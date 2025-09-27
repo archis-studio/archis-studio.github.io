@@ -1,0 +1,122 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+/* ==========================================================================
+   ARCHIS DIGITAL COMPASS CUSTOM STYLES
+   ========================================================================== */
+
+/* Chinese Font Optimization */
+body {
+  font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+}
+
+/* Code Font */
+pre, code {
+  font-family: 'Fira Code', Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Enhanced Feature Row */
+.feature__item {
+  .archive__item-teaser {
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* Category Colors - based on site guidelines */
+.category-technical { 
+  .page__hero-caption, .btn { background-color: #2c3e50 !important; }
+}
+.category-backend { 
+  .page__hero-caption, .btn { background-color: #34495e !important; }
+}
+.category-data-engineer { 
+  .page__hero-caption, .btn { background-color: #16a085 !important; }
+}
+.category-data-science { 
+  .page__hero-caption, .btn { background-color: #3498db !important; }
+}
+.category-quant-trading { 
+  .page__hero-caption, .btn { background-color: #e74c3c !important; }
+}
+.category-finance { 
+  .page__hero-caption, .btn { background-color: #f39c12 !important; }
+}
+.category-energy-management { 
+  .page__hero-caption, .btn { background-color: #27ae60 !important; }
+}
+.category-digital-advertising { 
+  .page__hero-caption, .btn { background-color: #9b59b6 !important; }
+}
+.category-personal-growth { 
+  .page__hero-caption, .btn { background-color: #1abc9c !important; }
+}
+
+/* Navigation Emoji Spacing */
+.greedy-nav__toggle {
+  margin-left: 0.5rem;
+}
+
+.masthead__inner-wrap .masthead__menu .greedy-nav .visible-links a {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+/* Enhanced Notice Boxes */
+.notice--success {
+  border-left: 4px solid #27ae60;
+}
+
+.notice--info {
+  border-left: 4px solid #3498db;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .masthead__inner-wrap .masthead__menu .greedy-nav .visible-links a {
+    font-size: 0.9rem;
+  }
+  
+  .feature__item .archive__item-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Loading Animation for Images */
+img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+img[data-src] {
+  opacity: 0;
+}
+
+/* Enhanced Table of Contents */
+.toc {
+  background: rgba(52, 73, 94, 0.05);
+  border: 1px solid rgba(52, 73, 94, 0.1);
+  border-radius: 8px;
+  
+  .nav__title {
+    background: rgba(52, 73, 94, 0.1);
+    border-radius: 6px 6px 0 0;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .masthead, .page__footer, .toc, .page__share, .page__related {
+    display: none !important;
+  }
+}

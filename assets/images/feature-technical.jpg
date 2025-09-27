@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#2c3e50"/>
+  <g transform="translate(200,150)" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    <text y="-20" font-size="32">💻</text>
+    <text y="10" font-size="18" font-weight="bold">技術開發</text>
+    <text y="30" font-size="12" opacity="0.8">Programming & Architecture</text>
+  </g>
+  <rect x="50" y="50" width="300" height="200" fill="none" stroke="white" stroke-width="2" opacity="0.3" rx="10"/>
+  <line x1="80" y1="80" x2="320" y2="80" stroke="white" opacity="0.2"/>
+  <line x1="80" y1="100" x2="280" y2="100" stroke="white" opacity="0.2"/>
+  <line x1="80" y1="120" x2="300" y2="120" stroke="white" opacity="0.2"/>
+</svg>

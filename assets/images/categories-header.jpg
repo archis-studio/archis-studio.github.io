@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+  <rect width="1200" height="675" fill="#34495e"/>
+  <g transform="translate(600,337.5)" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    <text y="-40" font-size="48" font-weight="bold">📂 文章分類</text>
+    <text y="0" font-size="24" opacity="0.9">依照技術領域分類的專業文章總覽</text>
+    <text y="40" font-size="18" opacity="0.7">九大專業領域 • 從入門到進階的完整學習路徑</text>
+  </g>
+  <g transform="translate(200,200)" fill="white" opacity="0.2">
+    <rect x="0" y="0" width="100" height="100" rx="10"/>
+    <rect x="120" y="0" width="100" height="100" rx="10"/>
+    <rect x="240" y="0" width="100" height="100" rx="10"/>
+  </g>
+  <g transform="translate(600,200)" fill="white" opacity="0.2">
+    <rect x="0" y="0" width="100" height="100" rx="10"/>
+    <rect x="120" y="0" width="100" height="100" rx="10"/>
+    <rect x="240" y="0" width="100" height="100" rx="10"/>
+  </g>
+  <g transform="translate(200,350)" fill="white" opacity="0.15">
+    <rect x="0" y="0" width="100" height="100" rx="10"/>
+    <rect x="120" y="0" width="100" height="100" rx="10"/>
+    <rect x="240" y="0" width="100" height="100" rx="10"/>
+  </g>
+</svg>

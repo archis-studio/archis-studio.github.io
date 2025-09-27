@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <circle cx="200" cy="200" r="200" fill="#34495e"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="#2c3e50" stroke-width="4"/>
+  <g transform="translate(200,200)" text-anchor="middle" fill="white" font-family="Arial, sans-serif">
+    <text y="-60" font-size="48">👨‍💻</text>
+    <text y="-10" font-size="24" font-weight="bold">Archi Chen</text>
+    <text y="15" font-size="14" opacity="0.9">Backend Engineer</text>
+    <text y="35" font-size="14" opacity="0.9">Data Scientist</text>
+    <text y="60" font-size="12" opacity="0.7">台北, 台灣</text>
+  </g>
+</svg>
