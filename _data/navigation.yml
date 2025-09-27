@@ -1,0 +1,35 @@
+# Main navigation links
+main:
+  - title: "Home"
+    url: /
+  - title: "About"
+    url: /about/
+  - title: "Blog"
+    url: /posts/
+  - title: "Categories"
+    url: /categories/
+  - title: "Tags"
+    url: /tags/
+  - title: "Portfolio"
+    url: /portfolio/
+
+# Sidebar navigation for categories
+categories:
+  - title: "Technical Categories"
+    children:
+      - title: "Technical"
+        url: /categories/technical/
+      - title: "Backend"
+        url: /categories/backend/
+      - title: "Data Engineering"
+        url: /categories/data-engineering/
+      - title: "Data Science"
+        url: /categories/data-science/
+  - title: "Business & Growth"
+    children:
+      - title: "Energy Management"
+        url: /categories/energy-management/
+      - title: "Digital Advertising"
+        url: /categories/digital-advertising/
+      - title: "Personal Growth"
+        url: /categories/personal-growth/

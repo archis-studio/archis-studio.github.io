@@ -1,0 +1,54 @@
+---
+layout: home
+author_profile: true
+header:
+  overlay_color: "#2c3e50"
+  overlay_filter: "0.5"
+  overlay_image: /assets/images/header-home.jpg
+  actions:
+    - label: "Explore My Work"
+      url: "/portfolio/"
+  caption: "Photo by [**Unsplash**](https://unsplash.com)"
+excerpt: "Empowering growth through technology & AI.<br />透過科技與 AI，成就每一個人的成長"
+intro: 
+  - excerpt: 'Welcome to **Archis Digital Compass** — where technology becomes accessible, inspiring, and practical. I guide people through programming, AI, and data-driven thinking to transform daily life and business decisions.'
+feature_row:
+  - image_path: assets/images/feature-technical.jpg
+    image_caption: "Technical Excellence"
+    alt: "Technical posts"
+    title: "Technical Insights"
+    excerpt: "Deep dives into programming, backend systems, and software architecture best practices."
+    url: "/categories/technical/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: assets/images/feature-data.jpg
+    image_caption: "Data-Driven Solutions"
+    alt: "Data science posts" 
+    title: "Data Science & Engineering"
+    excerpt: "Practical applications of data science, engineering workflows, and analytics insights."
+    url: "/categories/data-science/"
+    btn_label: "Read More"
+    btn_class: "btn--primary"
+  - image_path: assets/images/feature-growth.jpg
+    image_caption: "Personal & Business Growth"
+    alt: "Growth posts"
+    title: "Growth & Strategy"
+    excerpt: "Personal development, digital marketing strategies, and energy management insights."
+    url: "/categories/personal-growth/"
+    btn_label: "Read More" 
+    btn_class: "btn--primary"
+---
+
+{% include feature_row id="intro" type="center" %}
+
+{% include feature_row %}
+
+## Recent Posts
+
+{% for post in site.posts limit:6 %}
+  {% include archive-single.html %}
+{% endfor %}
+
+<div class="text-center">
+  <a href="/posts/" class="btn btn--primary btn--large">View All Posts</a>
+</div>

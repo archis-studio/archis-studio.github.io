@@ -1,0 +1,94 @@
+/* ==========================================================================
+   Custom skin for Archis Digital Compass
+   Modern, professional tech-focused color scheme
+   ========================================================================== */
+
+/* Colors */
+$primary-color: #2c3e50 !default;
+$accent-color: #3498db !default;
+$success-color: #27ae60 !default;
+$warning-color: #f39c12 !default;
+$danger-color: #e74c3c !default;
+$info-color: #9b59b6 !default;
+
+$background-color: #ffffff !default;
+$code-background-color: #f8f9fa !default;
+$code-background-color-dark: #282c34 !default;
+$text-color: #2c3e50 !default;
+$muted-text-color: #6c757d !default;
+$border-color: #ecf0f1 !default;
+$form-background-color: #ffffff !default;
+$footer-background-color: #34495e !default;
+
+$link-color: mix(#000, $info-color, 15%) !default;
+$link-color-hover: mix(#000, $link-color, 25%) !default;
+$link-color-visited: mix(#fff, $link-color, 15%) !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $accent-color !default;
+$navicon-link-color-hover: mix(#fff, $text-color, 75%) !default;
+
+$global-font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !default;
+$header-font-family: "Merriweather", Georgia, serif !default;
+$caption-font-family: $global-font-family !default;
+
+/* Custom category colors */
+.page__taxonomy .taxonomy__term {
+  &[href*="technical"] { background-color: #e67e22; }
+  &[href*="backend"] { background-color: #3498db; }
+  &[href*="data-engineering"] { background-color: #9b59b6; }
+  &[href*="data-science"] { background-color: #27ae60; }
+  &[href*="energy-management"] { background-color: #f39c12; }
+  &[href*="digital-advertising"] { background-color: #e74c3c; }
+  &[href*="personal-growth"] { background-color: #1abc9c; }
+}
+
+/* Enhanced button styles */
+.btn--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+  
+  &:hover {
+    background-color: mix(black, $primary-color, 20%);
+    border-color: mix(black, $primary-color, 20%);
+  }
+}
+
+/* Custom header overlay improvements */
+.page__hero {
+  &--overlay {
+    .page__title,
+    .page__meta,
+    .page__lead,
+    .btn {
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+  }
+}
+
+/* Enhanced code block styling */
+.highlight {
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Improved navigation */
+.masthead {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Category badge styling */
+.archive__item-category {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: white;
+  border-radius: 3px;
+  margin-right: 5px;
+  text-decoration: none;
+  
+  &:hover {
+    color: white;
+    opacity: 0.8;
+  }
+}

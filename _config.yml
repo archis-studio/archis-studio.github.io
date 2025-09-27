@@ -1,53 +1,216 @@
+# Site Settings
+locale: "en-US"
 title: "Archis Digital Compass"
-description: "A platform where technology becomes accessible and practical. Guiding you through programming, AI, and data-driven thinking for personal growth and smarter decisions. 💡 Empowering Growth Through Technology & AI."
-tagline: "透過科技與 AI，成就每一個人的成長"
-author: "Archi"
-email: "magic83w@gmail.com"
+title_separator: "-"
+subtitle: "透過科技與 AI，成就每一個人的成長"
+name: "Archi Chen"
+description: "A platform where technology becomes accessible and practical. Guiding you through programming, AI, and data-driven thinking for personal growth and smarter decisions."
 url: "https://magicxcr7.github.io"
 baseurl: ""
+repository: "magicxcr7/magicxcr7.github.io"
+teaser: "/assets/images/teaser-default.jpg"
+logo: "/assets/images/logo.png"
+masthead_title: "Archis Digital Compass"
+breadcrumbs: true
+words_per_minute: 200
 
-# Build settings
-markdown: kramdown
-highlighter: rouge
-theme: jekyll-theme-dinky
+# Comments (optional - you can enable later)
+comments:
+  provider: false
 
-# Permalink structure
-permalink: /:year/:month/:day/:title/
+# SEO Related
+google_site_verification: # Add your verification code when ready
+bing_site_verification: # Add your verification code when ready
+yandex_site_verification: # Add your verification code when ready
+naver_site_verification: # Add your verification code when ready
 
-# Plugins
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
-# Navigation
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "About"
-    url: "/about/"
-  - title: "Blog"
-    url: "/blog/"
-
-# Social links
-github_username: magicxcr7
-
-# SEO and social
-lang: "en"
-logo: "/assets/images/logo.png"  # Optional: add your logo later
+# Social Sharing
+twitter:
+  username: # Add your Twitter handle when ready
+facebook:
+  username: # Add your Facebook username when ready
+  app_id:
+  publisher:
+og_image: "/assets/images/bio-photo.jpg"
 social:
-  name: "Archi"
+  type: "Person"
+  name: "Archi Chen"
   links:
     - "https://github.com/magicxcr7"
 
-# Blog settings
-show_excerpts: true
-paginate: 5
-excerpt_separator: "<!--more-->"
+# Analytics
+analytics:
+  provider: false # Set to "google" or "google-universal" when ready
+  google:
+    tracking_id: # Add your tracking ID when ready
+    anonymize_ip: false
 
-# Categories and tags
+# Site Author
+author:
+  name: "Archi Chen"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "Tech enthusiast empowering growth through AI, data science, and practical programming insights."
+  location: "Taiwan"
+  email: "magic83w@gmail.com"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:magic83w@gmail.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/magicxcr7"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: # Add your LinkedIn URL when ready
+
+# Site Footer
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/magicxcr7"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:magic83w@gmail.com"
+
+# Reading Files
+include:
+  - .htaccess
+  - _pages
+exclude:
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - vendor
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gemfile
+  - Gruntfile.js
+  - gulpfile.js
+  - LICENSE
+  - log
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README
+  - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
+keep_files:
+  - .git
+  - .svn
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Conversion
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Outputting
+permalink: /:categories/:title/
+paginate: 10
+paginate_path: /page:num/
+timezone: Asia/Taipei
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+
+# Archives
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# HTML Compression
+compress_html:
+  clippings: all
+  ignore:
+    envs: development
+
+# Collections
 collections:
-  categories:
+  portfolio:
     output: true
-  tags:
-    output: true
+    permalink: /:collection/:name/
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      toc: true
+      toc_sticky: true
+      header:
+        overlay_color: "#2c3e50"
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      header:
+        overlay_color: "#34495e"
+  # _portfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+
+# Theme
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
