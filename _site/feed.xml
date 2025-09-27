@@ -1,0 +1,1209 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://magicxcr7.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://magicxcr7.github.io/" rel="alternate" type="text/html" /><updated>2025-09-27T19:34:11+08:00</updated><id>https://magicxcr7.github.io/feed.xml</id><title type="html">Archis Digital Compass</title><subtitle>專業的技術分享平台，專注於 Backend 開發、Data Science、量化交易與個人成長。讓複雜的技術變得簡單易懂，陪伴您在數位時代中成長茁壯。</subtitle><author><name>Archi Chen</name><email>magic83w@gmail.com</email></author><entry><title type="html">歡迎來到全新的 Archis Digital Compass！</title><link href="https://magicxcr7.github.io/personal-growth/welcome-to-new-archis-compass/" rel="alternate" type="text/html" title="歡迎來到全新的 Archis Digital Compass！" /><published>2024-12-19T10:00:00+08:00</published><updated>2024-12-19T10:00:00+08:00</updated><id>https://magicxcr7.github.io/personal-growth/welcome-to-new-archis-compass</id><content type="html" xml:base="https://magicxcr7.github.io/personal-growth/welcome-to-new-archis-compass/"><![CDATA[<p>哈囉大家好！我是 Archi 👋</p>
+
+<p>經過一段時間的重新設計與規劃，<strong>Archis Digital Compass</strong> 全新改版正式上線啦！🎉 這次不只是換個新衣服這麼簡單，而是從內容到設計都重新思考，打造一個真正適合台灣技術社群的分享平台。</p>
+
+<!--more-->
+
+<h2 id="為什麼要重新改版-">為什麼要重新改版？ 🤔</h2>
+
+<p>老實說，之前的網站雖然功能完整，但總覺得少了點什麼。經過深思熟慮後，我發現了幾個問題：</p>
+
+<h3 id="1-語言混用的困擾">1. 語言混用的困擾</h3>
+<p>以前的文章中英夾雜，雖然看起來很國際化，但對台灣讀者來說其實不太友善。技術文章本來就已經夠硬了，如果還要在語言上增加閱讀障礙，那就本末倒置了 😅</p>
+
+<h3 id="2-內容分類不夠清晰">2. 內容分類不夠清晰</h3>
+<p>之前的分類太籠統，讀者很難快速找到自己需要的內容。現在我把內容重新整理，分成更具體的領域。</p>
+
+<h3 id="3-缺乏個人溫度">3. 缺乏個人溫度</h3>
+<p>技術部落格不應該只是冷冰冰的教學文件。加入一些個人經驗、心得分享，甚至偶爾來點幽默，才能讓讀者感受到真實的人味 😊</p>
+
+<h2 id="全新網站有什麼特色-">全新網站有什麼特色？ ✨</h2>
+
+<h3 id="-完全繁體中文化">🇹🇼 完全繁體中文化</h3>
+<p>除了技術術語保持英文外（畢竟 Backend、Data Science 這些詞已經是共同語言了），其他內容都用繁體中文撰寫。讓台灣的朋友們可以更輕鬆地閱讀！</p>
+
+<h3 id="-更詳細的分類系統">📚 更詳細的分類系統</h3>
+<p>新的分類系統包括：</p>
+
+<p><strong>技術開發類</strong></p>
+<ul>
+  <li>💻 <strong>技術分享</strong> - 通用的程式設計經驗</li>
+  <li>🔧 <strong>Backend 開發</strong> - 伺服器端技術深度探討</li>
+  <li>📊 <strong>Data Engineering</strong> - 資料工程實務分享</li>
+  <li>🤖 <strong>Data Science</strong> - 機器學習與資料分析</li>
+</ul>
+
+<p><strong>金融科技類</strong></p>
+<ul>
+  <li>📈 <strong>量化交易</strong> - 演算法交易策略分享</li>
+  <li>💰 <strong>金融科技</strong> - FinTech 技術與應用</li>
+</ul>
+
+<p><strong>其他專業領域</strong></p>
+<ul>
+  <li>⚡ <strong>能源管理</strong> - 智慧電網與綠能科技</li>
+  <li>📢 <strong>數位廣告</strong> - 行銷技術與數據分析</li>
+  <li>🌟 <strong>個人成長</strong> - 職涯發展與學習心得</li>
+</ul>
+
+<h3 id="-實戰導向的內容">🎯 實戰導向的內容</h3>
+<p>每篇文章都會包含：</p>
+<ul>
+  <li>📝 <strong>實際程式碼範例</strong></li>
+  <li>🔍 <strong>詳細的步驟說明</strong></li>
+  <li>💡 <strong>個人心得與踩坑經驗</strong></li>
+  <li>🚀 <strong>可以立即應用的技巧</strong></li>
+</ul>
+
+<h2 id="接下來會有哪些內容-">接下來會有哪些內容？ 📅</h2>
+
+<p>我已經準備了一系列的文章主題，預計每週更新 1-2 篇：</p>
+
+<h3 id="近期計畫-12月---1月">近期計畫 (12月 - 1月)</h3>
+<ul>
+  <li>🔧 <strong>「Backend 開發實戰系列」</strong> - 從 API 設計到微服務架構</li>
+  <li>📊 <strong>「Python 資料分析實務」</strong> - 用實際案例學 Pandas 與 NumPy</li>
+  <li>📈 <strong>「量化交易入門」</strong> - 從策略發想到程式實作</li>
+</ul>
+
+<h3 id="中期規劃-2-4月">中期規劃 (2-4月)</h3>
+<ul>
+  <li>🤖 <strong>「Machine Learning 實戰專案」</strong> - 完整的 ML 專案流程</li>
+  <li>☁️ <strong>「雲端服務整合指南」</strong> - AWS、GCP 實務應用</li>
+  <li>💡 <strong>「職場生存技能」</strong> - 技術人的軟實力提升</li>
+</ul>
+
+<h3 id="長期願景-全年">長期願景 (全年)</h3>
+<ul>
+  <li>📖 建立完整的技術知識體系</li>
+  <li>🎥 可能會加入影片教學內容</li>
+  <li>🤝 與其他技術社群合作交流</li>
+</ul>
+
+<h2 id="給讀者的小提醒-">給讀者的小提醒 📋</h2>
+
+<h3 id="如何獲得最佳體驗">如何獲得最佳體驗？</h3>
+<ul>
+  <li>💾 <strong>書籤收藏</strong> - 把常用的分類頁面加到書籤</li>
+  <li>🔔 <strong>關注更新</strong> - 追蹤我的 GitHub 獲得最新動態</li>
+  <li>💬 <strong>積極互動</strong> - 在文章下方留言分享你的想法</li>
+</ul>
+
+<h3 id="遇到問題怎麼辦">遇到問題怎麼辦？</h3>
+<ul>
+  <li>🐛 <strong>發現錯誤</strong> - 歡迎透過 Email 或 GitHub Issue 回報</li>
+  <li>❓ <strong>有疑問</strong> - 可以在文章下方留言討論</li>
+  <li>💡 <strong>建議主題</strong> - 想看什麼主題的文章也可以告訴我</li>
+</ul>
+
+<h2 id="一些碎碎念-">一些碎碎念 💭</h2>
+
+<p>說實話，經營技術部落格真的不容易。要在工作之餘持續產出有價值的內容，需要很多的時間和精力。但每當收到讀者的正面回饋，或是看到自己的文章真的幫助到別人解決問題時，那種成就感是無法言喻的 😊</p>
+
+<p>我希望這個網站不只是我一個人的技術筆記本，更能成為台灣技術社群交流學習的小據點。如果你也有類似的想法，或是想要分享自己的經驗，歡迎與我聯繫！</p>
+
+<h3 id="一起打造更好的技術社群-">一起打造更好的技術社群 🚀</h3>
+
+<p>最後，我想說的是：<strong>技術的價值在於分享</strong>。無論你是剛入門的新手，還是經驗豐富的資深工程師，每個人都有值得分享的經驗和觀點。</p>
+
+<p>在這個快速變化的科技時代，我們更需要互相扶持、共同學習。希望這個小小的部落格能夠成為我們技術交流的橋樑，讓每個人都能在這裡找到有價值的內容！</p>
+
+<hr />
+
+<h2 id="聯繫我-">聯繫我 📬</h2>
+
+<p>如果你有任何建議、問題，或是想要討論技術話題，都歡迎與我聯繫：</p>
+
+<ul>
+  <li>📧 <strong>Email</strong>: <a href="mailto:magic83w@gmail.com">magic83w@gmail.com</a></li>
+  <li>💻 <strong>GitHub</strong>: <a href="https://github.com/magicxcr7">github.com/magicxcr7</a></li>
+  <li>🔗 <strong>LinkedIn</strong>: <a href="https://linkedin.com/in/archi-chen">linkedin.com/in/archi-chen</a></li>
+</ul>
+
+<div class="notice--success">
+  <h4>🎉 歡迎加入我們的學習之旅！</h4>
+  <p>記得定期回來看看新文章，也歡迎把這個網站推薦給其他對技術有興趣的朋友！一起學習，一起成長 💪</p>
+</div>
+
+<p><em>感謝您的耐心閱讀，讓我們在技術的道路上一起前進吧！</em></p>]]></content><author><name>Archi Chen</name><email>magic83w@gmail.com</email></author><category term="personal-growth" /><category term="網站更新" /><category term="個人品牌" /><category term="技術分享" /><category term="歡迎" /><summary type="html"><![CDATA[全新改版的個人技術部落格正式上線！這次我們用繁體中文重新打造，專為台灣的技術社群量身設計 🚀]]></summary></entry><entry><title type="html">Python Backend API 設計的眉眉角角</title><link href="https://magicxcr7.github.io/backend/technical/python-backend-api-best-practices/" rel="alternate" type="text/html" title="Python Backend API 設計的眉眉角角" /><published>2024-12-18T14:30:00+08:00</published><updated>2024-12-18T14:30:00+08:00</updated><id>https://magicxcr7.github.io/backend/technical/python-backend-api-best-practices</id><content type="html" xml:base="https://magicxcr7.github.io/backend/technical/python-backend-api-best-practices/"><![CDATA[<p>最近在 Code Review 的時候，發現團隊夥伴們在 API 設計上還有很多可以改進的地方。趁著這個機會，來整理一下我這幾年在 Python Backend 開發上累積的一些心得 🤓</p>
+
+<p>說到 API 設計，就像蓋房子一樣，地基打得好不好，決定了整個系統的穩定性。今天就來分享一些實戰經驗，希望能幫助大家少踩一些坑！</p>
+
+<!--more-->
+
+<h2 id="選擇合適的框架-️">選擇合適的框架 🛠️</h2>
+
+<h3 id="fastapi-vs-flask-vs-django-rest">FastAPI vs Flask vs Django REST</h3>
+
+<p>這個老問題了，但還是值得再聊聊：</p>
+
+<p><strong>FastAPI</strong> - 我的新歡 ❤️</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span><span class="p">,</span> <span class="n">HTTPException</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s">"我的 API"</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s">"1.0.0"</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">UserCreate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/users/"</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">create_user</span><span class="p">(</span><span class="n">user</span><span class="p">:</span> <span class="n">UserCreate</span><span class="p">):</span>
+    <span class="c1"># 自動產生 API 文件，型別檢查都幫你搞定
+</span>    <span class="k">return</span> <span class="p">{</span><span class="s">"message"</span><span class="p">:</span> <span class="sa">f</span><span class="s">"用戶 </span><span class="si">{</span><span class="n">user</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> 建立成功！"</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>為什麼選 FastAPI？</strong></p>
+<ul>
+  <li>🚀 <strong>效能超好</strong> - 接近 Node.js 和 Go 的速度</li>
+  <li>📝 <strong>自動文件</strong> - Swagger UI 自動生成，省去寫文件的痛苦</li>
+  <li>🔒 <strong>型別安全</strong> - 用 Pydantic 做資料驗證，錯誤少很多</li>
+  <li>🔄 <strong>非同步支援</strong> - 原生支援 async/await</li>
+</ul>
+
+<h3 id="實際效能比較">實際效能比較</h3>
+
+<p>我之前做過一個簡單的壓力測試（用 Apache Bench 測試 1000 個併發請求）：</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>框架</th>
+      <th>請求/秒</th>
+      <th>平均回應時間</th>
+      <th>記憶體使用</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FastAPI</td>
+      <td>12,000</td>
+      <td>83ms</td>
+      <td>25MB</td>
+    </tr>
+    <tr>
+      <td>Flask</td>
+      <td>8,500</td>
+      <td>118ms</td>
+      <td>35MB</td>
+    </tr>
+    <tr>
+      <td>Django REST</td>
+      <td>6,200</td>
+      <td>161ms</td>
+      <td>45MB</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p>📊 數據僅供參考，實際效能會因應用邏輯而異</p>
+</blockquote>
+
+<h2 id="api-設計的黃金準則-">API 設計的黃金準則 ✨</h2>
+
+<h3 id="1-restful-設計要做對">1. RESTful 設計要做對</h3>
+
+<p>這個大家都知道，但實際做起來總是會歪掉 😅</p>
+
+<p><strong>❌ 常見的錯誤：</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 這樣設計會被 Backend 前輩們翻白眼...
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/getUserById"</span><span class="p">)</span>  <span class="c1"># 用 POST 來查詢？
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/deleteUser/123"</span><span class="p">)</span>  <span class="c1"># 用 GET 來刪除？
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">"/users/update/456"</span><span class="p">)</span>  <span class="c1"># URL 裡面有動詞？
+</span></code></pre></div></div>
+
+<p><strong>✅ 正確的做法：</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 清爽簡潔，語意明確
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/users/{user_id}"</span><span class="p">)</span>      <span class="c1"># 取得用戶
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/users/"</span><span class="p">)</span>              <span class="c1"># 建立用戶  
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">put</span><span class="p">(</span><span class="s">"/users/{user_id}"</span><span class="p">)</span>      <span class="c1"># 更新用戶
+</span><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">delete</span><span class="p">(</span><span class="s">"/users/{user_id}"</span><span class="p">)</span>   <span class="c1"># 刪除用戶
+</span></code></pre></div></div>
+
+<h3 id="2-錯誤處理要優雅">2. 錯誤處理要優雅</h3>
+
+<p><strong>❌ 糟糕的錯誤處理：</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/users/{user_id}"</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">database</span><span class="p">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s">"error"</span><span class="p">:</span> <span class="s">"找不到用戶"</span><span class="p">}</span>  <span class="c1"># 沒有 HTTP 狀態碼？
+</span></code></pre></div></div>
+
+<p><strong>✅ 專業的錯誤處理：</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">HTTPException</span><span class="p">,</span> <span class="n">status</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/users/{user_id}"</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">user</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">HTTPException</span><span class="p">(</span>
+            <span class="n">status_code</span><span class="o">=</span><span class="n">status</span><span class="p">.</span><span class="n">HTTP_404_NOT_FOUND</span><span class="p">,</span>
+            <span class="n">detail</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">"message"</span><span class="p">:</span> <span class="s">"找不到指定的用戶"</span><span class="p">,</span>
+                <span class="s">"error_code"</span><span class="p">:</span> <span class="s">"USER_NOT_FOUND"</span><span class="p">,</span>
+                <span class="s">"user_id"</span><span class="p">:</span> <span class="n">user_id</span>
+            <span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">return</span> <span class="n">user</span>
+</code></pre></div></div>
+
+<h3 id="3-統一的回應格式">3. 統一的回應格式</h3>
+
+<p>建立一致的 API 回應格式，讓前端同事不會想揍你 🤜</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Optional</span>
+
+<span class="k">class</span> <span class="nc">APIResponse</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">success</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">message</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">data</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+    <span class="n">error_code</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+
+<span class="c1"># 成功的回應
+</span><span class="k">return</span> <span class="n">APIResponse</span><span class="p">(</span>
+    <span class="n">success</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">message</span><span class="o">=</span><span class="s">"操作成功"</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">user_data</span>
+<span class="p">)</span>
+
+<span class="c1"># 失敗的回應
+</span><span class="k">return</span> <span class="n">APIResponse</span><span class="p">(</span>
+    <span class="n">success</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> 
+    <span class="n">message</span><span class="o">=</span><span class="s">"用戶名稱已存在"</span><span class="p">,</span>
+    <span class="n">error_code</span><span class="o">=</span><span class="s">"DUPLICATE_USERNAME"</span>
+<span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="資料驗證與清理-">資料驗證與清理 🧹</h2>
+
+<h3 id="pydantic-是你的好朋友">Pydantic 是你的好朋友</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">validator</span><span class="p">,</span> <span class="n">EmailStr</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">class</span> <span class="nc">UserCreate</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">email</span><span class="p">:</span> <span class="n">EmailStr</span>
+    <span class="n">password</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">age</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="bp">None</span>
+    
+    <span class="o">@</span><span class="n">validator</span><span class="p">(</span><span class="s">'username'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">username_must_be_valid</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'用戶名稱至少要 3 個字元'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s">'^[a-zA-Z0-9_]+$'</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'用戶名稱只能包含英數字和底線'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+    
+    <span class="o">@</span><span class="n">validator</span><span class="p">(</span><span class="s">'password'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">password_strength</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'密碼至少要 8 個字元'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s">'[A-Z]'</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'密碼需要包含大寫字母'</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="p">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s">'[0-9]'</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'密碼需要包含數字'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+    
+    <span class="o">@</span><span class="n">validator</span><span class="p">(</span><span class="s">'age'</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">age_must_be_reasonable</span><span class="p">(</span><span class="n">cls</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">v</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="nb">ValueError</span><span class="p">(</span><span class="s">'年齡必須在 0-150 之間'</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">v</span>
+</code></pre></div></div>
+
+<h2 id="效能優化的實戰技巧-">效能優化的實戰技巧 🚀</h2>
+
+<h3 id="1-非同步程式設計">1. 非同步程式設計</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">asyncio</span>
+<span class="kn">import</span> <span class="nn">aiohttp</span>
+<span class="kn">from</span> <span class="nn">concurrent.futures</span> <span class="kn">import</span> <span class="n">ThreadPoolExecutor</span>
+
+<span class="c1"># ❌ 同步版本 - 會阻塞其他請求
+</span><span class="k">def</span> <span class="nf">get_user_with_profile</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">database</span><span class="p">.</span><span class="n">get_user</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>  <span class="c1"># 100ms
+</span>    <span class="n">profile</span> <span class="o">=</span> <span class="n">api</span><span class="p">.</span><span class="n">get_user_profile</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>  <span class="c1"># 200ms  
+</span>    <span class="n">settings</span> <span class="o">=</span> <span class="n">database</span><span class="p">.</span><span class="n">get_user_settings</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>  <span class="c1"># 50ms
+</span>    <span class="k">return</span> <span class="n">merge_data</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">settings</span><span class="p">)</span>
+    <span class="c1"># 總時間：350ms
+</span>
+<span class="c1"># ✅ 非同步版本 - 平行處理
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">get_user_with_profile_async</span><span class="p">(</span><span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">database</span><span class="p">.</span><span class="n">get_user_async</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+        <span class="n">api</span><span class="p">.</span><span class="n">get_user_profile_async</span><span class="p">(</span><span class="n">user_id</span><span class="p">),</span>
+        <span class="n">database</span><span class="p">.</span><span class="n">get_user_settings_async</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+    <span class="p">]</span>
+    <span class="n">user</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">settings</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="p">.</span><span class="n">gather</span><span class="p">(</span><span class="o">*</span><span class="n">tasks</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">merge_data</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">profile</span><span class="p">,</span> <span class="n">settings</span><span class="p">)</span>
+    <span class="c1"># 總時間：200ms (最慢的那個)
+</span></code></pre></div></div>
+
+<h3 id="2-資料庫查詢優化">2. 資料庫查詢優化</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ N+1 查詢問題
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">get_users_with_posts</span><span class="p">():</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">get_all_users</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+        <span class="n">user</span><span class="p">.</span><span class="n">posts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">get_posts_by_user</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="nb">id</span><span class="p">)</span>  <span class="c1"># 每個用戶一次查詢
+</span>    <span class="k">return</span> <span class="n">users</span>
+
+<span class="c1"># ✅ 批量查詢
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">get_users_with_posts_optimized</span><span class="p">():</span>
+    <span class="n">users</span> <span class="o">=</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">get_all_users</span><span class="p">()</span>
+    <span class="n">user_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">user</span><span class="p">.</span><span class="nb">id</span> <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">]</span>
+    <span class="n">all_posts</span> <span class="o">=</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">get_posts_by_user_ids</span><span class="p">(</span><span class="n">user_ids</span><span class="p">)</span>  <span class="c1"># 一次查詢
+</span>    
+    <span class="c1"># 在程式中組合資料
+</span>    <span class="n">posts_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">post</span> <span class="ow">in</span> <span class="n">all_posts</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">post</span><span class="p">.</span><span class="n">user_id</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">posts_dict</span><span class="p">:</span>
+            <span class="n">posts_dict</span><span class="p">[</span><span class="n">post</span><span class="p">.</span><span class="n">user_id</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">posts_dict</span><span class="p">[</span><span class="n">post</span><span class="p">.</span><span class="n">user_id</span><span class="p">].</span><span class="n">append</span><span class="p">(</span><span class="n">post</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">user</span> <span class="ow">in</span> <span class="n">users</span><span class="p">:</span>
+        <span class="n">user</span><span class="p">.</span><span class="n">posts</span> <span class="o">=</span> <span class="n">posts_dict</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="nb">id</span><span class="p">,</span> <span class="p">[])</span>
+    
+    <span class="k">return</span> <span class="n">users</span>
+</code></pre></div></div>
+
+<h3 id="3-快取策略">3. 快取策略</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">wraps</span>
+<span class="kn">import</span> <span class="nn">redis</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">redis_client</span> <span class="o">=</span> <span class="n">redis</span><span class="p">.</span><span class="n">Redis</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s">'localhost'</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">6379</span><span class="p">,</span> <span class="n">db</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">cache_result</span><span class="p">(</span><span class="n">expire_seconds</span><span class="o">=</span><span class="mi">300</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="o">@</span><span class="n">wraps</span><span class="p">(</span><span class="n">func</span><span class="p">)</span>
+        <span class="k">async</span> <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="c1"># 產生快取 key
+</span>            <span class="n">cache_key</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">func</span><span class="p">.</span><span class="n">__name__</span><span class="si">}</span><span class="s">:</span><span class="si">{</span><span class="nb">hash</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span><span class="si">}</span><span class="s">"</span>
+            
+            <span class="c1"># 嘗試從快取取得
+</span>            <span class="n">cached</span> <span class="o">=</span> <span class="n">redis_client</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">cache_key</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">cached</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">json</span><span class="p">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cached</span><span class="p">)</span>
+            
+            <span class="c1"># 執行原函數
+</span>            <span class="n">result</span> <span class="o">=</span> <span class="k">await</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+            
+            <span class="c1"># 儲存到快取
+</span>            <span class="n">redis_client</span><span class="p">.</span><span class="n">setex</span><span class="p">(</span>
+                <span class="n">cache_key</span><span class="p">,</span> 
+                <span class="n">expire_seconds</span><span class="p">,</span> 
+                <span class="n">json</span><span class="p">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">str</span><span class="p">)</span>
+            <span class="p">)</span>
+            
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">return</span> <span class="n">wrapper</span>
+    <span class="k">return</span> <span class="n">decorator</span>
+
+<span class="c1"># 使用快取
+</span><span class="o">@</span><span class="n">cache_result</span><span class="p">(</span><span class="n">expire_seconds</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>  <span class="c1"># 快取 10 分鐘
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">get_popular_articles</span><span class="p">():</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">get_articles_by_popularity</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="安全性考量-">安全性考量 🔐</h2>
+
+<h3 id="1-輸入驗證與-sql-injection-防護">1. 輸入驗證與 SQL Injection 防護</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 危險的做法
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">get_user_by_email</span><span class="p">(</span><span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"SELECT * FROM users WHERE email = '</span><span class="si">{</span><span class="n">email</span><span class="si">}</span><span class="s">'"</span>  <span class="c1"># SQL Injection 風險
+</span>    <span class="k">return</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="c1"># ✅ 安全的做法
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">get_user_by_email_safe</span><span class="p">(</span><span class="n">email</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="s">"SELECT * FROM users WHERE email = %s"</span>
+    <span class="k">return</span> <span class="k">await</span> <span class="n">database</span><span class="p">.</span><span class="n">execute</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">(</span><span class="n">email</span><span class="p">,))</span>  <span class="c1"># 參數化查詢
+</span></code></pre></div></div>
+
+<h3 id="2-限流與-rate-limiting">2. 限流與 Rate Limiting</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">slowapi</span> <span class="kn">import</span> <span class="n">Limiter</span><span class="p">,</span> <span class="n">_rate_limit_exceeded_handler</span>
+<span class="kn">from</span> <span class="nn">slowapi.util</span> <span class="kn">import</span> <span class="n">get_remote_address</span>
+<span class="kn">from</span> <span class="nn">slowapi.errors</span> <span class="kn">import</span> <span class="n">RateLimitExceeded</span>
+
+<span class="n">limiter</span> <span class="o">=</span> <span class="n">Limiter</span><span class="p">(</span><span class="n">key_func</span><span class="o">=</span><span class="n">get_remote_address</span><span class="p">)</span>
+<span class="n">app</span><span class="p">.</span><span class="n">state</span><span class="p">.</span><span class="n">limiter</span> <span class="o">=</span> <span class="n">limiter</span>
+<span class="n">app</span><span class="p">.</span><span class="n">add_exception_handler</span><span class="p">(</span><span class="n">RateLimitExceeded</span><span class="p">,</span> <span class="n">_rate_limit_exceeded_handler</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/login/"</span><span class="p">)</span>
+<span class="o">@</span><span class="n">limiter</span><span class="p">.</span><span class="n">limit</span><span class="p">(</span><span class="s">"5/minute"</span><span class="p">)</span>  <span class="c1"># 每分鐘最多 5 次登入嘗試
+</span><span class="k">async</span> <span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">credentials</span><span class="p">:</span> <span class="n">LoginCredentials</span><span class="p">):</span>
+    <span class="c1"># 登入邏輯
+</span>    <span class="k">pass</span>
+</code></pre></div></div>
+
+<h2 id="api-文件與測試-">API 文件與測試 📚</h2>
+
+<h3 id="自動生成文件">自動生成文件</h3>
+
+<p>FastAPI 的一大優勢就是自動文件生成：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">FastAPI</span>
+<span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">FastAPI</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s">"我的超棒 API"</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s">"這個 API 可以做很多很酷的事情 🚀"</span><span class="p">,</span>
+    <span class="n">version</span><span class="o">=</span><span class="s">"1.0.0"</span>
+<span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">UserResponse</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="s">"用戶的唯一識別碼"</span><span class="p">)</span>
+    <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="s">"用戶名稱"</span><span class="p">,</span> <span class="n">example</span><span class="o">=</span><span class="s">"john_doe"</span><span class="p">)</span>
+    <span class="n">email</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="s">"電子郵件地址"</span><span class="p">,</span> <span class="n">example</span><span class="o">=</span><span class="s">"john@example.com"</span><span class="p">)</span>
+    <span class="n">created_at</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="s">"帳號建立時間"</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"/users/{user_id}"</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">UserResponse</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">get_user</span><span class="p">(</span>
+    <span class="n">user_id</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(...,</span> <span class="n">description</span><span class="o">=</span><span class="s">"要查詢的用戶 ID"</span><span class="p">,</span> <span class="n">example</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+<span class="p">):</span>
+    <span class="s">"""
+    取得指定用戶的詳細資訊
+    
+    - **user_id**: 用戶的唯一識別碼
+    
+    回傳用戶的基本資料，包括用戶名稱、電子郵件等資訊。
+    """</span>
+    <span class="c1"># 實作邏輯
+</span>    <span class="k">pass</span>
+</code></pre></div></div>
+
+<p>訪問 <code class="language-plaintext highlighter-rouge">http://localhost:8000/docs</code> 就能看到美美的 Swagger UI 文件！</p>
+
+<h3 id="單元測試">單元測試</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">fastapi.testclient</span> <span class="kn">import</span> <span class="n">TestClient</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">TestClient</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_create_user_success</span><span class="p">():</span>
+    <span class="n">user_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">"username"</span><span class="p">:</span> <span class="s">"testuser"</span><span class="p">,</span>
+        <span class="s">"email"</span><span class="p">:</span> <span class="s">"test@example.com"</span><span class="p">,</span>
+        <span class="s">"password"</span><span class="p">:</span> <span class="s">"SecurePass123"</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/users/"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">user_data</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">201</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()[</span><span class="s">"success"</span><span class="p">]</span> <span class="ow">is</span> <span class="bp">True</span>
+
+<span class="k">def</span> <span class="nf">test_create_user_duplicate_username</span><span class="p">():</span>
+    <span class="n">user_data</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s">"username"</span><span class="p">:</span> <span class="s">"existing_user"</span><span class="p">,</span> 
+        <span class="s">"email"</span><span class="p">:</span> <span class="s">"test@example.com"</span><span class="p">,</span>
+        <span class="s">"password"</span><span class="p">:</span> <span class="s">"SecurePass123"</span>
+    <span class="p">}</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">"/users/"</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">user_data</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">response</span><span class="p">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">409</span>
+    <span class="k">assert</span> <span class="s">"DUPLICATE_USERNAME"</span> <span class="ow">in</span> <span class="n">response</span><span class="p">.</span><span class="n">json</span><span class="p">()[</span><span class="s">"error_code"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h2 id="部署與監控-">部署與監控 📊</h2>
+
+<h3 id="docker-化部署">Docker 化部署</h3>
+
+<div class="language-dockerfile highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">FROM</span><span class="s"> python:3.11-slim</span>
+
+<span class="k">WORKDIR</span><span class="s"> /app</span>
+
+<span class="k">COPY</span><span class="s"> requirements.txt .</span>
+<span class="k">RUN </span>pip <span class="nb">install</span> <span class="nt">--no-cache-dir</span> <span class="nt">-r</span> requirements.txt
+
+<span class="k">COPY</span><span class="s"> . .</span>
+
+<span class="k">EXPOSE</span><span class="s"> 8000</span>
+
+<span class="k">CMD</span><span class="s"> ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]</span>
+</code></pre></div></div>
+
+<h3 id="日誌與監控">日誌與監控</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">fastapi</span> <span class="kn">import</span> <span class="n">Request</span>
+
+<span class="c1"># 設定日誌
+</span><span class="n">logging</span><span class="p">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="p">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="p">.</span><span class="n">getLogger</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="o">@</span><span class="n">app</span><span class="p">.</span><span class="n">middleware</span><span class="p">(</span><span class="s">"http"</span><span class="p">)</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">log_requests</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">call_next</span><span class="p">):</span>
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+    
+    <span class="c1"># 記錄請求
+</span>    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s">"請求開始: </span><span class="si">{</span><span class="n">request</span><span class="p">.</span><span class="n">method</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">request</span><span class="p">.</span><span class="n">url</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    
+    <span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">call_next</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+    
+    <span class="c1"># 計算處理時間
+</span>    <span class="n">process_time</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="n">start_time</span>
+    
+    <span class="c1"># 記錄回應
+</span>    <span class="n">logger</span><span class="p">.</span><span class="n">info</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s">"請求完成: </span><span class="si">{</span><span class="n">request</span><span class="p">.</span><span class="n">method</span><span class="si">}</span><span class="s"> </span><span class="si">{</span><span class="n">request</span><span class="p">.</span><span class="n">url</span><span class="si">}</span><span class="s"> "</span>
+        <span class="sa">f</span><span class="s">"狀態碼: </span><span class="si">{</span><span class="n">response</span><span class="p">.</span><span class="n">status_code</span><span class="si">}</span><span class="s"> "</span>
+        <span class="sa">f</span><span class="s">"處理時間: </span><span class="si">{</span><span class="n">process_time</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s">s"</span>
+    <span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">response</span>
+</code></pre></div></div>
+
+<h2 id="我的踩坑經驗分享-">我的踩坑經驗分享 💀</h2>
+
+<h3 id="1-資料庫連線池沒設定好">1. 資料庫連線池沒設定好</h3>
+
+<p>有次部署到生產環境後，API 在高流量時會隨機回傳 500 錯誤。調查後發現是資料庫連線池設定太小，導致連線不足 🤦‍♂️</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 沒設定連線池
+</span><span class="n">engine</span> <span class="o">=</span> <span class="n">create_async_engine</span><span class="p">(</span><span class="s">"postgresql://..."</span><span class="p">)</span>
+
+<span class="c1"># ✅ 正確設定
+</span><span class="n">engine</span> <span class="o">=</span> <span class="n">create_async_engine</span><span class="p">(</span>
+    <span class="s">"postgresql://..."</span><span class="p">,</span>
+    <span class="n">pool_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>           <span class="c1"># 基本連線數
+</span>    <span class="n">max_overflow</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>        <span class="c1"># 最大額外連線數
+</span>    <span class="n">pool_timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>        <span class="c1"># 取得連線的超時時間
+</span>    <span class="n">pool_recycle</span><span class="o">=</span><span class="mi">3600</span>       <span class="c1"># 連線回收時間
+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-忘記處理時區問題">2. 忘記處理時區問題</h3>
+
+<p>另一個慘痛經驗是時區問題。API 回傳的時間在不同地區的用戶看到的不一樣 😵</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span><span class="p">,</span> <span class="n">timezone</span>
+
+<span class="c1"># ❌ 沒考慮時區
+</span><span class="n">created_at</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">()</span>  <span class="c1"># 這是 server 的當地時間
+</span>
+<span class="c1"># ✅ 明確使用 UTC
+</span><span class="n">created_at</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">(</span><span class="n">timezone</span><span class="p">.</span><span class="n">utc</span><span class="p">)</span>  <span class="c1"># 統一用 UTC
+</span></code></pre></div></div>
+
+<h2 id="總結與建議-">總結與建議 🎯</h2>
+
+<p>設計一個好的 API 真的是門藝術，需要在很多面向取得平衡：</p>
+
+<ol>
+  <li><strong>效能 vs 可讀性</strong> - 不要過度優化，保持程式碼簡潔</li>
+  <li><strong>功能完整 vs 簡潔</strong> - API 設計要簡單明瞭，不要塞太多功能</li>
+  <li><strong>彈性 vs 穩定</strong> - 版本控制很重要，向後相容性要考慮</li>
+</ol>
+
+<h3 id="我的開發流程建議">我的開發流程建議：</h3>
+<ol>
+  <li>📋 <strong>需求分析</strong> - 先搞清楚要解決什麼問題</li>
+  <li>🎨 <strong>API 設計</strong> - 設計 URL 結構和資料格式</li>
+  <li>📝 <strong>寫測試</strong> - 先寫測試再寫實作（TDD）</li>
+  <li>💻 <strong>實作功能</strong> - 一個一個 endpoint 慢慢實作</li>
+  <li>📚 <strong>寫文件</strong> - FastAPI 自動生成，但還是要補充說明</li>
+  <li>🚀 <strong>部署測試</strong> - 在類生產環境測試</li>
+</ol>
+
+<p>記住，<strong>好的 API 就像好的工具，使用者甚至不會注意到它的存在</strong> - 它就是能完美地完成工作！</p>
+
+<hr />
+
+<h2 id="延伸閱讀-">延伸閱讀 📖</h2>
+
+<p>想深入了解 API 設計的話，推薦這些資源：</p>
+
+<ul>
+  <li>📖 <a href="https://www.oreilly.com/library/view/restful-web-apis/9781449359713/">RESTful Web APIs</a> - API 設計聖經</li>
+  <li>🌐 <a href="https://fastapi.tiangolo.com/">FastAPI 官方文件</a> - 寫得非常詳細</li>
+  <li>📝 <a href="https://github.com/Microsoft/api-guidelines">Microsoft REST API Guidelines</a> - 微軟的 API 設計指南</li>
+</ul>
+
+<p>下次我們來聊聊微服務架構的設計，那又是另一個大坑了 😅</p>
+
+<p>有問題歡迎在底下留言討論，或是直接 Email 給我！Happy coding! 🚀</p>]]></content><author><name>Archi Chen</name><email>magic83w@gmail.com</email></author><category term="backend" /><category term="technical" /><category term="Python" /><category term="FastAPI" /><category term="API設計" /><category term="後端開發" /><category term="最佳實務" /><summary type="html"><![CDATA[設計一個好的 API 就像做料理一樣，食材（程式碼）很重要，但調味（設計原則）更關鍵！今天來聊聊 Python Backend API 的設計撇步 👨‍🍳]]></summary></entry><entry><title type="html">Pandas 效能調校：讓你的資料分析飛起來！</title><link href="https://magicxcr7.github.io/data-science/technical/pandas-performance-optimization-tips/" rel="alternate" type="text/html" title="Pandas 效能調校：讓你的資料分析飛起來！" /><published>2024-12-17T09:15:00+08:00</published><updated>2024-12-17T09:15:00+08:00</updated><id>https://magicxcr7.github.io/data-science/technical/pandas-performance-optimization-tips</id><content type="html" xml:base="https://magicxcr7.github.io/data-science/technical/pandas-performance-optimization-tips/"><![CDATA[<p>前幾天同事跑來問我：「為什麼我的 Pandas 程式跑了 2 小時還沒結束？」看了一下他的程式碼，我差點笑出來… 😅</p>
+
+<p>其實 Pandas 效能優化就像調音響一樣，知道幾個關鍵的「旋鈕」在哪裡，就能讓它唱出美妙的歌聲！今天就來分享一些我這幾年踩坑累積的優化技巧。</p>
+
+<!--more-->
+
+<h2 id="為什麼-pandas-會這麼慢-">為什麼 Pandas 會這麼慢？ 🤔</h2>
+
+<p>首先要了解 Pandas 的「痛點」在哪裡：</p>
+
+<h3 id="1-記憶體使用不當">1. 記憶體使用不當</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 產生測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'id'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'value'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># 檢查記憶體使用
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="n">memory_usage</span><span class="o">=</span><span class="s">'deep'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="2-迴圈的陷阱">2. 迴圈的陷阱</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 這樣寫會被同事翻白眼...
+</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">iterrows</span><span class="p">():</span>  <span class="c1"># 超級慢！
+</span>    <span class="n">total</span> <span class="o">+=</span> <span class="n">row</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span>
+
+<span class="c1"># ✅ 向量化操作
+</span><span class="n">total</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>  <span class="c1"># 快 100 倍！
+</span></code></pre></div></div>
+
+<p>讓我用實際測試來展示差異：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">time_it</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"執行時間: </span><span class="si">{</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s"> 秒"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'A'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+    <span class="s">'B'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># 方法 1: 迴圈 (慢到爆)
+</span><span class="k">def</span> <span class="nf">loop_method</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 方法 2: 向量化操作 (神速)
+</span><span class="k">def</span> <span class="nf">vectorized_method</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"迴圈方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">loop_method</span><span class="p">)</span>        <span class="c1"># ~15 秒
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"向量化方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">vectorized_method</span><span class="p">)</span>  <span class="c1"># ~0.001 秒
+</span></code></pre></div></div>
+
+<p>差異有多大？向量化操作可以快上 <strong>15,000 倍</strong>！😱</p>
+
+<h2 id="資料類型優化省記憶體就是省時間-">資料類型優化：省記憶體就是省時間 💾</h2>
+
+<h3 id="選對資料類型">選對資料類型</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 建立測試 DataFrame
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'int_col'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'float_col'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'str_col'</span><span class="p">:</span> <span class="p">[</span><span class="s">'category_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)]</span>
+<span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"原始資料類型:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"記憶體使用: </span><span class="si">{</span><span class="n">df</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+
+<span class="c1"># 優化資料類型
+</span><span class="n">df_optimized</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># int64 -&gt; int8 (如果數值範圍允許)
+</span><span class="n">df_optimized</span><span class="p">[</span><span class="s">'int_col'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s">'int_col'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'int8'</span><span class="p">)</span>
+
+<span class="c1"># float64 -&gt; float32 (通常精度夠用)
+</span><span class="n">df_optimized</span><span class="p">[</span><span class="s">'float_col'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s">'float_col'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'float32'</span><span class="p">)</span>
+
+<span class="c1"># 字串 -&gt; category (重複值很多時超有效)
+</span><span class="n">df_optimized</span><span class="p">[</span><span class="s">'str_col'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s">'str_col'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">優化後資料類型:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_optimized</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"記憶體使用: </span><span class="si">{</span><span class="n">df_optimized</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>結果通常能省下 <strong>50-70%</strong> 的記憶體！</p>
+
+<h3 id="自動優化函數">自動優化函數</h3>
+
+<p>我寫了一個自動優化的函數，超好用的：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">optimize_dtypes</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""自動優化 DataFrame 的資料類型"""</span>
+    <span class="n">optimized</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">col_type</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">dtype</span>
+        
+        <span class="k">if</span> <span class="n">col_type</span> <span class="o">!=</span> <span class="s">'object'</span><span class="p">:</span>
+            <span class="n">c_min</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nb">min</span><span class="p">()</span>
+            <span class="n">c_max</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nb">max</span><span class="p">()</span>
+            
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">'int'</span><span class="p">:</span>
+                <span class="c1"># 整數型優化
+</span>                <span class="k">if</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int16</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int16</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int16</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">)</span>
+                    
+            <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">'float'</span><span class="p">:</span>
+                <span class="c1"># 浮點數優化
+</span>                <span class="k">if</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># 字串類型優化
+</span>            <span class="n">num_unique_values</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">unique</span><span class="p">())</span>
+            <span class="n">num_total_values</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">num_unique_values</span> <span class="o">/</span> <span class="n">num_total_values</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>  <span class="c1"># 重複率超過 50%
+</span>                <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">optimized</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">df_auto_optimized</span> <span class="o">=</span> <span class="n">optimize_dtypes</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="讀取資料的優化技巧-">讀取資料的優化技巧 📂</h2>
+
+<h3 id="csv-讀取優化">CSV 讀取優化</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 慢速讀取
+</span><span class="n">df_slow</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">)</span>
+
+<span class="c1"># ✅ 優化讀取
+</span><span class="n">df_fast</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">'large_file.csv'</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s">'user_id'</span><span class="p">:</span> <span class="s">'int32'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">:</span> <span class="s">'category'</span><span class="p">},</span>  <span class="c1"># 預先指定型別
+</span>    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s">'timestamp'</span><span class="p">],</span>  <span class="c1"># 指定日期欄位
+</span>    <span class="n">nrows</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1"># 先讀一部分測試
+</span>    <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1"># 分批讀取
+</span>    <span class="n">low_memory</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># 避免混合型別推斷
+</span>    <span class="n">engine</span><span class="o">=</span><span class="s">'c'</span>  <span class="c1"># 使用 C 引擎 (預設)
+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="分批處理大檔案">分批處理大檔案</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">process_large_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="s">"""分批處理大型 CSV 檔案"""</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+        <span class="c1"># 對每個 chunk 進行處理
+</span>        <span class="n">processed_chunk</span> <span class="o">=</span> <span class="n">chunk</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_chunk</span><span class="p">)</span>
+    
+    <span class="c1"># 合併所有結果
+</span>    <span class="n">final_result</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">final_result</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">process_large_csv</span><span class="p">(</span><span class="s">'huge_sales_data.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="向量化操作拒絕迴圈的誘惑-">向量化操作：拒絕迴圈的誘惑 🚀</h2>
+
+<h3 id="apply-vs-向量化操作">apply() vs 向量化操作</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'A'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+    <span class="s">'B'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+    <span class="s">'C'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'X'</span><span class="p">,</span> <span class="s">'Y'</span><span class="p">,</span> <span class="s">'Z'</span><span class="p">],</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># ❌ 使用 apply (較慢)
+</span><span class="k">def</span> <span class="nf">slow_calculation</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Y'</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">*</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s">'result_slow'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">slow_calculation</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># ✅ 向量化操作 (超快)
+</span><span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Y'</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Z'</span>
+<span class="p">]</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">],</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">],</span> 
+    <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s">'result_fast'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="字串操作優化">字串操作優化</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 慢速字串處理
+</span><span class="n">df</span><span class="p">[</span><span class="s">'processed'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'text_col'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">upper</span><span class="p">().</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="c1"># ✅ 向量化字串操作
+</span><span class="n">df</span><span class="p">[</span><span class="s">'processed'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'text_col'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">upper</span><span class="p">().</span><span class="nb">str</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># 更複雜的例子：提取 email 網域
+# ❌ 慢速版本
+</span><span class="n">df</span><span class="p">[</span><span class="s">'domain'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'email'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'@'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="s">'@'</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">else</span> <span class="s">''</span><span class="p">)</span>
+
+<span class="c1"># ✅ 快速版本
+</span><span class="n">df</span><span class="p">[</span><span class="s">'domain'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'email'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'@'</span><span class="p">).</span><span class="nb">str</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">fillna</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="群組操作優化-">群組操作優化 📊</h2>
+
+<h3 id="groupby-效能調校">GroupBy 效能調校</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'group'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'A'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'C'</span><span class="p">],</span> <span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'value1'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'value2'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="n">pd</span><span class="p">.</span><span class="n">date_range</span><span class="p">(</span><span class="s">'2020-01-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s">'1min'</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># ❌ 慢速群組操作
+</span><span class="k">def</span> <span class="nf">slow_groupby</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s">'group'</span><span class="p">].</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'group'</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">]</span>
+        <span class="n">agg_result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'group'</span><span class="p">:</span> <span class="n">group</span><span class="p">,</span>
+            <span class="s">'mean_value1'</span><span class="p">:</span> <span class="n">subset</span><span class="p">[</span><span class="s">'value1'</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span>
+            <span class="s">'sum_value2'</span><span class="p">:</span> <span class="n">subset</span><span class="p">[</span><span class="s">'value2'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">agg_result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># ✅ 快速群組操作
+</span><span class="k">def</span> <span class="nf">fast_groupby</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'group'</span><span class="p">).</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s">'value1'</span><span class="p">:</span> <span class="s">'mean'</span><span class="p">,</span>
+        <span class="s">'value2'</span><span class="p">:</span> <span class="s">'sum'</span>
+    <span class="p">}).</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># 效能測試
+</span><span class="k">print</span><span class="p">(</span><span class="s">"慢速方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">slow_groupby</span><span class="p">)</span>    <span class="c1"># ~2 秒
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"快速方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">fast_groupby</span><span class="p">)</span>    <span class="c1"># ~0.05 秒
+</span></code></pre></div></div>
+
+<h3 id="進階-groupby-技巧">進階 GroupBy 技巧</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 多重聚合操作
+</span><span class="n">agg_functions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'value1'</span><span class="p">:</span> <span class="p">[</span><span class="s">'mean'</span><span class="p">,</span> <span class="s">'std'</span><span class="p">,</span> <span class="s">'min'</span><span class="p">,</span> <span class="s">'max'</span><span class="p">],</span>
+    <span class="s">'value2'</span><span class="p">:</span> <span class="p">[</span><span class="s">'sum'</span><span class="p">,</span> <span class="s">'count'</span><span class="p">],</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="p">[</span><span class="s">'min'</span><span class="p">,</span> <span class="s">'max'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'group'</span><span class="p">).</span><span class="n">agg</span><span class="p">(</span><span class="n">agg_functions</span><span class="p">)</span>
+
+<span class="c1"># 扁平化欄位名稱
+</span><span class="n">result</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'_'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">col</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">result</span><span class="p">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h2 id="記憶體管理與監控-">記憶體管理與監控 📈</h2>
+
+<h3 id="監控記憶體使用">監控記憶體使用</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">memory_usage_check</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">""</span><span class="p">):</span>
+    <span class="s">"""檢查 DataFrame 記憶體使用"""</span>
+    <span class="n">memory_mb</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s"> 記憶體使用: </span><span class="si">{</span><span class="n">memory_mb</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">memory_mb</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">original_memory</span> <span class="o">=</span> <span class="n">memory_usage_check</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">"原始資料"</span><span class="p">)</span>
+<span class="n">optimized_memory</span> <span class="o">=</span> <span class="n">memory_usage_check</span><span class="p">(</span><span class="n">df_optimized</span><span class="p">,</span> <span class="s">"優化後"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"節省記憶體: </span><span class="si">{</span><span class="p">((</span><span class="n">original_memory</span> <span class="o">-</span> <span class="n">optimized_memory</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_memory</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">%"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="即時記憶體清理">即時記憶體清理</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">gc</span>
+
+<span class="k">def</span> <span class="nf">cleanup_memory</span><span class="p">():</span>
+    <span class="s">"""強制垃圾回收"""</span>
+    <span class="n">gc</span><span class="p">.</span><span class="n">collect</span><span class="p">()</span>
+    
+<span class="c1"># 在處理大資料時定期清理
+</span><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="c1"># 處理資料
+</span>    <span class="n">processed</span> <span class="o">=</span> <span class="n">process_chunk</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    
+    <span class="c1"># 清理記憶體
+</span>    <span class="k">del</span> <span class="n">chunk</span>
+    <span class="n">cleanup_memory</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="平行處理多核心威力-">平行處理：多核心威力 💪</h2>
+
+<h3 id="使用-dask-處理超大資料">使用 Dask 處理超大資料</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="n">dd</span>
+
+<span class="c1"># 讀取大型資料集
+</span><span class="n">dask_df</span> <span class="o">=</span> <span class="n">dd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'massive_file.csv'</span><span class="p">)</span>
+
+<span class="c1"># Dask 會自動分割資料到多個核心
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">dask_df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="n">value</span><span class="p">.</span><span class="n">mean</span><span class="p">().</span><span class="n">compute</span><span class="p">()</span>
+
+<span class="c1"># 比較 Pandas vs Dask
+</span><span class="k">def</span> <span class="nf">pandas_process</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">)</span>  <span class="c1"># 可能會 out of memory
+</span>    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="n">value</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">dask_process</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">)</span>  <span class="c1"># 分批讀取
+</span>    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="n">value</span><span class="p">.</span><span class="n">mean</span><span class="p">().</span><span class="n">compute</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="多進程處理">多進程處理</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">process_chunk</span><span class="p">(</span><span class="n">chunk</span><span class="p">):</span>
+    <span class="s">"""處理單個 chunk 的函數"""</span>
+    <span class="k">return</span> <span class="n">chunk</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'group'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">parallel_processing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">num_processes</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="s">"""平行處理 DataFrame"""</span>
+    
+    <span class="c1"># 分割資料
+</span>    <span class="n">chunks</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">num_processes</span><span class="p">)</span>
+    
+    <span class="c1"># 使用多進程處理
+</span>    <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">num_processes</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="n">process_chunk</span><span class="p">,</span> <span class="n">chunks</span><span class="p">)</span>
+    
+    <span class="c1"># 合併結果
+</span>    <span class="n">final_result</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">final_result</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">parallel_processing</span><span class="p">(</span><span class="n">large_df</span><span class="p">,</span> <span class="n">num_processes</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="我的踩坑血淚史-">我的踩坑血淚史 💀</h2>
+
+<h3 id="1-settingwithcopywarning-的陷阱">1. SettingWithCopyWarning 的陷阱</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 這樣會有警告，而且可能不會生效
+</span><span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">df_subset</span><span class="p">[</span><span class="s">'new_col'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'something'</span>  <span class="c1"># 警告！
+</span>
+<span class="c1"># ✅ 正確的做法
+</span><span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">].</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># 明確複製
+</span><span class="n">df_subset</span><span class="p">[</span><span class="s">'new_col'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'something'</span>  <span class="c1"># OK!
+</span>
+<span class="c1"># 或者直接在原 DataFrame 操作
+</span><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'new_col'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'something'</span>
+</code></pre></div></div>
+
+<h3 id="2-日期時間處理的坑">2. 日期時間處理的坑</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 字串比較 (超慢)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'date_str'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'date_str'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s">'2023-01-01'</span><span class="p">]</span>
+
+<span class="c1"># ✅ 直接用 datetime 比較 (超快)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s">'2023-01-01'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="3-join-vs-merge-的選擇">3. join vs merge 的選擇</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 當有明確的索引關係時，join 比 merge 快很多
+</span><span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'key_col'</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'key_col'</span><span class="p">)</span>
+
+<span class="c1"># ✅ 使用 join (較快)
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'inner'</span><span class="p">)</span>
+
+<span class="c1"># 而不是 merge (較慢)
+# result = pd.merge(df1, df2, on='key_col', how='inner')
+</span></code></pre></div></div>
+
+<h2 id="實戰案例股票資料分析優化-">實戰案例：股票資料分析優化 📈</h2>
+
+<p>讓我用一個實際例子來展示這些技巧：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">analyze_stock_data_slow</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""未優化版本"""</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">stock</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s">'symbol'</span><span class="p">].</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">stock_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'symbol'</span><span class="p">]</span> <span class="o">==</span> <span class="n">stock</span><span class="p">].</span><span class="n">copy</span><span class="p">()</span>
+        
+        <span class="c1"># 計算移動平均 (慢)
+</span>        <span class="n">ma_5</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ma_20</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_data</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">ma_5</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s">'close'</span><span class="p">].</span><span class="n">mean</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ma_5</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+                
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">19</span><span class="p">:</span>
+                <span class="n">ma_20</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">19</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s">'close'</span><span class="p">].</span><span class="n">mean</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ma_20</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+        
+        <span class="n">stock_data</span><span class="p">[</span><span class="s">'ma_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma_5</span>
+        <span class="n">stock_data</span><span class="p">[</span><span class="s">'ma_20'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma_20</span>
+        <span class="n">results</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_data</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">analyze_stock_data_fast</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""優化版本"""</span>
+    <span class="c1"># 使用向量化操作計算移動平均
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s">'symbol'</span><span class="p">,</span> <span class="s">'date'</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'ma_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'symbol'</span><span class="p">)[</span><span class="s">'close'</span><span class="p">].</span><span class="n">rolling</span><span class="p">(</span><span class="mi">5</span><span class="p">).</span><span class="n">mean</span><span class="p">().</span><span class="n">values</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'ma_20'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'symbol'</span><span class="p">)[</span><span class="s">'close'</span><span class="p">].</span><span class="n">rolling</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="n">mean</span><span class="p">().</span><span class="n">values</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># 效能比較
+</span><span class="n">stock_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'symbol'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'AAPL'</span><span class="p">,</span> <span class="s">'GOOGL'</span><span class="p">,</span> <span class="s">'MSFT'</span><span class="p">],</span> <span class="mi">10000</span><span class="p">),</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="n">pd</span><span class="p">.</span><span class="n">date_range</span><span class="p">(</span><span class="s">'2020-01-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10000</span><span class="p">),</span>
+    <span class="s">'close'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1000</span>
+<span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"未優化版本:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">analyze_stock_data_slow</span><span class="p">(</span><span class="n">stock_df</span><span class="p">))</span>  <span class="c1"># ~15 秒
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"優化版本:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">analyze_stock_data_fast</span><span class="p">(</span><span class="n">stock_df</span><span class="p">))</span>   <span class="c1"># ~0.1 秒
+</span></code></pre></div></div>
+
+<h2 id="效能監控與-profiling-">效能監控與 Profiling 🔍</h2>
+
+<h3 id="使用-cprofile-找瓶頸">使用 cProfile 找瓶頸</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cProfile</span>
+<span class="kn">import</span> <span class="nn">pstats</span>
+
+<span class="k">def</span> <span class="nf">profile_pandas_code</span><span class="p">():</span>
+    <span class="s">"""要分析的 Pandas 程式碼"""</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">index</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 效能分析
+</span><span class="n">cProfile</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'profile_pandas_code()'</span><span class="p">,</span> <span class="s">'pandas_profile.prof'</span><span class="p">)</span>
+
+<span class="c1"># 查看結果
+</span><span class="n">stats</span> <span class="o">=</span> <span class="n">pstats</span><span class="p">.</span><span class="n">Stats</span><span class="p">(</span><span class="s">'pandas_profile.prof'</span><span class="p">)</span>
+<span class="n">stats</span><span class="p">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s">'cumulative'</span><span class="p">).</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用-line_profiler-逐行分析">使用 line_profiler 逐行分析</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安裝 line_profiler</span>
+pip <span class="nb">install </span>line_profiler
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">profile</span>  <span class="c1"># 需要 line_profiler
+</span><span class="k">def</span> <span class="nf">detailed_analysis</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># 每一行都會被分析
+</span>    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>  <span class="c1"># 這行花多少時間？
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">grouped</span><span class="p">.</span><span class="nb">sum</span><span class="p">()</span>            <span class="c1"># 這行花多少時間？ 
+</span>    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+
+<h2 id="總結與最佳實務-">總結與最佳實務 🎯</h2>
+
+<p>根據我的經驗，Pandas 效能優化的黃金法則：</p>
+
+<h3 id="1-優先順序">1. 優先順序</h3>
+<ol>
+  <li><strong>資料類型優化</strong> - 投資報酬率最高</li>
+  <li><strong>向量化操作</strong> - 避免迴圈</li>
+  <li><strong>分批處理</strong> - 控制記憶體使用</li>
+  <li><strong>平行處理</strong> - 善用多核心</li>
+</ol>
+
+<h3 id="2-開發習慣">2. 開發習慣</h3>
+<ul>
+  <li>✅ 總是先用小資料集測試</li>
+  <li>✅ 定期檢查記憶體使用</li>
+  <li>✅ 使用 <code class="language-plaintext highlighter-rouge">.copy()</code> 避免 SettingWithCopyWarning</li>
+  <li>✅ 優先考慮向量化操作</li>
+</ul>
+
+<h3 id="3-效能檢查清單">3. 效能檢查清單</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">performance_checklist</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""Pandas 效能檢查清單"""</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s">"🔍 Pandas 效能檢查報告"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"="</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+    
+    <span class="c1"># 1. 資料類型檢查
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">1. 資料類型分析:"</span><span class="p">)</span>
+    <span class="n">memory_usage</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   總記憶體使用: </span><span class="si">{</span><span class="n">memory_usage</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+    
+    <span class="n">object_cols</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s">'object'</span><span class="p">]).</span><span class="n">columns</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">object_cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   ⚠️  發現 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">object_cols</span><span class="p">)</span><span class="si">}</span><span class="s"> 個 object 欄位，考慮轉換為 category"</span><span class="p">)</span>
+    
+    <span class="c1"># 2. 重複值檢查
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">2. 重複值分析:"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">unique_ratio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">nunique</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">unique_ratio</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">dtype</span> <span class="o">==</span> <span class="s">'object'</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   💡 </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s">: 重複率 </span><span class="si">{</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">unique_ratio</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">%，建議轉為 category"</span><span class="p">)</span>
+    
+    <span class="c1"># 3. 空值檢查
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">3. 空值分析:"</span><span class="p">)</span>
+    <span class="n">null_cols</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">null_count</span> <span class="ow">in</span> <span class="n">null_cols</span><span class="p">[</span><span class="n">null_cols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">].</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   📊 </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">null_count</span><span class="si">}</span><span class="s"> 個空值 (</span><span class="si">{</span><span class="n">null_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">%)"</span><span class="p">)</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">performance_checklist</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>記住，<strong>效能優化是一門平衡的藝術</strong>。不要為了微小的效能提升而犧牲程式碼的可讀性。先讓程式跑起來，再讓程式跑得快！</p>
+
+<hr />
+
+<h2 id="延伸閱讀-">延伸閱讀 📚</h2>
+
+<ul>
+  <li>📖 <a href="https://pandas.pydata.org/docs/user_guide/enhancingperf.html">Pandas Documentation - Performance</a></li>
+  <li>🎥 <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a></li>
+  <li>💻 <a href="https://docs.dask.org/en/stable/">Dask Documentation</a></li>
+</ul>
+
+<p>下次來聊聊 NumPy 的效能優化技巧，那個更是深不見底的坑 😂</p>
+
+<p>有任何問題歡迎留言討論！讓我們一起讓 Pandas 飛起來 🚀</p>]]></content><author><name>Archi Chen</name><email>magic83w@gmail.com</email></author><category term="data-science" /><category term="technical" /><category term="Python" /><category term="Pandas" /><category term="效能優化" /><category term="資料分析" /><category term="DataFrame" /><summary type="html"><![CDATA[是不是常常等 Pandas 跑資料跑到懷疑人生？🐌 今天來分享幾個實戰技巧，讓你的 DataFrame 操作速度提升 10 倍！]]></summary></entry></feed>

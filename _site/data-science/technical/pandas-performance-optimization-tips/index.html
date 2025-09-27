@@ -1,0 +1,1252 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="zh-TW" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Pandas 效能調校：讓你的資料分析飛起來！ - Archis Digital Compass</title>
+<meta name="description" content="是不是常常等 Pandas 跑資料跑到懷疑人生？🐌 今天來分享幾個實戰技巧，讓你的 DataFrame 操作速度提升 10 倍！">
+
+
+  <meta name="author" content="Archi Chen">
+  
+  <meta property="article:author" content="Archi Chen">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="Archis Digital Compass">
+<meta property="og:title" content="Pandas 效能調校：讓你的資料分析飛起來！">
+<meta property="og:url" content="https://magicxcr7.github.io/data-science/technical/pandas-performance-optimization-tips/">
+
+
+  <meta property="og:description" content="是不是常常等 Pandas 跑資料跑到懷疑人生？🐌 今天來分享幾個實戰技巧，讓你的 DataFrame 操作速度提升 10 倍！">
+
+
+
+  <meta property="og:image" content="https://magicxcr7.github.io/assets/images/pandas-optimization-header.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-12-17T09:15:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://magicxcr7.github.io/data-science/technical/pandas-performance-optimization-tips/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Archis Digital Compass Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/site-logo.png" alt="Archis Digital Compass"></a>
+        
+        <a class="site-title" href="/">
+          Archis Digital Compass
+          <span class="site-subtitle">透過科技與 AI，成就每一個人的成長</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >首頁</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >關於我</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >技術文章</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >文章分類</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style="background-color: #3498db; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/pandas-optimization-header.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Pandas 效能調校：讓你的資料分析飛起來！
+
+        
+      </h1>
+      
+        <p class="page__lead">是不是常常等 Pandas 跑資料跑到懷疑人生？🐌 今天來分享幾個實戰技巧，讓你的 DataFrame 操作速度提升 10 倍！
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#data-science" itemprop="item"><span itemprop="name">Data science</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#technical" itemprop="item"><span itemprop="name">Technical</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Pandas 效能調校：讓你的資料分析飛起來！</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://magicxcr7.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Archi Chen" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://magicxcr7.github.io/" itemprop="url">Archi Chen</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <table>
+  <tbody>
+    <tr>
+      <td>Backend 工程師</td>
+      <td>Data Scientist</td>
+      <td>量化交易研究員<br />熱衷於用技術解決實際問題，分享學習心得與職場經驗</td>
+    </tr>
+  </tbody>
+</table>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">台北, 台灣</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:magic83w@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/magicxcr7" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://linkedin.com/in/archi-chen" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span class="label">LinkedIn</span></a></li>
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:magic83w@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="magic83w@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Pandas 效能調校：讓你的資料分析飛起來！">
+    <meta itemprop="description" content="是不是常常等 Pandas 跑資料跑到懷疑人生？🐌 今天來分享幾個實戰技巧，讓你的 DataFrame 操作速度提升 10 倍！">
+    <meta itemprop="datePublished" content="2024-12-17T09:15:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> 目錄</h4></header>
+              <ul class="toc__menu"><li><a href="#為什麼-pandas-會這麼慢-">為什麼 Pandas 會這麼慢？ 🤔</a><ul><li><a href="#1-記憶體使用不當">1. 記憶體使用不當</a></li><li><a href="#2-迴圈的陷阱">2. 迴圈的陷阱</a></li></ul></li><li><a href="#資料類型優化省記憶體就是省時間-">資料類型優化：省記憶體就是省時間 💾</a><ul><li><a href="#選對資料類型">選對資料類型</a></li><li><a href="#自動優化函數">自動優化函數</a></li></ul></li><li><a href="#讀取資料的優化技巧-">讀取資料的優化技巧 📂</a><ul><li><a href="#csv-讀取優化">CSV 讀取優化</a></li><li><a href="#分批處理大檔案">分批處理大檔案</a></li></ul></li><li><a href="#向量化操作拒絕迴圈的誘惑-">向量化操作：拒絕迴圈的誘惑 🚀</a><ul><li><a href="#apply-vs-向量化操作">apply() vs 向量化操作</a></li><li><a href="#字串操作優化">字串操作優化</a></li></ul></li><li><a href="#群組操作優化-">群組操作優化 📊</a><ul><li><a href="#groupby-效能調校">GroupBy 效能調校</a></li><li><a href="#進階-groupby-技巧">進階 GroupBy 技巧</a></li></ul></li><li><a href="#記憶體管理與監控-">記憶體管理與監控 📈</a><ul><li><a href="#監控記憶體使用">監控記憶體使用</a></li><li><a href="#即時記憶體清理">即時記憶體清理</a></li></ul></li><li><a href="#平行處理多核心威力-">平行處理：多核心威力 💪</a><ul><li><a href="#使用-dask-處理超大資料">使用 Dask 處理超大資料</a></li><li><a href="#多進程處理">多進程處理</a></li></ul></li><li><a href="#我的踩坑血淚史-">我的踩坑血淚史 💀</a><ul><li><a href="#1-settingwithcopywarning-的陷阱">1. SettingWithCopyWarning 的陷阱</a></li><li><a href="#2-日期時間處理的坑">2. 日期時間處理的坑</a></li><li><a href="#3-join-vs-merge-的選擇">3. join vs merge 的選擇</a></li></ul></li><li><a href="#實戰案例股票資料分析優化-">實戰案例：股票資料分析優化 📈</a></li><li><a href="#效能監控與-profiling-">效能監控與 Profiling 🔍</a><ul><li><a href="#使用-cprofile-找瓶頸">使用 cProfile 找瓶頸</a></li><li><a href="#使用-line_profiler-逐行分析">使用 line_profiler 逐行分析</a></li></ul></li><li><a href="#總結與最佳實務-">總結與最佳實務 🎯</a><ul><li><a href="#1-優先順序">1. 優先順序</a></li><li><a href="#2-開發習慣">2. 開發習慣</a></li><li><a href="#3-效能檢查清單">3. 效能檢查清單</a></li></ul></li><li><a href="#延伸閱讀-">延伸閱讀 📚</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>前幾天同事跑來問我：「為什麼我的 Pandas 程式跑了 2 小時還沒結束？」看了一下他的程式碼，我差點笑出來… 😅</p>
+
+<p>其實 Pandas 效能優化就像調音響一樣，知道幾個關鍵的「旋鈕」在哪裡，就能讓它唱出美妙的歌聲！今天就來分享一些我這幾年踩坑累積的優化技巧。</p>
+
+<!--more-->
+
+<h2 id="為什麼-pandas-會這麼慢-">為什麼 Pandas 會這麼慢？ 🤔</h2>
+
+<p>首先要了解 Pandas 的「痛點」在哪裡：</p>
+
+<h3 id="1-記憶體使用不當">1. 記憶體使用不當</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="c1"># 產生測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'id'</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'value'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># 檢查記憶體使用
+</span><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">info</span><span class="p">(</span><span class="n">memory_usage</span><span class="o">=</span><span class="s">'deep'</span><span class="p">))</span>
+</code></pre></div></div>
+
+<h3 id="2-迴圈的陷阱">2. 迴圈的陷阱</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 這樣寫會被同事翻白眼...
+</span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">iterrows</span><span class="p">():</span>  <span class="c1"># 超級慢！
+</span>    <span class="n">total</span> <span class="o">+=</span> <span class="n">row</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span>
+
+<span class="c1"># ✅ 向量化操作
+</span><span class="n">total</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>  <span class="c1"># 快 100 倍！
+</span></code></pre></div></div>
+
+<p>讓我用實際測試來展示差異：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">def</span> <span class="nf">time_it</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">func</span><span class="p">()</span>
+    <span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="p">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"執行時間: </span><span class="si">{</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="si">:</span><span class="p">.</span><span class="mi">4</span><span class="n">f</span><span class="si">}</span><span class="s"> 秒"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'A'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+    <span class="s">'B'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># 方法 1: 迴圈 (慢到爆)
+</span><span class="k">def</span> <span class="nf">loop_method</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">iterrows</span><span class="p">():</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 方法 2: 向量化操作 (神速)
+</span><span class="k">def</span> <span class="nf">vectorized_method</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"迴圈方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">loop_method</span><span class="p">)</span>        <span class="c1"># ~15 秒
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"向量化方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">vectorized_method</span><span class="p">)</span>  <span class="c1"># ~0.001 秒
+</span></code></pre></div></div>
+
+<p>差異有多大？向量化操作可以快上 <strong>15,000 倍</strong>！😱</p>
+
+<h2 id="資料類型優化省記憶體就是省時間-">資料類型優化：省記憶體就是省時間 💾</h2>
+
+<h3 id="選對資料類型">選對資料類型</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 建立測試 DataFrame
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'int_col'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'float_col'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'str_col'</span><span class="p">:</span> <span class="p">[</span><span class="s">'category_'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">)]</span>
+<span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"原始資料類型:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"記憶體使用: </span><span class="si">{</span><span class="n">df</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+
+<span class="c1"># 優化資料類型
+</span><span class="n">df_optimized</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="c1"># int64 -&gt; int8 (如果數值範圍允許)
+</span><span class="n">df_optimized</span><span class="p">[</span><span class="s">'int_col'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s">'int_col'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'int8'</span><span class="p">)</span>
+
+<span class="c1"># float64 -&gt; float32 (通常精度夠用)
+</span><span class="n">df_optimized</span><span class="p">[</span><span class="s">'float_col'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s">'float_col'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'float32'</span><span class="p">)</span>
+
+<span class="c1"># 字串 -&gt; category (重複值很多時超有效)
+</span><span class="n">df_optimized</span><span class="p">[</span><span class="s">'str_col'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_optimized</span><span class="p">[</span><span class="s">'str_col'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">優化後資料類型:"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">df_optimized</span><span class="p">.</span><span class="n">dtypes</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"記憶體使用: </span><span class="si">{</span><span class="n">df_optimized</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>結果通常能省下 <strong>50-70%</strong> 的記憶體！</p>
+
+<h3 id="自動優化函數">自動優化函數</h3>
+
+<p>我寫了一個自動優化的函數，超好用的：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">optimize_dtypes</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""自動優化 DataFrame 的資料類型"""</span>
+    <span class="n">optimized</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">col_type</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">dtype</span>
+        
+        <span class="k">if</span> <span class="n">col_type</span> <span class="o">!=</span> <span class="s">'object'</span><span class="p">:</span>
+            <span class="n">c_min</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nb">min</span><span class="p">()</span>
+            <span class="n">c_max</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="nb">max</span><span class="p">()</span>
+            
+            <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">)[:</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="s">'int'</span><span class="p">:</span>
+                <span class="c1"># 整數型優化
+</span>                <span class="k">if</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int8</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int16</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int16</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int16</span><span class="p">)</span>
+                <span class="k">elif</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">int32</span><span class="p">)</span>
+                    
+            <span class="k">elif</span> <span class="nb">str</span><span class="p">(</span><span class="n">col_type</span><span class="p">)[:</span><span class="mi">5</span><span class="p">]</span> <span class="o">==</span> <span class="s">'float'</span><span class="p">:</span>
+                <span class="c1"># 浮點數優化
+</span>                <span class="k">if</span> <span class="n">c_min</span> <span class="o">&gt;</span> <span class="n">np</span><span class="p">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">).</span><span class="nb">min</span> <span class="ow">and</span> <span class="n">c_max</span> <span class="o">&lt;</span> <span class="n">np</span><span class="p">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">).</span><span class="nb">max</span><span class="p">:</span>
+                    <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">float32</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># 字串類型優化
+</span>            <span class="n">num_unique_values</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">unique</span><span class="p">())</span>
+            <span class="n">num_total_values</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">num_unique_values</span> <span class="o">/</span> <span class="n">num_total_values</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span>  <span class="c1"># 重複率超過 50%
+</span>                <span class="n">optimized</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">optimized</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">df_auto_optimized</span> <span class="o">=</span> <span class="n">optimize_dtypes</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="讀取資料的優化技巧-">讀取資料的優化技巧 📂</h2>
+
+<h3 id="csv-讀取優化">CSV 讀取優化</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 慢速讀取
+</span><span class="n">df_slow</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">)</span>
+
+<span class="c1"># ✅ 優化讀取
+</span><span class="n">df_fast</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s">'large_file.csv'</span><span class="p">,</span>
+    <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s">'user_id'</span><span class="p">:</span> <span class="s">'int32'</span><span class="p">,</span> <span class="s">'category'</span><span class="p">:</span> <span class="s">'category'</span><span class="p">},</span>  <span class="c1"># 預先指定型別
+</span>    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s">'timestamp'</span><span class="p">],</span>  <span class="c1"># 指定日期欄位
+</span>    <span class="n">nrows</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1"># 先讀一部分測試
+</span>    <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>  <span class="c1"># 分批讀取
+</span>    <span class="n">low_memory</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>  <span class="c1"># 避免混合型別推斷
+</span>    <span class="n">engine</span><span class="o">=</span><span class="s">'c'</span>  <span class="c1"># 使用 C 引擎 (預設)
+</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="分批處理大檔案">分批處理大檔案</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">process_large_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">chunk_size</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="s">"""分批處理大型 CSV 檔案"""</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="n">chunk_size</span><span class="p">):</span>
+        <span class="c1"># 對每個 chunk 進行處理
+</span>        <span class="n">processed_chunk</span> <span class="o">=</span> <span class="n">chunk</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+        <span class="n">results</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">processed_chunk</span><span class="p">)</span>
+    
+    <span class="c1"># 合併所有結果
+</span>    <span class="n">final_result</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">final_result</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">process_large_csv</span><span class="p">(</span><span class="s">'huge_sales_data.csv'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="向量化操作拒絕迴圈的誘惑-">向量化操作：拒絕迴圈的誘惑 🚀</h2>
+
+<h3 id="apply-vs-向量化操作">apply() vs 向量化操作</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'A'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+    <span class="s">'B'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">),</span>
+    <span class="s">'C'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'X'</span><span class="p">,</span> <span class="s">'Y'</span><span class="p">,</span> <span class="s">'Z'</span><span class="p">],</span> <span class="mi">100000</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># ❌ 使用 apply (較慢)
+</span><span class="k">def</span> <span class="nf">slow_calculation</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Y'</span><span class="p">:</span> 
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">-</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">row</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">*</span> <span class="n">row</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s">'result_slow'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="nb">apply</span><span class="p">(</span><span class="n">slow_calculation</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># ✅ 向量化操作 (超快)
+</span><span class="n">conditions</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'X'</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Y'</span><span class="p">,</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'C'</span><span class="p">]</span> <span class="o">==</span> <span class="s">'Z'</span>
+<span class="p">]</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">],</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">],</span> 
+    <span class="n">df</span><span class="p">[</span><span class="s">'A'</span><span class="p">]</span> <span class="o">*</span> <span class="n">df</span><span class="p">[</span><span class="s">'B'</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s">'result_fast'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">select</span><span class="p">(</span><span class="n">conditions</span><span class="p">,</span> <span class="n">choices</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="字串操作優化">字串操作優化</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 慢速字串處理
+</span><span class="n">df</span><span class="p">[</span><span class="s">'processed'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'text_col'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">upper</span><span class="p">().</span><span class="n">strip</span><span class="p">())</span>
+
+<span class="c1"># ✅ 向量化字串操作
+</span><span class="n">df</span><span class="p">[</span><span class="s">'processed'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'text_col'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">upper</span><span class="p">().</span><span class="nb">str</span><span class="p">.</span><span class="n">strip</span><span class="p">()</span>
+
+<span class="c1"># 更複雜的例子：提取 email 網域
+# ❌ 慢速版本
+</span><span class="n">df</span><span class="p">[</span><span class="s">'domain'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'email'</span><span class="p">].</span><span class="nb">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'@'</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="k">if</span> <span class="s">'@'</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">else</span> <span class="s">''</span><span class="p">)</span>
+
+<span class="c1"># ✅ 快速版本
+</span><span class="n">df</span><span class="p">[</span><span class="s">'domain'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'email'</span><span class="p">].</span><span class="nb">str</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">'@'</span><span class="p">).</span><span class="nb">str</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="n">fillna</span><span class="p">(</span><span class="s">''</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="群組操作優化-">群組操作優化 📊</h2>
+
+<h3 id="groupby-效能調校">GroupBy 效能調校</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 測試資料
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'group'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'A'</span><span class="p">,</span> <span class="s">'B'</span><span class="p">,</span> <span class="s">'C'</span><span class="p">],</span> <span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'value1'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'value2'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1000000</span><span class="p">),</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="n">pd</span><span class="p">.</span><span class="n">date_range</span><span class="p">(</span><span class="s">'2020-01-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">1000000</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="s">'1min'</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1"># ❌ 慢速群組操作
+</span><span class="k">def</span> <span class="nf">slow_groupby</span><span class="p">():</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s">'group'</span><span class="p">].</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'group'</span><span class="p">]</span> <span class="o">==</span> <span class="n">group</span><span class="p">]</span>
+        <span class="n">agg_result</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">'group'</span><span class="p">:</span> <span class="n">group</span><span class="p">,</span>
+            <span class="s">'mean_value1'</span><span class="p">:</span> <span class="n">subset</span><span class="p">[</span><span class="s">'value1'</span><span class="p">].</span><span class="n">mean</span><span class="p">(),</span>
+            <span class="s">'sum_value2'</span><span class="p">:</span> <span class="n">subset</span><span class="p">[</span><span class="s">'value2'</span><span class="p">].</span><span class="nb">sum</span><span class="p">()</span>
+        <span class="p">}</span>
+        <span class="n">result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">agg_result</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+<span class="c1"># ✅ 快速群組操作
+</span><span class="k">def</span> <span class="nf">fast_groupby</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'group'</span><span class="p">).</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s">'value1'</span><span class="p">:</span> <span class="s">'mean'</span><span class="p">,</span>
+        <span class="s">'value2'</span><span class="p">:</span> <span class="s">'sum'</span>
+    <span class="p">}).</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># 效能測試
+</span><span class="k">print</span><span class="p">(</span><span class="s">"慢速方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">slow_groupby</span><span class="p">)</span>    <span class="c1"># ~2 秒
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"快速方法:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="n">fast_groupby</span><span class="p">)</span>    <span class="c1"># ~0.05 秒
+</span></code></pre></div></div>
+
+<h3 id="進階-groupby-技巧">進階 GroupBy 技巧</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 多重聚合操作
+</span><span class="n">agg_functions</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'value1'</span><span class="p">:</span> <span class="p">[</span><span class="s">'mean'</span><span class="p">,</span> <span class="s">'std'</span><span class="p">,</span> <span class="s">'min'</span><span class="p">,</span> <span class="s">'max'</span><span class="p">],</span>
+    <span class="s">'value2'</span><span class="p">:</span> <span class="p">[</span><span class="s">'sum'</span><span class="p">,</span> <span class="s">'count'</span><span class="p">],</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="p">[</span><span class="s">'min'</span><span class="p">,</span> <span class="s">'max'</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'group'</span><span class="p">).</span><span class="n">agg</span><span class="p">(</span><span class="n">agg_functions</span><span class="p">)</span>
+
+<span class="c1"># 扁平化欄位名稱
+</span><span class="n">result</span><span class="p">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s">'_'</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">col</span><span class="p">).</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">result</span><span class="p">.</span><span class="n">columns</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">head</span><span class="p">())</span>
+</code></pre></div></div>
+
+<h2 id="記憶體管理與監控-">記憶體管理與監控 📈</h2>
+
+<h3 id="監控記憶體使用">監控記憶體使用</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">memory_usage_check</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s">""</span><span class="p">):</span>
+    <span class="s">"""檢查 DataFrame 記憶體使用"""</span>
+    <span class="n">memory_mb</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="n">message</span><span class="si">}</span><span class="s"> 記憶體使用: </span><span class="si">{</span><span class="n">memory_mb</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">memory_mb</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">original_memory</span> <span class="o">=</span> <span class="n">memory_usage_check</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s">"原始資料"</span><span class="p">)</span>
+<span class="n">optimized_memory</span> <span class="o">=</span> <span class="n">memory_usage_check</span><span class="p">(</span><span class="n">df_optimized</span><span class="p">,</span> <span class="s">"優化後"</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"節省記憶體: </span><span class="si">{</span><span class="p">((</span><span class="n">original_memory</span> <span class="o">-</span> <span class="n">optimized_memory</span><span class="p">)</span> <span class="o">/</span> <span class="n">original_memory</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">%"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="即時記憶體清理">即時記憶體清理</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">gc</span>
+
+<span class="k">def</span> <span class="nf">cleanup_memory</span><span class="p">():</span>
+    <span class="s">"""強制垃圾回收"""</span>
+    <span class="n">gc</span><span class="p">.</span><span class="n">collect</span><span class="p">()</span>
+    
+<span class="c1"># 在處理大資料時定期清理
+</span><span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">,</span> <span class="n">chunksize</span><span class="o">=</span><span class="mi">10000</span><span class="p">):</span>
+    <span class="c1"># 處理資料
+</span>    <span class="n">processed</span> <span class="o">=</span> <span class="n">process_chunk</span><span class="p">(</span><span class="n">chunk</span><span class="p">)</span>
+    
+    <span class="c1"># 清理記憶體
+</span>    <span class="k">del</span> <span class="n">chunk</span>
+    <span class="n">cleanup_memory</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="平行處理多核心威力-">平行處理：多核心威力 💪</h2>
+
+<h3 id="使用-dask-處理超大資料">使用 Dask 處理超大資料</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">dask.dataframe</span> <span class="k">as</span> <span class="n">dd</span>
+
+<span class="c1"># 讀取大型資料集
+</span><span class="n">dask_df</span> <span class="o">=</span> <span class="n">dd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'massive_file.csv'</span><span class="p">)</span>
+
+<span class="c1"># Dask 會自動分割資料到多個核心
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">dask_df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="n">value</span><span class="p">.</span><span class="n">mean</span><span class="p">().</span><span class="n">compute</span><span class="p">()</span>
+
+<span class="c1"># 比較 Pandas vs Dask
+</span><span class="k">def</span> <span class="nf">pandas_process</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">)</span>  <span class="c1"># 可能會 out of memory
+</span>    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="n">value</span><span class="p">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">dask_process</span><span class="p">():</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">dd</span><span class="p">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'large_file.csv'</span><span class="p">)</span>  <span class="c1"># 分批讀取
+</span>    <span class="k">return</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">).</span><span class="n">value</span><span class="p">.</span><span class="n">mean</span><span class="p">().</span><span class="n">compute</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="多進程處理">多進程處理</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+
+<span class="k">def</span> <span class="nf">process_chunk</span><span class="p">(</span><span class="n">chunk</span><span class="p">):</span>
+    <span class="s">"""處理單個 chunk 的函數"""</span>
+    <span class="k">return</span> <span class="n">chunk</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'group'</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">parallel_processing</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">num_processes</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+    <span class="s">"""平行處理 DataFrame"""</span>
+    
+    <span class="c1"># 分割資料
+</span>    <span class="n">chunks</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">num_processes</span><span class="p">)</span>
+    
+    <span class="c1"># 使用多進程處理
+</span>    <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="n">processes</span><span class="o">=</span><span class="n">num_processes</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+        <span class="n">results</span> <span class="o">=</span> <span class="n">pool</span><span class="p">.</span><span class="nb">map</span><span class="p">(</span><span class="n">process_chunk</span><span class="p">,</span> <span class="n">chunks</span><span class="p">)</span>
+    
+    <span class="c1"># 合併結果
+</span>    <span class="n">final_result</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results</span><span class="p">).</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="mi">0</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">final_result</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">parallel_processing</span><span class="p">(</span><span class="n">large_df</span><span class="p">,</span> <span class="n">num_processes</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="我的踩坑血淚史-">我的踩坑血淚史 💀</h2>
+
+<h3 id="1-settingwithcopywarning-的陷阱">1. SettingWithCopyWarning 的陷阱</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 這樣會有警告，而且可能不會生效
+</span><span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">df_subset</span><span class="p">[</span><span class="s">'new_col'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'something'</span>  <span class="c1"># 警告！
+</span>
+<span class="c1"># ✅ 正確的做法
+</span><span class="n">df_subset</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">].</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># 明確複製
+</span><span class="n">df_subset</span><span class="p">[</span><span class="s">'new_col'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'something'</span>  <span class="c1"># OK!
+</span>
+<span class="c1"># 或者直接在原 DataFrame 操作
+</span><span class="n">df</span><span class="p">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'value'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="s">'new_col'</span><span class="p">]</span> <span class="o">=</span> <span class="s">'something'</span>
+</code></pre></div></div>
+
+<h3 id="2-日期時間處理的坑">2. 日期時間處理的坑</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># ❌ 字串比較 (超慢)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'date_str'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">].</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'date_str'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s">'2023-01-01'</span><span class="p">]</span>
+
+<span class="c1"># ✅ 直接用 datetime 比較 (超快)
+</span><span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'date'</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s">'2023-01-01'</span><span class="p">]</span>
+</code></pre></div></div>
+
+<h3 id="3-join-vs-merge-的選擇">3. join vs merge 的選擇</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 當有明確的索引關係時，join 比 merge 快很多
+</span><span class="n">df1</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'key_col'</span><span class="p">)</span>
+<span class="n">df2</span> <span class="o">=</span> <span class="n">df2</span><span class="p">.</span><span class="n">set_index</span><span class="p">(</span><span class="s">'key_col'</span><span class="p">)</span>
+
+<span class="c1"># ✅ 使用 join (較快)
+</span><span class="n">result</span> <span class="o">=</span> <span class="n">df1</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s">'inner'</span><span class="p">)</span>
+
+<span class="c1"># 而不是 merge (較慢)
+# result = pd.merge(df1, df2, on='key_col', how='inner')
+</span></code></pre></div></div>
+
+<h2 id="實戰案例股票資料分析優化-">實戰案例：股票資料分析優化 📈</h2>
+
+<p>讓我用一個實際例子來展示這些技巧：</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">analyze_stock_data_slow</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""未優化版本"""</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">for</span> <span class="n">stock</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s">'symbol'</span><span class="p">].</span><span class="n">unique</span><span class="p">():</span>
+        <span class="n">stock_data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s">'symbol'</span><span class="p">]</span> <span class="o">==</span> <span class="n">stock</span><span class="p">].</span><span class="n">copy</span><span class="p">()</span>
+        
+        <span class="c1"># 計算移動平均 (慢)
+</span>        <span class="n">ma_5</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ma_20</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_data</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">:</span>
+                <span class="n">ma_5</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">4</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s">'close'</span><span class="p">].</span><span class="n">mean</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ma_5</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+                
+            <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">19</span><span class="p">:</span>
+                <span class="n">ma_20</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_data</span><span class="p">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">19</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="s">'close'</span><span class="p">].</span><span class="n">mean</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ma_20</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">nan</span><span class="p">)</span>
+        
+        <span class="n">stock_data</span><span class="p">[</span><span class="s">'ma_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma_5</span>
+        <span class="n">stock_data</span><span class="p">[</span><span class="s">'ma_20'</span><span class="p">]</span> <span class="o">=</span> <span class="n">ma_20</span>
+        <span class="n">results</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">stock_data</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">pd</span><span class="p">.</span><span class="n">concat</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">analyze_stock_data_fast</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""優化版本"""</span>
+    <span class="c1"># 使用向量化操作計算移動平均
+</span>    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s">'symbol'</span><span class="p">,</span> <span class="s">'date'</span><span class="p">])</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'ma_5'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'symbol'</span><span class="p">)[</span><span class="s">'close'</span><span class="p">].</span><span class="n">rolling</span><span class="p">(</span><span class="mi">5</span><span class="p">).</span><span class="n">mean</span><span class="p">().</span><span class="n">values</span>
+    <span class="n">df</span><span class="p">[</span><span class="s">'ma_20'</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'symbol'</span><span class="p">)[</span><span class="s">'close'</span><span class="p">].</span><span class="n">rolling</span><span class="p">(</span><span class="mi">20</span><span class="p">).</span><span class="n">mean</span><span class="p">().</span><span class="n">values</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># 效能比較
+</span><span class="n">stock_df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s">'symbol'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">choice</span><span class="p">([</span><span class="s">'AAPL'</span><span class="p">,</span> <span class="s">'GOOGL'</span><span class="p">,</span> <span class="s">'MSFT'</span><span class="p">],</span> <span class="mi">10000</span><span class="p">),</span>
+    <span class="s">'date'</span><span class="p">:</span> <span class="n">pd</span><span class="p">.</span><span class="n">date_range</span><span class="p">(</span><span class="s">'2020-01-01'</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">10000</span><span class="p">),</span>
+    <span class="s">'close'</span><span class="p">:</span> <span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1000</span>
+<span class="p">})</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"未優化版本:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">analyze_stock_data_slow</span><span class="p">(</span><span class="n">stock_df</span><span class="p">))</span>  <span class="c1"># ~15 秒
+</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"優化版本:"</span><span class="p">)</span>
+<span class="n">time_it</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">analyze_stock_data_fast</span><span class="p">(</span><span class="n">stock_df</span><span class="p">))</span>   <span class="c1"># ~0.1 秒
+</span></code></pre></div></div>
+
+<h2 id="效能監控與-profiling-">效能監控與 Profiling 🔍</h2>
+
+<h3 id="使用-cprofile-找瓶頸">使用 cProfile 找瓶頸</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cProfile</span>
+<span class="kn">import</span> <span class="nn">pstats</span>
+
+<span class="k">def</span> <span class="nf">profile_pandas_code</span><span class="p">():</span>
+    <span class="s">"""要分析的 Pandas 程式碼"""</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="p">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">random</span><span class="p">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">df</span><span class="p">.</span><span class="n">index</span> <span class="o">%</span> <span class="mi">1000</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">result</span>
+
+<span class="c1"># 效能分析
+</span><span class="n">cProfile</span><span class="p">.</span><span class="n">run</span><span class="p">(</span><span class="s">'profile_pandas_code()'</span><span class="p">,</span> <span class="s">'pandas_profile.prof'</span><span class="p">)</span>
+
+<span class="c1"># 查看結果
+</span><span class="n">stats</span> <span class="o">=</span> <span class="n">pstats</span><span class="p">.</span><span class="n">Stats</span><span class="p">(</span><span class="s">'pandas_profile.prof'</span><span class="p">)</span>
+<span class="n">stats</span><span class="p">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="s">'cumulative'</span><span class="p">).</span><span class="n">print_stats</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="使用-line_profiler-逐行分析">使用 line_profiler 逐行分析</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安裝 line_profiler</span>
+pip <span class="nb">install </span>line_profiler
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">@</span><span class="n">profile</span>  <span class="c1"># 需要 line_profiler
+</span><span class="k">def</span> <span class="nf">detailed_analysis</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># 每一行都會被分析
+</span>    <span class="n">grouped</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">groupby</span><span class="p">(</span><span class="s">'category'</span><span class="p">)</span>  <span class="c1"># 這行花多少時間？
+</span>    <span class="n">result</span> <span class="o">=</span> <span class="n">grouped</span><span class="p">.</span><span class="nb">sum</span><span class="p">()</span>            <span class="c1"># 這行花多少時間？ 
+</span>    <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+
+<h2 id="總結與最佳實務-">總結與最佳實務 🎯</h2>
+
+<p>根據我的經驗，Pandas 效能優化的黃金法則：</p>
+
+<h3 id="1-優先順序">1. 優先順序</h3>
+<ol>
+  <li><strong>資料類型優化</strong> - 投資報酬率最高</li>
+  <li><strong>向量化操作</strong> - 避免迴圈</li>
+  <li><strong>分批處理</strong> - 控制記憶體使用</li>
+  <li><strong>平行處理</strong> - 善用多核心</li>
+</ol>
+
+<h3 id="2-開發習慣">2. 開發習慣</h3>
+<ul>
+  <li>✅ 總是先用小資料集測試</li>
+  <li>✅ 定期檢查記憶體使用</li>
+  <li>✅ 使用 <code class="language-plaintext highlighter-rouge">.copy()</code> 避免 SettingWithCopyWarning</li>
+  <li>✅ 優先考慮向量化操作</li>
+</ul>
+
+<h3 id="3-效能檢查清單">3. 效能檢查清單</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">performance_checklist</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="s">"""Pandas 效能檢查清單"""</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="s">"🔍 Pandas 效能檢查報告"</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"="</span> <span class="o">*</span> <span class="mi">40</span><span class="p">)</span>
+    
+    <span class="c1"># 1. 資料類型檢查
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">1. 資料類型分析:"</span><span class="p">)</span>
+    <span class="n">memory_usage</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">memory_usage</span><span class="p">(</span><span class="n">deep</span><span class="o">=</span><span class="bp">True</span><span class="p">).</span><span class="nb">sum</span><span class="p">()</span> <span class="o">/</span> <span class="mi">1024</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   總記憶體使用: </span><span class="si">{</span><span class="n">memory_usage</span><span class="si">:</span><span class="p">.</span><span class="mi">2</span><span class="n">f</span><span class="si">}</span><span class="s"> MB"</span><span class="p">)</span>
+    
+    <span class="n">object_cols</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s">'object'</span><span class="p">]).</span><span class="n">columns</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">object_cols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   ⚠️  發現 </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">object_cols</span><span class="p">)</span><span class="si">}</span><span class="s"> 個 object 欄位，考慮轉換為 category"</span><span class="p">)</span>
+    
+    <span class="c1"># 2. 重複值檢查
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">2. 重複值分析:"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">df</span><span class="p">.</span><span class="n">columns</span><span class="p">:</span>
+        <span class="n">unique_ratio</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">nunique</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">unique_ratio</span> <span class="o">&lt;</span> <span class="mf">0.5</span> <span class="ow">and</span> <span class="n">df</span><span class="p">[</span><span class="n">col</span><span class="p">].</span><span class="n">dtype</span> <span class="o">==</span> <span class="s">'object'</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   💡 </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s">: 重複率 </span><span class="si">{</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">unique_ratio</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">%，建議轉為 category"</span><span class="p">)</span>
+    
+    <span class="c1"># 3. 空值檢查
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">3. 空值分析:"</span><span class="p">)</span>
+    <span class="n">null_cols</span> <span class="o">=</span> <span class="n">df</span><span class="p">.</span><span class="n">isnull</span><span class="p">().</span><span class="nb">sum</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">col</span><span class="p">,</span> <span class="n">null_count</span> <span class="ow">in</span> <span class="n">null_cols</span><span class="p">[</span><span class="n">null_cols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">].</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"   📊 </span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s">: </span><span class="si">{</span><span class="n">null_count</span><span class="si">}</span><span class="s"> 個空值 (</span><span class="si">{</span><span class="n">null_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="p">.</span><span class="mi">1</span><span class="n">f</span><span class="si">}</span><span class="s">%)"</span><span class="p">)</span>
+
+<span class="c1"># 使用範例
+</span><span class="n">performance_checklist</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>記住，<strong>效能優化是一門平衡的藝術</strong>。不要為了微小的效能提升而犧牲程式碼的可讀性。先讓程式跑起來，再讓程式跑得快！</p>
+
+<hr />
+
+<h2 id="延伸閱讀-">延伸閱讀 📚</h2>
+
+<ul>
+  <li>📖 <a href="https://pandas.pydata.org/docs/user_guide/enhancingperf.html">Pandas Documentation - Performance</a></li>
+  <li>🎥 <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Python Data Science Handbook</a></li>
+  <li>💻 <a href="https://docs.dask.org/en/stable/">Dask Documentation</a></li>
+</ul>
+
+<p>下次來聊聊 NumPy 的效能優化技巧，那個更是深不見底的坑 😂</p>
+
+<p>有任何問題歡迎留言討論！讓我們一起讓 Pandas 飛起來 🚀</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#dataframe" class="page__taxonomy-item p-category" rel="tag">DataFrame</a><span class="sep">, </span>
+    
+      <a href="/tags/#pandas" class="page__taxonomy-item p-category" rel="tag">Pandas</a><span class="sep">, </span>
+    
+      <a href="/tags/#python" class="page__taxonomy-item p-category" rel="tag">Python</a><span class="sep">, </span>
+    
+      <a href="/tags/#%E6%95%88%E8%83%BD%E5%84%AA%E5%8C%96" class="page__taxonomy-item p-category" rel="tag">效能優化</a><span class="sep">, </span>
+    
+      <a href="/tags/#%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90" class="page__taxonomy-item p-category" rel="tag">資料分析</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#data-science" class="page__taxonomy-item p-category" rel="tag">data-science</a><span class="sep">, </span>
+    
+      <a href="/categories/#technical" class="page__taxonomy-item p-category" rel="tag">technical</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-12-17T09:15:00+08:00">December 17, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=Pandas+%E6%95%88%E8%83%BD%E8%AA%BF%E6%A0%A1%EF%BC%9A%E8%AE%93%E4%BD%A0%E7%9A%84%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E9%A3%9B%E8%B5%B7%E4%BE%86%EF%BC%81%20https%3A%2F%2Fmagicxcr7.github.io%2Fdata-science%2Ftechnical%2Fpandas-performance-optimization-tips%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmagicxcr7.github.io%2Fdata-science%2Ftechnical%2Fpandas-performance-optimization-tips%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://magicxcr7.github.io/data-science/technical/pandas-performance-optimization-tips/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=Pandas+%E6%95%88%E8%83%BD%E8%AA%BF%E6%A0%A1%EF%BC%9A%E8%AE%93%E4%BD%A0%E7%9A%84%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E9%A3%9B%E8%B5%B7%E4%BE%86%EF%BC%81%20https%3A%2F%2Fmagicxcr7.github.io%2Fdata-science%2Ftechnical%2Fpandas-performance-optimization-tips%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/backend/technical/python-backend-api-best-practices/" class="pagination--pager" title="Python Backend API 設計的眉眉角角">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/welcome-new-site-teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal-growth/welcome-to-new-archis-compass/" rel="permalink">歡迎來到全新的 Archis Digital Compass！
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">全新改版的個人技術部落格正式上線！這次我們用繁體中文重新打造，專為台灣的技術社群量身設計 🚀
+</p>
+  </article>
+</div>
+
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/python-api-teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/backend/technical/python-backend-api-best-practices/" rel="permalink">Python Backend API 設計的眉眉角角
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">設計一個好的 API 就像做料理一樣，食材（程式碼）很重要，但調味（設計原則）更關鍵！今天來聊聊 Python Backend API 的設計撇步 👨‍🍳
+</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';" role="search">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/magicxcr7" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="mailto:magic83w@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://magicxcr7.github.io">Archis Digital Compass</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
