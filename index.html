@@ -4,38 +4,40 @@ author_profile: true
 header:
   overlay_color: "#2c3e50"
   overlay_filter: "0.5"
-  overlay_image: /assets/images/header-home.jpg
+  overlay_image: /assets/images/home-header.jpg
   actions:
-    - label: "Explore My Work"
-      url: "/portfolio/"
-  caption: "Photo by [**Unsplash**](https://unsplash.com)"
-excerpt: "Empowering growth through technology & AI.<br />透過科技與 AI，成就每一個人的成長"
+    - label: "開始探索"
+      url: "/posts/"
+      btn_class: "btn--primary"
+  caption: "透過科技與 AI，成就每一個人的成長"
+excerpt: "歡迎來到 **Archis Digital Compass**<br/>這裡分享 Backend 開發、Data Science、量化交易與個人成長的實戰經驗 🚀"
 intro: 
-  - excerpt: 'Welcome to **Archis Digital Compass** — where technology becomes accessible, inspiring, and practical. I guide people through programming, AI, and data-driven thinking to transform daily life and business decisions.'
+  - excerpt: '我是 **Archi Chen**，一位熱愛技術的 Backend 工程師與 Data Scientist。在這裡，我將複雜的技術概念轉化為易懂的實戰指南，陪伴您在數位時代中持續成長 💪'
+
 feature_row:
-  - image_path: assets/images/feature-technical.jpg
-    image_caption: "Technical Excellence"
-    alt: "Technical posts"
-    title: "Technical Insights"
-    excerpt: "Deep dives into programming, backend systems, and software architecture best practices."
+  - image_path: /assets/images/feature-technical.jpg
+    image_caption: "技術開發"
+    alt: "技術分享文章"
+    title: "💻 技術開發"
+    excerpt: "Backend 開發、Data Engineering、系統架構設計的實戰經驗分享"
     url: "/categories/technical/"
-    btn_label: "Read More"
+    btn_label: "閱讀更多"
     btn_class: "btn--primary"
-  - image_path: assets/images/feature-data.jpg
-    image_caption: "Data-Driven Solutions"
-    alt: "Data science posts" 
-    title: "Data Science & Engineering"
-    excerpt: "Practical applications of data science, engineering workflows, and analytics insights."
-    url: "/categories/data-science/"
-    btn_label: "Read More"
+  - image_path: /assets/images/feature-finance.jpg
+    image_caption: "金融科技"
+    alt: "量化交易文章" 
+    title: "📈 金融科技"
+    excerpt: "量化交易策略、金融建模、投資分析的深度探討"
+    url: "/categories/quant-trading/"
+    btn_label: "閱讀更多"
     btn_class: "btn--primary"
-  - image_path: assets/images/feature-growth.jpg
-    image_caption: "Personal & Business Growth"
-    alt: "Growth posts"
-    title: "Growth & Strategy"
-    excerpt: "Personal development, digital marketing strategies, and energy management insights."
+  - image_path: /assets/images/feature-growth.jpg
+    image_caption: "成長學習"
+    alt: "個人成長文章"
+    title: "🌟 成長學習"
+    excerpt: "職涯發展、學習方法、生產力提升的心得分享"
     url: "/categories/personal-growth/"
-    btn_label: "Read More" 
+    btn_label: "閱讀更多" 
     btn_class: "btn--primary"
 ---
 
@@ -43,12 +45,37 @@ feature_row:
 
 {% include feature_row %}
 
-## Recent Posts
+## 最新文章 📚
 
 {% for post in site.posts limit:6 %}
   {% include archive-single.html %}
 {% endfor %}
 
 <div class="text-center">
-  <a href="/posts/" class="btn btn--primary btn--large">View All Posts</a>
+  <a href="/posts/" class="btn btn--primary btn--large">查看所有文章</a>
+</div>
+
+---
+
+## 關於這個網站 ℹ️
+
+這裡是我分享技術學習心得與職場經驗的地方。無論您是：
+
+- 🔧 **Backend 工程師** - 想學習系統設計與 API 開發
+- 📊 **Data Scientist** - 尋找機器學習與資料分析的實戰案例  
+- 💰 **量化交易者** - 想了解演算法交易與金融建模
+- 🚀 **職場工作者** - 希望提升技能與職涯發展
+
+都能在這裡找到對您有用的內容！
+
+### 為什麼選擇這裡？
+
+✅ **實戰導向** - 每篇文章都包含可執行的程式碼或具體案例  
+✅ **深入淺出** - 用平易近人的語言解釋複雜的技術概念  
+✅ **持續更新** - 跟上最新的技術趨勢與實務做法  
+✅ **中文內容** - 專為台灣讀者量身打造的繁體中文內容
+
+<div class="notice--info">
+  <h4>💌 想要第一時間收到更新？</h4>
+  <p>歡迎追蹤我的 <a href="https://github.com/magicxcr7">GitHub</a> 或是透過 <a href="mailto:magic83w@gmail.com">Email</a> 與我聯繫！</p>
 </div>

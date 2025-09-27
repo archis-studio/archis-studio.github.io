@@ -1,35 +1,37 @@
-# Main navigation links
+# 主要導航選單
 main:
-  - title: "Home"
+  - title: "首頁"
     url: /
-  - title: "About"
+  - title: "關於我"
     url: /about/
-  - title: "Blog"
+  - title: "技術文章"
     url: /posts/
-  - title: "Categories"
+  - title: "文章分類"
     url: /categories/
-  - title: "Portfolio"
-    url: /portfolio/
-  - title: "Search"
-    url: /search/
 
-# Sidebar navigation for categories
+# 分類導航 (用於分類頁面側邊欄)
 categories:
-  - title: "Technical Categories"
+  - title: "技術開發"
     children:
-      - title: "Technical"
+      - title: "技術分享"
         url: /categories/technical/
-      - title: "Backend"
+      - title: "Backend 開發"
         url: /categories/backend/
       - title: "Data Engineering"
-        url: /categories/data-engineering/
+        url: /categories/data-engineer/
       - title: "Data Science"
         url: /categories/data-science/
-  - title: "Business & Growth"
+  - title: "金融科技"
     children:
-      - title: "Energy Management"
+      - title: "量化交易"
+        url: /categories/quant-trading/
+      - title: "金融科技"
+        url: /categories/finance/
+  - title: "其他專業"
+    children:
+      - title: "能源管理"
         url: /categories/energy-management/
-      - title: "Digital Advertising"
+      - title: "數位廣告"
         url: /categories/digital-advertising/
-      - title: "Personal Growth"
+      - title: "個人成長"
         url: /categories/personal-growth/
