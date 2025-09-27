@@ -1,37 +1,46 @@
 # 主要導航選單
 main:
-  - title: "首頁"
+  - title: "🏠 首頁"
     url: /
-  - title: "關於我"
+  - title: "👨‍💻 關於我"
     url: /about/
-  - title: "技術文章"
+  - title: "📚 技術文章"
     url: /posts/
-  - title: "文章分類"
+  - title: "📂 文章分類"
     url: /categories/
 
 # 分類導航 (用於分類頁面側邊欄)
 categories:
-  - title: "技術開發"
+  - title: "💻 技術開發"
     children:
       - title: "技術分享"
         url: /categories/technical/
+        description: "程式設計通用經驗"
       - title: "Backend 開發"
         url: /categories/backend/
+        description: "伺服器端技術"
       - title: "Data Engineering"
         url: /categories/data-engineer/
+        description: "資料工程實務"
       - title: "Data Science"
         url: /categories/data-science/
-  - title: "金融科技"
+        description: "機器學習分析"
+  - title: "💰 金融科技"
     children:
       - title: "量化交易"
         url: /categories/quant-trading/
+        description: "演算法交易策略"
       - title: "金融科技"
         url: /categories/finance/
-  - title: "其他專業"
+        description: "FinTech 應用"
+  - title: "🚀 其他領域"
     children:
       - title: "能源管理"
         url: /categories/energy-management/
+        description: "智慧電網技術"
       - title: "數位廣告"
         url: /categories/digital-advertising/
+        description: "行銷技術分析"
       - title: "個人成長"
         url: /categories/personal-growth/
+        description: "職涯發展心得"
