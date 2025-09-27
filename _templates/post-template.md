@@ -1,10 +1,10 @@
 ---
 title: "在這裡填寫文章標題"
 date: YYYY-MM-DD HH:MM:SS +0800
-categories: [選擇主要分類, 次要分類]
-tags: [標籤1, 標籤2, 標籤3, 標籤4]
+categories: [選擇一個主分類: technical, ai-applications, fintech, digital-marketing, personal-growth]
+tags: [核心技術, 應用領域, 工具框架, 概念技能, 內容類型]
 header:
-  overlay_color: "#選擇顏色"
+  overlay_color: "#選擇分類對應顏色"
   overlay_filter: "0.5"
   overlay_image: /assets/images/你的標題圖片.jpg
   teaser: /assets/images/你的縮圖.jpg
@@ -122,22 +122,25 @@ good_example = "展示解決方案"
 
 ---
 
-## 撰寫指南 (發布前請刪除此section)
+## 標籤使用指南 (發布前請刪除此section)
 
-### 內容要求
-- 文章長度至少 800 字
-- 包含實用的程式碼或案例
-- 提供可行動的建議
-- 語調親切但專業
+### 分類選擇 (選擇一個主分類)
+- **technical**: 程式設計、後端開發、資料工程、資料科學
+- **ai-applications**: AI工具應用、自動化、生成式AI
+- **fintech**: 量化交易、程式交易、回測分析  
+- **digital-marketing**: GA分析、廣告投放、電商工具
+- **personal-growth**: 閱讀心得、職涯經驗、自我管理
 
-### 技術要求  
-- 所有程式碼都要測試過
-- 圖片比例符合 _site_guideline.yml 規範
-- 分類和標籤正確設定
-- 檔名格式：YYYY-MM-DD-english-title.md
+### 標籤使用 (5-8個標籤)
+1. **核心技術** (1-2個): Python, FastAPI, ChatGPT 等
+2. **應用領域** (1-2個): 量化交易, 資料分析, 工作流程自動化 等  
+3. **工具框架** (1-2個): pandas, Docker, n8n 等
+4. **概念技能** (1-2個): 效能優化, 系統設計, 最佳實務 等
+5. **內容類型** (1個): 實戰專案, 踩坑經驗, 入門指南 等
 
-### SEO 優化
-- 標題包含關鍵字
-- excerpt 長度 150 字內
-- 使用適當的內部連結
-- 圖片要有 alt 文字
+### 分類對應顏色
+- technical: "#2c3e50"
+- ai-applications: "#9b59b6"  
+- fintech: "#e74c3c"
+- digital-marketing: "#f39c12"
+- personal-growth: "#1abc9c"

@@ -1,8 +1,8 @@
 ---
 title: "Python Backend API 設計的眉眉角角"
 date: 2024-12-18 14:30:00 +0800
-categories: [backend, technical]
-tags: [Python, FastAPI, API設計, 後端開發, 最佳實務]
+categories: [technical]
+tags: [Python, FastAPI, API設計, Backend開發, 系統架構, 最佳實務, 效能優化]
 header:
   overlay_color: "#34495e"
   overlay_filter: "0.5"

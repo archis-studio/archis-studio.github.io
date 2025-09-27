@@ -21,42 +21,61 @@ content_rules:
       - "量化交易的坑有多深？讓我們一起來踩踩看 😅"
 
   categories:
-    technical: 
+    # === 五大主分類架構 ===
+    technical:
       name: "技術分享"
-      description: "程式設計、軟體架構、開發經驗"
+      description: "程式設計、後端開發、資料工程、資料科學的技術實務"
       color: "#2c3e50"
-    backend:
-      name: "Backend 開發"
-      description: "伺服器端開發、API 設計、系統架構"
-      color: "#34495e"
-    data_engineer:
-      name: "Data Engineering"
-      description: "資料管道、ETL 流程、大數據處理"
-      color: "#16a085"
-    data_science:
-      name: "Data Science"
-      description: "機器學習、資料分析、預測模型"
-      color: "#3498db"
-    quant_trading:
-      name: "量化交易"
-      description: "演算法交易、金融建模、投資策略"
-      color: "#e74c3c"
-    energy_management:
-      name: "能源管理"
-      description: "智慧電網、再生能源、能源效率"
-      color: "#27ae60"
-    digital_advertising:
-      name: "數位廣告"
-      description: "行銷分析、廣告優化、用戶洞察"
+      subcategories:
+        - backend-dev: "後端開發"
+        - data-engineering: "資料工程" 
+        - data-science: "資料科學"
+        - system-design: "系統設計"
+        - dev-tools: "開發工具"
+        
+    ai-applications:
+      name: "AI 應用"
+      description: "人工智慧工具應用、自動化流程、生成式 AI 實戰"
       color: "#9b59b6"
-    finance:
+      subcategories:
+        - automation-tools: "自動化工具 (n8n, Zapier)"
+        - ai-assistants: "AI 助手 (ChatGPT, Copilot CLI)"
+        - generative-ai: "生成式 AI (圖像、影片、文字)"
+        - ml-deployment: "模型部署與應用"
+        - ai-integration: "AI 工具整合"
+        
+    fintech:
       name: "金融科技"
-      description: "FinTech、區塊鏈、數位支付"
+      description: "量化交易、程式交易、回測分析、策略算法"
+      color: "#e74c3c"
+      subcategories:
+        - quantitative-trading: "量化交易"
+        - algorithmic-trading: "程式交易"
+        - backtesting: "回測分析"
+        - trading-strategies: "策略算法"
+        - risk-management: "風險管理"
+        
+    digital-marketing:
+      name: "數位行銷"
+      description: "Google Analytics、廣告投放、電商工具、行銷自動化"
       color: "#f39c12"
-    personal_growth:
+      subcategories:
+        - analytics: "數據分析 (GA, GTM)"
+        - advertising: "廣告投放"
+        - ecommerce-tools: "電商工具"
+        - growth-hacking: "成長駭客"
+        - marketing-automation: "行銷自動化"
+        
+    personal-growth:
       name: "個人成長"
-      description: "職涯發展、技能提升、生產力工具"
+      description: "閱讀心得、自我管理、職涯經驗、生產力提升"
       color: "#1abc9c"
+      subcategories:
+        - book-reviews: "閱讀心得"
+        - self-management: "自我管理"
+        - career-development: "職涯經驗"
+        - productivity: "生產力工具"
+        - leadership: "領導力發展"
 
 # === 視覺設計規範 ===
 design_guidelines:

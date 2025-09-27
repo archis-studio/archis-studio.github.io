@@ -11,36 +11,24 @@ main:
 
 # 分類導航 (用於分類頁面側邊欄)
 collections:
-  - title: "Code & Design"
+  - title: "💻 技術領域"
     children:
-      - title: "Code Artistry"
+      - title: "技術分享"
         url: /categories/technical/
-        description: "程式設計美學"
-      - title: "Backend Elegance"
-        url: /categories/backend/
-        description: "優雅的後端架構"
-      - title: "Data Engineering"
-        url: /categories/data-engineer/
-        description: "資料工程藝術"
-      - title: "Data Poetry"
-        url: /categories/data-science/
-        description: "數據科學詩學"
-  - title: "Innovation & Growth"
+        description: "程式設計、後端開發、資料工程實務"
+      - title: "AI 應用"
+        url: /categories/ai-applications/
+        description: "人工智慧工具與實戰應用"
+  - title: "💰 商業應用" 
     children:
-      - title: "Quant Aesthetics"
-        url: /categories/quant-trading/
-        description: "量化交易美學"
-      - title: "FinTech Style"
-        url: /categories/finance/
-        description: "金融科技風格"
-  - title: "Lifestyle & Philosophy"
+      - title: "金融科技"
+        url: /categories/fintech/
+        description: "量化交易、程式交易、回測分析"
+      - title: "數位行銷"
+        url: /categories/digital-marketing/
+        description: "GA 分析、廣告投放、電商工具"
+  - title: "🌟 個人發展"
     children:
-      - title: "Sustainable Tech"
-        url: /categories/energy-management/
-        description: "永續科技風尚"
-      - title: "Digital Marketing"
-        url: /categories/digital-advertising/
-        description: "數位行銷美學"
-      - title: "Elegant Growth"
+      - title: "個人成長"
         url: /categories/personal-growth/
-        description: "優雅成長哲學"
+        description: "閱讀心得、職涯經驗、自我管理"
