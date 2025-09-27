@@ -1,65 +1,65 @@
-# Site Settings
-locale: "en-US"
+# 網站基本設定
+locale: "zh-TW"
 title: "Archis Digital Compass"
 title_separator: "-"
 subtitle: "透過科技與 AI，成就每一個人的成長"
 name: "Archi Chen"
-description: "A platform where technology becomes accessible and practical. Guiding you through programming, AI, and data-driven thinking for personal growth and smarter decisions."
+description: "專業的技術分享平台，專注於 Backend 開發、Data Science、量化交易與個人成長。讓複雜的技術變得簡單易懂，陪伴您在數位時代中成長茁壯。"
 url: "https://magicxcr7.github.io"
 baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
-teaser: "/assets/images/teaser-default.jpg"
-logo: "/assets/images/logo.png"
+teaser: "/assets/images/default-teaser.jpg"
+logo: "/assets/images/site-logo.png"
 masthead_title: "Archis Digital Compass"
 breadcrumbs: true
 words_per_minute: 200
 
-# Comments (Enable Disqus for production)
+# 評論系統 (生產環境時啟用)
 comments:
-  provider: false # Set to "disqus" when ready
+  provider: false # 上線時改為 "disqus"
   disqus:
-    shortname: # Add your disqus shortname
+    shortname: # 請勿修改 - GA_DISQUS_SHORTNAME
 
-# Search
+# 搜尋功能
 search: true
 search_full_content: true
 search_provider: lunr
 lunr:
   search_within_pages: true
 
-# SEO Related
-google_site_verification: # Add your verification code when ready
-bing_site_verification: # Add your verification code when ready
-yandex_site_verification: # Add your verification code when ready
-naver_site_verification: # Add your verification code when ready
+# SEO 相關設定
+google_site_verification: # 請勿修改 - GA_SITE_VERIFICATION
+bing_site_verification: # 請勿修改 - BING_SITE_VERIFICATION
+naver_site_verification: # 請勿修改 - NAVER_SITE_VERIFICATION
 
-# Social Sharing
+# 社群分享設定
 twitter:
-  username: # Add your Twitter handle when ready
+  username: # 未來可新增 Twitter 帳號
 facebook:
-  username: # Add your Facebook username when ready
+  username: # 未來可新增 Facebook 頁面
   app_id:
   publisher:
-og_image: "/assets/images/bio-photo.jpg"
+og_image: "/assets/images/site-og-image.jpg"
 social:
   type: "Person"
   name: "Archi Chen"
   links:
     - "https://github.com/magicxcr7"
+    - "https://linkedin.com/in/archi-chen" # 未來可新增
 
-# Analytics
+# 網站分析 (請勿修改)
 analytics:
-  provider: false # Set to "google" or "google-universal" when ready
+  provider: false # 請勿修改 - GA_PROVIDER
   google:
-    tracking_id: # Add your tracking ID when ready
+    tracking_id: # 請勿修改 - GA_TRACKING_ID
     anonymize_ip: false
 
-# Site Author
+# 作者資訊
 author:
   name: "Archi Chen"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Tech enthusiast empowering growth through AI, data science, and practical programming insights."
-  location: "Taiwan"
+  bio: "Backend 工程師 | Data Scientist | 量化交易研究員<br/>熱衷於用技術解決實際問題，分享學習心得與職場經驗"
+  location: "台北, 台灣"
   email: "magic83w@gmail.com"
   links:
     - label: "Email"
@@ -70,9 +70,9 @@ author:
       url: "https://github.com/magicxcr7"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: # Add your LinkedIn URL when ready
+      url: "https://linkedin.com/in/archi-chen"
 
-# Site Footer
+# 網站底部
 footer:
   links:
     - label: "GitHub"
@@ -82,7 +82,7 @@ footer:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:magic83w@gmail.com"
 
-# Reading Files
+# 檔案處理
 include:
   - .htaccess
   - _pages
@@ -111,22 +111,24 @@ exclude:
   - Rakefile
   - README
   - tmp
-  - /docs # ignore Minimal Mistakes /docs
-  - /test # ignore Minimal Mistakes /test
+  - /docs
+  - /test
+  - scripts
+  - _site_guideline.yml
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Conversion
+# Markdown 處理
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# Markdown Processing
+# Kramdown 設定
 kramdown:
   input: GFM
   hard_wrap: false
@@ -142,13 +144,13 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Outputting
+# 輸出設定
 permalink: /:categories/:title/
-paginate: 10
+paginate: 12
 paginate_path: /page:num/
 timezone: Asia/Taipei
 
-# Plugins (previously gems:)
+# 外掛程式
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -158,7 +160,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-remote-theme
 
-# mimic GitHub Pages with --safe
+# GitHub Pages 安全白名單
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
@@ -168,7 +170,7 @@ whitelist:
   - jekyll-seo-tag
   - jekyll-remote-theme
 
-# Archives
+# 分類與標籤歸檔
 category_archive:
   type: liquid
   path: /categories/
@@ -176,19 +178,19 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# HTML Compression
+# HTML 壓縮
 compress_html:
   clippings: all
   ignore:
     envs: development
 
-# Collections
+# 集合設定
 collections:
   portfolio:
     output: true
     permalink: /:collection/:name/
 
-# Defaults
+# 預設設定
 defaults:
   # _posts
   - scope:
@@ -203,8 +205,10 @@ defaults:
       related: true
       toc: true
       toc_sticky: true
+      toc_label: "目錄"
       header:
         overlay_color: "#2c3e50"
+        overlay_filter: "0.5"
   # _pages
   - scope:
       path: "_pages"
@@ -214,6 +218,7 @@ defaults:
       author_profile: true
       header:
         overlay_color: "#34495e"
+        overlay_filter: "0.5"
   # _portfolio
   - scope:
       path: ""
@@ -222,7 +227,9 @@ defaults:
       layout: single
       author_profile: false
       share: true
+      toc: true
+      toc_sticky: true
 
-# Theme
+# 主題設定
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin: "contrast"

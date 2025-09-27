@@ -1,0 +1,169 @@
+# Archis 個人品牌網站指引
+# Personal Branding Website Guidelines for AI Content Creation
+
+site_info:
+  name: "Archis Digital Compass"
+  chinese_name: "Archis 數位指南針"
+  tagline: "透過科技與 AI，成就每一個人的成長"
+  author: "Archi Chen"
+  language: "zh-TW"
+  target_audience: "台灣科技工作者、數據分析師、程式開發者"
+
+# === 內容創作規則 ===
+content_rules:
+  language_policy:
+    primary: "繁體中文"
+    technical_terms: "保持英文 (Backend, Data Science, API, GitHub, etc.)"
+    tone: "專業但親切，偶爾幽默，使用適量 emoji"
+    examples:
+      - "今天來聊聊 Backend 開發的眉眉角角 🤔"
+      - "Data Science 不只是跑模型這麼簡單！"
+      - "量化交易的坑有多深？讓我們一起來踩踩看 😅"
+
+  categories:
+    technical: 
+      name: "技術分享"
+      description: "程式設計、軟體架構、開發經驗"
+      color: "#2c3e50"
+    backend:
+      name: "Backend 開發"
+      description: "伺服器端開發、API 設計、系統架構"
+      color: "#34495e"
+    data_engineer:
+      name: "Data Engineering"
+      description: "資料管道、ETL 流程、大數據處理"
+      color: "#16a085"
+    data_science:
+      name: "Data Science"
+      description: "機器學習、資料分析、預測模型"
+      color: "#3498db"
+    quant_trading:
+      name: "量化交易"
+      description: "演算法交易、金融建模、投資策略"
+      color: "#e74c3c"
+    energy_management:
+      name: "能源管理"
+      description: "智慧電網、再生能源、能源效率"
+      color: "#27ae60"
+    digital_advertising:
+      name: "數位廣告"
+      description: "行銷分析、廣告優化、用戶洞察"
+      color: "#9b59b6"
+    finance:
+      name: "金融科技"
+      description: "FinTech、區塊鏈、數位支付"
+      color: "#f39c12"
+    personal_growth:
+      name: "個人成長"
+      description: "職涯發展、技能提升、生產力工具"
+      color: "#1abc9c"
+
+# === 視覺設計規範 ===
+design_guidelines:
+  colors:
+    primary: "#2c3e50"      # 深藍灰
+    secondary: "#3498db"    # 藍色
+    accent: "#e74c3c"       # 紅色
+    success: "#27ae60"      # 綠色
+    warning: "#f39c12"      # 橙色
+    light_gray: "#ecf0f1"   # 淺灰
+    dark_gray: "#34495e"    # 深灰
+
+  images:
+    header_ratio: "16:9"    # 1200x675px
+    teaser_ratio: "2:1"     # 400x200px
+    thumbnail_ratio: "4:3"  # 400x300px
+    max_size: "200KB"
+    formats: ["jpg", "png", "webp"]
+    
+  typography:
+    chinese_font: "Noto Sans TC"
+    english_font: "Source Sans Pro"
+    code_font: "Fira Code"
+
+# === 文章模板規範 ===
+post_templates:
+  structure:
+    front_matter:
+      - title (繁體中文)
+      - date (YYYY-MM-DD HH:MM:SS +0800)
+      - categories (最多3個)
+      - tags (最多6個)
+      - excerpt (150字內摘要)
+      - header (overlay_color + overlay_image)
+      - toc (true/false)
+      - toc_sticky (true/false)
+    
+    content_sections:
+      - "引言 (100-200字)"
+      - "<!--more--> (閱讀更多分隔線)"
+      - "主要內容 (結構化標題)"
+      - "程式碼範例 (如適用)"
+      - "重點整理"
+      - "延伸閱讀/下一步行動"
+
+  filename_format: "YYYY-MM-DD-article-title-in-english.md"
+  
+  sample_tags:
+    technical: ["程式設計", "軟體開發", "程式碼", "架構設計"]
+    backend: ["API", "資料庫", "伺服器", "微服務"]
+    data: ["機器學習", "資料分析", "Python", "模型訓練"]
+    finance: ["量化分析", "投資策略", "金融科技", "風險管理"]
+    growth: ["職涯發展", "學習筆記", "生產力", "時間管理"]
+
+# === SEO 優化 ===
+seo_rules:
+  title_format: "{文章標題} | Archis Digital Compass"
+  meta_description: "150字內，包含關鍵字，吸引點擊"
+  keywords: "最多10個，中英文混合"
+  structured_data: "自動生成 (jekyll-seo-tag)"
+
+# === 檔案結構 ===
+file_structure:
+  posts: "_posts/"
+  pages: "_pages/"
+  assets: "assets/"
+  images: "assets/images/"
+  css: "assets/css/"
+  js: "assets/js/"
+
+# === 禁止修改區域 ===
+# DO NOT MODIFY - 以下區域由網站管理員維護
+protected_areas:
+  analytics: 
+    google_analytics: "GA_TRACKING_ID"  # 請勿修改
+    google_adsense: "ADSENSE_CLIENT_ID" # 請勿修改
+  
+  integrations:
+    disqus_shortname: "SITE_SHORTNAME"  # 請勿修改
+    social_media: "保持現有設定"         # 請勿修改
+  
+  technical_settings:
+    permalink: "/:categories/:title/"   # 請勿修改
+    timezone: "Asia/Taipei"            # 請勿修改
+    encoding: "utf-8"                  # 請勿修改
+
+# === AI 內容創作提示 ===
+ai_content_guidelines:
+  voice_and_tone:
+    - "使用繁體中文，專業中帶有親和力"
+    - "技術術語保持英文，其他翻譯成中文"
+    - "適度使用 emoji 增加親近感"
+    - "避免過於正式或教科書式的語調"
+    
+  content_quality:
+    - "每篇文章至少 800 字"
+    - "包含實用的程式碼或案例"
+    - "提供可行動的建議或步驟"
+    - "引用可靠的資料來源"
+    
+  engagement_tactics:
+    - "開頭提出問題或痛點"
+    - "使用生活化的比喻說明技術概念"
+    - "結尾鼓勵讀者互動或分享經驗"
+    - "適時加入個人觀點或經驗分享"
+
+# 版本資訊
+guideline_version: "1.0"
+last_updated: "2024-12-19"
+maintained_by: "Archi Chen"
