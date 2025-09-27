@@ -4,41 +4,56 @@ title: "About"
 permalink: /about/
 ---
 
-# About Me
+# About Archis Digital Compass
 
-Welcome to my personal blog! 
+Welcome to **Archis Digital Compass** — where technology becomes accessible, inspiring, and practical! 🧭
 
-## Who Am I?
+## Our Mission 🎯
 
-I'm a passionate individual who loves to share knowledge and experiences through writing. This blog is my space to document my journey, share insights, and connect with like-minded people.
+We guide people to understand **programming**, **artificial intelligence**, and **data-driven thinking** — and more importantly, how to apply them in everyday life: from personal growth to smarter financial decisions.
 
-## What You'll Find Here
+**透過科技與 AI，成就每一個人的成長**
 
-On this blog, you can expect to find:
+## What You'll Find Here 📚
 
-- Personal experiences and lessons learned
-- Technical insights and tutorials
-- Thoughts on current trends and topics
-- Book recommendations and reviews
-- Travel stories and photography
+### 🔧 Technology & Programming
+- Practical programming tutorials and guides
+- AI and machine learning explained simply
+- Data analysis for real-world applications
 
-## My Interests
+### 💡 Personal Growth
+- How to use technology for self-improvement
+- Data-driven decision making in daily life
+- Smart financial strategies using tech tools
 
-- Technology and software development
-- Reading and continuous learning
-- Photography and visual storytelling
-- Travel and exploring new cultures
-- Problem-solving and creative thinking
+### 🚀 Digital Marketing & Strategy
+- Concise insights on digital marketing trends
+- Building bridges between innovation and business
+- Practical strategies for the digital age
 
-## Get in Touch
+## About Archi 👨‍💻
 
-I'd love to connect with you! You can reach out to me through:
+Hi, I'm **Archi** — your guide in this digital compass journey. I'm passionate about making complex technology accessible to everyone and showing how it can transform our daily lives.
 
+I believe that technology should empower people, not intimidate them. Through this platform, I share practical insights that you can immediately apply to improve your personal and professional life.
+
+## My Focus Areas 🎯
+
+- **Programming & Development**: Making coding accessible to beginners
+- **Artificial Intelligence**: Demystifying AI for everyday applications  
+- **Data Science**: Using data to make better life decisions
+- **Digital Strategy**: Bridging technology and business success
+- **Personal Growth**: Leveraging tech for self-improvement
+
+## Get in Touch 📬
+
+I'd love to connect and help you on your digital journey!
+
+- **Email**: [{{ site.email }}](mailto:{{ site.email }})
 - **GitHub**: [{{ site.github_username }}](https://github.com/{{ site.github_username }})
-- **Email**: {{ site.email }}
 
-Feel free to drop me a message if you have any questions, suggestions, or just want to say hello!
+Feel free to reach out with questions, suggestions, or collaboration ideas. Let's navigate the digital world together! 🌟
 
 ---
 
-*Thanks for visiting my blog. I hope you find the content useful and engaging!*
+*"Technology is best when it brings people together and empowers them to achieve more."*
