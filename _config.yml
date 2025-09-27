@@ -14,9 +14,18 @@ masthead_title: "Archis Digital Compass"
 breadcrumbs: true
 words_per_minute: 200
 
-# Comments (optional - you can enable later)
+# Comments (Enable Disqus for production)
 comments:
-  provider: false
+  provider: false # Set to "disqus" when ready
+  disqus:
+    shortname: # Add your disqus shortname
+
+# Search
+search: true
+search_full_content: true
+search_provider: lunr
+lunr:
+  search_within_pages: true
 
 # SEO Related
 google_site_verification: # Add your verification code when ready
@@ -147,6 +156,7 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -155,6 +165,8 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Archives
 category_archive:

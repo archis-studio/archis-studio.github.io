@@ -1,0 +1,964 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.27.3 by Michael Rose
+  Copyright 2013-2025 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+
+<html lang="en-US" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Building Your Digital Presence with GitHub Pages and Jekyll - Archis Digital Compass</title>
+<meta name="description" content="Learn how to build a professional blog and portfolio using GitHub Pages and Jekyll. Complete guide from setup to deployment with practical tips for developers and content creators.">
+
+
+  <meta name="author" content="Archi Chen">
+  
+  <meta property="article:author" content="Archi Chen">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Archis Digital Compass">
+<meta property="og:title" content="Building Your Digital Presence with GitHub Pages and Jekyll">
+<meta property="og:url" content="https://magicxcr7.github.io/technical/backend/getting-started-with-github-pages/">
+
+
+  <meta property="og:description" content="Learn how to build a professional blog and portfolio using GitHub Pages and Jekyll. Complete guide from setup to deployment with practical tips for developers and content creators.">
+
+
+
+  <meta property="og:image" content="https://magicxcr7.github.io/assets/images/post-github-pages-header.jpg">
+
+
+
+
+
+  <meta property="article:published_time" content="2024-09-28T10:00:00+08:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://magicxcr7.github.io/technical/backend/getting-started-with-github-pages/">
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Archis Digital Compass Feed">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@latest/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single" dir="ltr">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/logo.png" alt="Archis Digital Compass"></a>
+        
+        <a class="site-title" href="/">
+          Archis Digital Compass
+          <span class="site-subtitle">透過科技與 AI，成就每一個人的成長</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a
+                href="/"
+                
+                
+              >Home</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/about/"
+                
+                
+              >About</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/posts/"
+                
+                
+              >Blog</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/categories/"
+                
+                
+              >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/tags/"
+                
+                
+              >Tags</a>
+            </li><li class="masthead__menu-item">
+              <a
+                href="/portfolio/"
+                
+                
+              >Portfolio</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style="background-color: #34495e; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/post-github-pages-header.jpg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Building Your Digital Presence with GitHub Pages and Jekyll
+
+        
+      </h1>
+      
+        <p class="page__lead">Learn how to build a professional blog and portfolio using GitHub Pages and Jekyll. Complete guide from setup to deployment with practical tips for developers and content creators.
+</p>
+      
+      
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+
+  
+    
+
+
+
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+    
+    
+    
+      
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/" itemprop="item"><span itemprop="name">Home</span></a>
+
+          <meta itemprop="position" content="1" />
+        </li>
+        <span class="sep">/</span>
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#technical" itemprop="item"><span itemprop="name">Technical</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="/categories/#backend" itemprop="item"><span itemprop="name">Backend</span></a>
+          <meta itemprop="position" content="3" />
+        </li>
+        <span class="sep">/</span>
+      
+    
+      
+      
+        <li class="current">Building Your Digital Presence with GitHub Pages and Jekyll</li>
+      
+    
+  </ol>
+</nav>
+
+  
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+    <div class="author__avatar">
+      <a href="https://magicxcr7.github.io/">
+        <img src="/assets/images/bio-photo.jpg" alt="Archi Chen" itemprop="image" class="u-photo">
+      </a>
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="https://magicxcr7.github.io/" itemprop="url">Archi Chen</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Tech enthusiast empowering growth through AI, data science, and practical programming insights.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Taiwan</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:magic83w@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/magicxcr7" rel="nofollow noopener noreferrer me" itemprop="sameAs"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+        
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:magic83w@gmail.com" rel="me" class="u-email">
+            <meta itemprop="email" content="magic83w@gmail.com" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span>
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Building Your Digital Presence with GitHub Pages and Jekyll">
+    <meta itemprop="description" content="Learn how to build a professional blog and portfolio using GitHub Pages and Jekyll. Complete guide from setup to deployment with practical tips for developers and content creators.">
+    <meta itemprop="datePublished" content="2024-09-28T10:00:00+08:00">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right sticky">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu"><li><a href="#why-github-pages--jekyll-">Why GitHub Pages + Jekyll? 🤔</a><ul><li><a href="#cost-effective-excellence-">Cost-Effective Excellence 💰</a></li><li><a href="#developer-friendly-workflow-️">Developer-Friendly Workflow 🛠️</a></li><li><a href="#technical-advantages-">Technical Advantages ⚡</a></li></ul></li><li><a href="#architecture-overview-️">Architecture Overview 🏗️</a></li><li><a href="#step-by-step-implementation-guide-">Step-by-Step Implementation Guide 📋</a><ul><li><a href="#phase-1-repository-setup">Phase 1: Repository Setup</a><ul><li><a href="#11-create-your-github-pages-repository">1.1 Create Your GitHub Pages Repository</a></li><li><a href="#12-enable-github-pages">1.2 Enable GitHub Pages</a></li></ul></li><li><a href="#phase-2-jekyll-configuration">Phase 2: Jekyll Configuration</a><ul><li><a href="#21-essential-gemfile-setup">2.1 Essential Gemfile Setup</a></li><li><a href="#22-core-_configyml-configuration">2.2 Core _config.yml Configuration</a></li></ul></li><li><a href="#phase-3-content-structure-design">Phase 3: Content Structure Design</a><ul><li><a href="#31-strategic-category-planning">3.1 Strategic Category Planning</a></li><li><a href="#32-post-template-standardization">3.2 Post Template Standardization</a></li></ul></li></ul></li><li><a href="#performance-optimization-strategies-">Performance Optimization Strategies 🚀</a><ul><li><a href="#image-optimization">Image Optimization</a></li><li><a href="#seo-enhancement">SEO Enhancement</a></li><li><a href="#loading-speed-optimization">Loading Speed Optimization</a></li></ul></li><li><a href="#common-implementation-challenges-️">Common Implementation Challenges 🛠️</a><ul><li><a href="#build-failures">Build Failures</a></li><li><a href="#theme-customization">Theme Customization</a></li></ul></li><li><a href="#advanced-configuration-tips-">Advanced Configuration Tips 💡</a><ul><li><a href="#custom-navigation">Custom Navigation</a></li><li><a href="#analytics-integration">Analytics Integration</a></li><li><a href="#social-media-optimization">Social Media Optimization</a></li></ul></li><li><a href="#content-strategy-for-technical-blogs-">Content Strategy for Technical Blogs 📝</a><ul><li><a href="#post-structure-framework">Post Structure Framework</a></li><li><a href="#engagement-optimization">Engagement Optimization</a></li></ul></li><li><a href="#deployment-and-maintenance-">Deployment and Maintenance 🔄</a><ul><li><a href="#automated-workflow">Automated Workflow</a></li><li><a href="#monitoring-and-analytics">Monitoring and Analytics</a></li></ul></li><li><a href="#scaling-your-digital-presence-">Scaling Your Digital Presence 📈</a><ul><li><a href="#content-organization">Content Organization</a></li><li><a href="#community-building">Community Building</a></li></ul></li><li><a href="#conclusion-and-next-steps-">Conclusion and Next Steps 🎯</a></li><li><a href="#additional-resources-">Additional Resources 📚</a></li></ul>
+            </nav>
+          </aside>
+        
+        <p>GitHub Pages combined with Jekyll provides an excellent foundation for building professional websites, blogs, and portfolios. In this comprehensive guide, I’ll share my experience setting up this very site and provide you with actionable insights to create your own digital presence.</p>
+
+<h2 id="why-github-pages--jekyll-">Why GitHub Pages + Jekyll? 🤔</h2>
+
+<p>After evaluating multiple platforms for hosting technical content, GitHub Pages with Jekyll emerged as the optimal solution for several compelling reasons:</p>
+
+<h3 id="cost-effective-excellence-"><strong>Cost-Effective Excellence</strong> 💰</h3>
+<ul>
+  <li><strong>Zero hosting costs</strong> for public repositories</li>
+  <li><strong>Custom domain support</strong> without additional fees</li>
+  <li><strong>SSL certificates</strong> provided automatically</li>
+  <li><strong>Global CDN</strong> for fast loading worldwide</li>
+</ul>
+
+<h3 id="developer-friendly-workflow-️"><strong>Developer-Friendly Workflow</strong> 🛠️</h3>
+<ul>
+  <li><strong>Version control</strong> built into the publishing process</li>
+  <li><strong>Markdown writing</strong> with familiar syntax</li>
+  <li><strong>Local development</strong> environment for testing</li>
+  <li><strong>Automated deployment</strong> on every commit</li>
+</ul>
+
+<h3 id="technical-advantages-"><strong>Technical Advantages</strong> ⚡</h3>
+<ul>
+  <li><strong>Static site generation</strong> for optimal performance</li>
+  <li><strong>SEO optimization</strong> out of the box</li>
+  <li><strong>Mobile responsiveness</strong> with modern themes</li>
+  <li><strong>Plugin ecosystem</strong> for extended functionality</li>
+</ul>
+
+<!--more-->
+
+<h2 id="architecture-overview-️">Architecture Overview 🏗️</h2>
+
+<p>Understanding the technical stack helps you make informed decisions about customization and optimization:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GitHub Repository
+    ├── _config.yml          # Site configuration
+    ├── _posts/              # Blog posts (Markdown)
+    ├── _pages/              # Static pages  
+    ├── _layouts/            # HTML templates
+    ├── _includes/           # Reusable components
+    ├── _sass/               # Stylesheet customizations
+    ├── assets/              # Images, CSS, JS
+    └── index.html           # Homepage
+</code></pre></div></div>
+
+<h2 id="step-by-step-implementation-guide-">Step-by-Step Implementation Guide 📋</h2>
+
+<h3 id="phase-1-repository-setup">Phase 1: Repository Setup</h3>
+
+<h4 id="11-create-your-github-pages-repository">1.1 Create Your GitHub Pages Repository</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Repository naming convention for user pages</span>
+<span class="c"># Format: username.github.io</span>
+<span class="c"># Example: magicxcr7.github.io</span>
+</code></pre></div></div>
+
+<p><strong>Critical Requirements:</strong></p>
+<ul>
+  <li>Repository name must match: <code class="language-plaintext highlighter-rouge">{username}.github.io</code></li>
+  <li>Repository must be <strong>public</strong> (for free GitHub accounts)</li>
+  <li>Default branch should be <code class="language-plaintext highlighter-rouge">main</code> or <code class="language-plaintext highlighter-rouge">master</code></li>
+</ul>
+
+<h4 id="12-enable-github-pages">1.2 Enable GitHub Pages</h4>
+<ol>
+  <li>Navigate to repository <strong>Settings</strong></li>
+  <li>Scroll to <strong>Pages</strong> section</li>
+  <li>Select source: <strong>Deploy from a branch</strong></li>
+  <li>Choose branch: <strong>main</strong> (root directory)</li>
+  <li>Save configuration</li>
+</ol>
+
+<h3 id="phase-2-jekyll-configuration">Phase 2: Jekyll Configuration</h3>
+
+<h4 id="21-essential-gemfile-setup">2.1 Essential Gemfile Setup</h4>
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s2">"https://rubygems.org"</span>
+
+<span class="n">gem</span> <span class="s2">"jekyll"</span><span class="p">,</span> <span class="s2">"~&gt; 4.3.0"</span>
+<span class="n">gem</span> <span class="s2">"minimal-mistakes-jekyll"</span>  <span class="c1"># Professional theme</span>
+
+<span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-paginate"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-sitemap"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-gist"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-feed"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-include-cache"</span>
+  <span class="n">gem</span> <span class="s2">"jekyll-seo-tag"</span>
+<span class="k">end</span>
+
+<span class="c1"># Platform-specific dependencies</span>
+<span class="n">platforms</span> <span class="ss">:mingw</span><span class="p">,</span> <span class="ss">:x64_mingw</span><span class="p">,</span> <span class="ss">:mswin</span><span class="p">,</span> <span class="ss">:jruby</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"tzinfo"</span><span class="p">,</span> <span class="s2">"&gt;= 1"</span><span class="p">,</span> <span class="s2">"&lt; 3"</span>
+  <span class="n">gem</span> <span class="s2">"tzinfo-data"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h4 id="22-core-_configyml-configuration">2.2 Core _config.yml Configuration</h4>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Essential site settings</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Site</span><span class="nv"> </span><span class="s">Title"</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Professional</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">of</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">content</span><span class="nv"> </span><span class="s">focus"</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://yourusername.github.io"</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="c1"># Theme configuration</span>
+<span class="na">remote_theme</span><span class="pi">:</span> <span class="s2">"</span><span class="s">mmistakes/minimal-mistakes"</span>
+<span class="na">minimal_mistakes_skin</span><span class="pi">:</span> <span class="s2">"</span><span class="s">contrast"</span>  <span class="c1"># Choose your aesthetic</span>
+
+<span class="c1"># Content organization</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/:categories/:title/</span>
+<span class="na">paginate</span><span class="pi">:</span> <span class="m">10</span>
+<span class="na">paginate_path</span><span class="pi">:</span> <span class="s">/page:num/</span>
+
+<span class="c1"># SEO optimization</span>
+<span class="na">author</span><span class="pi">:</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Name"</span>
+  <span class="na">bio</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Professional</span><span class="nv"> </span><span class="s">tagline</span><span class="nv"> </span><span class="s">describing</span><span class="nv"> </span><span class="s">your</span><span class="nv"> </span><span class="s">expertise"</span>
+  <span class="na">avatar</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/assets/images/bio-photo.jpg"</span>
+  <span class="na">email</span><span class="pi">:</span> <span class="s2">"</span><span class="s">your@email.com"</span>
+  <span class="na">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">label</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub"</span>
+      <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">fab</span><span class="nv"> </span><span class="s">fa-fw</span><span class="nv"> </span><span class="s">fa-github"</span>
+      <span class="na">url</span><span class="pi">:</span> <span class="s2">"</span><span class="s">https://github.com/yourusername"</span>
+</code></pre></div></div>
+
+<h3 id="phase-3-content-structure-design">Phase 3: Content Structure Design</h3>
+
+<h4 id="31-strategic-category-planning">3.1 Strategic Category Planning</h4>
+<p>Based on content strategy analysis, organize posts into logical categories:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Recommended category structure for tech professionals</span>
+<span class="na">categories</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">technical</span>          <span class="c1"># Core programming concepts</span>
+  <span class="pi">-</span> <span class="s">backend</span>           <span class="c1"># Server-side development</span>
+  <span class="pi">-</span> <span class="s">data-science</span>      <span class="c1"># Analytics and ML</span>
+  <span class="pi">-</span> <span class="s">data-engineering</span>  <span class="c1"># ETL and infrastructure</span>
+  <span class="pi">-</span> <span class="s">digital-strategy</span>  <span class="c1"># Marketing and growth</span>
+  <span class="pi">-</span> <span class="s">personal-growth</span>   <span class="c1"># Career and productivity</span>
+</code></pre></div></div>
+
+<h4 id="32-post-template-standardization">3.2 Post Template Standardization</h4>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Descriptive,</span><span class="nv"> </span><span class="s">SEO-Optimized</span><span class="nv"> </span><span class="s">Title"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">YYYY-MM-DD HH:MM:SS +TIMEZONE</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">primary-category</span><span class="pi">,</span> <span class="nv">secondary-category</span><span class="pi">]</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">specific</span><span class="pi">,</span> <span class="nv">searchable</span><span class="pi">,</span> <span class="nv">keywords</span><span class="pi">]</span>
+<span class="na">header</span><span class="pi">:</span>
+  <span class="na">overlay_color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#color-code"</span>
+  <span class="na">overlay_image</span><span class="pi">:</span> <span class="s">/path/to/header-image.jpg</span>
+  <span class="na">teaser</span><span class="pi">:</span> <span class="s">/path/to/teaser-image.jpg</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Compelling</span><span class="nv"> </span><span class="s">1-2</span><span class="nv"> </span><span class="s">sentence</span><span class="nv"> </span><span class="s">summary</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">social</span><span class="nv"> </span><span class="s">sharing"</span>
+<span class="na">toc</span><span class="pi">:</span> <span class="no">true</span>                    <span class="c1"># Table of contents</span>
+<span class="na">toc_sticky</span><span class="pi">:</span> <span class="no">true</span>            <span class="c1"># Fixed navigation</span>
+<span class="nn">---</span>
+
+Introduction paragraph with clear value proposition.
+
+<span class="gu">## Main Content Sections</span>
+
+Use <span class="c">&lt;!--more--&gt;</span> to control excerpt length.
+
+<span class="c">&lt;!--more--&gt;</span>
+
+Detailed content with actionable insights...
+</code></pre></div></div>
+
+<h2 id="performance-optimization-strategies-">Performance Optimization Strategies 🚀</h2>
+
+<h3 id="image-optimization"><strong>Image Optimization</strong></h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Recommended image specifications</span>
+<span class="na">header_images</span><span class="pi">:</span>
+  <span class="na">dimensions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1200x600px"</span>
+  <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">JPEG</span><span class="nv"> </span><span class="s">(compressed)"</span>
+  <span class="na">file_size</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;200KB"</span>
+
+<span class="na">teaser_images</span><span class="pi">:</span>
+  <span class="na">dimensions</span><span class="pi">:</span> <span class="s2">"</span><span class="s">400x200px"</span> 
+  <span class="na">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">JPEG</span><span class="nv"> </span><span class="s">(compressed)"</span>
+  <span class="na">file_size</span><span class="pi">:</span> <span class="s2">"</span><span class="s">&lt;50KB"</span>
+</code></pre></div></div>
+
+<h3 id="seo-enhancement"><strong>SEO Enhancement</strong></h3>
+<ul>
+  <li><strong>Semantic HTML structure</strong> with proper heading hierarchy</li>
+  <li><strong>Meta descriptions</strong> under 160 characters</li>
+  <li><strong>Alt text</strong> for all images</li>
+  <li><strong>Internal linking</strong> strategy for content discovery</li>
+  <li><strong>XML sitemap</strong> generation (automatic with jekyll-sitemap)</li>
+</ul>
+
+<h3 id="loading-speed-optimization"><strong>Loading Speed Optimization</strong></h3>
+<ul>
+  <li><strong>Minimize plugins</strong> to essential functionality only</li>
+  <li><strong>Compress images</strong> before uploading</li>
+  <li><strong>Use Jekyll’s built-in SASS compilation</strong> for CSS optimization</li>
+  <li><strong>Enable GitHub Pages CDN</strong> (automatic)</li>
+</ul>
+
+<h2 id="common-implementation-challenges-️">Common Implementation Challenges 🛠️</h2>
+
+<h3 id="build-failures"><strong>Build Failures</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Local testing prevents deployment issues</span>
+bundle <span class="nb">install
+</span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+
+<span class="c"># Access local site at: http://localhost:4000</span>
+</code></pre></div></div>
+
+<p><strong>Frequent Solutions:</strong></p>
+<ul>
+  <li>Verify Gemfile compatibility with GitHub Pages versions</li>
+  <li>Check YAML front matter syntax (indentation matters)</li>
+  <li>Ensure image paths are correct and files exist</li>
+  <li>Validate _config.yml syntax</li>
+</ul>
+
+<h3 id="theme-customization"><strong>Theme Customization</strong></h3>
+<div class="language-scss highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Custom styling in _sass/minimal-mistakes/skins/_custom.scss</span>
+<span class="nv">$primary-color</span><span class="p">:</span> <span class="mh">#your</span><span class="o">-</span><span class="n">brand-color</span><span class="p">;</span>
+<span class="nv">$link-color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+<span class="nv">$masthead-link-color</span><span class="p">:</span> <span class="nv">$primary-color</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="advanced-configuration-tips-">Advanced Configuration Tips 💡</h2>
+
+<h3 id="custom-navigation"><strong>Custom Navigation</strong></h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _data/navigation.yml</span>
+<span class="na">main</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Blog"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/posts/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Categories"</span> 
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/categories/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">About"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/about/</span>
+  <span class="pi">-</span> <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Portfolio"</span>
+    <span class="na">url</span><span class="pi">:</span> <span class="s">/portfolio/</span>
+</code></pre></div></div>
+
+<h3 id="analytics-integration"><strong>Analytics Integration</strong></h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml analytics configuration</span>
+<span class="na">analytics</span><span class="pi">:</span>
+  <span class="na">provider</span><span class="pi">:</span> <span class="s2">"</span><span class="s">google-gtag"</span>
+  <span class="na">google</span><span class="pi">:</span>
+    <span class="na">tracking_id</span><span class="pi">:</span> <span class="s2">"</span><span class="s">G-XXXXXXXXXX"</span>
+    <span class="na">anonymize_ip</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<h3 id="social-media-optimization"><strong>Social Media Optimization</strong></h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enhanced social sharing</span>
+<span class="na">og_image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">/assets/images/site-logo.png"</span>
+<span class="na">twitter</span><span class="pi">:</span>
+  <span class="na">username</span><span class="pi">:</span> <span class="s2">"</span><span class="s">your_handle"</span>
+<span class="na">social</span><span class="pi">:</span>
+  <span class="na">type</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Person"</span>
+  <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Full</span><span class="nv"> </span><span class="s">Name"</span>
+  <span class="na">links</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">https://github.com/yourusername"</span>
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">https://linkedin.com/in/yourprofile"</span>
+</code></pre></div></div>
+
+<h2 id="content-strategy-for-technical-blogs-">Content Strategy for Technical Blogs 📝</h2>
+
+<h3 id="post-structure-framework"><strong>Post Structure Framework</strong></h3>
+<ol>
+  <li><strong>Problem Definition</strong> (Why this matters)</li>
+  <li><strong>Solution Overview</strong> (What we’ll build/learn)</li>
+  <li><strong>Step-by-Step Implementation</strong> (How to do it)</li>
+  <li><strong>Real-World Applications</strong> (Where to use it)</li>
+  <li><strong>Additional Resources</strong> (What’s next)</li>
+</ol>
+
+<h3 id="engagement-optimization"><strong>Engagement Optimization</strong></h3>
+<ul>
+  <li><strong>Code examples</strong> with syntax highlighting</li>
+  <li><strong>Screenshots</strong> for visual learners</li>
+  <li><strong>Downloadable resources</strong> (GitHub repositories)</li>
+  <li><strong>Related post suggestions</strong> (automatic with Jekyll)</li>
+</ul>
+
+<h2 id="deployment-and-maintenance-">Deployment and Maintenance 🔄</h2>
+
+<h3 id="automated-workflow"><strong>Automated Workflow</strong></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Typical publishing workflow</span>
+git add <span class="nb">.</span>
+git commit <span class="nt">-m</span> <span class="s2">"Add new post: Post Title"</span>
+git push origin main
+
+<span class="c"># GitHub Pages builds automatically</span>
+<span class="c"># Site updates in 1-2 minutes</span>
+</code></pre></div></div>
+
+<h3 id="monitoring-and-analytics"><strong>Monitoring and Analytics</strong></h3>
+<ul>
+  <li><strong>Google Analytics</strong> for traffic insights</li>
+  <li><strong>GitHub Insights</strong> for repository statistics</li>
+  <li><strong>Search Console</strong> for SEO performance</li>
+  <li><strong>PageSpeed Insights</strong> for performance monitoring</li>
+</ul>
+
+<h2 id="scaling-your-digital-presence-">Scaling Your Digital Presence 📈</h2>
+
+<p>As your content library grows, consider these advanced strategies:</p>
+
+<h3 id="content-organization"><strong>Content Organization</strong></h3>
+<ul>
+  <li><strong>Series posts</strong> for comprehensive topics</li>
+  <li><strong>Cross-references</strong> between related articles</li>
+  <li><strong>Tag taxonomy</strong> for discoverability</li>
+  <li><strong>Archive pages</strong> for historical content</li>
+</ul>
+
+<h3 id="community-building"><strong>Community Building</strong></h3>
+<ul>
+  <li><strong>Comments integration</strong> (Disqus, GitHub Discussions)</li>
+  <li><strong>Social sharing</strong> optimization</li>
+  <li><strong>Email newsletter</strong> signup (ConvertKit, Mailchimp)</li>
+  <li><strong>RSS feeds</strong> for subscribers</li>
+</ul>
+
+<h2 id="conclusion-and-next-steps-">Conclusion and Next Steps 🎯</h2>
+
+<p>GitHub Pages with Jekyll provides a robust, scalable platform for technical content creation. The combination of version control, automated deployment, and extensive customization options makes it ideal for developers and content creators who value both functionality and control.</p>
+
+<p><strong>Immediate Action Items:</strong></p>
+<ol>
+  <li><strong>Set up your repository</strong> following the naming convention</li>
+  <li><strong>Choose a theme</strong> that aligns with your content goals</li>
+  <li><strong>Plan your category structure</strong> based on your expertise areas</li>
+  <li><strong>Write your first post</strong> using the template provided</li>
+  <li><strong>Optimize for SEO</strong> from day one</li>
+</ol>
+
+<p><strong>Long-term Growth Strategy:</strong></p>
+<ul>
+  <li><strong>Consistent publishing schedule</strong> (weekly or bi-weekly)</li>
+  <li><strong>Analytics-driven content</strong> optimization</li>
+  <li><strong>Community engagement</strong> through comments and social media</li>
+  <li><strong>Performance monitoring</strong> and continuous improvement</li>
+</ul>
+
+<p>Your digital compass is now ready to guide others through the complexities of technology! 🧭</p>
+
+<hr />
+
+<h2 id="additional-resources-">Additional Resources 📚</h2>
+
+<ul>
+  <li><strong><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></strong></li>
+  <li><strong><a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes Theme Guide</a></strong></li>
+  <li><strong><a href="https://docs.github.com/en/pages">GitHub Pages Documentation</a></strong></li>
+  <li><strong><a href="https://www.markdownguide.org/cheat-sheet/">Markdown Cheatsheet</a></strong></li>
+</ul>
+
+<p><em>What’s your experience with GitHub Pages? Share your setup challenges or success stories in the comments below!</em></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/tags/#blogging" class="page__taxonomy-item p-category" rel="tag">blogging</a><span class="sep">, </span>
+    
+      <a href="/tags/#github-pages" class="page__taxonomy-item p-category" rel="tag">github-pages</a><span class="sep">, </span>
+    
+      <a href="/tags/#jekyll" class="page__taxonomy-item p-category" rel="tag">jekyll</a><span class="sep">, </span>
+    
+      <a href="/tags/#tutorial" class="page__taxonomy-item p-category" rel="tag">tutorial</a><span class="sep">, </span>
+    
+      <a href="/tags/#web-development" class="page__taxonomy-item p-category" rel="tag">web-development</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      <a href="/categories/#backend" class="page__taxonomy-item p-category" rel="tag">backend</a><span class="sep">, </span>
+    
+      <a href="/categories/#technical" class="page__taxonomy-item p-category" rel="tag">technical</a>
+    
+    </span>
+  </p>
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2024-09-28T10:00:00+08:00">September 28, 2024</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  <h4 class="page__share-title">Share on</h4>
+
+  <a href="https://x.com/intent/tweet?text=Building+Your+Digital+Presence+with+GitHub+Pages+and+Jekyll%20https%3A%2F%2Fmagicxcr7.github.io%2Ftechnical%2Fbackend%2Fgetting-started-with-github-pages%2F" class="btn btn--x" aria-label="Share on X" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on X">
+    <i class="fab fa-fw fa-x-twitter" aria-hidden="true"></i><span> X</span>
+  </a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmagicxcr7.github.io%2Ftechnical%2Fbackend%2Fgetting-started-with-github-pages%2F" class="btn btn--facebook" aria-label="Share on Facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook">
+    <i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span>
+  </a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://magicxcr7.github.io/technical/backend/getting-started-with-github-pages/" class="btn btn--linkedin" aria-label="Share on LinkedIn" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn">
+    <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span>
+  </a>
+
+  <a href="https://bsky.app/intent/compose?text=Building+Your+Digital+Presence+with+GitHub+Pages+and+Jekyll%20https%3A%2F%2Fmagicxcr7.github.io%2Ftechnical%2Fbackend%2Fgetting-started-with-github-pages%2F" class="btn btn--bluesky" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Bluesky">
+    <i class="fab fa-fw fa-bluesky" aria-hidden="true"></i><span> Bluesky</span>
+  </a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/personal-growth/technical/welcome-to-my-blog/" class="pagination--pager" title="Welcome to Archis Digital Compass!">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    
+<div class="page__related">
+  
+  <h2 class="page__related-title">You May Also Enjoy</h2>
+  <div class="grid__wrapper">
+    
+      
+      
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src="/assets/images/post-welcome-teaser.jpg" alt="">
+      </div>
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/personal-growth/technical/welcome-to-my-blog/" rel="permalink">Welcome to Archis Digital Compass!
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Welcome to Archis Digital Compass — where technology becomes accessible, inspiring, and practical! Join me on a journey to empower growth through AI, data sc...</p>
+  </article>
+</div>
+
+    
+  </div>
+</div>
+
+  
+  
+</div>
+
+      
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        
+
+<div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/magicxcr7" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="mailto:magic83w@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+
+<div class="page__footer-copyright">&copy; 2025 <a href="https://magicxcr7.github.io">Archis Digital Compass</a>. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/jekyll-themes/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
