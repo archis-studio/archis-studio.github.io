@@ -1,16 +1,16 @@
 # 網站基本設定
 locale: "zh-TW"
-title: "Archis Digital Compass"
-title_separator: "-"
-subtitle: "透過科技與 AI，成就每一個人的成長"
+title: "Archis Studio"
+title_separator: "·"
+subtitle: "Code with Style · 用優雅書寫程式碼的藝術"
 name: "Archi Chen"
-description: "專業的技術分享平台，專注於 Backend 開發、Data Science、量化交易與個人成長。讓複雜的技術變得簡單易懂，陪伴您在數位時代中成長茁壯。"
+description: "探索技術與美學的交匯點。專注於 Backend 開發、Data Science、量化交易的優雅實踐。這裡不只分享程式碼，更分享創造美好數位體驗的哲學。"
 url: "https://magicxcr7.github.io"
 baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
 teaser: "/assets/images/default-teaser.jpg"
 logo: "/assets/images/site-logo.png"
-masthead_title: "Archis Digital Compass"
+masthead_title: "Archis Studio"
 breadcrumbs: true
 words_per_minute: 200
 

@@ -61,25 +61,33 @@ content_rules:
 # === 視覺設計規範 ===
 design_guidelines:
   colors:
-    primary: "#2c3e50"      # 深藍灰
-    secondary: "#3498db"    # 藍色
-    accent: "#e74c3c"       # 紅色
-    success: "#27ae60"      # 綠色
-    warning: "#f39c12"      # 橙色
-    light_gray: "#ecf0f1"   # 淺灰
-    dark_gray: "#34495e"    # 深灰
+    primary: "#1a1a1a"         # 深黑 - 時尚經典
+    secondary: "#f8f8f8"       # 純白 - 簡約優雅
+    accent: "#d4af37"          # 金色 - 奢華點綴
+    rose_gold: "#e8b4b8"       # 玫瑰金 - 溫暖優雅
+    sage_green: "#9caf88"      # 鼠尾草綠 - 自然時尚
+    lavender: "#b19cd9"        # 薰衣草紫 - 夢幻優雅
+    charcoal: "#2d2d2d"        # 炭灰 - 現代感
+    cream: "#faf7f2"           # 奶油色 - 溫暖基調
+    coral: "#ff6b6b"           # 珊瑚色 - 活力點綴
 
   images:
-    header_ratio: "16:9"    # 1200x675px
-    teaser_ratio: "2:1"     # 400x200px
-    thumbnail_ratio: "4:3"  # 400x300px
+    header_ratio: "16:9"       # 1200x675px - 寬螢幕美學
+    teaser_ratio: "4:5"        # 400x500px - 時尚雜誌比例
+    thumbnail_ratio: "1:1"     # 正方形 - Instagram 風格
     max_size: "200KB"
     formats: ["jpg", "png", "webp"]
     
   typography:
-    chinese_font: "Noto Sans TC"
-    english_font: "Source Sans Pro"
-    code_font: "Fira Code"
+    primary_font: "Montserrat"      # 現代無襯線 - 時尚感
+    chinese_font: "Noto Sans TC"    # 繁體中文優化
+    accent_font: "Playfair Display" # 優雅襯線 - 標題用
+    code_font: "JetBrains Mono"     # 程式碼專用
+
+  fashion_aesthetics:
+    style: "極簡奢華 (Minimalist Luxury)"
+    mood: "現代、優雅、專業卻不失溫度"
+    inspiration: "北歐設計 × 日式簡約 × 現代時尚"
 
 # === 文章模板規範 ===
 post_templates:

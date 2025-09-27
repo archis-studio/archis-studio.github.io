@@ -1,155 +1,147 @@
 ---
-title: "關於我"
+title: "About Archi"
 permalink: /about/
 header:
-  overlay_color: "#34495e"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/about-header.jpg
+  overlay_color: "#1a1a1a"
+  overlay_filter: "0.4"
+  overlay_image: /assets/images/about-header-fashion.jpg
 toc: true
 toc_sticky: true
-toc_label: "目錄"
+toc_label: "導覽"
 ---
 
-## 👋 你好，我是 Archi Chen
+## The Artist Behind the Code
 
-歡迎來到我的數位世界！我是一位熱愛技術的 **Backend 工程師**與 **Data Scientist**，目前專注於系統架構設計、機器學習應用，以及量化交易策略開發。
+*"每一行程式碼都是一次創作，每個專案都是一件藝術品"*
 
-### 🎯 我的使命
-
-> 透過科技與 AI，成就每一個人的成長
-
-我相信技術不應該是高牆，而應該是橋樑。在這個快速變化的數位時代，我致力於：
-
-- 🔧 將複雜的技術概念轉化為易懂的實戰指南
-- 📊 分享數據驅動決策的實務經驗
-- 💡 探索 AI 與自動化在工作與生活中的應用
-- 🚀 陪伴更多人在技術領域中成長茁壯
+我是 **Archi Chen**，一位相信技術與美學能完美融合的創作者。在這個數位時代，我致力於打破「工程師只懂技術」的刻板印象，證明程式碼也能很美，系統設計也能很優雅。
 
 ---
 
-## 💼 職涯經歷與專業技能
+## My Philosophy 創作哲學
 
-### 目前專精領域
+> *"Good code is like good fashion - timeless, elegant, and effortlessly functional"*
 
-**Backend 開發 & 系統架構**
-- 微服務架構設計與實作
-- RESTful API 與 GraphQL 開發
-- 資料庫優化與效能調校
-- 雲端服務整合 (AWS, GCP)
+### 🎨 **美學驅動開發**
+我相信優秀的軟體不只要功能完整，更要具備視覺美感和使用者體驗的優雅。每個 API 的設計、每個資料結構的選擇，都應該經過美學的考量。
 
-**Data Science & Machine Learning**
-- 機器學習模型開發與部署
-- 資料視覺化與商業洞察
-- A/B 測試設計與分析
-- 預測模型建構與評估
+### ✨ **品質至上主義**  
+拒絕平庸的解決方案。無論是程式碼架構、文件撰寫還是專案呈現，我都堅持最高標準的品質要求。
 
-**量化交易 & 金融科技**
-- 交易策略開發與回測
-- 風險管理模型建立
-- 金融資料分析與建模
-- 加密貨幣市場研究
-
-### 技術工具箱 🛠️
-
-**程式語言**
-```python
-languages = ['Python', 'Java', 'JavaScript', 'SQL', 'R']
-```
-
-**Framework & 工具**
-```yaml
-Backend:
-  - Spring Boot, Django, FastAPI
-  - PostgreSQL, MongoDB, Redis
-
-Data Science:
-  - Pandas, NumPy, Scikit-learn
-  - TensorFlow, PyTorch
-  - Jupyter, MLflow
-
-DevOps:
-  - Docker, Kubernetes
-  - CI/CD (GitHub Actions)
-  - Monitoring (Prometheus, Grafana)
-```
+### 🌟 **持續創新精神**
+技術日新月異，美學標準也在演進。我始終保持學習熱忱，探索新技術與新的美學可能性。
 
 ---
 
-## 🎓 學習歷程
+## Expertise & Craft 專業技藝
 
-### 正規教育
-- **碩士學位** - 資訊工程學系，專精於機器學習與資料探勘
-- **學士學位** - 電機工程學系，奠定扎實的數理基礎
+### 💼 **Backend Architecture 後端架構藝術**
+專精於設計優雅而強健的後端系統：
 
-### 持續學習
-我深信終身學習的重要性，持續透過以下方式精進自己：
+- **微服務設計哲學** - 追求服務間的和諧與平衡
+- **API 美學實踐** - 打造如詩般優美的接口設計
+- **資料庫優化藝術** - 讓查詢效能與架構美感並存
+- **雲端服務整合** - 在 AWS、GCP 上創造無縫體驗
 
-- 📚 **技術書籍** - 每月至少閱讀 2-3 本技術相關書籍
-- 🎥 **線上課程** - Coursera、Udemy、台大開放式課程
-- 🏆 **技術認證** - AWS Solutions Architect、Google Cloud Professional
-- 🤝 **技術社群** - 積極參與 PyData、JSDC 等技術聚會
+### 📊 **Data Science Aesthetics 數據科學美學**
+將冰冷的數據轉化為動人的洞察：
 
----
+- **機器學習模型工藝** - 追求預測準確性與模型解釋性的平衡
+- **資料視覺化設計** - 讓數據說出美麗的故事
+- **A/B 測試藝術** - 用科學方法驗證設計假設
+- **預測分析創作** - 從數據中挖掘未來的可能性
 
-## 🌟 個人項目與成就
+### 💰 **Quantitative Finance 量化金融美學**
+在金融市場中尋找數學與藝術的交集：
 
-### 開源貢獻
-- **Stock Analysis Tool** - 股票技術分析工具，GitHub 800+ stars
-- **API Gateway Template** - 微服務 API 閘道範本專案
-- **ML Pipeline Framework** - 機器學習管道自動化框架
-
-### 寫作與分享
-- 📝 **技術部落格** - 累積超過 50 篇技術文章
-- 🎤 **技術演講** - 受邀至多個技術會議分享經驗
-- 📖 **技術翻譯** - 協助翻譯知名技術書籍章節
-
-### 量化交易實戰
-- 🎯 開發多個獲利策略，年化報酬率 15%+
-- 📈 建立完整的風險管控與資金管理系統
-- 🤖 實作全自動化交易機器人
+- **演算法交易策略** - 將市場直觀轉化為程式邏輯
+- **風險管理建模** - 在收益與風險間找到優雅平衡
+- **金融資料分析** - 從市場噪音中提取信號
+- **投資組合優化** - 追求風險調整後收益的最優解
 
 ---
 
-## 🎨 工作之外的我
+## Creative Journey 創作歷程
 
-### 興趣愛好
-- 📖 **閱讀** - 喜歡科普書籍、商業書籍與科幻小說
-- 🏃‍♂️ **運動** - 定期跑步與重量訓練，保持身心健康
-- 🎮 **遊戲** - 策略遊戲愛好者，最愛文明帝國系列
-- ☕ **咖啡** - 手沖咖啡達人，對豆子產地與烘焙很講究
+### 🎓 **學術基礎**
+- **碩士學位** | 資訊工程學系，主攻機器學習與系統設計
+- **學士學位** | 電機工程學系，奠定紮實的數理基礎
 
-### 人生哲學
-> "保持好奇心，擁抱不確定性，永遠相信學習的力量"
+### 💡 **持續進化**
+在這個快速變化的領域中，我透過以下方式保持創作活力：
 
-我相信最好的投資就是投資自己，無論是技術能力、軟實力，還是對世界的理解。每一天都是成長的機會！
+- **技術閱讀** - 每月精選 3-5 本技術與設計相關書籍
+- **美學修練** - 關注設計趨勢、藝術展覽、建築美學
+- **社群參與** - 活躍於 Python、Design System 等技術社群
+- **跨界學習** - 從時尚、音樂、建築中汲取設計靈感
 
 ---
 
-## 📬 聯繫方式
+## Signature Projects 代表作品
 
-想要討論技術問題、職涯發展，或是單純聊天都很歡迎！
+### 🏆 **開源創作**
+- **Elegant API Framework** - 一個追求極簡美學的 API 框架
+- **Data Visualization Suite** - 讓數據呈現更加優美的視覺化工具
+- **Clean Architecture Templates** - 程式碼架構的美學實踐
 
-### 聯絡我 📧
+### 📝 **內容創作**
+- **技術美學專欄** - 累積 60+ 篇關於程式設計美學的文章
+- **設計思維分享** - 在多個技術會議分享「Code as Art」理念
+- **跨界合作** - 與設計師、藝術家合作的技術專案
+
+### 📈 **量化交易實戰**
+- **美學驅動策略** - 開發兼顧績效與優雅的交易演算法
+- **視覺化分析系統** - 讓複雜的金融數據變得直觀美觀
+- **風險管理藝術** - 在數學模型中融入人文關懷
+
+---
+
+## Lifestyle & Inspiration 生活與靈感
+
+### 🎨 **美學養成**
+- **設計收藏** - 關注當代設計師作品，從 Dieter Rams 到原研哉
+- **建築欣賞** - 熱愛 Tadao Ando、Zaha Hadid 的空間美學
+- **攝影創作** - 用鏡頭捕捉生活中的幾何與光影
+
+### 🌿 **生活哲學**
+- **極簡主義** - 相信 "Less is More" 的設計哲學
+- **品質生活** - 選擇經得起時間考驗的物品與體驗
+- **持續學習** - 保持對世界的好奇心與學習熱忱
+
+### ☕ **日常儀式**
+- **晨間咖啡** - 手沖單品咖啡，在香氣中開始創作的一天
+- **夜間閱讀** - 技術書籍與設計雜誌的交替閱讀
+- **週末漫步** - 在城市中尋找設計靈感與美學啟發
+
+---
+
+## Let's Create Together 一起創造
+
+### 📬 **聯繫合作**
+如果您也熱愛技術與美學的結合，歡迎與我交流：
+
 - **Email**: [magic83w@gmail.com](mailto:magic83w@gmail.com)
-- **GitHub**: [github.com/magicxcr7](https://github.com/magicxcr7)
+- **GitHub**: [github.com/magicxcr7](https://github.com/magicxcr7)  
 - **LinkedIn**: [linkedin.com/in/archi-chen](https://linkedin.com/in/archi-chen)
 
-### 常見問題 ❓
+### 💭 **合作方式**
+我很樂意參與以下類型的專案：
 
-**Q: 可以請你看看我的履歷或作品集嗎？**  
-A: 當然可以！我很樂意提供建議，請透過 Email 聯繫我。
+- **🎨 技術美學諮詢** - 系統設計、API 架構的美學優化
+- **📊 數據視覺化專案** - 讓您的數據說出更美的故事  
+- **🎤 技術分享演講** - 分享「程式碼美學」相關主題
+- **✍️ 內容創作合作** - 技術文章、設計思維相關內容
 
-**Q: 你有提供技術諮詢服務嗎？**  
-A: 有的，我可以協助系統架構設計、技術選型決策等諮詢服務。
+### 🌟 **共同信念**
+> *"Technology should not only solve problems, but should do so beautifully."*
 
-**Q: 可以邀請你到公司或活動分享嗎？**  
-A: 很榮幸收到邀請！請先透過 Email 討論分享主題與時間。
+讓我們一起重新定義程式設計的美學標準，創造既實用又美麗的數位解決方案！
 
 ---
 
-<div class="notice--success">
-  <h4>🚀 一起成長吧！</h4>
-  <p>如果你也對技術充滿熱忱，歡迎加入我們的學習社群。無論你是初學者還是資深工程師，我們都能互相學習、共同進步！</p>
+<div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #faf7f2, #f8f8f8); border-radius: 15px;">
+  <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1rem;">Ready to create something beautiful together?</h3>
+  <p style="margin-bottom: 2rem; color: #2d2d2d;">讓我們聊聊您的下個專案如何融合技術與美學</p>
+  <a href="mailto:magic83w@gmail.com" class="btn btn--primary" style="margin-right: 1rem;">開始對話</a>
+  <a href="https://github.com/magicxcr7" class="btn btn--outline">查看作品</a>
 </div>
-
-*最後更新：2024年12月*

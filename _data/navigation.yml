@@ -1,46 +1,46 @@
-# 主要導航選單
+# 主要導航選單 - Fashion Style
 main:
-  - title: "🏠 首頁"
+  - title: "Studio"
     url: /
-  - title: "👨‍💻 關於我"
+  - title: "About"
     url: /about/
-  - title: "📚 技術文章"
+  - title: "Stories"
     url: /posts/
-  - title: "📂 文章分類"
+  - title: "Collections"
     url: /categories/
 
 # 分類導航 (用於分類頁面側邊欄)
-categories:
-  - title: "💻 技術開發"
+collections:
+  - title: "Code & Design"
     children:
-      - title: "技術分享"
+      - title: "Code Artistry"
         url: /categories/technical/
-        description: "程式設計通用經驗"
-      - title: "Backend 開發"
+        description: "程式設計美學"
+      - title: "Backend Elegance"
         url: /categories/backend/
-        description: "伺服器端技術"
+        description: "優雅的後端架構"
       - title: "Data Engineering"
         url: /categories/data-engineer/
-        description: "資料工程實務"
-      - title: "Data Science"
+        description: "資料工程藝術"
+      - title: "Data Poetry"
         url: /categories/data-science/
-        description: "機器學習分析"
-  - title: "💰 金融科技"
+        description: "數據科學詩學"
+  - title: "Innovation & Growth"
     children:
-      - title: "量化交易"
+      - title: "Quant Aesthetics"
         url: /categories/quant-trading/
-        description: "演算法交易策略"
-      - title: "金融科技"
+        description: "量化交易美學"
+      - title: "FinTech Style"
         url: /categories/finance/
-        description: "FinTech 應用"
-  - title: "🚀 其他領域"
+        description: "金融科技風格"
+  - title: "Lifestyle & Philosophy"
     children:
-      - title: "能源管理"
+      - title: "Sustainable Tech"
         url: /categories/energy-management/
-        description: "智慧電網技術"
-      - title: "數位廣告"
+        description: "永續科技風尚"
+      - title: "Digital Marketing"
         url: /categories/digital-advertising/
-        description: "行銷技術分析"
-      - title: "個人成長"
+        description: "數位行銷美學"
+      - title: "Elegant Growth"
         url: /categories/personal-growth/
-        description: "職涯發展心得"
+        description: "優雅成長哲學"

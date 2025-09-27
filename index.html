@@ -2,42 +2,42 @@
 layout: home
 author_profile: true
 header:
-  overlay_color: "#2c3e50"
-  overlay_filter: "0.5"
-  overlay_image: /assets/images/home-header.jpg
+  overlay_color: "#1a1a1a"
+  overlay_filter: "0.3"
+  overlay_image: /assets/images/home-header-fashion.jpg
   actions:
-    - label: "開始探索 🚀"
+    - label: "探索作品集"
       url: "/posts/"
       btn_class: "btn--primary btn--large"
-  caption: "透過科技與 AI，成就每一個人的成長"
-excerpt: "歡迎來到 **Archis Digital Compass** 數位指南針！<br/>這裡分享 Backend 開發、Data Science、量化交易與個人成長的實戰經驗 ✨"
+  caption: "Code with Style · 用優雅書寫程式碼的藝術"
+excerpt: "歡迎來到 **Archis Studio**<br/>一個追求技術與美學完美融合的創作空間 ✨"
 intro: 
-  - excerpt: '我是 **Archi Chen**，一位熱愛技術的 Backend 工程師與 Data Scientist 🤓<br/>在這裡，我將複雜的技術概念轉化為易懂的實戰指南，陪伴您在數位時代中持續成長茁壯！'
+  - excerpt: '我是 **Archi Chen**，一位相信程式碼也能很美的工程師 💫<br/>專精於 Backend 開發與 Data Science，致力於創造既優雅又實用的數位解決方案'
 
 feature_row:
-  - image_path: /assets/images/feature-technical.jpg
-    image_caption: "技術開發"
-    alt: "技術分享文章"
-    title: "💻 技術開發"
-    excerpt: "Backend 開發、Data Engineering、系統架構設計的實戰經驗分享。從 API 設計到微服務架構，帶你深入後端技術的精髓！"
+  - image_path: /assets/images/feature-code-artistry.jpg
+    image_caption: "程式藝術"
+    alt: "優雅的程式設計"
+    title: "Code Artistry"
+    excerpt: "探索程式設計的美學哲學。從 Clean Architecture 到優雅的 API 設計，每一行程式碼都是藝術品。"
     url: "/categories/technical/"
-    btn_label: "閱讀更多 →"
+    btn_label: "品味程式之美"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feature-finance.jpg
-    image_caption: "金融科技"
-    alt: "量化交易文章" 
-    title: "📈 金融科技"
-    excerpt: "量化交易策略、金融建模、投資分析的深度探討。用程式碼打造你的交易機器人，讓數據為你賺錢！"
-    url: "/categories/quant-trading/"
-    btn_label: "閱讀更多 →"
+  - image_path: /assets/images/feature-data-poetry.jpg
+    image_caption: "數據詩學"
+    alt: "數據科學美學" 
+    title: "Data Poetry"
+    excerpt: "將冰冷的數據轉化為動人的故事。Machine Learning 不只是演算法，更是理解世界的藝術。"
+    url: "/categories/data-science/"
+    btn_label: "聆聽數據之歌"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feature-growth.jpg
-    image_caption: "成長學習"
-    alt: "個人成長文章"
-    title: "🌟 成長學習"
-    excerpt: "職涯發展、學習方法、生產力提升的心得分享。在技術路上不孤單，一起成為更好的自己！"
+  - image_path: /assets/images/feature-growth-elegance.jpg
+    image_caption: "優雅成長"
+    alt: "個人成長美學"
+    title: "Elegant Growth"
+    excerpt: "成長如同時尚，需要品味與堅持。分享職涯路上的優雅轉身與美好蛻變。"
     url: "/categories/personal-growth/"
-    btn_label: "閱讀更多 →" 
+    btn_label: "開啟成長之旅" 
     btn_class: "btn--primary"
 ---
 
@@ -45,38 +45,59 @@ feature_row:
 
 {% include feature_row %}
 
-## 最新文章 📚
+## Latest Stories 最新故事
 
+<div class="archive-stories">
 {% for post in site.posts limit:6 %}
   {% include archive-single.html %}
 {% endfor %}
+</div>
 
-<div class="text-center">
-  <a href="/posts/" class="btn btn--primary btn--large">查看所有文章 📖</a>
+<div class="text-center" style="margin-top: 3rem;">
+  <a href="/posts/" class="btn btn--primary btn--large">探索所有故事</a>
 </div>
 
 ---
 
-## 關於這個網站 ℹ️
+## About This Space 關於這個空間
 
-這裡是我分享技術學習心得與職場經驗的地方。無論您是：
+<div class="about-space" style="background: linear-gradient(135deg, #faf7f2, #f8f8f8); padding: 3rem; border-radius: 20px; margin: 2rem 0;">
 
-- 🔧 **Backend 工程師** - 想學習系統設計與 API 開發
-- 📊 **Data Scientist** - 尋找機器學習與資料分析的實戰案例  
-- 💰 **量化交易者** - 想了解演算法交易與金融建模
-- 🚀 **職場工作者** - 希望提升技能與職涯發展
+這裡是技術與美學交織的創作空間，專為追求品質的開發者而設計：
 
-都能在這裡找到對您有用的內容！每週更新 1-2 篇高品質技術文章 📝
+<div class="space-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
 
-### 為什麼選擇這裡？ 🎯
+<div style="text-align: center;">
+**🎨 設計思維**  
+每個解決方案都經過精心設計，追求功能與美感的完美平衡
+</div>
 
-✅ **實戰導向** - 每篇文章都包含可執行的程式碼或具體案例  
-✅ **深入淺出** - 用平易近人的語言解釋複雜的技術概念  
-✅ **持續更新** - 跟上最新的技術趨勢與實務做法  
-✅ **中文內容** - 專為台灣讀者量身打造的繁體中文內容  
-✅ **社群互動** - 歡迎在文章下方留言討論與交流
+<div style="text-align: center;">
+**✨ 品質至上**  
+只分享經過實戰驗證的高品質內容，拒絕平庸與將就
+</div>
 
-<div class="notice--success">
-  <h4>🎉 加入我們的學習社群！</h4>
-  <p>想要第一時間收到更新？歡迎追蹤我的 <strong><a href="https://github.com/magicxcr7">GitHub</a></strong> 或透過 <strong><a href="mailto:magic83w@gmail.com">Email</a></strong> 與我聯繫！一起在技術的道路上成長 💪</p>
+<div style="text-align: center;">
+**🌟 持續創新**  
+緊跟技術潮流，探索新的可能性，永遠保持創作熱情
+</div>
+
+</div>
+
+### 我們的創作理念
+
+> *"好的程式碼就像好的時尚單品 - 簡約、優雅、經得起時間考驗"*
+
+在這裡，我們不只談技術，更談品味。不只寫程式碼，更創造體驗。每一個專案都是一次美學實踐，每一行程式碼都承載著對完美的追求。
+
+</div>
+
+<div class="cta-section" style="text-align: center; margin-top: 3rem;">
+  <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">準備好開始這趟美學之旅了嗎？</h3>
+  <p style="font-size: 1.1rem; color: #2d2d2d; margin-bottom: 2rem;">加入我們，一起重新定義程式設計的美學標準</p>
+  
+  <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+    <a href="mailto:magic83w@gmail.com" class="btn btn--primary">聯繫合作</a>
+    <a href="https://github.com/magicxcr7" class="btn btn--outline">GitHub 作品集</a>
+  </div>
 </div>
