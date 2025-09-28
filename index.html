@@ -2,40 +2,40 @@
 layout: home
 author_profile: true
 header:
-  overlay_color: "#1a1a1a"
-  overlay_filter: "0.3"
-  overlay_image: /assets/images/home-header-fashion.jpg
+  overlay_color: "#0a0a0a"
+  overlay_filter: "0.4"
+  overlay_image: /assets/images/hero-ai-coding.jpg
   actions:
-    - label: "探索作品集"
-      url: "/posts/"
+    - label: "開始學習 AI Coding 🚀"
+      url: "/blog/"
       btn_class: "btn--primary btn--large"
-  caption: "Code with Style · 用優雅書寫程式碼的藝術"
-excerpt: "歡迎來到 **Archis Studio**<br/>一個追求技術與美學完美融合的創作空間 ✨"
+  caption: "Learning AI Coding · 有趣且易懂"
+excerpt: "歡迎來到 **Archis Digital Compass**<br/>讓 AI Coding 變得有趣且容易上手的學習空間 ⚡"
 intro: 
-  - excerpt: '我是 **Archi Chen**，一位相信程式碼也能很美的工程師 💫<br/>專精於 Backend 開發與 Data Science，致力於創造既優雅又實用的數位解決方案'
+  - excerpt: '我是 **Archi Chen**，相信學習程式設計應該是件有趣的事 🎯<br/>專注分享 AI、Backend、Data Science 的實戰經驗，用最簡單的語言讓每個人都能享受 Coding 的樂趣'
 
 feature_row:
-  - image_path: /assets/images/feature-code-artistry.jpg
-    image_caption: "程式藝術"
-    alt: "優雅的程式設計"
-    title: "Code Artistry"
-    excerpt: "探索程式設計的美學哲學。從 Clean Architecture 到優雅的 API 設計，每一行程式碼都是藝術品。"
+  - image_path: /assets/images/feature-ai-tools.jpg
+    image_caption: "AI 工具應用"
+    alt: "AI 工具實戰應用"
+    title: "🤖 AI 工具實戰"
+    excerpt: "從 ChatGPT 到 GitHub Copilot，學習如何用 AI 工具提升開發效率。讓 AI 成為你最佳的編程夥伴！"
+    url: "/categories/ai-applications/"
+    btn_label: "探索 AI 工具"
+    btn_class: "btn--primary"
+  - image_path: /assets/images/feature-coding-fun.jpg
+    image_caption: "有趣程式設計"
+    alt: "程式設計樂趣" 
+    title: "💻 程式設計樂趣"
+    excerpt: "Backend 開發、資料分析不再枯燥！用實戰專案和有趣案例，讓你愛上寫程式的每一刻。"
     url: "/categories/technical/"
-    btn_label: "品味程式之美"
+    btn_label: "發現程式之美"
     btn_class: "btn--primary"
-  - image_path: /assets/images/feature-data-poetry.jpg
-    image_caption: "數據詩學"
-    alt: "數據科學美學" 
-    title: "Data Poetry"
-    excerpt: "將冰冷的數據轉化為動人的故事。Machine Learning 不只是演算法，更是理解世界的藝術。"
-    url: "/categories/data-science/"
-    btn_label: "聆聽數據之歌"
-    btn_class: "btn--primary"
-  - image_path: /assets/images/feature-growth-elegance.jpg
-    image_caption: "優雅成長"
-    alt: "個人成長美學"
-    title: "Elegant Growth"
-    excerpt: "成長如同時尚，需要品味與堅持。分享職涯路上的優雅轉身與美好蛻變。"
+  - image_path: /assets/images/feature-growth-mindset.jpg
+    image_caption: "學習成長"
+    alt: "持續學習成長"
+    title: "🌱 學習無止境"
+    excerpt: "分享學習心得、職場經驗與成長思維。一起在技術的道路上持續進步，享受學習的過程。"
     url: "/categories/personal-growth/"
     btn_label: "開啟成長之旅" 
     btn_class: "btn--primary"
@@ -45,9 +45,9 @@ feature_row:
 
 {% include feature_row %}
 
-## Latest Stories 最新故事
+## 🔥 最新學習內容
 
-<div class="archive-stories">
+<div class="latest-posts">
 {% assign posts_by_update = site.posts | sort: 'last_modified_at' | reverse %}
 {% for post in posts_by_update limit:6 %}
   {% include archive-single.html %}
@@ -55,50 +55,187 @@ feature_row:
 </div>
 
 <div class="text-center" style="margin-top: 3rem;">
-  <a href="/posts/" class="btn btn--primary btn--large">探索所有故事</a>
+  <a href="/blog/" class="btn btn--primary btn--large">查看所有文章</a>
 </div>
 
 ---
 
-## About This Space 關於這個空間
+## 🎯 為什麼選擇在這裡學習？
 
-<div class="about-space" style="background: linear-gradient(135deg, #faf7f2, #f8f8f8); padding: 3rem; border-radius: 20px; margin: 2rem 0;">
-
-這裡是技術與美學交織的創作空間，專為追求品質的開發者而設計：
-
-<div class="space-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-
-<div style="text-align: center;">
-**🎨 設計思維**  
-每個解決方案都經過精心設計，追求功能與美感的完美平衡
-</div>
-
-<div style="text-align: center;">
-**✨ 品質至上**  
-只分享經過實戰驗證的高品質內容，拒絕平庸與將就
-</div>
-
-<div style="text-align: center;">
-**🌟 持續創新**  
-緊跟技術潮流，探索新的可能性，永遠保持創作熱情
-</div>
-
-</div>
-
-### 我們的創作理念
-
-> *"好的程式碼就像好的時尚單品 - 簡約、優雅、經得起時間考驗"*
-
-在這裡，我們不只談技術，更談品味。不只寫程式碼，更創造體驗。每一個專案都是一次美學實踐，每一行程式碼都承載著對完美的追求。
-
-</div>
-
-<div class="cta-section" style="text-align: center; margin-top: 3rem;">
-  <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 1rem;">準備好開始這趟美學之旅了嗎？</h3>
-  <p style="font-size: 1.1rem; color: #2d2d2d; margin-bottom: 2rem;">加入我們，一起重新定義程式設計的美學標準</p>
-  
-  <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <a href="mailto:magic83w@gmail.com" class="btn btn--primary">聯繫合作</a>
-    <a href="https://github.com/magicxcr7" class="btn btn--outline">GitHub 作品集</a>
+<div class="why-learn-here">
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🎮</div>
+      <h3>學習很有趣</h3>
+      <p>用遊戲化思維學程式，每個概念都用生活化例子解釋，讓學習變成一種享受而不是痛苦。</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🛠️</div>
+      <h3>實戰導向</h3>
+      <p>每篇文章都包含完整的程式碼範例和實際專案，學完馬上就能應用到工作或個人專案中。</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🤖</div>
+      <h3>AI 時代必備</h3>
+      <p>深入分享各種 AI 工具的使用技巧，讓你在 AI 時代保持競爭力，成為更高效的開發者。</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🌍</div>
+      <h3>繁體中文友善</h3>
+      <p>專為台灣開發者設計的內容，技術術語保持英文，說明用繁體中文，學習無障礙。</p>
+    </div>
   </div>
 </div>
+
+---
+
+## 💡 學習路徑建議
+
+<div class="learning-path">
+  <div class="path-section">
+    <h3>🚀 新手入門</h3>
+    <p>如果你剛開始接觸程式設計，建議從<strong>個人成長</strong>分類開始，了解學習方法和心態建立。</p>
+  </div>
+  
+  <div class="path-section">
+    <h3>⚡ 進階實戰</h3>
+    <p>有基礎程式設計經驗？直接跳到<strong>技術分享</strong>或<strong>AI 應用</strong>，學習最新的開發技巧。</p>
+  </div>
+  
+  <div class="path-section">
+    <h3>📈 專業發展</h3>
+    <p>想要專精某個領域？可以深入<strong>金融科技</strong>或<strong>數位行銷</strong>的專業應用。</p>
+  </div>
+</div>
+
+---
+
+<div class="cta-section">
+  <h2>🎉 準備好開始這趟有趣的 Coding 之旅了嗎？</h2>
+  <p>加入我們，一起用最有趣的方式學習 AI 和程式設計！</p>
+  
+  <div class="cta-buttons">
+    <a href="/blog/" class="btn btn--primary btn--large">開始學習</a>
+    <a href="/about/" class="btn btn--outline btn--large">認識 Archi</a>
+    <a href="mailto:magic83w@gmail.com" class="btn btn--outline">聯繫討論</a>
+  </div>
+</div>
+
+<style>
+/* 自定義首頁樣式 */
+.why-learn-here {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 3rem 2rem;
+  margin: 2rem 0;
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  background: #2a2a2a;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgba(0, 217, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #00d9ff;
+  box-shadow: 0 10px 25px rgba(0, 217, 255, 0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  color: #00d9ff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #a1a1aa;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.learning-path {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.path-section {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #00ff88;
+}
+
+.path-section h3 {
+  color: #00ff88;
+  margin-bottom: 0.8rem;
+}
+
+.path-section p {
+  color: #a1a1aa;
+  line-height: 1.6;
+}
+
+.cta-section {
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  margin-top: 4rem;
+  border: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.cta-section h2 {
+  background: linear-gradient(135deg, #00d9ff 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.latest-posts .archive__item {
+  background: #1a1a1a !important;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+</style>

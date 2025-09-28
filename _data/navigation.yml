@@ -1,13 +1,13 @@
-# 主要導航選單 - Fashion Style
+# 主要導航選單 - AI Coding Theme
 main:
-  - title: "Studio"
+  - title: "Home"
     url: /
+  - title: "Blog"
+    url: /blog/
   - title: "About"
     url: /about/
-  - title: "Stories"
-    url: /posts/
-  - title: "Collections"
-    url: /categories/
+  - title: "Contact"
+    url: "mailto:magic83w@gmail.com"
 
 # 分類導航 (用於分類頁面側邊欄)
 collections:

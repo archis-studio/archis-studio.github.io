@@ -1,16 +1,16 @@
 # 網站基本設定
 locale: "zh-TW"
-title: "Archis Studio"
+title: "Archis Digital Compass"
 title_separator: "·"
-subtitle: "Code with Style · 用優雅書寫程式碼的藝術"
+subtitle: "Learning AI Coding · 有趣且易懂"
 name: "Archi Chen"
-description: "探索技術與美學的交匯點。專注於 Backend 開發、Data Science、量化交易的優雅實踐。這裡不只分享程式碼，更分享創造美好數位體驗的哲學。"
+description: "用最有趣的方式學習 AI Coding！專注分享 AI 工具應用、程式設計、數據分析的實戰經驗。讓每個人都能享受 Coding 的樂趣。"
 url: "https://magicxcr7.github.io"
 baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
 teaser: "/assets/images/default-teaser.jpg"
 logo: "/assets/images/site-logo.png"
-masthead_title: "Archis Studio"
+masthead_title: "Archis Digital Compass"
 breadcrumbs: true
 words_per_minute: 200
 
@@ -58,7 +58,7 @@ analytics:
 author:
   name: "Archi Chen"
   avatar: "/assets/images/bio-photo.jpg"
-  bio: "Backend 工程師 | Data Scientist | 量化交易研究員<br/>熱衷於用技術解決實際問題，分享學習心得與職場經驗"
+  bio: "AI Coding 愛好者 | Backend 工程師 | 讓學習變得有趣<br/>分享 AI 工具應用與程式設計的實戰經驗，用最簡單的語言讓每個人都能享受 Coding"
   location: "台北, 台灣"
   email: "magic83w@gmail.com"
   links:
@@ -233,4 +233,4 @@ defaults:
 
 # 主題設定
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "contrast"
+minimal_mistakes_skin: "dark"
