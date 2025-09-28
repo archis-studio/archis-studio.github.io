@@ -1,0 +1,235 @@
+<!-- 學習曲線 Hero SVG 模板 -->
+<!-- 完整的像素風格學習進度視覺化 -->
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  
+  <defs>
+    <!-- 舒適閱讀版色彩定義 -->
+    <linearGradient id="stageGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#388E3C;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#0277BD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E91E63;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- 像素網格 Pattern -->
+    <pattern id="pixelGrid" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="none" stroke="rgba(2,119,189,0.03)" stroke-width="0.5"/>
+    </pattern>
+    
+    <!-- 發光效果 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- 像素陰影 -->
+    <filter id="pixelShadow">
+      <feOffset in="SourceGraphic" dx="3" dy="3"/>
+      <feFlood flood-color="rgba(0,0,0,0.3)"/>
+      <feComposite in2="SourceGraphic"/>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 背景 -->
+  <rect width="800" height="400" fill="#0a0a0a"/>
+  <rect width="800" height="400" fill="url(#pixelGrid)" opacity="0.5"/>
+  
+  <!-- 背景裝飾元素 -->
+  <g id="backgroundDecorations" opacity="0.1">
+    <!-- 左上角裝飾 -->
+    <circle cx="100" cy="80" r="25" fill="#0277BD"/>
+    <rect x="140" y="60" width="16" height="16" fill="#388E3C"/>
+    
+    <!-- 右上角裝飾 -->
+    <polygon points="700,60 720,80 700,100 680,80" fill="#7B1FA2"/>
+    <circle cx="650" cy="90" r="12" fill="#FF9800"/>
+    
+    <!-- 右下角裝飾 -->
+    <rect x="720" y="320" width="24" height="24" fill="#E91E63"/>
+    <circle cx="680" cy="340" r="18" fill="#0277BD"/>
+  </g>
+  
+  <!-- 主標題 -->
+  <text x="400" y="50" text-anchor="middle" fill="#f5f5f5" 
+        font-family="JetBrains Mono, monospace" font-size="24" font-weight="bold">
+    Learning Curve Journey
+  </text>
+  
+  <text x="400" y="75" text-anchor="middle" fill="#b3b3b3" 
+        font-family="Inter, sans-serif" font-size="14">
+    Personal Growth Through Technology &amp; AI
+  </text>
+  
+  <!-- 學習階段視覺化 -->
+  <g id="learningStages" transform="translate(120, 320)">
+    
+    <!-- Stage 1: 新手 (Beginner) -->
+    <g id="stage1">
+      <!-- 主柱 -->
+      <rect x="0" y="0" width="40" height="-60" fill="#388E3C" 
+            filter="url(#pixelShadow)" class="pixel-perfect"/>
+      <!-- 發光頂部 -->
+      <rect x="2" y="-58" width="36" height="6" fill="#4CAF50" opacity="0.7"/>
+      <!-- 等級指示 -->
+      <circle cx="20" cy="-70" r="8" fill="#FFC107" opacity="0.8"/>
+      <text x="20" y="-66" text-anchor="middle" fill="#0a0a0a" 
+            font-family="JetBrains Mono" font-size="8" font-weight="bold">1</text>
+      <!-- 標籤 -->
+      <text x="20" y="20" text-anchor="middle" fill="#f5f5f5" 
+            font-family="JetBrains Mono" font-size="11" font-weight="600">新手</text>
+      <text x="20" y="35" text-anchor="middle" fill="#b3b3b3" 
+            font-family="Inter" font-size="9">Beginner</text>
+    </g>
+    
+    <!-- Stage 2: AI工具 -->
+    <g id="stage2" transform="translate(110, 0)">
+      <rect x="0" y="0" width="40" height="-100" fill="#FF9800" 
+            filter="url(#pixelShadow)" class="pixel-perfect"/>
+      <rect x="2" y="-98" width="36" height="6" fill="#FFC107" opacity="0.7"/>
+      <circle cx="20" cy="-110" r="8" fill="#FFC107" opacity="0.8"/>
+      <text x="20" y="-106" text-anchor="middle" fill="#0a0a0a" 
+            font-family="JetBrains Mono" font-size="8" font-weight="bold">2</text>
+      <text x="20" y="20" text-anchor="middle" fill="#f5f5f5" 
+            font-family="JetBrains Mono" font-size="11" font-weight="600">AI工具</text>
+      <text x="20" y="35" text-anchor="middle" fill="#b3b3b3" 
+            font-family="Inter" font-size="9">AI Tools</text>
+    </g>
+    
+    <!-- Stage 3: 程式設計 -->
+    <g id="stage3" transform="translate(220, 0)">
+      <rect x="0" y="0" width="40" height="-140" fill="#7B1FA2" 
+            filter="url(#pixelShadow)" class="pixel-perfect"/>
+      <rect x="2" y="-138" width="36" height="6" fill="#9C27B0" opacity="0.7"/>
+      <circle cx="20" cy="-150" r="8" fill="#FFC107" opacity="0.8"/>
+      <text x="20" y="-146" text-anchor="middle" fill="#0a0a0a" 
+            font-family="JetBrains Mono" font-size="8" font-weight="bold">3</text>
+      <text x="20" y="20" text-anchor="middle" fill="#f5f5f5" 
+            font-family="JetBrains Mono" font-size="11" font-weight="600">程式設計</text>
+      <text x="20" y="35" text-anchor="middle" fill="#b3b3b3" 
+            font-family="Inter" font-size="9">Programming</text>
+    </g>
+    
+    <!-- Stage 4: 專業化 -->
+    <g id="stage4" transform="translate(330, 0)">
+      <rect x="0" y="0" width="40" height="-180" fill="#0277BD" 
+            filter="url(#pixelShadow)" class="pixel-perfect"/>
+      <rect x="2" y="-178" width="36" height="6" fill="#2196F3" opacity="0.7"/>
+      <circle cx="20" cy="-190" r="8" fill="#FFC107" opacity="0.8"/>
+      <text x="20" y="-186" text-anchor="middle" fill="#0a0a0a" 
+            font-family="JetBrains Mono" font-size="8" font-weight="bold">4</text>
+      <text x="20" y="20" text-anchor="middle" fill="#f5f5f5" 
+            font-family="JetBrains Mono" font-size="11" font-weight="600">專業化</text>
+      <text x="20" y="35" text-anchor="middle" fill="#b3b3b3" 
+            font-family="Inter" font-size="9">Specialization</text>
+    </g>
+    
+    <!-- Stage 5: 專家 -->
+    <g id="stage5" transform="translate(440, 0)">
+      <rect x="0" y="0" width="40" height="-220" fill="#E91E63" 
+            filter="url(#pixelShadow)" class="pixel-perfect"/>
+      <rect x="2" y="-218" width="36" height="6" fill="#F06292" opacity="0.7"/>
+      <!-- 特殊專家標記 -->
+      <polygon points="20,-235 25,-245 15,-245" fill="#FFC107"/>
+      <circle cx="20" cy="-230" r="8" fill="#FFC107" opacity="0.9"/>
+      <text x="20" y="-226" text-anchor="middle" fill="#0a0a0a" 
+            font-family="JetBrains Mono" font-size="8" font-weight="bold">★</text>
+      <text x="20" y="20" text-anchor="middle" fill="#f5f5f5" 
+            font-family="JetBrains Mono" font-size="11" font-weight="600">專家</text>
+      <text x="20" y="35" text-anchor="middle" fill="#b3b3b3" 
+            font-family="Inter" font-size="9">Expert</text>
+    </g>
+    
+    <!-- 連接路徑 -->
+    <g id="connectionPath" opacity="0.8">
+      <!-- 像素風格連接線 -->
+      <path d="M 40 -30 L 110 -70 M 150 -70 L 220 -110 M 260 -110 L 330 -150 M 370 -150 L 440 -190" 
+            stroke="url(#stageGradient)" 
+            stroke-width="4" 
+            fill="none"
+            stroke-linecap="square"
+            stroke-dasharray="12,6">
+        <!-- 路徑動畫 -->
+        <animate attributeName="stroke-dashoffset" values="18;0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- 成長箭頭 -->
+      <path d="M 470 -200 L 490 -220 M 480 -230 L 490 -220 L 480 -210" 
+            stroke="#FFC107" 
+            stroke-width="4" 
+            fill="none"
+            stroke-linecap="square"/>
+    </g>
+  </g>
+  
+  <!-- 進度條區域 -->
+  <g id="progressSection" transform="translate(200, 350)">
+    <!-- 進度條外框 -->
+    <rect x="0" y="0" width="400" height="24" fill="#1a1a1a" 
+          stroke="#0277BD" stroke-width="2" class="pixel-perfect"/>
+    
+    <!-- 進度填充 -->
+    <rect x="2" y="2" width="300" height="20" fill="url(#stageGradient)" 
+          class="progress-fill">
+      <!-- 進度動畫 -->
+      <animate attributeName="width" values="0;300" dur="2s" 
+               begin="0s" fill="freeze"/>
+    </rect>
+    
+    <!-- 進度文字 -->
+    <text x="200" y="38" text-anchor="middle" fill="#b3b3b3" 
+          font-family="JetBrains Mono" font-size="12">
+      Learning Progress: 75% Complete
+    </text>
+  </g>
+  
+  <!-- 裝飾性遊戲元素 -->
+  <g id="gameElements" opacity="0.6">
+    <!-- 經驗值點 -->
+    <circle cx="180" cy="150" r="3" fill="#FFC107">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="320" cy="120" r="3" fill="#FFC107">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="460" cy="90" r="3" fill="#FFC107">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- 成就星星 -->
+    <g transform="translate(600, 120)">
+      <polygon points="0,-8 2,-2 8,0 2,2 0,8 -2,2 -8,0 -2,-2" fill="#FFC107">
+        <animateTransform attributeName="transform" type="rotate" 
+                         values="0;360" dur="4s" repeatCount="indefinite"/>
+      </polygon>
+    </g>
+  </g>
+  
+  <!-- 像素完美樣式 -->
+  <style>
+    <![CDATA[
+    .pixel-perfect {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      shape-rendering: crispEdges;
+    }
+    
+    .progress-fill {
+      image-rendering: pixelated;
+    }
+    
+    text {
+      image-rendering: auto;
+      text-rendering: optimizeLegibility;
+    }
+    ]]>
+  </style>
+</svg>
