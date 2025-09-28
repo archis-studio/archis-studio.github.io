@@ -18,18 +18,29 @@
 // Import Pixel Art Framework
 @import "pixel-style";
 
-// Enhanced Dark AI Color Palette
+// Enhanced Dark AI Color Palette - 舒適閱讀版 (方案 C)
 $dark-bg: #0a0a0a;          // 深黑背景
 $dark-surface: #1a1a1a;     // 卡片背景
 $dark-surface-2: #2a2a2a;   // 次級表面
-$ai-blue: #00d9ff;          // AI 藍 (主要強調色)
-$ai-green: #00ff88;         // AI 綠 (成功/學習)
-$ai-purple: #8b5cf6;        // AI 紫 (創意/代碼)
-$ai-yellow: #fbbf24;        // AI 黃 (警告/提示)
-$pixel-accent: #ff6b6b;     // 像素紅 (重點強調)
-$text-primary: #ffffff;      // 主要文字
-$text-secondary: #a1a1aa;   // 次要文字
-$text-muted: #71717a;       // 輔助文字
+
+// 主色系 - 舒適閱讀優化
+$ai-blue: #0277BD;          // 極深信任藍 - 專業可靠，眼睛舒適
+$ai-green: #388E3C;         // 深森林綠 - 成長穩重，自然和諧
+$ai-purple: #7B1FA2;        // 深紫智慧色 - 創意深度，神秘優雅
+$ai-yellow: #FF9800;        // 溫暖橙色 - 友善活力，溫馨提醒
+$pixel-accent: #E91E63;     // 深粉強調色 - 重點突出，適度吸睛
+
+// 遊戲風格輔助色系 (為未來功能預留)
+$game-health: #4CAF50;      // 生命值綠 - 成功完成
+$game-mana: #2196F3;        // 魔力值藍 - 學習能量
+$game-exp: #FFC107;         // 經驗值金 - 成長進度
+$game-rare: #9C27B0;        // 稀有紫 - 特殊成就
+$game-epic: #FF5722;        // 史詩橙 - 重大突破
+
+// 舒適閱讀文字色系
+$text-primary: #f5f5f5;     // 主要文字 (柔和白色，減少刺眼)
+$text-secondary: #b3b3b3;   // 次要文字 (舒適灰色)
+$text-muted: #888888;       // 輔助文字 (深灰色，低對比)
 
 /* ===== ENHANCED DARK THEME BASE ===== */
 body {
@@ -39,7 +50,7 @@ body {
   color: $text-primary;
   background-color: $dark-bg;
   
-  // 全局像素完美滾動條
+  // 全局像素完美滾動條 - 舒適閱讀版
   &::-webkit-scrollbar {
     width: 12px;
   }
@@ -53,7 +64,7 @@ body {
     border: 2px solid $dark-surface;
     
     &:hover {
-      background: linear-gradient(180deg, lighten($ai-blue, 10%), lighten($ai-purple, 10%));
+      background: linear-gradient(180deg, lighten($ai-blue, 5%), lighten($ai-purple, 5%));
     }
   }
 }
@@ -103,11 +114,11 @@ h3 {
   shape-rendering: crispEdges;
 }
 
-/* ===== ENHANCED CODE STYLING ===== */
+/* ===== ENHANCED CODE STYLING - 舒適閱讀版 ===== */
 pre, code {
   font-family: 'JetBrains Mono', Monaco, Consolas, monospace !important;
   background-color: $dark-surface-2 !important;
-  border: 2px solid rgba($ai-blue, 0.3) !important;
+  border: 2px solid rgba($ai-blue, 0.2) !important;
   border-radius: 0 !important; // Pixel perfect corners
   color: $text-primary !important;
   image-rendering: pixelated;
@@ -115,11 +126,11 @@ pre, code {
 
 pre {
   box-shadow: 
-    4px 4px 0px rgba($ai-blue, 0.2),
-    8px 8px 0px rgba($ai-purple, 0.1) !important;
+    4px 4px 0px rgba($ai-blue, 0.15),
+    8px 8px 0px rgba($ai-purple, 0.08) !important;
   position: relative;
   
-  // Pixel art border decoration
+  // 遊戲風格邊框裝飾
   &::before {
     content: '';
     position: absolute;
@@ -129,9 +140,9 @@ pre {
     bottom: -2px;
     background: linear-gradient(45deg, 
       transparent 0%, 
-      rgba($ai-blue, 0.1) 25%, 
+      rgba($ai-blue, 0.05) 25%, 
       transparent 50%, 
-      rgba($ai-purple, 0.1) 75%, 
+      rgba($ai-purple, 0.05) 75%, 
       transparent 100%
     );
     border-radius: 0;
@@ -140,11 +151,11 @@ pre {
 }
 
 code {
-  background-color: rgba($ai-blue, 0.15) !important;
-  color: $ai-blue !important;
+  background-color: rgba($ai-blue, 0.1) !important;
+  color: lighten($ai-blue, 10%) !important;
   padding: 2px 6px !important;
   border-radius: 0 !important; // Pixel perfect
-  border: 1px solid rgba($ai-blue, 0.3) !important;
+  border: 1px solid rgba($ai-blue, 0.2) !important;
 }
 
 /* ===== PIXEL-ENHANCED MASTHEAD ===== */

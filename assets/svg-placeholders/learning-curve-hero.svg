@@ -1,61 +1,104 @@
-<!-- Learning Curve Hero - Pixel Art Style -->
-<!-- 學習曲線主視覺 - 像素風格 -->
+<!-- Learning Curve Hero - Pixel Art Style (舒適閱讀版) -->
+<!-- 學習曲線主視覺 - 像素風格舒適配色 -->
 <svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <!-- Pixel Art Grid Pattern -->
     <pattern id="pixelGrid" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
-      <rect width="8" height="8" fill="none" stroke="rgba(0,217,255,0.1)" stroke-width="0.5"/>
+      <rect width="8" height="8" fill="none" stroke="rgba(2,119,189,0.05)" stroke-width="0.5"/>
     </pattern>
+    
+    <!-- 遊戲風格漸變 -->
+    <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#388E3C;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#FF9800;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7B1FA2;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#0277BD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E91E63;stop-opacity:1" />
+    </linearGradient>
   </defs>
   
   <!-- Background -->
   <rect width="800" height="400" fill="#0a0a0a"/>
   <rect width="800" height="400" fill="url(#pixelGrid)"/>
   
-  <!-- Learning Curve Path (Pixel Style) -->
-  <g id="learningCurve" transform="translate(50, 350)">
-    <!-- Beginner Level -->
-    <rect x="0" y="0" width="32" height="-80" fill="#ff6b6b" class="pixel-block"/>
-    <text x="16" y="20" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">新手</text>
+  <!-- 遊戲風格背景裝飾 -->
+  <g opacity="0.1">
+    <circle cx="150" cy="100" r="30" fill="#0277BD"/>
+    <circle cx="650" cy="120" r="25" fill="#388E3C"/>
+    <circle cx="700" cy="300" r="20" fill="#7B1FA2"/>
+  </g>
+  
+  <!-- Learning Curve Path (遊戲風格像素) -->
+  <g id="learningCurve" transform="translate(80, 350)">
+    <!-- Stage 1: Beginner Level -->
+    <rect x="0" y="0" width="32" height="-60" fill="#388E3C" class="pixel-block"/>
+    <rect x="2" y="-58" width="28" height="4" fill="#4CAF50" opacity="0.6"/>
+    <text x="16" y="20" text-anchor="middle" fill="#f5f5f5" font-family="monospace" font-size="10">新手</text>
     
-    <!-- Learning Tools -->
-    <rect x="100" y="0" width="32" height="-140" fill="#fbbf24" class="pixel-block"/>
-    <text x="116" y="20" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">AI工具</text>
+    <!-- Stage 2: AI Tools -->
+    <rect x="120" y="0" width="32" height="-120" fill="#FF9800" class="pixel-block"/>
+    <rect x="122" y="-118" width="28" height="4" fill="#FFC107" opacity="0.6"/>
+    <text x="136" y="20" text-anchor="middle" fill="#f5f5f5" font-family="monospace" font-size="10">AI工具</text>
     
-    <!-- Programming Skills -->
-    <rect x="200" y="0" width="32" height="-200" fill="#8b5cf6" class="pixel-block"/>
-    <text x="216" y="20" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">程式設計</text>
+    <!-- Stage 3: Programming -->
+    <rect x="240" y="0" width="32" height="-180" fill="#7B1FA2" class="pixel-block"/>
+    <rect x="242" y="-178" width="28" height="4" fill="#9C27B0" opacity="0.6"/>
+    <text x="256" y="20" text-anchor="middle" fill="#f5f5f5" font-family="monospace" font-size="10">程式設計</text>
     
-    <!-- Specialization -->
-    <rect x="300" y="0" width="32" height="-260" fill="#00ff88" class="pixel-block"/>
-    <text x="316" y="20" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">專業化</text>
+    <!-- Stage 4: Specialization -->
+    <rect x="360" y="0" width="32" height="-240" fill="#0277BD" class="pixel-block"/>
+    <rect x="362" y="-238" width="28" height="4" fill="#2196F3" opacity="0.6"/>
+    <text x="376" y="20" text-anchor="middle" fill="#f5f5f5" font-family="monospace" font-size="10">專業化</text>
     
-    <!-- Expert Level -->
-    <rect x="400" y="0" width="32" height="-320" fill="#00d9ff" class="pixel-block"/>
-    <text x="416" y="20" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="10">專家</text>
+    <!-- Stage 5: Expert Level -->
+    <rect x="480" y="0" width="32" height="-300" fill="#E91E63" class="pixel-block"/>
+    <rect x="482" y="-298" width="28" height="4" fill="#FF5722" opacity="0.6"/>
+    <text x="496" y="20" text-anchor="middle" fill="#f5f5f5" font-family="monospace" font-size="10">專家</text>
     
-    <!-- Growth Arrow (Pixel Style) -->
-    <path d="M 50 -40 L 450 -340 M 440 -350 L 450 -340 L 440 -330" 
-          stroke="#00d9ff" 
-          stroke-width="3" 
+    <!-- 遊戲風格連接線 -->
+    <path d="M 32 -30 L 120 -90 M 152 -90 L 240 -150 M 272 -150 L 360 -210 M 392 -210 L 480 -270" 
+          stroke="url(#progressGradient)" 
+          stroke-width="4" 
+          fill="none"
+          stroke-linecap="square"
+          stroke-dasharray="8,4"/>
+    
+    <!-- Growth Arrow (像素風格) -->
+    <path d="M 500 -280 L 520 -300 M 510 -310 L 520 -300 L 510 -290" 
+          stroke="#0277BD" 
+          stroke-width="4" 
           fill="none"
           stroke-linecap="square"/>
   </g>
   
-  <!-- Title Text -->
-  <text x="400" y="50" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="24" font-weight="bold">
+  <!-- 遊戲風格標題 -->
+  <text x="400" y="60" text-anchor="middle" fill="#f5f5f5" font-family="monospace" font-size="28" font-weight="bold">
     Learning Curve Journey
   </text>
   
+  <text x="400" y="85" text-anchor="middle" fill="#b3b3b3" font-family="monospace" font-size="14">
+    Personal Growth Through Technology &amp; AI
+  </text>
+  
+  <!-- 進度指示器 -->
+  <g transform="translate(200, 320)">
+    <rect width="400" height="20" fill="#1a1a1a" stroke="#0277BD" stroke-width="2"/>
+    <rect width="300" height="16" x="2" y="2" fill="url(#progressGradient)"/>
+    <text x="200" y="50" text-anchor="middle" fill="#888888" font-family="monospace" font-size="12">
+      學習進度: 75% Complete
+    </text>
+  </g>
+  
   <!-- Placeholder Text -->
-  <text x="400" y="380" text-anchor="middle" fill="#a1a1aa" font-family="monospace" font-size="12">
-    [PLACEHOLDER: Replace with custom pixel art]
+  <text x="400" y="380" text-anchor="middle" fill="#888888" font-family="monospace" font-size="11">
+    [舒適閱讀版配色 | 未來替換為自定義像素圖]
   </text>
   
   <style>
     .pixel-block {
       image-rendering: pixelated;
       shape-rendering: crispEdges;
+      filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.3));
     }
   </style>
 </svg>
