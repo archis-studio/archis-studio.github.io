@@ -1,0 +1,58 @@
+<!-- Skill Icons - Pixel Art Style -->
+<!-- 技能圖標 - 像素風格 -->
+<svg width="400" height="100" viewBox="0 0 400 100" xmlns="http://www.w3.org/2000/svg">
+  
+  <!-- AI Tool Icon -->
+  <g id="ai-tool-icon" transform="translate(10, 10)">
+    <rect width="60" height="60" fill="#1a1a1a" stroke="#00d9ff" stroke-width="2"/>
+    <!-- Simple robot face pixel art -->
+    <rect x="15" y="15" width="8" height="8" fill="#00d9ff"/>
+    <rect x="37" y="15" width="8" height="8" fill="#00d9ff"/>
+    <rect x="20" y="35" width="20" height="4" fill="#00ff88"/>
+    <text x="30" y="75" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="8">AI工具</text>
+  </g>
+  
+  <!-- Programming Icon -->
+  <g id="programming-icon" transform="translate(90, 10)">
+    <rect width="60" height="60" fill="#1a1a1a" stroke="#8b5cf6" stroke-width="2"/>
+    <!-- Code brackets pixel art -->
+    <rect x="15" y="20" width="4" height="20" fill="#8b5cf6"/>
+    <rect x="41" y="20" width="4" height="20" fill="#8b5cf6"/>
+    <rect x="25" y="25" width="10" height="4" fill="#8b5cf6"/>
+    <rect x="25" y="31" width="10" height="4" fill="#8b5cf6"/>
+    <text x="30" y="75" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="8">程式設計</text>
+  </g>
+  
+  <!-- Data Analysis Icon -->
+  <g id="data-icon" transform="translate(170, 10)">
+    <rect width="60" height="60" fill="#1a1a1a" stroke="#fbbf24" stroke-width="2"/>
+    <!-- Chart pixel art -->
+    <rect x="15" y="40" width="6" height="15" fill="#fbbf24"/>
+    <rect x="25" y="30" width="6" height="25" fill="#fbbf24"/>
+    <rect x="35" y="20" width="6" height="35" fill="#fbbf24"/>
+    <text x="30" y="75" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="8">數據分析</text>
+  </g>
+  
+  <!-- Growth Icon -->
+  <g id="growth-icon" transform="translate(250, 10)">
+    <rect width="60" height="60" fill="#1a1a1a" stroke="#00ff88" stroke-width="2"/>
+    <!-- Plant growth pixel art -->
+    <rect x="28" y="45" width="4" height="10" fill="#00ff88"/>
+    <rect x="20" y="35" width="8" height="4" fill="#00ff88"/>
+    <rect x="32" y="30" width="8" height="4" fill="#00ff88"/>
+    <rect x="24" y="25" width="12" height="4" fill="#00ff88"/>
+    <text x="30" y="75" text-anchor="middle" fill="#ffffff" font-family="monospace" font-size="8">個人成長</text>
+  </g>
+  
+  <!-- Placeholder Text -->
+  <text x="200" y="95" text-anchor="middle" fill="#71717a" font-family="monospace" font-size="10">
+    [PLACEHOLDER: Custom pixel art icons]
+  </text>
+  
+  <style>
+    rect {
+      image-rendering: pixelated;
+      shape-rendering: crispEdges;
+    }
+  </style>
+</svg>

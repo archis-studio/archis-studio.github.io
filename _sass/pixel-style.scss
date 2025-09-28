@@ -1,0 +1,329 @@
+/* ==========================================================================
+   PIXEL ART STYLE FRAMEWORK
+   像素風格樣式框架
+   ========================================================================== */
+
+// Pixel Art Color Palette
+$pixel-ai-blue: #00d9ff;
+$pixel-ai-green: #00ff88;
+$pixel-ai-purple: #8b5cf6;
+$pixel-ai-yellow: #fbbf24;
+$pixel-accent: #ff6b6b;
+$pixel-bg-dark: #0a0a0a;
+$pixel-surface: #1a1a1a;
+$pixel-surface-2: #2a2a2a;
+$pixel-text: #ffffff;
+$pixel-text-muted: #a1a1aa;
+
+/* ===== PIXEL ART BASE STYLES ===== */
+.pixel-art {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  shape-rendering: crispEdges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+.pixel-container {
+  position: relative;
+  overflow: hidden;
+  
+  // 8px grid alignment
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      linear-gradient(rgba($pixel-ai-blue, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba($pixel-ai-blue, 0.03) 1px, transparent 1px);
+    background-size: 8px 8px;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+/* ===== LEARNING CURVE HERO SECTION ===== */
+.hero-pixel-learning {
+  position: relative;
+  background: $pixel-bg-dark;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  .learning-curve-visual {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    background: url('/assets/svg-placeholders/learning-curve-hero.svg') center/contain no-repeat;
+    
+    // Future replacement ready
+    &.pixel-ready {
+      background: url('/assets/images/pixel-art/hero/learning-curve-main.png') center/contain no-repeat;
+    }
+  }
+  
+  .hero-text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    
+    h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      color: $pixel-text;
+      text-shadow: 2px 2px 0px $pixel-bg-dark;
+      margin-bottom: 1rem;
+      
+      .gradient-text {
+        background: linear-gradient(135deg, $pixel-ai-blue 0%, $pixel-ai-green 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    }
+    
+    p {
+      font-family: 'Inter', sans-serif;
+      color: $pixel-text-muted;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+/* ===== SKILL ICONS PIXEL STYLE ===== */
+.skill-icons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  
+  .skill-icon {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background: $pixel-surface;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: $pixel-ai-blue;
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba($pixel-ai-blue, 0.2);
+    }
+    
+    .icon-image {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1rem;
+      background: url('/assets/svg-placeholders/skill-icons.svg') no-repeat;
+      background-size: 400px 100px;
+      
+      // Individual icon positions
+      &.ai-tools { background-position: -10px -10px; }
+      &.programming { background-position: -90px -10px; }
+      &.data { background-position: -170px -10px; }
+      &.growth { background-position: -250px -10px; }
+      
+      // Future pixel art replacement
+      &.pixel-ready {
+        background-image: url('/assets/images/pixel-art/skills/');
+      }
+    }
+    
+    h3 {
+      font-family: 'JetBrains Mono', monospace;
+      color: $pixel-ai-blue;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    p {
+      color: $pixel-text-muted;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+  }
+}
+
+/* ===== PROGRESS BAR PIXEL STYLE ===== */
+.pixel-progress-bar {
+  position: relative;
+  margin: 2rem 0;
+  
+  .progress-container {
+    width: 100%;
+    height: 40px;
+    background: $pixel-surface-2;
+    border: 2px solid $pixel-ai-blue;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, 
+      $pixel-ai-green 0%, 
+      $pixel-ai-green 25%, 
+      $pixel-ai-yellow 25%, 
+      $pixel-ai-yellow 50%, 
+      $pixel-ai-purple 50%, 
+      $pixel-ai-purple 75%, 
+      $pixel-ai-blue 75%, 
+      $pixel-ai-blue 100%
+    );
+    width: 0%;
+    transition: width 1s ease-out;
+    position: relative;
+    
+    // Pixel segments overlay
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('/assets/svg-placeholders/progress-bar.svg') repeat-x;
+      background-size: 300px 40px;
+      
+      &.pixel-ready {
+        background-image: url('/assets/images/pixel-art/ui/progress-segments.png');
+      }
+    }
+  }
+  
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+    
+    span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: $pixel-text-muted;
+    }
+  }
+}
+
+/* ===== PIXEL ANIMATIONS ===== */
+@keyframes pixelGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba($pixel-ai-blue, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba($pixel-ai-blue, 0.8);
+  }
+}
+
+@keyframes pixelBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}
+
+@keyframes progressFill {
+  from { width: 0%; }
+  to { width: var(--progress-width, 75%); }
+}
+
+.pixel-glow {
+  animation: pixelGlow 2s ease-in-out infinite;
+}
+
+.pixel-blink {
+  animation: pixelBlink 1s ease-in-out infinite;
+}
+
+.animate-progress {
+  animation: progressFill 2s ease-out forwards;
+}
+
+/* ===== RESPONSIVE PIXEL ART ===== */
+@media (max-width: 768px) {
+  .hero-pixel-learning {
+    min-height: 300px;
+    
+    .learning-curve-visual {
+      height: 300px;
+    }
+    
+    .hero-text-overlay h1 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  .skill-icons-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    
+    .skill-icon {
+      padding: 1rem 0.5rem;
+      
+      .icon-image {
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-pixel-learning .hero-text-overlay h1 {
+    font-size: 1.5rem;
+  }
+  
+  .skill-icons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+.pixel-border {
+  border: 2px solid $pixel-ai-blue;
+  border-radius: 4px;
+}
+
+.pixel-shadow {
+  box-shadow: 4px 4px 0px rgba($pixel-ai-blue, 0.3);
+}
+
+.pixel-text {
+  font-family: 'JetBrains Mono', monospace;
+  image-rendering: pixelated;
+}
+
+.retro-container {
+  background: $pixel-surface;
+  border: 2px solid $pixel-ai-blue;
+  border-radius: 8px;
+  padding: 1.5rem;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+      $pixel-ai-blue 0%, 
+      $pixel-ai-green 25%, 
+      $pixel-ai-purple 50%, 
+      $pixel-ai-yellow 75%, 
+      $pixel-ai-blue 100%
+    );
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0.3;
+  }
+}
