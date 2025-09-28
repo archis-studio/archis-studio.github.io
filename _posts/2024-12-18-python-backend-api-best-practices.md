@@ -1,7 +1,7 @@
 ---
 title: "Python Backend API 設計的眉眉角角"
-date: 2024-12-18 14:30:00 +0800
-last_modified_at: 2024-12-18 14:30:00 +0800  # 發布後未修改
+date: 2025-09-27 19:32:37 +0800  # 實際建立時間
+last_modified_at: 2025-09-28 18:04:54 +0800  # 最後修改時間（加入排序功能）
 categories: [technical]
 tags: [Python, FastAPI, API設計, Backend開發, 系統架構, 最佳實務, 效能優化]
 header:

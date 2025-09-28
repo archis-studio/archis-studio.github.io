@@ -1,7 +1,7 @@
 ---
 title: "Pandas 效能調校：讓你的資料分析飛起來！"
-date: 2024-12-17 09:15:00 +0800
-last_modified_at: 2024-12-20 15:30:00 +0800  # 模擬最近更新
+date: 2025-09-27 19:32:37 +0800  # 實際建立時間
+last_modified_at: 2025-09-28 18:04:54 +0800  # 最後修改時間（加入排序功能）
 categories: [technical]
 tags: [Python, Pandas, 效能優化, 資料分析, DataFrame, 資料科學, 最佳實務]
 header:

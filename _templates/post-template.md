@@ -1,7 +1,7 @@
 ---
 title: "在這裡填寫文章標題"
-date: YYYY-MM-DD HH:MM:SS +0800
-last_modified_at: YYYY-MM-DD HH:MM:SS +0800  # 文章最後更新時間
+date: 2025-09-28 18:45:00 +0800  # 發布時間（當前時間範例）
+last_modified_at: 2025-09-28 18:45:00 +0800  # 最後更新時間（新文章設為相同）
 categories: [選擇一個主分類: technical, ai-applications, fintech, digital-marketing, personal-growth]
 tags: [核心技術, 應用領域, 工具框架, 概念技能, 內容類型]
 header:
@@ -119,11 +119,24 @@ good_example = "展示解決方案"
   <p>歡迎在下方留言分享你的經驗，或是透過 <a href="mailto:magic83w@gmail.com">Email</a> 與我聯繫！</p>
 </div>
 
-*最後更新：YYYY年MM月*
+*最後更新：{{ page.last_modified_at | date: "%Y年%m月%d日" }}*
 
 ---
 
 ## 標籤使用指南 (發布前請刪除此section)
+
+### 時間戳記設定
+```bash
+# 取得當前正確時間戳記
+./scripts/get-timestamp.sh
+
+# 新文章：設定相同時間
+date: 2025-09-28 18:45:00 +0800
+last_modified_at: 2025-09-28 18:45:00 +0800
+
+# 更新文章：只修改 last_modified_at
+last_modified_at: $(date '+%Y-%m-%d %H:%M:%S +0800')
+```
 
 ### 分類選擇 (選擇一個主分類)
 - **technical**: 程式設計、後端開發、資料工程、資料科學

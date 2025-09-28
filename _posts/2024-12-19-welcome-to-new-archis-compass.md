@@ -1,7 +1,7 @@
 ---
 title: "歡迎來到全新的 Archis Digital Compass！"
-date: 2024-12-19 10:00:00 +0800
-last_modified_at: 2024-12-19 16:45:00 +0800  # 發布當天有小修改
+date: 2025-09-27 19:32:37 +0800  # 實際建立時間
+last_modified_at: 2025-09-28 18:04:54 +0800  # 最後修改時間（加入排序功能）
 categories: [personal-growth]
 tags: [網站更新, 個人品牌, 技術分享, 歡迎, 部落格經營]
 header:
