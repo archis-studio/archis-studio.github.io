@@ -48,7 +48,8 @@ feature_row:
 ## Latest Stories 最新故事
 
 <div class="archive-stories">
-{% for post in site.posts limit:6 %}
+{% assign posts_by_update = site.posts | sort: 'last_modified_at' | reverse %}
+{% for post in posts_by_update limit:6 %}
   {% include archive-single.html %}
 {% endfor %}
 </div>

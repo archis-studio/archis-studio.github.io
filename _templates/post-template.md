@@ -1,6 +1,7 @@
 ---
 title: "在這裡填寫文章標題"
 date: YYYY-MM-DD HH:MM:SS +0800
+last_modified_at: YYYY-MM-DD HH:MM:SS +0800  # 文章最後更新時間
 categories: [選擇一個主分類: technical, ai-applications, fintech, digital-marketing, personal-growth]
 tags: [核心技術, 應用領域, 工具框架, 概念技能, 內容類型]
 header:

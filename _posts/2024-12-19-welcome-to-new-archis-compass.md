@@ -1,8 +1,9 @@
 ---
 title: "歡迎來到全新的 Archis Digital Compass！"
 date: 2024-12-19 10:00:00 +0800
+last_modified_at: 2024-12-19 16:45:00 +0800  # 發布當天有小修改
 categories: [personal-growth]
-tags: [網站更新, 個人品牌, 技術分享, 歡迎]
+tags: [網站更新, 個人品牌, 技術分享, 歡迎, 部落格經營]
 header:
   overlay_color: "#2c3e50"
   overlay_filter: "0.5"

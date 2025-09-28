@@ -206,6 +206,7 @@ defaults:
       toc: true
       toc_sticky: true
       toc_label: "目錄"
+      last_modified_at: # 會自動使用 Git 提交時間或手動設定
       header:
         overlay_color: "#2c3e50"
         overlay_filter: "0.5"
