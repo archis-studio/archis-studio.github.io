@@ -1,6 +1,6 @@
 # 網站基本設定
 locale: "zh-TW"
-title: "Archis Digital Compass"
+title: "Archis Studio"
 title_separator: "·"
 subtitle: "Learning AI Coding · 有趣且易懂"
 name: "Archi Chen"
@@ -10,7 +10,7 @@ baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
 teaser: "/assets/images/default-teaser.jpg"
 logo: "/assets/images/site-logo.png"
-masthead_title: "Archis Digital Compass"
+masthead_title: "Digital Compass"
 breadcrumbs: true
 words_per_minute: 200
 

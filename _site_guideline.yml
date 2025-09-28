@@ -2,8 +2,8 @@
 # Personal Branding Website Guidelines for AI Content Creation
 
 site_info:
-  name: "Archis Digital Compass"
-  chinese_name: "Archis 數位指南針"
+  name: "Archis Studio"
+  chinese_name: "Archis Studio"
   tagline: "透過科技與 AI，成就每一個人的成長"
   author: "Archi Chen"
   language: "zh-TW"
@@ -140,7 +140,7 @@ post_templates:
 
 # === SEO 優化 ===
 seo_rules:
-  title_format: "{文章標題} | Archis Digital Compass"
+  title_format: "{文章標題} | Archis Studio"
   meta_description: "150字內，包含關鍵字，吸引點擊"
   keywords: "最多10個，中英文混合"
   structured_data: "自動生成 (jekyll-seo-tag)"
