@@ -176,3 +176,11 @@ protected_areas:
     permalink: "/:categories/:title/"
     timezone: "Asia/Taipei"
     encoding: "utf-8"
+
+# === Project-Specific Knowledge Base ===
+# A log of key findings and best practices discovered during development.
+# This helps all collaborators (human or AI) avoid repeating past mistakes.
+project_knowledge_base:
+  - lesson: "The project uses a Jekyll remote_theme, not a locally installed gem."
+    finding: "The theme is specified in _config.yml as `remote_theme: mmistakes/minimal-mistakes`. The `Gemfile` does not explicitly list the theme gem. Commands like `bundle show` will not work to find theme files."
+    best_practice: "To customize a theme file (e.g., a layout or include), fetch the original file\'s content from the theme\'s GitHub repository and create a local copy in the corresponding project directory (e.g., `_layouts/`)."
