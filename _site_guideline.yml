@@ -1,196 +1,178 @@
-# Archis 個人品牌網站指引
-# Personal Branding Website Guidelines for AI Content Creation
+# Archis Digital Compass: AI Collaboration Guidelines
+# Version: 2.0
+# Last Updated: 2025-09-28
+# Maintained by: Archi Chen & AI Assistants
+# Purpose: This document is the single source of truth for all content creation, design, and collaboration rules. It is designed to be machine-readable for AI assistants.
 
-site_info:
-  name: "Archis Studio"
-  chinese_name: "Archis Studio"
+# === Project Information ===
+project_info:
+  name: "Archis Digital Compass"
   tagline: "透過科技與 AI，成就每一個人的成長"
   author: "Archi Chen"
-  language: "zh-TW"
+  language: "zh-TW" # ISO 639-1 code for Traditional Chinese
   target_audience: "台灣科技工作者、數據分析師、程式開發者"
 
-# === 內容創作規則 ===
+# === AI & Human Collaboration Protocols ===
+collaboration_protocols:
+  # Defines the standard operating procedure for any task.
+  workflow_model:
+    - "Step 1 (Goal): The user defines a high-level objective."
+    - "Step 2 (Plan): The AI analyzes the request and proposes a top-down, structured plan."
+    - "Step 3 (Options): For any decision point (e.g., naming, implementation details), the AI must provide clear, multiple-choice options (A, B, C...)."
+    - "Step 4 (Execution): Once the user makes a choice, the AI executes the task using the appropriate tools."
+    - "Step 5 (Verification): The user verifies the result of the execution before moving to the next step."
+
+  # Governs how we communicate.
+  communication:
+    language_policy:
+      engineering_topics: "Use English for all technical and engineering-related discussions (e.g., code structure, git, performance)."
+      visual_and_content_topics: "Use Traditional Chinese (繁體中文) for discussions related to UI/UX, content, and visual design, as this is often for client review."
+    interaction_style:
+      - "Provide clear, multiple-choice options for decisions."
+      - "Be concise and direct in all communications."
+      - "Explain the purpose of any file-system-modifying command before execution."
+
+  # Rules for interacting with the git repository.
+  git_protocol:
+    commit_workflow:
+      - "1. Always check `git status` and `git diff` to understand the current state."
+      - "2. CRITICAL: Always study the output of `git log` to understand and match the project's commit message style, tone, and format."
+      - "3. Use `git add` to stage only the completed and verified changes."
+      - "4. Propose a commit message based on the changes and the learned style."
+      - "5. Wait for user approval of the commit message before executing `git commit`."
+    push_policy: "CRITICAL: The AI assistant must NEVER use `git push`. Pushing to the remote repository is the sole responsibility of the user."
+
+  # Defines the boundaries of the AI's capabilities and restrictions.
+  scope_of_work:
+    allowed_actions:
+      - "Read, write, and modify files within the project directory."
+      - "Run shell commands for analysis, testing, and execution."
+      - "Search the web for information."
+      - "Analyze and refactor code according to project guidelines."
+    restricted_actions:
+      - "Do not modify files or settings listed in the `protected_areas` section of this document."
+      - "Do not push to the remote git repository."
+      - "Do not run commands that require interactive input."
+
+# === Content Creation Rules ===
 content_rules:
-  language_policy:
+  # Language and tone of voice.
+  language_and_tone:
     primary: "繁體中文"
-    technical_terms: "保持英文 (Backend, Data Science, API, GitHub, etc.)"
-    tone: "專業但親切，偶爾幽默，使用適量 emoji"
+    technical_terms: "Keep in English (e.g., Backend, API, DataFrame, GitHub)."
+    tone: "Professional yet approachable. Use humor and emojis sparingly for personality."
     examples:
       - "今天來聊聊 Backend 開發的眉眉角角 🤔"
       - "Data Science 不只是跑模型這麼簡單！"
-      - "量化交易的坑有多深？讓我們一起來踩踩看 😅"
 
-  categories:
-    # === 五大主分類架構 ===
-    technical:
-      name: "技術分享"
-      description: "程式設計、後端開發、資料工程、資料科學的技術實務"
-      color: "#2c3e50"
-      subcategories:
-        - backend-dev: "後端開發"
-        - data-engineering: "資料工程" 
-        - data-science: "資料科學"
-        - system-design: "系統設計"
-        - dev-tools: "開發工具"
-        
-    ai-applications:
-      name: "AI 應用"
-      description: "人工智慧工具應用、自動化流程、生成式 AI 實戰"
-      color: "#9b59b6"
-      subcategories:
-        - automation-tools: "自動化工具 (n8n, Zapier)"
-        - ai-assistants: "AI 助手 (ChatGPT, Copilot CLI)"
-        - generative-ai: "生成式 AI (圖像、影片、文字)"
-        - ml-deployment: "模型部署與應用"
-        - ai-integration: "AI 工具整合"
-        
-    fintech:
-      name: "金融科技"
-      description: "量化交易、程式交易、回測分析、策略算法"
-      color: "#e74c3c"
-      subcategories:
-        - quantitative-trading: "量化交易"
-        - algorithmic-trading: "程式交易"
-        - backtesting: "回測分析"
-        - trading-strategies: "策略算法"
-        - risk-management: "風險管理"
-        
-    digital-marketing:
-      name: "數位行銷"
-      description: "Google Analytics、廣告投放、電商工具、行銷自動化"
-      color: "#f39c12"
-      subcategories:
-        - analytics: "數據分析 (GA, GTM)"
-        - advertising: "廣告投放"
-        - ecommerce-tools: "電商工具"
-        - growth-hacking: "成長駭客"
-        - marketing-automation: "行銷自動化"
-        
-    personal-growth:
-      name: "個人成長"
-      description: "閱讀心得、自我管理、職涯經驗、生產力提升"
-      color: "#1abc9c"
-      subcategories:
-        - book-reviews: "閱讀心得"
-        - self-management: "自我管理"
-        - career-development: "職涯經驗"
-        - productivity: "生產力工具"
-        - leadership: "領導力發展"
+  # Rules for all blog posts.
+  post_requirements:
+    min_length: "800 words"
+    elements:
+      - "Must include practical code samples or case studies."
+      - "Must provide actionable solutions or steps."
+      - "Should include personal insights or experiences."
+    filename_format: "YYYY-MM-DD-english-title-for-post.md"
 
-# === 視覺設計規範 ===
-design_guidelines:
+  # The required structure for a post's content.
+  post_content_structure:
+    - "1. Introduction (100-200 words): State the problem or topic."
+    - "2. <!--more-->: The 'read more' separator."
+    - "3. Main Content: Use H2/H3 headings to structure."
+    - "4. Code Samples: If applicable, with explanations."
+    - "5. Key Takeaways: A summary or bulleted list."
+    - "6. Next Steps: Encourage reader action or further reading."
+
+  # Front matter requirements for posts.
+  post_front_matter:
+    title: "string (Required, engaging title in Traditional Chinese)"
+    date: "YYYY-MM-DD HH:MM:SS +0800 (Required)"
+    categories: "array (Max 3, from the list of defined categories)"
+    tags: "array (Max 6, relevant keywords)"
+    excerpt: "string (Max 150 characters, concise summary for SEO)"
+    header: "object (Optional, for custom header images/colors)"
+    toc: "boolean (Optional, default: false)"
+    toc_sticky: "boolean (Optional, default: false)"
+
+# === Design System ===
+design_system:
+  # Overall aesthetic direction.
+  aesthetics:
+    style: "Minimalist Luxury"
+    mood: "Modern, elegant, professional yet warm."
+    inspiration: "Nordic Design × Japanese Simplicity × Modern Fashion"
+
+  # Official color palette.
   colors:
-    primary: "#1a1a1a"         # 深黑 - 時尚經典
-    secondary: "#f8f8f8"       # 純白 - 簡約優雅
-    accent: "#d4af37"          # 金色 - 奢華點綴
-    rose_gold: "#e8b4b8"       # 玫瑰金 - 溫暖優雅
-    sage_green: "#9caf88"      # 鼠尾草綠 - 自然時尚
-    lavender: "#b19cd9"        # 薰衣草紫 - 夢幻優雅
-    charcoal: "#2d2d2d"        # 炭灰 - 現代感
-    cream: "#faf7f2"           # 奶油色 - 溫暖基調
-    coral: "#ff6b6b"           # 珊瑚色 - 活力點綴
+    primary: "#1a1a1a"
+    secondary: "#f8f8f8"
+    accent: "#d4af37"
+    rose_gold: "#e8b4b8"
+    sage_green: "#9caf88"
+    lavender: "#b19cd9"
+    charcoal: "#2d2d2d"
+    cream: "#faf7f2"
+    coral: "#ff6b6b"
 
+  # Image specifications.
   images:
-    header_ratio: "16:9"       # 1200x675px - 寬螢幕美學
-    teaser_ratio: "4:5"        # 400x500px - 時尚雜誌比例
-    thumbnail_ratio: "1:1"     # 正方形 - Instagram 風格
+    header_ratio: "16:9 (e.g., 1200x675px)"
+    teaser_ratio: "4:5 (e.g., 400x500px) # Modern, magazine style"
+    thumbnail_ratio: "1:1 (e.g., 500x500px) # Square, Instagram style"
     max_size: "200KB"
     formats: ["jpg", "png", "webp"]
-    
+    alt_text_required: true
+
+  # Typography rules.
   typography:
-    primary_font: "Montserrat"      # 現代無襯線 - 時尚感
-    chinese_font: "Noto Sans TC"    # 繁體中文優化
-    accent_font: "Playfair Display" # 優雅襯線 - 標題用
-    code_font: "JetBrains Mono"     # 程式碼專用
+    primary_font: "Montserrat"
+    chinese_font: "Noto Sans TC"
+    accent_font: "Playfair Display"
+    code_font: "JetBrains Mono"
 
-  fashion_aesthetics:
-    style: "極簡奢華 (Minimalist Luxury)"
-    mood: "現代、優雅、專業卻不失溫度"
-    inspiration: "北歐設計 × 日式簡約 × 現代時尚"
+# === Site Structure & SEO ===
+site_structure:
+  # Content categories and their specific colors.
+  categories:
+    technical: { name: "技術分享", color: "#2c3e50" }
+    backend: { name: "Backend 開發", color: "#34495e" }
+    data-engineer: { name: "資料工程", color: "#16a085" }
+    data-science: { name: "資料科學", color: "#3498db" }
+    ai-applications: { name: "AI 應用", color: "#9b59b6" }
+    fintech: { name: "金融科技", color: "#e74c3c" }
+    quantitative-trading: { name: "量化交易", color: "#e74c3c" }
+    digital-marketing: { name: "數位行銷", color: "#f39c12" }
+    personal-growth: { name: "個人成長", color: "#1abc9c" }
 
-# === 文章模板規範 ===
-post_templates:
-  structure:
-    front_matter:
-      - title (繁體中文)
-      - date (YYYY-MM-DD HH:MM:SS +0800)
-      - categories (最多3個)
-      - tags (最多6個)
-      - excerpt (150字內摘要)
-      - header (overlay_color + overlay_image)
-      - toc (true/false)
-      - toc_sticky (true/false)
-    
-    content_sections:
-      - "引言 (100-200字)"
-      - "<!--more--> (閱讀更多分隔線)"
-      - "主要內容 (結構化標題)"
-      - "程式碼範例 (如適用)"
-      - "重點整理"
-      - "延伸閱讀/下一步行動"
+  # SEO rules and formats.
+  seo:
+    title_format: "{Post Title} | Archis Digital Compass"
+    meta_description_length: "150 characters"
+    internal_links: "Use appropriate internal links in posts."
+    structured_data: "Handled automatically by jekyll-seo-tag plugin."
 
-  filename_format: "YYYY-MM-DD-article-title-in-english.md"
-  
-  sample_tags:
-    technical: ["程式設計", "軟體開發", "程式碼", "架構設計"]
-    backend: ["API", "資料庫", "伺服器", "微服務"]
-    data: ["機器學習", "資料分析", "Python", "模型訓練"]
-    finance: ["量化分析", "投資策略", "金融科技", "風險管理"]
-    growth: ["職涯發展", "學習筆記", "生產力", "時間管理"]
+  # Location of key project directories for consistent reference.
+  file_paths:
+    posts: "_posts/"              # Blog articles
+    pages: "_pages/"              # Static pages (About, Blog, etc.)
+    includes: "_includes/"        # Reusable HTML components
+    layouts: "_layouts/"          # Page templates
+    data: "_data/"                # Site data files (e.g., navigation)
+    assets: "assets/"             # All static assets
+    images: "assets/images/"      # Image assets
+    css: "assets/css/"            # Compiled and source CSS/SCSS
+    js: "assets/js/"              # JavaScript files
+    scripts: "scripts/"           # Automation and utility scripts
 
-# === SEO 優化 ===
-seo_rules:
-  title_format: "{文章標題} | Archis Studio"
-  meta_description: "150字內，包含關鍵字，吸引點擊"
-  keywords: "最多10個，中英文混合"
-  structured_data: "自動生成 (jekyll-seo-tag)"
-
-# === 檔案結構 ===
-file_structure:
-  posts: "_posts/"
-  pages: "_pages/"
-  assets: "assets/"
-  images: "assets/images/"
-  css: "assets/css/"
-  js: "assets/js/"
-
-# === 禁止修改區域 ===
-# DO NOT MODIFY - 以下區域由網站管理員維護
+# === Protected Areas (DO NOT MODIFY) ===
+# These settings are managed by the site administrator.
 protected_areas:
   analytics: 
-    google_analytics: "GA_TRACKING_ID"  # 請勿修改
-    google_adsense: "ADSENSE_CLIENT_ID" # 請勿修改
-  
+    google_analytics: "GA_TRACKING_ID"
+    google_adsense: "ADSENSE_CLIENT_ID"
   integrations:
-    disqus_shortname: "SITE_SHORTNAME"  # 請勿修改
-    social_media: "保持現有設定"         # 請勿修改
-  
+    disqus_shortname: "SITE_SHORTNAME"
   technical_settings:
-    permalink: "/:categories/:title/"   # 請勿修改
-    timezone: "Asia/Taipei"            # 請勿修改
-    encoding: "utf-8"                  # 請勿修改
-
-# === AI 內容創作提示 ===
-ai_content_guidelines:
-  voice_and_tone:
-    - "使用繁體中文，專業中帶有親和力"
-    - "技術術語保持英文，其他翻譯成中文"
-    - "適度使用 emoji 增加親近感"
-    - "避免過於正式或教科書式的語調"
-    
-  content_quality:
-    - "每篇文章至少 800 字"
-    - "包含實用的程式碼或案例"
-    - "提供可行動的建議或步驟"
-    - "引用可靠的資料來源"
-    
-  engagement_tactics:
-    - "開頭提出問題或痛點"
-    - "使用生活化的比喻說明技術概念"
-    - "結尾鼓勵讀者互動或分享經驗"
-    - "適時加入個人觀點或經驗分享"
-
-# 版本資訊
-guideline_version: "1.0"
-last_updated: "2024-12-19"
-maintained_by: "Archi Chen"
+    permalink: "/:categories/:title/"
+    timezone: "Asia/Taipei"
+    encoding: "utf-8"
