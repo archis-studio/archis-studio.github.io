@@ -10,7 +10,7 @@ sidebar:
 header:
   overlay_color: "#0a0a0a"
   overlay_filter: "0.6"
-  overlay_image: /assets/images/blog-header.jpg
+  overlay_image: /assets/images/blog-header.svg
   caption: "Learning AI Coding · 有趣且易懂"
 excerpt: "用最有趣的方式學習 AI Coding 🚀 探索程式設計、AI 工具、數據分析的實戰技巧"
 description: "Archis Digital Compass 技術學習文章 - AI 工具、程式設計、數據分析、個人成長，適合所有想學 Coding 的人"
