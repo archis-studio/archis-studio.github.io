@@ -1,0 +1,104 @@
+/* Design System Variables - Autumn Noir Editorial AI Theme
+   Based on docs/DESIGN_SYSTEM_SPEC.md
+   Fashion + Gaming + Pixel Art + AI Aesthetic
+   ========================================================================== */
+
+/* Autumn Noir - Editorial AI Theme Colors */
+
+// 核心 Noir 色彩系統
+$noir-black: #0E0E10 !default;     // 深邃黑 - 主背景
+$noir-gray: #1C1C1E !default;      // 暖灰 - 中層背景  
+$noir-border: #2C2C2E !default;    // 邊框灰
+$noir-text: #EDEDED !default;      // 主文字 - 溫暖白
+$noir-text-muted: #A0A0A5 !default; // 次要文字 - 優雅灰
+
+// Autumn Fashion 色彩調色盤
+$autumn-gold: #D4A017 !default;    // 秋日金 - 主要強調色
+$autumn-burgundy: #8B3A3A !default; // 勃艮第紅 - 時尚重點
+$autumn-moss: #6B8E23 !default;    // 苔蘚綠 - 自然元素
+$autumn-copper: #B87333 !default;  // 銅棕色 - 金屬質感
+$autumn-cream: #F5DEB3 !default;   // 奶油色 - 柔和對比
+
+// AI + Gaming 科技色彩
+$ai-neural: #9B59B6 !default;      // AI 神經紫 - 深度學習
+$pixel-cyan: #17A2B8 !default;     // 像素青 - 數據流
+$gaming-neon: #E74C3C !default;    // 遊戲霓虹 - 互動元素
+
+// 遊戲 UI 色彩 (Autumn Noir 風格)
+$game-bg-dark: $noir-black !default;
+$game-bg-mid: $noir-gray !default;
+$game-text: $noir-text !default;
+$game-text-dim: $noir-text-muted !default;
+$game-border: $noir-border !default;
+
+// Minimal Mistakes 變數覆寫 - Autumn Noir Fashion Style
+$background-color: $game-bg-dark !default;
+$text-color: $game-text !default;
+$muted-text-color: $game-text-dim !default;
+$primary-color: $autumn-gold !default;       // 主要強調 - 秋日金
+$link-color: $autumn-gold !default;          // 連結 - 優雅金色
+$link-color-hover: lighten($autumn-gold, 15%) !default;
+$link-color-visited: $autumn-copper !default; // 已訪問連結 - 銅色
+$border-color: $game-border !default;
+$code-background-color: $game-bg-mid !default;
+
+// Navigation colors - Autumn Fashion Style
+$masthead-link-color: $game-text !default;
+$masthead-link-color-hover: $autumn-gold !default;
+$navicon-link-color-hover: $autumn-burgundy !default;
+
+// Button colors - Fashion Editorial Style
+$button-bg: $autumn-burgundy !default;       // 按鈕背景 - 勃艮第
+$button-hover-bg: darken($autumn-burgundy, 10%) !default;
+$button-text: $noir-text !default;
+
+// Accent elements - AI + Fashion
+$accent-line: $autumn-copper !default;       // 強調線 - 銅色
+$highlight-bg: rgba($autumn-gold, 0.1) !default; // 高亮背景
+$code-highlight: rgba($ai-neural, 0.15) !default; // 程式碼高亮
+
+/* Typography - Fashion Editorial + Gaming Hybrid */
+$serif-editorial: 'Playfair Display', 'Georgia', serif !default; // 時尚編輯字體
+$sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
+$monospace: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace !default;
+$pixel-font: 'JetBrains Mono', monospace !default; // 像素風格程式字型
+
+// Font weights - Fashion Editorial
+$font-light: 300 !default;
+$font-regular: 400 !default;
+$font-medium: 500 !default;
+$font-semibold: 600 !default;
+$font-bold: 700 !default;
+
+/* Spacing - 基於 8px grid system */
+$space-1: 0.25rem !default; // 4px
+$space-2: 0.5rem !default;  // 8px
+$space-3: 0.75rem !default; // 12px
+$space-4: 1rem !default;    // 16px
+$space-6: 1.5rem !default;  // 24px
+$space-8: 2rem !default;    // 32px
+$space-12: 3rem !default;   // 48px
+$space-16: 4rem !default;   // 64px
+
+/* Layout - Fashion Editorial Style */
+$max-width: 1280px !default;
+$content-width: 800px !default;        // 閱讀最適寬度
+$sidebar-width: 300px !default;
+
+/* Autumn Noir Pixel Art Specific */
+$pixel-border-width: 2px !default;
+$pixel-border-radius: 6px !default;    // 稍微圓潤的時尚感
+$pixel-glow-color: $autumn-gold !default;
+
+/* Fashion Editorial Effects */
+$box-shadow-soft: 0 4px 20px rgba($noir-black, 0.3) !default;
+$box-shadow-editorial: 0 8px 32px rgba($noir-black, 0.4) !default;
+$text-shadow-glow: 0 0 20px rgba($autumn-gold, 0.5) !default;
+
+/* Gradient Definitions - Autumn Noir */
+$bg-gradient-main: linear-gradient(135deg, $noir-black 0%, $noir-gray 100%) !default;
+$bg-gradient-accent: linear-gradient(135deg, $autumn-burgundy 0%, darken($autumn-burgundy, 20%) 100%) !default;
+$bg-gradient-hero: linear-gradient(135deg, 
+  rgba($noir-black, 0.9) 0%, 
+  rgba($autumn-burgundy, 0.1) 50%, 
+  rgba($noir-black, 0.9) 100%) !default;

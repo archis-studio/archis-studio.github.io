@@ -1,558 +1,255 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@charset "utf-8";
+/* 
+ * Autumn Noir - Editorial AI Theme
+ * Fashion + Gaming + Pixel Art + AI Aesthetics
+ * 
+ * Main stylesheet entry point for magicxcr7.github.io
+ * Combines Minimal Mistakes theme with custom Autumn Noir design system
+ */
 
-// Import Google Fonts for Dark AI Theme + Pixel Art
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap');
+// Import Minimal Mistakes theme
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
 
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
+// Import our custom Autumn Noir design system
+@import "design-system";
 
-/* ==========================================================================
-   ARCHIS DIGITAL COMPASS - PIXEL ART AI CODING THEME
-   像素風格 AI Coding 主題
-   ========================================================================== */
-
-// Import Pixel Art Framework
-@import "pixel-style";
-
-// Enhanced Dark AI Color Palette - 舒適閱讀版 (方案 C)
-$dark-bg: #0a0a0a;          // 深黑背景
-$dark-surface: #1a1a1a;     // 卡片背景
-$dark-surface-2: #2a2a2a;   // 次級表面
-
-// 主色系 - 舒適閱讀優化
-$ai-blue: #0277BD;          // 極深信任藍 - 專業可靠，眼睛舒適
-$ai-green: #388E3C;         // 深森林綠 - 成長穩重，自然和諧
-$ai-purple: #7B1FA2;        // 深紫智慧色 - 創意深度，神秘優雅
-$ai-yellow: #FF9800;        // 溫暖橙色 - 友善活力，溫馨提醒
-$pixel-accent: #E91E63;     // 深粉強調色 - 重點突出，適度吸睛
-
-// 遊戲風格輔助色系 (為未來功能預留)
-$game-health: #4CAF50;      // 生命值綠 - 成功完成
-$game-mana: #2196F3;        // 魔力值藍 - 學習能量
-$game-exp: #FFC107;         // 經驗值金 - 成長進度
-$game-rare: #9C27B0;        // 稀有紫 - 特殊成就
-$game-epic: #FF5722;        // 史詩橙 - 重大突破
-
-// 舒適閱讀文字色系
-$text-primary: #f5f5f5;     // 主要文字 (柔和白色，減少刺眼)
-$text-secondary: #b3b3b3;   // 次要文字 (舒適灰色)
-$text-muted: #888888;       // 輔助文字 (深灰色，低對比)
-
-/* ===== ENHANCED DARK THEME BASE ===== */
+/* Global Autumn Noir Theme Overrides */
 body {
-  font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 400;
-  line-height: 1.7;
-  color: $text-primary;
-  background-color: $dark-bg;
-  
-  // 全局像素完美滾動條 - 舒適閱讀版
-  &::-webkit-scrollbar {
-    width: 12px;
-  }
-  &::-webkit-scrollbar-track {
-    background: $dark-surface;
-    border-radius: 0; // Pixel perfect
-  }
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg, $ai-blue, $ai-purple);
-    border-radius: 0; // Pixel perfect
-    border: 2px solid $dark-surface;
-    
-    &:hover {
-      background: linear-gradient(180deg, lighten($ai-blue, 5%), lighten($ai-purple, 5%));
-    }
-  }
+  background: $bg-gradient-main;
+  color: $noir-text;
+  font-family: $sans-serif;
+  line-height: 1.6;
 }
 
-// Dark mode overrides
-.page,
-.page__content,
-.archive {
-  background-color: $dark-bg !important;
-  color: $text-primary !important;
-}
-
-/* ===== PIXEL-ENHANCED TYPOGRAPHY ===== */
+/* Typography - Fashion Editorial Style */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', 'Noto Sans TC', sans-serif;
-  font-weight: 700;
-  color: $text-primary;
-  letter-spacing: -0.02em;
-  image-rendering: auto; // 標題不使用像素化
+  font-family: $serif-editorial;
+  color: $autumn-gold;
+  font-weight: $font-bold;
 }
 
-h1 { 
-  font-size: 3rem; 
-  line-height: 1.1;
-  background: linear-gradient(135deg, $ai-blue 0%, $ai-purple 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+h1 {
+  font-size: 2.5rem;
+  text-shadow: $text-shadow-glow;
 }
 
-h2 { 
-  font-size: 2.2rem; 
-  color: $ai-blue;
+h2 {
+  font-size: 2rem;
+  border-bottom: 2px solid $autumn-copper;
+  padding-bottom: $space-2;
+  margin-bottom: $space-6;
 }
 
-h3 {
-  font-size: 1.6rem;
-  color: $ai-green;
+/* Links - Autumn Gold Elegance */
+a {
+  color: $autumn-gold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: lighten($autumn-gold, 15%);
+    text-shadow: 0 0 8px rgba($autumn-gold, 0.5);
+  }
+  
+  &:visited {
+    color: $autumn-copper;
+  }
 }
 
-// Pixel Text Class
-.pixel-text {
-  font-family: 'JetBrains Mono', monospace !important;
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  shape-rendering: crispEdges;
-}
-
-/* ===== ENHANCED CODE STYLING - 舒適閱讀版 ===== */
-pre, code {
-  font-family: 'JetBrains Mono', Monaco, Consolas, monospace !important;
-  background-color: $dark-surface-2 !important;
-  border: 2px solid rgba($ai-blue, 0.2) !important;
-  border-radius: 0 !important; // Pixel perfect corners
-  color: $text-primary !important;
-  image-rendering: pixelated;
+/* Code Blocks - AI Theme */
+code {
+  background: rgba($ai-neural, 0.1);
+  color: $autumn-gold;
+  border-radius: $pixel-border-radius;
+  padding: 0.2rem 0.4rem;
+  font-family: $pixel-font;
 }
 
 pre {
-  box-shadow: 
-    4px 4px 0px rgba($ai-blue, 0.15),
-    8px 8px 0px rgba($ai-purple, 0.08) !important;
-  position: relative;
+  background: $noir-gray;
+  border: 1px solid $autumn-copper;
+  border-radius: $pixel-border-radius;
+  box-shadow: $box-shadow-soft;
+}
+
+/* Blockquotes - Fashion Editorial */
+blockquote {
+  border-left: 4px solid $autumn-gold;
+  background: rgba($autumn-gold, 0.05);
+  padding: $space-4 $space-6;
+  margin: $space-6 0;
+  font-style: italic;
+  color: $noir-text-muted;
   
-  // 遊戲風格邊框裝飾
-  &::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, 
-      transparent 0%, 
-      rgba($ai-blue, 0.05) 25%, 
-      transparent 50%, 
-      rgba($ai-purple, 0.05) 75%, 
-      transparent 100%
-    );
-    border-radius: 0;
-    z-index: -1;
+  p:last-child {
+    margin-bottom: 0;
   }
 }
 
-code {
-  background-color: rgba($ai-blue, 0.1) !important;
-  color: lighten($ai-blue, 10%) !important;
-  padding: 2px 6px !important;
-  border-radius: 0 !important; // Pixel perfect
-  border: 1px solid rgba($ai-blue, 0.2) !important;
-}
-
-/* ===== PIXEL-ENHANCED MASTHEAD ===== */
+/* Navigation - Autumn Noir Style */
 .masthead {
-  background-color: $dark-surface !important;
-  border-bottom: 3px solid $ai-blue !important;
-  box-shadow: 0 3px 0px rgba($ai-blue, 0.3) !important; // Pixel shadow
+  background: rgba($noir-black, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid $autumn-copper;
   
   .site-title {
-    font-family: 'JetBrains Mono', monospace !important;
-    font-weight: 700 !important;
-    font-size: 1.5rem !important;
-    color: $ai-blue !important;
-    text-decoration: none !important;
-    text-shadow: 2px 2px 0px rgba($ai-purple, 0.3);
+    font-family: $serif-editorial;
+    color: $autumn-gold;
+    font-weight: $font-bold;
+  }
+  
+  .masthead__menu-item a {
+    color: $noir-text;
+    font-weight: $font-medium;
     
     &:hover {
-      background: linear-gradient(45deg, $ai-blue, $ai-green);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      transition: all 0.3s ease;
-      transform: translateY(-1px);
+      color: $autumn-gold;
     }
   }
 }
 
-/* ===== PIXEL-ENHANCED NAVIGATION ===== */
-.greedy-nav {
-  background: $dark-surface !important;
+/* Sidebar - Editorial Fashion */
+.sidebar {
+  background: $bg-gradient-main;
+  border-right: 1px solid $noir-border;
   
-  a {
-    color: $text-secondary !important;
-    font-weight: 500 !important;
-    font-size: 0.9rem !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.3s ease !important;
-    
-    &:hover {
-      color: $ai-blue !important;
-      transform: translateY(-2px) !important;
-      text-shadow: 0 2px 4px rgba($ai-blue, 0.3);
-    }
+  .author__avatar img {
+    border: 3px solid $autumn-gold;
+    box-shadow: $box-shadow-soft;
   }
   
-  .visible-links a {
-    position: relative;
-    
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 3px;
-      bottom: -8px;
-      left: 50%;
-      background: $ai-blue;
-      transition: all 0.3s ease;
-      box-shadow: 0 1px 0px rgba($ai-blue, 0.5); // Pixel glow
-    }
-    
-    &:hover::after {
-      width: 100%;
-      left: 0;
-    }
+  .author__bio {
+    color: $noir-text-muted;
+    font-style: italic;
   }
 }
 
-/* ===== PIXEL-ENHANCED HERO SECTION ===== */
-.page__hero {
-  background: $dark-bg !important;
-  position: relative;
-  overflow: hidden;
-  
-  // Pixel grid overlay
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      linear-gradient(rgba($ai-blue, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba($ai-blue, 0.03) 1px, transparent 1px);
-    background-size: 16px 16px;
-    pointer-events: none;
-    z-index: 1;
-  }
-  
-  // Animated pixel particles
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 20% 20%, rgba($ai-blue, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgba($ai-purple, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 60% 40%, rgba($ai-green, 0.05) 0%, transparent 50%);
-    z-index: 2;
-  }
-  
-  .page__hero-caption {
-    background: linear-gradient(90deg, $ai-green, $ai-blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 600;
-    z-index: 10;
-    position: relative;
-    text-shadow: none;
-  }
-  
+/* Posts and Pages - Fashion Editorial Layout */
+.page__content {
+  background: rgba($noir-gray, 0.3);
+  border-radius: $pixel-border-radius;
+  padding: $space-8;
+  box-shadow: $box-shadow-editorial;
+  margin: $space-6 0;
+}
+
+/* Archive and Category Pages */
+.archive {
   .page__title {
-    color: $text-primary !important;
-    font-size: 3.5rem !important;
-    font-weight: 800 !important;
-    z-index: 10;
-    position: relative;
-    text-shadow: 2px 2px 0px rgba($dark-bg, 0.8);
-    font-family: 'Inter', sans-serif !important;
-  }
-  
-  .btn {
-    background: linear-gradient(45deg, $ai-blue, $ai-purple) !important;
-    border: none !important;
-    border-radius: 0 !important; // Pixel perfect
-    color: white !important;
-    font-weight: 700 !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    padding: 12px 24px !important;
-    font-size: 1rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 4px 4px 0px rgba($dark-bg, 0.5) !important;
-    
-    &:hover {
-      transform: translate(-2px, -2px) !important;
-      box-shadow: 6px 6px 0px rgba($dark-bg, 0.7) !important;
-    }
+    font-family: $serif-editorial;
+    color: $autumn-gold;
+    text-align: center;
+    margin-bottom: $space-8;
   }
 }
 
-/* ===== PIXEL-ENHANCED BUTTONS ===== */
-.btn {
-  &--primary {
-    background: linear-gradient(45deg, $ai-blue, $ai-purple) !important;
-    border: 2px solid $ai-blue !important;
-    border-radius: 0 !important; // Pixel perfect
-    color: white !important;
-    font-weight: 600 !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: 3px 3px 0px rgba($ai-blue, 0.3) !important;
-    
-    &:hover {
-      transform: translate(-1px, -1px) !important;
-      box-shadow: 4px 4px 0px rgba($ai-blue, 0.5) !important;
-      background: linear-gradient(45deg, lighten($ai-blue, 10%), lighten($ai-purple, 10%)) !important;
-    }
-  }
-  
-  &--outline {
-    background: transparent !important;
-    border: 2px solid $ai-blue !important;
-    color: $ai-blue !important;
-    border-radius: 0 !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    text-transform: uppercase !important;
-    
-    &:hover {
-      background: $ai-blue !important;
-      color: $dark-bg !important;
-      transform: translate(-1px, -1px) !important;
-      box-shadow: 3px 3px 0px rgba($ai-blue, 0.3) !important;
-    }
-  }
-}
-
-/* ===== PIXEL-ENHANCED ARTICLES ===== */
-.archive__item {
-  background: $dark-surface !important;
-  border: 2px solid rgba($text-primary, 0.1) !important;
-  border-radius: 0 !important; // Pixel perfect
-  padding: 2rem !important;
-  margin-bottom: 2rem !important;
-  transition: all 0.3s ease !important;
-  position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, $ai-blue, $ai-purple);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
+.list__item {
+  padding: $space-4;
+  border-bottom: 1px solid rgba($autumn-copper, 0.3);
   
   &:hover {
-    border-color: $ai-blue !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 6px 12px rgba($ai-blue, 0.2) !important;
-    
-    &::before {
-      opacity: 1;
-    }
+    background: rgba($autumn-gold, 0.05);
   }
   
-  .archive__item-title a {
-    color: $text-primary !important;
-    text-decoration: none !important;
-    font-weight: 600 !important;
+  .archive__item-title {
+    color: $noir-text;
     
     &:hover {
-      color: $ai-blue !important;
+      color: $autumn-gold;
     }
-  }
-  
-  .page__meta {
-    color: $text-muted !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    font-size: 0.8rem !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
   }
   
   .archive__item-excerpt {
-    color: $text-secondary !important;
+    color: $noir-text-muted;
   }
 }
 
-/* ===== PIXEL-ENHANCED NOTICES ===== */
-.notice {
-  border-radius: 0 !important; // Pixel perfect
-  border: 2px solid !important;
-  background: $dark-surface !important;
-  font-family: 'Inter', sans-serif !important;
-  
-  &--info {
-    border-color: $ai-blue !important;
-    background: rgba($ai-blue, 0.05) !important;
-    box-shadow: 4px 4px 0px rgba($ai-blue, 0.1);
-  }
-  
-  &--success {
-    border-color: $ai-green !important;
-    background: rgba($ai-green, 0.05) !important;
-    box-shadow: 4px 4px 0px rgba($ai-green, 0.1);
-  }
-  
-  &--warning {
-    border-color: $ai-yellow !important;
-    background: rgba($ai-yellow, 0.05) !important;
-    box-shadow: 4px 4px 0px rgba($ai-yellow, 0.1);
-  }
-  
-  h4 {
-    color: $text-primary !important;
-    font-weight: 700 !important;
-    font-family: 'JetBrains Mono', monospace !important;
-  }
-  
-  p {
-    color: $text-secondary !important;
-  }
-}
-
-/* ===== PIXEL-ENHANCED FOOTER ===== */
-.page__footer {
-  background: $dark-surface !important;
-  border-top: 3px solid $ai-blue !important;
-  
-  .page__footer-copyright {
-    color: $text-muted !important;
-    font-family: 'JetBrains Mono', monospace !important;
-    font-size: 0.8rem !important;
-  }
-  
-  .social-icons .fa {
-    color: $ai-blue !important;
-    transition: all 0.3s ease !important;
+/* Pagination - Gaming Style */
+.pagination {
+  .current, .pagination a {
+    background: $bg-gradient-accent;
+    border: 1px solid $autumn-gold;
+    color: $noir-text;
     
     &:hover {
-      color: $ai-green !important;
-      transform: translateY(-2px) !important;
-      filter: drop-shadow(0 2px 4px rgba($ai-green, 0.3));
+      background: lighten($autumn-burgundy, 10%);
+      color: $autumn-gold;
     }
   }
 }
 
-/* ===== PIXEL ANIMATIONS ===== */
-@keyframes pixelGlow {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba($ai-blue, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba($ai-blue, 0.6), 0 0 30px rgba($ai-purple, 0.3);
-  }
-}
-
-@keyframes pixelPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
+/* Footer - Minimal Autumn Style */
+.page__footer {
+  background: $noir-black;
+  border-top: 2px solid $autumn-copper;
+  color: $noir-text-muted;
+  
+  .page__footer-copyright {
+    font-family: $pixel-font;
+    font-size: 0.8rem;
   }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 30px, 0);
+/* Table of Contents - AI Neural Style */
+.toc {
+  background: rgba($ai-neural, 0.05);
+  border: 1px solid $autumn-copper;
+  border-radius: $pixel-border-radius;
+  
+  .toc__title {
+    color: $autumn-gold;
+    font-family: $serif-editorial;
   }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  
+  a {
+    color: $noir-text-muted;
+    
+    &:hover {
+      color: $autumn-gold;
+    }
   }
 }
 
-.pixel-glow {
-  animation: pixelGlow 2s ease-in-out infinite;
+/* Search - Autumn Fashion */
+.search-content {
+  .search-input {
+    background: $noir-gray;
+    border: 2px solid $autumn-copper;
+    color: $noir-text;
+    border-radius: $pixel-border-radius;
+    
+    &:focus {
+      border-color: $autumn-gold;
+      box-shadow: 0 0 10px rgba($autumn-gold, 0.3);
+    }
+  }
 }
 
-.pixel-pulse {
-  animation: pixelPulse 1.5s ease-in-out infinite;
+/* Responsive Design Improvements */
+@media (max-width: 1024px) {
+  .page__content {
+    padding: $space-6;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
 }
 
-.fade-in-up {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-/* ===== RESPONSIVE PIXEL DESIGN ===== */
 @media (max-width: 768px) {
-  .page__title {
-    font-size: 2.5rem !important;
+  .page__content {
+    padding: $space-4;
+    margin: $space-4 0;
   }
   
-  h1 { font-size: 2.2rem !important; }
-  h2 { font-size: 1.8rem !important; }
-  
-  .btn {
-    padding: 10px 20px !important;
-    font-size: 0.9rem !important;
+  h1 {
+    font-size: 1.8rem;
   }
   
-  .archive__item {
-    padding: 1.5rem !important;
+  h2 {
+    font-size: 1.5rem;
   }
-}
-
-@media (max-width: 480px) {
-  .page__title {
-    font-size: 2rem !important;
-  }
-  
-  .masthead .site-title {
-    font-size: 1.2rem !important;
-  }
-}
-
-/* ===== SELECTION AND FOCUS ===== */
-::selection {
-  background: rgba($ai-blue, 0.3);
-  color: white;
-}
-
-*:focus {
-  outline: 2px solid $ai-blue !important;
-  outline-offset: 2px !important;
-  border-radius: 0 !important;
-}
-
-/* ===== UTILITY CLASSES ===== */
-.pixel-border {
-  border: 2px solid $ai-blue !important;
-  border-radius: 0 !important;
-}
-
-.pixel-shadow {
-  box-shadow: 4px 4px 0px rgba($ai-blue, 0.3) !important;
-}
-
-.retro-glow {
-  box-shadow: 
-    0 0 5px rgba($ai-blue, 0.5),
-    0 0 10px rgba($ai-blue, 0.3),
-    0 0 15px rgba($ai-purple, 0.2) !important;
 }

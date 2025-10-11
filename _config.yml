@@ -1,64 +1,28 @@
-# 網站基本設定
+# Site settings - Autumn Noir Editorial Theme
 locale: "zh-TW"
 title: "Archis Studio"
 title_separator: "·"
-subtitle: "Learning AI Coding · 有趣且易懂"
+subtitle: "Fashion AI + Pixel Gaming + Autumn Aesthetics"
 name: "Archi Chen"
-description: "用最有趣的方式學習 AI Coding！專注分享 AI 工具應用、程式設計、數據分析的實戰經驗。讓每個人都能享受 Coding 的樂趣。"
+description: "時尚與科技的完美融合 - 用 Editorial 風格分享 AI 工具、程式開發與像素藝術創作，讓技術學習如秋日般優雅而充滿詩意"
 url: "https://magicxcr7.github.io"
 baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
-teaser: "/assets/images/default-teaser.jpg"
-logo: "/assets/images/site-logo.png"
-masthead_title: "Digital Compass"
+teaser: "/assets/images/autumn-noir-teaser.jpg"
+logo: "/assets/images/autumn-logo.png"
+masthead_title: "Archis Studio"
 breadcrumbs: true
 words_per_minute: 200
 
-# 評論系統 (生產環境時啟用)
-comments:
-  provider: false # 上線時改為 "disqus"
-  disqus:
-    shortname: # 請勿修改 - GA_DISQUS_SHORTNAME
+# Autumn Noir Theme settings
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dark" # Base skin, will be overridden by custom Autumn Noir theme
 
-# 搜尋功能
-search: true
-search_full_content: true
-search_provider: lunr
-lunr:
-  search_within_pages: true
-
-# SEO 相關設定
-google_site_verification: # 請勿修改 - GA_SITE_VERIFICATION
-bing_site_verification: # 請勿修改 - BING_SITE_VERIFICATION
-naver_site_verification: # 請勿修改 - NAVER_SITE_VERIFICATION
-
-# 社群分享設定
-twitter:
-  username: # 未來可新增 Twitter 帳號
-facebook:
-  username: # 未來可新增 Facebook 頁面
-  app_id:
-  publisher:
-og_image: "/assets/images/site-og-image.jpg"
-social:
-  type: "Person"
-  name: "Archi Chen"
-  links:
-    - "https://github.com/magicxcr7"
-    - "https://linkedin.com/in/archi-chen" # 未來可新增
-
-# 網站分析 (請勿修改)
-analytics:
-  provider: false # 請勿修改 - GA_PROVIDER
-  google:
-    tracking_id: # 請勿修改 - GA_TRACKING_ID
-    anonymize_ip: false
-
-# 作者資訊
+# Author - Fashion Editorial Style
 author:
   name: "Archi Chen"
-  avatar: "/assets/images/bio-photo.jpg"
-  bio: "AI Coding 愛好者 | Backend 工程師 | 讓學習變得有趣<br/>分享 AI 工具應用與程式設計的實戰經驗，用最簡單的語言讓每個人都能享受 Coding"
+  avatar: "/assets/images/autumn-bio-photo.jpg"
+  bio: "Fashion AI Enthusiast | Editorial Developer<br/>🍂 創造時尚與科技的秋日美學<br/>讓程式設計如時裝週般優雅"
   location: "台北, 台灣"
   email: "magic83w@gmail.com"
   links:
@@ -68,11 +32,11 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/magicxcr7"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      url: "https://linkedin.com/in/archi-chen"
+    - label: "Fashion Portfolio"
+      icon: "fas fa-fw fa-link"
+      url: "#"
 
-# 網站底部
+# Site footer
 footer:
   links:
     - label: "GitHub"
@@ -82,7 +46,7 @@ footer:
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:magic83w@gmail.com"
 
-# 檔案處理
+# Reading Files
 include:
   - .htaccess
   - _pages
@@ -107,28 +71,25 @@ exclude:
   - log
   - node_modules
   - package.json
-  - package-lock.json
   - Rakefile
   - README
   - tmp
   - /docs
   - /test
-  - scripts
-  - _site_guideline.yml
 keep_files:
   - .git
   - .svn
 encoding: "utf-8"
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 
-# Markdown 處理
+# Conversion
 markdown: kramdown
 highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
 
-# Kramdown 設定
+# Markdown Processing
 kramdown:
   input: GFM
   hard_wrap: false
@@ -144,13 +105,13 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# 輸出設定
+# Outputting
 permalink: /:categories/:title/
 paginate: 12
 paginate_path: /page:num/
 timezone: Asia/Taipei
 
-# 外掛程式
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -160,7 +121,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-remote-theme
 
-# GitHub Pages 安全白名單
+# mimic GitHub Pages with --safe
 whitelist:
   - jekyll-paginate
   - jekyll-sitemap
@@ -170,7 +131,7 @@ whitelist:
   - jekyll-seo-tag
   - jekyll-remote-theme
 
-# 分類與標籤歸檔
+# Archives
 category_archive:
   type: liquid
   path: /categories/
@@ -178,19 +139,13 @@ tag_archive:
   type: liquid
   path: /tags/
 
-# HTML 壓縮
+# HTML Compression
 compress_html:
   clippings: all
   ignore:
     envs: development
 
-# 集合設定
-collections:
-  portfolio:
-    output: true
-    permalink: /:collection/:name/
-
-# 預設設定
+# Defaults
 defaults:
   # _posts
   - scope:
@@ -206,10 +161,6 @@ defaults:
       toc: true
       toc_sticky: true
       toc_label: "目錄"
-      last_modified_at: # 會自動使用 Git 提交時間或手動設定
-      header:
-        overlay_color: "#2c3e50"
-        overlay_filter: "0.5"
   # _pages
   - scope:
       path: "_pages"
@@ -217,20 +168,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      header:
-        overlay_color: "#34495e"
-        overlay_filter: "0.5"
-  # _portfolio
-  - scope:
-      path: ""
-      type: portfolio
-    values:
-      layout: single
-      author_profile: false
-      share: true
-      toc: true
-      toc_sticky: true
 
-# 主題設定
-remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "dark"
+# Search
+search: true
+search_full_content: true
+search_provider: lunr

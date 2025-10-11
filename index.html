@@ -1,256 +1,177 @@
 ---
 layout: home
 author_profile: true
-classes: wide
+classes: wide autumn-noir-theme
 header:
-  overlay_color: "#0a0a0a"
-  overlay_filter: "0.4"
-  overlay_image: /assets/svg-placeholders/learning-curve-hero.svg
+  overlay_color: "#0E0E10"
+  overlay_filter: "0.7"
+  overlay_image: /assets/images/autumn-noir-hero.jpg
   actions:
-    - label: "開始我的成長之旅 🚀"
-      url: "/blog/"
-      btn_class: "btn--primary btn--large"
-  caption: "Learning AI Coding · 有趣且易懂"
-excerpt: "歡迎來到 **Archis Studio**<br/>和 500+ 人一起快樂 Vibe Coding，讓學習成為成長的樂趣 ⚡"
-intro: 
-  - excerpt: '我是 **Archi Chen**，相信每個人都有自己的學習曲線 🎯<br/>用像素風格記錄成長軌跡，分享從零開始的 AI Coding 學習經驗'
+    - label: "🍂 探索秋季創作"
+      url: "/posts/"
+      btn_class: "btn--primary btn--large editorial-primary"
+    - label: "🤖 AI 時尚工具"
+      url: "/categories/#ai-applications"
+      btn_class: "btn--info btn--large ai-neural"
+  caption: "Fashion · AI · Gaming · Pixel Art"
+excerpt: "🍂 **Archis Studio** - Autumn Noir Editorial<br/>時尚與科技的完美融合，用像素藝術記錄 AI 時代的創作旅程<br/>讓程式開發如秋日般優雅而充滿詩意"
+intro:
+  - excerpt: "歡迎來到秋日時尚的技術世界！在這裡，**Editorial Fashion** 遇見 **AI Innovation**，**Pixel Art** 融合 **Autumn Aesthetics**。<br/>無論你是追求時尚的開發者，還是熱愛藝術的程式設計師，這裡都是你的創意天堂。"
 ---
-
-<!-- Custom Pixel Art Hero Section -->
-<div class="hero-pixel-learning pixel-container">
-  <div class="learning-curve-visual pixel-art" id="learningCurveHero">
-    <!-- SVG Placeholder - Will be replaced with custom pixel art -->
-  </div>
-  
-  <div class="hero-text-overlay">
-    <h1>
-      和 <span class="gradient-text">500+</span> 人一起快樂 
-      <span class="gradient-text">Vibe Coding</span>
-    </h1>
-    <p>Empowering Growth Through Technology & AI</p>
-    <p class="pixel-text">A place where technology becomes accessible, inspiring, and practical</p>
-    <a href="/blog/" class="btn btn--primary btn--large pixel-glow">開始我的成長之旅</a>
-  </div>
-</div>
 
 {% include feature_row id="intro" type="center" %}
 
-## 🎯 我的學習曲線理念
-
-<div class="retro-container">
-  <div class="pixel-progress-bar">
-    <h3 class="pixel-text">個人成長 = 持續學習 + 實際應用</h3>
-    <div class="progress-container">
-      <div class="progress-fill animate-progress" style="--progress-width: 75%;">
-        <!-- Progress segments will be pixel art -->
+<!-- Autumn Fashion Stats Section -->
+<div class="gaming-stats-showcase neural-bg autumn-pixel-grid">
+  <div class="container">
+    <h2 class="section-title pixel-text-glow ai-typing">🍂 Autumn Fashion Achievements</h2>
+    
+    <div class="gaming-panel editorial stats-container">
+      <div class="gaming-stats">
+        <div class="stat-item">
+          <div class="stat-icon pixel-icon fashion-code">📖</div>
+          <span class="stat-value">{{ site.posts.size }}+</span>
+          <span class="stat-label">Editorial Posts</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon pixel-icon ai-brain">🧠</div>
+          <span class="stat-value">12+</span>
+          <span class="stat-label">AI Fashion Tools</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon pixel-icon autumn-leaf">🍂</div>
+          <span class="stat-value">4+</span>
+          <span class="stat-label">Seasons Experience</span>
+        </div>
+        <div class="stat-item">
+          <div class="stat-icon pixel-icon gaming-pixel">👗</div>
+          <span class="stat-value">800+</span>
+          <span class="stat-label">Fashion Learners</span>
+        </div>
       </div>
     </div>
-    <div class="progress-labels">
-      <span>新手</span>
-      <span>AI工具</span>
-      <span>程式設計</span>
-      <span>專業化</span>
-      <span>專家</span>
+  </div>
+</div>
+
+<!-- Autumn Fashion Categories Section -->
+<div class="gaming-categories-section neural-bg">
+  <div class="container">
+    <h2 class="section-title pixel-text-glow ai-typing editorial">🍂 Fashion Editorial Collections</h2>
+    
+    <div class="categories-grid">
+      <div class="editorial-card ai-category">
+        <div class="card-header">
+          <span class="card-category">AI Fashion</span>
+          <h3 class="card-title">🤖 AI 時尚工具</h3>
+        </div>
+        <div class="card-content">
+          <p>探索 ChatGPT、Midjourney 等 AI 工具在時尚設計與創作中的應用，讓科技為創意賦能</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-date">{{ site.posts | where: "categories", "ai-applications" | size }} 篇文章</span>
+          <div class="card-tags">
+            <span class="tag">AI應用</span>
+            <span class="tag">創意工具</span>
+          </div>
+        </div>
+        <a href="/categories/#ai-applications" class="pixel-btn editorial-primary">探索時尚 AI</a>
+      </div>
+
+      <div class="editorial-card backend-category">
+        <div class="card-header">
+          <span class="card-category">Tech Fashion</span>
+          <h3 class="card-title">💻 技術時尚筆記</h3>
+        </div>
+        <div class="card-content">
+          <p>以時尚的視角記錄 Python、FastAPI、系統架構等技術，讓程式碼也能充滿美感</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-date">{{ site.posts | where: "categories", "technical" | size }} 篇文章</span>
+          <div class="card-tags">
+            <span class="tag">Backend</span>
+            <span class="tag">Architecture</span>
+          </div>
+        </div>
+        <a href="/categories/#technical" class="pixel-btn ai-neural">技術美學</a>
+      </div>
+
+      <div class="editorial-card data-category">
+        <div class="card-header">
+          <span class="card-category">Data Couture</span>
+          <h3 class="card-title">📊 數據時裝週</h3>
+        </div>
+        <div class="card-content">
+          <p>將數據科學與時尚結合，用優雅的方式展示 Pandas、機器學習的實務應用</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-date">{{ site.posts | where: "categories", "data-science" | size }} 篇文章</span>
+          <div class="card-tags">
+            <span class="tag">Data Science</span>
+            <span class="tag">ML</span>
+          </div>
+        </div>
+        <a href="/categories/#data-science" class="pixel-btn editorial-primary">數據美學</a>
+      </div>
+
+      <div class="editorial-card growth-category">
+        <div class="card-header">
+          <span class="card-category">Growth Style</span>
+          <h3 class="card-title">🌱 成長時尚指南</h3>
+        </div>
+        <div class="card-content">
+          <p>以時尚編輯的角度分享個人成長、學習方法與職涯發展的優雅策略</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-date">{{ site.posts | where: "categories", "personal-growth" | size }} 篇文章</span>
+          <div class="card-tags">
+            <span class="tag">Personal Growth</span>
+            <span class="tag">Career</span>
+          </div>
+        </div>
+        <a href="/categories/#personal-growth" class="pixel-btn ai-neural">成長美學</a>
+      </div>
     </div>
   </div>
-  
-  <p style="color: #a1a1aa; text-align: center; margin-top: 1rem;">
-    每個人的學習曲線都不同，重要的是享受成長的過程 🌱
-  </p>
 </div>
 
-## 🚀 學習路徑 - 像素風格成長地圖
-
-<div class="skill-icons-grid">
-  <div class="skill-icon">
-    <div class="icon-image ai-tools pixel-art"></div>
-    <h3>🤖 AI 工具實戰</h3>
-    <p>從 ChatGPT 到 GitHub Copilot，讓 AI 成為你的最佳學習夥伴</p>
-    <a href="/categories/ai-applications/" class="btn btn--primary btn--small">開始探索</a>
-  </div>
-  
-  <div class="skill-icon">
-    <div class="icon-image programming pixel-art"></div>
-    <h3>💻 程式設計基礎</h3>
-    <p>Python、API 設計、系統架構，打造紮實的技術基礎</p>
-    <a href="/categories/technical/" class="btn btn--primary btn--small">學習程式</a>
-  </div>
-  
-  <div class="skill-icon">
-    <div class="icon-image data pixel-art"></div>
-    <h3>📊 數據分析應用</h3>
-    <p>量化交易、數位行銷，將技能應用到專業領域</p>
-    <a href="/categories/fintech/" class="btn btn--primary btn--small">探索應用</a>
-  </div>
-  
-  <div class="skill-icon">
-    <div class="icon-image growth pixel-art"></div>
-    <h3>🌱 持續成長</h3>
-    <p>學習方法、職涯經驗，建立終生學習的成長思維</p>
-    <a href="/categories/personal-growth/" class="btn btn--primary btn--small">成長心法</a>
-  </div>
-</div>
-
-## 🔥 最新成長紀錄
-
-<div class="latest-posts pixel-border">
-{% assign posts_by_update = site.posts | sort: 'last_modified_at' | reverse %}
-{% for post in posts_by_update limit:3 %}
-  {% include archive-single.html %}
-{% endfor %}
-</div>
-
-<div class="text-center" style="margin-top: 3rem;">
-  <a href="/blog/" class="btn btn--primary btn--large pixel-shadow">查看所有學習紀錄</a>
-</div>
-
----
-
-## 💡 為什麼選擇跟著我學習？
-
-<div class="why-learn-grid">
-  <div class="feature-card retro-container">
-    <div class="feature-icon pixel-text">🎮</div>
-    <h3>學習很有趣</h3>
-    <p>用像素風格和遊戲化思維記錄學習過程，讓每個成長里程碑都看得見。</p>
-  </div>
-  
-  <div class="feature-card retro-container">
-    <div class="feature-icon pixel-text">📈</div>
-    <h3>成長可視化</h3>
-    <p>用學習曲線圖追蹤進步軌跡，每個技能提升都有具體的成果展示。</p>
-  </div>
-  
-  <div class="feature-card retro-container">
-    <div class="feature-icon pixel-text">🤖</div>
-    <h3>AI 時代領先</h3>
-    <p>分享最新 AI 工具使用心得，讓你在快速變化的科技時代保持競爭力。</p>
-  </div>
-  
-  <div class="feature-card retro-container">
-    <div class="feature-icon pixel-text">🌍</div>
-    <h3>實用主義</h3>
-    <p>每篇文章都能立即應用，從學習到實作，從理論到職場實戰。</p>
+<!-- Latest Fashion Posts Section -->
+<div class="latest-posts-section autumn-pixel-grid">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title pixel-text-glow ai-typing">📖 Latest Editorial Stories</h2>
+      <a href="/posts/" class="pixel-btn editorial-primary">View All Collections</a>
+    </div>
+    
+    <div class="posts-gaming-grid">
+      {% for post in site.posts limit:6 %}
+        <article class="editorial-card post-gaming-card">
+          <div class="card-header">
+            <span class="card-category">
+              {% if post.categories contains 'ai-applications' %}AI Fashion
+              {% elsif post.categories contains 'technical' %}Tech Style
+              {% elsif post.categories contains 'data-science' %}Data Couture
+              {% elsif post.categories contains 'personal-growth' %}Growth Guide
+              {% else %}Editorial{% endif %}
+            </span>
+            <h3 class="card-title">
+              <a href="{{ post.url }}">{{ post.title }}</a>
+            </h3>
+          </div>
+          
+          <div class="card-content">
+            <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          </div>
+          
+          <div class="card-footer">
+            <span class="card-date">{{ post.date | date: "%B %d, %Y" }}</span>
+            <div class="card-tags">
+              {% for tag in post.tags limit:2 %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </div>
-
----
-
-<div class="cta-section pixel-container">
-  <h2 class="pixel-text">🎉 準備好開始你的成長曲線了嗎？</h2>
-  <p>跟著我的學習路徑，用最有趣的方式掌握 AI 和程式設計！</p>
-  
-  <div class="cta-buttons">
-    <a href="/blog/" class="btn btn--primary btn--large pixel-glow">開始學習冒險</a>
-    <a href="/about/" class="btn btn--outline btn--large">認識 Archi</a>
-  </div>
-  
-  <div class="pixel-progress-bar" style="margin-top: 2rem;">
-    <p class="pixel-text" style="text-align: center; margin-bottom: 1rem;">
-      🚀 加入 500+ 學習者的成長之旅
-    </p>
-  </div>
-</div>
-
-<style>
-/* 首頁專用樣式 */
-.why-learn-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin: 3rem 0;
-}
-
-.feature-card {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.feature-card:hover {
-  transform: translateY(-5px);
-}
-
-.feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.feature-card h3 {
-  color: #00d9ff;
-  margin-bottom: 1rem;
-  font-family: 'JetBrains Mono', monospace;
-}
-
-.feature-card p {
-  color: #a1a1aa;
-  line-height: 1.6;
-}
-
-.cta-section {
-  text-align: center;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  padding: 4rem 2rem;
-  border-radius: 15px;
-  margin-top: 4rem;
-  border: 2px solid rgba(0, 217, 255, 0.3);
-}
-
-.cta-section h2 {
-  background: linear-gradient(135deg, #00d9ff 0%, #8b5cf6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: 1rem;
-  font-size: 2.2rem;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.latest-posts {
-  background: #1a1a1a;
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-/* 響應式設計 */
-@media (max-width: 768px) {
-  .why-learn-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .cta-buttons .btn {
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .skill-icons-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .skill-icons-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .cta-section h2 {
-    font-size: 1.8rem;
-  }
-}
-</style>
-
-
