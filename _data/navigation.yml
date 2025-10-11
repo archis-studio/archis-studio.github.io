@@ -1,34 +1,9 @@
-# 主要導航選單 - AI Coding Theme
 main:
-  - title: "Home"
+  - title: "首頁"
     url: /
-  - title: "Blog"
-    url: /blog/
-  - title: "About"
+  - title: "文章"
+    url: /posts/
+  - title: "分類"
+    url: /categories/
+  - title: "關於"
     url: /about/
-  - title: "Contact"
-    url: "mailto:magic83w@gmail.com"
-
-# 分類導航 (用於分類頁面側邊欄)
-collections:
-  - title: "💻 技術領域"
-    children:
-      - title: "技術分享"
-        url: /categories/technical/
-        description: "程式設計、後端開發、資料工程實務"
-      - title: "AI 應用"
-        url: /categories/ai-applications/
-        description: "人工智慧工具與實戰應用"
-  - title: "💰 商業應用" 
-    children:
-      - title: "金融科技"
-        url: /categories/fintech/
-        description: "量化交易、程式交易、回測分析"
-      - title: "數位行銷"
-        url: /categories/digital-marketing/
-        description: "GA 分析、廣告投放、電商工具"
-  - title: "🌟 個人發展"
-    children:
-      - title: "個人成長"
-        url: /categories/personal-growth/
-        description: "閱讀心得、職涯經驗、自我管理"

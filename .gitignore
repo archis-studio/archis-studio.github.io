@@ -1,4 +1,4 @@
-# Jekyll build artifacts
+# Jekyll
 _site/
 .sass-cache/
 .jekyll-cache/
@@ -8,11 +8,20 @@ _site/
 .bundle/
 vendor/
 
-# Environment variables
-.env
-.env.*
+# Ruby
+*.gem
+*.rbc
+/.config
+/coverage/
+/InstalledFiles
+/pkg/
+/spec/reports/
+/spec/examples.txt
+/test/tmp/
+/test/version_tmp/
+/tmp/
 
-# OS generated files
+# macOS
 .DS_Store
 .DS_Store?
 ._*
@@ -21,28 +30,31 @@ vendor/
 ehthumbs.db
 Thumbs.db
 
-# Editor files
+# IDE
+.vscode/
+.idea/
 *.swp
 *.swo
 *~
-.vscode/
-.idea/
 
-# Temporary files
-tmp/
-temp/
-
-# Log files
+# Logs
 *.log
 
-# Package files
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Cache
+.cache/
 
 # Backup files
-*~ 
 *.bak
-*2.md
-*2.lock
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp

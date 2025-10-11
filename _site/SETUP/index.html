@@ -1,0 +1,437 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="zh" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>🚀 本地開發環境設置指南 · Archis Studio</title>
+<meta name="description" content="專注於 AI 工具應用與程式開發的實戰分享，用繁體中文讓技術學習變得更友善。">
+
+
+  <meta name="author" content="Archi Chen">
+  
+
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="Archis Studio">
+<meta property="og:title" content="🚀 本地開發環境設置指南">
+<meta property="og:url" content="http://localhost:4000/SETUP/">
+
+
+  <meta property="og:description" content="專注於 AI 工具應用與程式開發的實戰分享，用繁體中文讓技術學習變得更友善。">
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/SETUP/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Archi Chen",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Archis Studio Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Custom Head Content for Gaming Theme -->
+
+<!-- Preload Gaming Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Custom Gaming Styles -->
+<link rel="stylesheet" href="/assets/css/gaming-hero.css">
+
+<!-- Theme Colors for Gaming Style -->
+<meta name="theme-color" content="#0A0A0F">
+<meta name="msapplication-TileColor" content="#00BFFF">
+
+<!-- Viewport optimizations for mobile gaming experience -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<!-- Gaming-style favicon (placeholder) -->
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-gaming.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon-gaming.png">
+  </head>
+
+  <body class="layout--default">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+          <a class="site-logo" href="/"><img src="/assets/images/site-logo.png" alt="Archis Studio"></a>
+        
+        <a class="site-title" href="/">
+          Archis Studio
+          <span class="site-subtitle">AI Coding 學習筆記</span>
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/">首頁</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/">文章</a>
+            </li><li class="masthead__menu-item">
+              <a href="/categories/">分類</a>
+            </li><li class="masthead__menu-item">
+              <a href="/about/">關於</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      <h1 id="-本地開發環境設置指南">🚀 本地開發環境設置指南</h1>
+
+<p><strong>快速啟動 Jekyll 部落格進行本地測試與開發</strong></p>
+
+<h2 id="-系統需求">📋 系統需求</h2>
+
+<ul>
+  <li><strong>Ruby</strong> 2.7+ (建議使用 rbenv 管理版本)</li>
+  <li><strong>Bundler</strong> gem 管理工具</li>
+  <li><strong>Git</strong> 版本控制</li>
+</ul>
+
+<h2 id="-快速啟動步驟">⚡ 快速啟動步驟</h2>
+
+<h3 id="1-安裝相依套件">1. 安裝相依套件</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安裝 bundler (如果尚未安裝)</span>
+gem <span class="nb">install </span>bundler
+
+<span class="c"># 安裝專案相依套件</span>
+bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<h3 id="2-啟動開發伺服器-gaming-style">2. 啟動開發伺服器 (Gaming Style)</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 啟動 Jekyll 開發伺服器 (含自動重新載入)</span>
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+
+<span class="c"># 或使用簡化指令</span>
+bundle <span class="nb">exec </span>jekyll s <span class="nt">-l</span>
+
+<span class="c"># 🎮 Gaming Style 專用測試指令</span>
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span> <span class="nt">--future</span> <span class="nt">--drafts</span>
+</code></pre></div></div>
+
+<h3 id="3-瀏覽網站">3. 瀏覽網站</h3>
+<p>開啟瀏覽器，前往: <strong>http://localhost:4000</strong></p>
+
+<p><strong>🎯 重點測試頁面</strong>:</p>
+<ul>
+  <li><strong>首頁</strong>: http://localhost:4000 - AI Gaming Hero Section</li>
+  <li><strong>關於頁面</strong>: http://localhost:4000/about/ - 個人介紹</li>
+  <li><strong>文章列表</strong>: http://localhost:4000/posts/ - 所有文章</li>
+  <li><strong>分類頁面</strong>: http://localhost:4000/categories/ - 按分類瀏覽</li>
+</ul>
+
+<p><strong>🎨 設計重點檢查</strong>:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />像素風格的 terminal 動畫</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Neural network 節點脈動效果</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Gaming panel 發光邊框</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Responsive 在手機上的顯示</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />深色背景與霓虹配色</li>
+</ul>
+
+<h2 id="-開發指令參考">🔧 開發指令參考</h2>
+
+<h3 id="基本指令">基本指令</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 建立靜態網站檔案</span>
+bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># 啟動開發伺服器 (基本)</span>
+bundle <span class="nb">exec </span>jekyll serve
+
+<span class="c"># 啟動開發伺服器 (進階選項)</span>
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span> <span class="nt">--drafts</span> <span class="nt">--future</span>
+
+<span class="c"># 清理建立的檔案</span>
+bundle <span class="nb">exec </span>jekyll clean
+</code></pre></div></div>
+
+<h3 id="常用開發參數">常用開發參數</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">--livereload</code> - 檔案變更時自動重新載入瀏覽器</li>
+  <li><code class="language-plaintext highlighter-rouge">--drafts</code> - 包含草稿文章 (_drafts 資料夾)</li>
+  <li><code class="language-plaintext highlighter-rouge">--future</code> - 包含未來日期的文章</li>
+  <li><code class="language-plaintext highlighter-rouge">--incremental</code> - 增量建立 (僅重建變更的檔案)</li>
+</ul>
+
+<h2 id="-重要檔案與資料夾">📁 重要檔案與資料夾</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/
+├── _config.yml          # Jekyll 主要設定檔
+├── _data/               # 網站資料檔案
+├── _includes/           # 可重用的 HTML 片段
+├── _layouts/            # 頁面版面模板
+├── _pages/              # 靜態頁面
+├── _posts/              # 部落格文章
+├── _sass/               # Sass/SCSS 樣式檔案
+├── assets/              # 靜態資源 (CSS, JS, 圖片)
+├── docs/                # 📋 專案規格文件
+└── index.html           # 網站首頁
+</code></pre></div></div>
+
+<h2 id="️-建立新文章">✏️ 建立新文章</h2>
+
+<h3 id="快速建立文章">快速建立文章</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 在 _posts/ 資料夾建立新檔案</span>
+<span class="c"># 檔案名稱格式: YYYY-MM-DD-title.md</span>
+
+<span class="nb">touch </span>_posts/<span class="si">$(</span><span class="nb">date</span> +%Y-%m-%d<span class="si">)</span><span class="nt">-my-new-post</span>.md
+</code></pre></div></div>
+
+<h3 id="文章範本">文章範本</h3>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章標題"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2025-10-11 18:00:00 +0800</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">technical</span><span class="pi">,</span> <span class="nv">ai-applications</span><span class="pi">]</span>  <span class="c1"># 最多 3 個</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">Python</span><span class="pi">,</span> <span class="nv">AI工具</span><span class="pi">,</span> <span class="nv">實戰心得</span><span class="pi">]</span>        <span class="c1"># 最多 6 個  </span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s2">"</span><span class="s">文章摘要，最多</span><span class="nv"> </span><span class="s">150</span><span class="nv"> </span><span class="s">字"</span>
+<span class="na">header</span><span class="pi">:</span>
+  <span class="na">overlay_color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#2563eb"</span>
+  <span class="na">overlay_filter</span><span class="pi">:</span> <span class="s2">"</span><span class="s">0.5"</span>
+<span class="na">toc</span><span class="pi">:</span> <span class="no">true</span>           <span class="c1"># 顯示目錄</span>
+<span class="na">toc_sticky</span><span class="pi">:</span> <span class="no">true</span>    <span class="c1"># 固定目錄</span>
+<span class="nn">---</span>
+
+<span class="gu">## 文章內容</span>
+
+你的精彩內容...
+</code></pre></div></div>
+
+<h2 id="-客製化樣式">🎨 客製化樣式</h2>
+
+<h3 id="修改設計系統">修改設計系統</h3>
+<ol>
+  <li>編輯 <code class="language-plaintext highlighter-rouge">_sass/design-system/_variables.scss</code> - 修改顏色、字型等變數</li>
+  <li>編輯 <code class="language-plaintext highlighter-rouge">_sass/design-system.scss</code> - 新增自訂樣式</li>
+  <li>重新啟動開發伺服器以載入變更</li>
+</ol>
+
+<h3 id="覆寫主題檔案">覆寫主題檔案</h3>
+<p>若需要客製化 Minimal Mistakes 主題檔案：</p>
+<ol>
+  <li>從 <a href="https://github.com/mmistakes/minimal-mistakes">主題 GitHub</a> 複製原始檔案</li>
+  <li>放置到對應的專案資料夾 (例: <code class="language-plaintext highlighter-rouge">_layouts/</code>, <code class="language-plaintext highlighter-rouge">_includes/</code>)</li>
+  <li>進行客製化修改</li>
+</ol>
+
+<h2 id="-常見問題排解">🐛 常見問題排解</h2>
+
+<h3 id="bundle-相關問題">Bundle 相關問題</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 更新 gems</span>
+bundle update
+
+<span class="c"># 重新安裝 gems  </span>
+<span class="nb">rm </span>Gemfile.lock
+bundle <span class="nb">install</span>
+
+<span class="c"># 清理並重建</span>
+bundle <span class="nb">exec </span>jekyll clean
+bundle <span class="nb">exec </span>jekyll build
+</code></pre></div></div>
+
+<h3 id="樣式未更新">樣式未更新</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 清理 Sass cache</span>
+<span class="nb">rm</span> <span class="nt">-rf</span> .sass-cache
+bundle <span class="nb">exec </span>jekyll clean
+bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+</code></pre></div></div>
+
+<h3 id="文章未顯示">文章未顯示</h3>
+<ul>
+  <li>檢查檔案名稱格式: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code></li>
+  <li>檢查 front matter 語法</li>
+  <li>確認日期不是未來時間 (除非使用 <code class="language-plaintext highlighter-rouge">--future</code> 參數)</li>
+</ul>
+
+<h2 id="-效能監控">📊 效能監控</h2>
+
+<h3 id="建立時間分析">建立時間分析</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 顯示建立時間詳細資訊</span>
+bundle <span class="nb">exec </span>jekyll build <span class="nt">--profile</span>
+
+<span class="c"># 僅建立增量變更</span>
+bundle <span class="nb">exec </span>jekyll build <span class="nt">--incremental</span>
+</code></pre></div></div>
+
+<h3 id="檔案大小檢查">檔案大小檢查</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 檢查 _site 資料夾大小</span>
+<span class="nb">du</span> <span class="nt">-sh</span> _site/
+
+<span class="c"># 列出最大的檔案</span>
+find _site <span class="nt">-type</span> f <span class="nt">-exec</span> <span class="nb">ls</span> <span class="nt">-la</span> <span class="o">{}</span> <span class="se">\;</span> | <span class="nb">sort</span> <span class="nt">-nrk</span> 5 | <span class="nb">head</span> <span class="nt">-10</span>
+</code></pre></div></div>
+
+<h2 id="-部署前檢查">🚀 部署前檢查</h2>
+
+<h3 id="生產環境建立">生產環境建立</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 使用生產環境設定建立</span>
+<span class="nv">JEKYLL_ENV</span><span class="o">=</span>production bundle <span class="nb">exec </span>jekyll build
+
+<span class="c"># 檢查建立結果</span>
+bundle <span class="nb">exec </span>jekyll doctor
+</code></pre></div></div>
+
+<h3 id="seo-與效能檢查">SEO 與效能檢查</h3>
+<ul>
+  <li>確認所有文章都有 <code class="language-plaintext highlighter-rouge">excerpt</code></li>
+  <li>檢查圖片是否最佳化</li>
+  <li>驗證 HTML 結構</li>
+  <li>測試 mobile responsiveness</li>
+</ul>
+
+<hr />
+
+<h2 id="-開發技巧">💡 開發技巧</h2>
+
+<ol>
+  <li><strong>使用 <code class="language-plaintext highlighter-rouge">--livereload</code></strong> 提升開發效率</li>
+  <li><strong>定期執行 <code class="language-plaintext highlighter-rouge">bundle update</code></strong> 保持套件更新</li>
+  <li><strong>遵循 <a href="./docs/">docs/</a> 資料夾的規格文件</strong> 確保一致性</li>
+  <li><strong>在本地充分測試後再推送到 GitHub</strong></li>
+</ol>
+
+<p><strong>Happy Coding!</strong> 🎉</p>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="https://github.com/magicxcr7" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="mailto:magic83w@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2025 Archi Chen. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>
