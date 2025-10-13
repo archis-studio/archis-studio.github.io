@@ -103,12 +103,13 @@
 
 /* 全息投影面板 */
 .hologram-panel {
-  background: rgba($space-nebula, 0.8);
-  border: 2px solid $space-comet;
+  background: rgba($space-nebula, 0.6);
+  border: 1px solid rgba($space-comet, 0.4);
   border-radius: $pixel-border-radius;
   position: relative;
-  backdrop-filter: blur(10px);
-  box-shadow: $box-shadow-hologram;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 12px rgba($ai-hologram, 0.2);
+  margin-bottom: $space-4;
   
   // 全息掃描線效果
   &::before {
@@ -148,27 +149,28 @@
   
   // 內容樣式
   .panel-header {
-    padding: $space-4 $space-6;
-    border-bottom: 1px solid rgba($space-comet, 0.3);
+    padding: $space-3 $space-4; /* 減少 padding */
+    border-bottom: 1px solid rgba($space-comet, 0.2);
     
     .panel-title {
       font-family: $futura-font;
-      font-weight: $font-bold;
-      color: $space-starlight;
+      font-weight: $font-semibold; /* 減少字重 */
+      color: $autumn-gold;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: $text-shadow-neon;
+      letter-spacing: 1px; /* 減少字間距 */
+      text-shadow: none; /* 移除文字陰影 */
+      font-size: 1rem; /* 減小字體 */
     }
     
     .panel-status {
       display: inline-block;
       padding: $space-1 $space-2;
-      background: rgba($space-aurora, 0.2);
-      color: $space-aurora;
+      background: rgba($space-aurora, 0.15);
+      color: lighten($space-aurora, 20%);
       border-radius: $space-1;
       font-family: $pixel-font;
-      font-size: 0.75rem;
-      animation: statusBlink 2s ease-in-out infinite;
+      font-size: 0.7rem; /* 減小字體 */
+      animation: none; /* 移除閃爍動畫 */
       
       &::before {
         content: '●';
@@ -179,21 +181,22 @@
   }
   
   .panel-content {
-    padding: $space-6;
-    color: $space-starlight;
-    line-height: 1.6;
+    padding: $space-4; /* 減少 padding */
+    color: $noir-text; /* 使用更柔和的文字色 */
+    line-height: 1.5; /* 減少行高 */
   }
 }
 
 /* AI 代理卡片 */
 .ai-agent-card {
   background: $bg-gradient-ai;
-  border: 2px solid $ai-neural;
+  border: 1px solid rgba($ai-neural, 0.3);
   border-radius: $pixel-border-radius;
-  padding: $space-6;
+  padding: $space-4; /* 減少 padding */
   position: relative;
   transition: all $ease-cyber 0.4s;
   overflow: hidden;
+  margin-bottom: $space-4; /* 減少間距 */
   
   &::before {
     content: '';
