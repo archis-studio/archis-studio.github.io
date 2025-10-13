@@ -104,6 +104,33 @@ B) [選項 B 描述]
 **建議**: [AI 的推薦選項與理由]
 ```
 
+### 進度回報標準格式
+
+每完成一個功能模組後的標準回報：
+
+```markdown
+## 🔄 進度回報 (Progress Report)
+
+### ✅ 已完成 (Completed)
+- [具體完成的任務]
+- [相關檔案異動]
+
+### 🔧 技術細節 (Technical Details)
+- [使用的技術/方法]
+- [遇到的挑戰與解決方案]
+
+### 📝 Git 狀態 (Git Status)  
+- Commit Hash: [hash]
+- Files Changed: [檔案列表]
+- Next Steps: [下一步計劃]
+
+### 🧪 測試確認 (Testing)
+- [ ] 功能正常運作
+- [ ] 響應式設計正確
+- [ ] 文檔已同步更新
+- [ ] 符合設計規範
+```
+
 ## 📁 檔案操作規範 (File Operation Guidelines)
 
 ### 檔案修改協定
