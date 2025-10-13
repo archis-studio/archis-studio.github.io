@@ -1,6 +1,6 @@
-/* Design System Variables - Autumn Noir Editorial AI Theme
+/* Design System Variables - Autumn Noir Future Theme
    Based on docs/DESIGN_SYSTEM_SPEC.md
-   Fashion + Gaming + Pixel Art + AI Aesthetic
+   Fashion + Gaming + Pixel Art + AI + Future Space Aesthetics
    ========================================================================== */
 
 /* Autumn Noir - Editorial AI Theme Colors */
@@ -24,51 +24,75 @@ $ai-neural: #9B59B6 !default;      // AI 神經紫 - 深度學習
 $pixel-cyan: #17A2B8 !default;     // 像素青 - 數據流
 $gaming-neon: #E74C3C !default;    // 遊戲霓虹 - 互動元素
 
-// 遊戲 UI 色彩 (Autumn Noir 風格)
-$game-bg-dark: $noir-black !default;
-$game-bg-mid: $noir-gray !default;
-$game-text: $noir-text !default;
-$game-text-dim: $noir-text-muted !default;
-$game-border: $noir-border !default;
+/* Future Space 太空色彩系統 */
+$space-void: #0B0B0F !default;     // 太空虚空 - 最深背景
+$space-nebula: #1A0B2E !default;   // 星雲紫 - 神秘深空
+$space-comet: #00D9FF !default;    // 彗星藍 - 太空科技
+$space-aurora: #00FF88 !default;   // 極光綠 - 能量流動
+$space-plasma: #FF6B9D !default;   // 等離子粉 - 未來能源
+$space-starlight: #FFF4E6 !default; // 星光白 - 遙遠恆星
 
-// Minimal Mistakes 變數覆寫 - Autumn Noir Fashion Style
+/* AI Agent 人工智慧色彩 */
+$ai-core: #9B59B6 !default;        // AI 核心紫 - 深度學習
+$ai-neural-blue: #3498DB !default; // 神經網路藍 - 數據處理
+$ai-quantum: #E67E22 !default;     // 量子橙 - 運算能力
+$ai-matrix: #2ECC71 !default;      // 矩陣綠 - 代碼流
+$ai-hologram: #F39C12 !default;    // 全息金 - 虛擬投影
+
+/* Retro Gaming 復古遊戲色彩 */
+$retro-neon-pink: #FF0080 !default; // 霓虹粉 - 80年代經典
+$retro-neon-cyan: #00FFFF !default; // 霓虹青 - 電子遊戲
+$retro-neon-lime: #CCFF00 !default; // 霓虹綠 - 像素發光
+$retro-amber: #FFBF00 !default;     // 琥珀黃 - CRT 顯示器
+$retro-magenta: #FF00FF !default;   // 洋紅色 - 復古螢幕
+
+// 遊戲 UI 色彩 (Future Space 風格)
+$game-bg-dark: $space-void !default;
+$game-bg-mid: $space-nebula !default;
+$game-text: $space-starlight !default;
+$game-text-dim: $noir-text-muted !default;
+$game-border: rgba($space-comet, 0.4) !default;
+
+// Minimal Mistakes 變數覆寫 - Future Autumn Noir Style
 $background-color: $game-bg-dark !default;
 $text-color: $game-text !default;
 $muted-text-color: $game-text-dim !default;
-$primary-color: $autumn-gold !default;       // 主要強調 - 秋日金
-$link-color: $autumn-gold !default;          // 連結 - 優雅金色
-$link-color-hover: lighten($autumn-gold, 15%) !default;
-$link-color-visited: $autumn-copper !default; // 已訪問連結 - 銅色
+$primary-color: $autumn-gold !default;       // 保持秋日金作為主色
+$link-color: $space-comet !default;          // 連結 - 彗星藍
+$link-color-hover: lighten($space-comet, 15%) !default;
+$link-color-visited: $ai-hologram !default;  // 已訪問連結 - 全息金
 $border-color: $game-border !default;
-$code-background-color: $game-bg-mid !default;
+$code-background-color: rgba($ai-core, 0.1) !default;
 
-// Navigation colors - Autumn Fashion Style
+// Navigation colors - Future Space Style
 $masthead-link-color: $game-text !default;
 $masthead-link-color-hover: $autumn-gold !default;
-$navicon-link-color-hover: $autumn-burgundy !default;
+$navicon-link-color-hover: $space-aurora !default;
 
-// Button colors - Fashion Editorial Style
-$button-bg: $autumn-burgundy !default;       // 按鈕背景 - 勃艮第
-$button-hover-bg: darken($autumn-burgundy, 10%) !default;
-$button-text: $noir-text !default;
+// Button colors - AI Agent Style
+$button-bg: linear-gradient(135deg, $autumn-burgundy, $ai-core) !default;
+$button-hover-bg: linear-gradient(135deg, $ai-core, $space-plasma) !default;
+$button-text: $space-starlight !default;
 
-// Accent elements - AI + Fashion
-$accent-line: $autumn-copper !default;       // 強調線 - 銅色
-$highlight-bg: rgba($autumn-gold, 0.1) !default; // 高亮背景
-$code-highlight: rgba($ai-neural, 0.15) !default; // 程式碼高亮
+// Accent elements - Future Fusion
+$accent-line: $space-comet !default;         // 強調線 - 彗星藍
+$highlight-bg: rgba($autumn-gold, 0.15) !default; // 高亮背景
+$code-highlight: rgba($ai-neural-blue, 0.2) !default; // 程式碼高亮
 
-/* Typography - Fashion Editorial + Gaming Hybrid */
+/* Typography - Future Editorial + Gaming Hybrid */
 $serif-editorial: 'Playfair Display', 'Georgia', serif !default; // 時尚編輯字體
 $sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
 $monospace: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace !default;
 $pixel-font: 'JetBrains Mono', monospace !default; // 像素風格程式字型
+$futura-font: 'Futura', 'Arial', sans-serif !default; // 未來感字體
 
-// Font weights - Fashion Editorial
+// Font weights - Future Fashion
 $font-light: 300 !default;
 $font-regular: 400 !default;
 $font-medium: 500 !default;
 $font-semibold: 600 !default;
 $font-bold: 700 !default;
+$font-black: 900 !default;
 
 /* Spacing - 基於 8px grid system */
 $space-1: 0.25rem !default; // 4px
@@ -87,18 +111,58 @@ $sidebar-width: 300px !default;
 
 /* Autumn Noir Pixel Art Specific */
 $pixel-border-width: 2px !default;
-$pixel-border-radius: 6px !default;    // 稍微圓潤的時尚感
-$pixel-glow-color: $autumn-gold !default;
+$pixel-border-radius: 8px !default;    // 未來感圓潤邊角
+$pixel-glow-color: $space-comet !default;
 
-/* Fashion Editorial Effects */
+/* Future Space Effects + Legacy Support */
 $box-shadow-soft: 0 4px 20px rgba($noir-black, 0.3) !default;
 $box-shadow-editorial: 0 8px 32px rgba($noir-black, 0.4) !default;
-$text-shadow-glow: 0 0 20px rgba($autumn-gold, 0.5) !default;
+$box-shadow-space: 0 8px 32px rgba($space-void, 0.6) !default;
+$box-shadow-hologram: 0 4px 20px rgba($ai-hologram, 0.3) !default;
+$box-shadow-neon: 0 0 30px rgba($retro-neon-cyan, 0.4) !default;
+$text-shadow-glow: 0 0 20px rgba($autumn-gold, 0.6) !default;
+$text-shadow-neon: 0 0 10px currentColor !default;
 
-/* Gradient Definitions - Autumn Noir */
+/* Gradient Definitions - Autumn Noir + Future Space */
 $bg-gradient-main: linear-gradient(135deg, $noir-black 0%, $noir-gray 100%) !default;
 $bg-gradient-accent: linear-gradient(135deg, $autumn-burgundy 0%, darken($autumn-burgundy, 20%) 100%) !default;
 $bg-gradient-hero: linear-gradient(135deg, 
   rgba($noir-black, 0.9) 0%, 
   rgba($autumn-burgundy, 0.1) 50%, 
   rgba($noir-black, 0.9) 100%) !default;
+
+// Future Space Gradients  
+$bg-gradient-space: linear-gradient(135deg, 
+  $space-void 0%, 
+  $space-nebula 30%, 
+  $noir-black 70%, 
+  $space-void 100%) !default;
+
+$bg-gradient-ai: linear-gradient(135deg, 
+  rgba($ai-core, 0.1) 0%, 
+  rgba($ai-neural-blue, 0.05) 50%, 
+  rgba($ai-quantum, 0.1) 100%) !default;
+
+$bg-gradient-retro: linear-gradient(45deg, 
+  rgba($retro-neon-pink, 0.1) 0%, 
+  rgba($retro-neon-cyan, 0.1) 25%, 
+  rgba($retro-neon-lime, 0.1) 50%, 
+  rgba($retro-amber, 0.1) 75%, 
+  rgba($retro-magenta, 0.1) 100%) !default;
+
+$bg-gradient-autumn: linear-gradient(135deg, 
+  $autumn-burgundy 0%, 
+  darken($autumn-burgundy, 20%) 100%) !default;
+
+/* Animation Timing Functions - Future Feel */
+$ease-cyber: cubic-bezier(0.25, 0.46, 0.45, 0.94) !default;
+$ease-quantum: cubic-bezier(0.68, -0.55, 0.265, 1.55) !default;
+$ease-neural: cubic-bezier(0.4, 0, 0.2, 1) !default;
+
+/* Z-Index Layers - Space Organization */
+$z-background: -10 !default;
+$z-starfield: -5 !default;
+$z-content: 1 !default;
+$z-ui: 10 !default;
+$z-hologram: 50 !default;
+$z-modal: 100 !default;
