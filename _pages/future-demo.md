@@ -97,7 +97,7 @@ excerpt: "探索未來太空、AI 代理、像素藝術與復古遊戲的融合�
 
 <div class="retro-game-grid">
   <div class="crt-screen" style="padding: 2rem; min-height: 300px;">
-    <h3 style="color: #00FFFF; font-family: 'JetBrains Mono', monospace; text-align: center;">
+    <h3 style="color: #6BAAB8; font-family: 'JetBrains Mono', monospace; text-align: center;">
       RETRO GAMING INTERFACE
     </h3>
     
@@ -109,7 +109,7 @@ excerpt: "探索未來太空、AI 代理、像素藝術與復古遊戲的融合�
     </div>
     
     <div style="text-align: center; margin-top: 2rem;">
-      <p style="color: #CCFF00; font-family: 'JetBrains Mono', monospace;">
+      <p style="color: #9BB85F; font-family: 'JetBrains Mono', monospace;">
         > SYSTEM_INITIALIZED<br>
         > LOADING_RETRO_COMPONENTS...<br>
         > STATUS: [████████████████████] 100%<br>
@@ -158,19 +158,35 @@ excerpt: "探索未來太空、AI 代理、像素藝術與復古遊戲的融合�
   </div>
 </div>
 
-### 新增的太空色系
+### 新增的太空色系 (和諧版)
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
-  <div style="background: #00D9FF; padding: 1rem; text-align: center; border-radius: 8px; color: black;">
-    <strong>彗星藍</strong><br>#00D9FF
+  <div style="background: #4A90B8; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
+    <strong>彗星藍 (柔和版)</strong><br>#4A90B8
   </div>
-  <div style="background: #00FF88; padding: 1rem; text-align: center; border-radius: 8px; color: black;">
-    <strong>極光綠</strong><br>#00FF88
+  <div style="background: #5A8B5F; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
+    <strong>極光綠 (自然版)</strong><br>#5A8B5F
   </div>
-  <div style="background: #FF6B9D; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
-    <strong>等離子粉</strong><br>#FF6B9D
+  <div style="background: #B87B9A; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
+    <strong>等離子粉 (溫和版)</strong><br>#B87B9A
   </div>
-  <div style="background: #9B59B6; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
-    <strong>AI 核心紫</strong><br>#9B59B6
+  <div style="background: #7B6B9E; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
+    <strong>AI 核心紫 (和諧版)</strong><br>#7B6B9E
+  </div>
+</div>
+
+### AI 代理色系 (協調版)
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+  <div style="background: #D4B873; padding: 1rem; text-align: center; border-radius: 8px; color: black;">
+    <strong>全息金 (協調版)</strong><br>#D4B873
+  </div>
+  <div style="background: #5B85A6; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
+    <strong>神經藍 (溫和版)</strong><br>#5B85A6
+  </div>
+  <div style="background: #C49B73; padding: 1rem; text-align: center; border-radius: 8px; color: white;">
+    <strong>量子橙 (銅色調)</strong><br>#C49B73
+  </div>
+  <div style="background: #E8E1D3; padding: 1rem; text-align: center; border-radius: 8px; color: black;">
+    <strong>星光白 (米白色)</strong><br>#E8E1D3
   </div>
 </div>
 
