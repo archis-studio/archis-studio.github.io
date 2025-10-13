@@ -12,6 +12,9 @@
 | `PROJECT_CHARTER.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 專案目標與原則 |
 | `DESIGN_SYSTEM_SPEC.md` | 1.1.0 | 2025-10-11 | ✅ Complete | AI+Gaming 像素風格設計系統 |
 | `AI_COLLABORATION_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | AI 協作流程 |
+| `AUTUMN_NOIR_THEME.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 原版 Autumn Noir 主題規格 |
+| `AUTUMN_NOIR_FUTURE_THEME.md` | 2.0.0 | 2025-10-11 | ✅ Complete | 未來太空版主題規格 |
+| `SVG_PLACEHOLDERS_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | SVG 佔位符使用指南 |
 | `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 1.0.0 | 2025-10-11 | 📝 Draft | 主題客製化指南 |
 | `CONTENT_STRATEGY.md` | 1.0.0 | 2025-10-11 | 📝 Draft | 內容創作規範 |
 
@@ -85,10 +88,13 @@ head -n 2 docs/*.md
 
 ## 📊 專案進度追蹤
 
-### 當前階段: 📋 規格制定
+### 當前階段: 🚀 主題實作完成
 - [x] 基礎文件架構建立
 - [x] AI 協作流程定義  
-- [ ] Design System 規格完善
+- [x] Design System 規格完善
+- [x] Autumn Noir Future Theme 實作完成
+- [x] 示範頁面與新主題整合
+- [ ] 主頁面完全整合新主題
 - [ ] 技術實作指南完成
 - [ ] 內容策略詳細規劃
 
