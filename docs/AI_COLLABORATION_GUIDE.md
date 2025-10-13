@@ -1,5 +1,5 @@
 # AI 協作指南 - AI Collaboration Guide  
-# Version 1.1.0 | Updated: 2025-10-11
+# Version 1.2.0 | Updated: 2025-10-11
 
 ## 🔄 標準工作流程 (Enhanced)
 
@@ -50,6 +50,13 @@
 
 ## 📝 CHANGELOG
 
+### v1.2.0 (2025-10-11)
+- 新增 AI Agent 互換性設計標準
+- 建立標準化規劃格式模板
+- 定義 Conventional Commits 規範
+- 新增進度回報標準格式
+- 確保任何 AI assistant 都能順利接手
+
 ### v1.1.0 (2025-10-11)
 - Enhanced 協作工作流程 (4階段模式)
 - 更新 Git 操作規範 (允許 commit，禁止 push)
@@ -68,10 +75,18 @@
 - **Code & Comments**: 英文
 - **Documentation**: 依讀者需求，技術文件英文，使用指南中文
 
-### 決策提供格式
-AI 在需要人類決策時，必須使用以下格式：
+### Git 操作標準規範
+- ✅ **允許**: `git status`, `git diff`, `git add`, `git commit`
+- ❌ **禁止**: `git push origin main` (需人類明確指令)
+- 📝 **Commit 策略**: 
+  - 每完成一個功能模組就 commit
+  - 使用 Conventional Commits 格式
+  - 所有 commits 保持在本地，等確認後再 push
 
-```markdown
+### 決策請求標準格式
+AI 需要人類決策時的標準格式：
+
+```markdown  
 ## 🤔 需要您的決定
 
 **背景**: [簡述情況]
@@ -86,10 +101,6 @@ B) [選項 B 描述]
    - 優點: [列出優點]
    - 缺點: [列出缺點]
 
-C) [選項 C 描述]
-   - 優點: [列出優點] 
-   - 缺點: [列出缺點]
-
 **建議**: [AI 的推薦選項與理由]
 ```
 
@@ -100,13 +111,37 @@ C) [選項 C 描述]
 2. **精確修改**: 使用 `str_replace` 進行最小範圍修改
 3. **驗證結果**: 修改後重新讀取確認結果正確
 
-### Git 操作規範 (Updated)
-- ✅ **允許**: `git status`, `git diff`, `git add`, `git commit`
-- ❌ **禁止**: `git push origin main` (需人類明確指令)
-- 📝 **Commit 策略**: 
-  - 每完成一個功能模組就 commit
-  - 使用描述性的 commit message
-  - 所有 commits 保持在本地，等確認後再 push
+### Git Commit 標準格式
+使用 Conventional Commits 規範，確保任何 AI 都能理解：
+
+```
+<type>(<scope>): <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+**類型 (Types)**:
+- `feat`: 新功能
+- `fix`: 修復問題  
+- `docs`: 文檔更新
+- `style`: 樣式調整
+- `refactor`: 重構程式碼
+- `test`: 測試相關
+- `chore`: 建置或輔助工具變動
+
+**範例**:
+```
+feat(components): add hologram panel with scan animation
+
+- Implement CSS keyframe animations
+- Add responsive design breakpoints  
+- Include accessibility attributes
+- Update component documentation
+
+Closes #123
+```
 
 ## 🎨 Design System 協作
 
