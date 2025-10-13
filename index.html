@@ -1,177 +1,187 @@
 ---
-layout: home
+layout: single
+classes: wide space-starfield
 author_profile: true
-classes: wide autumn-noir-theme
 header:
-  overlay_color: "#0E0E10"
-  overlay_filter: "0.7"
-  overlay_image: /assets/images/autumn-noir-hero.jpg
+  overlay_color: "#0B0B0F"
+  overlay_filter: "0.9"
+  overlay_image: /assets/images/autumn-space-hero.jpg
   actions:
-    - label: "🍂 探索秋季創作"
-      url: "/posts/"
-      btn_class: "btn--primary btn--large editorial-primary"
-    - label: "🤖 AI 時尚工具"
-      url: "/categories/#ai-applications"
-      btn_class: "btn--info btn--large ai-neural"
-  caption: "Fashion · AI · Gaming · Pixel Art"
-excerpt: "🍂 **Archis Studio** - Autumn Noir Editorial<br/>時尚與科技的完美融合，用像素藝術記錄 AI 時代的創作旅程<br/>讓程式開發如秋日般優雅而充滿詩意"
-intro:
-  - excerpt: "歡迎來到秋日時尚的技術世界！在這裡，**Editorial Fashion** 遇見 **AI Innovation**，**Pixel Art** 融合 **Autumn Aesthetics**。<br/>無論你是追求時尚的開發者，還是熱愛藝術的程式設計師，這裡都是你的創意天堂。"
+    - label: "🍂 探索 Future Demo"
+      url: "/future-demo/"
+      btn_class: "pixel-btn-future space-primary"
+excerpt: "**Fashion × Technology × Art**<br/>在秋日的溫暖中探索無限宇宙，讓 AI 與創意在時空中交織"
 ---
 
-{% include feature_row id="intro" type="center" %}
+<div class="space-particles"></div>
 
-<!-- Autumn Fashion Stats Section -->
-<div class="gaming-stats-showcase neural-bg autumn-pixel-grid">
-  <div class="container">
-    <h2 class="section-title pixel-text-glow ai-typing">🍂 Autumn Fashion Achievements</h2>
-    
-    <div class="gaming-panel editorial stats-container">
-      <div class="gaming-stats">
-        <div class="stat-item">
-          <div class="stat-icon pixel-icon fashion-code">📖</div>
-          <span class="stat-value">{{ site.posts.size }}+</span>
-          <span class="stat-label">Editorial Posts</span>
-        </div>
-        <div class="stat-item">
-          <div class="stat-icon pixel-icon ai-brain">🧠</div>
-          <span class="stat-value">12+</span>
-          <span class="stat-label">AI Fashion Tools</span>
-        </div>
-        <div class="stat-item">
-          <div class="stat-icon pixel-icon autumn-leaf">🍂</div>
-          <span class="stat-value">4+</span>
-          <span class="stat-label">Seasons Experience</span>
-        </div>
-        <div class="stat-item">
-          <div class="stat-icon pixel-icon gaming-pixel">👗</div>
-          <span class="stat-value">800+</span>
-          <span class="stat-label">Fashion Learners</span>
-        </div>
+<!-- Hero Section with AI Agent Welcome -->
+<div class="ai-neural-network">
+  <div class="ai-agent-card">
+    <div class="agent-header">
+      <div class="agent-avatar"></div>
+      <div class="agent-info">
+        <h4 class="agent-name">ARCHIS-AI</h4>
+        <p class="agent-type">Creative Assistant</p>
+      </div>
+      <span class="agent-status online">ONLINE</span>
+    </div>
+    <div class="agent-capabilities">
+      <p>歡迎來到 <strong>Archis Studio</strong>！我是你的 AI 創作助手，專精於時尚科技與像素藝術的完美融合。</p>
+      <div class="capability-list">
+        <span class="capability">Fashion AI</span>
+        <span class="capability">Pixel Art</span>
+        <span class="capability">Autumn Aesthetics</span>
+        <span class="capability">Creative Coding</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Autumn Fashion Categories Section -->
-<div class="gaming-categories-section neural-bg">
-  <div class="container">
-    <h2 class="section-title pixel-text-glow ai-typing editorial">🍂 Fashion Editorial Collections</h2>
-    
-    <div class="categories-grid">
-      <div class="editorial-card ai-category">
-        <div class="card-header">
-          <span class="card-category">AI Fashion</span>
-          <h3 class="card-title">🤖 AI 時尚工具</h3>
-        </div>
-        <div class="card-content">
-          <p>探索 ChatGPT、Midjourney 等 AI 工具在時尚設計與創作中的應用，讓科技為創意賦能</p>
-        </div>
-        <div class="card-footer">
-          <span class="card-date">{{ site.posts | where: "categories", "ai-applications" | size }} 篇文章</span>
-          <div class="card-tags">
-            <span class="tag">AI應用</span>
-            <span class="tag">創意工具</span>
-          </div>
-        </div>
-        <a href="/categories/#ai-applications" class="pixel-btn editorial-primary">探索時尚 AI</a>
-      </div>
+---
 
-      <div class="editorial-card backend-category">
-        <div class="card-header">
-          <span class="card-category">Tech Fashion</span>
-          <h3 class="card-title">💻 技術時尚筆記</h3>
-        </div>
-        <div class="card-content">
-          <p>以時尚的視角記錄 Python、FastAPI、系統架構等技術，讓程式碼也能充滿美感</p>
-        </div>
-        <div class="card-footer">
-          <span class="card-date">{{ site.posts | where: "categories", "technical" | size }} 篇文章</span>
-          <div class="card-tags">
-            <span class="tag">Backend</span>
-            <span class="tag">Architecture</span>
-          </div>
-        </div>
-        <a href="/categories/#technical" class="pixel-btn ai-neural">技術美學</a>
-      </div>
+## 🌟 **Autumn Fashion Collections**
 
-      <div class="editorial-card data-category">
-        <div class="card-header">
-          <span class="card-category">Data Couture</span>
-          <h3 class="card-title">📊 數據時裝週</h3>
-        </div>
-        <div class="card-content">
-          <p>將數據科學與時尚結合，用優雅的方式展示 Pandas、機器學習的實務應用</p>
-        </div>
-        <div class="card-footer">
-          <span class="card-date">{{ site.posts | where: "categories", "data-science" | size }} 篇文章</span>
-          <div class="card-tags">
-            <span class="tag">Data Science</span>
-            <span class="tag">ML</span>
-          </div>
-        </div>
-        <a href="/categories/#data-science" class="pixel-btn editorial-primary">數據美學</a>
+<div class="row">
+  <div class="col-md-4">
+    <div class="hologram-panel">
+      <div class="panel-header">
+        <h3 class="panel-title">🤖 AI 工具箱</h3>
+        <span class="panel-status">ACTIVE</span>
       </div>
-
-      <div class="editorial-card growth-category">
-        <div class="card-header">
-          <span class="card-category">Growth Style</span>
-          <h3 class="card-title">🌱 成長時尚指南</h3>
-        </div>
-        <div class="card-content">
-          <p>以時尚編輯的角度分享個人成長、學習方法與職涯發展的優雅策略</p>
-        </div>
-        <div class="card-footer">
-          <span class="card-date">{{ site.posts | where: "categories", "personal-growth" | size }} 篇文章</span>
-          <div class="card-tags">
-            <span class="tag">Personal Growth</span>
-            <span class="tag">Career</span>
-          </div>
-        </div>
-        <a href="/categories/#personal-growth" class="pixel-btn ai-neural">成長美學</a>
+      <div class="panel-content">
+        <p>深度探索 AI 工具的創意應用，從 ChatGPT 到 Midjourney，讓人工智慧成為你的創作夥伴。</p>
+        <a href="/categories/#ai-tools" class="pixel-btn-future ai-neural">探索 AI 世界</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="hologram-panel">
+      <div class="panel-header">
+        <h3 class="panel-title">🎮 像素藝術</h3>
+        <span class="panel-status">CREATIVE</span>
+      </div>
+      <div class="panel-content">
+        <p>復古與未來的完美碰撞，學習像素藝術創作技巧，打造屬於你的 8-bit 美學世界。</p>
+        <a href="/categories/#pixel-art" class="pixel-btn-future retro-neon">進入像素世界</a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-md-4">
+    <div class="hologram-panel">
+      <div class="panel-header">
+        <h3 class="panel-title">🍂 時尚科技</h3>
+        <span class="panel-status">TRENDING</span>
+      </div>
+      <div class="panel-content">
+        <p>將 Editorial 美學融入程式設計，用時尚的眼光重新定義技術內容的呈現方式。</p>
+        <a href="/categories/#fashion-tech" class="pixel-btn-future">時尚編程</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Latest Fashion Posts Section -->
-<div class="latest-posts-section autumn-pixel-grid">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title pixel-text-glow ai-typing">📖 Latest Editorial Stories</h2>
-      <a href="/posts/" class="pixel-btn editorial-primary">View All Collections</a>
+---
+
+## 📊 **Autumn Fashion Achievements**
+
+<div class="retro-game-grid">
+  <div class="crt-screen" style="padding: 2rem;">
+    <h3 style="color: #00FFFF; font-family: 'JetBrains Mono', monospace; text-align: center; margin-bottom: 2rem;">
+      === ARCHIS STUDIO STATS ===
+    </h3>
+    
+    <div class="row" style="margin-bottom: 2rem;">
+      <div class="col-md-3 text-center">
+        <div class="pixel-icon-future ai-chip"></div>
+        <h4 style="color: #D4A017; font-family: 'JetBrains Mono', monospace; margin: 1rem 0;">AI TOOLS</h4>
+        <p style="color: #CCFF00; font-family: 'JetBrains Mono', monospace;">15+ Reviewed</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="pixel-icon-future space-ship"></div>
+        <h4 style="color: #D4A017; font-family: 'JetBrains Mono', monospace; margin: 1rem 0;">PROJECTS</h4>
+        <p style="color: #CCFF00; font-family: 'JetBrains Mono', monospace;">8+ Completed</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="pixel-icon-future retro-console"></div>
+        <h4 style="color: #D4A017; font-family: 'JetBrains Mono', monospace; margin: 1rem 0;">TUTORIALS</h4>
+        <p style="color: #CCFF00; font-family: 'JetBrains Mono', monospace;">12+ Created</p>
+      </div>
+      <div class="col-md-3 text-center">
+        <div class="pixel-icon-future quantum-core"></div>
+        <h4 style="color: #D4A017; font-family: 'JetBrains Mono', monospace; margin: 1rem 0;">ARTICLES</h4>
+        <p style="color: #CCFF00; font-family: 'JetBrains Mono', monospace;">{{ site.posts.size }}+ Published</p>
+      </div>
     </div>
     
-    <div class="posts-gaming-grid">
-      {% for post in site.posts limit:6 %}
-        <article class="editorial-card post-gaming-card">
-          <div class="card-header">
-            <span class="card-category">
-              {% if post.categories contains 'ai-applications' %}AI Fashion
-              {% elsif post.categories contains 'technical' %}Tech Style
-              {% elsif post.categories contains 'data-science' %}Data Couture
-              {% elsif post.categories contains 'personal-growth' %}Growth Guide
-              {% else %}Editorial{% endif %}
-            </span>
-            <h3 class="card-title">
-              <a href="{{ post.url }}">{{ post.title }}</a>
-            </h3>
-          </div>
-          
-          <div class="card-content">
-            <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
-          </div>
-          
-          <div class="card-footer">
-            <span class="card-date">{{ post.date | date: "%B %d, %Y" }}</span>
-            <div class="card-tags">
-              {% for tag in post.tags limit:2 %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          </div>
-        </article>
-      {% endfor %}
+    <div style="text-align: center;">
+      <div class="future-progress" style="margin: 1rem auto; max-width: 400px;">
+        <div class="progress-bar" style="width: 85%;"></div>
+      </div>
+      <p style="color: #00FFFF; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+        > CREATIVE_LEVEL: 85% | STATUS: EVOLVING
+      </p>
+    </div>
+  </div>
+</div>
+
+---
+
+## 📚 **Latest Editorial Stories**
+
+{% for post in site.posts limit:3 %}
+<div class="ai-neural-network" style="margin-bottom: 2rem;">
+  <article class="hologram-panel">
+    <div class="panel-header">
+      <h3 class="panel-title">
+        <a href="{{ post.url | relative_url }}" style="color: inherit; text-decoration: none;">
+          {{ post.title | escape }}
+        </a>
+      </h3>
+      <span class="panel-status">
+        {{ post.date | date: "%b %d" }}
+      </span>
+    </div>
+    <div class="panel-content">
+      {% if post.excerpt %}
+        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+      {% endif %}
+      
+      {% if post.categories %}
+        <div class="capability-list">
+          {% for category in post.categories %}
+            <span class="capability">{{ category }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+      
+      <div style="margin-top: 1rem;">
+        <a href="{{ post.url | relative_url }}" class="pixel-btn-future ai-neural">閱讀全文</a>
+      </div>
+    </div>
+  </article>
+</div>
+{% endfor %}
+
+<div style="text-align: center; margin: 3rem 0;">
+  <a href="/posts/" class="pixel-btn-future space-primary" style="font-size: 1.1rem;">
+    🚀 探索所有文章
+  </a>
+</div>
+
+---
+
+<div class="energy-ripple" style="height: 150px; display: flex; align-items: center; justify-content: center; margin: 4rem 0;">
+  <div style="text-align: center; z-index: 10; position: relative;">
+    <h2 style="color: #D4A017; margin-bottom: 1rem;">Ready to Explore the Future?</h2>
+    <p style="color: #FFF4E6; font-size: 1.1rem; margin-bottom: 2rem;">
+      讓我們一起在秋日的詩意中，探索 AI 與創意的無限可能
+    </p>
+    <div>
+      <a href="/about/" class="pixel-btn-future" style="margin: 0 1rem;">認識 Archi</a>
+      <a href="/future-demo/" class="pixel-btn-future space-primary" style="margin: 0 1rem;">體驗 Future</a>
     </div>
   </div>
 </div>
