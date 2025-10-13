@@ -365,9 +365,9 @@
     transform: translateY(-3px) scale(1.05);
     border-color: $space-comet;
     box-shadow: 
-      0 0 30px rgba($autumn-gold, 0.6),
-      0 8px 25px rgba($autumn-burgundy, 0.4),
-      inset 0 0 20px rgba($space-comet, 0.2);
+      0 0 20px rgba($autumn-gold, 0.4),
+      0 6px 20px rgba($autumn-burgundy, 0.3),
+      inset 0 0 15px rgba($space-comet, 0.15);
     color: $space-starlight;
     text-decoration: none;
     
@@ -675,10 +675,10 @@
 /* AI 代理活躍狀態 */
 @keyframes agentActive {
   0%, 100% {
-    box-shadow: 0 0 10px rgba($space-aurora, 0.5);
+    box-shadow: 0 0 8px rgba($space-aurora, 0.3);
   }
   50% {
-    box-shadow: 0 0 20px rgba($space-aurora, 0.8);
+    box-shadow: 0 0 12px rgba($space-aurora, 0.5);
   }
 }
 
