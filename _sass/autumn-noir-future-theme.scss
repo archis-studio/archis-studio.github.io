@@ -17,7 +17,8 @@
 .space-starfield {
   position: relative;
   background: $bg-gradient-space;
-  overflow: hidden;
+  /* 移除 overflow: hidden 以允許頁面滾動 */
+  min-height: 100vh; /* 確保背景覆蓋整個視窗 */
   
   &::before {
     content: '';
@@ -55,6 +56,7 @@
 .ai-neural-network {
   position: relative;
   background: $bg-gradient-ai;
+  /* 確保不阻擋滾動 */
   
   &::before {
     content: '';
@@ -521,7 +523,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: hidden;
+  /* 移除 overflow: hidden 避免阻擋滾動 */
+  pointer-events: none; /* 確保不阻擋互動 */
   z-index: $z-background;
   
   &::before {
