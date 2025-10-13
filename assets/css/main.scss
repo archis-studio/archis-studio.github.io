@@ -2,160 +2,349 @@
 ---
 
 /* 
- * Autumn Noir - Editorial AI Theme
- * Fashion + Gaming + Pixel Art + AI Aesthetics
+ * Autumn Noir Future Theme - 未來太空版
+ * Fashion + Gaming + Pixel Art + AI + Future Space Aesthetics
  * 
- * Main stylesheet entry point for magicxcr7.github.io
- * Combines Minimal Mistakes theme with custom Autumn Noir design system
+ * 主樣式表，整合 Minimal Mistakes 主題與 Autumn Noir Future 設計系統
+ * 保留秋季色系，融入未來太空、AI 代理與復古遊戲元素
  */
 
 // Import Minimal Mistakes theme
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-// Import our custom Autumn Noir design system
+// Import our enhanced Autumn Noir Future design system
 @import "design-system";
 
-/* Global Autumn Noir Theme Overrides */
+/* Global Future Theme Overrides */
 body {
-  background: $bg-gradient-main;
-  color: $noir-text;
+  background: $bg-gradient-space;
+  color: $space-starlight;
   font-family: $sans-serif;
   line-height: 1.6;
+  position: relative;
 }
 
-/* Typography - Fashion Editorial Style */
+/* Space Background Layer */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(ellipse at 20% 20%, rgba($space-comet, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba($space-aurora, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 40%, rgba($ai-hologram, 0.06) 0%, transparent 50%);
+  z-index: $z-background;
+  pointer-events: none;
+}
+
+/* Typography - Future Editorial Style */
 h1, h2, h3, h4, h5, h6 {
   font-family: $serif-editorial;
   color: $autumn-gold;
   font-weight: $font-bold;
+  position: relative;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   text-shadow: $text-shadow-glow;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, $autumn-gold, $space-comet);
+  }
 }
 
 h2 {
-  font-size: 2rem;
-  border-bottom: 2px solid $autumn-copper;
+  font-size: 2.2rem;
+  border-bottom: 2px solid $space-comet;
   padding-bottom: $space-2;
   margin-bottom: $space-6;
+  
+  &::before {
+    content: '▶ ';
+    color: $space-aurora;
+    font-family: $pixel-font;
+  }
 }
 
-/* Links - Autumn Gold Elegance */
+h3 {
+  font-size: 1.8rem;
+  color: $space-comet;
+  
+  &::before {
+    content: '◆ ';
+    color: $ai-hologram;
+    font-family: $pixel-font;
+  }
+}
+
+/* Links - Future Space Elegance */
 a {
-  color: $autumn-gold;
+  color: $space-comet;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all $ease-cyber 0.3s;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, $space-comet, $space-aurora);
+    transition: width $ease-cyber 0.3s;
+  }
   
   &:hover {
-    color: lighten($autumn-gold, 15%);
-    text-shadow: 0 0 8px rgba($autumn-gold, 0.5);
+    color: $space-aurora;
+    text-shadow: 0 0 8px rgba($space-comet, 0.6);
+    
+    &::after {
+      width: 100%;
+    }
   }
   
   &:visited {
-    color: $autumn-copper;
+    color: $ai-hologram;
   }
 }
 
-/* Code Blocks - AI Theme */
+/* Code Blocks - AI Future Theme */
 code {
-  background: rgba($ai-neural, 0.1);
-  color: $autumn-gold;
+  background: rgba($ai-core, 0.15);
+  color: $space-comet;
+  border: 1px solid rgba($ai-neural, 0.3);
   border-radius: $pixel-border-radius;
-  padding: 0.2rem 0.4rem;
+  padding: 0.3rem 0.6rem;
   font-family: $pixel-font;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+      transparent 0%, 
+      rgba($space-aurora, 0.1) 50%, 
+      transparent 100%);
+    border-radius: $pixel-border-radius;
+    pointer-events: none;
+  }
 }
 
 pre {
-  background: $noir-gray;
-  border: 1px solid $autumn-copper;
+  background: $space-nebula;
+  border: 2px solid $ai-neural;
   border-radius: $pixel-border-radius;
-  box-shadow: $box-shadow-soft;
+  box-shadow: $box-shadow-space;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: 'TERMINAL';
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    font-family: $pixel-font;
+    font-size: 0.7rem;
+    color: $space-aurora;
+    background: rgba($space-void, 0.8);
+    padding: 2px 8px;
+    border-radius: 3px;
+    z-index: 1;
+  }
+  
+  code {
+    background: transparent;
+    border: none;
+    color: $space-starlight;
+    display: block;
+    padding: $space-4;
+    margin-top: $space-4;
+  }
 }
 
-/* Blockquotes - Fashion Editorial */
+/* Blockquotes - Future Editorial */
 blockquote {
-  border-left: 4px solid $autumn-gold;
-  background: rgba($autumn-gold, 0.05);
-  padding: $space-4 $space-6;
-  margin: $space-6 0;
+  border-left: 4px solid $space-comet;
+  background: rgba($space-nebula, 0.3);
+  backdrop-filter: blur(10px);
+  padding: $space-6 $space-8;
+  margin: $space-8 0;
   font-style: italic;
-  color: $noir-text-muted;
+  color: $space-starlight;
+  position: relative;
+  border-radius: 0 $pixel-border-radius $pixel-border-radius 0;
+  
+  &::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: $autumn-gold;
+    font-family: $serif-editorial;
+    opacity: 0.3;
+  }
   
   p:last-child {
     margin-bottom: 0;
   }
 }
 
-/* Navigation - Autumn Noir Style */
+/* Navigation - Future Space Style */
 .masthead {
-  background: rgba($noir-black, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid $autumn-copper;
+  background: rgba($space-void, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 2px solid $space-comet;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      $autumn-gold 0%, 
+      $space-comet 25%, 
+      $space-aurora 50%, 
+      $ai-hologram 75%, 
+      $autumn-gold 100%);
+    animation: navGlow 8s ease-in-out infinite;
+  }
   
   .site-title {
-    font-family: $serif-editorial;
+    font-family: $futura-font;
     color: $autumn-gold;
-    font-weight: $font-bold;
+    font-weight: $font-black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: $text-shadow-glow;
+    
+    &::after {
+      content: ' ◆';
+      color: $space-aurora;
+      font-size: 0.8em;
+      animation: titlePulse 3s ease-in-out infinite;
+    }
   }
   
   .masthead__menu-item a {
-    color: $noir-text;
+    color: $space-starlight;
     font-weight: $font-medium;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: $pixel-font;
     
     &:hover {
       color: $autumn-gold;
+      text-shadow: 0 0 10px rgba($autumn-gold, 0.6);
     }
   }
 }
 
-/* Sidebar - Editorial Fashion */
+/* Sidebar - Future Fashion */
 .sidebar {
-  background: $bg-gradient-main;
-  border-right: 1px solid $noir-border;
+  background: $bg-gradient-ai;
+  border-right: 2px solid rgba($space-comet, 0.4);
+  backdrop-filter: blur(10px);
   
   .author__avatar img {
     border: 3px solid $autumn-gold;
-    box-shadow: $box-shadow-soft;
+    box-shadow: $box-shadow-hologram;
+    transition: all $ease-quantum 0.3s;
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 
+        0 0 20px rgba($autumn-gold, 0.6),
+        $box-shadow-hologram;
+    }
   }
   
   .author__bio {
-    color: $noir-text-muted;
+    color: $space-starlight;
     font-style: italic;
+    line-height: 1.5;
   }
 }
 
-/* Posts and Pages - Fashion Editorial Layout */
+/* Posts and Pages - Future Editorial Layout */
 .page__content {
-  background: rgba($noir-gray, 0.3);
+  background: rgba($space-nebula, 0.4);
+  border: 1px solid rgba($space-comet, 0.3);
   border-radius: $pixel-border-radius;
   padding: $space-8;
-  box-shadow: $box-shadow-editorial;
+  box-shadow: $box-shadow-space;
   margin: $space-6 0;
+  backdrop-filter: blur(10px);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      $space-comet 50%, 
+      transparent 100%);
+  }
 }
 
 /* Archive and Category Pages */
 .archive {
   .page__title {
-    font-family: $serif-editorial;
+    font-family: $futura-font;
     color: $autumn-gold;
     text-align: center;
     margin-bottom: $space-8;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 2px;
+      background: $space-comet;
+      margin: $space-4 auto;
+    }
   }
 }
 
 .list__item {
   padding: $space-4;
-  border-bottom: 1px solid rgba($autumn-copper, 0.3);
+  border-bottom: 1px solid rgba($space-comet, 0.2);
+  transition: all $ease-cyber 0.3s;
+  border-radius: $pixel-border-radius;
   
   &:hover {
-    background: rgba($autumn-gold, 0.05);
+    background: rgba($autumn-gold, 0.08);
+    border-color: $space-comet;
+    transform: translateX(5px);
   }
   
   .archive__item-title {
-    color: $noir-text;
+    color: $space-starlight;
     
     &:hover {
       color: $autumn-gold;
@@ -163,68 +352,136 @@ blockquote {
   }
   
   .archive__item-excerpt {
-    color: $noir-text-muted;
+    color: $space-starlight;
+    opacity: 0.8;
   }
 }
 
-/* Pagination - Gaming Style */
+/* Pagination - Future Gaming Style */
 .pagination {
   .current, .pagination a {
-    background: $bg-gradient-accent;
-    border: 1px solid $autumn-gold;
-    color: $noir-text;
+    background: $bg-gradient-autumn;
+    border: 2px solid $autumn-gold;
+    color: $space-starlight;
+    font-family: $pixel-font;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     
     &:hover {
-      background: lighten($autumn-burgundy, 10%);
-      color: $autumn-gold;
+      background: linear-gradient(135deg, $space-comet, $space-aurora);
+      border-color: $space-comet;
+      color: $space-starlight;
+      transform: translateY(-2px);
     }
   }
 }
 
-/* Footer - Minimal Autumn Style */
+/* Footer - Future Minimal Style */
 .page__footer {
-  background: $noir-black;
-  border-top: 2px solid $autumn-copper;
-  color: $noir-text-muted;
+  background: $space-void;
+  border-top: 2px solid $space-comet;
+  color: $space-starlight;
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      $autumn-gold 0%, 
+      $space-aurora 50%, 
+      $autumn-gold 100%);
+    animation: footerGlow 6s ease-in-out infinite alternate;
+  }
   
   .page__footer-copyright {
     font-family: $pixel-font;
     font-size: 0.8rem;
+    text-align: center;
+    opacity: 0.7;
   }
 }
 
 /* Table of Contents - AI Neural Style */
 .toc {
-  background: rgba($ai-neural, 0.05);
-  border: 1px solid $autumn-copper;
+  background: rgba($ai-core, 0.1);
+  border: 2px solid $ai-neural;
   border-radius: $pixel-border-radius;
+  backdrop-filter: blur(10px);
   
   .toc__title {
     color: $autumn-gold;
-    font-family: $serif-editorial;
+    font-family: $futura-font;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    &::before {
+      content: '📋 ';
+      font-size: 0.8em;
+    }
   }
   
   a {
-    color: $noir-text-muted;
+    color: $space-starlight;
     
     &:hover {
-      color: $autumn-gold;
+      color: $space-comet;
+      padding-left: 10px;
     }
   }
 }
 
-/* Search - Autumn Fashion */
+/* Search - Future Fashion */
 .search-content {
   .search-input {
-    background: $noir-gray;
-    border: 2px solid $autumn-copper;
-    color: $noir-text;
+    background: rgba($space-nebula, 0.8);
+    border: 2px solid $space-comet;
+    color: $space-starlight;
     border-radius: $pixel-border-radius;
+    font-family: $pixel-font;
     
     &:focus {
       border-color: $autumn-gold;
-      box-shadow: 0 0 10px rgba($autumn-gold, 0.3);
+      box-shadow: 0 0 20px rgba($autumn-gold, 0.4);
+      background: rgba($space-nebula, 0.9);
     }
+    
+    &::placeholder {
+      color: rgba($space-starlight, 0.6);
+    }
+  }
+}
+
+/* Custom Animations */
+@keyframes navGlow {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes titlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes footerGlow {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -235,21 +492,45 @@ blockquote {
   }
   
   h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
+  }
+  
+  .masthead .site-title {
+    font-size: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
+  body::before {
+    display: none; // 隱藏背景效果以提升性能
+  }
+  
   .page__content {
     padding: $space-4;
     margin: $space-4 0;
   }
   
   h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+  
+  .masthead .site-title {
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .masthead .site-title {
+    font-size: 1rem;
+  }
+  
+  h1, h2, h3 {
+    &::before {
+      display: none;
+    }
   }
 }

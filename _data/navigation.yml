@@ -1,9 +1,11 @@
 main:
-  - title: "首頁"
+  - title: "🏠 首頁"
     url: /
-  - title: "文章"
+  - title: "📖 文章"
     url: /posts/
-  - title: "分類"
+  - title: "📂 分類"
     url: /categories/
-  - title: "關於"
+  - title: "🍂 Future Demo"
+    url: /future-demo/
+  - title: "ℹ️ 關於"
     url: /about/

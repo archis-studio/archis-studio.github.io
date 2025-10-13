@@ -1,9 +1,12 @@
 /* Design System - Main Entry Point
-   Based on docs/DESIGN_SYSTEM_SPEC.md - AI + Gaming Pixel Style
+   Autumn Noir Future Theme - AI + Gaming + Space + Pixel Art
    ========================================================================== */
 
-// Import design system variables
+// Import design system variables (updated with Future theme)
 @import "design-system/variables";
 
-// Import pixel gaming components
+// Import pixel gaming components (enhanced with space elements)
 @import "design-system/pixel-components";
+
+// Import the new Future theme components
+@import "autumn-noir-future-theme";
