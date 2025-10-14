@@ -1,5 +1,5 @@
-# AI 協作指南 - AI Collaboration Guide  
-# Version 1.2.0 | Updated: 2025-10-11
+# AI 協作指南 - AI Collaboration Guide
+# Version 1.3.0 | Updated: 2025-10-14
 
 ## 🔄 標準工作流程 (Enhanced)
 
@@ -50,6 +50,11 @@
 
 ## 📝 CHANGELOG
 
+### v1.3.0 (2025-10-14)
+- 新增「錯誤處理」標準流程
+- 具體化 Git 操作範例
+- 整合並精簡溝通協定結構
+
 ### v1.2.0 (2025-10-11)
 - 新增 AI Agent 互換性設計標準
 - 建立標準化規劃格式模板
@@ -83,6 +88,15 @@
   - 使用 Conventional Commits 格式
   - 所有 commits 保持在本地，等確認後再 push
 
+**範例**:
+```bash
+# 1. 將變更的檔案加入暫存區
+git add docs/AI_COLLABORATION_GUIDE.md
+
+# 2. 根據 Conventional Commits 格式撰寫 commit message
+git commit -m "docs(ai): add error handling protocol and git examples"
+```
+
 ### 決策請求標準格式
 AI 需要人類決策時的標準格式：
 
@@ -102,6 +116,21 @@ B) [選項 B 描述]
    - 缺點: [列出缺點]
 
 **建議**: [AI 的推薦選項與理由]
+```
+
+### 錯誤處理標準格式 (Error Handling Protocol)
+當操作失敗或發生非預期錯誤時，AI 應使用此格式回報：
+
+```markdown
+## ⚠️ 錯誤報告 (Error Report)
+
+**執行動作**: [描述嘗試執行的命令或動作]
+**錯誤訊息**: 
+```
+[貼上完整的錯誤訊息]
+```
+**初步分析**: [對錯誤原因的初步判斷]
+**建議操作**: [建議下一步如何處理，或請求人類指示]
 ```
 
 ### 進度回報標準格式

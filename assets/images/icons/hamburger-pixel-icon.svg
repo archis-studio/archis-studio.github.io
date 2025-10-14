@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+  <!-- Pixel Art Style Hamburger Menu Icon -->
+  <!-- 像素風格漢堡選單圖示 -->
+  <rect x="4" y="6" width="16" height="2" fill="currentColor"/>
+  <rect x="4" y="11" width="16" height="2" fill="currentColor"/>
+  <rect x="4" y="16" width="16" height="2" fill="currentColor"/>
+  <!-- Pixel glow effect dots -->
+  <rect x="2" y="6" width="1" height="2" fill="currentColor" opacity="0.6"/>
+  <rect x="21" y="6" width="1" height="2" fill="currentColor" opacity="0.6"/>
+  <rect x="2" y="11" width="1" height="2" fill="currentColor" opacity="0.6"/>
+  <rect x="21" y="11" width="1" height="2" fill="currentColor" opacity="0.6"/>
+  <rect x="2" y="16" width="1" height="2" fill="currentColor" opacity="0.6"/>
+  <rect x="21" y="16" width="1" height="2" fill="currentColor" opacity="0.6"/>
+</svg>

@@ -5,7 +5,9 @@ main:
     url: /posts/
   - title: "📂 分類"
     url: /categories/
-  - title: "🍂 Future Demo"
-    url: /future-demo/
+  - title: "🎨 展示空間"
+    children:
+      - title: "🍂 Future Demo"
+        url: /future-demo/
   - title: "ℹ️ 關於"
     url: /about/

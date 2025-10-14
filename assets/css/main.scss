@@ -206,55 +206,450 @@ blockquote {
   }
 }
 
-/* Navigation - Future Space Style */
+/* Navigation - Autumn Noir Future Space Style 
+   ================================================== */
 .masthead {
-  background: rgba($space-void, 0.95);
-  backdrop-filter: blur(15px);
-  border-bottom: 2px solid $space-comet;
-  position: relative;
+  // 星雲漸層背景 (使用 SVG 或漸層模擬)
+  background: linear-gradient(135deg, 
+    rgba($space-void, 0.98) 0%, 
+    rgba($space-nebula, 0.95) 50%, 
+    rgba($space-void, 0.98) 100%);
+  // 備用 SVG 背景圖示 (需創建: /assets/images/icons/masthead-cosmic-bg.svg)
+  background-image: url('/assets/images/icons/masthead-cosmic-bg.svg');
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(20px);
   
+  // AI 光暈邊框
+  border-bottom: 2px solid $noir-border;
+  box-shadow: 
+    0 2px 20px rgba($ai-neural, 0.4),
+    0 4px 40px rgba($space-comet, 0.2),
+    inset 0 -1px 0 rgba($ai-hologram, 0.3);
+  position: relative;
+  padding: 1rem 0;
+  transition: all $ease-cyber 0.4s;
+  
+  // 太空漸層動畫底線 (取代彩虹效果)
   &::after {
     content: '';
     position: absolute;
     bottom: -2px;
     left: 0;
     right: 0;
-    height: 2px;
+    height: 3px;
     background: linear-gradient(90deg, 
-      $autumn-gold 0%, 
-      $space-comet 25%, 
-      $space-aurora 50%, 
-      $ai-hologram 75%, 
-      $autumn-gold 100%);
-    animation: navGlow 8s ease-in-out infinite;
+      transparent 0%,
+      $space-comet 20%, 
+      $ai-neural 40%, 
+      $autumn-gold 60%, 
+      $space-aurora 80%,
+      transparent 100%);
+    animation: spaceGradientFlow 6s ease-in-out infinite;
+    filter: blur(1px);
   }
   
-  .site-title {
-    font-family: $futura-font;
-    color: $autumn-gold;
-    font-weight: $font-black;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: $text-shadow-glow;
+  // 像素過渡效果
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba($pixel-cyan, 0.03) 2px,
+        rgba($pixel-cyan, 0.03) 4px
+      );
+    pointer-events: none;
+    opacity: 0.6;
+    z-index: 1;
+  }
+  
+  // 懸浮時的互動效果
+  &:hover {
+    box-shadow: 
+      0 2px 30px rgba($ai-neural, 0.6),
+      0 4px 60px rgba($space-comet, 0.4),
+      inset 0 -1px 0 rgba($ai-hologram, 0.5);
     
     &::after {
-      content: ' ◆';
-      color: $space-aurora;
-      font-size: 0.8em;
-      animation: titlePulse 3s ease-in-out infinite;
+      animation-duration: 3s;
     }
   }
   
-  .masthead__menu-item a {
-    color: $space-starlight;
-    font-weight: $font-medium;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  // 主標題 "Archis Studio" - 像素字體 + 秋日金
+  .site-title {
     font-family: $pixel-font;
+    color: $autumn-gold;
+    font-weight: $font-black;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 1.4rem;
+    text-shadow: 
+      0 0 10px rgba($autumn-gold, 0.6),
+      0 0 20px rgba($ai-neural, 0.4),
+      2px 2px 0 rgba($space-void, 0.8);
+    position: relative;
+    z-index: 2;
+    transition: all $ease-quantum 0.3s;
+    display: inline-block;
+    
+    // Hover 效果：放大 + AI 神經光
+    &:hover {
+      transform: scale(1.05);
+      text-shadow: 
+        0 0 20px rgba($autumn-gold, 0.8),
+        0 0 40px rgba($ai-neural, 0.7),
+        0 0 60px rgba($space-comet, 0.5),
+        3px 3px 0 rgba($space-void, 0.9);
+      color: lighten($autumn-gold, 10%);
+    }
+    
+    // 像素藝術裝飾符號
+    &::after {
+      content: ' ◆';
+      color: $space-aurora;
+      font-size: 0.7em;
+      animation: pixelPulse 2s ease-in-out infinite;
+      display: inline-block;
+      margin-left: 0.3rem;
+    }
+  }
+  
+  // 副標題 "Crafting the Future: AI, Pixel Art & Autumn Vibes"
+  .site-subtitle {
+    display: block;
+    font-family: $sans-serif;
+    font-size: 0.75rem;
+    color: $noir-text-muted;
+    font-weight: $font-regular;
+    letter-spacing: 1px;
+    margin-top: 0.25rem;
+    text-transform: none;
+    transition: all $ease-cyber 0.3s;
+    opacity: 0.85;
+    
+    // Hover 效果：轉為像素青色
+    &:hover {
+      color: $pixel-cyan;
+      opacity: 1;
+      text-shadow: 0 0 10px rgba($pixel-cyan, 0.5);
+    }
+  }
+  
+  // 導航選單項目
+  .masthead__menu {
+    .masthead__menu-item {
+      position: relative;
+      
+      a {
+        color: $space-starlight;
+        font-weight: $font-medium;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-family: $pixel-font;
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        position: relative;
+        transition: all $ease-cyber 0.3s;
+        
+        // SVG 圖示支援 (需創建對應 SVG 檔案)
+        // home-planet-icon.svg, posts-scroll-icon.svg, 
+        // categories-grid-icon.svg, future-portal-icon.svg, about-user-icon.svg
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: drop-shadow(0 0 3px currentColor);
+          transition: all $ease-quantum 0.3s;
+        }
+        
+        // 首頁圖示
+        &[href="/"]::before,
+        &[href*="home"]::before {
+          background-image: url('/assets/images/icons/home-planet-icon.svg');
+        }
+        
+        // 文章圖示
+        &[href*="posts"]::before {
+          background-image: url('/assets/images/icons/posts-scroll-icon.svg');
+        }
+        
+        // 分類圖示
+        &[href*="categories"]::before {
+          background-image: url('/assets/images/icons/categories-grid-icon.svg');
+        }
+        
+        // Future Demo 圖示
+        &[href*="future-demo"]::before {
+          background-image: url('/assets/images/icons/future-portal-icon.svg');
+        }
+        
+        // 關於圖示
+        &[href*="about"]::before {
+          background-image: url('/assets/images/icons/about-user-icon.svg');
+        }
+        
+        // Hover 效果：遊戲霓虹閃光
+        &:hover {
+          color: $gaming-neon;
+          text-shadow: 
+            0 0 10px rgba($gaming-neon, 0.8),
+            0 0 20px rgba($pixel-cyan, 0.5);
+          transform: translateY(-2px);
+          
+          &::before {
+            filter: drop-shadow(0 0 8px $gaming-neon) 
+                    drop-shadow(0 0 12px $pixel-cyan);
+            transform: scale(1.15) rotate(5deg);
+          }
+          
+          // 底部像素光暈
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+              transparent, 
+              $gaming-neon, 
+              transparent);
+            box-shadow: 0 0 8px $gaming-neon;
+            animation: pixelGlow 1s ease-in-out infinite;
+          }
+        }
+        
+        // 當前頁面高亮
+        &.active,
+        &[aria-current="page"] {
+          color: $autumn-gold;
+          font-weight: $font-bold;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 2px;
+            background: $autumn-gold;
+            box-shadow: 0 0 10px rgba($autumn-gold, 0.6);
+          }
+        }
+      }
+    }
+  }
+  
+  // 下拉選單 (Dropdown Menu) - Future Space Style
+  .greedy-nav {
+    .visible-links {
+      // 確保導航項目與下拉選單正確對齊
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    // 有子選單的項目
+    .masthead__menu-item {
+      &.has-children {
+        position: relative;
+        
+        // 父項目箭頭
+        > a::after {
+          content: ' ▼';
+          font-size: 0.7em;
+          margin-left: 0.3rem;
+          transition: transform $ease-quantum 0.3s;
+        }
+        
+        // Hover 時箭頭旋轉
+        &:hover > a::after {
+          transform: rotate(180deg);
+        }
+        
+        // 顯示子選單
+        &:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
+    }
+    
+    // 下拉選單容器
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+      min-width: 200px;
+      
+      // 未來太空風格背景
+      background: linear-gradient(135deg, 
+        rgba($space-nebula, 0.98) 0%, 
+        rgba($space-void, 0.95) 100%);
+      backdrop-filter: blur(20px);
+      
+      // AI 光暈邊框
+      border: 2px solid $space-comet;
+      border-radius: $pixel-border-radius;
+      box-shadow: 
+        0 8px 32px rgba($space-void, 0.8),
+        0 0 20px rgba($ai-neural, 0.4),
+        inset 0 1px 0 rgba($ai-hologram, 0.2);
+      
+      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      z-index: 1000;
+      
+      // 初始隱藏狀態
+      opacity: 0;
+      visibility: hidden;
+      transition: all $ease-cyber 0.3s;
+      
+      // 像素掃描線效果
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba($pixel-cyan, 0.05) 2px,
+            rgba($pixel-cyan, 0.05) 4px
+          );
+        pointer-events: none;
+        border-radius: $pixel-border-radius;
+        z-index: 1;
+      }
+      
+      // 上方三角形箭頭
+      &::after {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 8px solid $space-comet;
+        filter: drop-shadow(0 -2px 4px rgba($ai-neural, 0.3));
+      }
+      
+      // 子選單項目
+      a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        color: $space-starlight;
+        font-family: $pixel-font;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all $ease-cyber 0.2s;
+        position: relative;
+        z-index: 2;
+        border-left: 3px solid transparent;
+        
+        // SVG 圖示支援（與主選單相同）
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 16px;
+          height: 16px;
+          margin-right: 0.5rem;
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: drop-shadow(0 0 2px currentColor);
+          transition: all $ease-quantum 0.3s;
+          vertical-align: middle;
+        }
+        
+        // Future Demo 圖示
+        &[href*="future-demo"]::before {
+          background-image: url('/assets/images/icons/future-portal-icon.svg');
+        }
+        
+        // Hover 效果
+        &:hover {
+          background: rgba($autumn-gold, 0.15);
+          color: $autumn-gold;
+          border-left-color: $autumn-gold;
+          padding-left: 2rem;
+          text-shadow: 0 0 10px rgba($autumn-gold, 0.6);
+          
+          &::before {
+            filter: drop-shadow(0 0 6px $autumn-gold);
+            transform: scale(1.1) rotate(5deg);
+          }
+          
+          // 霓虹光效
+          &::after {
+            content: '';
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 4px;
+            background: $gaming-neon;
+            border-radius: 50%;
+            box-shadow: 0 0 8px $gaming-neon;
+            animation: pixelGlow 1s ease-in-out infinite;
+          }
+        }
+      }
+    }
+  }
+  
+  // 漢堡選單按鈕 (響應式 - 手機版)
+  .greedy-nav__toggle {
+    // 使用像素風格圖示 (需創建: hamburger-pixel-icon.svg)
+    &::before,
+    &::after,
+    .navicon {
+      background-color: $autumn-gold;
+      box-shadow: 0 0 5px rgba($autumn-gold, 0.5);
+      transition: all $ease-cyber 0.3s;
+    }
     
     &:hover {
-      color: $autumn-gold;
-      text-shadow: 0 0 10px rgba($autumn-gold, 0.6);
+      &::before,
+      &::after,
+      .navicon {
+        background-color: $gaming-neon;
+        box-shadow: 0 0 10px rgba($gaming-neon, 0.8);
+      }
+    }
+    
+    // 自訂圖示背景
+    .navicon {
+      background-image: url('/assets/images/icons/hamburger-pixel-icon.svg');
+      background-size: 100%;
+      background-repeat: no-repeat;
     }
   }
 }
@@ -455,33 +850,90 @@ blockquote {
   }
 }
 
-/* Custom Animations */
-@keyframes navGlow {
-  0%, 100% {
+/* Custom Animations - Future Space + Pixel Art 
+   ================================================== */
+
+// 太空漸層流動動畫 (取代彩虹效果)
+@keyframes spaceGradientFlow {
+  0% {
+    background-position: 0% 50%;
     opacity: 0.7;
   }
   50% {
+    background-position: 100% 50%;
     opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.7;
   }
 }
 
+// 像素脈衝動畫
+@keyframes pixelPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+    filter: brightness(1.5);
+  }
+}
+
+// 像素光暈閃爍
+@keyframes pixelGlow {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 0 0 8px currentColor;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 16px currentColor, 0 0 24px currentColor;
+  }
+}
+
+// 標題脈衝 (保留並優化)
 @keyframes titlePulse {
   0%, 100% {
     opacity: 1;
     transform: scale(1);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(1.1);
+    opacity: 0.8;
+    transform: scale(1.05);
   }
 }
 
+// Footer 光暈 (保留)
 @keyframes footerGlow {
   0% {
     opacity: 0.5;
   }
   100% {
     opacity: 1;
+  }
+}
+
+// 星雲漂移動畫
+@keyframes nebulaDrift {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
+
+// AI 神經脈衝
+@keyframes neuralPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba($ai-neural, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba($ai-neural, 0.8), 0 0 50px rgba($pixel-cyan, 0.4);
   }
 }
 
