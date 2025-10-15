@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Masthead / Rewritten for Autumn Noir Future Theme
+   ========================================================================== */
+
+.masthead {
+  position: relative !important;
+  z-index: 20 !important;
+  padding: 1rem 0 !important;
+  
+  // Use the SVG background as the definitive solution, as per user's earlier suggestion
+  background-image: url("/assets/images/icons/masthead-cosmic-bg.svg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  
+  // Fallback background color if SVG fails
+  background-color: $noir-black !important;
+
+  border-bottom: 2px solid $noir-border !important;
+  box-shadow: 0 2px 20px rgba($ai-neural, 0.4), 0 4px 40px rgba($pixel-cyan, 0.2), inset 0 -1px 0 rgba($autumn-gold, 0.3) !important;
+  transition: all $ease-cyber 0.4s !important;
+
+  &:hover {
+    box-shadow: 0 2px 30px rgba($ai-neural, 0.6), 0 4px 60px rgba($pixel-cyan, 0.4), inset 0 -1px 0 rgba($autumn-gold, 0.5) !important;
+  }
+
+  // Animated gradient line at the bottom
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, $space-comet 20%, $ai-neural 40%, $autumn-gold 60%, $space-aurora 80%, transparent 100%);
+    animation: spaceGradientFlow 6s ease-in-out infinite;
+    filter: blur(1px);
+  }
+
+  // Scanlines effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba($pixel-cyan, 0.03) 2px, rgba($pixel-cyan, 0.03) 4px);
+    pointer-events: none;
+    opacity: 0.6;
+    z-index: 1;
+  }
+}
+
+// Navigation Menu Items
+.masthead__menu-item a {
+  color: $space-starlight !important;
+  font-family: $pixel-font !important;
+  font-weight: $font-medium !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  font-size: 0.8rem !important;
+  transition: all $ease-cyber 0.3s !important;
+
+  &:hover {
+    color: $gaming-neon !important;
+    text-shadow: 0 0 10px rgba($gaming-neon, 0.8), 0 0 20px rgba($pixel-cyan, 0.5) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  &.active,
+  &[aria-current="page"] {
+    color: $autumn-gold !important;
+    font-weight: $font-bold !important;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 2px;
+      background: $autumn-gold;
+      box-shadow: 0 0 10px rgba($autumn-gold, 0.6);
+    }
+  }
+}
+
+// Dropdown Menu
+.dropdown-menu {
+  background: linear-gradient(135deg, rgba($space-nebula, 0.98) 0%, rgba($noir-black, 0.95) 100%) !important;
+  backdrop-filter: blur(20px);
+  border: 2px solid $space-comet !important;
+  border-radius: $pixel-border-radius !important;
+  box-shadow: 0 8px 32px rgba($noir-black, 0.8), 0 0 20px rgba($ai-neural, 0.4), inset 0 1px 0 rgba($autumn-gold, 0.2) !important;
+}
