@@ -15,6 +15,22 @@
 // Import our enhanced Autumn Noir Future design system
 @import "design-system";
 
+/* 強制覆蓋 Minimal Mistakes 的 masthead 樣式 */
+.masthead {
+  background: linear-gradient(135deg, 
+    rgba(14, 14, 16, 0.95) 0%, 
+    rgba(26, 26, 46, 0.90) 30%,
+    rgba(22, 33, 62, 0.85) 70%,
+    rgba(14, 14, 16, 0.95) 100%) !important;
+  
+  background-color: #0E0E10 !important;
+  
+  border-bottom: 1px solid rgba(212, 160, 23, 0.2) !important;
+  box-shadow: 
+    0 1px 3px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(212, 160, 23, 0.1) !important;
+}
+
 /* Global Future Theme Overrides */
 html, body {
   overflow-x: hidden; /* 防止水平滾動 */
