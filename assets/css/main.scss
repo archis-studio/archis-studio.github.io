@@ -61,6 +61,24 @@ body::before {
 .page__inner-wrap {
   max-width: 100%;
   overflow-x: hidden;
+  /* 改善滾動邊界行為 */
+  overscroll-behavior-y: contain;
+}
+
+/* 改善主要內容區域的滾動 */
+main {
+  /* 確保主內容區域有良好的滾動體驗 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* 改善側邊欄滾動 */
+.sidebar {
+  /* 如果側邊欄內容過長，改善其滾動體驗 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100vh;
 }
 
 /* Typography - Future Editorial Style */
@@ -203,6 +221,8 @@ pre {
 /* Performance Optimizations for Smooth Scrolling */
 html {
   scroll-behavior: smooth;
+  /* 改善整體滾動 */
+  height: 100%;
 }
 
 body {
@@ -210,6 +230,24 @@ body {
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   will-change: scroll-position;
+  /* 改善滾動容器 */
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* 改善主要容器的滾動體驗 */
+.page {
+  /* 確保頁面容器有正確的滾動行為 */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__inner-wrap {
+  flex: 1;
+  /* 改善內層滾動 */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* 減少不必要的 backdrop-filter 使用 */
@@ -715,9 +753,17 @@ blockquote {
   /* backdrop-filter: blur(10px); */ /* 移除模糊效果 */
   position: relative;
   
+  /* 改善內容區塊滾動 */
+  overflow-y: visible; /* 允許內容自然流動 */
+  -webkit-overflow-scrolling: touch;
+  
   /* 啟用硬體加速 */
   transform: translateZ(0);
   will-change: transform;
+  
+  /* 改善文字渲染 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   
   &::before {
     content: '';
@@ -998,6 +1044,9 @@ blockquote {
     overflow-x: hidden; /* 強制隱藏水平滾動 */
     width: 100%;
     max-width: 100vw;
+    /* 改善手機版滾動 */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
   }
   
   .page__content {
@@ -1005,7 +1054,22 @@ blockquote {
     margin: $space-4 0;
     width: 100%;
     max-width: 100%;
+    /* 手機版滾動優化 */
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
   }
+  
+  /* 改善手機版整體滾動體驗 */
+  .page {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  
+  .page__inner-wrap {
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+}
   
   h1 {
     font-size: 2rem;
