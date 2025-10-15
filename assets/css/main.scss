@@ -200,11 +200,24 @@ pre {
   }
 }
 
-/* Blockquotes - Future Editorial */
+/* Performance Optimizations for Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  /* 啟用硬體加速 */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: scroll-position;
+}
+
+/* 減少不必要的 backdrop-filter 使用 */
+/* Blockquotes - Future Editorial (Optimized) */
 blockquote {
   border-left: 4px solid $space-comet;
   background: rgba($space-nebula, 0.3);
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */ /* 移除造成卡頓的模糊效果 */
   padding: $space-6 $space-8;
   margin: $space-8 0;
   font-style: italic;
@@ -240,26 +253,23 @@ blockquote {
   background-image: url('/assets/images/icons/masthead-cosmic-bg.svg');
   background-size: cover;
   background-position: center;
-  backdrop-filter: blur(20px);
+  /* backdrop-filter: blur(20px); */ /* 移除造成效能問題的模糊效果 */
   
-  // AI 光暈邊框
+  // AI 光暈邊框 (簡化)
   border-bottom: 2px solid $noir-border;
-  box-shadow: 
-    0 2px 20px rgba($ai-neural, 0.4),
-    0 4px 40px rgba($space-comet, 0.2),
-    inset 0 -1px 0 rgba($ai-hologram, 0.3);
+  box-shadow: 0 2px 10px rgba($ai-neural, 0.3); /* 簡化陰影效果 */
   position: relative;
   padding: 1rem 0;
-  transition: all $ease-cyber 0.4s;
+  transition: box-shadow 0.2s ease; /* 簡化 transition */
   
-  // 太空漸層動畫底線 (取代彩虹效果)
+  // 太空漸層動畫底線 (簡化版)
   &::after {
     content: '';
     position: absolute;
     bottom: -2px;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 2px;
     background: linear-gradient(90deg, 
       transparent 0%,
       $space-comet 20%, 
@@ -267,8 +277,8 @@ blockquote {
       $autumn-gold 60%, 
       $space-aurora 80%,
       transparent 100%);
-    animation: spaceGradientFlow 6s ease-in-out infinite;
-    filter: blur(1px);
+    /* animation: spaceGradientFlow 6s ease-in-out infinite; */ /* 暫時移除動畫 */
+    opacity: 0.8;
   }
   
   // 像素過渡效果
@@ -514,7 +524,7 @@ blockquote {
       }
     }
     
-    // 下拉選單容器
+    // 下拉選單容器 (效能優化版)
     .dropdown-menu {
       position: absolute;
       top: 100%;
@@ -522,19 +532,14 @@ blockquote {
       transform: translateX(-50%) translateY(10px);
       min-width: 200px;
       
-      // 未來太空風格背景
-      background: linear-gradient(135deg, 
-        rgba($space-nebula, 0.98) 0%, 
-        rgba($space-void, 0.95) 100%);
-      backdrop-filter: blur(20px);
+      // 未來太空風格背景 (簡化)
+      background: rgba($space-nebula, 0.95);
+      /* backdrop-filter: blur(20px); */ /* 移除模糊效果 */
       
-      // AI 光暈邊框
+      // AI 光暈邊框 (簡化)
       border: 2px solid $space-comet;
       border-radius: $pixel-border-radius;
-      box-shadow: 
-        0 8px 32px rgba($space-void, 0.8),
-        0 0 20px rgba($ai-neural, 0.4),
-        inset 0 1px 0 rgba($ai-hologram, 0.2);
+      box-shadow: 0 8px 24px rgba($space-void, 0.6); /* 簡化陰影 */
       
       padding: 0.5rem 0;
       margin-top: 0.5rem;
@@ -543,7 +548,7 @@ blockquote {
       // 初始隱藏狀態
       opacity: 0;
       visibility: hidden;
-      transition: all $ease-cyber 0.3s;
+      transition: opacity 0.2s ease, visibility 0.2s ease; /* 簡化 transition */
       
       // 像素掃描線效果
       &::before {
@@ -615,32 +620,29 @@ blockquote {
           background-image: url('/assets/images/icons/future-portal-icon.svg');
         }
         
-        // Hover 效果
+        // Hover 效果 (簡化版)
         &:hover {
           background: rgba($autumn-gold, 0.15);
           color: $autumn-gold;
           border-left-color: $autumn-gold;
           padding-left: 2rem;
-          text-shadow: 0 0 10px rgba($autumn-gold, 0.6);
+          /* text-shadow: 0 0 10px rgba($autumn-gold, 0.6); */ /* 移除文字陰影 */
           
           &::before {
-            filter: drop-shadow(0 0 6px $autumn-gold);
-            transform: scale(1.1) rotate(5deg);
+            /* filter: drop-shadow(0 0 6px $autumn-gold); */ /* 移除濾鏡效果 */
+            transform: scale(1.05); /* 簡化變換 */
           }
           
-          // 霓虹光效
+          // 簡化的指示器
           &::after {
-            content: '';
+            content: '●';
             position: absolute;
             right: 1rem;
             top: 50%;
             transform: translateY(-50%);
-            width: 4px;
-            height: 4px;
-            background: $gaming-neon;
-            border-radius: 50%;
-            box-shadow: 0 0 8px $gaming-neon;
-            animation: pixelGlow 1s ease-in-out infinite;
+            color: $gaming-neon;
+            font-size: 8px;
+            /* animation: pixelGlow 1s ease-in-out infinite; */ /* 移除動畫 */
           }
         }
       }
@@ -702,16 +704,20 @@ blockquote {
   }
 }
 
-/* Posts and Pages - Future Editorial Layout */
+/* Posts and Pages - Future Editorial Layout (Optimized) */
 .page__content {
   background: rgba($space-nebula, 0.4);
   border: 1px solid rgba($space-comet, 0.3);
   border-radius: $pixel-border-radius;
   padding: $space-8;
-  box-shadow: $box-shadow-space;
+  box-shadow: 0 4px 16px rgba($space-void, 0.4); /* 簡化陰影 */
   margin: $space-6 0;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */ /* 移除模糊效果 */
   position: relative;
+  
+  /* 啟用硬體加速 */
+  transform: translateZ(0);
+  will-change: transform;
   
   &::before {
     content: '';
@@ -822,12 +828,15 @@ blockquote {
   }
 }
 
-/* Table of Contents - AI Neural Style */
+/* Table of Contents - AI Neural Style (Optimized) */
 .toc {
   background: rgba($ai-core, 0.1);
   border: 2px solid $ai-neural;
   border-radius: $pixel-border-radius;
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */ /* 移除模糊效果 */
+  
+  /* 啟用硬體加速 */
+  transform: translateZ(0);
   
   .toc__title {
     color: $autumn-gold;
@@ -843,6 +852,7 @@ blockquote {
   
   a {
     color: $space-starlight;
+    transition: color 0.2s ease, padding-left 0.2s ease; /* 簡化 transition */
     
     &:hover {
       color: $space-comet;
@@ -851,7 +861,7 @@ blockquote {
   }
 }
 
-/* Search - Future Fashion */
+/* Search - Future Fashion (Optimized) */
 .search-content {
   .search-input {
     background: rgba($space-nebula, 0.8);
@@ -859,10 +869,11 @@ blockquote {
     color: $space-starlight;
     border-radius: $pixel-border-radius;
     font-family: $pixel-font;
+    transition: border-color 0.2s ease, background 0.2s ease; /* 簡化 transition */
     
     &:focus {
       border-color: $autumn-gold;
-      box-shadow: 0 0 20px rgba($autumn-gold, 0.4);
+      /* box-shadow: 0 0 20px rgba($autumn-gold, 0.4); */ /* 移除陰影效果 */
       background: rgba($space-nebula, 0.9);
     }
     
