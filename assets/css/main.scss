@@ -31,6 +31,24 @@
     0 0 20px rgba(212, 160, 23, 0.1) !important;
 }
 
+/* 修復導航選單項目樣式 */
+.masthead__menu .masthead__menu-item a {
+  color: #E8E1D3 !important; /* space-starlight */
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  font-family: "JetBrains Mono", monospace !important;
+  font-size: 0.8rem !important;
+  padding: 0.5rem 0.1rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.masthead__menu .masthead__menu-item a:hover {
+  color: #E74C3C !important; /* gaming-neon */
+  text-shadow: 0 0 10px rgba(231, 76, 60, 0.8) !important;
+  transform: translateY(-2px) !important;
+}
+
 /* Global Future Theme Overrides */
 html, body {
   overflow-x: hidden; /* 防止水平滾動 */
