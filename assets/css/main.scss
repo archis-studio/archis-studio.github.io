@@ -243,6 +243,13 @@ body {
   flex-direction: column;
 }
 
+/* 確保導航列不受 flex 影響 */
+.masthead {
+  flex-shrink: 0; /* 防止導航列被壓縮 */
+  position: relative;
+  z-index: 1000; /* 確保導航列在最上層 */
+}
+
 .page__inner-wrap {
   flex: 1;
   /* 改善內層滾動 */
