@@ -11,7 +11,7 @@
 |------|------|----------|------|------|
 | `PROJECT_CHARTER.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 專案目標與原則 |
 | `DESIGN_SYSTEM_SPEC.md` | 1.1.0 | 2025-10-11 | ✅ Complete | AI+Gaming 像素風格設計系統 |
-| `AI_COLLABORATION_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | AI 協作流程 |
+| `AI_COLLABORATION_GUIDE.md` | 1.4.0 | 2025-10-15 | ✅ Complete | AI 協作流程 |
 | `AUTUMN_NOIR_THEME.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 原版 Autumn Noir 主題規格 |
 | `AUTUMN_NOIR_FUTURE_THEME.md` | 2.0.0 | 2025-10-11 | ✅ Complete | 未來太空版主題規格 |
 | `SVG_PLACEHOLDERS_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | SVG 佔位符使用指南 |

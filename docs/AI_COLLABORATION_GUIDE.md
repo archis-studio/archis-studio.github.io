@@ -1,5 +1,5 @@
 # AI 協作指南 - AI Collaboration Guide
-# Version 1.3.0 | Updated: 2025-10-14
+# Version 1.4.0 | Updated: 2025-10-15
 
 ## 🔄 標準工作流程 (Enhanced)
 
@@ -50,6 +50,11 @@
 
 ## 📝 CHANGELOG
 
+### v1.4.0 (2025-10-15)
+- 新增 AI Agent 識別規範於 commit message
+- 建立多 AI 協作的標準化流程
+- 定義 AI agent 命名規則與格式
+
 ### v1.3.0 (2025-10-14)
 - 新增「錯誤處理」標準流程
 - 具體化 Git 操作範例
@@ -85,16 +90,40 @@
 - ❌ **禁止**: `git push origin main` (需人類明確指令)
 - 📝 **Commit 策略**: 
   - 每完成一個功能模組就 commit
-  - 使用 Conventional Commits 格式
+  - 使用 Conventional Commits 格式 + AI Agent 識別
   - 所有 commits 保持在本地，等確認後再 push
+
+### AI Agent 識別規範
+每個 AI assistant 在 commit message 中必須標註自己的身份：
+
+**格式**: `<type>(<scope>): <description> [by <ai-agent>]`
+
+**AI Agent 命名規則**:
+- **Amazon Q**: `[by Q]`
+- **Claude**: `[by Claude]` 
+- **ChatGPT**: `[by GPT]`
+- **Copilot**: `[by Copilot]`
+- **其他**: `[by <AI名稱>]`
 
 **範例**:
 ```bash
-# 1. 將變更的檔案加入暫存區
-git add docs/AI_COLLABORATION_GUIDE.md
+# Amazon Q 的 commit
+git commit -m "fix(css): resolve infinite scroll issue [by Q]
 
-# 2. 根據 Conventional Commits 格式撰寫 commit message
-git commit -m "docs(ai): add error handling protocol and git examples"
+- Add overflow-x: hidden to html and body
+- Set explicit width/height for background layer"
+
+# Claude 的 commit  
+git commit -m "feat(components): add hologram panel component [by Claude]
+
+- Implement CSS keyframe animations
+- Add responsive design breakpoints"
+
+# 人類的 commit (不需要標註)
+git commit -m "docs: update project requirements
+
+- Add new feature specifications
+- Update timeline and milestones"
 ```
 
 ### 決策請求標準格式
