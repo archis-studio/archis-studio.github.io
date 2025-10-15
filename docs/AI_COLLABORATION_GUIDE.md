@@ -1,5 +1,5 @@
 # AI 協作指南 - AI Collaboration Guide
-# Version 1.4.0 | Updated: 2025-10-15
+# Version 1.5.0 | Updated: 2025-10-15
 
 ## 🔄 標準工作流程 (Enhanced)
 
@@ -35,8 +35,8 @@
 - 更新 `docs/DOC_INDEX.md` 記錄
 
 **Git 規則**:
-- ✅ 可執行: `git status`, `git diff`, `git add`
-- ❌ 禁止: `git commit`, `git push` (需人類確認)
+- ✅ 可執行: `git status`, `git diff`, `git add`, `git commit`
+- ❌ 禁止: `git push` (需人類確認)
 
 ## 🎯 品質檢查
 
@@ -94,36 +94,44 @@
   - 所有 commits 保持在本地，等確認後再 push
 
 ### AI Agent 識別規範
-每個 AI assistant 在 commit message 中必須標註自己的身份：
+每個 AI assistant 在 commit message 中必須標註自己的身份。我們採用 Git 標準的 `trailer` 格式。
 
-**格式**: `<type>(<scope>): <description> [by <ai-agent>]`
+**格式**:
+```
+<type>(<scope>): <description>
+
+[optional body]
+
+Authored-by: <ai-agent-name>
+```
 
 **AI Agent 命名規則**:
-- **Amazon Q**: `[by Q]`
-- **Claude**: `[by Claude]` 
-- **ChatGPT**: `[by GPT]`
-- **Copilot**: `[by Copilot]`
-- **其他**: `[by <AI名稱>]`
+- **Amazon Q**: `Q`
+- **Claude**: `Claude`
+- **ChatGPT**: `GPT`
+- **Copilot**: `Copilot`
+- **Gemini**: `Gemini`
 
 **範例**:
 ```bash
-# Amazon Q 的 commit
-git commit -m "fix(css): resolve infinite scroll issue [by Q]
+# Gemini 的 commit
+git commit -m "refactor(theme): rewrite masthead styles
+> 
+> This refactor clarifies the navigation styling by moving all related
+> rules to a dedicated partial.
+> 
+> Authored-by: Gemini"
 
-- Add overflow-x: hidden to html and body
-- Set explicit width/height for background layer"
-
-# Claude 的 commit  
-git commit -m "feat(components): add hologram panel component [by Claude]
-
-- Implement CSS keyframe animations
-- Add responsive design breakpoints"
+# Q 的 commit
+git commit -m "fix(css): resolve infinite scroll issue
+>
+> - Add overflow-x: hidden to html and body
+> - Set explicit width/height for background layer
+>
+> Authored-by: Q"
 
 # 人類的 commit (不需要標註)
-git commit -m "docs: update project requirements
-
-- Add new feature specifications
-- Update timeline and milestones"
+git commit -m "docs: update project requirements"
 ```
 
 ### 決策請求標準格式
