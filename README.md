@@ -9,8 +9,14 @@
 2. `docs/PROJECT_CHARTER.md` - 專案目標與原則
 3. `docs/AI_COLLABORATION_GUIDE.md` - AI 協作流程
 
-**🔧 實作參考**:
+**🎨 設計規格**:
 - `docs/DESIGN_SYSTEM_SPEC.md` - 設計系統規格
+- `docs/LAYOUT_SPEC.md` - 版面配置規格
+- `docs/NAVIGATION_SPEC.md` - 導航設計規格
+- `docs/ASSET_SPEC.md` - 資源檔案規格
+
+**🔧 實作參考**:
+- `docs/IMPLEMENTATION_CHECKLIST.md` - 10階段實作指南
 - `docs/MINIMAL_MISTAKES_CUSTOMIZATION.md` - 主題客製化
 - `docs/CONTENT_STRATEGY.md` - 內容創作規範
 

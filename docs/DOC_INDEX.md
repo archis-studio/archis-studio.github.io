@@ -1,5 +1,5 @@
 # 文件索引 - Documentation Index
-# Version 1.1.0 | Updated: 2025-10-16
+# Version 1.3.0 | Updated: 2025-10-16
 
 ## 📚 文件追蹤系統
 
@@ -10,12 +10,15 @@
 | 文件 | 版本 | 更新日期 | 狀態 | 用途 |
 |------|------|----------|------|------|
 | `PROJECT_CHARTER.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 專案目標與原則 |
-| `DESIGN_SYSTEM_SPEC.md` | 1.2.0 | 2025-10-16 | ✅ Complete | Fashion Editorial + Autumn Noir + Gaming Pixel + AI Future 設計系統 |
-| `AI_COLLABORATION_GUIDE.md` | 1.6.0 | 2025-10-16 | ✅ Complete | AI 協作流程 (新增簡化流程) |
-| `AUTUMN_NOIR_FUTURE_THEME.md` | 2.0.0 | 2025-10-11 | ✅ Complete | 主題規格 (Fashion+Autumn Noir+Gaming+AI Future) |
-| `SVG_PLACEHOLDERS_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | SVG 佔位符使用指南 |
-| `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 1.1.0 | 2025-10-16 | ✅ Complete | MM 主題客製化指南 (已同步 Dark Mode) |
+| `DESIGN_SYSTEM_SPEC.md` | 1.2.0 | 2025-10-16 | ✅ Complete | 完整設計系統規格 (色彩、字型、間距) |
+| `LAYOUT_SPEC.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 版面配置規格 (Navigation, Sidebars, Content) |
+| `NAVIGATION_SPEC.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 導航設計規格 (Masthead, Menu, Responsive) |
+| `ASSET_SPEC.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 資源檔案規格 (Icons, Images, SVG Placeholders) |
+| `IMPLEMENTATION_CHECKLIST.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 10階段實作指南 (從初始化到部署) |
+| `AI_COLLABORATION_GUIDE.md` | 1.6.0 | 2025-10-16 | ✅ Complete | AI 協作流程 |
+| `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 1.1.0 | 2025-10-16 | ✅ Complete | MM 主題客製化指南 |
 | `CONTENT_STRATEGY.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 內容創作規範 |
+| `AUTUMN_NOIR_FUTURE_THEME.md` | 2.1.0 | 2025-10-16 | ✅ Complete | 主題概念與視覺指南 |
 
 ### 📖 文件閱讀順序
 
@@ -24,9 +27,15 @@
 2. `AI_COLLABORATION_GUIDE.md` - 學習協作方式
 3. `DESIGN_SYSTEM_SPEC.md` - 掌握設計規範
 
-**開始實作**:
-4. `MINIMAL_MISTAKES_CUSTOMIZATION.md` - 技術實作
-5. `CONTENT_STRATEGY.md` - 內容創作
+**開始實作前**:
+4. `LAYOUT_SPEC.md` - 了解版面配置
+5. `NAVIGATION_SPEC.md` - 了解導航設計
+6. `ASSET_SPEC.md` - 了解資源需求
+
+**技術實作**:
+7. `IMPLEMENTATION_CHECKLIST.md` - 按階段實作
+8. `MINIMAL_MISTAKES_CUSTOMIZATION.md` - MM 客製化
+9. `CONTENT_STRATEGY.md` - 內容創作
 
 ### 🔄 版本更新規則
 
@@ -108,6 +117,21 @@ head -n 2 docs/*.md
 ---
 
 ## 📝 CHANGELOG
+
+### v1.3.0 (2025-10-16)
+- **文件優化與合併**:
+  - 刪除 `SVG_PLACEHOLDERS_GUIDE.md`，內容合併至 `ASSET_SPEC.md`
+  - 簡化 `AUTUMN_NOIR_FUTURE_THEME.md` 為主題概念文件
+  - 移除技術細節重複，專注於設計理念
+  - 文件系統更加精簡且無冗餘
+
+### v1.2.0 (2025-10-16)
+- 新增 `LAYOUT_SPEC.md` - 完整版面配置規格
+- 新增 `NAVIGATION_SPEC.md` - 詳細導航設計規格  
+- 新增 `ASSET_SPEC.md` - 資源檔案管理規格
+- 新增 `IMPLEMENTATION_CHECKLIST.md` - 10階段實作指南
+- 更新文件閱讀順序，包含新規格文件
+- 文件系統現已完整，可支援完全重構
 
 ### v1.1.0 (2025-10-16)
 - 移除重複的 AUTUMN_NOIR_THEME.md 文件
