@@ -1,42 +1,57 @@
 # Design System 規格書
-# Version 1.0.0 | Updated: 2025-10-11
+# Version 1.2.0 | Updated: 2025-10-16
 
 ## 🎨 設計原則
 
-**Keep It Simple**:
-- 現代簡約風格
-- 內容優先設計
-- 系統化可擴展
+**Jekyll 基礎**: Minimal Mistakes Theme + Dark Mode
 
-**品牌特質**: 專業、友善、教育導向
+**四重風格融合**:
+- 🎭 **Fashion Editorial**: 時尚編輯版面，優雅排版
+- 🍂 **Autumn Noir**: 秋日黑色美學，溫暖深色調
+- 🎮 **Gaming Pixel Art**: 遊戲像素風格，復古科技感
+- 🚀 **AI Future Space**: 人工智慧未來太空，科幻元素
+
+**Keep It Simple**: 內容優先，系統化可擴展
 
 ---
 
 ## 🎨 色彩系統
 
-### 像素遊戲風格配色
+### Autumn Noir 核心色彩
 ```scss
-// 主要色彩 - AI + Gaming 主題
-$pixel-blue: #00BFFF;     // 電子藍 - 主要 AI 色彩
-$pixel-green: #00FF7F;    // 駭客綠 - 成功/完成狀態
-$pixel-purple: #9370DB;   // 神秘紫 - AI 神經網路
-$pixel-orange: #FF6347;   // 警示橙 - 重要提醒
-$pixel-cyan: #00FFFF;     // 螢光青 - 連結/互動
+// 深色基調 (Dark Mode Base)
+$noir-black: #0E0E10;     // 深邃黑 - 主背景
+$noir-gray: #1C1C1E;      // 暖灰 - 中層背景  
+$noir-border: #2C2C2E;    // 邊框灰
+$noir-text: #EDEDED;      // 主文字 - 溫暖白
+$noir-text-muted: #A0A0A5; // 次要文字 - 優雅灰
+```
 
-// 遊戲 UI 色彩
-$game-bg-dark: #0A0A0F;   // 深空背景
-$game-bg-mid: #1A1A2E;    // 中層背景
-$game-text: #FFFFFF;      // 主文字
-$game-text-dim: #B0B0C4;  // 次要文字
-$game-border: #16213E;    // 邊框色彩
+### Fashion Editorial 色彩調色盤
+```scss
+$autumn-gold: #D4A017;    // 秋日金 - 主要強調色
+$autumn-burgundy: #8B3A3A; // 勃艮第紅 - 時尚重點
+$autumn-moss: #6B8E23;    // 苔蘚綠 - 自然元素
+$autumn-copper: #B87333;  // 銅棕色 - 金屬質感
+$autumn-cream: #F5DEB3;   // 奶油色 - 柔和對比
+```
 
-// 灰階系統 (保持原有但調整為遊戲風格)
-$gray-900: #0A0A0F;  // 深空黑
-$gray-700: #1A1A2E;  // 太空灰
-$gray-500: #B0B0C4;  // 次要文字
-$gray-300: #16213E;  // 邊框
-$gray-100: #F0F0F5;  // 淺背景
-$white: #FFFFFF;     // 純白
+### AI Future Space 色彩
+```scss
+$space-void: #0F0F12;     // 太空虛空
+$space-nebula: #1A1B2E;   // 星雲紫
+$space-comet: #4A90B8;    // 彗星藍
+$space-aurora: #5A8B5F;   // 極光綠
+$space-starlight: #E8E1D3; // 星光白
+```
+
+### Gaming Pixel Art 色彩
+```scss
+$ai-neural: #9B59B6;      // AI 神經紫
+$pixel-cyan: #17A2B8;     // 像素青
+$gaming-neon: #E74C3C;    // 遊戲霓虹
+$retro-neon-pink: #C97A8F; // 復古霓虹粉
+$retro-amber: #D4B36A;    // 琥珀黃
 ```
 
 ---
@@ -45,14 +60,19 @@ $white: #FFFFFF;     // 純白
 
 ### Font Families (字型家族)
 ```scss
-// 英文字型
-$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-$font-heading: 'Montserrat', $font-primary;
-$font-code: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+// Fashion Editorial 字型
+$serif-editorial: 'Playfair Display', 'Georgia', serif; // 時尚編輯標題
+$sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; // 現代內文
+
+// Gaming Pixel Art 字型  
+$pixel-font: 'JetBrains Mono', monospace; // 像素風格程式碼
+$monospace: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+
+// AI Future 字型
+$futura-font: 'Futura', 'Arial', sans-serif; // 未來感標題
 
 // 繁體中文字型
 $font-chinese: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-$font-display: 'Noto Serif TC', Georgia, serif; // 特殊標題使用
 ```
 
 ### Typography Scale (文字比例)

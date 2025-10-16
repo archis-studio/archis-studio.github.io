@@ -1,5 +1,5 @@
 # Minimal Mistakes 客製化指南
-# MM Theme Customization Guide - Version 1.0.0
+# MM Theme Customization Guide - Version 1.1.0 | Updated: 2025-10-16
 
 **建立時間**: 2025-10-11  
 **主題版本**: Minimal Mistakes 4.x  
@@ -38,29 +38,30 @@ _sass/
 ```scss
 // _sass/minimal-mistakes/_variables.scss
 
-// 覆寫 MM 預設色彩
-$background-color: #ffffff !default;
-$text-color: #1a1a1a !default;
-$muted-text-color: #666666 !default;
-$primary-color: #2563eb !default;
-$border-color: #d9d9d9 !default;
-$footer-background-color: #f8f8f8 !default;
+// 覆寫 MM 預設色彩 (Dark Mode + Autumn Noir)
+$background-color: #0E0E10 !default;        // noir-black
+$text-color: #EDEDED !default;              // noir-text  
+$muted-text-color: #A0A0A5 !default;        // noir-text-muted
+$primary-color: #D4A017 !default;           // autumn-gold
+$border-color: #2C2C2E !default;            // noir-border
+$footer-background-color: #0F0F12 !default; // space-void
 
 // 連結色彩
-$link-color: #2563eb !default;
-$link-color-hover: darken(#2563eb, 10%) !default;
-$link-color-visited: #7c3aed !default;
+$link-color: #4A90B8 !default;              // space-comet
+$link-color-hover: #5A8B5F !default;        // space-aurora
+$link-color-visited: #D4B873 !default;      // ai-hologram
 
-// Code highlighting
-$code-background-color: #f8f9fa !default;
-$code-background-color-dark: #1a1a1a !default;
+// Code highlighting (Dark Mode)
+$code-background-color: rgba(#7B6B9E, 0.15) !default; // ai-core
+$code-background-color-dark: #1A1B2E !default;        // space-nebula
 ```
 
 ### Typography Override  
 ```scss
-// Font families
-$sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
-$monospace: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace !default;
+// Font families (四重風格融合)
+$sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !default;
+$serif: 'Playfair Display', 'Georgia', serif !default;  // Fashion Editorial
+$monospace: 'JetBrains Mono', 'SF Mono', Monaco, monospace !default; // Gaming Pixel
 
 // Font sizes (MM 使用 em 單位)
 $type-size-1: 2.441em !default;  // ~39px - h1
