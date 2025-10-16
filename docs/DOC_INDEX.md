@@ -11,7 +11,7 @@
 |------|------|----------|------|------|
 | `PROJECT_CHARTER.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 專案目標與原則 |
 | `DESIGN_SYSTEM_SPEC.md` | 1.2.0 | 2025-10-16 | ✅ Complete | Fashion Editorial + Autumn Noir + Gaming Pixel + AI Future 設計系統 |
-| `AI_COLLABORATION_GUIDE.md` | 1.4.0 | 2025-10-15 | ✅ Complete | AI 協作流程 |
+| `AI_COLLABORATION_GUIDE.md` | 1.6.0 | 2025-10-16 | ✅ Complete | AI 協作流程 (新增簡化流程) |
 | `AUTUMN_NOIR_FUTURE_THEME.md` | 2.0.0 | 2025-10-11 | ✅ Complete | 主題規格 (Fashion+Autumn Noir+Gaming+AI Future) |
 | `SVG_PLACEHOLDERS_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | SVG 佔位符使用指南 |
 | `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 1.1.0 | 2025-10-16 | ✅ Complete | MM 主題客製化指南 (已同步 Dark Mode) |
