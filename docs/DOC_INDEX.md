@@ -1,5 +1,5 @@
 # 文件索引 - Documentation Index
-# Version 1.0.0 | Updated: 2025-10-11
+# Version 1.1.0 | Updated: 2025-10-16
 
 ## 📚 文件追蹤系統
 
@@ -15,7 +15,7 @@
 | `AUTUMN_NOIR_FUTURE_THEME.md` | 2.0.0 | 2025-10-11 | ✅ Complete | 主題規格 (Fashion+Autumn Noir+Gaming+AI Future) |
 | `SVG_PLACEHOLDERS_GUIDE.md` | 1.0.0 | 2025-10-11 | ✅ Complete | SVG 佔位符使用指南 |
 | `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 1.1.0 | 2025-10-16 | ✅ Complete | MM 主題客製化指南 (已同步 Dark Mode) |
-| `CONTENT_STRATEGY.md` | 1.0.0 | 2025-10-11 | 📝 Draft | 內容創作規範 |
+| `CONTENT_STRATEGY.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 內容創作規範 |
 
 ### 📖 文件閱讀順序
 
@@ -105,5 +105,21 @@ head -n 2 docs/*.md
 
 ---
 
+---
+
+## 📝 CHANGELOG
+
+### v1.1.0 (2025-10-16)
+- 移除重複的 AUTUMN_NOIR_THEME.md 文件
+- 更新 DESIGN_SYSTEM_SPEC.md 到 v1.2.0 (四重風格融合)
+- 更新 AI_COLLABORATION_GUIDE.md 到 v1.6.0 (新增簡化流程)
+- 更新 MINIMAL_MISTAKES_CUSTOMIZATION.md 到 v1.1.0 (同步 Dark Mode)
+- 統一所有文件版本號格式
+- 修正 CONTENT_STRATEGY.md 狀態為 Complete
+
+### v1.0.0 (2025-10-11)
+- 建立文件追蹤系統
+- 定義文件版本更新規則
+
 **維護者**: Archi Chen & AI Assistants  
-**最後檢查**: 2025-10-11
+**最後檢查**: 2025-10-16

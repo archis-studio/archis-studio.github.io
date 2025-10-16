@@ -1,7 +1,6 @@
 # Autumn Noir Future Theme - 未來太空版
+# Version 2.0.0 | Updated: 2025-10-11
 ## Fashion + Gaming + Pixel Art + AI + Future Space Aesthetics
-
-**Version**: 2.0.0 | **Created**: 2025-10-11 | **Style**: Future Editorial + Space Gaming + Pixel Art
 
 ---
 
