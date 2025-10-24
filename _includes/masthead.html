@@ -1,0 +1,84 @@
+<!-- 
+  Custom Masthead - Autumn Noir Future Theme
+  Navigation with Pixel Art & Space aesthetics
+-->
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <!-- Logo & Brand -->
+    <div class="masthead__menu">
+      <div class="greedy-nav">
+        <!-- Site Title -->
+        <a class="site-logo" href="{{ '/' | relative_url }}">
+          {% if site.logo %}
+            <img src="{{ site.logo | relative_url }}" alt="{{ site.masthead_title | default: site.title }}">
+          {% endif %}
+          <span class="site-title">
+            {{ site.masthead_title | default: site.title }}
+          </span>
+        </a>
+
+        <!-- Navigation Links -->
+        <ul class="visible-links">
+          {%- for link in site.data.navigation.main -%}
+            <li class="masthead__menu-item">
+              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="greedy-nav__toggle hidden" type="button" aria-label="Toggle menu">
+          <span class="navicon"></span>
+        </button>
+
+        <!-- Hidden Links (Mobile Dropdown) -->
+        <ul class="hidden-links hidden"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add padding to page content to account for fixed header -->
+<script>
+  // Add active class to current page
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.visible-links a');
+    
+    links.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      if (currentPath === linkPath || (currentPath === '/' && linkPath === '/')) {
+        link.classList.add('active');
+      }
+    });
+
+    // Mobile menu toggle
+    const toggle = document.querySelector('.greedy-nav__toggle');
+    const visibleLinks = document.querySelector('.visible-links');
+    
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        toggle.classList.toggle('close');
+        visibleLinks.classList.toggle('show');
+        toggle.classList.remove('hidden');
+      });
+    }
+
+    // Scroll effect
+    let lastScroll = 0;
+    window.addEventListener('scroll', function() {
+      const masthead = document.querySelector('.masthead');
+      const currentScroll = window.pageYOffset;
+      
+      if (currentScroll > 50) {
+        masthead.classList.add('scrolled');
+      } else {
+        masthead.classList.remove('scrolled');
+      }
+      
+      lastScroll = currentScroll;
+    });
+  });
+</script>

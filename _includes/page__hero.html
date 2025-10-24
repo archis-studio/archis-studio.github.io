@@ -1,0 +1,31 @@
+<!-- 
+  Custom Hero Section - Autumn Noir Future Theme
+  Used for homepage and special pages
+-->
+{% if page.hero %}
+<section class="page-hero">
+  <div class="page-hero__content">
+    {% if page.hero.title %}
+      <h1 class="page-hero__title">{{ page.hero.title }}</h1>
+    {% endif %}
+    
+    {% if page.hero.subtitle %}
+      <p class="page-hero__subtitle">{{ page.hero.subtitle }}</p>
+    {% endif %}
+    
+    {% if page.hero.description %}
+      <p class="page-hero__description">{{ page.hero.description }}</p>
+    {% endif %}
+    
+    {% if page.hero.cta %}
+      <div class="page-hero__cta">
+        {% for button in page.hero.cta %}
+          <a href="{{ button.url | relative_url }}" class="btn btn-{{ button.type | default: 'primary' }}">
+            {{ button.label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% endif %}

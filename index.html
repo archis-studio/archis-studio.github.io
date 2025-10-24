@@ -3,23 +3,21 @@ layout: home
 author_profile: true
 sidebar:
   nav: "sidebar"
+hero:
+  title: "Archis Studio"
+  subtitle: "Crafting the Future: AI, Pixel Art & Autumn Vibes"
+  description: "探索 AI 工具實戰、後端開發經驗與像素藝術創作。用繁體中文分享技術學習旅程。"
+  cta:
+    - label: "探索文章"
+      url: "/posts/"
+      type: "primary"
+    - label: "關於我"
+      url: "/about/"
+      type: "secondary"
 ---
 
 <!-- Hero Section -->
-<section class="hero-section">
-  <div class="hero-container">
-    <h1 class="hero-title">Archis Studio</h1>
-    <p class="hero-subtitle">Crafting the Future: AI, Pixel Art & Autumn Vibes</p>
-    <p class="hero-description">
-      探索 AI 工具實戰、後端開發經驗與像素藝術創作。
-      用繁體中文分享技術學習旅程。
-    </p>
-    <div class="hero-cta">
-      <a href="/posts/" class="btn btn-primary">探索文章</a>
-      <a href="/about/" class="btn btn-secondary">關於我</a>
-    </div>
-  </div>
-</section>
+{% include page__hero.html %}
 
 <!-- Featured Section -->
 <section class="featured-section">
