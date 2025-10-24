@@ -7,6 +7,21 @@
 - Bundler
 - Jekyll 4.4.1
 
+### ⚠️ 首次設定（重要）
+
+如果遇到 `Could not find 'bundler'` 或 Ruby 版本錯誤：
+
+```bash
+# 1. 重新載入 shell 配置（讓 rbenv 生效）
+source ~/.zshrc
+
+# 2. 確認 Ruby 版本
+ruby --version
+# 應顯示：ruby 3.3.10
+
+# 3. 如果還是 2.6.10，請關閉並重新開啟終端機
+```
+
 ### 啟動本地伺服器
 
 #### 標準啟動（推薦）
