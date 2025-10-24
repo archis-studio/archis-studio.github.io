@@ -36,25 +36,24 @@ cat agents.MD
 ## 📖 Documentation Map
 
 ### 🎯 Start Here
+
 | 文件 | 用途 | 對象 |
 |------|------|------|
-| `README.md` | 專案概覽與導航 | 所有人 |
-| `DEVELOPMENT.md` | 開發環境與指令 | 開發者 |
-| `agents.MD` | AI 協作規範 | AI Agents |
-| `docs/DOC_INDEX.md` | 文件追蹤系統 | 所有協作者 |
+| `README.md` | 專案概覽與快速導航 | 所有人 |
+| `DEVELOPMENT.md` | 開發環境設定與指令 | 開發者 |
+| `agents.MD` | AI 協作規範與指引 | AI Agents |
 
-### 📋 Specification Docs
+### 📋 Detailed Specifications
+
+完整的設計與實作規格請見 `docs/` 目錄：
+
 ```
 docs/
-├── PROJECT_CHARTER.md              # 專案目標與原則
-├── DESIGN_SYSTEM_SPEC.md           # 設計系統規格
-├── LAYOUT_SPEC.md                  # 版面配置規格
-├── NAVIGATION_SPEC.md              # 導航設計規格
-├── ASSET_SPEC.md                   # 資源檔案規格
-├── IMPLEMENTATION_CHECKLIST.md     # 10階段實作指南
-├── MINIMAL_MISTAKES_CUSTOMIZATION.md
-├── CONTENT_STRATEGY.md
-└── AI_COLLABORATION_GUIDE.md
+├── PROJECT.md          # 專案管理（目標 + 實作階段）
+├── DESIGN_SYSTEM.md    # 設計系統（色彩 + 字型 + 間距）
+├── LAYOUT.md           # 版面設計（Layout + Navigation）
+├── WORKFLOW.md         # 工作流程（內容策略 + AI 協作細節）
+└── ASSETS.md           # 資源管理（圖片 + Icon + 字型）
 ```
 
 ---
