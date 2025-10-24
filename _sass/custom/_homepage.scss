@@ -2,11 +2,29 @@
    Homepage - Hero, Featured, Posts, Categories
    ============================================ */
 
-// Container
+// Override archive/page layout for homepage
+.layout--home {
+  .archive {
+    width: 100%;
+    
+    @media (min-width: 64em) {
+      width: calc(100% - 300px - 2rem);
+      padding-right: 0;
+    }
+  }
+}
+
+// Container - Full width for homepage sections
 .container {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 0 2rem;
+  
+  @media (min-width: 64em) {
+    max-width: calc(100% - 300px - 4rem); // Account for sidebar
+    margin-right: 0;
+  }
 }
 
 // Section Spacing
@@ -36,6 +54,14 @@ section {
   );
   text-align: center;
   padding: 8rem 2rem 4rem;
+  
+  // Full width - ignore sidebar
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   
   .hero-container {
     max-width: 800px;

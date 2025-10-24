@@ -8,7 +8,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 1000; // Ensure it's above everything
   
   // 背景與模糊效果
   background: rgba(14, 14, 16, 0.95); // 近似 $noir-black
