@@ -1,83 +1,171 @@
 # Navigation 導航規格書
-# Version 1.0.0 | Updated: 2025-10-16
+# Version 2.0.0 | Updated: 2025-10-24
 
 ## 🧭 導航架構
 
 **基於**: Minimal Mistakes Masthead  
-**風格**: Gaming Pixel + Future Space  
-**字型**: JetBrains Mono (像素風格)
+**設計理念**: 極簡現代、固定頂部、Mobile-first  
+**字型策略**: 品牌用 Serif，選單用 Sans-serif
 
 ---
 
-## 📋 導航項目結構
+## 📋 導航結構
 
-### 主選單 (_data/navigation.yml)
+### 主選單架構 (_data/navigation.yml)
+
 ```yaml
+# 主導航 - 4 個核心項目
 main:
-  - title: "🏠 首頁"
+  - title: "Home"
     url: /
-  - title: "📖 文章"
+    
+  - title: "Blog" 
     url: /posts/
-  - title: "📂 分類"
+    
+  - title: "Category"
     url: /categories/
-  - title: "ℹ️ 關於"
+    
+  - title: "About"
     url: /about/
-  - title: "🎨 展示空間"
-    children:
-      - title: "🍂 Future Demo"
-        url: /future-demo/
+
+# 保留未來擴充空間
+# 可能的擴充項目：
+# - Projects (專案作品集)
+# - Portfolio (個人作品)
+# - Uses (使用工具)
+# - Contact (聯絡頁面)
 ```
 
-### 品牌區域
+### 品牌識別 (_config.yml)
+
 ```yaml
-# _config.yml
-masthead_title: "Archis Studio"
-masthead_subtitle: "Crafting the Future: AI, Pixel Art & Autumn Vibes"
-logo: "/assets/images/autumn-logo.png"
+# Site branding
+title: "Archis Studio"
+subtitle: "Crafting the Future: AI, Pixel Art & Autumn Vibes"
+logo: "/assets/images/logo.png"  # Optional
+
+# Masthead settings
+masthead_title: "Archis Studio"  # 顯示在導航列
 ```
 
 ---
 
 ## 🎨 視覺設計規格
 
-### 背景設計
+### 整體結構
+
 ```scss
 .masthead {
-  // 太空星雲背景
-  background: linear-gradient(135deg, 
-    $space-void 0%,      // #0F0F12
-    $space-nebula 25%,   // #1A1B2E  
-    $noir-black 50%,     // #0E0E10
-    $space-nebula 75%,   // #1A1B2E
-    $space-void 100%     // #0F0F12
-  );
+  // 固定頂部
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
   
-  // 星空點點效果 (可選)
-  background-image: 
-    radial-gradient(2px 2px at 20px 30px, $space-starlight, transparent),
-    radial-gradient(2px 2px at 40px 70px, $autumn-gold, transparent),
-    radial-gradient(1px 1px at 90px 40px, $space-comet, transparent);
-  background-size: 200px 100px;
-  background-repeat: repeat;
+  // 背景與效果
+  background: rgba($noir-black, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba($autumn-gold, 0.2);
   
-  // 基本屬性
-  height: 80px;
-  padding: 1rem 0;
-  border-bottom: 2px solid $noir-border;
-  position: relative;
-  z-index: 20;
+  // 尺寸
+  height: 70px;
+  padding: 0 2rem;
+  
+  // 陰影
+  box-shadow: 0 2px 10px rgba(#000, 0.3);
+  
+  // Flex 佈局
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  // Smooth transitions
+  transition: all 0.3s ease;
+  
+  // 滾動時增強陰影
+  &.scrolled {
+    box-shadow: 0 4px 20px rgba(#000, 0.5);
+    background: rgba($noir-black, 0.98);
+  }
 }
 ```
 
-### 品牌標題樣式
+### Logo & Brand
+
 ```scss
-.site-title {
-  font-family: $serif-editorial; // Playfair Display
-  font-size: 1.8rem;
-  font-weight: $font-bold;
-  color: $autumn-gold;
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   text-decoration: none;
-  text-shadow: 0 0 10px rgba($autumn-gold, 0.5);
+  
+  img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .site-title {
+    font-family: $serif-editorial; // Playfair Display
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $autumn-gold;
+    letter-spacing: -0.5px;
+    
+    // Subtle glow
+    text-shadow: 0 0 10px rgba($autumn-gold, 0.3);
+    
+    // Hover effect
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: lighten($autumn-gold, 10%);
+      text-shadow: 0 0 15px rgba($autumn-gold, 0.5);
+    }
+  }
+}
+```
+
+### Navigation Menu
+
+```scss
+.nav-menu {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  
+  li {
+    margin: 0;
+  }
+  
+  a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    font-family: $sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: $noir-text;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    
+    // Hover state
+    &:hover {
+      color: $autumn-gold;
+      background: rgba($autumn-gold, 0.1);
+    }
+    
+    // Active state
+    &.active {
+      color: $autumn-gold;
+      background: rgba($autumn-gold, 0.15);
+      font-weight: 600;
+    }
+  }
+}
+```
   
   &:hover {
     color: lighten($autumn-gold, 10%);
@@ -460,3 +548,58 @@ logo: "/assets/images/autumn-logo.png"
 - `_data/navigation.yml` - 選單結構
 - `_sass/custom/_masthead.scss` - 樣式定義
 - `_includes/masthead.html` - HTML 結構 (如需客製化)
+
+---
+
+## ✅ 實作檢查清單
+
+### 基礎設定
+- [ ] 建立 `_data/navigation.yml` 並設定 4 個選單項目
+- [ ] 更新 `_config.yml` 設定 masthead_title
+- [ ] 準備 Logo 圖片 (optional)
+
+### SCSS 實作
+- [ ] 建立 `_sass/custom/_navigation.scss`
+- [ ] 實作 fixed header 樣式
+- [ ] 實作 Logo & Brand 樣式
+- [ ] 實作 Menu Links 樣式
+- [ ] 實作 Hover & Active 狀態
+
+### 響應式設計
+- [ ] Desktop 版面 (> 1024px)
+- [ ] Tablet 版面 (768px - 1023px)
+- [ ] Mobile 版面 (< 768px)
+- [ ] Hamburger 選單按鈕
+- [ ] Mobile menu panel
+
+### JavaScript 互動
+- [ ] Scroll state 偵測
+- [ ] Active link 標示
+- [ ] Mobile menu toggle
+- [ ] Body scroll lock (menu open 時)
+
+### 測試驗證
+- [ ] 各裝置尺寸測試
+- [ ] 橫向/直向切換測試
+- [ ] 滾動行為測試
+- [ ] 連結功能測試
+- [ ] 動畫流暢度測試
+
+---
+
+## 📝 CHANGELOG
+
+### v2.0.0 (2025-10-24)
+- **重大更新**: 完全重新設計導航系統
+- **簡化選單**: 從 5 項減至 4 項 (Home, Blog, Category, About)
+- **移除 Emoji**: 改用純文字，更專業現代
+- **Fixed Header**: 置頂導航，滾動時保持可見
+- **半透明背景**: backdrop-filter 模糊效果
+- **新增**: Scroll state 動態陰影效果
+- **優化**: Mobile hamburger menu 動畫
+- **保留**: 未來擴充空間（可加入 Projects, Portfolio 等）
+- **移除**: 下拉子選單（展示空間）
+
+---
+
+**下一步**: 實作 `_data/navigation.yml` 與基礎 SCSS
