@@ -14,6 +14,26 @@ main:
   - title: "About"
     url: /about/
 
+# Sidebar Navigation
+# 側邊欄導航 - 所有頁面使用
+
+sidebar:
+  - title: "📂 分類瀏覽"
+    children:
+      - title: "所有分類"
+        url: /categories/
+      - title: "所有標籤"
+        url: /tags/
+
+  - title: "📌 快速連結"
+    children:
+      - title: "最新文章"
+        url: /posts/
+      - title: "關於我"
+        url: /about/
+      - title: "GitHub"
+        url: "https://github.com/magicxcr7"
+
 # 保留未來擴充空間
 # 可能的擴充項目：
 # - title: "Projects"

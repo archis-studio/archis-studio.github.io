@@ -1,0 +1,258 @@
+/* ============================================
+   Right Sidebar - Custom Styles
+   ============================================ */
+
+// Override Minimal Mistakes default left sidebar
+// Force sidebar to right side for all layouts
+
+// Main layout container adjustment
+.layout--single,
+.layout--home,
+.layout--archive {
+  .sidebar {
+    // Move to right side
+    @media (min-width: 64em) {
+      float: right !important;
+      margin-left: 1em;
+      margin-right: 0;
+    }
+  }
+}
+
+// Sidebar styling
+.sidebar {
+  @media (min-width: 64em) {
+    width: 300px;
+    padding: 2rem 0 0 2rem;
+  }
+
+  // Sticky behavior
+  &__right {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+  
+  // Author profile in sidebar
+  .author__avatar {
+    img {
+      border: 3px solid #D4A017;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+      }
+    }
+  }
+  
+  .author__name {
+    color: #D4A017;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+  
+  .author__bio {
+    color: #C5C5C5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+  
+  .author__urls {
+    li {
+      a {
+        color: #C5C5C5;
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #D4A017;
+        }
+      }
+    }
+  }
+}
+
+// Sidebar navigation styling
+.nav__list {
+  .nav__title {
+    background: rgba(212, 160, 23, 0.1);
+    border-left: 3px solid #D4A017;
+    color: #D4A017;
+    font-family: "Playfair Display", Georgia, serif;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .nav__items {
+    font-size: 0.9rem;
+    
+    a {
+      color: #C5C5C5;
+      padding: 0.5rem 1rem;
+      display: block;
+      border-left: 2px solid transparent;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        color: #D4A017;
+        background: rgba(212, 160, 23, 0.05);
+        border-left-color: #D4A017;
+        padding-left: 1.5rem;
+      }
+      
+      &.active {
+        color: #D4A017;
+        font-weight: 600;
+        border-left-color: #D4A017;
+      }
+    }
+  }
+}
+
+// Sidebar categories widget
+.sidebar-category-list {
+  background: rgba(30, 30, 35, 0.5);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  
+  h3 {
+    color: #D4A017;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: #C5C5C5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid rgba(197, 197, 197, 0.1);
+        transition: color 0.2s ease;
+        
+        &:hover {
+          color: #D4A017;
+        }
+        
+        .count {
+          background: rgba(212, 160, 23, 0.2);
+          color: #D4A017;
+          padding: 0.2rem 0.6rem;
+          border-radius: 12px;
+          font-size: 0.8rem;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// Sidebar tags widget
+.sidebar-tag-cloud {
+  background: rgba(30, 30, 35, 0.5);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  
+  h3 {
+    color: #D4A017;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    
+    a {
+      background: rgba(212, 160, 23, 0.1);
+      color: #C5C5C5;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      border: 1px solid rgba(212, 160, 23, 0.2);
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: rgba(212, 160, 23, 0.2);
+        color: #D4A017;
+        border-color: #D4A017;
+      }
+    }
+  }
+}
+
+// Recent posts in sidebar
+.sidebar-recent-posts {
+  background: rgba(30, 30, 35, 0.5);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  
+  h3 {
+    color: #D4A017;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+  
+  .post-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(197, 197, 197, 0.1);
+    
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    a {
+      color: #C5C5C5;
+      font-size: 0.9rem;
+      display: block;
+      margin-bottom: 0.3rem;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: #D4A017;
+      }
+    }
+    
+    .post-meta {
+      font-size: 0.75rem;
+      color: #888;
+    }
+  }
+}
+
+// Responsive: Hide sidebar on mobile
+@media (max-width: 63.9375em) {
+  .sidebar {
+    display: none;
+  }
+  
+  // Show toggle button for mobile sidebar (future feature)
+  .sidebar-toggle {
+    display: block;
+  }
+}

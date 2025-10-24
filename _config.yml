@@ -160,6 +160,8 @@ defaults:
       toc: true
       toc_sticky: true
       toc_label: "目錄"
+      sidebar:
+        nav: "sidebar"
   # _pages
   - scope:
       path: "_pages"
@@ -167,6 +169,16 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "sidebar"
+  # Homepage
+  - scope:
+      path: "index.html"
+    values:
+      layout: home
+      author_profile: true
+      sidebar:
+        nav: "sidebar"
 
 # Search
 search: true
