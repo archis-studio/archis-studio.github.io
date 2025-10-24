@@ -8,5 +8,6 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 @import "minimal-mistakes";
 
-// Custom Navigation Styles
+// Custom Styles
 @import "custom/navigation";
+@import "custom/homepage";

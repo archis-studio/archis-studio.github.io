@@ -1,0 +1,333 @@
+/* ============================================
+   Homepage - Hero, Featured, Posts, Categories
+   ============================================ */
+
+// Container
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+// Section Spacing
+section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #D4A017;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+// Hero Section
+.hero-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, 
+    rgba(15, 15, 18, 0.95), 
+    rgba(26, 27, 46, 0.90), 
+    rgba(14, 14, 16, 0.95)
+  );
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  
+  .hero-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #D4A017;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: #E8E8E8;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    color: #C5C5C5;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &.btn-primary {
+    background: #D4A017;
+    color: #0E0E10;
+    
+    &:hover {
+      background: lighten(#D4A017, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(212, 160, 23, 0.4);
+    }
+  }
+  
+  &.btn-secondary {
+    background: transparent;
+    color: #D4A017;
+    border: 2px solid #D4A017;
+    
+    &:hover {
+      background: rgba(212, 160, 23, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+  
+  &.btn-outline {
+    background: transparent;
+    color: #C5C5C5;
+    border: 1px solid rgba(197, 197, 197, 0.3);
+    
+    &:hover {
+      color: #D4A017;
+      border-color: #D4A017;
+      background: rgba(212, 160, 23, 0.05);
+    }
+  }
+}
+
+// Featured Grid
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+// Posts Grid
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+// Post Card
+.post-card {
+  background: rgba(30, 30, 35, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(212, 160, 23, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 160, 23, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  
+  &.featured {
+    border-color: rgba(212, 160, 23, 0.3);
+  }
+  
+  .card-thumbnail {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    
+    &.placeholder {
+      background: linear-gradient(135deg, 
+        rgba(212, 160, 23, 0.2), 
+        rgba(212, 160, 23, 0.05)
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .placeholder-text {
+        font-size: 3rem;
+        font-weight: 700;
+        color: rgba(212, 160, 23, 0.5);
+        font-family: "Playfair Display", Georgia, serif;
+      }
+    }
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .card-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.3rem;
+    
+    a {
+      color: #D4A017;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      
+      &:hover {
+        color: lighten(#D4A017, 10%);
+      }
+    }
+  }
+  
+  .card-meta {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 1rem;
+    
+    .separator {
+      margin: 0 0.5rem;
+    }
+    
+    .category {
+      color: #D4A017;
+    }
+  }
+  
+  .card-excerpt {
+    color: #C5C5C5;
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+}
+
+// Categories Grid
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.category-card {
+  background: rgba(30, 30, 35, 0.5);
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: #D4A017;
+    background: rgba(212, 160, 23, 0.05);
+    transform: translateY(-2px);
+  }
+  
+  .category-name {
+    font-size: 1.2rem;
+    color: #E8E8E8;
+    margin: 0 0 0.5rem;
+  }
+  
+  .category-count {
+    font-size: 0.9rem;
+    color: #D4A017;
+    font-weight: 600;
+  }
+}
+
+// View All Button Container
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+// Placeholder Message
+.placeholder-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #888;
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .hint {
+    font-size: 0.9rem;
+    color: #666;
+    
+    code {
+      background: rgba(212, 160, 23, 0.1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      color: #D4A017;
+    }
+  }
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero-section {
+    min-height: 50vh;
+    padding: 6rem 1rem 3rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    
+    .btn {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+  
+  .featured-grid,
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
