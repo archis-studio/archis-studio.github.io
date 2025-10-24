@@ -1,0 +1,24 @@
+# Main Navigation
+# 主選單 - 4 個核心項目
+
+main:
+  - title: "Home"
+    url: /
+    
+  - title: "Blog" 
+    url: /posts/
+    
+  - title: "Category"
+    url: /categories/
+    
+  - title: "About"
+    url: /about/
+
+# 保留未來擴充空間
+# 可能的擴充項目：
+# - title: "Projects"
+#   url: /projects/
+# - title: "Portfolio"
+#   url: /portfolio/
+# - title: "Uses"
+#   url: /uses/

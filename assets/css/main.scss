@@ -1,0 +1,12 @@
+---
+# Main Stylesheet for Archis Studio Blog
+---
+
+@charset "utf-8";
+
+// Import Minimal Mistakes theme
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
+@import "minimal-mistakes";
+
+// Custom Navigation Styles
+@import "custom/navigation";
