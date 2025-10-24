@@ -383,4 +383,61 @@ $duration-slow: 350ms;
 
 ---
 
-**下一步**: 閱讀 `MINIMAL_MISTAKES_CUSTOMIZATION.md` 了解如何在 MM 主題中實作此設計系統
+**下一步**: 閱讀 `MINIMAL_MISTAKES_CUSTOMIZATION.md` 了解如何在 MM 主題中實作此設計系統# Autumn Noir Future Theme - 主題概念
+# Version 2.1.0 | Updated: 2025-10-16
+
+## 🎭 主題理念
+
+**Autumn Noir Future Theme** 融合四種美學風格：
+
+- **🍂 Fashion Editorial** - 時尚雜誌的優雅排版
+- **🌌 Future Space** - 未來太空的深邃神秘
+- **🤖 AI Agent** - 人工智慧的科技感
+- **🎮 Retro Gaming** - 80年代復古遊戲霓虹魅力
+
+## 🎨 視覺風格指南
+
+### 色彩情感
+- **深邃與溫暖並存** - 太空的深邃 + 秋日的溫暖
+- **科技與自然融合** - AI 的冷調 + 秋季的暖調
+- **復古與未來交織** - 像素藝術 + 未來科技
+
+### 設計原則
+1. **Keep It Simple** - 內容優先，避免過度裝飾
+2. **系統化設計** - 所有元素都有明確規格
+3. **響應式優先** - Mobile-first 設計思維
+4. **無障礙友善** - 符合 WCAG 標準
+
+## 🌟 主題特色
+
+### 獨特的視覺元素
+- **星空背景** - 動態星雲與閃爍星星
+- **像素圖示** - 復古遊戲風格的 UI 元素
+- **霓虹效果** - Hover 時的發光動畫
+- **掃描線** - CRT 螢幕的復古質感
+
+### 互動體驗
+- **流暢動畫** - 60fps 的平滑過渡
+- **觸覺回饋** - 清晰的視覺反饋
+- **直覺導航** - 符合用戶習慣的操作邏輯
+
+## 📚 相關文件
+
+**技術實作請參考**:
+- `DESIGN_SYSTEM_SPEC.md` - 完整的色彩、字型、間距規格
+- `LAYOUT_SPEC.md` - 版面配置與響應式設計
+- `NAVIGATION_SPEC.md` - 導航系統設計
+- `ASSET_SPEC.md` - 視覺資源管理
+
+---
+
+## 📝 CHANGELOG
+
+### v2.1.0 (2025-10-16)
+- 簡化為主題概念文件
+- 移除與 DESIGN_SYSTEM_SPEC.md 重複的技術細節
+- 專注於設計理念與視覺指南
+
+### v2.0.0 (2025-10-11)
+- 融合四重風格：Fashion + Space + AI + Gaming
+- 建立完整的色彩與字型系統
