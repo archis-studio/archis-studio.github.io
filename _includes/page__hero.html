@@ -1,12 +1,44 @@
 <!-- 
-  Custom Hero Section - Autumn Noir Future Theme
-  Used for homepage and special pages
+  Custom Hero Section - Pixel Matrix Gaming World
+  Fusion of Retro Gaming + Matrix Rain + Space + AI
 -->
 {% if page.hero %}
 <section class="page-hero">
+  <!-- Matrix Rain Background -->
+  <div class="hero-matrix" aria-hidden="true">
+    <canvas id="matrixCanvas"></canvas>
+  </div>
+  
+  <!-- Starfield Layer -->
+  <div class="hero-starfield" aria-hidden="true"></div>
+  
+  <!-- Scanlines -->
+  <div class="hero-scanlines" aria-hidden="true"></div>
+  
+  <!-- Pixel Border Decoration -->
+  <div class="hero-border-top" aria-hidden="true">
+    <span class="pixel-corner pixel-corner--tl"></span>
+    <span class="pixel-line pixel-line--top"></span>
+    <span class="pixel-corner pixel-corner--tr"></span>
+  </div>
+  
   <div class="page-hero__content">
+    <!-- ASCII Art Decoration -->
+    <div class="hero-ascii-art" aria-hidden="true">
+      <pre>
+   ▲▲▲
+  ▲███▲
+ ▲█████▲
+▲███████▲
+   ███
+   ███
+      </pre>
+    </div>
+    
     {% if page.hero.title %}
-      <h1 class="page-hero__title">{{ page.hero.title }}</h1>
+      <h1 class="page-hero__title">
+        <span class="glitch" data-text="{{ page.hero.title }}">{{ page.hero.title }}</span>
+      </h1>
     {% endif %}
     
     {% if page.hero.subtitle %}
@@ -14,18 +46,96 @@
     {% endif %}
     
     {% if page.hero.description %}
-      <p class="page-hero__description">{{ page.hero.description }}</p>
+      <p class="page-hero__description typing-text">{{ page.hero.description }}</p>
     {% endif %}
+    
+    {% if page.hero.tagline %}
+      <p class="page-hero__tagline">{{ page.hero.tagline }}</p>
+    {% endif %}
+    
+    <!-- Skill Badges -->
+    <div class="hero-badges">
+      <span class="badge badge--ai">🤖 AI</span>
+      <span class="badge badge--pixel">🎮 PIXEL</span>
+      <span class="badge badge--space">🚀 SPACE</span>
+      <span class="badge badge--code">💻 CODE</span>
+    </div>
     
     {% if page.hero.cta %}
       <div class="page-hero__cta">
         {% for button in page.hero.cta %}
-          <a href="{{ button.url | relative_url }}" class="btn btn-{{ button.type | default: 'primary' }}">
-            {{ button.label }}
+          <a href="{{ button.url | relative_url }}" class="btn-pixel btn-pixel--{{ button.type | default: 'primary' }}">
+            <span class="btn-pixel__text">{{ button.label }}</span>
+            <span class="btn-pixel__glitch"></span>
           </a>
         {% endfor %}
       </div>
     {% endif %}
+    
+    <!-- Welcome Message -->
+    <div class="hero-welcome">
+      <span class="blink">▐</span> SYSTEM READY. PRESS START TO CONTINUE...
+    </div>
+  </div>
+  
+  <!-- Pixel Border Bottom -->
+  <div class="hero-border-bottom" aria-hidden="true">
+    <span class="pixel-corner pixel-corner--bl"></span>
+    <span class="pixel-line pixel-line--bottom"></span>
+    <span class="pixel-corner pixel-corner--br"></span>
   </div>
 </section>
+
+<!-- Matrix Rain Script -->
+<script>
+(function() {
+  'use strict';
+  
+  const canvas = document.getElementById('matrixCanvas');
+  if (!canvas) return;
+  
+  const ctx = canvas.getContext('2d');
+  
+  // Set canvas size
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  
+  // Matrix characters (Binary + Japanese + Symbols)
+  const chars = '01アイウエオカキクケコサシスセソタチツテト10';
+  const fontSize = 14;
+  const columns = Math.floor(canvas.width / fontSize);
+  const drops = Array(columns).fill(1);
+  
+  // Colors
+  const colors = ['#D4A017', '#4A90B8', '#E8E8E8'];
+  
+  function drawMatrix() {
+    // Fade effect
+    ctx.fillStyle = 'rgba(15, 15, 18, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    ctx.font = fontSize + 'px monospace';
+    
+    for (let i = 0; i < drops.length; i++) {
+      const text = chars[Math.floor(Math.random() * chars.length)];
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      
+      ctx.fillStyle = color;
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+        drops[i] = 0;
+      }
+      drops[i]++;
+    }
+  }
+  
+  // Slower animation for better performance
+  setInterval(drawMatrix, 50);
+})();
+</script>
 {% endif %}

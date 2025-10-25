@@ -59,74 +59,494 @@ section {
   text-align: center;
 }
 
-// Hero Section - Page Hero Component  
+// Hero Section - Pixel Matrix Gaming World
 .page-hero {
-  min-height: 50vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, 
-    rgba(15, 15, 18, 0.95), 
-    rgba(26, 27, 46, 0.90), 
-    rgba(14, 14, 16, 0.95)
-  );
+  background: 
+    linear-gradient(135deg, 
+      rgba(15, 15, 18, 0.95), 
+      rgba(26, 27, 46, 0.92), 
+      rgba(14, 14, 16, 0.95)
+    );
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem 4rem;
   margin: 0 -2rem 3rem -2rem;
   border-radius: 0 0 12px 12px;
+  position: relative;
+  overflow: hidden;
   
   @media (min-width: 64em) {
     margin: 0 -3rem 4rem -3rem;
-    min-height: 60vh;
-    padding: 5rem 3rem;
+    min-height: 75vh;
+    padding: 8rem 3rem 6rem;
   }
   
+  // Matrix Rain Canvas
+  .hero-matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.4;
+    pointer-events: none;
+    
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  // Starfield Layer (lighter than nav)
+  .hero-starfield {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle-hero 4s ease-in-out infinite;
+    }
+    
+    &::before {
+      box-shadow: 
+        80px 30px 0 0 rgba(255, 255, 255, 0.3),
+        200px 50px 0 0 rgba(212, 160, 23, 0.4),
+        350px 20px 0 0 rgba(74, 144, 184, 0.3),
+        500px 60px 0 0 rgba(255, 255, 255, 0.4),
+        650px 35px 0 0 rgba(212, 160, 23, 0.3),
+        800px 55px 0 0 rgba(74, 144, 184, 0.4),
+        950px 25px 0 0 rgba(255, 255, 255, 0.3),
+        1100px 45px 0 0 rgba(212, 160, 23, 0.4);
+    }
+    
+    &::after {
+      animation-delay: 2s;
+      box-shadow: 
+        150px 40px 0 0 rgba(74, 144, 184, 0.3),
+        300px 25px 0 0 rgba(255, 255, 255, 0.4),
+        450px 55px 0 0 rgba(212, 160, 23, 0.3),
+        600px 30px 0 0 rgba(74, 144, 184, 0.4),
+        750px 50px 0 0 rgba(255, 255, 255, 0.3),
+        900px 20px 0 0 rgba(212, 160, 23, 0.4);
+    }
+  }
+  
+  @keyframes twinkle-hero {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+  }
+  
+  // Scanlines Effect
+  .hero-scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
+    animation: scanline-move 8s linear infinite;
+  }
+  
+  // Pixel Border Top
+  .hero-border-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  .hero-border-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  .pixel-corner {
+    width: 12px;
+    height: 12px;
+    background: var(--nav-gold);
+    box-shadow: 0 0 10px rgba(212, 160, 23, 0.6);
+    
+    &--tl { border-radius: 0 0 3px 0; }
+    &--tr { border-radius: 0 0 0 3px; }
+    &--bl { border-radius: 0 3px 0 0; }
+    &--br { border-radius: 3px 0 0 0; }
+  }
+  
+  .pixel-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      var(--nav-gold) 0%,
+      var(--nav-blue) 50%,
+      var(--nav-gold) 100%
+    );
+    opacity: 0.6;
+    animation: line-glow 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes line-glow {
+    from { opacity: 0.4; }
+    to { opacity: 0.8; }
+  }
+}
+  
+  // Content Container
   &__content {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
   }
   
+  // ASCII Art Rocket
+  .hero-ascii-art {
+    font-family: 'Courier New', monospace;
+    color: var(--nav-gold);
+    font-size: 0.6rem;
+    line-height: 0.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.8;
+    animation: float 3s ease-in-out infinite;
+    
+    pre {
+      margin: 0;
+      text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+    }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  // Title with Glitch Effect
   &__title {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #D4A017;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--nav-gold);
     margin-bottom: 1rem;
-    text-shadow: 0 0 20px rgba(212, 160, 23, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-shadow: 
+      0 0 20px rgba(212, 160, 23, 0.6),
+      0 0 40px rgba(212, 160, 23, 0.4);
+    position: relative;
     
     @media (min-width: 64em) {
       font-size: 3.5rem;
     }
-  }
-  
-  &__subtitle {
-    font-size: 1.2rem;
-    color: #E8E8E8;
-    margin-bottom: 1.5rem;
-    font-weight: 300;
     
-    @media (min-width: 64em) {
-      font-size: 1.3rem;
+    .glitch {
+      position: relative;
+      display: inline-block;
+      
+      &::before,
+      &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      
+      &::before {
+        left: 2px;
+        text-shadow: -2px 0 var(--nav-blue);
+        clip: rect(24px, 550px, 90px, 0);
+        animation: glitch-anim 3s infinite linear alternate-reverse;
+      }
+      
+      &::after {
+        left: -2px;
+        text-shadow: -2px 0 var(--nav-gold);
+        clip: rect(85px, 550px, 140px, 0);
+        animation: glitch-anim 2.5s infinite linear alternate-reverse;
+      }
     }
   }
   
-  &__description {
+  @keyframes glitch-anim {
+    0% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    5% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    10% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    15% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    20% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    25% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    30% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    35% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    40% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    45% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    50% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+    100% { clip: rect(random(100) + px, 9999px, random(100) + px, 0); }
+  }
+  
+  // Subtitle - Pixel Style
+  &__subtitle {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1rem;
-    color: #C5C5C5;
-    line-height: 1.7;
-    margin-bottom: 2rem;
+    color: var(--nav-text-dim);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.9;
     
     @media (min-width: 64em) {
       font-size: 1.1rem;
     }
   }
   
-  &__cta {
+  // Description with Typing Effect
+  &__description {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    color: var(--nav-text);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    
+    @media (min-width: 64em) {
+      font-size: 1.1rem;
+    }
+  }
+  
+  // Tagline - Code Comment Style
+  &__tagline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--nav-blue);
+    font-style: italic;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+  }
+  
+  // Skill Badges
+  .hero-badges {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     justify-content: center;
+    margin-bottom: 2.5rem;
     flex-wrap: wrap;
   }
+  
+  .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: 2px solid;
+    border-radius: 3px;
+    background: rgba(28, 28, 30, 0.6);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    
+    &--ai {
+      border-color: var(--nav-gold);
+      color: var(--nav-gold);
+      
+      &:hover {
+        background: rgba(212, 160, 23, 0.2);
+        box-shadow: 0 0 15px rgba(212, 160, 23, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+    
+    &--pixel {
+      border-color: #E74C3C;
+      color: #E74C3C;
+      
+      &:hover {
+        background: rgba(231, 76, 60, 0.2);
+        box-shadow: 0 0 15px rgba(231, 76, 60, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+    
+    &--space {
+      border-color: var(--nav-blue);
+      color: var(--nav-blue);
+      
+      &:hover {
+        background: rgba(74, 144, 184, 0.2);
+        box-shadow: 0 0 15px rgba(74, 144, 184, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+    
+    &--code {
+      border-color: #6B8E23;
+      color: #6B8E23;
+      
+      &:hover {
+        background: rgba(107, 142, 35, 0.2);
+        box-shadow: 0 0 15px rgba(107, 142, 35, 0.5);
+        transform: translateY(-2px);
+      }
+    }
+  }
+  
+  // CTA Buttons - Pixel Style
+  &__cta {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  
+  // Welcome Message - Retro Gaming Style
+  .hero-welcome {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--nav-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+    animation: pulse 2s ease-in-out infinite;
+    
+    .blink {
+      animation: blink 1s step-end infinite;
+    }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.9; }
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+}
+
+// Pixel-Style Buttons
+.btn-pixel {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 3px solid;
+  border-radius: 0;
+  background: rgba(28, 28, 30, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  
+  &__text {
+    position: relative;
+    z-index: 2;
+  }
+  
+  &__glitch {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: currentColor;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  // Primary Button (Gold)
+  &--primary {
+    border-color: var(--nav-gold);
+    color: var(--nav-gold);
+    box-shadow: 
+      0 0 20px rgba(212, 160, 23, 0.3),
+      inset 0 0 20px rgba(212, 160, 23, 0.1);
+    
+    &:hover {
+      background: rgba(212, 160, 23, 0.2);
+      box-shadow: 
+        0 0 30px rgba(212, 160, 23, 0.6),
+        inset 0 0 30px rgba(212, 160, 23, 0.2);
+      transform: translateY(-3px) scale(1.02);
+      
+      .btn-pixel__glitch {
+        animation: glitch-btn 0.3s ease;
+      }
+    }
+    
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+  }
+  
+  // Secondary Button (Blue)
+  &--secondary {
+    border-color: var(--nav-blue);
+    color: var(--nav-blue);
+    box-shadow: 
+      0 0 20px rgba(74, 144, 184, 0.3),
+      inset 0 0 20px rgba(74, 144, 184, 0.1);
+    
+    &:hover {
+      background: rgba(74, 144, 184, 0.2);
+      box-shadow: 
+        0 0 30px rgba(74, 144, 184, 0.6),
+        inset 0 0 30px rgba(74, 144, 184, 0.2);
+      transform: translateY(-3px) scale(1.02);
+      
+      .btn-pixel__glitch {
+        animation: glitch-btn 0.3s ease;
+      }
+    }
+    
+    &:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+  }
+}
+
+@keyframes glitch-btn {
+  0% { opacity: 0; transform: translateX(0); }
+  33% { opacity: 0.3; transform: translateX(-5px); }
+  66% { opacity: 0.3; transform: translateX(5px); }
+  100% { opacity: 0; transform: translateX(0); }
 }
 
 // Legacy hero-section class (for backwards compatibility)
