@@ -269,7 +269,7 @@
 }
 
 // ============================================
-// Experience Log - Gaming Card Style
+// Experience Log - Gaming Card Style (Softer)
 // ============================================
 
 .journey-container {
@@ -280,66 +280,66 @@
 
 .journey-item {
   background: 
-    linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
-  border: 3px solid transparent;
+    linear-gradient(135deg, rgba(25, 25, 25, 0.7), rgba(15, 15, 15, 0.7));
+  border: 2px solid transparent;
   border-radius: 10px;
   padding: 20px 24px;
   position: relative;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   
-  // Pixel art texture overlay
+  // Subtle pixel art texture overlay
   &::after {
     content: '';
     position: absolute;
     inset: 0;
     background: 
-      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.1) 2px, rgba(0, 0, 0, 0.1) 4px);
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.05) 2px, rgba(0, 0, 0, 0.05) 4px);
     pointer-events: none;
-    opacity: 0.3;
+    opacity: 0.2;
   }
   
-  // Active state styling - Softer, warmer tones
+  // Active state styling - Softer, more subtle tones
   &.active {
-    border-color: rgba(212, 165, 73, 0.5);
+    border-color: rgba(170, 140, 90, 0.35);
     box-shadow: 
-      0 0 20px rgba(212, 165, 73, 0.2),
-      0 4px 20px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      0 0 15px rgba(170, 140, 90, 0.12),
+      0 4px 15px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
     
     &::before {
       content: '';
       position: absolute;
-      inset: -3px;
+      inset: -2px;
       border-radius: 10px;
-      padding: 3px;
-      background: linear-gradient(135deg, rgba(212, 165, 73, 0.6) 0%, rgba(170, 130, 50, 0.4) 50%, rgba(212, 165, 73, 0.6) 100%);
+      padding: 2px;
+      background: linear-gradient(135deg, rgba(170, 140, 90, 0.35) 0%, rgba(140, 110, 70, 0.25) 50%, rgba(170, 140, 90, 0.35) 100%);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
-      animation: activeBorderGlow 3s ease-in-out infinite;
+      animation: activeBorderGlow 4s ease-in-out infinite;
       z-index: -1;
     }
     
     .status-indicator {
-      background: rgba(212, 165, 73, 0.15);
-      border-color: rgba(212, 165, 73, 0.6);
-      color: #d4a549;
-      animation: statusPulse 2s ease-in-out infinite;
+      background: rgba(170, 140, 90, 0.1);
+      border-color: rgba(170, 140, 90, 0.4);
+      color: #c9a86f;
+      animation: statusPulse 3s ease-in-out infinite;
     }
   }
   
-  // Archived state styling - Softer purple tones
+  // Archived state styling - Much softer purple/lavender tones
   &.archived {
-    border-color: rgba(130, 100, 150, 0.35);
+    border-color: rgba(130, 110, 140, 0.25);
     box-shadow: 
-      0 0 15px rgba(130, 100, 150, 0.15),
-      0 4px 15px rgba(0, 0, 0, 0.5);
+      0 0 10px rgba(130, 110, 140, 0.08),
+      0 4px 12px rgba(0, 0, 0, 0.4);
     
     .status-indicator {
-      background: rgba(130, 100, 150, 0.12);
-      border-color: rgba(155, 125, 180, 0.5);
-      color: #b89bd4;
+      background: rgba(130, 110, 140, 0.08);
+      border-color: rgba(140, 120, 150, 0.35);
+      color: #a090b0;
     }
   }
   
@@ -411,10 +411,10 @@
   
   .item-exp {
     background: 
-      linear-gradient(135deg, rgba(212, 165, 73, 0.2), rgba(170, 130, 50, 0.2)),
-      rgba(0, 0, 0, 0.8);
-    border: 2px solid rgba(212, 165, 73, 0.6);
-    color: #d4a549;
+      linear-gradient(135deg, rgba(170, 140, 90, 0.15), rgba(140, 110, 70, 0.15)),
+      rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(170, 140, 90, 0.4);
+    color: #b89b6f;
     padding: 6px 16px;
     border-radius: 6px;
     font-size: 15px;
@@ -422,8 +422,8 @@
     letter-spacing: 1.5px;
     white-space: nowrap;
     box-shadow: 
-      0 2px 12px rgba(212, 165, 73, 0.25),
-      inset 0 2px 8px rgba(255, 255, 255, 0.15);
+      0 2px 8px rgba(170, 140, 90, 0.15),
+      inset 0 2px 6px rgba(255, 255, 255, 0.1);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
   }
@@ -464,9 +464,9 @@
   
   .item-badge {
     display: inline-block;
-    background: rgba(170, 130, 50, 0.3);
-    border: 2px solid #aa8232;
-    color: #d4a549;
+    background: rgba(140, 110, 90, 0.2);
+    border: 2px solid rgba(140, 110, 90, 0.4);
+    color: #a89070;
     padding: 6px 14px;
     border-radius: 6px;
     font-size: 14px;
@@ -474,8 +474,8 @@
     white-space: nowrap;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     box-shadow: 
-      0 2px 0 rgba(0, 0, 0, 0.5),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      0 2px 0 rgba(0, 0, 0, 0.4),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
   }
   
   // Meta info (company & location)
@@ -503,21 +503,21 @@
 
 @keyframes activeBorderGlow {
   0%, 100% { 
-    opacity: 0.6;
-    filter: brightness(1);
+    opacity: 0.4;
+    filter: brightness(0.9);
   }
   50% { 
-    opacity: 1;
-    filter: brightness(1.3);
+    opacity: 0.6;
+    filter: brightness(1.1);
   }
 }
 
 @keyframes statusPulse {
   0%, 100% {
-    box-shadow: 0 0 10px currentColor;
+    box-shadow: 0 0 8px currentColor;
   }
   50% {
-    box-shadow: 0 0 25px currentColor, 0 0 40px currentColor;
+    box-shadow: 0 0 15px currentColor, 0 0 25px currentColor;
   }
 }
 
