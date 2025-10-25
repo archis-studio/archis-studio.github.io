@@ -1,69 +1,67 @@
-// About Page Styles - Gaming RPG Terminal
-// Fashion-forward Gaming Experience with Rich Colors
+// About Page Styles - Pixel Art Gaming Experience
+// Retro 8-bit aesthetic with subtle fashion touches
 
 // ============================================
-// Terminal Window
+// Terminal Window (Pixel Art Container)
 // ============================================
 
 .terminal-container {
   background: 
-    radial-gradient(ellipse at top, rgba(212, 160, 23, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom, rgba(232, 180, 244, 0.08) 0%, transparent 50%),
-    #0a0a0a;
+    radial-gradient(ellipse at top left, rgba(170, 130, 50, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(130, 100, 150, 0.08) 0%, transparent 50%),
+    #0f0f0f;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 
-    0 0 50px rgba(212, 160, 23, 0.5),
-    0 0 100px rgba(232, 180, 244, 0.3),
-    inset 0 0 120px rgba(212, 160, 23, 0.08);
-  border: 2px solid;
-  border-image: linear-gradient(135deg, #D4A017, #E8B4F4, #FFB6C1) 1;
-  animation: terminalPulse 4s ease-in-out infinite;
+    0 4px 30px rgba(170, 130, 50, 0.25),
+    0 0 60px rgba(130, 100, 150, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(170, 130, 50, 0.4);
+  position: relative;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-size: 18px;
-}
-
-@keyframes terminalPulse {
-  0%, 100% {
-    border-color: rgba(212, 160, 23, 0.5);
-    box-shadow: 
-      0 0 40px rgba(212, 160, 23, 0.4),
-      0 0 80px rgba(212, 160, 23, 0.2);
-  }
-  50% {
-    border-color: rgba(212, 160, 23, 0.8);
-    box-shadow: 
-      0 0 60px rgba(212, 160, 23, 0.6),
-      0 0 120px rgba(212, 160, 23, 0.3);
+  
+  // Pixel art scanline effect
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px
+    );
+    pointer-events: none;
   }
 }
 
 .terminal-header {
-  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+  background: #1a1a1a;
   padding: 10px 14px;
   display: flex;
   align-items: center;
   gap: 6px;
-  border-bottom: 1px solid rgba(212, 160, 23, 0.3);
+  border-bottom: 1px solid rgba(170, 130, 50, 0.3);
   
   .terminal-button {
     width: 10px;
     height: 10px;
-    border-radius: 50%;
-    box-shadow: 0 0 10px currentColor;
+    border-radius: 0;
     
-    &.red { background: #ff5f56; }
-    &.yellow { background: #ffbd2e; }
-    &.green { background: #27c93f; }
+    &.red { background: #d74e52; }
+    &.yellow { background: #d4a549; }
+    &.green { background: #5aa04d; }
   }
   
   .terminal-title {
     margin-left: auto;
-    color: #D4A017;
+    color: #aa8232;
     font-size: 14px;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
+    letter-spacing: 1px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -74,21 +72,14 @@
       0deg,
       transparent,
       transparent 2px,
-      rgba(212, 160, 23, 0.03) 2px,
-      rgba(212, 160, 23, 0.03) 4px
+      rgba(170, 130, 50, 0.02) 2px,
+      rgba(170, 130, 50, 0.02) 4px
     ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 2px,
-      rgba(232, 180, 244, 0.02) 2px,
-      rgba(232, 180, 244, 0.02) 4px
-    ),
-    #0a0a0a;
+    #0f0f0f;
 }
 
 // ============================================
-// Terminal Commands
+// Terminal Commands (Pixel Art Style)
 // ============================================
 
 .terminal-line {
@@ -99,30 +90,23 @@
   margin-bottom: 16px;
   
   .prompt {
-    background: linear-gradient(135deg, #D4A017, #FFD700);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #aa8232;
     font-weight: 900;
     font-size: 18px;
-    filter: drop-shadow(0 0 15px rgba(212, 160, 23, 1));
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   }
   
   .command {
-    background: linear-gradient(135deg, #E8B4F4, #FFB6C1);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #8296b3;
     font-weight: 700;
     font-size: 18px;
-    filter: drop-shadow(0 0 15px rgba(232, 180, 244, 1));
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
   }
   
   .cursor {
-    color: #D4A017;
+    color: #aa8232;
     font-size: 18px;
     animation: blink 1s steps(2) infinite;
-    text-shadow: 0 0 15px rgba(212, 160, 23, 1);
   }
 }
 
@@ -137,46 +121,51 @@
 }
 
 // ============================================
-// Player Card (RPG Style)
+// Player Card (Retro Game Card Style)
 // ============================================
 
 .player-card {
   background: 
-    linear-gradient(135deg, rgba(212, 160, 23, 0.15) 0%, rgba(0, 255, 159, 0.15) 100%),
-    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-  border: 2px solid #D4A017;
-  border-radius: 6px;
-  padding: 16px;
+    radial-gradient(ellipse at top left, rgba(170, 130, 50, 0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #1a1a1a 0%, #141414 100%);
+  border: 3px solid #aa8232;
+  border-radius: 8px;
+  padding: 24px;
   position: relative;
   overflow: hidden;
   box-shadow: 
-    0 0 30px rgba(212, 160, 23, 0.3),
+    0 6px 30px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(170, 130, 50, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   
-  &:before {
+  // Pixel art corner decorations
+  &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(212, 160, 23, 0.4),
-      transparent
-    );
-    animation: cardShine 4s infinite;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: 
+      linear-gradient(45deg, #aa8232 0%, #aa8232 50%, transparent 50%);
   }
-}
-
-@keyframes cardShine {
-  0% { left: -100%; }
-  50%, 100% { left: 200%; }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: 
+      linear-gradient(225deg, #aa8232 0%, #aa8232 50%, transparent 50%);
+  }
 }
 
 .player-header {
   margin-bottom: 18px;
+  position: relative;
+  z-index: 1;
   
   .player-name-level {
     display: flex;
@@ -187,76 +176,43 @@
     .player-name {
       font-size: 28px;
       font-weight: 900;
-      background: linear-gradient(135deg, #FFB6C1, #E8B4F4, #C9A0DC);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #b89b6f;
       letter-spacing: 2px;
       font-family: 'Playfair Display', serif;
-      filter: drop-shadow(0 0 20px rgba(255, 182, 193, 1))
-              drop-shadow(0 0 40px rgba(232, 180, 244, 0.6));
-      animation: nameGlow 3s ease-in-out infinite;
+      text-shadow: 
+        2px 2px 0 rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(184, 155, 111, 0.3);
     }
     
     .player-level {
-      background: linear-gradient(135deg, #FFD700, #D4A017, #FFD700);
+      background: #aa8232;
       color: #000;
       padding: 6px 18px;
-      border-radius: 16px;
+      border-radius: 4px;
       font-weight: 900;
       font-size: 16px;
       box-shadow: 
-        0 0 25px rgba(212, 160, 23, 1),
-        0 0 50px rgba(212, 160, 23, 0.5),
-        inset 0 2px 10px rgba(255, 255, 255, 0.3);
-      border: 2px solid rgba(255, 215, 0, 0.5);
-      animation: levelPulse 2s ease-in-out infinite;
+        0 4px 0 #7a5e23,
+        inset 0 2px 0 rgba(255, 255, 255, 0.2);
+      border: 2px solid #d4a549;
     }
   }
   
   .player-class {
     .class-badge {
       display: inline-block;
-      background: 
-        linear-gradient(135deg, rgba(232, 180, 244, 0.2), rgba(201, 160, 220, 0.2)),
-        rgba(0, 0, 0, 0.6);
-      border: 2px solid #E8B4F4;
-      color: #E8B4F4;
+      background: rgba(130, 100, 150, 0.3);
+      border: 2px solid #826496;
+      color: #b89bd4;
       padding: 8px 16px;
-      border-radius: 6px;
+      border-radius: 4px;
       font-size: 16px;
       font-weight: 700;
-      text-shadow: 0 0 15px rgba(232, 180, 244, 1);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
       box-shadow: 
-        0 0 20px rgba(232, 180, 244, 0.6),
-        inset 0 0 20px rgba(232, 180, 244, 0.1);
+        0 2px 0 rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     }
-  }
-}
-
-@keyframes nameGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 20px rgba(255, 182, 193, 1))
-            drop-shadow(0 0 40px rgba(232, 180, 244, 0.6));
-  }
-  50% {
-    filter: drop-shadow(0 0 30px rgba(255, 182, 193, 1))
-            drop-shadow(0 0 60px rgba(232, 180, 244, 0.8));
-  }
-}
-
-@keyframes levelPulse {
-  0%, 100% {
-    box-shadow: 
-      0 0 25px rgba(212, 160, 23, 1),
-      0 0 50px rgba(212, 160, 23, 0.5),
-      inset 0 2px 10px rgba(255, 255, 255, 0.3);
-  }
-  50% {
-    box-shadow: 
-      0 0 35px rgba(212, 160, 23, 1),
-      0 0 70px rgba(212, 160, 23, 0.7),
-      inset 0 2px 15px rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -266,44 +222,22 @@
   gap: 8px;
   
   .stat-box {
-    background: 
-      linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(232, 180, 244, 0.05)),
-      rgba(0, 0, 0, 0.6);
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    position: relative;
-    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(170, 130, 50, 0.4);
+    border-radius: 4px;
     padding: 12px 10px;
     text-align: center;
     transition: all 0.3s ease;
     
-    &::before {
-      content: '';
-      position: absolute;
-      inset: -2px;
-      border-radius: 6px;
-      padding: 2px;
-      background: linear-gradient(135deg, #D4A017, #E8B4F4);
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      opacity: 0.5;
-    }
-    
     &:hover {
-      background: 
-        linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(232, 180, 244, 0.1)),
-        rgba(0, 0, 0, 0.8);
+      background: rgba(170, 130, 50, 0.1);
+      border-color: #aa8232;
       transform: translateY(-2px);
-      
-      &::before {
-        opacity: 1;
-      }
     }
     
     .stat-label {
       font-size: 13px;
-      color: #aaa;
+      color: #888;
       text-transform: uppercase;
       margin-bottom: 6px;
       letter-spacing: 1px;
@@ -312,198 +246,229 @@
     
     .stat-value {
       font-size: 16px;
-      color: #fff;
+      color: #ccc;
       font-weight: 700;
       
       &.status-active {
-        background: linear-gradient(135deg, #E8B4F4, #FFB6C1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0 0 15px rgba(232, 180, 244, 1));
-        animation: pulse 2s ease-in-out infinite;
+        color: #aa8232;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
       }
     }
   }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
-}
-
 // ============================================
-// Quest List (Experience)
+// Quest List (Structured Cards)
 // ============================================
 
 .quest-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .quest-item {
-  display: flex;
-  align-items: center;
-  gap: 16px;
   background: 
-    linear-gradient(90deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4));
-  border: 2px solid rgba(212, 160, 23, 0.3);
-  border-left: 4px solid;
-  border-radius: 8px;
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.05) 0%, transparent 60%),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+  border-radius: 12px;
   padding: 16px 20px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
   
-  &::before {
+  // Card shimmer effect
+  &::after {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -100%;
     right: 0;
     bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-    transform: translateX(-100%);
-    transition: transform 0.6s ease;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.8s ease;
   }
   
+  &:hover::after {
+    left: 100%;
+  }
+  
+  // Main Quest (Epic - Pink)
   &.main-quest {
-    border-left-color: #FF6B9D;
-    &:hover { 
-      border-color: #FF6B9D;
-      background: linear-gradient(90deg, rgba(255, 107, 157, 0.1), rgba(0, 0, 0, 0.6));
-      box-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
-    }
-  }
-  
-  &.side-quest {
-    border-left-color: #C9A0DC;
-    &:hover { 
-      border-color: #C9A0DC;
-      background: linear-gradient(90deg, rgba(201, 160, 220, 0.1), rgba(0, 0, 0, 0.6));
-      box-shadow: 0 0 30px rgba(201, 160, 220, 0.3);
-    }
-  }
-  
-  &.tutorial-quest {
-    border-left-color: #87CEEB;
-    &:hover { 
-      border-color: #87CEEB;
-      background: linear-gradient(90deg, rgba(135, 206, 235, 0.1), rgba(0, 0, 0, 0.6));
-      box-shadow: 0 0 30px rgba(135, 206, 235, 0.3);
-    }
-  }
-  
-  &:hover {
-    transform: translateX(6px);
+    border: 3px solid #b47a8c;
+    box-shadow: 
+      0 6px 20px rgba(180, 122, 140, 0.3),
+      inset 0 2px 8px rgba(180, 122, 140, 0.15);
     
-    &::before {
-      transform: translateX(100%);
-    }
-  }
-  
-  .quest-icon {
-    font-size: 32px;
-    flex-shrink: 0;
-    filter: drop-shadow(0 0 10px currentColor);
-  }
-  
-  .quest-details {
-    flex: 1;
-    min-width: 0;
-    
-    .quest-meta {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 6px;
-      
-      .quest-type {
-        font-size: 13px;
-        font-weight: 900;
-        background: linear-gradient(135deg, #D4A017, #FFD700);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        filter: drop-shadow(0 0 10px rgba(212, 160, 23, 0.8));
-      }
-      
-      .quest-period {
-        font-size: 15px;
-        color: #aaa;
-        font-weight: 600;
-      }
-    }
-    
-    .quest-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 5px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-    
-    .quest-location {
-      font-size: 16px;
-      color: #ccc;
-      font-weight: 500;
-    }
-  }
-  
-  .quest-reward {
-    text-align: right;
-    flex-shrink: 0;
-    
-    .exp-badge {
+    &:hover {
       background: 
-        linear-gradient(135deg, rgba(232, 180, 244, 0.3), rgba(201, 160, 220, 0.3)),
-        rgba(0, 0, 0, 0.6);
-      border: 2px solid #E8B4F4;
-      color: #E8B4F4;
-      padding: 6px 16px;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 900;
-      margin-bottom: 6px;
-      display: inline-block;
-      text-shadow: 0 0 15px rgba(232, 180, 244, 1);
+        radial-gradient(circle at top left, rgba(180, 122, 140, 0.12) 0%, transparent 60%),
+        linear-gradient(90deg, rgba(180, 122, 140, 0.15), rgba(0, 0, 0, 0.7));
       box-shadow: 
-        0 0 20px rgba(232, 180, 244, 0.6),
-        inset 0 0 20px rgba(232, 180, 244, 0.2);
-      animation: expGlow 2s ease-in-out infinite;
+        0 10px 40px rgba(180, 122, 140, 0.5),
+        inset 0 2px 15px rgba(180, 122, 140, 0.2);
+      transform: translateX(10px) translateY(-4px);
+    }
+    
+    .quest-type {
+      color: #FF6B9D;
+    }
+  }
+  
+  // Side Quest (Rare - Purple)
+  &.side-quest {
+    border: 3px solid #826496;
+    box-shadow: 
+      0 6px 20px rgba(155, 125, 180, 0.3),
+      inset 0 2px 8px rgba(155, 125, 180, 0.15);
+    
+    &:hover {
+      background: 
+        radial-gradient(circle at top left, rgba(155, 125, 180, 0.12) 0%, transparent 60%),
+        linear-gradient(90deg, rgba(155, 125, 180, 0.15), rgba(0, 0, 0, 0.7));
+      box-shadow: 
+        0 10px 40px rgba(155, 125, 180, 0.5),
+        inset 0 2px 15px rgba(155, 125, 180, 0.2);
+      transform: translateX(10px) translateY(-4px);
+    }
+    
+    .quest-type {
+      color: #C9A0DC;
+    }
+  }
+  
+  // Tutorial Quest (Common - Blue)
+  &.tutorial-quest {
+    border: 3px solid #6b8296;
+    box-shadow: 
+      0 6px 20px rgba(107, 130, 173, 0.3),
+      inset 0 2px 8px rgba(107, 130, 173, 0.15);
+    
+    &:hover {
+      background: 
+        radial-gradient(circle at top left, rgba(107, 130, 173, 0.12) 0%, transparent 60%),
+        linear-gradient(90deg, rgba(107, 130, 173, 0.15), rgba(0, 0, 0, 0.7));
+      box-shadow: 
+        0 10px 40px rgba(107, 130, 173, 0.5),
+        inset 0 2px 15px rgba(107, 130, 173, 0.2);
+      transform: translateX(10px) translateY(-4px);
+    }
+    
+    .quest-type {
+      color: #87CEEB;
+    }
+  }
+  
+  // Quest Header
+  .quest-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    
+    .quest-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    
+    .quest-type {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
     
     .quest-status {
-      font-size: 13px;
+      margin-left: auto;
+      font-size: 12px;
       font-weight: 700;
-      color: #aaa;
-      text-transform: uppercase;
       letter-spacing: 1px;
       
-      &.completed {
-        background: linear-gradient(135deg, #C9A0DC, #E8B4F4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        filter: drop-shadow(0 0 10px rgba(201, 160, 220, 0.8));
+      &.active {
+        color: #00ff9f;
+        animation: statusPulse 2s ease-in-out infinite;
       }
+      
+      &.completed {
+        color: #9b7db4;
+      }
+    }
+  }
+  
+  // Quest Body
+  .quest-body {
+    margin-bottom: 10px;
+    
+    .quest-period {
+      font-size: 13px;
+      color: #d4a549;
+      font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+    
+    .quest-title {
+      font-size: 17px;
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+    
+    .quest-location {
+      font-size: 14px;
+      color: #ccc;
+      font-weight: 600;
+    }
+  }
+  
+  // Quest Footer (Compact)
+  .quest-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 12px;
+    
+    .exp-badge {
+      background: 
+        linear-gradient(135deg, rgba(170, 130, 50, 0.3), rgba(130, 100, 150, 0.3)),
+        rgba(0, 0, 0, 0.7);
+      border: 2px solid #aa8232;
+      color: #d4c5a3;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      box-shadow: 
+        0 4px 20px rgba(170, 130, 50, 0.5),
+        inset 0 2px 8px rgba(255, 255, 255, 0.2);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     }
   }
 }
 
-@keyframes expGlow {
+@keyframes statusPulse {
+  0%, 100% { 
+    opacity: 1;
+    text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
+  }
+  50% { 
+    opacity: 0.7;
+    text-shadow: 0 0 20px rgba(0, 255, 159, 0.8);
+  }
+}
+
+// ============================================
+// Skills Display
+// ============================================
+
+@keyframes completedGlow {
   0%, 100% {
-    box-shadow: 
-      0 0 20px rgba(232, 180, 244, 0.6),
-      inset 0 0 20px rgba(232, 180, 244, 0.2);
+    filter: drop-shadow(0 0 15px rgba(201, 160, 220, 1));
   }
   50% {
-    box-shadow: 
-      0 0 30px rgba(232, 180, 244, 0.8),
-      inset 0 0 30px rgba(232, 180, 244, 0.3);
+    filter: drop-shadow(0 0 25px rgba(201, 160, 220, 1)) drop-shadow(0 0 35px rgba(201, 160, 220, 0.8));
   }
 }
 
@@ -632,80 +597,152 @@
 }
 
 // ============================================
-// Achievements (Game Badges)
+// Achievements (Collectible Card Style)
 // ============================================
 
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 16px;
 }
 
 .achievement {
   background: 
-    linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(30, 30, 30, 0.6));
-  border: 2px solid rgba(100, 100, 100, 0.3);
-  border-radius: 8px;
-  padding: 16px 14px;
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%),
+    linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.7));
+  border: 3px solid transparent;
+  background-clip: padding-box;
+  border-radius: 12px;
+  padding: 24px 20px;
   text-align: center;
-  transition: all 0.4s ease;
-  filter: grayscale(100%);
-  opacity: 0.3;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: grayscale(100%) brightness(0.3);
+  opacity: 0.4;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
   
+  // Locked card border
   &::before {
     content: '';
     position: absolute;
+    inset: -3px;
+    border-radius: 12px;
+    padding: 3px;
+    background: linear-gradient(135deg, #444, #666, #444);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.3;
+  }
+  
+  // Card reflection effect
+  &::after {
+    content: '';
+    position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: translateX(-100%) rotate(45deg);
-    transition: transform 0.6s ease;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+    transform: translateX(-100%) rotate(-10deg);
+    transition: transform 0.8s ease;
   }
   
   &.unlocked {
-    border: 2px solid;
-    border-image: linear-gradient(135deg, #E8B4F4, #FFB6C1, #D4A017) 1;
-    filter: grayscale(0%);
+    filter: grayscale(0%) brightness(1);
     opacity: 1;
-    background: 
-      linear-gradient(135deg, rgba(232, 180, 244, 0.15), rgba(255, 182, 193, 0.15)),
-      rgba(0, 0, 0, 0.6);
     box-shadow: 
-      0 0 25px rgba(232, 180, 244, 0.5),
-      0 0 50px rgba(232, 180, 244, 0.3);
+      0 10px 40px rgba(232, 180, 244, 0.6),
+      0 0 60px rgba(255, 182, 193, 0.4),
+      inset 0 2px 10px rgba(255, 255, 255, 0.2);
+    
+    // Unlocked card border (rainbow)
+    &::before {
+      background: linear-gradient(135deg, 
+        #E8B4F4 0%, 
+        #FFB6C1 25%, 
+        #FFD700 50%, 
+        #FFB6C1 75%, 
+        #E8B4F4 100%
+      );
+      opacity: 1;
+      animation: achievementBorder 4s linear infinite;
+    }
     
     &:hover {
-      transform: translateY(-5px) scale(1.08);
+      transform: translateY(-10px) rotateY(5deg) scale(1.05);
       box-shadow: 
-        0 6px 30px rgba(232, 180, 244, 0.7),
-        0 6px 60px rgba(255, 182, 193, 0.4);
+        0 20px 60px rgba(232, 180, 244, 0.9),
+        0 0 100px rgba(255, 182, 193, 0.6),
+        0 0 140px rgba(255, 215, 0, 0.4),
+        inset 0 2px 15px rgba(255, 255, 255, 0.3);
       
-      &::before {
-        transform: translateX(100%) rotate(45deg);
+      &::after {
+        transform: translateX(200%) rotate(-10deg);
       }
       
       .achievement-icon {
-        transform: scale(1.3) rotate(10deg);
-        filter: drop-shadow(0 0 20px currentColor);
+        transform: scale(1.4) rotate(360deg);
+        filter: 
+          drop-shadow(0 0 30px currentColor)
+          drop-shadow(0 0 50px currentColor);
+      }
+      
+      .achievement-name {
+        text-shadow: 
+          0 0 20px rgba(255, 255, 255, 0.8),
+          0 2px 10px rgba(0, 0, 0, 0.8);
       }
     }
   }
   
   .achievement-icon {
-    font-size: 36px;
+    font-size: 48px;
     display: block;
-    margin-bottom: 12px;
-    transition: all 0.4s ease;
+    margin-bottom: 16px;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
   }
   
   .achievement-name {
-    font-size: 15px;
+    font-size: 16px;
     color: #fff;
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1.4;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: 0.5px;
+    transition: all 0.4s ease;
+  }
+  
+  // Unlocked pulse animation
+  &.unlocked .achievement-icon {
+    animation: iconFloat 3s ease-in-out infinite;
+  }
+}
+
+@keyframes achievementBorder {
+  0% {
+    background: linear-gradient(135deg, #E8B4F4 0%, #FFB6C1 25%, #FFD700 50%, #FFB6C1 75%, #E8B4F4 100%);
+  }
+  25% {
+    background: linear-gradient(225deg, #FFB6C1 0%, #FFD700 25%, #E8B4F4 50%, #FFD700 75%, #FFB6C1 100%);
+  }
+  50% {
+    background: linear-gradient(315deg, #FFD700 0%, #E8B4F4 25%, #FFB6C1 50%, #E8B4F4 75%, #FFD700 100%);
+  }
+  75% {
+    background: linear-gradient(45deg, #E8B4F4 0%, #FFB6C1 25%, #FFD700 50%, #FFB6C1 75%, #E8B4F4 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #E8B4F4 0%, #FFB6C1 25%, #FFD700 50%, #FFB6C1 75%, #E8B4F4 100%);
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.05);
   }
 }
 
@@ -809,10 +846,8 @@
   }
   
   .quest-item {
-    .quest-details {
-      .quest-title {
-        font-size: 12px;
-      }
+    .quest-title {
+      font-size: 16px;
     }
   }
 }
@@ -821,567 +856,8 @@
   .player-stats-grid {
     grid-template-columns: 1fr;
   }
-}
-
-// ============================================
-// Terminal Window
-// ============================================
-
-.terminal-container {
-  background: #0a0a0a;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 
-    0 0 30px rgba(212, 160, 23, 0.3),
-    0 0 60px rgba(212, 160, 23, 0.1);
-  border: 1px solid rgba(212, 160, 23, 0.3);
-  animation: terminalGlow 3s ease-in-out infinite;
-  font-family: 'JetBrains Mono', 'Courier New', monospace;
-}
-
-@keyframes terminalGlow {
-  0%, 100% {
-    box-shadow: 
-      0 0 30px rgba(212, 160, 23, 0.3),
-      0 0 60px rgba(212, 160, 23, 0.1);
-  }
-  50% {
-    box-shadow: 
-      0 0 40px rgba(212, 160, 23, 0.4),
-      0 0 80px rgba(212, 160, 23, 0.2);
+  
+  .terminal-container {
+    font-size: 16px;
   }
 }
-
-.terminal-header {
-  background: #1a1a1a;
-  padding: 12px 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid rgba(212, 160, 23, 0.2);
-  
-  .terminal-button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    
-    &.red { background: #ff5f56; }
-    &.yellow { background: #ffbd2e; }
-    &.green { background: #27c93f; }
-  }
-  
-  .terminal-title {
-    margin-left: auto;
-    color: #D4A017;
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-}
-
-.terminal-body {
-  padding: 24px;
-  background: 
-    linear-gradient(transparent 50%, rgba(212, 160, 23, 0.03) 50%),
-    #0a0a0a;
-  background-size: 100% 4px;
-  animation: scanlines 8s linear infinite;
-}
-
-@keyframes scanlines {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 100%; }
-}
-
-// ============================================
-// Terminal Lines
-// ============================================
-
-.terminal-line {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  margin-bottom: 12px;
-  
-  .prompt {
-    color: #D4A017;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
-  }
-  
-  .command {
-    color: #00ff9f;
-    font-weight: 600;
-    text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
-    animation: typing 0.5s steps(20);
-  }
-  
-  .cursor {
-    color: #D4A017;
-    animation: blink 1s steps(2) infinite;
-  }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
-}
-
-.terminal-output {
-  margin-left: 24px;
-  margin-bottom: 24px;
-}
-
-// ============================================
-// RPG Profile Card
-// ============================================
-
-.rpg-card {
-  background: 
-    linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(0, 255, 159, 0.1)),
-    #1a1a1a;
-  border: 2px solid #D4A017;
-  border-radius: 8px;
-  padding: 20px;
-  position: relative;
-  overflow: hidden;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(212, 160, 23, 0.3),
-      transparent
-    );
-    animation: shine 3s infinite;
-  }
-}
-
-@keyframes shine {
-  0% { left: -100%; }
-  50%, 100% { left: 200%; }
-}
-
-.rpg-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-  
-  .rpg-name {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #FFD700;
-    text-shadow: 
-      0 0 10px rgba(255, 215, 0, 0.8),
-      0 0 20px rgba(255, 215, 0, 0.4);
-    letter-spacing: 2px;
-  }
-  
-  .rpg-level {
-    background: linear-gradient(135deg, #D4A017, #FFD700);
-    color: #000;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    font-size: 0.9rem;
-    box-shadow: 0 0 20px rgba(212, 160, 23, 0.6);
-  }
-}
-
-.rpg-class {
-  color: #00ff9f;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
-  
-  .class-icon {
-    margin-right: 8px;
-  }
-}
-
-.rpg-status {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  
-  .status-item {
-    color: #C5C5C5;
-    font-size: 0.9rem;
-    
-    .status-icon {
-      margin-right: 6px;
-    }
-    
-    &.status-online {
-      color: #00ff9f;
-      
-      .status-icon {
-        animation: pulse 2s ease-in-out infinite;
-      }
-    }
-  }
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-// ============================================
-// RPG Timeline (Quest Log)
-// ============================================
-
-.rpg-timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.timeline-quest {
-  display: flex;
-  gap: 16px;
-  position: relative;
-  
-  &:not(:last-child):after {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 30px;
-    bottom: -20px;
-    width: 2px;
-    background: linear-gradient(
-      180deg,
-      rgba(212, 160, 23, 0.5),
-      rgba(212, 160, 23, 0.1)
-    );
-  }
-  
-  .quest-marker {
-    width: 16px;
-    height: 16px;
-    color: #D4A017;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
-    animation: glow 2s ease-in-out infinite;
-  }
-  
-  .quest-content {
-    flex: 1;
-    background: rgba(26, 26, 26, 0.6);
-    border: 1px solid rgba(212, 160, 23, 0.3);
-    border-radius: 6px;
-    padding: 16px;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      border-color: #D4A017;
-      background: rgba(26, 26, 26, 0.9);
-      transform: translateX(4px);
-    }
-  }
-  
-  .quest-period {
-    color: #D4A017;
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-  
-  .quest-title {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .quest-desc {
-    color: #C5C5C5;
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 8px;
-    
-    div {
-      margin-bottom: 4px;
-    }
-  }
-  
-  .quest-reward {
-    color: #00ff9f;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(212, 160, 23, 1);
-  }
-}
-
-// ============================================
-// RPG Stats (Skill Bars)
-// ============================================
-
-.rpg-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.stat-item {
-  .stat-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 8px;
-    
-    .stat-icon {
-      font-size: 1.2rem;
-    }
-    
-    .stat-name {
-      color: #fff;
-      font-weight: 600;
-      flex: 1;
-    }
-    
-    .stat-value {
-      color: #D4A017;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-shadow: 0 0 10px rgba(212, 160, 23, 0.6);
-    }
-  }
-  
-  .stat-bar {
-    height: 20px;
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(212, 160, 23, 0.3);
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    
-    .stat-fill {
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        #D4A017 0%,
-        #FFD700 50%,
-        #00ff9f 100%
-      );
-      border-radius: 10px;
-      position: relative;
-      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 
-        0 0 20px rgba(212, 160, 23, 0.6),
-        inset 0 2px 4px rgba(255, 255, 255, 0.3);
-      
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.4),
-          transparent
-        );
-        animation: statShimmer 2s infinite;
-      }
-      
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 50%;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.3),
-          transparent
-        );
-        border-radius: 10px 10px 0 0;
-      }
-    }
-  }
-}
-
-@keyframes statShimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(200%); }
-}
-
-// ============================================
-// RPG Achievements
-// ============================================
-
-.rpg-achievements {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-}
-
-.achievement-item {
-  background: rgba(26, 26, 26, 0.6);
-  border: 2px solid rgba(100, 100, 100, 0.3);
-  border-radius: 8px;
-  padding: 16px;
-  text-align: center;
-  transition: all 0.3s ease;
-  filter: grayscale(100%);
-  opacity: 0.5;
-  
-  &.unlocked {
-    border-color: #D4A017;
-    filter: grayscale(0%);
-    opacity: 1;
-    box-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
-    
-    &:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 4px 30px rgba(212, 160, 23, 0.5);
-    }
-    
-    .achievement-icon {
-      animation: bounce 1s ease-in-out;
-    }
-  }
-  
-  .achievement-icon {
-    font-size: 2.5rem;
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  .achievement-name {
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-}
-
-@keyframes bounce {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-// ============================================
-// Contact Buttons
-// ============================================
-
-.contact-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
-  background: rgba(26, 26, 26, 0.8);
-  border: 2px solid #D4A017;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(212, 160, 23, 0.3);
-    transform: translate(-50%, -50%);
-    transition: width 0.5s, height 0.5s;
-  }
-  
-  &:hover {
-    border-color: #FFD700;
-    box-shadow: 0 0 30px rgba(212, 160, 23, 0.5);
-    transform: translateY(-2px);
-    
-    &:before {
-      width: 300px;
-      height: 300px;
-    }
-    
-    .contact-icon {
-      transform: scale(1.2) rotate(10deg);
-    }
-  }
-  
-  .contact-icon {
-    font-size: 1.2rem;
-    transition: transform 0.3s ease;
-    position: relative;
-    z-index: 1;
-  }
-  
-  span:not(.contact-icon) {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-// ============================================
-// Responsive Design
-// ============================================
-
-@media (max-width: 768px) {
-  .terminal-body {
-    padding: 16px;
-  }
-  
-  .terminal-output {
-    margin-left: 12px;
-  }
-  
-  .rpg-header {
-    .rpg-name {
-      font-size: 1.2rem;
-    }
-  }
-  
-  .rpg-achievements {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .contact-links {
-    flex-direction: column;
-  }
-  
-  .contact-btn {
-    width: 100%;
-    justify-content: center;
-  }
-}
-
