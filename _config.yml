@@ -16,7 +16,8 @@ breadcrumbs: true
 words_per_minute: 200
 
 # Autumn Noir Theme settings
-theme: minimal-mistakes-jekyll
+# Use remote_theme for GitHub Pages compatibility
+remote_theme: "mmistakes/minimal-mistakes@4.27.0"
 minimal_mistakes_skin: "dark" # Base skin, will be overridden by custom Autumn Noir theme
 
 # Author - Fashion Editorial Style
@@ -119,6 +120,8 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-seo-tag
+  - jekyll-remote-theme
   - jekyll-seo-tag
 
 # Plugin whitelist for Jekyll 4.x
