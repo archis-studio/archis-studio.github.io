@@ -1,4 +1,5 @@
 # 開發指南 - Development Guide
+# Version 2.0.0 | Updated: 2025-10-26
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -401,5 +402,22 @@ bundle exec htmlproofer ./_site --disable-external
 
 ---
 
-**Last Updated**: 2025-10-24  
+**Last Updated**: 2025-10-26  
+**Version**: 2.0.0  
 **Jekyll**: 4.4.1 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.3
+
+---
+
+## 📝 Changelog
+
+### v2.0.0 (2025-10-26)
+- ✅ Core implementation complete
+- ✅ All pages functional (Home, About, Posts, Article)
+- ✅ Custom layouts and components
+- ✅ Design system fully implemented
+- ✅ Responsive design optimized
+
+### v1.0.0 (2025-10-24)
+- Initial project setup
+- Basic Jekyll configuration
+- Minimal Mistakes theme integration
