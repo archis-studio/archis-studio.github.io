@@ -253,25 +253,67 @@ section {
     z-index: 1;
   }
   
-  // ASCII Art Rocket
+  // ASCII Art Arcade Sign - Larger with Neon Colors
   .hero-ascii-art {
     font-family: 'Courier New', monospace;
-    color: var(--nav-gold);
-    font-size: 0.6rem;
-    line-height: 0.8;
-    margin-bottom: 1.5rem;
-    opacity: 0.8;
+    font-size: 0.9rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    opacity: 1;
     animation: float 3s ease-in-out infinite;
     
     pre {
       margin: 0;
-      text-shadow: 0 0 10px rgba(212, 160, 23, 0.5);
+      // Neon multi-color glow effect
+      background: linear-gradient(
+        135deg,
+        rgba(212, 160, 23, 0.15) 0%,
+        rgba(74, 144, 184, 0.15) 50%,
+        rgba(231, 76, 60, 0.15) 100%
+      );
+      padding: 1.5rem;
+      border-radius: 8px;
+      text-shadow: 
+        0 0 10px rgba(212, 160, 23, 0.8),
+        0 0 20px rgba(74, 144, 184, 0.6),
+        0 0 30px rgba(231, 76, 60, 0.4);
+      color: var(--nav-gold);
+      
+      // Neon pulsing animation
+      animation: neon-pulse 2s ease-in-out infinite alternate;
     }
   }
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  @keyframes neon-pulse {
+    0% { 
+      text-shadow: 
+        0 0 10px rgba(212, 160, 23, 0.8),
+        0 0 20px rgba(74, 144, 184, 0.6),
+        0 0 30px rgba(231, 76, 60, 0.4);
+      filter: brightness(1);
+    }
+    100% { 
+      text-shadow: 
+        0 0 15px rgba(212, 160, 23, 1),
+        0 0 30px rgba(74, 144, 184, 0.8),
+        0 0 45px rgba(231, 76, 60, 0.6);
+      filter: brightness(1.2);
+    }
+  }
+  
+  @media (min-width: 64em) {
+    .hero-ascii-art {
+      font-size: 1.1rem;
+      
+      pre {
+        padding: 2rem;
+      }
+    }
   }
   
   // Title with Glitch Effect
