@@ -1,24 +1,33 @@
 # 文件索引 - Documentation Index
-# Version 1.3.0 | Updated: 2025-10-16
+# Version 1.4.0 | Updated: 2025-10-25
 
 ## 📚 文件追蹤系統
 
 **AI & 人類協作者**: 使用此文件追蹤所有規格文件的狀態與版本
 
-### 🗂️ 核心文件清單
+### 🗂️ 核心規格文件 (docs/)
 
 | 文件 | 版本 | 更新日期 | 狀態 | 用途 |
 |------|------|----------|------|------|
 | `PROJECT_CHARTER.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 專案目標與原則 |
-| `DESIGN_SYSTEM_SPEC.md` | 1.2.0 | 2025-10-16 | ✅ Complete | 完整設計系統規格 (色彩、字型、間距) |
-| `LAYOUT_SPEC.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 版面配置規格 (Navigation, Sidebars, Content) |
-| `NAVIGATION_SPEC.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 導航設計規格 (Masthead, Menu, Responsive) |
-| `ASSET_SPEC.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 資源檔案規格 (Icons, Images, SVG Placeholders) |
-| `IMPLEMENTATION_CHECKLIST.md` | 1.0.0 | 2025-10-16 | ✅ Complete | 10階段實作指南 (從初始化到部署) |
+| `DESIGN_SYSTEM_SPEC.md` | 1.2.0 | 2025-10-16 | 🚧 Needs Update | 完整設計系統規格 (需補充 8 色配色) |
+| `LAYOUT_SPEC.md` | 1.0.0 | 2025-10-16 | 🚧 Needs Update | 版面配置規格 (需補充簡化版首頁) |
+| `NAVIGATION_SPEC.md` | 1.0.0 | 2025-10-16 | 🚧 Needs Update | 導航設計規格 (需補充 Sidebar 結構) |
+| `ASSET_SPEC.md` | 1.0.0 | 2025-10-16 | 🚧 Needs Update | 資源檔案規格 (需補充 Avatar SVG) |
+| `IMPLEMENTATION_CHECKLIST.md` | 1.0.0 | 2025-10-16 | 🚧 Needs Update | 10階段實作指南 (需更新實際進度) |
 | `AI_COLLABORATION_GUIDE.md` | 1.6.0 | 2025-10-16 | ✅ Complete | AI 協作流程 |
 | `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 1.1.0 | 2025-10-16 | ✅ Complete | MM 主題客製化指南 |
 | `CONTENT_STRATEGY.md` | 1.0.0 | 2025-10-11 | ✅ Complete | 內容創作規範 |
 | `AUTUMN_NOIR_FUTURE_THEME.md` | 2.1.0 | 2025-10-16 | ✅ Complete | 主題概念與視覺指南 |
+
+### 📝 操作指南文件 (Root)
+
+| 文件 | 版本 | 建立日期 | 狀態 | 用途 |
+|------|------|----------|------|------|
+| `HOW-TO-EDIT-BIO.md` | 1.0.0 | 2025-10-25 | ✅ Complete | Author Bio 編輯完整指南 |
+| `PROFILE-IMAGE-TODO.md` | 1.0.0 | 2025-10-25 | ✅ Complete | Profile 頭像替換清單與指南 |
+| `DOCUMENTATION-AUDIT-2025-10-25.md` | 1.0.0 | 2025-10-25 | ✅ Complete | 文件與實作一致性審計報告 |
+| `assets/images/README.md` | 1.0.0 | 2025-10-25 | ✅ Complete | 圖片資源規格與要求 |
 
 ### 📖 文件閱讀順序
 
@@ -146,4 +155,29 @@ head -n 2 docs/*.md
 - 定義文件版本更新規則
 
 **維護者**: Archi Chen & AI Assistants  
-**最後檢查**: 2025-10-16
+**最後檢查**: 2025-10-25
+
+---
+
+## 📋 v1.4.0 更新說明 (2025-10-25)
+
+### 新增內容
+- 新增操作指南文件表格，追蹤根目錄的 HOW-TO 文件
+- 新增 `DOCUMENTATION-AUDIT-2025-10-25.md` - 文件與實作一致性審計報告
+- 新增 `HOW-TO-EDIT-BIO.md` - Author Bio 編輯完整指南
+- 新增 `PROFILE-IMAGE-TODO.md` - Profile 頭像替換清單與指南
+- 新增 `assets/images/README.md` - 圖片資源規格與要求
+
+### 狀態更新
+- 標記需要更新的規格文件狀態為 🚧 Needs Update:
+  * DESIGN_SYSTEM_SPEC.md - 需補充 8 色配色系統
+  * LAYOUT_SPEC.md - 需補充簡化版首頁佈局
+  * NAVIGATION_SPEC.md - 需補充 Sidebar Navigation 結構
+  * ASSET_SPEC.md - 需補充 Placeholder Avatar SVG 規格
+  * IMPLEMENTATION_CHECKLIST.md - 需更新實際實作進度
+
+### 實作進度反映
+- Phase 1-6 已大致完成（Hero, Homepage, Sidebar, Author Profile）
+- Phase 7-10 待實作（Content Pages, Post Template, 互動功能, 部署）
+
+---
