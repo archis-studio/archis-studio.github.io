@@ -23,9 +23,7 @@ minimal_mistakes_skin: "dark" # Base skin, will be overridden by custom Autumn N
 author:
   name: "Archi Chen"
   avatar: "/assets/images/placeholder-avatar.svg"
-  bio: "Digital Craftsman | AI Explorer
-        🍂 在程式與設計之間尋找美學平衡
-        Building intelligent systems with elegance and purpose"
+  bio: "Software Engineer, NYCU CS Master's | 這裡是我的個人部落格，記錄我在職涯上點滴的所學、所知、所見、所思，分享給有需要的你。"
   location: "Taipei, Taiwan"
   email: "magic83w@gmail.com"
   links:
