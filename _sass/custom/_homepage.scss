@@ -59,7 +59,7 @@ section {
   text-align: center;
 }
 
-// Hero Section - Pixel Matrix Gaming World
+// Hero Section - Pixel Matrix Gaming World (Full Width Banner)
 .page-hero {
   min-height: 70vh;
   display: flex;
@@ -73,15 +73,24 @@ section {
     );
   text-align: center;
   padding: 6rem 2rem 4rem;
-  margin: 0 -2rem 3rem -2rem;
-  border-radius: 0 0 12px 12px;
+  
+  // Full width - ignore content container
+  width: 100vw;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0;
+  margin-bottom: 3rem;
+  
+  border-radius: 0;
   overflow: hidden;
   
   @media (min-width: 64em) {
-    margin: 0 -3rem 4rem -3rem;
     min-height: 75vh;
     padding: 8rem 3rem 6rem;
+    margin-bottom: 4rem;
   }
   
   // Matrix Rain Canvas
@@ -167,7 +176,7 @@ section {
     animation: scanline-move 8s linear infinite;
   }
   
-  // Pixel Border Top
+  // Pixel Border Top (full width)
   .hero-border-top {
     position: absolute;
     top: 0;
@@ -178,6 +187,11 @@ section {
     align-items: center;
     justify-content: space-between;
     z-index: 2;
+    padding: 0 2rem;
+    
+    @media (min-width: 64em) {
+      padding: 0 4rem;
+    }
   }
   
   .hero-border-bottom {
@@ -190,6 +204,11 @@ section {
     align-items: center;
     justify-content: space-between;
     z-index: 2;
+    padding: 0 2rem;
+    
+    @media (min-width: 64em) {
+      padding: 0 4rem;
+    }
   }
   
   .pixel-corner {
