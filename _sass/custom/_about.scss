@@ -66,7 +66,7 @@
 }
 
 .terminal-body {
-  padding: 28px;
+  padding: 28px 28px 20px;
   background: 
     repeating-linear-gradient(
       0deg,
@@ -88,6 +88,12 @@
   gap: 10px;
   margin-top: 24px;
   margin-bottom: 16px;
+  
+  // Reduce spacing for the last terminal-line (Contact section)
+  &:last-of-type {
+    margin-top: 16px;
+    margin-bottom: 12px;
+  }
   
   .prompt {
     color: #aa8232;
@@ -118,6 +124,11 @@
 .terminal-output {
   margin-left: 18px;
   margin-bottom: 16px;
+  
+  // Reduce spacing for the last output (Contact section)
+  &:last-of-type {
+    margin-bottom: 12px;
+  }
 }
 
 // ============================================
@@ -753,14 +764,16 @@
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 24px;
+  margin-top: 16px;
+  margin-bottom: 8px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 14px;
-  padding: 16px 20px;
+  gap: 18px;
+  padding: 22px 28px;
   background: 
     linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(232, 180, 244, 0.05)),
     rgba(0, 0, 0, 0.6);
@@ -769,7 +782,7 @@
   border-radius: 8px;
   color: #fff;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 19px;
   font-weight: 700;
   transition: all 0.3s ease;
   position: relative;
@@ -808,7 +821,7 @@
   }
   
   .contact-icon {
-    font-size: 24px;
+    font-size: 28px;
     transition: all 0.3s ease;
   }
   
@@ -817,6 +830,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 18px;
   }
 }
 
@@ -843,6 +857,7 @@
   
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   
   .quest-item {
