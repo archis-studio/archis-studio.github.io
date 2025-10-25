@@ -209,22 +209,24 @@ AI Coding 教育部落格，專注於：
 
 ---
 
-**Version**: 2.1.0 | **Updated**: 2025-10-25  
+**Version**: 2.0.0 | **Updated**: 2025-10-26  
 **Maintained by**: Archi Chen & AI Assistants
 
 ---
 
 ## 📝 CHANGELOG
 
-### v2.1.0 (2025-10-25)
-- ✅ About 頁面完成 (Gaming Terminal + RPG Style)
-- ✅ Posts Archive 頁面完成 (Fashion Magazine Style)  
-- ✅ Post Single 頁面完成 (TOC Sidebar + Typography)
-- ✅ 8 Skill Categories 顏色系統完成
-- ✅ Author Profile 重構完成
-- 📝 文件同步更新與實作一致
+### v2.0.0 (2025-10-26)
+- ✅ About 頁面完成 (Gaming Terminal + RPG Style + Journey Timeline)
+- ✅ Posts Archive 頁面完成 (Fashion Magazine 3-column Grid Layout)  
+- ✅ Post Single 頁面完成 (TOC Sidebar Only + Optimized Typography)
+- ✅ 8 Skill Categories 顏色系統完成 (語義化配色)
+- ✅ Author Profile 重構完成 (Placeholder Avatar System)
+- ✅ Homepage 精簡設計 (4 Featured Cards + 8 Category Badges)
+- ✅ Hero Section 完成 (8 Skill Badges with Animations)
+- 📝 所有文件同步更新至 v2.0.0
 
-### v2.0.0 (2025-10-24)
+### v1.0.0 (2025-10-24)
 - 🎨 Autumn Noir Future 主題完整實作
 - 🏗️ Design System 建立
 - 🎯 Hero Section & Homepage 完成
