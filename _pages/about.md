@@ -54,80 +54,116 @@ classes: wide
       </div>
     </div>
 
-    <!-- Journey Timeline -->
+    <!-- Experience Log -->
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">cat journey.log</span>
+      <span class="command">cat experience.log</span>
     </div>
     <div class="terminal-output">
       <div class="journey-container">
         
-        <!-- ACTIVE Section -->
-        <div class="journey-section active-section">
-          <div class="section-header">
-            <span class="section-icon">⚡</span>
-            <span class="section-title">ACTIVE</span>
-            <span class="section-subtitle">Current Career Path</span>
+        <!-- Journey Item - Active -->
+        <div class="journey-item active">
+          <div class="item-status">
+            <span class="status-indicator active-indicator">● ACTIVE</span>
+            <span class="item-exp">+1500 EXP</span>
           </div>
-          
-          <div class="journey-item">
-            <div class="item-timeline">2022.07 - Present</div>
-            <div class="item-content">
-              <div class="item-title">Software Engineer</div>
-              <div class="item-company">[Company Name]</div>
-              <div class="item-location">📍 Taipei, Taiwan</div>
-            </div>
-            <div class="item-exp">+1500 EXP</div>
+          <div class="item-timeline">2025.09 - Present</div>
+          <div class="item-header">
+            <div class="item-title">AIoT Backend Engineer</div>
+            <div class="item-badge">⚔️ Current</div>
           </div>
-          
-          <!-- Add more active items here using the same structure -->
-          
+          <div class="item-meta">
+            <span class="item-company">🏢 Mobius-Nexsys</span>
+            <span class="item-location">📍 Taipei, Taiwan</span>
+          </div>
+        </div>
+        
+        <!-- Journey Item - Archived -->
+        <div class="journey-item archived">
+          <div class="item-status">
+            <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-exp">+1000 EXP</span>
+          </div>
+          <div class="item-timeline">2025.04 - 2025.08</div>
+          <div class="item-header">
+            <div class="item-title">Cross-Functional Explorer</div>
+            <div class="item-badge">🎯 Venture</div>
+          </div>
+          <div class="item-meta">
+            <span class="item-company">🏢 Venture</span>
+            <span class="item-location">📍 Free Market, Taiwan</span>
+          </div>
+        </div>
+        
+        <div class="journey-item archived">
+          <div class="item-status">
+            <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-exp">+1000 EXP</span>
+          </div>
+          <div class="item-timeline">2023.03 - 2025.03</div>
+          <div class="item-header">
+            <div class="item-title">Venture Builder</div>
+            <div class="item-badge">🎯 Venture</div>
+          </div>
+          <div class="item-meta">
+            <span class="item-company">🏢 Venture</span>
+            <span class="item-location">📍 Free Market, Taiwan</span>
+          </div>
+        </div>
+        
+        <div class="journey-item archived">
+          <div class="item-status">
+            <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-exp">+1000 EXP</span>
+          </div>
+          <div class="item-timeline">2020.09 - 2022.06</div>
+          <div class="item-header">
+            <div class="item-title">Master's Degree in Computer Science</div>
+            <div class="item-badge">🎓 Education</div>
+          </div>
+          <div class="item-meta">
+            <span class="item-company">🏢 National Yang Ming Chiao Tung University</span>
+            <span class="item-location">📍 Hsinchu, Taiwan</span>
+          </div>
         </div>
 
-        <!-- ARCHIVE Section -->
-        <div class="journey-section archive-section">
-          <div class="section-header">
-            <span class="section-icon">📦</span>
-            <span class="section-title">ARCHIVE</span>
-            <span class="section-subtitle">Past Experiences & Education</span>
+        <div class="journey-item archived">
+          <div class="item-status">
+            <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-exp">+800 EXP</span>
           </div>
-          
-          <div class="journey-item">
-            <div class="item-timeline">2020.09 - 2022.06</div>
-            <div class="item-content">
-              <div class="item-title">Master's Degree in Computer Science</div>
-              <div class="item-company">National Yang Ming Chiao Tung University</div>
-              <div class="item-location">📍 Hsinchu, Taiwan</div>
-            </div>
-            <div class="item-exp">+1000 EXP</div>
+          <div class="item-timeline">2016.09 - 2020.06</div>
+          <div class="item-header">
+            <div class="item-title">Bachelor's Degree</div>
+            <div class="item-badge">🎓 Education</div>
           </div>
-
-          <div class="journey-item">
-            <div class="item-timeline">2016.09 - 2020.06</div>
-            <div class="item-content">
-              <div class="item-title">Bachelor's Degree</div>
-              <div class="item-company">[University Name]</div>
-              <div class="item-location">📍 Taiwan</div>
-            </div>
-            <div class="item-exp">+800 EXP</div>
+          <div class="item-meta">
+            <span class="item-company">🏢 [University Name]</span>
+            <span class="item-location">📍 Taiwan</span>
           </div>
-          
-          <!-- 
-            ✨ Add New Experience:
-            Copy this template and modify:
-            
-            <div class="journey-item">
-              <div class="item-timeline">YYYY.MM - YYYY.MM</div>
-              <div class="item-content">
-                <div class="item-title">Your Job Title</div>
-                <div class="item-company">Company Name</div>
-                <div class="item-location">📍 Location</div>
-              </div>
-              <div class="item-exp">+XXX EXP</div>
-            </div>
-          -->
-          
         </div>
+        
+        <!-- 
+          ✨ Add New Experience - Simple Template:
+          Copy this block and modify the content:
+          
+          <div class="journey-item active">  <!-- Use 'active' or 'archived' -->
+            <div class="item-status">
+              <span class="status-indicator active-indicator">● ACTIVE</span>
+              <span class="item-exp">+XXX EXP</span>
+            </div>
+            <div class="item-timeline">YYYY.MM - Present/YYYY.MM</div>
+            <div class="item-header">
+              <div class="item-title">Your Job Title</div>
+              <div class="item-badge">⚔️ Your Badge</div>
+            </div>
+            <div class="item-meta">
+              <span class="item-company">🏢 Company Name</span>
+              <span class="item-location">📍 Location</span>
+            </div>
+          </div>
+        -->
         
       </div>
     </div>
