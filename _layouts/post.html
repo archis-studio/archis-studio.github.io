@@ -1,0 +1,129 @@
+---
+layout: default
+---
+
+<article class="post-single">
+  <!-- Post Header -->
+  <header class="post-header">
+    <!-- Categories -->
+    {% if page.categories.size > 0 %}
+    <div class="post-categories">
+      {% for category in page.categories %}
+        <a href="{{ site.baseurl }}/categories/#{{ category | slugify }}" class="category-link">
+          {{ category }}
+        </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Title -->
+    <h1 class="post-title">{{ page.title }}</h1>
+
+    <!-- Meta Info -->
+    <div class="post-meta">
+      <time class="post-date" datetime="{{ page.date | date_to_xmlschema }}">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M4 0a1 1 0 0 1 1 1v1h6V1a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h1V1a1 1 0 0 1 1-1zM2 6v8h12V6H2z"/>
+        </svg>
+        {{ page.date | date: "%Y年%m月%d日" }}
+      </time>
+
+      <!-- Reading Time -->
+      {% assign words = content | number_of_words %}
+      {% assign reading_time = words | divided_by: 200 | plus: 1 %}
+      <span class="reading-time">
+        <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm0 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm.5 3v4.21l2.65 1.53-.75 1.3L7 9V4h1.5z"/>
+        </svg>
+        約 {{ reading_time }} 分鐘閱讀
+      </span>
+    </div>
+
+    <!-- Tags -->
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+        <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}" class="tag-link">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Featured Image -->
+  {% if page.header.teaser or page.header.image %}
+  <div class="post-featured-image">
+    <img src="{{ page.header.teaser | default: page.header.image | relative_url }}" 
+         alt="{{ page.title }}">
+  </div>
+  {% endif %}
+
+  <!-- Post Content -->
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <!-- Post Footer -->
+  <footer class="post-footer">
+    <!-- Share Buttons -->
+    <div class="share-buttons">
+      <span class="share-label">分享文章</span>
+      <a href="https://twitter.com/intent/tweet?text={{ page.title | uri_escape }}&url={{ page.url | absolute_url | uri_escape }}" 
+         class="share-btn share-btn--twitter" target="_blank" rel="noopener">
+        Twitter
+      </a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | uri_escape }}" 
+         class="share-btn share-btn--facebook" target="_blank" rel="noopener">
+        Facebook
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ page.url | absolute_url | uri_escape }}" 
+         class="share-btn share-btn--linkedin" target="_blank" rel="noopener">
+        LinkedIn
+      </a>
+    </div>
+  </footer>
+
+  <!-- Related Posts -->
+  {% if site.related_posts.size > 0 %}
+  <aside class="related-posts">
+    <h2 class="related-posts__title">相關文章</h2>
+    <div class="related-posts__grid">
+      {% for post in site.related_posts limit:3 %}
+      <article class="related-post">
+        {% if post.header.teaser %}
+        <div class="related-post__image">
+          <a href="{{ post.url | relative_url }}">
+            <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
+          </a>
+        </div>
+        {% endif %}
+        <div class="related-post__content">
+          <h3 class="related-post__title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <time class="related-post__date" datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%Y.%m.%d" }}
+          </time>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </aside>
+  {% endif %}
+
+  <!-- Navigation -->
+  <nav class="post-navigation">
+    {% if page.previous %}
+    <a href="{{ page.previous.url | relative_url }}" class="post-nav post-nav--prev">
+      <span class="post-nav__label">← 上一篇</span>
+      <span class="post-nav__title">{{ page.previous.title }}</span>
+    </a>
+    {% endif %}
+    
+    {% if page.next %}
+    <a href="{{ page.next.url | relative_url }}" class="post-nav post-nav--next">
+      <span class="post-nav__label">下一篇 →</span>
+      <span class="post-nav__title">{{ page.next.title }}</span>
+    </a>
+    {% endif %}
+  </nav>
+</article>

@@ -1,0 +1,301 @@
+// ================================
+// Posts Archive Page
+// Fashion Magazine + Autumn Tones
+// ================================
+
+// =========================
+// Archive Header
+// =========================
+.posts-archive {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.archive-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid rgba(139, 92, 63, 0.3);
+}
+
+.archive-title {
+  font-family: 'Georgia', 'Noto Serif TC', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #d4a574; // Autumn Gold
+  letter-spacing: 0.5px;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.archive-subtitle {
+  font-size: 1.125rem;
+  color: #a8a8a8;
+  font-weight: 300;
+  letter-spacing: 1px;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+// =========================
+// Posts Grid Layout
+// =========================
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// =========================
+// Post Card - Magazine Style
+// =========================
+.post-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #252525 100%);
+  border-radius: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(139, 92, 63, 0.2);
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, 
+      #d4a574 0%, 
+      #8b5c3f 50%, 
+      #d4a574 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(139, 92, 63, 0.25);
+    border-color: rgba(212, 165, 116, 0.5);
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    .post-card__image img {
+      transform: scale(1.08);
+    }
+    
+    .post-card__title a {
+      color: #d4a574;
+    }
+  }
+}
+
+// =========================
+// Post Card Image
+// =========================
+.post-card__image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #1a1a1a;
+  position: relative;
+  
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(26, 26, 26, 0.8), transparent);
+    pointer-events: none;
+  }
+}
+
+// =========================
+// Post Card Content
+// =========================
+.post-card__content {
+  padding: 1.75rem;
+}
+
+// Categories
+.post-card__categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.25rem 0.875rem;
+  background: linear-gradient(135deg, #8b5c3f, #6b4832);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: linear-gradient(135deg, #a67152, #8b5c3f);
+    transform: translateY(-1px);
+  }
+}
+
+// Title
+.post-card__title {
+  margin: 0 0 1rem;
+  font-family: 'Georgia', 'Noto Serif TC', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  
+  a {
+    color: #e8e8e8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: #d4a574;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+// Excerpt
+.post-card__excerpt {
+  color: #b0b0b0;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+  font-weight: 300;
+}
+
+// =========================
+// Post Card Meta
+// =========================
+.post-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(139, 92, 63, 0.2);
+}
+
+.post-date {
+  color: #d4a574;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-family: 'Courier New', monospace;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  color: #999;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: #d4a574;
+  }
+}
+
+// =========================
+// Responsive Adjustments
+// =========================
+@media (max-width: 1024px) {
+  .posts-archive {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .archive-header {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-archive {
+    padding: 2rem 1rem;
+  }
+  
+  .archive-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .post-card__content {
+    padding: 1.5rem;
+  }
+  
+  .post-card__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+// =========================
+// Empty State
+// =========================
+.posts-grid:empty::after {
+  content: '目前還沒有文章...';
+  display: block;
+  text-align: center;
+  color: #666;
+  font-size: 1.125rem;
+  padding: 3rem 0;
+}
