@@ -25,58 +25,58 @@ hero:
   <div class="container">
     <h2 class="section-title">精選推薦</h2>
     
-    {% assign featured = site.posts | where: "featured", true | first %}
-    {% unless featured %}
-      {% assign featured = site.posts | first %}
-    {% endunless %}
-    
-    {% if featured %}
-      <article class="hero-featured-card">
-        <div class="hero-card-image">
-          {% if featured.header.image %}
-            <img src="{{ featured.header.image | relative_url }}" alt="{{ featured.title }}">
-          {% else %}
-            <div class="hero-card-placeholder">
-              <span class="placeholder-icon">✦</span>
-            </div>
-          {% endif %}
-          <div class="hero-card-overlay"></div>
-        </div>
-        
-        <div class="hero-card-content">
-          <div class="hero-card-meta">
-            <time datetime="{{ featured.date | date_to_xmlschema }}">
-              {{ featured.date | date: "%Y.%m.%d" }}
-            </time>
-            {% if featured.categories %}
-              <span class="separator">·</span>
-              <span class="category">{{ featured.categories | first }}</span>
-            {% endif %}
-          </div>
-          
-          <h3 class="hero-card-title">
-            <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
-          </h3>
-          
-          <p class="hero-card-excerpt">
-            {{ featured.excerpt | strip_html | truncate: 150 }}
-          </p>
-          
-          <a href="{{ featured.url | relative_url }}" class="hero-card-cta">
-            閱讀全文 <span class="arrow">→</span>
-          </a>
-        </div>
-      </article>
+    <div class="featured-cards-grid">
+      {% assign featured_posts = site.posts | where: "featured", true | limit: 4 %}
+      {% unless featured_posts.size > 0 %}
+        {% assign featured_posts = site.posts | limit: 4 %}
+      {% endunless %}
       
-      <div class="section-cta">
-        <a href="/posts/" class="btn btn-explore">探索文章庫 →</a>
-      </div>
-    {% else %}
-      <div class="placeholder-message">
-        <p>✨ 即將推出精選內容</p>
-        <p class="hint">在 <code>_posts/</code> 目錄建立文章並設定 <code>featured: true</code></p>
-      </div>
-    {% endif %}
+      {% if featured_posts.size > 0 %}
+        {% for post in featured_posts %}
+          <article class="featured-card">
+            <div class="featured-card-image">
+              {% if post.header.image %}
+                <img src="{{ post.header.image | relative_url }}" alt="{{ post.title }}">
+              {% else %}
+                <div class="featured-card-placeholder">
+                  <span class="placeholder-icon">✦</span>
+                </div>
+              {% endif %}
+              <div class="featured-card-overlay"></div>
+            </div>
+            
+            <div class="featured-card-content">
+              <div class="featured-card-meta">
+                <time datetime="{{ post.date | date_to_xmlschema }}">
+                  {{ post.date | date: "%Y.%m.%d" }}
+                </time>
+                {% if post.categories %}
+                  <span class="separator">·</span>
+                  <span class="category">{{ post.categories | first }}</span>
+                {% endif %}
+              </div>
+              
+              <h3 class="featured-card-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h3>
+              
+              <p class="featured-card-excerpt">
+                {{ post.excerpt | strip_html | truncate: 80 }}
+              </p>
+            </div>
+          </article>
+        {% endfor %}
+      {% else %}
+        <div class="placeholder-message">
+          <p>✨ 即將推出精選內容</p>
+          <p class="hint">在 <code>_posts/</code> 目錄建立文章並設定 <code>featured: true</code></p>
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="section-cta">
+      <a href="/posts/" class="btn btn-explore">探索文章庫 →</a>
+    </div>
   </div>
 </section>
 
@@ -85,27 +85,58 @@ hero:
   <div class="container">
     <h2 class="section-title">探索分類</h2>
     
-    <div class="categories-compact-grid">
-      {% assign categories = site.categories | sort %}
-      {% if categories.size > 0 %}
-        {% for category in categories limit: 8 %}
-          <a href="/categories/#{{ category[0] | slugify }}" class="category-badge">
-            <span class="category-icon">📁</span>
-            <span class="category-name">{{ category[0] }}</span>
-            <span class="category-count">{{ category[1].size }}</span>
-          </a>
-        {% endfor %}
-      {% else %}
-        <div class="placeholder-message">
-          <p>🏷️ 分類建立中</p>
-        </div>
-      {% endif %}
+    <div class="categories-skill-grid">
+      <a href="/categories/#ai" class="skill-category-badge skill-category--ai">
+        <span class="skill-icon">🤖</span>
+        <span class="skill-name">AI 工具</span>
+        <span class="skill-count">{{ site.categories['AI'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#dev" class="skill-category-badge skill-category--dev">
+        <span class="skill-icon">💻</span>
+        <span class="skill-name">軟體開發</span>
+        <span class="skill-count">{{ site.categories['開發'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#data" class="skill-category-badge skill-category--data">
+        <span class="skill-icon">📊</span>
+        <span class="skill-name">資料科學</span>
+        <span class="skill-count">{{ site.categories['資料'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#marketing" class="skill-category-badge skill-category--marketing">
+        <span class="skill-icon">🌐</span>
+        <span class="skill-name">數位行銷</span>
+        <span class="skill-count">{{ site.categories['行銷'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#quant" class="skill-category-badge skill-category--quant">
+        <span class="skill-icon">💹</span>
+        <span class="skill-name">量化交易</span>
+        <span class="skill-count">{{ site.categories['量化'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#reading" class="skill-category-badge skill-category--reading">
+        <span class="skill-icon">📘</span>
+        <span class="skill-name">閱讀筆記</span>
+        <span class="skill-count">{{ site.categories['閱讀'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#green" class="skill-category-badge skill-category--green">
+        <span class="skill-icon">🌱</span>
+        <span class="skill-name">綠色能源</span>
+        <span class="skill-count">{{ site.categories['能源'] | size | default: 0 }}</span>
+      </a>
+      
+      <a href="/categories/#growth" class="skill-category-badge skill-category--growth">
+        <span class="skill-icon">🎯</span>
+        <span class="skill-name">成長旅程</span>
+        <span class="skill-count">{{ site.categories['成長'] | size | default: 0 }}</span>
+      </a>
     </div>
     
-    {% if categories.size > 8 %}
-      <div class="section-cta">
-        <a href="/categories/" class="btn btn-explore">所有分類 →</a>
-      </div>
-    {% endif %}
+    <div class="section-cta">
+      <a href="/categories/" class="btn btn-explore">所有分類 →</a>
+    </div>
   </div>
 </section>

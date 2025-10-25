@@ -879,7 +879,7 @@ section {
   }
 }
 
-// Featured Spotlight Section - Hero Magazine Card
+// Featured Spotlight Section - 4 Cards Grid
 .featured-spotlight {
   background: linear-gradient(180deg, 
     rgba(15, 15, 18, 0) 0%,
@@ -888,62 +888,75 @@ section {
   );
 }
 
-.hero-featured-card {
-  max-width: 900px;
-  margin: 0 auto;
+.featured-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-card {
   background: linear-gradient(135deg, 
-    rgba(28, 28, 30, 0.95),
-    rgba(20, 20, 25, 0.98)
+    rgba(28, 28, 30, 0.9),
+    rgba(20, 20, 25, 0.95)
   );
-  border: 2px solid rgba(212, 160, 23, 0.25);
-  border-radius: 12px;
+  border: 1px solid rgba(212, 160, 23, 0.2);
+  border-radius: 10px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.6),
-    0 0 20px rgba(212, 160, 23, 0.15);
+    0 4px 20px rgba(0, 0, 0, 0.5),
+    0 0 15px rgba(212, 160, 23, 0.1);
   
   &:hover {
-    transform: translateY(-8px);
-    border-color: rgba(212, 160, 23, 0.6);
+    transform: translateY(-6px);
+    border-color: rgba(212, 160, 23, 0.5);
     box-shadow: 
-      0 20px 60px rgba(0, 0, 0, 0.8),
-      0 0 40px rgba(212, 160, 23, 0.4);
+      0 12px 40px rgba(0, 0, 0, 0.7),
+      0 0 30px rgba(212, 160, 23, 0.3);
     
-    .hero-card-image img {
-      transform: scale(1.08);
+    .featured-card-image img {
+      transform: scale(1.1);
     }
     
-    .hero-card-overlay {
+    .featured-card-overlay {
       background: linear-gradient(180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.7) 100%
+        rgba(0, 0, 0, 0.8) 100%
       );
+    }
+    
+    .featured-card-title a {
+      color: #FFCC33;
     }
   }
   
-  .hero-card-image {
+  .featured-card-image {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 200px;
     overflow: hidden;
     background: linear-gradient(135deg, 
-      rgba(212, 160, 23, 0.15), 
-      rgba(74, 144, 184, 0.15)
+      rgba(212, 160, 23, 0.1), 
+      rgba(74, 144, 184, 0.1)
     );
-    
-    @media (max-width: 768px) {
-      height: 280px;
-    }
     
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .hero-card-placeholder {
+    .featured-card-placeholder {
       width: 100%;
       height: 100%;
       display: flex;
@@ -951,12 +964,12 @@ section {
       justify-content: center;
       
       .placeholder-icon {
-        font-size: 6rem;
+        font-size: 3rem;
         color: rgba(212, 160, 23, 0.3);
       }
     }
     
-    .hero-card-overlay {
+    .featured-card-overlay {
       position: absolute;
       top: 0;
       left: 0;
@@ -964,44 +977,40 @@ section {
       bottom: 0;
       background: linear-gradient(180deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.5) 100%
+        rgba(0, 0, 0, 0.6) 100%
       );
-      transition: background 0.4s ease;
+      transition: background 0.35s ease;
     }
   }
   
-  .hero-card-content {
-    padding: 2.5rem;
-    
-    @media (max-width: 768px) {
-      padding: 1.5rem;
-    }
+  .featured-card-content {
+    padding: 1.5rem;
   }
   
-  .hero-card-meta {
+  .featured-card-meta {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    color: rgba(212, 160, 23, 0.8);
-    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    color: rgba(212, 160, 23, 0.7);
+    margin-bottom: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     
     .separator {
-      margin: 0 0.5rem;
+      margin: 0 0.4rem;
       color: rgba(255, 255, 255, 0.3);
     }
     
     .category {
-      color: rgba(74, 144, 184, 0.9);
+      color: rgba(74, 144, 184, 0.8);
     }
   }
   
-  .hero-card-title {
-    margin: 0 0 1.5rem;
+  .featured-card-title {
+    margin: 0 0 0.75rem;
     
     a {
       font-family: "Playfair Display", Georgia, serif;
-      font-size: 2.2rem;
+      font-size: 1.25rem;
       font-weight: 700;
       line-height: 1.3;
       color: #FFFFFF;
@@ -1009,51 +1018,20 @@ section {
       transition: color 0.3s ease;
       display: block;
       
-      @media (max-width: 768px) {
-        font-size: 1.6rem;
-      }
-      
       &:hover {
         color: #D4A017;
       }
     }
   }
   
-  .hero-card-excerpt {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: rgba(232, 232, 232, 0.85);
-    margin-bottom: 2rem;
-  }
-  
-  .hero-card-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
+  .featured-card-excerpt {
     font-size: 0.9rem;
-    font-weight: 600;
-    color: #D4A017;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    transition: all 0.3s ease;
-    
-    .arrow {
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover {
-      color: #FFCC33;
-      
-      .arrow {
-        transform: translateX(5px);
-      }
-    }
+    line-height: 1.6;
+    color: rgba(200, 200, 200, 0.8);
   }
 }
 
-// Categories Navigation Section - Compact Badges
+// Categories Navigation Section - Matching Skill Badges
 .categories-navigation {
   background: linear-gradient(180deg,
     rgba(26, 27, 46, 0.2) 0%,
@@ -1061,32 +1039,36 @@ section {
   );
 }
 
-.categories-compact-grid {
+.categories-skill-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 1rem;
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 0 auto 3rem;
   
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
 }
 
-.category-badge {
+.skill-category-badge {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  padding: 1.8rem 1rem;
-  background: rgba(28, 28, 30, 0.6);
+  gap: 0.4rem;
+  padding: 1.5rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border: 2px solid;
+  border-radius: 5px;
+  background: rgba(28, 28, 30, 0.75);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(212, 160, 23, 0.15);
-  border-radius: 8px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   
@@ -1094,61 +1076,195 @@ section {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg,
-      rgba(212, 160, 23, 0.1),
-      rgba(74, 144, 184, 0.1)
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
     );
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: left 0.5s;
   }
   
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(212, 160, 23, 0.6);
-    background: rgba(40, 40, 45, 0.8);
-    box-shadow: 
-      0 8px 24px rgba(0, 0, 0, 0.5),
-      0 0 20px rgba(212, 160, 23, 0.3);
-    
-    &::before {
-      opacity: 1;
-    }
-    
-    .category-icon {
-      transform: scale(1.2) rotate(5deg);
-    }
-    
-    .category-name {
-      color: #D4A017;
-    }
+  &:hover::before {
+    left: 100%;
   }
   
-  .category-icon {
+  .skill-icon {
     font-size: 2rem;
-    transition: transform 0.3s ease;
-    filter: grayscale(0.3);
+    filter: grayscale(0.2);
   }
   
-  .category-name {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.85rem;
-    font-weight: 600;
+  .skill-name {
     color: #E8E8E8;
-    text-align: center;
     transition: color 0.3s ease;
-    position: relative;
-    z-index: 1;
   }
   
-  .category-count {
-    font-family: 'JetBrains Mono', monospace;
+  .skill-count {
     font-size: 0.75rem;
-    color: rgba(212, 160, 23, 0.7);
-    position: relative;
-    z-index: 1;
+    opacity: 0.7;
+  }
+  
+  // AI 工具 - Premium Gold
+  &.skill-category--ai {
+    border-color: #D4A017;
+    color: #D4A017;
+    background: linear-gradient(135deg, rgba(212, 160, 23, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(212, 160, 23, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(212, 160, 23, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(212, 160, 23, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(212, 160, 23, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #FFCC33;
+      
+      .skill-name { color: #FFCC33; }
+    }
+  }
+  
+  // 軟體開發 - Tech Cyan
+  &.skill-category--dev {
+    border-color: #00B4D8;
+    color: #00B4D8;
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(0, 180, 216, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(0, 180, 216, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #48CAE4;
+      
+      .skill-name { color: #48CAE4; }
+    }
+  }
+  
+  // 資料科學 - Data Blue
+  &.skill-category--data {
+    border-color: #5D8AA8;
+    color: #5D8AA8;
+    background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(93, 138, 168, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(93, 138, 168, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(93, 138, 168, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(93, 138, 168, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #7BA8C0;
+      
+      .skill-name { color: #7BA8C0; }
+    }
+  }
+  
+  // 數位行銷 - Creative Purple
+  &.skill-category--marketing {
+    border-color: #9370DB;
+    color: #9370DB;
+    background: linear-gradient(135deg, rgba(147, 112, 219, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(147, 112, 219, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(147, 112, 219, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #B19CD9;
+      
+      .skill-name { color: #B19CD9; }
+    }
+  }
+  
+  // 量化交易 - Finance Orange
+  &.skill-category--quant {
+    border-color: #FF9800;
+    color: #FF9800;
+    background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(255, 152, 0, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(255, 152, 0, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(255, 152, 0, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 152, 0, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #FFB74D;
+      
+      .skill-name { color: #FFB74D; }
+    }
+  }
+  
+  // 閱讀筆記 - Book Brown
+  &.skill-category--reading {
+    border-color: #8B7355;
+    color: #C4A777;
+    background: linear-gradient(135deg, rgba(139, 115, 85, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(139, 115, 85, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(139, 115, 85, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(196, 167, 119, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(139, 115, 85, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #D4B896;
+      
+      .skill-name { color: #E5D4B5; }
+    }
+  }
+  
+  // 綠色能源 - Forest Green
+  &.skill-category--green {
+    border-color: #2E7D32;
+    color: #66BB6A;
+    background: linear-gradient(135deg, rgba(46, 125, 50, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(46, 125, 50, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(102, 187, 106, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(46, 125, 50, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #81C784;
+      
+      .skill-name { color: #A5D6A7; }
+    }
+  }
+  
+  // 成長旅程 - Warm Coral
+  &.skill-category--growth {
+    border-color: #FF6F61;
+    color: #FF6F61;
+    background: linear-gradient(135deg, rgba(255, 111, 97, 0.15), rgba(28, 28, 30, 0.75));
+    box-shadow: 0 0 15px rgba(255, 111, 97, 0.2);
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(255, 111, 97, 0.3), rgba(28, 28, 30, 0.75));
+      box-shadow: 
+        0 0 25px rgba(255, 111, 97, 0.7),
+        0 6px 12px rgba(0, 0, 0, 0.5),
+        inset 0 0 20px rgba(255, 111, 97, 0.2);
+      transform: translateY(-4px) scale(1.05);
+      border-color: #FF8A80;
+      
+      .skill-name { color: #FF8A80; }
+    }
   }
 }
 
@@ -1206,9 +1322,9 @@ section {
 
 // Responsive Design
 @media (max-width: 1024px) {
-  .hero-featured-card {
-    .hero-card-title a {
-      font-size: 2rem;
+  .featured-card {
+    .featured-card-title a {
+      font-size: 1.15rem;
     }
   }
 }
@@ -1222,40 +1338,38 @@ section {
     padding: 0 1rem;
   }
   
-  .hero-featured-card {
-    border-radius: 8px;
-    
-    .hero-card-image {
-      height: 240px;
+  .featured-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-card {
+    .featured-card-image {
+      height: 180px;
     }
     
-    .hero-card-content {
-      padding: 1.5rem;
+    .featured-card-content {
+      padding: 1.25rem;
     }
     
-    .hero-card-title a {
-      font-size: 1.5rem;
-    }
-    
-    .hero-card-excerpt {
-      font-size: 0.95rem;
+    .featured-card-title a {
+      font-size: 1.1rem;
     }
   }
   
-  .categories-compact-grid {
+  .categories-skill-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
   }
   
-  .category-badge {
-    padding: 1.5rem 0.75rem;
+  .skill-category-badge {
+    padding: 1.2rem 0.75rem;
     
-    .category-icon {
+    .skill-icon {
       font-size: 1.5rem;
     }
     
-    .category-name {
-      font-size: 0.8rem;
+    .skill-name {
+      font-size: 0.75rem;
     }
   }
 }
