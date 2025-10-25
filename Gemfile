@@ -1,9 +1,12 @@
 source "https://rubygems.org"
 
 # GitHub Pages - Use github-pages gem for compatibility
-gem "github-pages", group: :jekyll_plugins
+gem "github-pages", "~> 232", group: :jekyll_plugins
 
-# Jekyll plugins (included in github-pages, but listed for clarity)
+# Remote theme support (already included in github-pages, but explicit for clarity)
+gem "jekyll-remote-theme", group: :jekyll_plugins
+
+# Additional Jekyll plugins (most are already in github-pages)
 group :jekyll_plugins do
   gem "jekyll-feed"
   gem "jekyll-sitemap"
@@ -11,7 +14,6 @@ group :jekyll_plugins do
   gem "jekyll-include-cache"
   gem "jekyll-paginate"
   gem "jekyll-gist"
-  gem "jekyll-remote-theme"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
