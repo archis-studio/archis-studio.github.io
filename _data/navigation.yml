@@ -1,5 +1,5 @@
 # Main Navigation
-# 主選單 - Pixel Art + Future Space 風格 with AI Emoji
+# 主選單 - Autumn Noir Future 風格
 
 main:
   - title: "🏠 首頁"
@@ -18,30 +18,42 @@ main:
     url: /about/
 
 # Sidebar Navigation
-# 側邊欄導航 - 所有頁面使用
+# 側邊欄導航 - Autumn Noir Future 主題
 
 sidebar:
-  - title: "📂 分類瀏覽"
+  - title: "🎯 快速導航"
     children:
-      - title: "所有分類"
-        url: /categories/
-      - title: "所有標籤"
-        url: /tags/
-
-  - title: "📌 快速連結"
-    children:
-      - title: "最新文章"
+      - title: "🏠 返回首頁"
+        url: /
+      - title: "📚 所有文章"
         url: /posts/
-      - title: "關於我"
+      - title: "📡 關於我"
         url: /about/
+      - title: "🎓 證書與成就"
+        url: /certificates/
+
+  - title: "📂 探索分類"
+    children:
+      - title: "🤖 AI 工具"
+        url: "/categories/#ai"
+      - title: "💻 軟體開發"
+        url: "/categories/#dev"
+      - title: "📊 資料科學"
+        url: "/categories/#data"
+      - title: "🌐 數位行銷"
+        url: "/categories/#marketing"
+      - title: "💹 量化交易"
+        url: "/categories/#quant"
+      - title: "📘 閱讀筆記"
+        url: "/categories/#reading"
+      - title: "🌱 綠色能源"
+        url: "/categories/#green"
+      - title: "🎯 成長旅程"
+        url: "/categories/#growth"
+
+  - title: "🔗 社群連結"
+    children:
       - title: "GitHub"
         url: "https://github.com/magicxcr7"
-
-# 保留未來擴充空間
-# 可能的擴充項目：
-# - title: "Projects"
-#   url: /projects/
-# - title: "Portfolio"
-#   url: /portfolio/
-# - title: "Uses"
-#   url: /uses/
+      - title: "Email"
+        url: "mailto:magic83w@gmail.com"
