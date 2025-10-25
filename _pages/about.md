@@ -143,27 +143,7 @@ classes: wide
             <span class="item-location">📍 Taiwan</span>
           </div>
         </div>
-        
-        <!-- 
-          ✨ Add New Experience - Simple Template:
-          Copy this block and modify the content:
-          
-          <div class="journey-item active">  <!-- Use 'active' or 'archived' -->
-            <div class="item-status">
-              <span class="status-indicator active-indicator">● ACTIVE</span>
-              <span class="item-exp">+XXX EXP</span>
-            </div>
-            <div class="item-timeline">YYYY.MM - Present/YYYY.MM</div>
-            <div class="item-header">
-              <div class="item-title">Your Job Title</div>
-              <div class="item-badge">⚔️ Your Badge</div>
-            </div>
-            <div class="item-meta">
-              <span class="item-company">🏢 Company Name</span>
-              <span class="item-location">📍 Location</span>
-            </div>
-          </div>
-        -->
+
         
       </div>
     </div>

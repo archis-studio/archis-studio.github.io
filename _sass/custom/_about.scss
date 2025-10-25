@@ -299,13 +299,13 @@
     opacity: 0.3;
   }
   
-  // Active state styling
+  // Active state styling - Softer, warmer tones
   &.active {
-    border-color: #00ff9f;
+    border-color: rgba(212, 165, 73, 0.5);
     box-shadow: 
-      0 0 30px rgba(0, 255, 159, 0.4),
+      0 0 20px rgba(212, 165, 73, 0.2),
       0 4px 20px rgba(0, 0, 0, 0.6),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
     
     &::before {
       content: '';
@@ -313,7 +313,7 @@
       inset: -3px;
       border-radius: 10px;
       padding: 3px;
-      background: linear-gradient(135deg, #00ff9f 0%, #aa8232 50%, #00ff9f 100%);
+      background: linear-gradient(135deg, rgba(212, 165, 73, 0.6) 0%, rgba(170, 130, 50, 0.4) 50%, rgba(212, 165, 73, 0.6) 100%);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -322,56 +322,56 @@
     }
     
     .status-indicator {
-      background: rgba(0, 255, 159, 0.2);
-      border-color: #00ff9f;
-      color: #00ff9f;
+      background: rgba(212, 165, 73, 0.15);
+      border-color: rgba(212, 165, 73, 0.6);
+      color: #d4a549;
       animation: statusPulse 2s ease-in-out infinite;
     }
   }
   
-  // Archived state styling
+  // Archived state styling - Softer purple tones
   &.archived {
-    border-color: rgba(155, 125, 180, 0.4);
+    border-color: rgba(130, 100, 150, 0.35);
     box-shadow: 
-      0 0 20px rgba(155, 125, 180, 0.2),
+      0 0 15px rgba(130, 100, 150, 0.15),
       0 4px 15px rgba(0, 0, 0, 0.5);
     
     .status-indicator {
-      background: rgba(155, 125, 180, 0.15);
-      border-color: #9b7db4;
-      color: #9b7db4;
+      background: rgba(130, 100, 150, 0.12);
+      border-color: rgba(155, 125, 180, 0.5);
+      color: #b89bd4;
     }
   }
   
   &:hover {
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-3px) scale(1.01);
     box-shadow: 
-      0 0 40px currentColor,
+      0 0 25px rgba(170, 130, 50, 0.25),
       0 8px 30px rgba(0, 0, 0, 0.8),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
     
     &.active {
       box-shadow: 
-        0 0 50px rgba(0, 255, 159, 0.6),
+        0 0 30px rgba(212, 165, 73, 0.3),
         0 8px 30px rgba(0, 0, 0, 0.8);
     }
     
     &.archived {
       box-shadow: 
-        0 0 40px rgba(155, 125, 180, 0.4),
+        0 0 25px rgba(130, 100, 150, 0.25),
         0 8px 30px rgba(0, 0, 0, 0.8);
     }
     
     .item-title {
-      color: #FFB6C1;
-      text-shadow: 0 0 20px rgba(255, 182, 193, 0.6);
+      color: #e6d4c6;
+      text-shadow: 0 2px 8px rgba(230, 212, 198, 0.4);
     }
     
     .item-exp {
-      transform: scale(1.1);
+      transform: scale(1.05);
       box-shadow: 
-        0 0 30px rgba(255, 215, 0, 0.8),
-        inset 0 2px 10px rgba(255, 255, 255, 0.3);
+        0 0 20px rgba(212, 165, 73, 0.4),
+        inset 0 2px 10px rgba(255, 255, 255, 0.2);
     }
   }
   
@@ -401,20 +401,20 @@
     transition: all 0.3s ease;
     
     &.active-indicator {
-      color: #00ff9f;
+      color: #d4a549;
     }
     
     &.archived-indicator {
-      color: #9b7db4;
+      color: #b89bd4;
     }
   }
   
   .item-exp {
     background: 
-      linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(170, 130, 50, 0.3)),
-      rgba(0, 0, 0, 0.9);
-    border: 2px solid #FFD700;
-    color: #FFD700;
+      linear-gradient(135deg, rgba(212, 165, 73, 0.2), rgba(170, 130, 50, 0.2)),
+      rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(212, 165, 73, 0.6);
+    color: #d4a549;
     padding: 6px 16px;
     border-radius: 6px;
     font-size: 15px;
@@ -422,8 +422,8 @@
     letter-spacing: 1.5px;
     white-space: nowrap;
     box-shadow: 
-      0 4px 20px rgba(255, 215, 0, 0.4),
-      inset 0 2px 8px rgba(255, 255, 255, 0.2);
+      0 2px 12px rgba(212, 165, 73, 0.25),
+      inset 0 2px 8px rgba(255, 255, 255, 0.15);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease;
   }
@@ -520,8 +520,7 @@
     box-shadow: 0 0 25px currentColor, 0 0 40px currentColor;
   }
 }
-  }
-}
+
 
 // ============================================
 // Skills Display
