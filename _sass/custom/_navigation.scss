@@ -60,6 +60,11 @@
   padding-top: var(--nav-height);
 }
 
+// Home page - no extra padding (hero handles it)
+.layout--home .page {
+  padding-top: 0;
+}
+
 // Starfield Background Layer - Enhanced Gaming Style
 .masthead__starfield {
   position: absolute;

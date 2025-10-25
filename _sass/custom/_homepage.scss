@@ -61,7 +61,7 @@ section {
 
 // Hero Section - Pixel Matrix Gaming World (Full Width Banner)
 .page-hero {
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +72,7 @@ section {
       rgba(14, 14, 16, 0.95)
     );
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: calc(var(--nav-height) + 3rem) 2rem 3rem;
   
   // Full width - break out of parent container completely
   width: 100vw;
@@ -82,15 +82,15 @@ section {
   margin-left: -50vw;
   margin-right: -50vw;
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   
   border-radius: 0;
   overflow: hidden;
   
   @media (min-width: 64em) {
-    min-height: 75vh;
-    padding: 8rem 3rem 6rem;
-    margin-bottom: 4rem;
+    min-height: 55vh;
+    padding: calc(var(--nav-height) + 4rem) 3rem 4rem;
+    margin-bottom: 3rem;
     
     // Calculate from viewport, not parent
     // Parent is calc(100% - 300px), we need to add that back
