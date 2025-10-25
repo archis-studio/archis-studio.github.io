@@ -16,7 +16,7 @@
   border: 2px solid rgba(212, 160, 23, 0.5);
   animation: terminalPulse 4s ease-in-out infinite;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @keyframes terminalPulse {
@@ -56,7 +56,7 @@
   .terminal-title {
     margin-left: auto;
     color: #D4A017;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 0.5px;
     text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
@@ -64,7 +64,7 @@
 }
 
 .terminal-body {
-  padding: 20px;
+  padding: 24px;
   background: 
     repeating-linear-gradient(
       0deg,
@@ -83,27 +83,27 @@
 .terminal-line {
   display: flex;
   align-items: center;
-  gap: 6px;
-  margin-top: 18px;
-  margin-bottom: 10px;
+  gap: 8px;
+  margin-top: 20px;
+  margin-bottom: 12px;
   
   .prompt {
     color: #D4A017;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16px;
     text-shadow: 0 0 10px rgba(212, 160, 23, 1);
   }
   
   .command {
     color: #E8B4F4;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 16px;
     text-shadow: 0 0 10px rgba(232, 180, 244, 0.8);
   }
   
   .cursor {
     color: #D4A017;
-    font-size: 14px;
+    font-size: 16px;
     animation: blink 1s steps(2) infinite;
   }
 }
@@ -158,16 +158,16 @@
 }
 
 .player-header {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   
   .player-name-level {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     
     .player-name {
-      font-size: 18px;
+      font-size: 22px;
       font-weight: bold;
       color: #FFB6C1;
       text-shadow: 
@@ -180,10 +180,10 @@
     .player-level {
       background: linear-gradient(135deg, #D4A017, #FFD700);
       color: #000;
-      padding: 4px 12px;
-      border-radius: 12px;
+      padding: 5px 14px;
+      border-radius: 14px;
       font-weight: bold;
-      font-size: 12px;
+      font-size: 14px;
       box-shadow: 0 0 20px rgba(212, 160, 23, 0.8);
     }
   }
@@ -194,9 +194,9 @@
       background: rgba(232, 180, 244, 0.15);
       border: 1px solid #E8B4F4;
       color: #E8B4F4;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 4px;
-      font-size: 12px;
+      font-size: 14px;
       font-weight: 600;
       text-shadow: 0 0 10px rgba(232, 180, 244, 0.8);
     }
@@ -212,19 +212,19 @@
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid rgba(212, 160, 23, 0.3);
     border-radius: 4px;
-    padding: 8px 6px;
+    padding: 10px 8px;
     text-align: center;
     
     .stat-label {
-      font-size: 10px;
+      font-size: 11px;
       color: #999;
       text-transform: uppercase;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       letter-spacing: 0.5px;
     }
     
     .stat-value {
-      font-size: 12px;
+      font-size: 14px;
       color: #fff;
       font-weight: 600;
       
@@ -255,12 +255,12 @@
 .quest-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(212, 160, 23, 0.3);
   border-left: 3px solid;
   border-radius: 4px;
-  padding: 12px 14px;
+  padding: 14px 16px;
   transition: all 0.3s ease;
   
   &.main-quest {
@@ -284,7 +284,7 @@
   }
   
   .quest-icon {
-    font-size: 22px;
+    font-size: 26px;
     flex-shrink: 0;
   }
   
@@ -295,11 +295,11 @@
     .quest-meta {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
+      gap: 10px;
+      margin-bottom: 5px;
       
       .quest-type {
-        font-size: 10px;
+        font-size: 11px;
         font-weight: bold;
         color: #D4A017;
         text-transform: uppercase;
@@ -307,20 +307,20 @@
       }
       
       .quest-period {
-        font-size: 11px;
+        font-size: 13px;
         color: #999;
       }
     }
     
     .quest-title {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       color: #fff;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
     }
     
     .quest-location {
-      font-size: 12px;
+      font-size: 14px;
       color: #bbb;
     }
   }
@@ -333,17 +333,17 @@
       background: rgba(232, 180, 244, 0.15);
       border: 1px solid #E8B4F4;
       color: #E8B4F4;
-      padding: 3px 10px;
-      border-radius: 10px;
-      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 13px;
       font-weight: bold;
-      margin-bottom: 4px;
+      margin-bottom: 5px;
       display: inline-block;
       text-shadow: 0 0 10px rgba(232, 180, 244, 0.6);
     }
     
     .quest-status {
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
       color: #999;
       text-transform: uppercase;
@@ -369,12 +369,12 @@
 .skill-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   
   .skill-icon {
-    font-size: 20px;
+    font-size: 24px;
     flex-shrink: 0;
-    width: 28px;
+    width: 32px;
     text-align: center;
   }
   
@@ -382,23 +382,23 @@
     flex: 1;
     
     .skill-name {
-      font-size: 13px;
+      font-size: 15px;
       color: #fff;
       font-weight: 600;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
     
     .skill-bar-container {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       
       .skill-bar {
         flex: 1;
-        height: 14px;
+        height: 16px;
         background: rgba(0, 0, 0, 0.6);
         border: 1px solid rgba(212, 160, 23, 0.3);
-        border-radius: 7px;
+        border-radius: 8px;
         overflow: hidden;
         position: relative;
         box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
@@ -411,7 +411,7 @@
             #E8B4F4 50%,
             #C9A0DC 100%
           );
-          border-radius: 7px;
+          border-radius: 8px;
           position: relative;
           box-shadow: 0 0 15px rgba(232, 180, 244, 0.6);
           animation: skillLoad 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -441,10 +441,10 @@
       }
       
       .skill-level {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: bold;
         color: #E8B4F4;
-        min-width: 28px;
+        min-width: 32px;
         text-align: right;
         text-shadow: 0 0 10px rgba(232, 180, 244, 0.6);
       }
@@ -482,7 +482,7 @@
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(100, 100, 100, 0.3);
   border-radius: 6px;
-  padding: 12px 10px;
+  padding: 14px 12px;
   text-align: center;
   transition: all 0.3s ease;
   filter: grayscale(100%);
@@ -507,14 +507,14 @@
   }
   
   .achievement-icon {
-    font-size: 28px;
+    font-size: 32px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     transition: transform 0.3s ease;
   }
   
   .achievement-name {
-    font-size: 11px;
+    font-size: 13px;
     color: #fff;
     font-weight: 600;
     line-height: 1.3;
@@ -534,14 +534,14 @@
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 12px;
+  padding: 14px 16px;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(212, 160, 23, 0.3);
   border-radius: 4px;
   color: #fff;
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   transition: all 0.3s ease;
   
@@ -557,7 +557,7 @@
   }
   
   .contact-icon {
-    font-size: 18px;
+    font-size: 20px;
     transition: transform 0.3s ease;
   }
   
