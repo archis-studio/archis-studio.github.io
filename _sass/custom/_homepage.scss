@@ -258,9 +258,10 @@ section {
     font-family: 'Courier New', monospace;
     font-size: 0.5rem;
     line-height: 1;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
+    margin-top: -0.5rem;
     opacity: 1;
-    animation: float 3s ease-in-out infinite;
+    animation: float-smooth 4s ease-in-out infinite;
     
     pre {
       margin: 0;
@@ -285,9 +286,13 @@ section {
     }
   }
   
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+  @keyframes float-smooth {
+    0%, 100% { 
+      transform: translateY(0);
+    }
+    50% { 
+      transform: translateY(-12px);
+    }
   }
   
   @keyframes neon-pulse {
@@ -310,7 +315,8 @@ section {
   @media (min-width: 64em) {
     .hero-ascii-art {
       font-size: 0.6rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
+      margin-top: -0.8rem;
       
       pre {
         padding: 1rem 3rem;
