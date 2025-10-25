@@ -22,10 +22,11 @@ classes: wide
     </div>
     <div class="terminal-output">
       <div class="player-card">
+        <div class="card-shine"></div>
         <div class="player-header">
           <div class="player-name-level">
-            <span class="player-name">ARCHI CHEN</span>
-            <span class="player-level">LV 27</span>
+            <span class="player-name">Archi</span>
+            <span class="player-level">LV 31</span>
           </div>
           <div class="player-class">
             <span class="class-badge">⚔️ Software Engineer</span>
@@ -35,7 +36,7 @@ classes: wide
         <div class="player-stats-grid">
           <div class="stat-box">
             <div class="stat-label">Location</div>
-            <div class="stat-value">📍 Taipei, TW</div>
+            <div class="stat-value">📍 New Taipei, TW</div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Education</div>
@@ -43,7 +44,7 @@ classes: wide
           </div>
           <div class="stat-box">
             <div class="stat-label">Status</div>
-            <div class="stat-value status-active">● ACTIVE</div>
+            <div class="stat-value status-active">● SURVIVING</div>
           </div>
           <div class="stat-box">
             <div class="stat-label">Total EXP</div>
@@ -53,60 +54,82 @@ classes: wide
       </div>
     </div>
 
-    <!-- Quest History -->
+    <!-- Journey Log -->
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">quest --history</span>
+      <span class="command">journey --log</span>
     </div>
     <div class="terminal-output">
       <div class="quest-list">
+        
         <div class="quest-item main-quest">
-          <div class="quest-icon">⚔️</div>
-          <div class="quest-details">
-            <div class="quest-meta">
-              <span class="quest-type">MAIN QUEST</span>
-              <span class="quest-period">2022.7 - Present</span>
-            </div>
-            <div class="quest-title">Software Engineer</div>
-            <div class="quest-location">@ [公司名稱] · Taipei</div>
+          <div class="quest-header">
+            <span class="quest-icon">⚔️</span>
+            <span class="quest-type">MAIN JOURNEY</span>
+            <span class="quest-status active">● ACTIVE</span>
           </div>
-          <div class="quest-reward">
-            <div class="exp-badge">+1500 EXP</div>
-            <div class="quest-status">IN PROGRESS</div>
+          <div class="quest-body">
+            <div class="quest-period">2022.7 - Present</div>
+            <div class="quest-title">Software Engineer</div>
+            <div class="quest-location">📍 [公司名稱] · Taipei</div>
+          </div>
+          <div class="quest-footer">
+            <span class="exp-badge">+1500 EXP</span>
           </div>
         </div>
 
         <div class="quest-item side-quest">
-          <div class="quest-icon">📚</div>
-          <div class="quest-details">
-            <div class="quest-meta">
-              <span class="quest-type">SIDE QUEST</span>
-              <span class="quest-period">2020.9 - 2022.6</span>
-            </div>
-            <div class="quest-title">Master's Degree (CS)</div>
-            <div class="quest-location">@ NYCU · Hsinchu</div>
+          <div class="quest-header">
+            <span class="quest-icon">📚</span>
+            <span class="quest-type">SIDE JOURNEY</span>
+            <span class="quest-status completed">✓ COMPLETED</span>
           </div>
-          <div class="quest-reward">
-            <div class="exp-badge">+1000 EXP</div>
-            <div class="quest-status completed">COMPLETED</div>
+          <div class="quest-body">
+            <div class="quest-period">2020.9 - 2022.6</div>
+            <div class="quest-title">Master's Degree (CS)</div>
+            <div class="quest-location">📍 NYCU · Hsinchu</div>
+          </div>
+          <div class="quest-footer">
+            <span class="exp-badge">+1000 EXP</span>
           </div>
         </div>
 
         <div class="quest-item tutorial-quest">
-          <div class="quest-icon">🎯</div>
-          <div class="quest-details">
-            <div class="quest-meta">
-              <span class="quest-type">TUTORIAL</span>
-              <span class="quest-period">2016.9 - 2020.6</span>
-            </div>
-            <div class="quest-title">Bachelor's Degree</div>
-            <div class="quest-location">@ [學校名稱]</div>
+          <div class="quest-header">
+            <span class="quest-icon">🎯</span>
+            <span class="quest-type">TUTORIAL</span>
+            <span class="quest-status completed">✓ COMPLETED</span>
           </div>
-          <div class="quest-reward">
-            <div class="exp-badge">+800 EXP</div>
-            <div class="quest-status completed">COMPLETED</div>
+          <div class="quest-body">
+            <div class="quest-period">2016.9 - 2020.6</div>
+            <div class="quest-title">Bachelor's Degree</div>
+            <div class="quest-location">📍 [學校名稱]</div>
+          </div>
+          <div class="quest-footer">
+            <span class="exp-badge">+800 EXP</span>
           </div>
         </div>
+
+        <!-- 
+          新增經歷範例 - 複製以下結構並修改內容：
+          
+          <div class="quest-item side-quest">
+            <div class="quest-header">
+              <span class="quest-icon">🏅</span>
+              <span class="quest-type">SIDE JOURNEY</span>
+              <span class="quest-status completed">✓ COMPLETED</span>
+            </div>
+            <div class="quest-body">
+              <div class="quest-period">2021.1 - 2021.12</div>
+              <div class="quest-title">你的經歷標題</div>
+              <div class="quest-location">📍 地點</div>
+            </div>
+            <div class="quest-footer">
+              <span class="exp-badge">+500 EXP</span>
+            </div>
+          </div>
+        -->
+        
       </div>
     </div>
 

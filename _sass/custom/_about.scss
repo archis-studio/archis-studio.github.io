@@ -412,7 +412,7 @@
     margin-bottom: 10px;
     
     .quest-period {
-      font-size: 13px;
+      font-size: 14px;
       color: #d4a549;
       font-weight: 700;
       margin-bottom: 6px;
@@ -420,7 +420,7 @@
     }
     
     .quest-title {
-      font-size: 17px;
+      font-size: 18px;
       color: #fff;
       font-weight: 800;
       margin-bottom: 5px;
@@ -764,16 +764,16 @@
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 30px;
   margin-top: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 22px 28px;
+  padding: 20px 28px;
   background: 
     linear-gradient(135deg, rgba(212, 160, 23, 0.05), rgba(232, 180, 244, 0.05)),
     rgba(0, 0, 0, 0.6);
@@ -830,7 +830,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    font-size: 18px;
+    font-size: 19px;
   }
 }
 
