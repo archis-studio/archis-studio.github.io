@@ -54,81 +54,80 @@ classes: wide
       </div>
     </div>
 
-    <!-- Journey Log -->
+    <!-- Journey Timeline -->
     <div class="terminal-line">
       <span class="prompt">$</span>
-      <span class="command">journey --log</span>
+      <span class="command">cat journey.log</span>
     </div>
     <div class="terminal-output">
-      <div class="quest-list">
+      <div class="journey-container">
         
-        <div class="quest-item main-quest">
-          <div class="quest-header">
-            <span class="quest-icon">⚔️</span>
-            <span class="quest-type">MAIN JOURNEY</span>
-            <span class="quest-status active">● ACTIVE</span>
+        <!-- ACTIVE Section -->
+        <div class="journey-section active-section">
+          <div class="section-header">
+            <span class="section-icon">⚡</span>
+            <span class="section-title">ACTIVE</span>
+            <span class="section-subtitle">Current Career Path</span>
           </div>
-          <div class="quest-body">
-            <div class="quest-period">2022.7 - Present</div>
-            <div class="quest-title">Software Engineer</div>
-            <div class="quest-location">📍 [公司名稱] · Taipei</div>
-          </div>
-          <div class="quest-footer">
-            <span class="exp-badge">+1500 EXP</span>
-          </div>
-        </div>
-
-        <div class="quest-item side-quest">
-          <div class="quest-header">
-            <span class="quest-icon">📚</span>
-            <span class="quest-type">SIDE JOURNEY</span>
-            <span class="quest-status completed">✓ COMPLETED</span>
-          </div>
-          <div class="quest-body">
-            <div class="quest-period">2020.9 - 2022.6</div>
-            <div class="quest-title">Master's Degree (CS)</div>
-            <div class="quest-location">📍 NYCU · Hsinchu</div>
-          </div>
-          <div class="quest-footer">
-            <span class="exp-badge">+1000 EXP</span>
-          </div>
-        </div>
-
-        <div class="quest-item tutorial-quest">
-          <div class="quest-header">
-            <span class="quest-icon">🎯</span>
-            <span class="quest-type">TUTORIAL</span>
-            <span class="quest-status completed">✓ COMPLETED</span>
-          </div>
-          <div class="quest-body">
-            <div class="quest-period">2016.9 - 2020.6</div>
-            <div class="quest-title">Bachelor's Degree</div>
-            <div class="quest-location">📍 [學校名稱]</div>
-          </div>
-          <div class="quest-footer">
-            <span class="exp-badge">+800 EXP</span>
-          </div>
-        </div>
-
-        <!-- 
-          新增經歷範例 - 複製以下結構並修改內容：
           
-          <div class="quest-item side-quest">
-            <div class="quest-header">
-              <span class="quest-icon">🏅</span>
-              <span class="quest-type">SIDE JOURNEY</span>
-              <span class="quest-status completed">✓ COMPLETED</span>
+          <div class="journey-item">
+            <div class="item-timeline">2022.07 - Present</div>
+            <div class="item-content">
+              <div class="item-title">Software Engineer</div>
+              <div class="item-company">[Company Name]</div>
+              <div class="item-location">📍 Taipei, Taiwan</div>
             </div>
-            <div class="quest-body">
-              <div class="quest-period">2021.1 - 2021.12</div>
-              <div class="quest-title">你的經歷標題</div>
-              <div class="quest-location">📍 地點</div>
-            </div>
-            <div class="quest-footer">
-              <span class="exp-badge">+500 EXP</span>
-            </div>
+            <div class="item-exp">+1500 EXP</div>
           </div>
-        -->
+          
+          <!-- Add more active items here using the same structure -->
+          
+        </div>
+
+        <!-- ARCHIVE Section -->
+        <div class="journey-section archive-section">
+          <div class="section-header">
+            <span class="section-icon">📦</span>
+            <span class="section-title">ARCHIVE</span>
+            <span class="section-subtitle">Past Experiences & Education</span>
+          </div>
+          
+          <div class="journey-item">
+            <div class="item-timeline">2020.09 - 2022.06</div>
+            <div class="item-content">
+              <div class="item-title">Master's Degree in Computer Science</div>
+              <div class="item-company">National Yang Ming Chiao Tung University</div>
+              <div class="item-location">📍 Hsinchu, Taiwan</div>
+            </div>
+            <div class="item-exp">+1000 EXP</div>
+          </div>
+
+          <div class="journey-item">
+            <div class="item-timeline">2016.09 - 2020.06</div>
+            <div class="item-content">
+              <div class="item-title">Bachelor's Degree</div>
+              <div class="item-company">[University Name]</div>
+              <div class="item-location">📍 Taiwan</div>
+            </div>
+            <div class="item-exp">+800 EXP</div>
+          </div>
+          
+          <!-- 
+            ✨ Add New Experience:
+            Copy this template and modify:
+            
+            <div class="journey-item">
+              <div class="item-timeline">YYYY.MM - YYYY.MM</div>
+              <div class="item-content">
+                <div class="item-title">Your Job Title</div>
+                <div class="item-company">Company Name</div>
+                <div class="item-location">📍 Location</div>
+              </div>
+              <div class="item-exp">+XXX EXP</div>
+            </div>
+          -->
+          
+        </div>
         
       </div>
     </div>
