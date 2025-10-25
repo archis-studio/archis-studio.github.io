@@ -1,172 +1,427 @@
 /* ============================================
-   Navigation - Custom Masthead Styles
+   Navigation - Pixel Art + Future Space Theme
    ============================================ */
 
-// Masthead 容器
+// CSS Variables for theming
+:root {
+  --nav-height: 72px;
+  --nav-bg-start: #0F0F12;
+  --nav-bg-mid: #1A1B2E;
+  --nav-bg-end: #0F0F12;
+  --nav-gold: #D4A017;
+  --nav-blue: #4A90B8;
+  --nav-text: #E8E8E8;
+  --nav-text-dim: #A0A0A5;
+  --pixel-border: #2C2C2E;
+}
+
+// Masthead Container
 .masthead {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000; // Ensure it's above everything
+  z-index: 1000;
+  height: var(--nav-height);
   
-  // 背景與模糊效果
-  background: rgba(14, 14, 16, 0.95); // 近似 $noir-black
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(212, 160, 23, 0.2); // 近似 $autumn-gold
+  // Space gradient background
+  background: linear-gradient(135deg, 
+    var(--nav-bg-start) 0%,
+    var(--nav-bg-mid) 50%,
+    var(--nav-bg-end) 100%
+  );
   
-  // 尺寸
-  height: 70px;
-  padding: 0 2rem;
+  // Neon border bottom - subtle glow
+  border-bottom: 2px solid transparent;
+  border-image: linear-gradient(90deg, 
+    transparent 0%,
+    var(--nav-gold) 20%,
+    var(--nav-blue) 50%,
+    var(--nav-gold) 80%,
+    transparent 100%
+  ) 1;
   
-  // 陰影
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(212, 160, 23, 0.1);
   
-  // Flex 布局
+  transition: all 0.3s ease;
+  
+  // Scrolled state - enhance glow (subtle)
+  &.scrolled {
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.7),
+      0 0 30px rgba(212, 160, 23, 0.15);
+  }
+}
+
+// Add padding for fixed header
+.page {
+  padding-top: var(--nav-height);
+}
+
+// Starfield Background Layer
+.masthead__starfield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+  
+  // Create stars with CSS
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: var(--nav-text);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  
+  &::before {
+    top: 20%;
+    left: 15%;
+    box-shadow: 
+      100px 50px 0 rgba(232, 232, 232, 0.4),
+      200px 30px 0 rgba(212, 160, 23, 0.3),
+      300px 60px 0 rgba(74, 144, 184, 0.3),
+      450px 40px 0 rgba(232, 232, 232, 0.5),
+      600px 25px 0 rgba(212, 160, 23, 0.4),
+      750px 55px 0 rgba(74, 144, 184, 0.4),
+      900px 35px 0 rgba(232, 232, 232, 0.3),
+      1050px 45px 0 rgba(212, 160, 23, 0.3);
+  }
+  
+  &::after {
+    top: 40%;
+    left: 20%;
+    animation-delay: 1.5s;
+    box-shadow: 
+      150px 20px 0 rgba(232, 232, 232, 0.3),
+      350px 50px 0 rgba(74, 144, 184, 0.4),
+      550px 30px 0 rgba(212, 160, 23, 0.3),
+      700px 60px 0 rgba(232, 232, 232, 0.4),
+      850px 40px 0 rgba(74, 144, 184, 0.3),
+      1000px 25px 0 rgba(212, 160, 23, 0.4);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+// Scanline Effect (subtle)
+.masthead__scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+// Inner Wrap
+.masthead__inner-wrap {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
-  // 平滑過渡
-  transition: all 0.3s ease;
-  
-  // 滾動時增強陰影
-  &.scrolled {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    background: rgba(14, 14, 16, 0.98);
-  }
+  height: 100%;
+  padding: 0 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
 }
 
-// 為 fixed header 預留空間
-.page {
-  padding-top: 70px;
+// Logo & Brand Area
+.masthead__brand {
+  flex: 0 0 auto;
 }
 
-// Logo & Brand
 .site-logo {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   text-decoration: none;
+  transition: transform 0.2s ease;
   
-  img {
-    height: 40px;
-    width: auto;
+  &:hover {
+    transform: translateX(2px);
   }
+}
+
+// Pixel Rocket Icon
+.pixel-icon {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  
+  &__rocket {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    
+    // CSS Pixel Art Rocket
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: 
+        // Rocket body
+        linear-gradient(var(--nav-gold) 0%, var(--nav-gold) 100%);
+      clip-path: polygon(
+        40% 0%,
+        60% 0%,
+        60% 60%,
+        80% 60%,
+        50% 100%,
+        20% 60%,
+        40% 60%
+      );
+      filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.6));
+    }
+    
+    // Flame
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 12px;
+      height: 12px;
+      background: var(--nav-blue);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      filter: drop-shadow(0 0 6px rgba(74, 144, 184, 0.8));
+      animation: flame-flicker 0.3s ease-in-out infinite alternate;
+    }
+  }
+}
+
+@keyframes flame-flicker {
+  from { opacity: 0.8; transform: translateX(-50%) scaleY(1); }
+  to { opacity: 1; transform: translateX(-50%) scaleY(1.2); }
+}
+
+// Site Branding Text
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
 }
 
 .site-title {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 1.5rem;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 1.1rem;
   font-weight: 700;
-  color: #D4A017; // autumn-gold
-  letter-spacing: -0.5px;
+  color: var(--nav-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(212, 160, 23, 0.4);
+  line-height: 1;
   
-  // Subtle glow
-  text-shadow: 0 0 10px rgba(212, 160, 23, 0.3);
+  transition: all 0.2s ease;
   
-  transition: all 0.3s ease;
-  
-  &:hover {
-    color: lighten(#D4A017, 10%);
-    text-shadow: 0 0 15px rgba(212, 160, 23, 0.5);
+  .site-logo:hover & {
+    text-shadow: 0 0 15px rgba(212, 160, 23, 0.6);
   }
 }
 
+.site-tagline {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.65rem;
+  color: var(--nav-text-dim);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  opacity: 0.8;
+}
+
 // Navigation Menu
-.greedy-nav {
-  .visible-links {
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.masthead__menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.6rem 1.2rem;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--nav-text);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  
+  // Pixel border
+  border: 1px solid var(--pixel-border);
+  border-radius: 2px;
+  
+  background: rgba(28, 28, 30, 0.3);
+  
+  transition: all 0.25s ease;
+  
+  // Hover state - gentle glow
+  &:hover {
+    color: var(--nav-gold);
+    border-color: var(--nav-gold);
+    background: rgba(212, 160, 23, 0.08);
+    box-shadow: 
+      0 0 12px rgba(212, 160, 23, 0.3),
+      inset 0 0 8px rgba(212, 160, 23, 0.1);
+  }
+  
+  // Active state
+  &.active {
+    color: var(--nav-gold);
+    border-color: var(--nav-gold);
+    background: rgba(212, 160, 23, 0.12);
+    font-weight: 600;
+    box-shadow: 
+      0 0 16px rgba(212, 160, 23, 0.4),
+      inset 0 0 10px rgba(212, 160, 23, 0.15);
+  }
+  
+  // Glitch effect on click (subtle)
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// Action Buttons
+.masthead__actions {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.action-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(28, 28, 30, 0.4);
+  border: 1px solid var(--pixel-border);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  
+  &__icon {
+    font-size: 1rem;
+    filter: grayscale(0.3);
+  }
+  
+  &:hover {
+    border-color: var(--nav-blue);
+    background: rgba(74, 144, 184, 0.1);
+    box-shadow: 0 0 12px rgba(74, 144, 184, 0.3);
     
-    li {
-      margin: 0;
+    .action-btn__icon {
+      filter: grayscale(0);
+    }
+  }
+}
+
+// Mobile Menu Toggle
+.mobile-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  background: rgba(28, 28, 30, 0.4);
+  border: 1px solid var(--pixel-border);
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  
+  @media (max-width: 768px) {
+    display: block;
+  }
+  
+  &__icon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--nav-gold);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: var(--nav-gold);
+      left: 0;
+      transition: all 0.3s ease;
     }
     
-    a {
-      display: block;
-      padding: 0.75rem 1.25rem;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: #C5C5C5; // noir-text
-      text-decoration: none;
-      border-radius: 4px;
-      transition: all 0.2s ease;
+    &::before {
+      top: -6px;
+    }
+    
+    &::after {
+      bottom: -6px;
+    }
+  }
+  
+  // Open state
+  &[aria-expanded="true"] {
+    .mobile-toggle__icon {
+      background: transparent;
       
-      &:hover {
-        color: #D4A017;
-        background: rgba(212, 160, 23, 0.1);
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
       }
       
-      // Active state
-      &.active {
-        color: #D4A017;
-        background: rgba(212, 160, 23, 0.15);
-        font-weight: 600;
+      &::after {
+        bottom: 0;
+        transform: rotate(-45deg);
       }
     }
   }
   
-  // 漢堡選單按鈕
-  .greedy-nav__toggle {
-    display: none; // 桌面版隱藏
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    
-    @media (max-width: 767px) {
-      display: block;
-    }
-    
-    .navicon {
-      width: 24px;
-      height: 2px;
-      background: #D4A017;
-      position: relative;
-      transition: all 0.3s ease;
-      display: block;
-      
-      &::before,
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 2px;
-        background: #D4A017;
-        transition: all 0.3s ease;
-      }
-      
-      &::before {
-        top: -8px;
-      }
-      
-      &::after {
-        bottom: -8px;
-      }
-    }
-    
-    // Open state (X icon)
-    &.close {
-      .navicon {
-        background: transparent;
-        
-        &::before {
-          top: 0;
-          transform: rotate(45deg);
-        }
-        
-        &::after {
-          bottom: 0;
-          transform: rotate(-45deg);
-        }
-      }
-    }
+  &:hover {
+    border-color: var(--nav-gold);
+    box-shadow: 0 0 12px rgba(212, 160, 23, 0.3);
   }
 }
 

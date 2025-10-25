@@ -1,17 +1,20 @@
 # Main Navigation
-# 主選單 - 4 個核心項目
+# 主選單 - Pixel Art + Future Space 風格
 
 main:
-  - title: "Home"
+  - title: "首頁"
     url: /
     
-  - title: "Blog" 
+  - title: "文章" 
     url: /posts/
     
-  - title: "Category"
+  - title: "分類"
     url: /categories/
     
-  - title: "About"
+  - title: "證書"
+    url: /certificates/
+    
+  - title: "關於我"
     url: /about/
 
 # Sidebar Navigation

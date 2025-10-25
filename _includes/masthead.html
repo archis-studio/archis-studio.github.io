@@ -1,75 +1,99 @@
 <!-- 
-  Custom Masthead - Autumn Noir Future Theme
-  Navigation with Pixel Art & Space aesthetics
+  Custom Masthead - Pixel Art + Future Space Theme
+  Navigation with retro gaming & space aesthetics
 -->
 <div class="masthead">
+  <!-- Starfield background -->
+  <div class="masthead__starfield" aria-hidden="true"></div>
+  
+  <!-- Scanline effect -->
+  <div class="masthead__scanline" aria-hidden="true"></div>
+  
   <div class="masthead__inner-wrap">
     <!-- Logo & Brand -->
-    <div class="masthead__menu">
-      <div class="greedy-nav">
-        <!-- Site Title -->
-        <a class="site-logo" href="{{ '/' | relative_url }}">
-          {% if site.logo %}
-            <img src="{{ site.logo | relative_url }}" alt="{{ site.masthead_title | default: site.title }}">
-          {% endif %}
-          <span class="site-title">
-            {{ site.masthead_title | default: site.title }}
-          </span>
-        </a>
-
-        <!-- Navigation Links -->
-        <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>
-                {{ link.title }}
-              </a>
-            </li>
-          {%- endfor -%}
-        </ul>
-
-        <!-- Mobile Menu Toggle -->
-        <button class="greedy-nav__toggle hidden" type="button" aria-label="Toggle menu">
-          <span class="navicon"></span>
-        </button>
-
-        <!-- Hidden Links (Mobile Dropdown) -->
-        <ul class="hidden-links hidden"></ul>
-      </div>
+    <div class="masthead__brand">
+      <a class="site-logo" href="{{ '/' | relative_url }}">
+        <!-- Pixel Rocket Icon -->
+        <div class="pixel-icon" aria-hidden="true">
+          <span class="pixel-icon__rocket"></span>
+        </div>
+        
+        <div class="site-branding">
+          <span class="site-title">ARCHIS.STUDIO</span>
+          <span class="site-tagline">[ PIXEL·AI·SPACE ]</span>
+        </div>
+      </a>
     </div>
+
+    <!-- Navigation Menu -->
+    <nav class="masthead__menu" role="navigation">
+      <ul class="nav-links">
+        {%- for link in site.data.navigation.main -%}
+          <li class="nav-item">
+            <a href="{{ link.url | relative_url }}" 
+               class="nav-link"
+               {% if link.description %}title="{{ link.description }}"{% endif %}>
+              <span class="nav-link__text">{{ link.title }}</span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <!-- Action Buttons -->
+    <div class="masthead__actions">
+      <button class="action-btn search-toggle" type="button" aria-label="搜尋" title="搜尋">
+        <span class="action-btn__icon">🔍</span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="mobile-toggle" type="button" aria-label="選單" aria-expanded="false">
+      <span class="mobile-toggle__icon"></span>
+    </button>
   </div>
 </div>
 
-<!-- Add padding to page content to account for fixed header -->
+<!-- Navigation JavaScript -->
 <script>
-  // Add active class to current page
+(function() {
+  'use strict';
+  
   document.addEventListener('DOMContentLoaded', function() {
+    const masthead = document.querySelector('.masthead');
+    const menu = document.querySelector('.masthead__menu');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinks = document.querySelectorAll('.nav-link');
     const currentPath = window.location.pathname;
-    const links = document.querySelectorAll('.visible-links a');
     
-    links.forEach(link => {
+    // Mark active link
+    navLinks.forEach(link => {
       const linkPath = link.getAttribute('href');
       if (currentPath === linkPath || (currentPath === '/' && linkPath === '/')) {
         link.classList.add('active');
       }
+      
+      // Close mobile menu on link click
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          menu.classList.remove('show');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
     });
-
-    // Mobile menu toggle
-    const toggle = document.querySelector('.greedy-nav__toggle');
-    const visibleLinks = document.querySelector('.visible-links');
     
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        toggle.classList.toggle('close');
-        visibleLinks.classList.toggle('show');
-        toggle.classList.remove('hidden');
+    // Mobile menu toggle
+    if (mobileToggle && menu) {
+      mobileToggle.addEventListener('click', function() {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        menu.classList.toggle('show');
       });
     }
-
+    
     // Scroll effect
     let lastScroll = 0;
     window.addEventListener('scroll', function() {
-      const masthead = document.querySelector('.masthead');
       const currentScroll = window.pageYOffset;
       
       if (currentScroll > 50) {
@@ -80,5 +104,16 @@
       
       lastScroll = currentScroll;
     });
+    
+    // Search toggle (placeholder)
+    const searchToggle = document.querySelector('.search-toggle');
+    if (searchToggle) {
+      searchToggle.addEventListener('click', function() {
+        // TODO: Implement search functionality
+        console.log('Search clicked');
+      });
+    }
   });
+})();
 </script>
+
