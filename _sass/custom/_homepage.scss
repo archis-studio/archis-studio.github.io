@@ -74,7 +74,7 @@ section {
   text-align: center;
   padding: 6rem 2rem 4rem;
   
-  // Full width - ignore content container
+  // Full width - break out of parent container completely
   width: 100vw;
   position: relative;
   left: 50%;
@@ -91,6 +91,11 @@ section {
     min-height: 75vh;
     padding: 8rem 3rem 6rem;
     margin-bottom: 4rem;
+    
+    // Calculate from viewport, not parent
+    // Parent is calc(100% - 300px), we need to add that back
+    width: 100vw;
+    max-width: none;
   }
   
   // Matrix Rain Canvas
