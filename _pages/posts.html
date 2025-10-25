@@ -15,12 +15,16 @@ permalink: /posts/
   <div class="posts-grid">
     {% for post in site.posts %}
       <article class="post-card">
-        <!-- Post Image -->
+        <!-- Post Image or Placeholder -->
         {% if post.header.teaser %}
         <div class="post-card__image">
           <a href="{{ post.url | relative_url }}">
             <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
           </a>
+        </div>
+        {% else %}
+        <div class="post-card__placeholder">
+          <a href="{{ post.url | relative_url }}" style="display: block; width: 100%; height: 100%;"></a>
         </div>
         {% endif %}
 
