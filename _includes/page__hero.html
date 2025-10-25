@@ -54,12 +54,16 @@
       <p class="page-hero__tagline">{{ page.hero.tagline }}</p>
     {% endif %}
     
-    <!-- Skill Badges -->
+    <!-- Skill Badges - 8 Professional Fields -->
     <div class="hero-badges">
-      <span class="badge badge--ai">🤖 AI</span>
-      <span class="badge badge--pixel">🎮 PIXEL</span>
-      <span class="badge badge--space">🚀 SPACE</span>
-      <span class="badge badge--code">💻 CODE</span>
+      <span class="badge badge--ai">🤖 AI 工具</span>
+      <span class="badge badge--dev">💻 軟體開發</span>
+      <span class="badge badge--data">📊 資料科學</span>
+      <span class="badge badge--marketing">🌐 數位行銷</span>
+      <span class="badge badge--quant">💹 量化交易</span>
+      <span class="badge badge--reading">📜 閱讀筆記</span>
+      <span class="badge badge--green">🌱 綠色能源</span>
+      <span class="badge badge--growth">🎯 成長旅程</span>
     </div>
     
     {% if page.hero.cta %}
@@ -106,7 +110,7 @@
   window.addEventListener('resize', resizeCanvas);
   
   // Matrix characters (Binary + Japanese + Symbols)
-  const chars = '01アイウエオカキクケコサシスセソタチツテト10';
+  const chars = '0101010011010010110100110100101∆πΣΛΩψµ∞≠∑∂∇∫≈≡⊗⊕⊙⊹⊰⊱⋄⋆✦✧⚛︎⍜⍟⟡◇◆□■⎊⎈⌘⍴⍲⍱αβγδφχωΨΦΞΛΩ∇∂∞☯✴✵✶✷✹✺⋰⋱⋮⋯';
   const fontSize = 14;
   const columns = Math.floor(canvas.width / fontSize);
   const drops = Array(columns).fill(1);
