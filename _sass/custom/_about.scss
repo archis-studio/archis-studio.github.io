@@ -1,0 +1,1171 @@
+// About Page Styles - Gaming RPG Terminal
+// Compact, readable, game-like interface
+
+// ============================================
+// Terminal Window
+// ============================================
+
+.terminal-container {
+  background: #0a0a0a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 40px rgba(212, 160, 23, 0.4),
+    0 0 80px rgba(212, 160, 23, 0.2),
+    inset 0 0 100px rgba(212, 160, 23, 0.05);
+  border: 2px solid rgba(212, 160, 23, 0.5);
+  animation: terminalPulse 4s ease-in-out infinite;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+@keyframes terminalPulse {
+  0%, 100% {
+    border-color: rgba(212, 160, 23, 0.5);
+    box-shadow: 
+      0 0 40px rgba(212, 160, 23, 0.4),
+      0 0 80px rgba(212, 160, 23, 0.2);
+  }
+  50% {
+    border-color: rgba(212, 160, 23, 0.8);
+    box-shadow: 
+      0 0 60px rgba(212, 160, 23, 0.6),
+      0 0 120px rgba(212, 160, 23, 0.3);
+  }
+}
+
+.terminal-header {
+  background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid rgba(212, 160, 23, 0.3);
+  
+  .terminal-button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px currentColor;
+    
+    &.red { background: #ff5f56; }
+    &.yellow { background: #ffbd2e; }
+    &.green { background: #27c93f; }
+  }
+  
+  .terminal-title {
+    margin-left: auto;
+    color: #D4A017;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
+  }
+}
+
+.terminal-body {
+  padding: 20px;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(212, 160, 23, 0.02) 2px,
+      rgba(212, 160, 23, 0.02) 4px
+    ),
+    #0a0a0a;
+}
+
+// ============================================
+// Terminal Commands
+// ============================================
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+  
+  .prompt {
+    color: #D4A017;
+    font-weight: bold;
+    font-size: 12px;
+    text-shadow: 0 0 10px rgba(212, 160, 23, 1);
+  }
+  
+  .command {
+    color: #00ff9f;
+    font-weight: 600;
+    font-size: 12px;
+    text-shadow: 0 0 10px rgba(0, 255, 159, 0.8);
+  }
+  
+  .cursor {
+    color: #D4A017;
+    font-size: 12px;
+    animation: blink 1s steps(2) infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-output {
+  margin-left: 18px;
+  margin-bottom: 16px;
+}
+
+// ============================================
+// Player Card (RPG Style)
+// ============================================
+
+.player-card {
+  background: 
+    linear-gradient(135deg, rgba(212, 160, 23, 0.15) 0%, rgba(0, 255, 159, 0.15) 100%),
+    linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 2px solid #D4A017;
+  border-radius: 6px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px rgba(212, 160, 23, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 160, 23, 0.4),
+      transparent
+    );
+    animation: cardShine 4s infinite;
+  }
+}
+
+@keyframes cardShine {
+  0% { left: -100%; }
+  50%, 100% { left: 200%; }
+}
+
+.player-header {
+  margin-bottom: 12px;
+  
+  .player-name-level {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    
+    .player-name {
+      font-size: 16px;
+      font-weight: bold;
+      color: #FFD700;
+      text-shadow: 
+        0 0 15px rgba(255, 215, 0, 1),
+        0 0 30px rgba(255, 215, 0, 0.5);
+      letter-spacing: 1px;
+    }
+    
+    .player-level {
+      background: linear-gradient(135deg, #D4A017, #FFD700);
+      color: #000;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 11px;
+      box-shadow: 0 0 20px rgba(212, 160, 23, 0.8);
+    }
+  }
+  
+  .player-class {
+    .class-badge {
+      display: inline-block;
+      background: rgba(0, 255, 159, 0.15);
+      border: 1px solid #00ff9f;
+      color: #00ff9f;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(0, 255, 159, 0.8);
+    }
+  }
+}
+
+.player-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  
+  .stat-box {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    border-radius: 4px;
+    padding: 8px 6px;
+    text-align: center;
+    
+    .stat-label {
+      font-size: 9px;
+      color: #888;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      letter-spacing: 0.5px;
+    }
+    
+    .stat-value {
+      font-size: 11px;
+      color: #fff;
+      font-weight: 600;
+      
+      &.status-active {
+        color: #00ff9f;
+        text-shadow: 0 0 10px rgba(0, 255, 159, 0.8);
+        animation: pulse 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+// ============================================
+// Quest List (Experience)
+// ============================================
+
+.quest-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quest-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-left: 3px solid;
+  border-radius: 4px;
+  padding: 10px 12px;
+  transition: all 0.3s ease;
+  
+  &.main-quest {
+    border-left-color: #ff6b6b;
+    &:hover { border-color: #ff6b6b; }
+  }
+  
+  &.side-quest {
+    border-left-color: #4ecdc4;
+    &:hover { border-color: #4ecdc4; }
+  }
+  
+  &.tutorial-quest {
+    border-left-color: #95e1d3;
+    &:hover { border-color: #95e1d3; }
+  }
+  
+  &:hover {
+    background: rgba(0, 0, 0, 0.6);
+    transform: translateX(4px);
+  }
+  
+  .quest-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  
+  .quest-details {
+    flex: 1;
+    min-width: 0;
+    
+    .quest-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      
+      .quest-type {
+        font-size: 9px;
+        font-weight: bold;
+        color: #D4A017;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      
+      .quest-period {
+        font-size: 10px;
+        color: #888;
+      }
+    }
+    
+    .quest-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    
+    .quest-location {
+      font-size: 11px;
+      color: #aaa;
+    }
+  }
+  
+  .quest-reward {
+    text-align: right;
+    flex-shrink: 0;
+    
+    .exp-badge {
+      background: rgba(0, 255, 159, 0.15);
+      border: 1px solid #00ff9f;
+      color: #00ff9f;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-bottom: 4px;
+      display: inline-block;
+      text-shadow: 0 0 10px rgba(0, 255, 159, 0.6);
+    }
+    
+    .quest-status {
+      font-size: 9px;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      
+      &.completed {
+        color: #00ff9f;
+      }
+    }
+  }
+}
+
+// ============================================
+// Skills (Compact Design)
+// ============================================
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  
+  .skill-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+  }
+  
+  .skill-info {
+    flex: 1;
+    
+    .skill-name {
+      font-size: 11px;
+      color: #fff;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .skill-bar-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      .skill-bar {
+        flex: 1;
+        height: 12px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(212, 160, 23, 0.3);
+        border-radius: 6px;
+        overflow: hidden;
+        position: relative;
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+        
+        .skill-fill {
+          height: 100%;
+          background: linear-gradient(
+            90deg,
+            #D4A017 0%,
+            #FFD700 50%,
+            #00ff9f 100%
+          );
+          border-radius: 6px;
+          position: relative;
+          box-shadow: 0 0 10px rgba(212, 160, 23, 0.6);
+          animation: skillLoad 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          width: 0;
+          
+          &[data-skill="90"] { animation-delay: 0.1s; }
+          &[data-skill="85"] { animation-delay: 0.2s; }
+          &[data-skill="80"] { animation-delay: 0.3s; }
+          &[data-skill="75"] { animation-delay: 0.4s; }
+          
+          &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+              90deg,
+              transparent,
+              rgba(255, 255, 255, 0.5),
+              transparent
+            );
+            animation: skillShimmer 2s infinite;
+          }
+        }
+      }
+      
+      .skill-level {
+        font-size: 11px;
+        font-weight: bold;
+        color: #D4A017;
+        min-width: 24px;
+        text-align: right;
+        text-shadow: 0 0 10px rgba(212, 160, 23, 0.6);
+      }
+    }
+  }
+}
+
+@keyframes skillLoad {
+  to {
+    width: var(--skill-width, 0%);
+  }
+}
+
+.skill-fill[data-skill="90"] { --skill-width: 90%; }
+.skill-fill[data-skill="85"] { --skill-width: 85%; }
+.skill-fill[data-skill="80"] { --skill-width: 80%; }
+.skill-fill[data-skill="75"] { --skill-width: 75%; }
+
+@keyframes skillShimmer {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+
+// ============================================
+// Achievements (Game Badges)
+// ============================================
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.achievement {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(100, 100, 100, 0.3);
+  border-radius: 6px;
+  padding: 10px 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.4;
+  cursor: pointer;
+  
+  &.unlocked {
+    border-color: #D4A017;
+    filter: grayscale(0%);
+    opacity: 1;
+    background: rgba(212, 160, 23, 0.1);
+    box-shadow: 0 0 15px rgba(212, 160, 23, 0.3);
+    
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 4px 20px rgba(212, 160, 23, 0.5);
+      
+      .achievement-icon {
+        transform: scale(1.2) rotate(5deg);
+      }
+    }
+  }
+  
+  .achievement-icon {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+    transition: transform 0.3s ease;
+  }
+  
+  .achievement-name {
+    font-size: 10px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+}
+
+// ============================================
+// Contact (Simple Grid)
+// ============================================
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: #D4A017;
+    background: rgba(212, 160, 23, 0.1);
+    box-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
+    transform: translateY(-2px);
+    
+    .contact-icon {
+      transform: scale(1.2);
+    }
+  }
+  
+  .contact-icon {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+// ============================================
+// Responsive Design
+// ============================================
+
+@media (max-width: 768px) {
+  .terminal-body {
+    padding: 16px;
+  }
+  
+  .terminal-output {
+    margin-left: 12px;
+  }
+  
+  .player-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quest-item {
+    .quest-details {
+      .quest-title {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .player-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ============================================
+// Terminal Window
+// ============================================
+
+.terminal-container {
+  background: #0a0a0a;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 
+    0 0 30px rgba(212, 160, 23, 0.3),
+    0 0 60px rgba(212, 160, 23, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  animation: terminalGlow 3s ease-in-out infinite;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+}
+
+@keyframes terminalGlow {
+  0%, 100% {
+    box-shadow: 
+      0 0 30px rgba(212, 160, 23, 0.3),
+      0 0 60px rgba(212, 160, 23, 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(212, 160, 23, 0.4),
+      0 0 80px rgba(212, 160, 23, 0.2);
+  }
+}
+
+.terminal-header {
+  background: #1a1a1a;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+  
+  .terminal-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    
+    &.red { background: #ff5f56; }
+    &.yellow { background: #ffbd2e; }
+    &.green { background: #27c93f; }
+  }
+  
+  .terminal-title {
+    margin-left: auto;
+    color: #D4A017;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
+.terminal-body {
+  padding: 24px;
+  background: 
+    linear-gradient(transparent 50%, rgba(212, 160, 23, 0.03) 50%),
+    #0a0a0a;
+  background-size: 100% 4px;
+  animation: scanlines 8s linear infinite;
+}
+
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+// ============================================
+// Terminal Lines
+// ============================================
+
+.terminal-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  
+  .prompt {
+    color: #D4A017;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
+  }
+  
+  .command {
+    color: #00ff9f;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
+    animation: typing 0.5s steps(20);
+  }
+  
+  .cursor {
+    color: #D4A017;
+    animation: blink 1s steps(2) infinite;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.terminal-output {
+  margin-left: 24px;
+  margin-bottom: 24px;
+}
+
+// ============================================
+// RPG Profile Card
+// ============================================
+
+.rpg-card {
+  background: 
+    linear-gradient(135deg, rgba(212, 160, 23, 0.1), rgba(0, 255, 159, 0.1)),
+    #1a1a1a;
+  border: 2px solid #D4A017;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(212, 160, 23, 0.3),
+      transparent
+    );
+    animation: shine 3s infinite;
+  }
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50%, 100% { left: 200%; }
+}
+
+.rpg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  
+  .rpg-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 
+      0 0 10px rgba(255, 215, 0, 0.8),
+      0 0 20px rgba(255, 215, 0, 0.4);
+    letter-spacing: 2px;
+  }
+  
+  .rpg-level {
+    background: linear-gradient(135deg, #D4A017, #FFD700);
+    color: #000;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 0 20px rgba(212, 160, 23, 0.6);
+  }
+}
+
+.rpg-class {
+  color: #00ff9f;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  
+  .class-icon {
+    margin-right: 8px;
+  }
+}
+
+.rpg-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  
+  .status-item {
+    color: #C5C5C5;
+    font-size: 0.9rem;
+    
+    .status-icon {
+      margin-right: 6px;
+    }
+    
+    &.status-online {
+      color: #00ff9f;
+      
+      .status-icon {
+        animation: pulse 2s ease-in-out infinite;
+      }
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+// ============================================
+// RPG Timeline (Quest Log)
+// ============================================
+
+.rpg-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.timeline-quest {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  
+  &:not(:last-child):after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 30px;
+    bottom: -20px;
+    width: 2px;
+    background: linear-gradient(
+      180deg,
+      rgba(212, 160, 23, 0.5),
+      rgba(212, 160, 23, 0.1)
+    );
+  }
+  
+  .quest-marker {
+    width: 16px;
+    height: 16px;
+    color: #D4A017;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .quest-content {
+    flex: 1;
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    border-radius: 6px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      border-color: #D4A017;
+      background: rgba(26, 26, 26, 0.9);
+      transform: translateX(4px);
+    }
+  }
+  
+  .quest-period {
+    color: #D4A017;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .quest-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .quest-desc {
+    color: #C5C5C5;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    
+    div {
+      margin-bottom: 4px;
+    }
+  }
+  
+  .quest-reward {
+    color: #00ff9f;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(0, 255, 159, 0.5);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(212, 160, 23, 0.8);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(212, 160, 23, 1);
+  }
+}
+
+// ============================================
+// RPG Stats (Skill Bars)
+// ============================================
+
+.rpg-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stat-item {
+  .stat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    
+    .stat-icon {
+      font-size: 1.2rem;
+    }
+    
+    .stat-name {
+      color: #fff;
+      font-weight: 600;
+      flex: 1;
+    }
+    
+    .stat-value {
+      color: #D4A017;
+      font-weight: bold;
+      font-size: 1.1rem;
+      text-shadow: 0 0 10px rgba(212, 160, 23, 0.6);
+    }
+  }
+  
+  .stat-bar {
+    height: 20px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 1px solid rgba(212, 160, 23, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    
+    .stat-fill {
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        #D4A017 0%,
+        #FFD700 50%,
+        #00ff9f 100%
+      );
+      border-radius: 10px;
+      position: relative;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 
+        0 0 20px rgba(212, 160, 23, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+      
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        animation: statShimmer 2s infinite;
+      }
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50%;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        border-radius: 10px 10px 0 0;
+      }
+    }
+  }
+}
+
+@keyframes statShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(200%); }
+}
+
+// ============================================
+// RPG Achievements
+// ============================================
+
+.rpg-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.achievement-item {
+  background: rgba(26, 26, 26, 0.6);
+  border: 2px solid rgba(100, 100, 100, 0.3);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  
+  &.unlocked {
+    border-color: #D4A017;
+    filter: grayscale(0%);
+    opacity: 1;
+    box-shadow: 0 0 20px rgba(212, 160, 23, 0.3);
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 30px rgba(212, 160, 23, 0.5);
+    }
+    
+    .achievement-icon {
+      animation: bounce 1s ease-in-out;
+    }
+  }
+  
+  .achievement-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .achievement-name {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+// ============================================
+// Contact Buttons
+// ============================================
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: rgba(26, 26, 26, 0.8);
+  border: 2px solid #D4A017;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(212, 160, 23, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+  }
+  
+  &:hover {
+    border-color: #FFD700;
+    box-shadow: 0 0 30px rgba(212, 160, 23, 0.5);
+    transform: translateY(-2px);
+    
+    &:before {
+      width: 300px;
+      height: 300px;
+    }
+    
+    .contact-icon {
+      transform: scale(1.2) rotate(10deg);
+    }
+  }
+  
+  .contact-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+  
+  span:not(.contact-icon) {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ============================================
+// Responsive Design
+// ============================================
+
+@media (max-width: 768px) {
+  .terminal-body {
+    padding: 16px;
+  }
+  
+  .terminal-output {
+    margin-left: 12px;
+  }
+  
+  .rpg-header {
+    .rpg-name {
+      font-size: 1.2rem;
+    }
+  }
+  
+  .rpg-achievements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-links {
+    flex-direction: column;
+  }
+  
+  .contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
