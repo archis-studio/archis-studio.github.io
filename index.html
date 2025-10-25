@@ -20,115 +20,92 @@ hero:
 <!-- Hero Section -->
 {% include page__hero.html %}
 
-<!-- Featured Section -->
-<section class="featured-section">
+<!-- Featured Spotlight Section -->
+<section class="featured-spotlight">
   <div class="container">
-    <h2 class="section-title">📌 精選文章</h2>
-    <div class="featured-grid">
-      {% assign featured_posts = site.posts | where: "featured", true | limit: 3 %}
-      {% if featured_posts.size > 0 %}
-        {% for post in featured_posts %}
-          <article class="post-card featured">
-            {% if post.header.image %}
-              <img src="{{ post.header.image | relative_url }}" alt="{{ post.title }}" class="card-thumbnail">
-            {% else %}
-              <div class="card-thumbnail placeholder">
-                <span class="placeholder-text">{{ post.title | truncate: 2, '' | upcase }}</span>
-              </div>
-            {% endif %}
-            <div class="card-content">
-              <h3 class="card-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              </h3>
-              <div class="card-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                  {{ post.date | date: "%Y-%m-%d" }}
-                </time>
-                {% if post.categories %}
-                  <span class="separator">•</span>
-                  <span class="category">{{ post.categories | first }}</span>
-                {% endif %}
-              </div>
-              <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
-            </div>
-          </article>
-        {% endfor %}
-      {% else %}
-        <div class="placeholder-message">
-          <p>🚀 即將推出精選內容...</p>
-        </div>
-      {% endif %}
-    </div>
-  </div>
-</section>
-
-<!-- Recent Posts Section -->
-<section class="recent-posts-section">
-  <div class="container">
-    <h2 class="section-title">✨ 最新文章</h2>
-    <div class="posts-grid">
-      {% assign recent_posts = site.posts | limit: 6 %}
-      {% if recent_posts.size > 0 %}
-        {% for post in recent_posts %}
-          <article class="post-card">
-            {% if post.header.image %}
-              <img src="{{ post.header.image | relative_url }}" alt="{{ post.title }}" class="card-thumbnail">
-            {% else %}
-              <div class="card-thumbnail placeholder">
-                <span class="placeholder-text">{{ post.title | truncate: 2, '' | upcase }}</span>
-              </div>
-            {% endif %}
-            <div class="card-content">
-              <h3 class="card-title">
-                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-              </h3>
-              <div class="card-meta">
-                <time datetime="{{ post.date | date_to_xmlschema }}">
-                  {{ post.date | date: "%Y-%m-%d" }}
-                </time>
-                {% if post.categories %}
-                  <span class="separator">•</span>
-                  <span class="category">{{ post.categories | first }}</span>
-                {% endif %}
-              </div>
-              <p class="card-excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
-            </div>
-          </article>
-        {% endfor %}
-      {% else %}
-        <div class="placeholder-message">
-          <p>📝 開始你的創作旅程...</p>
-          <p class="hint">在 <code>_posts/</code> 目錄建立第一篇文章</p>
-        </div>
-      {% endif %}
-    </div>
+    <h2 class="section-title">精選推薦</h2>
     
-    {% if site.posts.size > 6 %}
-      <div class="view-all">
-        <a href="/posts/" class="btn btn-outline">查看所有文章 →</a>
+    {% assign featured = site.posts | where: "featured", true | first %}
+    {% unless featured %}
+      {% assign featured = site.posts | first %}
+    {% endunless %}
+    
+    {% if featured %}
+      <article class="hero-featured-card">
+        <div class="hero-card-image">
+          {% if featured.header.image %}
+            <img src="{{ featured.header.image | relative_url }}" alt="{{ featured.title }}">
+          {% else %}
+            <div class="hero-card-placeholder">
+              <span class="placeholder-icon">✦</span>
+            </div>
+          {% endif %}
+          <div class="hero-card-overlay"></div>
+        </div>
+        
+        <div class="hero-card-content">
+          <div class="hero-card-meta">
+            <time datetime="{{ featured.date | date_to_xmlschema }}">
+              {{ featured.date | date: "%Y.%m.%d" }}
+            </time>
+            {% if featured.categories %}
+              <span class="separator">·</span>
+              <span class="category">{{ featured.categories | first }}</span>
+            {% endif %}
+          </div>
+          
+          <h3 class="hero-card-title">
+            <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
+          </h3>
+          
+          <p class="hero-card-excerpt">
+            {{ featured.excerpt | strip_html | truncate: 150 }}
+          </p>
+          
+          <a href="{{ featured.url | relative_url }}" class="hero-card-cta">
+            閱讀全文 <span class="arrow">→</span>
+          </a>
+        </div>
+      </article>
+      
+      <div class="section-cta">
+        <a href="/posts/" class="btn btn-explore">探索文章庫 →</a>
+      </div>
+    {% else %}
+      <div class="placeholder-message">
+        <p>✨ 即將推出精選內容</p>
+        <p class="hint">在 <code>_posts/</code> 目錄建立文章並設定 <code>featured: true</code></p>
       </div>
     {% endif %}
   </div>
 </section>
 
-<!-- Categories Section -->
-<section class="categories-section">
+<!-- Categories Navigation Section -->
+<section class="categories-navigation">
   <div class="container">
-    <h2 class="section-title">📂 分類導覽</h2>
-    <div class="categories-grid">
+    <h2 class="section-title">探索分類</h2>
+    
+    <div class="categories-compact-grid">
       {% assign categories = site.categories | sort %}
       {% if categories.size > 0 %}
-        {% for category in categories %}
-          <a href="/categories/#{{ category[0] | slugify }}" class="category-card">
-            <h3 class="category-name">{{ category[0] }}</h3>
-            <span class="category-count">{{ category[1].size }} 篇</span>
+        {% for category in categories limit: 8 %}
+          <a href="/categories/#{{ category[0] | slugify }}" class="category-badge">
+            <span class="category-icon">📁</span>
+            <span class="category-name">{{ category[0] }}</span>
+            <span class="category-count">{{ category[1].size }}</span>
           </a>
         {% endfor %}
       {% else %}
         <div class="placeholder-message">
-          <p>🏷️ 分類建立中...</p>
+          <p>🏷️ 分類建立中</p>
         </div>
       {% endif %}
     </div>
+    
+    {% if categories.size > 8 %}
+      <div class="section-cta">
+        <a href="/categories/" class="btn btn-explore">所有分類 →</a>
+      </div>
+    {% endif %}
   </div>
 </section>

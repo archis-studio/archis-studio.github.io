@@ -35,9 +35,9 @@
 
 // Container - Full width from left to sidebar
 .container {
-  max-width: 100%;
+  max-width: 1000px;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 2rem;
   
   @media (min-width: 64em) {
@@ -45,18 +45,33 @@
   }
 }
 
-// Section Spacing
+// Section Spacing - Increased breathing room
 section {
-  padding: 4rem 0;
+  padding: 5rem 0;
+  
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
 }
 
 .section-title {
   font-family: "Playfair Display", Georgia, serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #D4A017;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
+  letter-spacing: -0.02em;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 // Hero Section - Pixel Matrix Gaming World (Full Width Banner)
@@ -864,150 +879,311 @@ section {
   }
 }
 
-// Featured Grid
-.featured-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
+// Featured Spotlight Section - Hero Magazine Card
+.featured-spotlight {
+  background: linear-gradient(180deg, 
+    rgba(15, 15, 18, 0) 0%,
+    rgba(26, 27, 46, 0.3) 50%,
+    rgba(15, 15, 18, 0) 100%
+  );
 }
 
-// Posts Grid
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-// Post Card
-.post-card {
-  background: rgba(30, 30, 35, 0.6);
-  border-radius: 8px;
-  border: 1px solid rgba(212, 160, 23, 0.1);
+.hero-featured-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, 
+    rgba(28, 28, 30, 0.95),
+    rgba(20, 20, 25, 0.98)
+  );
+  border: 2px solid rgba(212, 160, 23, 0.25);
+  border-radius: 12px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(212, 160, 23, 0.15);
   
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(212, 160, 23, 0.4);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  }
-  
-  &.featured {
-    border-color: rgba(212, 160, 23, 0.3);
-  }
-  
-  .card-thumbnail {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+    transform: translateY(-8px);
+    border-color: rgba(212, 160, 23, 0.6);
+    box-shadow: 
+      0 20px 60px rgba(0, 0, 0, 0.8),
+      0 0 40px rgba(212, 160, 23, 0.4);
     
-    &.placeholder {
-      background: linear-gradient(135deg, 
-        rgba(212, 160, 23, 0.2), 
-        rgba(212, 160, 23, 0.05)
+    .hero-card-image img {
+      transform: scale(1.08);
+    }
+    
+    .hero-card-overlay {
+      background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.7) 100%
       );
+    }
+  }
+  
+  .hero-card-image {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    background: linear-gradient(135deg, 
+      rgba(212, 160, 23, 0.15), 
+      rgba(74, 144, 184, 0.15)
+    );
+    
+    @media (max-width: 768px) {
+      height: 280px;
+    }
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .hero-card-placeholder {
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       
-      .placeholder-text {
-        font-size: 3rem;
-        font-weight: 700;
-        color: rgba(212, 160, 23, 0.5);
-        font-family: "Playfair Display", Georgia, serif;
+      .placeholder-icon {
+        font-size: 6rem;
+        color: rgba(212, 160, 23, 0.3);
       }
     }
-  }
-  
-  .card-content {
-    padding: 1.5rem;
-  }
-  
-  .card-title {
-    margin: 0 0 0.75rem;
-    font-size: 1.3rem;
     
-    a {
-      color: #D4A017;
-      text-decoration: none;
-      transition: color 0.2s ease;
-      
-      &:hover {
-        color: lighten(#D4A017, 10%);
-      }
+    .hero-card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+      transition: background 0.4s ease;
     }
   }
   
-  .card-meta {
+  .hero-card-content {
+    padding: 2.5rem;
+    
+    @media (max-width: 768px) {
+      padding: 1.5rem;
+    }
+  }
+  
+  .hero-card-meta {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 0.85rem;
-    color: #888;
+    color: rgba(212, 160, 23, 0.8);
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     
     .separator {
       margin: 0 0.5rem;
+      color: rgba(255, 255, 255, 0.3);
     }
     
     .category {
+      color: rgba(74, 144, 184, 0.9);
+    }
+  }
+  
+  .hero-card-title {
+    margin: 0 0 1.5rem;
+    
+    a {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      display: block;
+      
+      @media (max-width: 768px) {
+        font-size: 1.6rem;
+      }
+      
+      &:hover {
+        color: #D4A017;
+      }
+    }
+  }
+  
+  .hero-card-excerpt {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(232, 232, 232, 0.85);
+    margin-bottom: 2rem;
+  }
+  
+  .hero-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #D4A017;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover {
+      color: #FFCC33;
+      
+      .arrow {
+        transform: translateX(5px);
+      }
+    }
+  }
+}
+
+// Categories Navigation Section - Compact Badges
+.categories-navigation {
+  background: linear-gradient(180deg,
+    rgba(26, 27, 46, 0.2) 0%,
+    rgba(15, 15, 18, 0) 100%
+  );
+}
+
+.categories-compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+.category-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.8rem 1rem;
+  background: rgba(28, 28, 30, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 160, 23, 0.15);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+      rgba(212, 160, 23, 0.1),
+      rgba(74, 144, 184, 0.1)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(212, 160, 23, 0.6);
+    background: rgba(40, 40, 45, 0.8);
+    box-shadow: 
+      0 8px 24px rgba(0, 0, 0, 0.5),
+      0 0 20px rgba(212, 160, 23, 0.3);
+    
+    &::before {
+      opacity: 1;
+    }
+    
+    .category-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+    
+    .category-name {
       color: #D4A017;
     }
   }
   
-  .card-excerpt {
-    color: #C5C5C5;
-    line-height: 1.6;
-    font-size: 0.95rem;
-  }
-}
-
-// Categories Grid
-.categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-}
-
-.category-card {
-  background: rgba(30, 30, 35, 0.5);
-  border: 1px solid rgba(212, 160, 23, 0.2);
-  border-radius: 8px;
-  padding: 2rem 1.5rem;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    border-color: #D4A017;
-    background: rgba(212, 160, 23, 0.05);
-    transform: translateY(-2px);
+  .category-icon {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+    filter: grayscale(0.3);
   }
   
   .category-name {
-    font-size: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
     color: #E8E8E8;
-    margin: 0 0 0.5rem;
+    text-align: center;
+    transition: color 0.3s ease;
+    position: relative;
+    z-index: 1;
   }
   
   .category-count {
-    font-size: 0.9rem;
-    color: #D4A017;
-    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: rgba(212, 160, 23, 0.7);
+    position: relative;
+    z-index: 1;
   }
 }
 
-// View All Button Container
-.view-all {
-  text-align: center;
-  margin-top: 2rem;
+// Explore Button
+.btn-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2.5rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #D4A017;
+  background: transparent;
+  border: 2px solid rgba(212, 160, 23, 0.4);
+  border-radius: 6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    color: #FFFFFF;
+    background: rgba(212, 160, 23, 0.2);
+    border-color: #D4A017;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212, 160, 23, 0.3);
+  }
 }
 
-// Placeholder Message
+// Placeholder Message - Refined
 .placeholder-message {
-  grid-column: 1 / -1;
   text-align: center;
   padding: 4rem 2rem;
-  color: #888;
+  color: rgba(232, 232, 232, 0.6);
   
   p {
     font-size: 1.1rem;
@@ -1016,25 +1192,24 @@ section {
   
   .hint {
     font-size: 0.9rem;
-    color: #666;
+    color: rgba(232, 232, 232, 0.4);
     
     code {
       background: rgba(212, 160, 23, 0.1);
       padding: 0.2rem 0.5rem;
       border-radius: 3px;
       color: #D4A017;
+      font-family: 'JetBrains Mono', monospace;
     }
   }
 }
 
 // Responsive Design
 @media (max-width: 1024px) {
-  .page-hero__title {
-    font-size: 2.5rem !important;
-  }
-  
-  .posts-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  .hero-featured-card {
+    .hero-card-title a {
+      font-size: 2rem;
+    }
   }
 }
 
@@ -1047,35 +1222,40 @@ section {
     padding: 0 1rem;
   }
   
-  .page-hero {
-    min-height: 40vh;
-    padding: 3rem 1rem;
-    margin: -1rem -1rem 2rem -1rem;
-  }
-  
-  .page-hero__title {
-    font-size: 2rem !important;
-  }
-  
-  .page-hero__subtitle {
-    font-size: 1.1rem !important;
-  }
-  
-  .page-hero__cta {
-    flex-direction: column;
+  .hero-featured-card {
+    border-radius: 8px;
     
-    .btn {
-      width: 100%;
-      max-width: 300px;
+    .hero-card-image {
+      height: 240px;
+    }
+    
+    .hero-card-content {
+      padding: 1.5rem;
+    }
+    
+    .hero-card-title a {
+      font-size: 1.5rem;
+    }
+    
+    .hero-card-excerpt {
+      font-size: 0.95rem;
     }
   }
   
-  .featured-grid,
-  .posts-grid {
-    grid-template-columns: 1fr;
+  .categories-compact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
   
-  .categories-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  .category-badge {
+    padding: 1.5rem 0.75rem;
+    
+    .category-icon {
+      font-size: 1.5rem;
+    }
+    
+    .category-name {
+      font-size: 0.8rem;
+    }
   }
 }
