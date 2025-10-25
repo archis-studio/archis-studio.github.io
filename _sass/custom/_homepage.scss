@@ -253,12 +253,12 @@ section {
     z-index: 1;
   }
   
-  // ASCII Art Arcade Sign - Smaller font, compact background
+  // ASCII Art Arcade Sign - Even smaller and more compact
   .hero-ascii-art {
     font-family: 'Courier New', monospace;
-    font-size: 0.6rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    font-size: 0.5rem;
+    line-height: 1;
+    margin-bottom: 0.8rem;
     opacity: 1;
     animation: float 3s ease-in-out infinite;
     
@@ -271,8 +271,8 @@ section {
         rgba(74, 144, 184, 0.15) 50%,
         rgba(231, 76, 60, 0.15) 100%
       );
-      padding: 1rem 3rem;
-      border-radius: 8px;
+      padding: 0.8rem 2.5rem;
+      border-radius: 6px;
       text-shadow: 
         0 0 10px rgba(212, 160, 23, 0.8),
         0 0 20px rgba(74, 144, 184, 0.6),
@@ -309,12 +309,12 @@ section {
   
   @media (min-width: 64em) {
     .hero-ascii-art {
-      font-size: 0.7rem;
-      margin-bottom: 1.5rem;
+      font-size: 0.6rem;
+      margin-bottom: 1rem;
       
       pre {
-        padding: 1.2rem 4rem;
-        letter-spacing: 0.4em;
+        padding: 1rem 3rem;
+        letter-spacing: 0.35em;
       }
     }
   }
