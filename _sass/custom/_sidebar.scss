@@ -13,7 +13,7 @@
     // Move to right side
     @media (min-width: 64em) {
       float: right !important;
-      margin-left: 1em;
+      margin-left: 0;
       margin-right: 0;
     }
   }
@@ -23,7 +23,7 @@
 .sidebar {
   @media (min-width: 64em) {
     width: 300px;
-    padding: 2rem 0 0 2rem;
+    padding: 0 2rem 0 2rem;
   }
 
   // Sticky behavior
