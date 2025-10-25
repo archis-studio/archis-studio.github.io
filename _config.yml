@@ -22,20 +22,22 @@ minimal_mistakes_skin: "dark" # Base skin, will be overridden by custom Autumn N
 # Author - Fashion Editorial Style
 author:
   name: "Archi Chen"
-  avatar: "/assets/images/autumn-bio-photo.jpg"
-  bio: "Fashion AI Enthusiast | Editorial Developer<br/>🍂 創造時尚與科技的秋日美學<br/>讓程式設計如時裝週般優雅"
-  location: "台北, 台灣"
+  avatar: "/assets/images/placeholder-avatar.svg"
+  bio: "Digital Craftsman | AI Explorer
+        🍂 在程式與設計之間尋找美學平衡
+        Building intelligent systems with elegance and purpose"
+  location: "Taipei, Taiwan"
   email: "magic83w@gmail.com"
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:magic83w@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/magicxcr7"
-    - label: "Fashion Portfolio"
-      icon: "fas fa-fw fa-link"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
       url: "#"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:magic83w@gmail.com"
 
 # Site footer
 footer:
