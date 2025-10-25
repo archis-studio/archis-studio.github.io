@@ -325,19 +325,28 @@ section {
     }
   }
   
-  // Title with Glitch Effect
+  // Title with Glitch Effect - Fashion Magazine Monochrome
   &__title {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--nav-gold);
+    font-weight: 700;
+    color: #FFFFFF;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    // Rich multi-layer grayscale glow
     text-shadow: 
-      0 0 20px rgba(212, 160, 23, 0.6),
-      0 0 40px rgba(212, 160, 23, 0.4);
+      0 0 1px rgba(255, 255, 255, 0.95),   // Sharp white edge
+      0 0 5px rgba(250, 250, 250, 0.9),    // Very light gray
+      0 0 10px rgba(245, 245, 245, 0.85),  // Extra light gray
+      0 0 15px rgba(230, 230, 230, 0.7),   // Light gray
+      0 0 20px rgba(220, 220, 220, 0.6),   // Lighter gray
+      0 0 25px rgba(200, 200, 200, 0.5),   // Light-medium gray
+      0 0 30px rgba(180, 180, 180, 0.4),   // Medium-light gray
+      0 0 40px rgba(160, 160, 160, 0.3),   // Medium gray
+      0 0 50px rgba(140, 140, 140, 0.2);   // Medium-dark gray
     position: relative;
+    filter: contrast(1.05) brightness(1.02);
     
     @media (min-width: 64em) {
       font-size: 3.5rem;
@@ -357,19 +366,54 @@ section {
         height: 100%;
       }
       
+      // Left glitch - light gray with soft blur
       &::before {
         left: 2px;
-        text-shadow: -2px 0 var(--nav-blue);
+        color: #CCCCCC;
+        text-shadow: 
+          -2px 0 #CCCCCC,
+          0 0 3px rgba(204, 204, 204, 0.8),
+          0 0 6px rgba(200, 200, 200, 0.5);
         clip: rect(24px, 550px, 90px, 0);
-        animation: glitch-anim 3s infinite linear alternate-reverse;
+        animation: glitch-anim-slow 5s infinite linear alternate-reverse;
+        filter: blur(0.5px);
+        opacity: 0.85;
       }
       
+      // Right glitch - medium gray with soft blur
       &::after {
         left: -2px;
-        text-shadow: -2px 0 var(--nav-gold);
+        color: #999999;
+        text-shadow: 
+          2px 0 #999999,
+          0 0 3px rgba(153, 153, 153, 0.8),
+          0 0 6px rgba(140, 140, 140, 0.5);
         clip: rect(85px, 550px, 140px, 0);
-        animation: glitch-anim 2.5s infinite linear alternate-reverse;
+        animation: glitch-anim-slow 4s infinite linear alternate-reverse;
+        filter: blur(0.5px);
+        opacity: 0.75;
       }
+    }
+  }
+  
+  @keyframes glitch-anim-slow {
+    0% {
+      clip: rect(42px, 9999px, 98px, 0);
+    }
+    20% {
+      clip: rect(15px, 9999px, 65px, 0);
+    }
+    40% {
+      clip: rect(88px, 9999px, 120px, 0);
+    }
+    60% {
+      clip: rect(30px, 9999px, 75px, 0);
+    }
+    80% {
+      clip: rect(60px, 9999px, 110px, 0);
+    }
+    100% {
+      clip: rect(10px, 9999px, 85px, 0);
     }
   }
   
