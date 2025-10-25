@@ -60,7 +60,7 @@
   padding-top: var(--nav-height);
 }
 
-// Starfield Background Layer
+// Starfield Background Layer - Enhanced Gaming Style
 .masthead__starfield {
   position: absolute;
   top: 0;
@@ -70,53 +70,111 @@
   overflow: hidden;
   pointer-events: none;
   
-  // Create stars with CSS
-  &::before,
+  // Layer 1: Small stars (far away)
+  &::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: var(--nav-text);
+    border-radius: 50%;
+    animation: twinkle 2s ease-in-out infinite;
+    box-shadow: 
+      // White stars
+      50px 10px 0 0 rgba(255, 255, 255, 0.8),
+      100px 30px 0 0 rgba(255, 255, 255, 0.6),
+      150px 15px 0 0 rgba(255, 255, 255, 0.9),
+      200px 45px 0 0 rgba(255, 255, 255, 0.7),
+      250px 25px 0 0 rgba(255, 255, 255, 0.5),
+      300px 50px 0 0 rgba(255, 255, 255, 0.8),
+      350px 35px 0 0 rgba(255, 255, 255, 0.6),
+      400px 20px 0 0 rgba(255, 255, 255, 0.9),
+      450px 55px 0 0 rgba(255, 255, 255, 0.7),
+      500px 40px 0 0 rgba(255, 255, 255, 0.5),
+      550px 15px 0 0 rgba(255, 255, 255, 0.8),
+      600px 45px 0 0 rgba(255, 255, 255, 0.6),
+      650px 30px 0 0 rgba(255, 255, 255, 0.9),
+      700px 50px 0 0 rgba(255, 255, 255, 0.7),
+      750px 20px 0 0 rgba(255, 255, 255, 0.8),
+      800px 35px 0 0 rgba(255, 255, 255, 0.6),
+      850px 55px 0 0 rgba(255, 255, 255, 0.9),
+      900px 25px 0 0 rgba(255, 255, 255, 0.7),
+      950px 40px 0 0 rgba(255, 255, 255, 0.5),
+      1000px 15px 0 0 rgba(255, 255, 255, 0.8),
+      1050px 50px 0 0 rgba(255, 255, 255, 0.9),
+      1100px 30px 0 0 rgba(255, 255, 255, 0.6),
+      1150px 45px 0 0 rgba(255, 255, 255, 0.8),
+      1200px 20px 0 0 rgba(255, 255, 255, 0.7),
+      1250px 55px 0 0 rgba(255, 255, 255, 0.5),
+      1300px 35px 0 0 rgba(255, 255, 255, 0.9),
+      1350px 25px 0 0 rgba(255, 255, 255, 0.8),
+      1400px 50px 0 0 rgba(255, 255, 255, 0.6),
+      1450px 40px 0 0 rgba(255, 255, 255, 0.9),
+      1500px 15px 0 0 rgba(255, 255, 255, 0.7);
+  }
+  
+  // Layer 2: Medium stars (colored, closer)
   &::after {
     content: '';
     position: absolute;
     width: 2px;
     height: 2px;
-    background: var(--nav-text);
+    background: var(--nav-gold);
     border-radius: 50%;
-    opacity: 0.6;
     animation: twinkle 3s ease-in-out infinite;
-  }
-  
-  &::before {
-    top: 20%;
-    left: 15%;
+    animation-delay: 1s;
     box-shadow: 
-      100px 50px 0 rgba(232, 232, 232, 0.4),
-      200px 30px 0 rgba(212, 160, 23, 0.3),
-      300px 60px 0 rgba(74, 144, 184, 0.3),
-      450px 40px 0 rgba(232, 232, 232, 0.5),
-      600px 25px 0 rgba(212, 160, 23, 0.4),
-      750px 55px 0 rgba(74, 144, 184, 0.4),
-      900px 35px 0 rgba(232, 232, 232, 0.3),
-      1050px 45px 0 rgba(212, 160, 23, 0.3);
+      // Gold stars
+      80px 20px 0 0 rgba(212, 160, 23, 0.9),
+      180px 40px 0 0 rgba(212, 160, 23, 0.7),
+      280px 15px 0 0 rgba(212, 160, 23, 0.8),
+      380px 50px 0 0 rgba(212, 160, 23, 0.6),
+      480px 30px 0 0 rgba(212, 160, 23, 0.9),
+      580px 45px 0 0 rgba(212, 160, 23, 0.8),
+      680px 25px 0 0 rgba(212, 160, 23, 0.7),
+      780px 55px 0 0 rgba(212, 160, 23, 0.9),
+      880px 35px 0 0 rgba(212, 160, 23, 0.6),
+      980px 20px 0 0 rgba(212, 160, 23, 0.8),
+      1080px 50px 0 0 rgba(212, 160, 23, 0.9),
+      1180px 40px 0 0 rgba(212, 160, 23, 0.7),
+      1280px 15px 0 0 rgba(212, 160, 23, 0.8),
+      1380px 45px 0 0 rgba(212, 160, 23, 0.6),
+      // Blue stars
+      120px 35px 0 0 rgba(74, 144, 184, 0.9),
+      220px 50px 0 0 rgba(74, 144, 184, 0.7),
+      320px 25px 0 0 rgba(74, 144, 184, 0.8),
+      420px 45px 0 0 rgba(74, 144, 184, 0.6),
+      520px 20px 0 0 rgba(74, 144, 184, 0.9),
+      620px 55px 0 0 rgba(74, 144, 184, 0.8),
+      720px 30px 0 0 rgba(74, 144, 184, 0.7),
+      820px 40px 0 0 rgba(74, 144, 184, 0.9),
+      920px 15px 0 0 rgba(74, 144, 184, 0.6),
+      1020px 50px 0 0 rgba(74, 144, 184, 0.8),
+      1120px 35px 0 0 rgba(74, 144, 184, 0.9),
+      1220px 25px 0 0 rgba(74, 144, 184, 0.7),
+      1320px 45px 0 0 rgba(74, 144, 184, 0.8),
+      1420px 20px 0 0 rgba(74, 144, 184, 0.6);
   }
-  
-  &::after {
-    top: 40%;
-    left: 20%;
-    animation-delay: 1.5s;
-    box-shadow: 
-      150px 20px 0 rgba(232, 232, 232, 0.3),
-      350px 50px 0 rgba(74, 144, 184, 0.4),
-      550px 30px 0 rgba(212, 160, 23, 0.3),
-      700px 60px 0 rgba(232, 232, 232, 0.4),
-      850px 40px 0 rgba(74, 144, 184, 0.3),
-      1000px 25px 0 rgba(212, 160, 23, 0.4);
+}
+
+// Shooting stars animation
+.masthead__starfield {
+  &:hover::before {
+    animation: twinkle 1.5s ease-in-out infinite, shootingStar 2s linear infinite;
   }
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.8; }
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
 }
 
-// Scanline Effect (subtle)
+@keyframes shootingStar {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(100px) translateY(50px); }
+}
+
+// Scanline Effect - Enhanced for gaming feel
 .masthead__scanline {
   position: absolute;
   top: 0;
@@ -127,11 +185,17 @@
     0deg,
     transparent,
     transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
   );
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.7;
+  animation: scanline-move 8s linear infinite;
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
 }
 
 // Inner Wrap
@@ -251,12 +315,12 @@
   opacity: 0.8;
 }
 
-// Navigation Menu
+// Navigation Menu - Align right
 .masthead__menu {
   flex: 1;
   display: flex;
-  justify-content: center;
-  padding: 0 2rem;
+  justify-content: flex-end;
+  padding: 0 2rem 0 1rem;
 }
 
 .nav-links {
@@ -292,7 +356,7 @@
   
   transition: all 0.25s ease;
   
-  // Hover state - gentle glow
+  // Hover state - gentle glow with emoji scale
   &:hover {
     color: var(--nav-gold);
     border-color: var(--nav-gold);
@@ -300,6 +364,7 @@
     box-shadow: 
       0 0 12px rgba(212, 160, 23, 0.3),
       inset 0 0 8px rgba(212, 160, 23, 0.1);
+    transform: translateY(-1px);
   }
   
   // Active state
@@ -328,30 +393,38 @@
 }
 
 .action-btn {
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(28, 28, 30, 0.4);
-  border: 1px solid var(--pixel-border);
-  border-radius: 2px;
+  background: rgba(28, 28, 30, 0.5);
+  border: 2px solid var(--pixel-border);
+  border-radius: 3px;
   cursor: pointer;
   transition: all 0.25s ease;
   
   &__icon {
-    font-size: 1rem;
-    filter: grayscale(0.3);
+    font-size: 1.3rem;
+    filter: grayscale(0.2) brightness(1.1);
   }
   
   &:hover {
     border-color: var(--nav-blue);
-    background: rgba(74, 144, 184, 0.1);
-    box-shadow: 0 0 12px rgba(74, 144, 184, 0.3);
+    background: rgba(74, 144, 184, 0.15);
+    box-shadow: 
+      0 0 16px rgba(74, 144, 184, 0.5),
+      inset 0 0 10px rgba(74, 144, 184, 0.1);
+    transform: scale(1.05);
     
     .action-btn__icon {
-      filter: grayscale(0);
+      filter: grayscale(0) brightness(1.2);
+      transform: scale(1.1);
     }
+  }
+  
+  &:active {
+    transform: scale(0.98);
   }
 }
 

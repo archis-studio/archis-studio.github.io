@@ -1,20 +1,20 @@
 # Main Navigation
-# 主選單 - Pixel Art + Future Space 風格
+# 主選單 - Pixel Art + Future Space 風格 with AI Emoji
 
 main:
-  - title: "首頁"
+  - title: "🏠 首頁"
     url: /
     
-  - title: "文章" 
+  - title: "📝 文章" 
     url: /posts/
     
-  - title: "分類"
+  - title: "🗂️ 分類"
     url: /categories/
     
-  - title: "證書"
+  - title: "🎓 證書"
     url: /certificates/
     
-  - title: "關於我"
+  - title: "🤖 關於我"
     url: /about/
 
 # Sidebar Navigation
