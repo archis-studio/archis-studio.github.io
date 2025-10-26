@@ -36,6 +36,31 @@ $portal-growth: #FF6F61;
   }
 }
 
+// Force hide sidebar on categories page
+.page__content .cosmic-portals ~ .sidebar,
+.sidebar.sticky {
+  display: none !important;
+}
+
+// Ensure full width for cosmic portals page
+body.layout--single .page__inner-wrap {
+  .page__content {
+    .cosmic-portals {
+      width: 100%;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+// Override wide class constraints
+.wide .cosmic-portals {
+  max-width: 100% !important;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 // Cosmic Background
 .cosmic-space {
   position: fixed;
