@@ -71,10 +71,10 @@ classes: wide
           <div class="item-timeline">2025.09 - Present</div>
           <div class="item-header">
             <div class="item-title">AIoT Backend Engineer</div>
-            <div class="item-badge">⚔️ Current</div>
+            <div class="item-badge">💼 Professional</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 Mobius-Nexsys</span>
+            <span class="item-company">🏢 Mobiusnx</span>
             <span class="item-location">📍 Taipei, Taiwan</span>
           </div>
         </div>
@@ -91,8 +91,8 @@ classes: wide
             <div class="item-badge">🎯 Venture</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 Venture</span>
-            <span class="item-location">📍 Free Market, Taiwan</span>
+            <span class="item-company">🏢 Freelance</span>
+            <span class="item-location">📍 Taiwan</span>
           </div>
         </div>
         
@@ -103,12 +103,12 @@ classes: wide
           </div>
           <div class="item-timeline">2023.03 - 2025.03</div>
           <div class="item-header">
-            <div class="item-title">Venture Builder</div>
-            <div class="item-badge">🎯 Venture</div>
+            <div class="item-title">Data & AI Platform Engineer</div>
+            <div class="item-badge">💼 Professional</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 Venture</span>
-            <span class="item-location">📍 Free Market, Taiwan</span>
+            <span class="item-company">🏢 Ad2iction (TNL Mediagene)</span>
+            <span class="item-location">📍 Taipei, Taiwan</span>
           </div>
         </div>
         
@@ -117,14 +117,14 @@ classes: wide
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <span class="item-exp">+1000 EXP</span>
           </div>
-          <div class="item-timeline">2020.09 - 2022.06</div>
+          <div class="item-timeline">2022.07 - 2023.03</div>
           <div class="item-header">
-            <div class="item-title">Master's Degree in Computer Science</div>
-            <div class="item-badge">🎓 Education</div>
+            <div class="item-title">Fullstack Engineer</div>
+            <div class="item-badge">💼 Professional</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 National Yang Ming Chiao Tung University</span>
-            <span class="item-location">📍 Hsinchu, Taiwan</span>
+            <span class="item-company">🏢 FIH Mobile Limited</span>
+            <span class="item-location">📍 New Taipei, Taiwan</span>
           </div>
         </div>
 
@@ -133,14 +133,14 @@ classes: wide
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <span class="item-exp">+800 EXP</span>
           </div>
-          <div class="item-timeline">2016.09 - 2020.06</div>
+          <div class="item-timeline">2019.09 - 2022.02</div>
           <div class="item-header">
-            <div class="item-title">Bachelor's Degree</div>
+            <div class="item-title">M.S. in Computer Science</div>
             <div class="item-badge">🎓 Education</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 [University Name]</span>
-            <span class="item-location">📍 Taiwan</span>
+            <span class="item-company">🏢 National Yang Ming Chiao Tung University</span>
+            <span class="item-location">📍 Hsinchu, Taiwan</span>
           </div>
         </div>
 
