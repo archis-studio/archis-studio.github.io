@@ -67,10 +67,8 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator active-indicator">● ACTIVE</span>
             <div class="item-skills">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Django</span>
-              <span class="skill-tag">FastAPI</span>
-              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Energy Management System</span>
+              <span class="skill-tag">Streaming ETL</span>
             </div>
             <span class="item-exp">+1500 EXP</span>
           </div>
@@ -90,9 +88,13 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <div class="item-skills">
-              <span class="skill-tag">Fullstack</span>
-              <span class="skill-tag">AI</span>
-              <span class="skill-tag">PM</span>
+              <span class="skill-tag">Crypto Trading</span>
+              <span class="skill-tag">Life Coach</span>
+              <span class="skill-tag">Instructional Design</span>
+              <span class="skill-tag">E-commerce</span>
+              <span class="skill-tag">Marketing</span>
+              <span class="skill-tag">Sales</span>
+              <span class="skill-tag">Branding</span>
             </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
@@ -111,10 +113,12 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <div class="item-skills">
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">Airflow</span>
-              <span class="skill-tag">GCP</span>
-              <span class="skill-tag">BigQuery</span>
+              <span class="skill-tag">CEDP</span>
+              <span class="skill-tag">Recommender System</span>
+              <span class="skill-tag">Data Engineering</span>
+              <span class="skill-tag">AWS Redshift</span>
+              <span class="skill-tag">GCP BigQuery</span>
+              <span class="skill-tag">GCP Looker</span>
             </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
@@ -133,10 +137,11 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <div class="item-skills">
-              <span class="skill-tag">React</span>
-              <span class="skill-tag">Node.js</span>
-              <span class="skill-tag">MySQL</span>
-              <span class="skill-tag">AWS</span>
+              <span class="skill-tag">Backend Development</span>
+              <span class="skill-tag">System Analysis</span>
+              <span class="skill-tag">System Design</span>
+              <span class="skill-tag">AWS EC2</span>
+              <span class="skill-tag">Factory Management System</span>
             </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
@@ -155,9 +160,12 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <div class="item-skills">
-              <span class="skill-tag">ML</span>
-              <span class="skill-tag">Deep Learning</span>
-              <span class="skill-tag">Research</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">AI ML/DL/RL</span>
+              <span class="skill-tag">Academic Research</span>
+              <span class="skill-tag">Game Theory</span>
+              <span class="skill-tag">HackMeiChu</span>
+              <span class="skill-tag">Entrepreneurship</span>
             </div>
             <span class="item-exp">+800 EXP</span>
           </div>
