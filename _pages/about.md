@@ -66,7 +66,12 @@ classes: wide
         <div class="journey-item active">
           <div class="item-status">
             <span class="status-indicator active-indicator">● ACTIVE</span>
-            <span class="item-skills">Python · Django · FastAPI · PostgreSQL</span>
+            <div class="item-skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Django</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">PostgreSQL</span>
+            </div>
             <span class="item-exp">+1500 EXP</span>
           </div>
           <div class="item-timeline">2025.09 - Present</div>
@@ -84,7 +89,11 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
-            <span class="item-skills">Fullstack · AI · PM</span>
+            <div class="item-skills">
+              <span class="skill-tag">Fullstack</span>
+              <span class="skill-tag">AI</span>
+              <span class="skill-tag">PM</span>
+            </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
           <div class="item-timeline">2025.04 - 2025.08</div>
@@ -101,7 +110,12 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
-            <span class="item-skills">Python · Airflow · GCP · BigQuery</span>
+            <div class="item-skills">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Airflow</span>
+              <span class="skill-tag">GCP</span>
+              <span class="skill-tag">BigQuery</span>
+            </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
           <div class="item-timeline">2023.03 - 2025.03</div>
@@ -118,7 +132,12 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
-            <span class="item-skills">React · Node.js · MySQL · AWS</span>
+            <div class="item-skills">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">AWS</span>
+            </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
           <div class="item-timeline">2022.07 - 2023.03</div>
@@ -135,7 +154,11 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
-            <span class="item-skills">ML · Deep Learning · Research</span>
+            <div class="item-skills">
+              <span class="skill-tag">ML</span>
+              <span class="skill-tag">Deep Learning</span>
+              <span class="skill-tag">Research</span>
+            </div>
             <span class="item-exp">+800 EXP</span>
           </div>
           <div class="item-timeline">2019.09 - 2022.02</div>
