@@ -66,6 +66,7 @@ classes: wide
         <div class="journey-item active">
           <div class="item-status">
             <span class="status-indicator active-indicator">● ACTIVE</span>
+            <span class="item-skills">Python · Django · FastAPI · PostgreSQL</span>
             <span class="item-exp">+1500 EXP</span>
           </div>
           <div class="item-timeline">2025.09 - Present</div>
@@ -83,6 +84,7 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-skills">Fullstack · AI · PM</span>
             <span class="item-exp">+1000 EXP</span>
           </div>
           <div class="item-timeline">2025.04 - 2025.08</div>
@@ -99,6 +101,7 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-skills">Python · Airflow · GCP · BigQuery</span>
             <span class="item-exp">+1000 EXP</span>
           </div>
           <div class="item-timeline">2023.03 - 2025.03</div>
@@ -115,6 +118,7 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-skills">React · Node.js · MySQL · AWS</span>
             <span class="item-exp">+1000 EXP</span>
           </div>
           <div class="item-timeline">2022.07 - 2023.03</div>
@@ -131,6 +135,7 @@ classes: wide
         <div class="journey-item archived">
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
+            <span class="item-skills">ML · Deep Learning · Research</span>
             <span class="item-exp">+800 EXP</span>
           </div>
           <div class="item-timeline">2019.09 - 2022.02</div>
