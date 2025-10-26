@@ -52,6 +52,15 @@ layout: default
 
             <!-- Post Content -->
             <div class="post-card__content">
+              <!-- Categories -->
+              {% if post.categories.size > 0 %}
+              <div class="post-card__categories">
+                {% for category in post.categories %}
+                  <span class="category-tag">{{ category }}</span>
+                {% endfor %}
+              </div>
+              {% endif %}
+
               <!-- Title -->
               <h2 class="post-card__title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
