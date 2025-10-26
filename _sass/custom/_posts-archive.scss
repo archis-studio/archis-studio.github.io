@@ -415,7 +415,7 @@
 }
 
 // =========================
-// Empty State
+// Empty State & Navigation
 // =========================
 .posts-grid:empty::after {
   content: '目前還沒有文章...';
@@ -424,4 +424,65 @@
   color: #666;
   font-size: 1.125rem;
   padding: 3rem 0;
+}
+
+// Archive Footer - Back Link
+.archive-footer {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(139, 92, 63, 0.2);
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  color: #d4a574;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(212, 165, 116, 0.3);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, rgba(139, 92, 63, 0.1) 0%, rgba(212, 165, 116, 0.05) 100%);
+  
+  &:hover {
+    background: linear-gradient(135deg, rgba(139, 92, 63, 0.2) 0%, rgba(212, 165, 116, 0.15) 100%);
+    border-color: rgba(212, 165, 116, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 63, 0.2);
+  }
+}
+
+// Empty State Styling
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+  
+  .empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0.5rem;
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+  }
+  
+  p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+  }
+  
+  .back-link {
+    margin-top: 1rem;
+  }
 }
