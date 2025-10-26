@@ -1,7 +1,7 @@
 ---
 title: "AI 工具實戰：從入門到精通"
-categories: [AI, Tutorial]
-tags: [ai-tools, tutorial, chatgpt]
+categories: [AI Tools]
+tags: [ai-tools, tutorial, chatgpt, productivity]
 featured: true
 excerpt: "探索 AI 工具的實際應用場景，從 ChatGPT 到各種專業工具，讓 AI 成為你的最佳助手。"
 ---

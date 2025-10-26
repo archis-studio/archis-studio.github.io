@@ -1,7 +1,7 @@
 ---
 title: "像素藝術創作入門"
-categories: [Pixel Art, Design]
-tags: [pixel-art, design, tutorial]
+categories: [Software Dev]
+tags: [pixel-art, design, tutorial, creative-coding]
 featured: true
 excerpt: "學習像素藝術的基礎知識，從工具選擇到創作技巧，開啟你的像素藝術之旅。"
 ---
