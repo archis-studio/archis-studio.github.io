@@ -26,13 +26,11 @@ $portal-growth: #FF6F61;
   min-height: 100vh;
   background: $cosmic-void;
   position: relative;
-  padding: 3rem 1rem;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto;
+  padding: 3rem 2rem;
+  overflow-x: hidden;
   
   @media (max-width: 768px) {
-    padding: 2rem 0.5rem;
+    padding: 2rem 1rem;
   }
 }
 
@@ -42,23 +40,46 @@ $portal-growth: #FF6F61;
   display: none !important;
 }
 
-// Ensure full width for cosmic portals page
-body.layout--single .page__inner-wrap {
+// CRITICAL: Override Minimal Mistakes container constraints
+// Force full-width layout for cosmic portals
+body:has(.cosmic-portals) {
+  .page__inner-wrap {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
   .page__content {
-    .cosmic-portals {
-      width: 100%;
-      max-width: none;
-      margin-left: 0;
-      margin-right: 0;
-    }
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    float: none !important;
+  }
+  
+  .page__main {
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 }
 
-// Override wide class constraints
-.wide .cosmic-portals {
-  max-width: 100% !important;
-  padding-left: 1rem;
-  padding-right: 1rem;
+// Alternative selector for better compatibility
+.layout--single {
+  .cosmic-portals {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+// Ensure cosmic-portals itself is full width
+.cosmic-portals {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box !important;
 }
 
 // Cosmic Background
@@ -188,34 +209,37 @@ body.layout--single .page__inner-wrap {
 // Portal Grid
 .portal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   max-width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
   
-  @media (min-width: 1400px) {
+  @media (min-width: 1600px) {
     grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
-    padding: 0 2rem;
+    max-width: 1600px;
   }
   
-  @media (min-width: 1024px) and (max-width: 1399px) {
+  @media (min-width: 1200px) and (max-width: 1599px) {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 1400px;
   }
   
-  @media (min-width: 768px) and (max-width: 1023px) {
+  @media (min-width: 768px) and (max-width: 1199px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+    max-width: 1000px;
   }
   
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 0 0.5rem;
+    max-width: 600px;
   }
 }
 
