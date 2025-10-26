@@ -55,14 +55,6 @@ layout: default
             
             <!-- Card Content -->
             <div class="post-card__content">
-              {% if post.categories %}
-                <div class="post-card__categories">
-                  {% for category in post.categories limit:2 %}
-                    <a href="/categories/{{ category | slugify }}/" class="category-tag">{{ category }}</a>
-                  {% endfor %}
-                </div>
-              {% endif %}
-              
               <h2 class="post-card__title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
               </h2>
@@ -107,63 +99,4 @@ layout: default
     </footer>
 
   </article>
-
-  <!-- Category Sidebar -->
-  <aside class="post-toc">
-    <div class="toc-sticky">
-      <h2 class="toc-title">分類資訊</h2>
-      
-      <div class="category-sidebar-info">
-        <div class="sidebar-section">
-          <h3 class="sidebar-section-title">統計</h3>
-          <ul class="sidebar-stats">
-            <li>
-              <span class="stat-label">文章數量</span>
-              <span class="stat-value">{{ category_posts.size }}</span>
-            </li>
-            {% if category_posts.size > 0 %}
-            <li>
-              <span class="stat-label">最新更新</span>
-              <span class="stat-value">{{ category_posts.first.date | date: "%Y.%m" }}</span>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-
-        {% if category_posts.size > 0 %}
-        <div class="sidebar-section">
-          <h3 class="sidebar-section-title">標籤</h3>
-          <div class="sidebar-tags">
-            {% assign all_tags = "" | split: "" %}
-            {% for post in category_posts %}
-              {% for tag in post.tags %}
-                {% unless all_tags contains tag %}
-                  {% assign all_tags = all_tags | push: tag %}
-                {% endunless %}
-              {% endfor %}
-            {% endfor %}
-            
-            {% for tag in all_tags limit:10 %}
-              <a href="/tags/#{{ tag | slugify }}" class="sidebar-tag">#{{ tag }}</a>
-            {% endfor %}
-          </div>
-        </div>
-        {% endif %}
-
-        <div class="sidebar-section">
-          <h3 class="sidebar-section-title">其他分類</h3>
-          <nav class="sidebar-categories">
-            <a href="/categories/ai-tools/" class="sidebar-cat-link">🤖 AI Tools</a>
-            <a href="/categories/data-science/" class="sidebar-cat-link">📊 Data Science</a>
-            <a href="/categories/software-dev/" class="sidebar-cat-link">💻 Software Dev</a>
-            <a href="/categories/quant-trading/" class="sidebar-cat-link">📈 Quant Trading</a>
-            <a href="/categories/growth/" class="sidebar-cat-link">🌱 Growth</a>
-            <a href="/categories/green-energy/" class="sidebar-cat-link">🔋 Green Energy</a>
-            <a href="/categories/marketing/" class="sidebar-cat-link">📣 Marketing</a>
-            <a href="/categories/reading/" class="sidebar-cat-link">📚 Reading</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </aside>
 </div>
