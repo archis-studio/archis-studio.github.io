@@ -1,8 +1,10 @@
 # 🤖 AI Agents README
-# Version 2.0.0 | Updated: 2025-10-26
+# Version 3.0.0 | Updated: 2025-10-26
 
 > **For AI Assistants**: This document is your entry point to the Archis Studio Blog project.  
 > Read this first before any implementation work.
+
+> **v3.0 Update**: Documentation streamlined - 9 core files only (44% reduction)
 
 ---
 
@@ -34,9 +36,10 @@ docs/IMPLEMENTATION_CHECKLIST.md   ← 10-phase implementation guide
 docs/LAYOUT_SPEC.md                ← Layout specifications
 docs/NAVIGATION_SPEC.md            ← Navigation design
 docs/ASSET_SPEC.md                 ← Asset management
-docs/MINIMAL_MISTAKES_CUSTOMIZATION.md ← Theme customization
 docs/CONTENT_STRATEGY.md           ← Content creation guidelines
 ```
+
+> **Note**: 7 redundant/outdated docs removed in v3.0 for clarity
 
 ---
 
@@ -63,8 +66,8 @@ docs/CONTENT_STRATEGY.md           ← Content creation guidelines
 # Check current directory structure
 ls -la
 
-# Current state (v2.0):
-# ✅ docs/           - Complete specifications (v2.0)
+# Current state (v3.0):
+# ✅ docs/           - 9 core specifications (streamlined)
 # ✅ _config.yml     - Jekyll configuration
 # ✅ _layouts/       - Custom layouts (home, post, posts)
 # ✅ _includes/      - Custom components (hero, masthead, author-profile)
@@ -525,5 +528,25 @@ Let's build something beautiful together.
 ---
 
 **Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-24  
-**Status**: Ready for Phase 1 Implementation
+**Last Updated**: 2025-10-26  
+**Version**: 3.0.0 - Documentation Streamlined  
+**Status**: Ready for Phase 10 Enhancement
+
+---
+
+## 📝 CHANGELOG
+
+### v3.0.0 (2025-10-26)
+- Documentation streamlined: 16 → 9 core files (44% reduction)
+- Removed redundant docs: DESIGN_SYSTEM.md, LAYOUT.md, ASSETS.md, PROJECT.md, WORKFLOW.md
+- Removed outdated docs: AUTUMN_NOIR_FUTURE_THEME.md, MINIMAL_MISTAKES_CUSTOMIZATION.md
+- Optimized CONTENT_STRATEGY.md: Focus on writing guidelines only
+- Updated mandatory reading list
+
+### v2.0.0 (2025-10-24)
+- Phase 9 完成：8 色配色系統完整實作
+- 更新專案狀態為 Core Features Complete
+- 完整實作清單與文件同步
+
+### v1.0.0 (2025-10-11)
+- AI Agents 初版指南建立

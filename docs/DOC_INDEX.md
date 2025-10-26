@@ -1,24 +1,25 @@
 # 文件索引 - Documentation Index
-# Version 2.0.0 | Updated: 2025-10-26
+# Version 3.0.0 | Updated: 2025-10-26
 
 ## 📚 文件追蹤系統
 
 **AI & 人類協作者**: 使用此文件追蹤所有規格文件的狀態與版本
+
+> **v3.0 優化**: 移除重複文件，保留 9 個核心文件（簡化 44%）
 
 ### 🗂️ 核心規格文件 (docs/)
 
 | 文件 | 版本 | 更新日期 | 狀態 | 用途 |
 |------|------|----------|------|------|
 | `PROJECT_CHARTER.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 專案目標與原則 |
-| `DESIGN_SYSTEM_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 完整設計系統規格 (含 8 色配色) |
-| `LAYOUT_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 版面配置規格 (含簡化版首頁) |
-| `NAVIGATION_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 導航設計規格 (含 Sidebar) |
-| `ASSET_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 資源檔案規格 (含 Avatar SVG) |
-| `IMPLEMENTATION_CHECKLIST.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 10階段實作指南 (Phase 1-9 完成) |
+| `DESIGN_SYSTEM_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 完整設計系統規格 (含色彩、字體、間距) |
+| `LAYOUT_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 版面配置規格 |
+| `NAVIGATION_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 導航設計規格 |
+| `ASSET_SPEC.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 資源檔案規格 |
+| `IMPLEMENTATION_CHECKLIST.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 10階段實作指南 (Phase 9 完成) |
 | `AI_COLLABORATION_GUIDE.md` | 2.0.0 | 2025-10-26 | ✅ Complete | AI 協作流程 |
-| `MINIMAL_MISTAKES_CUSTOMIZATION.md` | 2.0.0 | 2025-10-26 | ✅ Complete | MM 主題客製化指南 |
 | `CONTENT_STRATEGY.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 內容創作規範 |
-| `AUTUMN_NOIR_FUTURE_THEME.md` | 2.0.0 | 2025-10-26 | ✅ Complete | 主題概念與視覺指南 |
+| `DOC_INDEX.md` | 3.0.0 | 2025-10-26 | ✅ Complete | 文件索引（本文件）|
 
 ### 📝 操作指南文件 (Root)
 
@@ -33,20 +34,21 @@
 
 ### 📖 文件閱讀順序
 
-**第一次接觸專案**:
-1. `PROJECT_CHARTER.md` - 了解專案目標
-2. `AI_COLLABORATION_GUIDE.md` - 學習協作方式
-3. `DESIGN_SYSTEM_SPEC.md` - 掌握設計規範
+**第一次接觸專案** (必讀):
+1. `agents.MD` - AI 協作規範（專案入口）
+2. `DOC_INDEX.md` - 文件地圖（本文件）
+3. `PROJECT_CHARTER.md` - 專案目標與原則
+4. `AI_COLLABORATION_GUIDE.md` - 協作流程
+5. `DESIGN_SYSTEM_SPEC.md` - 設計系統規格
 
-**開始實作前**:
-4. `LAYOUT_SPEC.md` - 了解版面配置
-5. `NAVIGATION_SPEC.md` - 了解導航設計
-6. `ASSET_SPEC.md` - 了解資源需求
+**開始實作前** (參考):
+6. `LAYOUT_SPEC.md` - 版面配置
+7. `NAVIGATION_SPEC.md` - 導航設計
+8. `ASSET_SPEC.md` - 資源需求
 
-**技術實作**:
-7. `IMPLEMENTATION_CHECKLIST.md` - 按階段實作
-8. `MINIMAL_MISTAKES_CUSTOMIZATION.md` - MM 客製化
-9. `CONTENT_STRATEGY.md` - 內容創作
+**技術實作** (執行):
+9. `IMPLEMENTATION_CHECKLIST.md` - 按階段實作
+10. `CONTENT_STRATEGY.md` - 內容創作規範
 
 ### 🔄 版本更新規則
 
@@ -132,6 +134,16 @@ head -n 2 docs/*.md
 ---
 
 ## 📝 CHANGELOG
+
+### v3.0.0 (2025-10-26)
+- **文件優化**: 移除 7 個重複/過時文件
+  - ❌ 刪除: DESIGN_SYSTEM.md, LAYOUT.md, ASSETS.md (與 _SPEC.md 重複)
+  - ❌ 刪除: PROJECT.md, WORKFLOW.md (過時)
+  - ❌ 刪除: AUTUMN_NOIR_FUTURE_THEME.md (已整合至 DESIGN_SYSTEM_SPEC)
+  - ❌ 刪除: MINIMAL_MISTAKES_CUSTOMIZATION.md (實作已完成)
+- **保留核心**: 9 個核心文件（簡化 44%）
+- **CONTENT_STRATEGY.md 優化**: 移除重複內容，聚焦創作規範
+- **文件閱讀順序更新**: 以 agents.MD 為起點
 
 ### v2.0.0 (2025-10-26)
 - **實作進度重大更新至 Phase 1-9 完成**:

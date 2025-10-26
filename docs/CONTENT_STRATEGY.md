@@ -1,15 +1,8 @@
 # 內容策略 - Content Strategy  
-# Version 1.0.0 | Updated: 2025-10-11
+# Version 2.0.0 | Updated: 2025-10-26
 
-## 🎯 內容定位
-
-**目標**: AI Coding 教育，繁體中文，實戰導向
-
-**主要內容類型**:
-1. AI 工具應用教學
-2. Backend 開發技巧  
-3. 數據科學實務
-4. 學習心得分享
+> **核心指南**: 文章創作規範、寫作標準、內容品質管理
+> **設計規範**: 請參考 DESIGN_SYSTEM_SPEC.md
 
 ---
 
@@ -180,42 +173,11 @@ def calculate_performance_metrics(data: pd.DataFrame) -> Dict[str, float]:
 
 ---
 
-## 🏷️ 分類與標籤系統 (Category & Tag System)
+## 🏷️ 標籤使用規範 (Tag Usage Guidelines)
 
-### 主要分類 (Primary Categories)
-```yaml
-technical:
-  name: "技術分享"
-  description: "程式設計、系統架構、開發工具"
-  color: "#2563eb"
+> **分類系統**: 完整的分類定義請參考 `DESIGN_SYSTEM_SPEC.md` § 分類系統
 
-ai-applications:
-  name: "AI 應用"  
-  description: "AI 工具使用、提示工程、自動化"
-  color: "#7c3aed"
-
-backend:
-  name: "Backend 開發"
-  description: "後端架構、API 設計、資料庫"  
-  color: "#059669"
-
-data-science:
-  name: "資料科學"
-  description: "數據分析、機器學習、視覺化"
-  color: "#dc2626"
-
-fintech:
-  name: "金融科技"  
-  description: "量化交易、風險管理、金融數據"
-  color: "#ea580c"
-
-personal-growth:
-  name: "個人成長"
-  description: "學習方法、職涯發展、心得分享"  
-  color: "#16a34a"
-```
-
-### 標籤使用規範 (Tag Usage Guidelines)
+### 標籤使用規範
 
 #### 技術標籤 (Technical Tags)
 ```yaml
@@ -309,13 +271,9 @@ soft_skills: [學習方法, 時間管理, 溝通技巧, 團隊協作, 問題解�
 
 ## 🎨 視覺內容規範 (Visual Content Guidelines)
 
-### 圖片需求
-- **封面圖**: 1200x630px (適合社群分享)
-- **內文圖**: 800x450px (16:9 比例)
-- **程式截圖**: 高解析度，清楚可讀
-- **圖表製作**: 使用品牌色彩，簡潔明瞭
+> **設計規範**: 完整的視覺規範請參考 `DESIGN_SYSTEM_SPEC.md` 和 `ASSET_SPEC.md`
 
-### 程式碼分享
+### 程式碼分享標準
 - **語法高亮**: 使用適當的 syntax highlighting
 - **行號顯示**: 便於討論與參考
 - **複製功能**: 讀者可直接複製使用
@@ -345,4 +303,18 @@ soft_skills: [學習方法, 時間管理, 溝通技巧, 團隊協作, 問題解�
 
 ---
 
-**下一步**: 開始建立實際的 Jekyll 網站架構與第一篇示範文章
+## 📝 CHANGELOG
+
+### v2.0.0 (2025-10-26)
+- 移除與 DESIGN_SYSTEM_SPEC.md 重複的分類系統定義
+- 移除與 ASSET_SPEC.md 重複的視覺規範
+- 簡化為純內容創作指南
+- 聚焦於寫作規範與品質標準
+
+### v1.0.0 (2025-10-11)
+- 初版內容策略建立
+
+---
+
+**維護者**: Archi Chen & AI Assistants  
+**最後更新**: 2025-10-26
