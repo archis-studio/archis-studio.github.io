@@ -26,11 +26,13 @@ $portal-growth: #FF6F61;
   min-height: 100vh;
   background: $cosmic-void;
   position: relative;
-  padding: 4rem 2rem;
+  padding: 3rem 1rem;
   overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
   
   @media (max-width: 768px) {
-    padding: 3rem 1rem;
+    padding: 2rem 0.5rem;
   }
 }
 
@@ -102,25 +104,29 @@ $portal-growth: #FF6F61;
 // Header
 .cosmic-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
   position: relative;
   z-index: 1;
   
   @media (max-width: 768px) {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 }
 
 .cosmic-title {
   font-family: 'Playfair Display', serif;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: $cosmic-text;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   letter-spacing: 0.05em;
   
   @media (max-width: 768px) {
     font-size: 2.5rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 2rem;
   }
   
   .title-glow {
@@ -140,29 +146,51 @@ $portal-growth: #FF6F61;
 
 .cosmic-subtitle {
   font-family: 'Noto Sans TC', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: $cosmic-dim;
   letter-spacing: 0.1em;
   margin: 0;
   
   @media (max-width: 768px) {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
   }
 }
 
 // Portal Grid
 .portal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 3rem;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+  padding: 0 1rem;
   
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+  @media (min-width: 1400px) {
+    grid-template-columns: repeat(4, 1fr);
     gap: 2.5rem;
+    padding: 0 2rem;
+  }
+  
+  @media (min-width: 1024px) and (max-width: 1399px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -172,9 +200,12 @@ $portal-growth: #FF6F61;
   background: rgba(15, 20, 40, 0.6);
   border: 1px solid rgba(147, 112, 219, 0.2);
   border-radius: 20px;
-  padding: 2.5rem 2rem;
+  padding: 2rem 1.5rem;
   transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   backdrop-filter: blur(10px);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
   
   &:hover {
     transform: translateY(-10px) scale(1.02);
@@ -206,11 +237,17 @@ $portal-growth: #FF6F61;
   }
   
   @media (max-width: 768px) {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1.25rem;
+    min-height: 380px;
     
     &:hover {
       transform: translateY(-5px);
     }
+  }
+  
+  @media (max-width: 480px) {
+    min-height: 360px;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -220,10 +257,15 @@ $portal-growth: #FF6F61;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   pointer-events: none;
   opacity: 0.4;
+  
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 160px;
+  }
 }
 
 .ring-outer,
@@ -270,11 +312,17 @@ $portal-growth: #FF6F61;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto 2rem;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 1.5rem;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(147, 112, 219, 0.1), transparent);
+  
+  @media (max-width: 768px) {
+    width: 90px;
+    height: 90px;
+    margin-bottom: 1.25rem;
+  }
 }
 
 .core-glow {
@@ -295,7 +343,7 @@ $portal-growth: #FF6F61;
   filter: drop-shadow(0 0 10px currentColor);
   
   @media (max-width: 768px) {
-    font-size: 3rem;
+    font-size: 2.75rem;
   }
 }
 
@@ -304,18 +352,22 @@ $portal-growth: #FF6F61;
   position: relative;
   z-index: 1;
   text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .portal-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: $cosmic-text;
   margin: 0 0 0.5rem;
   letter-spacing: 0.02em;
   
   @media (max-width: 768px) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -346,11 +398,12 @@ $portal-growth: #FF6F61;
 }
 
 .portal-description {
-  font-size: 0.95rem;
-  line-height: 1.7;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: $cosmic-dim;
-  margin: 0 0 2rem;
+  margin: 0 0 1.5rem;
   opacity: 0.9;
+  flex: 1;
 }
 
 .portal-enter {
