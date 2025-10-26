@@ -71,7 +71,7 @@ classes: wide
           <div class="item-timeline">2025.09 - Present</div>
           <div class="item-header">
             <div class="item-title">AIoT Backend Engineer</div>
-            <div class="item-badge">💼 Professional</div>
+            <div class="item-badge">⚔️ Quest</div>
           </div>
           <div class="item-meta">
             <span class="item-company">🏢 Mobiusnx</span>
@@ -104,7 +104,7 @@ classes: wide
           <div class="item-timeline">2023.03 - 2025.03</div>
           <div class="item-header">
             <div class="item-title">Data & AI Platform Engineer</div>
-            <div class="item-badge">💼 Professional</div>
+            <div class="item-badge">💼 Career</div>
           </div>
           <div class="item-meta">
             <span class="item-company">🏢 Ad2iction (TNL Mediagene)</span>
@@ -120,7 +120,7 @@ classes: wide
           <div class="item-timeline">2022.07 - 2023.03</div>
           <div class="item-header">
             <div class="item-title">Fullstack Engineer</div>
-            <div class="item-badge">💼 Professional</div>
+            <div class="item-badge">💼 Career</div>
           </div>
           <div class="item-meta">
             <span class="item-company">🏢 FIH Mobile Limited</span>
