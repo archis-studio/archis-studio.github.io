@@ -91,45 +91,58 @@ window.searchData = {
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
   
-  // Wait for DOM to be fully loaded
-  let searchToggle, searchClose;
-  
   let selectedIndex = -1;
   let searchResultItems = [];
   
-  // Initialize after DOM loaded
-  document.addEventListener('DOMContentLoaded', function() {
-    // Get elements after DOM is ready
-    searchToggle = document.querySelector('.search-toggle');
-    searchClose = document.querySelector('.search-close');
-    
-    // Bind events
-    if (searchToggle) {
-      searchToggle.addEventListener('click', openSearch);
-    }
-    if (searchClose) {
-      searchClose.addEventListener('click', closeSearch);
-    }
-    
-    // Initialize stats
-    document.getElementById('totalPosts').textContent = window.searchData.posts.length;
-    document.getElementById('totalCategories').textContent = window.searchData.categories.length;
-  });
-  
   // Open search
-  function openSearch() {
+  function openSearch(e) {
+    if (e) e.preventDefault();
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     setTimeout(() => searchInput.focus(), 100);
   }
   
   // Close search
-  function closeSearch() {
+  function closeSearch(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     overlay.classList.remove('active');
     document.body.style.overflow = '';
     searchInput.value = '';
     selectedIndex = -1;
     showWelcome();
+  }
+  
+  // Initialize after DOM loaded
+  function initialize() {
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchClose = document.querySelector('.search-close');
+    
+    // Bind search toggle
+    if (searchToggle) {
+      searchToggle.addEventListener('click', openSearch);
+    }
+    
+    // Bind close button with multiple methods for reliability
+    if (searchClose) {
+      searchClose.addEventListener('click', closeSearch);
+      searchClose.addEventListener('touchend', closeSearch);
+    }
+    
+    // Initialize stats
+    const totalPostsEl = document.getElementById('totalPosts');
+    const totalCategoriesEl = document.getElementById('totalCategories');
+    if (totalPostsEl) totalPostsEl.textContent = window.searchData.posts.length;
+    if (totalCategoriesEl) totalCategoriesEl.textContent = window.searchData.categories.length;
+  }
+  
+  // Call initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initialize);
+  } else {
+    initialize();
   }
   
   // Show welcome message
@@ -267,12 +280,22 @@ window.searchData = {
     });
   }
   
-  // Event listeners (non-dependent on DOM elements)
+  // Event listeners for overlay background click
   if (overlay) {
     overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) closeSearch();
+      // Only close if clicking directly on overlay (not on children)
+      if (e.target === overlay) {
+        closeSearch(e);
+      }
     });
   }
+  
+  // ESC key to close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      closeSearch(e);
+    }
+  });
   
   if (searchInput) {
     searchInput.addEventListener('input', function(e) {
@@ -281,7 +304,7 @@ window.searchData = {
     
     searchInput.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        closeSearch();
+        closeSearch(e);
       } else if (e.key === 'ArrowDown') {
         e.preventDefault();
         if (selectedIndex < searchResultItems.length - 1) {
@@ -303,11 +326,15 @@ window.searchData = {
     });
   }
   
-  // Keyboard shortcut: Cmd/Ctrl + K
+  // Global keyboard shortcut: Cmd/Ctrl + K
   document.addEventListener('keydown', function(e) {
     if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
       e.preventDefault();
-      openSearch();
+      if (overlay.classList.contains('active')) {
+        closeSearch(e);
+      } else {
+        openSearch(e);
+      }
     }
   });
 })();
