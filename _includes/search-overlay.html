@@ -14,7 +14,7 @@
     <div class="search-header">
       <div class="search-icon">🔍</div>
       <h2 class="search-title">SEARCH PORTAL</h2>
-      <p class="search-subtitle">探索知識宇宙</p>
+      <p class="search-subtitle">探索知識圖譜</p>
     </div>
     
     <!-- Search input -->
@@ -67,11 +67,15 @@ window.searchData = {
     {%- endfor -%}
   ],
   categories: [
+    {%- assign category_pages = site.pages | where_exp: "page", "page.layout == 'category-archive'" -%}
     {%- for category in site.categories -%}
+    {%- assign cat_name = category[0] -%}
+    {%- assign cat_page = category_pages | where: "category", cat_name | first -%}
+    {%- assign cat_url = cat_page.permalink | default: cat_name | append: '/' | prepend: '/categories/' -%}
     {
-      name: {{ category[0] | jsonify }},
+      name: {{ cat_name | jsonify }},
       count: {{ category[1].size }},
-      url: {{ '/categories/' | append: category[0] | relative_url | jsonify }}
+      url: {{ cat_url | relative_url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   ]
@@ -86,14 +90,28 @@ window.searchData = {
   const overlay = document.getElementById('searchOverlay');
   const searchInput = document.getElementById('searchInput');
   const searchResults = document.getElementById('searchResults');
-  const searchToggle = document.querySelector('.search-toggle');
-  const searchClose = document.querySelector('.search-close');
+  
+  // Wait for DOM to be fully loaded
+  let searchToggle, searchClose;
   
   let selectedIndex = -1;
   let searchResultItems = [];
   
-  // Initialize stats
+  // Initialize after DOM loaded
   document.addEventListener('DOMContentLoaded', function() {
+    // Get elements after DOM is ready
+    searchToggle = document.querySelector('.search-toggle');
+    searchClose = document.querySelector('.search-close');
+    
+    // Bind events
+    if (searchToggle) {
+      searchToggle.addEventListener('click', openSearch);
+    }
+    if (searchClose) {
+      searchClose.addEventListener('click', closeSearch);
+    }
+    
+    // Initialize stats
     document.getElementById('totalPosts').textContent = window.searchData.posts.length;
     document.getElementById('totalCategories').textContent = window.searchData.categories.length;
   });
@@ -249,40 +267,41 @@ window.searchData = {
     });
   }
   
-  // Event listeners
-  searchToggle?.addEventListener('click', openSearch);
-  searchClose?.addEventListener('click', closeSearch);
+  // Event listeners (non-dependent on DOM elements)
+  if (overlay) {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) closeSearch();
+    });
+  }
   
-  overlay?.addEventListener('click', function(e) {
-    if (e.target === overlay) closeSearch();
-  });
-  
-  searchInput?.addEventListener('input', function(e) {
-    performSearch(e.target.value);
-  });
-  
-  searchInput?.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      closeSearch();
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      if (selectedIndex < searchResultItems.length - 1) {
-        selectedIndex++;
-        updateSelection();
+  if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+      performSearch(e.target.value);
+    });
+    
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeSearch();
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (selectedIndex < searchResultItems.length - 1) {
+          selectedIndex++;
+          updateSelection();
+        }
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (selectedIndex > 0) {
+          selectedIndex--;
+          updateSelection();
+        }
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (selectedIndex >= 0 && searchResultItems[selectedIndex]) {
+          searchResultItems[selectedIndex].click();
+        }
       }
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      if (selectedIndex > 0) {
-        selectedIndex--;
-        updateSelection();
-      }
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      if (selectedIndex >= 0 && searchResultItems[selectedIndex]) {
-        searchResultItems[selectedIndex].click();
-      }
-    }
-  });
+    });
+  }
   
   // Keyboard shortcut: Cmd/Ctrl + K
   document.addEventListener('keydown', function(e) {
