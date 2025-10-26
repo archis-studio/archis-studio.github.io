@@ -326,6 +326,26 @@
   display: flex;
   justify-content: flex-end;
   padding: 0 2rem 0 1rem;
+  
+  @media (max-width: 768px) {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    padding: 0;
+    justify-content: center;
+    background: rgba(15, 15, 18, 0.98);
+    backdrop-filter: blur(10px);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(212, 160, 23, 0.2);
+    
+    &.show {
+      max-height: 500px;
+    }
+  }
 }
 
 .nav-links {
@@ -335,10 +355,21 @@
   margin: 0;
   padding: 0;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    padding: 1rem 0;
+  }
 }
 
 .nav-item {
   margin: 0;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .nav-link {
@@ -361,6 +392,20 @@
   
   transition: all 0.25s ease;
   
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(212, 160, 23, 0.1);
+    text-align: center;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
   // Hover state - gentle glow with emoji scale
   &:hover {
     color: var(--nav-gold);
@@ -370,6 +415,12 @@
       0 0 12px rgba(212, 160, 23, 0.3),
       inset 0 0 8px rgba(212, 160, 23, 0.1);
     transform: translateY(-1px);
+    
+    @media (max-width: 768px) {
+      transform: none;
+      box-shadow: none;
+      background: rgba(212, 160, 23, 0.15);
+    }
   }
   
   // Active state
@@ -381,11 +432,21 @@
     box-shadow: 
       0 0 16px rgba(212, 160, 23, 0.4),
       inset 0 0 10px rgba(212, 160, 23, 0.15);
+      
+    @media (max-width: 768px) {
+      box-shadow: none;
+      background: rgba(212, 160, 23, 0.2);
+      border-bottom-color: var(--nav-gold);
+    }
   }
   
   // Glitch effect on click (subtle)
   &:active {
     transform: translateY(1px);
+    
+    @media (max-width: 768px) {
+      transform: none;
+    }
   }
 }
 
@@ -395,6 +456,10 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .action-btn {
@@ -436,17 +501,20 @@
 // Mobile Menu Toggle
 .mobile-toggle {
   display: none;
-  width: 36px;
-  height: 36px;
-  background: rgba(28, 28, 30, 0.4);
+  width: 40px;
+  height: 40px;
+  background: rgba(28, 28, 30, 0.6);
   border: 1px solid var(--pixel-border);
-  border-radius: 2px;
+  border-radius: 3px;
   cursor: pointer;
   padding: 0;
   position: relative;
+  margin-left: 0.5rem;
   
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   &__icon {
@@ -504,55 +572,70 @@
 }
 
 // 響應式: Tablet
-@media (min-width: 768px) and (max-width: 1023px) {
-  .greedy-nav .visible-links {
-    gap: 0.25rem;
-    
-    a {
-      padding: 0.75rem 1rem;
-      font-size: 0.9rem;
-    }
+@media (min-width: 769px) and (max-width: 1023px) {
+  .masthead__inner-wrap {
+    padding: 0 1.5rem;
+  }
+  
+  .nav-links {
+    gap: 0.35rem;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .masthead__menu {
+    padding: 0 1rem 0 0.5rem;
   }
 }
 
 // 響應式: Mobile
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .masthead {
-    padding: 0 1rem;
+    height: auto;
+    min-height: var(--nav-height);
+  }
+  
+  .masthead__inner-wrap {
+    padding: 0.75rem 1rem;
+  }
+  
+  .pixel-icon {
+    width: 28px;
+    height: 28px;
   }
   
   .site-title {
-    font-size: 1.2rem;
+    font-size: 0.95rem;
   }
   
-  .greedy-nav {
-    .visible-links {
-      position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      background: rgba(14, 14, 16, 0.98);
-      backdrop-filter: blur(10px);
-      flex-direction: column;
-      gap: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      
-      &.show {
-        max-height: 400px;
-        padding: 1rem 0;
-      }
-      
-      a {
-        width: 100%;
-        padding: 1rem 2rem;
-        font-size: 1.1rem;
-        border-radius: 0;
-        border-bottom: 1px solid rgba(212, 160, 23, 0.1);
-      }
-    }
+  .site-tagline {
+    font-size: 0.55rem;
+  }
+  
+  .masthead__menu {
+    padding: 0;
+  }
+}
+
+// 極小螢幕
+@media (max-width: 480px) {
+  .site-branding {
+    gap: 0.05rem;
+  }
+  
+  .site-title {
+    font-size: 0.85rem;
+  }
+  
+  .site-tagline {
+    display: none;
+  }
+  
+  .masthead__inner-wrap {
+    padding: 0.5rem 0.75rem;
   }
 }
 
