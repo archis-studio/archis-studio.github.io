@@ -2,7 +2,11 @@
 layout: default
 ---
 
-{% assign category_posts = site.categories[page.category] | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
+{% if site.categories[page.category] %}
+  {% assign category_posts = site.categories[page.category] | where_exp: "post", "post.draft != true" | sort: "date" | reverse %}
+{% else %}
+  {% assign category_posts = "" | split: "" %}
+{% endif %}
 
 <div class="post-container">
   <article class="post-single">
