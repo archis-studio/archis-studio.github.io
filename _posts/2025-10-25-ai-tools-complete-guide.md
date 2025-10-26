@@ -1,6 +1,6 @@
 ---
 title: "AI 工具實戰：從入門到精通"
-categories: [AI Tools]
+categories: [AI Tools, Marketing]
 tags: [AI, ChatGPT, Claude, productivity]
 featured: true
 excerpt: "深入探索 AI 工具的實際應用場景，從基礎概念到進階技巧，讓你的工作效率翻倍。"

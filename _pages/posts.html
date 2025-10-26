@@ -7,8 +7,18 @@ permalink: /posts/
 <div class="posts-archive">
   <!-- Archive Header -->
   <header class="archive-header">
-    <h1 class="archive-title">文章</h1>
+    <h1 class="archive-title">ARCHIVES</h1>
     <p class="archive-subtitle">探索技術、創意與設計的交匯點</p>
+    <div class="archive-stats">
+      <div class="stat-item">
+        <span class="stat-label">TOTAL</span>
+        <span class="stat-value">{{ site.posts.size }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">CATEGORIES</span>
+        <span class="stat-value">{{ site.categories.size }}</span>
+      </div>
+    </div>
   </header>
 
   <!-- Posts Grid -->
