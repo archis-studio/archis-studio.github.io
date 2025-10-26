@@ -105,15 +105,9 @@
       lastScroll = currentScroll;
     });
     
-    // Search toggle (placeholder)
-    const searchToggle = document.querySelector('.search-toggle');
-    if (searchToggle) {
-      searchToggle.addEventListener('click', function() {
-        // TODO: Implement search functionality
-        console.log('Search clicked');
-      });
-    }
   });
 })();
 </script>
 
+<!-- Include Search Overlay -->
+{% include search-overlay.html %}

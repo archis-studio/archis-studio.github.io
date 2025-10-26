@@ -1,0 +1,295 @@
+<!-- Search Overlay - Cosmic Portal Theme -->
+<div class="search-overlay" id="searchOverlay">
+  <!-- Starfield background -->
+  <div class="search-overlay__starfield" aria-hidden="true"></div>
+  
+  <!-- Search container -->
+  <div class="search-container">
+    <!-- Close button -->
+    <button class="search-close" type="button" aria-label="關閉搜尋" title="關閉 (ESC)">
+      <span class="search-close__icon">✕</span>
+    </button>
+    
+    <!-- Search header -->
+    <div class="search-header">
+      <div class="search-icon">🔍</div>
+      <h2 class="search-title">SEARCH PORTAL</h2>
+      <p class="search-subtitle">探索知識宇宙</p>
+    </div>
+    
+    <!-- Search input -->
+    <div class="search-input-wrapper">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-input" 
+        placeholder="輸入關鍵字開始搜尋..."
+        autocomplete="off"
+        aria-label="搜尋"
+      >
+      <div class="search-input-glow"></div>
+    </div>
+    
+    <!-- Search results -->
+    <div class="search-results" id="searchResults">
+      <div class="search-welcome">
+        <div class="search-welcome__icon">🌌</div>
+        <p>開始探索文章、分類和標籤</p>
+        <div class="search-stats">
+          <span class="stat-item">📝 <span id="totalPosts">0</span> 篇文章</span>
+          <span class="stat-item">🏷️ <span id="totalCategories">0</span> 個分類</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Keyboard shortcuts -->
+    <div class="search-shortcuts">
+      <span class="shortcut"><kbd>↑</kbd><kbd>↓</kbd> 導航</span>
+      <span class="shortcut"><kbd>Enter</kbd> 開啟</span>
+      <span class="shortcut"><kbd>ESC</kbd> 關閉</span>
+    </div>
+  </div>
+</div>
+
+<!-- Search data -->
+<script>
+window.searchData = {
+  posts: [
+    {%- for post in site.posts -%}
+    {
+      title: {{ post.title | jsonify }},
+      url: {{ post.url | relative_url | jsonify }},
+      date: {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      categories: {{ post.categories | jsonify }},
+      tags: {{ post.tags | default: empty_array | jsonify }},
+      excerpt: {{ post.excerpt | strip_html | truncatewords: 30 | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ],
+  categories: [
+    {%- for category in site.categories -%}
+    {
+      name: {{ category[0] | jsonify }},
+      count: {{ category[1].size }},
+      url: {{ '/categories/' | append: category[0] | relative_url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {%- endfor -%}
+  ]
+};
+</script>
+
+<!-- Search functionality -->
+<script>
+(function() {
+  'use strict';
+  
+  const overlay = document.getElementById('searchOverlay');
+  const searchInput = document.getElementById('searchInput');
+  const searchResults = document.getElementById('searchResults');
+  const searchToggle = document.querySelector('.search-toggle');
+  const searchClose = document.querySelector('.search-close');
+  
+  let selectedIndex = -1;
+  let searchResultItems = [];
+  
+  // Initialize stats
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('totalPosts').textContent = window.searchData.posts.length;
+    document.getElementById('totalCategories').textContent = window.searchData.categories.length;
+  });
+  
+  // Open search
+  function openSearch() {
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => searchInput.focus(), 100);
+  }
+  
+  // Close search
+  function closeSearch() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    searchInput.value = '';
+    selectedIndex = -1;
+    showWelcome();
+  }
+  
+  // Show welcome message
+  function showWelcome() {
+    searchResults.innerHTML = `
+      <div class="search-welcome">
+        <div class="search-welcome__icon">🌌</div>
+        <p>開始探索文章、分類和標籤</p>
+        <div class="search-stats">
+          <span class="stat-item">📝 <span>${window.searchData.posts.length}</span> 篇文章</span>
+          <span class="stat-item">🏷️ <span>${window.searchData.categories.length}</span> 個分類</span>
+        </div>
+      </div>
+    `;
+  }
+  
+  // Search function
+  function performSearch(query) {
+    if (!query.trim()) {
+      showWelcome();
+      return;
+    }
+    
+    const lowerQuery = query.toLowerCase();
+    const results = {
+      posts: [],
+      categories: []
+    };
+    
+    // Search posts
+    window.searchData.posts.forEach(post => {
+      let score = 0;
+      if (post.title.toLowerCase().includes(lowerQuery)) score += 10;
+      if (post.excerpt.toLowerCase().includes(lowerQuery)) score += 5;
+      if (post.categories.some(cat => cat.toLowerCase().includes(lowerQuery))) score += 8;
+      if (post.tags && post.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) score += 6;
+      
+      if (score > 0) {
+        results.posts.push({ ...post, score });
+      }
+    });
+    
+    // Search categories
+    window.searchData.categories.forEach(cat => {
+      if (cat.name.toLowerCase().includes(lowerQuery)) {
+        results.categories.push(cat);
+      }
+    });
+    
+    // Sort by score
+    results.posts.sort((a, b) => b.score - a.score);
+    
+    // Display results
+    displayResults(results, query);
+  }
+  
+  // Display results
+  function displayResults(results, query) {
+    if (results.posts.length === 0 && results.categories.length === 0) {
+      searchResults.innerHTML = `
+        <div class="search-no-results">
+          <div class="search-no-results__icon">🔭</div>
+          <p>找不到「${query}」的相關結果</p>
+          <small>試試其他關鍵字</small>
+        </div>
+      `;
+      return;
+    }
+    
+    let html = '';
+    
+    // Categories
+    if (results.categories.length > 0) {
+      html += '<div class="search-section"><h3 class="search-section__title">🏷️ 分類</h3>';
+      results.categories.forEach(cat => {
+        html += `
+          <a href="${cat.url}" class="search-result-item" data-type="category">
+            <div class="search-result__icon">📁</div>
+            <div class="search-result__content">
+              <div class="search-result__title">${highlightMatch(cat.name, query)}</div>
+              <div class="search-result__meta">${cat.count} 篇文章</div>
+            </div>
+          </a>
+        `;
+      });
+      html += '</div>';
+    }
+    
+    // Posts
+    if (results.posts.length > 0) {
+      html += '<div class="search-section"><h3 class="search-section__title">📝 文章</h3>';
+      results.posts.slice(0, 10).forEach(post => {
+        html += `
+          <a href="${post.url}" class="search-result-item" data-type="post">
+            <div class="search-result__icon">📄</div>
+            <div class="search-result__content">
+              <div class="search-result__title">${highlightMatch(post.title, query)}</div>
+              <div class="search-result__excerpt">${highlightMatch(post.excerpt, query)}</div>
+              <div class="search-result__meta">
+                <span class="meta-date">${post.date}</span>
+                ${post.categories.map(cat => `<span class="meta-tag">${cat}</span>`).join('')}
+              </div>
+            </div>
+          </a>
+        `;
+      });
+      html += '</div>';
+      
+      if (results.posts.length > 10) {
+        html += `<div class="search-more">還有 ${results.posts.length - 10} 個結果...</div>`;
+      }
+    }
+    
+    searchResults.innerHTML = html;
+    searchResultItems = Array.from(searchResults.querySelectorAll('.search-result-item'));
+    selectedIndex = -1;
+  }
+  
+  // Highlight matching text
+  function highlightMatch(text, query) {
+    if (!query.trim()) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<mark>$1</mark>');
+  }
+  
+  // Keyboard navigation
+  function updateSelection() {
+    searchResultItems.forEach((item, index) => {
+      if (index === selectedIndex) {
+        item.classList.add('selected');
+        item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+      } else {
+        item.classList.remove('selected');
+      }
+    });
+  }
+  
+  // Event listeners
+  searchToggle?.addEventListener('click', openSearch);
+  searchClose?.addEventListener('click', closeSearch);
+  
+  overlay?.addEventListener('click', function(e) {
+    if (e.target === overlay) closeSearch();
+  });
+  
+  searchInput?.addEventListener('input', function(e) {
+    performSearch(e.target.value);
+  });
+  
+  searchInput?.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeSearch();
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      if (selectedIndex < searchResultItems.length - 1) {
+        selectedIndex++;
+        updateSelection();
+      }
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (selectedIndex > 0) {
+        selectedIndex--;
+        updateSelection();
+      }
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (selectedIndex >= 0 && searchResultItems[selectedIndex]) {
+        searchResultItems[selectedIndex].click();
+      }
+    }
+  });
+  
+  // Keyboard shortcut: Cmd/Ctrl + K
+  document.addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      openSearch();
+    }
+  });
+})();
+</script>
