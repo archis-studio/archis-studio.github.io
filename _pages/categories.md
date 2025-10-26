@@ -6,319 +6,301 @@ author_profile: false
 classes: wide
 ---
 
-<div class="categories-page">
+<div class="cosmic-portals">
+  
+  <!-- Cosmic Background -->
+  <div class="cosmic-space">
+    <div class="stars-layer stars-slow"></div>
+    <div class="stars-layer stars-medium"></div>
+    <div class="stars-layer stars-fast"></div>
+    <div class="nebula-glow"></div>
+  </div>
+  
   <!-- Page Header -->
-  <header class="categories-header">
-    <h1 class="categories-title">探索分類</h1>
-    <p class="categories-subtitle">8 個專業領域 · {{ site.posts.size }} 篇文章 · 持續更新中</p>
+  <header class="cosmic-header">
+    <h1 class="cosmic-title">
+      <span class="title-glow">宇宙大門</span>
+    </h1>
+    <p class="cosmic-subtitle">
+      ✦ 8 個知識星域 · {{ site.posts.size }} 篇星際紀錄 · 探索無限可能 ✦
+    </p>
   </header>
 
-  <!-- Categories Grid -->
-  <div class="categories-grid">
+  <!-- Portal Grid -->
+  <div class="portal-grid">
     
-    <!-- Category 1: AI Tools -->
-    <article id="ai" class="category-card category-card--ai">
-      <div class="category-card__header">
-        <span class="category-icon">🤖</span>
-        <div class="category-info">
-          <h2 class="category-title">AI 工具</h2>
-          <p class="category-title-en">AI Tools</p>
-        </div>
-        <span class="category-count">{{ site.categories['AI Tools'] | size | default: 0 }}</span>
+    <!-- Portal 1: AI Tools -->
+    <article id="ai" class="portal-card portal-ai">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          探索 AI 工具的實際應用，包括 ChatGPT、Claude、Midjourney 等工具的使用技巧與自動化流程。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">🤖</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">AI 工具星域</h2>
+        <p class="portal-subtitle">AI Tools Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['AI Tools'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          探索人工智慧的無限可能，從 ChatGPT 到 Midjourney 的星際之旅
         </p>
         
-        {% assign ai_posts = site.categories['AI Tools'] | limit: 3 %}
-        {% if ai_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in ai_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#ai-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#ai-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 2: Software Dev -->
-    <article id="dev" class="category-card category-card--dev">
-      <div class="category-card__header">
-        <span class="category-icon">💻</span>
-        <div class="category-info">
-          <h2 class="category-title">軟體開發</h2>
-          <p class="category-title-en">Software Dev</p>
-        </div>
-        <span class="category-count">{{ site.categories['Software Dev'] | size | default: 0 }}</span>
+    <!-- Portal 2: Software Dev -->
+    <article id="dev" class="portal-card portal-dev">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          程式開發技術、框架使用、開發工具與最佳實踐，涵蓋前端、後端與 DevOps。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">💻</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">軟體開發星域</h2>
+        <p class="portal-subtitle">Software Dev Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Software Dev'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          程式開發的宇宙，探索前端、後端與 DevOps 的星際航線
         </p>
         
-        {% assign dev_posts = site.categories['Software Dev'] | limit: 3 %}
-        {% if dev_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in dev_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#dev-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#dev-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 3: Data Science -->
-    <article id="data" class="category-card category-card--data">
-      <div class="category-card__header">
-        <span class="category-icon">📊</span>
-        <div class="category-info">
-          <h2 class="category-title">資料科學</h2>
-          <p class="category-title-en">Data Science</p>
-        </div>
-        <span class="category-count">{{ site.categories['Data Science'] | size | default: 0 }}</span>
+    <!-- Portal 3: Data Science -->
+    <article id="data" class="portal-card portal-data">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          資料分析、機器學習、視覺化工具與統計方法，從資料中挖掘洞察。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">📊</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">資料科學星域</h2>
+        <p class="portal-subtitle">Data Science Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Data Science'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          數據宇宙的奧秘，機器學習與視覺化的星際探索
         </p>
         
-        {% assign data_posts = site.categories['Data Science'] | limit: 3 %}
-        {% if data_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in data_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#data-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#data-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 4: Digital Marketing -->
-    <article id="marketing" class="category-card category-card--marketing">
-      <div class="category-card__header">
-        <span class="category-icon">🌐</span>
-        <div class="category-info">
-          <h2 class="category-title">數位行銷</h2>
-          <p class="category-title-en">Marketing</p>
-        </div>
-        <span class="category-count">{{ site.categories['Marketing'] | size | default: 0 }}</span>
+    <!-- Portal 4: Marketing -->
+    <article id="marketing" class="portal-card portal-marketing">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          數位行銷策略、社群經營、內容創作與品牌建立的實戰經驗分享。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">🌐</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">數位行銷星域</h2>
+        <p class="portal-subtitle">Marketing Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Marketing'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          社群與品牌的星際連結，內容創作的宇宙航道
         </p>
         
-        {% assign marketing_posts = site.categories['Marketing'] | limit: 3 %}
-        {% if marketing_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in marketing_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#marketing-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#marketing-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 5: Quant Trading -->
-    <article id="quant" class="category-card category-card--quant">
-      <div class="category-card__header">
-        <span class="category-icon">💹</span>
-        <div class="category-info">
-          <h2 class="category-title">量化交易</h2>
-          <p class="category-title-en">Quant Trading</p>
-        </div>
-        <span class="category-count">{{ site.categories['Quant Trading'] | size | default: 0 }}</span>
+    <!-- Portal 5: Quant Trading -->
+    <article id="quant" class="portal-card portal-quant">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          量化交易策略、技術分析、投資組合管理與風險控制的系統化方法。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">💹</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">量化交易星域</h2>
+        <p class="portal-subtitle">Quant Trading Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Quant Trading'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          金融宇宙的量子領域，策略與風控的星際旅程
         </p>
         
-        {% assign quant_posts = site.categories['Quant Trading'] | limit: 3 %}
-        {% if quant_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in quant_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#quant-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#quant-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 6: Reading Notes -->
-    <article id="reading" class="category-card category-card--reading">
-      <div class="category-card__header">
-        <span class="category-icon">📘</span>
-        <div class="category-info">
-          <h2 class="category-title">閱讀筆記</h2>
-          <p class="category-title-en">Reading</p>
-        </div>
-        <span class="category-count">{{ site.categories['Reading'] | size | default: 0 }}</span>
+    <!-- Portal 6: Reading -->
+    <article id="reading" class="portal-card portal-reading">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          書籍筆記、學習心得與知識整理，記錄閱讀旅程中的思考與啟發。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">📘</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">閱讀筆記星域</h2>
+        <p class="portal-subtitle">Reading Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Reading'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          知識星雲的漫遊，書籍與思想的宇宙圖書館
         </p>
         
-        {% assign reading_posts = site.categories['Reading'] | limit: 3 %}
-        {% if reading_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in reading_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#reading-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#reading-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 7: Green Energy -->
-    <article id="green" class="category-card category-card--green">
-      <div class="category-card__header">
-        <span class="category-icon">🌱</span>
-        <div class="category-info">
-          <h2 class="category-title">綠色能源</h2>
-          <p class="category-title-en">Green Energy</p>
-        </div>
-        <span class="category-count">{{ site.categories['Green Energy'] | size | default: 0 }}</span>
+    <!-- Portal 7: Green Energy -->
+    <article id="green" class="portal-card portal-green">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          永續能源、環境保護與綠色科技，探索未來能源解決方案。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">🌱</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">綠色能源星域</h2>
+        <p class="portal-subtitle">Green Energy Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Green Energy'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          永續宇宙的綠色星球，環保科技的星際使命
         </p>
         
-        {% assign green_posts = site.categories['Green Energy'] | limit: 3 %}
-        {% if green_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in green_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#green-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#green-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
-    <!-- Category 8: Growth Journey -->
-    <article id="growth" class="category-card category-card--growth">
-      <div class="category-card__header">
-        <span class="category-icon">🎯</span>
-        <div class="category-info">
-          <h2 class="category-title">成長旅程</h2>
-          <p class="category-title-en">Growth</p>
-        </div>
-        <span class="category-count">{{ site.categories['Growth'] | size | default: 0 }}</span>
+    <!-- Portal 8: Growth -->
+    <article id="growth" class="portal-card portal-growth">
+      <div class="portal-ring">
+        <div class="ring-outer"></div>
+        <div class="ring-middle"></div>
+        <div class="ring-inner"></div>
       </div>
       
-      <div class="category-card__body">
-        <p class="category-description">
-          個人成長、職涯發展與生活反思，記錄持續進化的旅程。
+      <div class="portal-core">
+        <div class="core-glow"></div>
+        <span class="portal-icon">🎯</span>
+      </div>
+      
+      <div class="portal-content">
+        <h2 class="portal-title">成長旅程星域</h2>
+        <p class="portal-subtitle">Growth Journey Galaxy</p>
+        
+        <div class="portal-stats">
+          <span class="stat-badge">{{ site.categories['Growth'] | size | default: 0 }} 紀錄</span>
+        </div>
+        
+        <p class="portal-description">
+          個人進化的宇宙軌跡，職涯與生活的星際航程
         </p>
         
-        {% assign growth_posts = site.categories['Growth'] | limit: 3 %}
-        {% if growth_posts.size > 0 %}
-          <ul class="category-posts-preview">
-            {% for post in growth_posts %}
-              <li>
-                <a href="{{ post.url | relative_url }}">
-                  <span class="post-date">{{ post.date | date: "%m/%d" }}</span>
-                  <span class="post-title">{{ post.title | truncate: 40 }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% else %}
-          <p class="category-empty">即將推出相關內容</p>
-        {% endif %}
+        <a href="#growth-posts" class="portal-enter">
+          <span>進入大門</span>
+          <span class="enter-arrow">→</span>
+        </a>
       </div>
       
-      <div class="category-card__footer">
-        <a href="#growth-posts" class="category-explore-btn">探索文章 →</a>
-      </div>
+      <div class="portal-particles"></div>
     </article>
     
   </div>
+  
 </div>
