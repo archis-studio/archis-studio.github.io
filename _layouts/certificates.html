@@ -1,0 +1,179 @@
+---
+layout: default
+---
+
+<div class="certificates-gallery">
+  <!-- Starfield Background -->
+  <div class="starfield"></div>
+  
+  <!-- Hero Section -->
+  <div class="gallery-hero">
+    <div class="hero-content">
+      <h1 class="gallery-title">{{ page.title }}</h1>
+      <p class="gallery-subtitle">{{ page.subtitle | default: "A collection of achievements floating in the digital cosmos" }}</p>
+    </div>
+  </div>
+
+  <!-- Filter Navigation -->
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="all">
+      <span class="filter-icon">🌌</span>
+      <span class="filter-label">All Achievements</span>
+      <span class="filter-count">{{ page.certificates | size | default: 0 }}</span>
+    </button>
+    
+    {% assign categories = page.certificates | map: "category" | uniq %}
+    {% for category in categories %}
+    <button class="filter-btn" data-filter="{{ category }}">
+      <span class="filter-icon">{{ page.category_icons[category] | default: "📜" }}</span>
+      <span class="filter-label">{{ category }}</span>
+      <span class="filter-count">{{ page.certificates | where: "category", category | size }}</span>
+    </button>
+    {% endfor %}
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="gallery-container">
+    <div class="gallery-grid" id="certificatesGrid">
+      {% if page.certificates and page.certificates.size > 0 %}
+        {% for cert in page.certificates %}
+        <div class="gallery-item" data-category="{{ cert.category }}" data-aos="fade-up">
+          <div class="cert-card">
+            <div class="cert-image-wrapper">
+              {% if cert.image %}
+                <img src="{{ cert.image }}" alt="{{ cert.title }}" class="cert-image" loading="lazy">
+              {% else %}
+                <div class="cert-placeholder">
+                  <span class="placeholder-icon">{{ page.category_icons[cert.category] | default: "📜" }}</span>
+                </div>
+              {% endif %}
+              <div class="cert-overlay">
+                <button class="view-btn" data-image="{{ cert.image }}" data-title="{{ cert.title }}">
+                  <span>🔍</span>
+                  <span>View</span>
+                </button>
+              </div>
+            </div>
+            <div class="cert-info">
+              <h3 class="cert-title">{{ cert.title }}</h3>
+              <p class="cert-issuer">{{ cert.issuer }}</p>
+              <div class="cert-meta">
+                <span class="cert-date">{{ cert.date }}</span>
+                {% if cert.credential_id %}
+                <span class="cert-id">ID: {{ cert.credential_id }}</span>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <!-- Empty State -->
+        <div class="gallery-empty">
+          <div class="empty-icon">🚀</div>
+          <h3>Achievements Loading...</h3>
+          <p>證書與成就將陸續解鎖</p>
+          <div class="loading-bar">
+            <div class="loading-progress"></div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close">&times;</button>
+      <img src="" alt="" class="lightbox-image">
+      <div class="lightbox-caption"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+      
+      // Update active button
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      // Filter items
+      galleryItems.forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+          setTimeout(() => item.style.opacity = '1', 10);
+        } else {
+          item.style.opacity = '0';
+          setTimeout(() => item.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+  
+  // Lightbox functionality
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = lightbox.querySelector('.lightbox-image');
+  const lightboxCaption = lightbox.querySelector('.lightbox-caption');
+  const lightboxClose = lightbox.querySelector('.lightbox-close');
+  const viewBtns = document.querySelectorAll('.view-btn');
+  
+  viewBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const imageSrc = this.getAttribute('data-image');
+      const title = this.getAttribute('data-title');
+      
+      if (imageSrc) {
+        lightboxImage.src = imageSrc;
+        lightboxCaption.textContent = title;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+  
+  // Close lightbox
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.querySelector('.lightbox-backdrop').addEventListener('click', closeLightbox);
+  
+  // ESC key to close
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
+  
+  // Starfield animation
+  createStarfield();
+});
+
+function createStarfield() {
+  const starfield = document.querySelector('.starfield');
+  const starCount = 100;
+  
+  for (let i = 0; i < starCount; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    starfield.appendChild(star);
+  }
+}
+</script>
+
+{{ content }}
