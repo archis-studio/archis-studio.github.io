@@ -36,12 +36,27 @@ $portal-growth: #FF6F61;
   min-height: 100vh;
   background: $cosmic-void;
   padding: 3rem 2rem;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   box-sizing: border-box;
   
   @media (max-width: 768px) {
     padding: 2rem 1rem;
   }
+}
+
+// Prevent horizontal scroll on body and html
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100%;
+  position: relative;
+}
+
+// Ensure all parent containers don't overflow
+.page,
+.page__inner-wrap,
+.page__content,
+.page__main {
+  overflow-x: hidden !important;
 }
 
 // Reset any inherited margins/paddings
@@ -219,6 +234,7 @@ $portal-growth: #FF6F61;
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
+  overflow: hidden;
   
   @media (min-width: 1600px) {
     grid-template-columns: repeat(4, 1fr);
@@ -257,6 +273,8 @@ $portal-growth: #FF6F61;
   min-height: 420px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  max-width: 100%;
   
   &:hover {
     transform: translateY(-10px) scale(1.02);
