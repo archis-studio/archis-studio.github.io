@@ -181,6 +181,10 @@ $portal-growth: #FF6F61;
   backdrop-filter: blur(10px);
   min-height: 400px;
   
+  // Flexbox layout for consistent alignment
+  display: flex;
+  flex-direction: column;
+  
   &:hover {
     transform: translateY(-10px) scale(1.02);
     border-color: currentColor;
@@ -308,6 +312,11 @@ $portal-growth: #FF6F61;
   position: relative;
   z-index: 1;
   text-align: center;
+  
+  // Flex grow to push button to bottom
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .portal-title {
@@ -367,6 +376,9 @@ $portal-growth: #FF6F61;
   line-height: 1.6;
   color: $cosmic-dim;
   margin: 0 0 1.5rem;
+  
+  // Flex grow to push button to bottom
+  flex-grow: 1;
 }
 
 .portal-enter {
@@ -378,6 +390,9 @@ $portal-growth: #FF6F61;
   font-weight: 500;
   color: $cosmic-text;
   text-decoration: none;
+  
+  // Align button to bottom
+  margin-top: auto;
   background: linear-gradient(135deg, rgba(147, 112, 219, 0.2), rgba(74, 47, 189, 0.3));
   border: 1px solid currentColor;
   border-radius: 50px;
