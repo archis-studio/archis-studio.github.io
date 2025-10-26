@@ -341,6 +341,25 @@ $portal-growth: #FF6F61;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid currentColor;
   border-radius: 20px;
+  margin-right: 0.5rem;
+  
+  &.stat-unlocked {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(46, 125, 50, 0.3));
+    border-color: #4CAF50;
+    color: #4CAF50;
+    font-weight: 600;
+    animation: pulse-glow 2s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+  }
 }
 
 .portal-description {

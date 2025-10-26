@@ -15,10 +15,10 @@ layout: default
   <!-- Page Header -->
   <header class="cosmic-header">
     <h1 class="cosmic-title">
-      <span class="title-glow">宇宙大門</span>
+      <span class="title-glow">KNOWLEDGE ATLAS</span>
     </h1>
     <p class="cosmic-subtitle">
-      ✦ 8 個知識星域 · {{ site.posts.size }} 篇星際紀錄 · 探索無限可能 ✦
+      8 ZONES · {{ site.posts.size }} LOGS · EXPLORE NOW
     </p>
   </header>
 
@@ -39,19 +39,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">AI 工具星域</h2>
-        <p class="portal-subtitle">AI Tools Galaxy</p>
+        <h2 class="portal-title">AI 工具區域</h2>
+        <p class="portal-subtitle">[ AI TOOLS ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['AI Tools'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['AI Tools'] | size | default: 0 }} LOGS</span>
+          {% assign ai_count = site.categories['AI Tools'] | size | default: 0 %}
+          {% if ai_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          探索人工智慧的無限可能，從 ChatGPT 到 Midjourney 的星際之旅
+          AI 工具實戰指南與應用案例，從新手到進階的完整攻略
         </p>
         
         <a href="/categories/ai-tools/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -73,19 +75,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">軟體開發星域</h2>
-        <p class="portal-subtitle">Software Dev Galaxy</p>
+        <h2 class="portal-title">軟體開發區域</h2>
+        <p class="portal-subtitle">[ SOFTWARE DEV ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Software Dev'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Software Dev'] | size | default: 0 }} LOGS</span>
+          {% assign dev_count = site.categories['Software Dev'] | size | default: 0 %}
+          {% if dev_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          程式開發的宇宙，探索前端、後端與 DevOps 的星際航線
+          前後端開發技術、框架選擇與最佳實踐經驗分享
         </p>
         
         <a href="/categories/software-dev/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -107,19 +111,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">資料科學星域</h2>
-        <p class="portal-subtitle">Data Science Galaxy</p>
+        <h2 class="portal-title">資料科學區域</h2>
+        <p class="portal-subtitle">[ DATA SCIENCE ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Data Science'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Data Science'] | size | default: 0 }} LOGS</span>
+          {% assign data_count = site.categories['Data Science'] | size | default: 0 %}
+          {% if data_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          數據宇宙的奧秘，機器學習與視覺化的星際探索
+          資料分析、機器學習與視覺化技術的實務應用筆記
         </p>
         
         <a href="/categories/data-science/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -141,19 +147,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">數位行銷星域</h2>
-        <p class="portal-subtitle">Marketing Galaxy</p>
+        <h2 class="portal-title">數位行銷區域</h2>
+        <p class="portal-subtitle">[ MARKETING ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Marketing'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Marketing'] | size | default: 0 }} LOGS</span>
+          {% assign marketing_count = site.categories['Marketing'] | size | default: 0 %}
+          {% if marketing_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          社群與品牌的星際連結，內容創作的宇宙航道
+          內容策略、社群經營與數位品牌建立的實戰心得
         </p>
         
         <a href="/categories/marketing/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -175,19 +183,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">量化交易星域</h2>
-        <p class="portal-subtitle">Quant Trading Galaxy</p>
+        <h2 class="portal-title">量化交易區域</h2>
+        <p class="portal-subtitle">[ QUANT TRADING ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Quant Trading'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Quant Trading'] | size | default: 0 }} LOGS</span>
+          {% assign quant_count = site.categories['Quant Trading'] | size | default: 0 %}
+          {% if quant_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          金融宇宙的量子領域，策略與風控的星際旅程
+          量化策略開發、回測與風險管理的技術探討
         </p>
         
         <a href="/categories/quant-trading/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -209,19 +219,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">閱讀筆記星域</h2>
-        <p class="portal-subtitle">Reading Galaxy</p>
+        <h2 class="portal-title">閱讀筆記區域</h2>
+        <p class="portal-subtitle">[ READING NOTES ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Reading'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Reading'] | size | default: 0 }} LOGS</span>
+          {% assign reading_count = site.categories['Reading'] | size | default: 0 %}
+          {% if reading_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          知識星雲的漫遊，書籍與思想的宇宙圖書館
+          商業、科技與個人成長書籍的精華摘錄與心得
         </p>
         
         <a href="/categories/reading/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -243,19 +255,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">綠色能源星域</h2>
-        <p class="portal-subtitle">Green Energy Galaxy</p>
+        <h2 class="portal-title">綠色能源區域</h2>
+        <p class="portal-subtitle">[ GREEN ENERGY ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Green Energy'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Green Energy'] | size | default: 0 }} LOGS</span>
+          {% assign green_count = site.categories['Green Energy'] | size | default: 0 %}
+          {% if green_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          永續宇宙的綠色星球，環保科技的星際使命
+          永續科技、環保趨勢與綠能產業的觀察與研究
         </p>
         
         <a href="/categories/green-energy/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
@@ -277,19 +291,21 @@ layout: default
       </div>
       
       <div class="portal-content">
-        <h2 class="portal-title">成長旅程星域</h2>
-        <p class="portal-subtitle">Growth Journey Galaxy</p>
+        <h2 class="portal-title">成長旅程區域</h2>
+        <p class="portal-subtitle">[ GROWTH ]</p>
         
         <div class="portal-stats">
-          <span class="stat-badge">{{ site.categories['Growth'] | size | default: 0 }} 紀錄</span>
+          <span class="stat-badge">{{ site.categories['Growth'] | size | default: 0 }} LOGS</span>
+          {% assign growth_count = site.categories['Growth'] | size | default: 0 %}
+          {% if growth_count > 0 %}<span class="stat-badge stat-unlocked">UNLOCKED</span>{% endif %}
         </div>
         
         <p class="portal-description">
-          個人進化的宇宙軌跡，職涯與生活的星際航程
+          職涯發展、技能升級與個人品牌建立的經驗分享
         </p>
         
         <a href="/categories/growth/" class="portal-enter">
-          <span>進入大門</span>
+          <span>ENTER</span>
           <span class="enter-arrow">→</span>
         </a>
       </div>
