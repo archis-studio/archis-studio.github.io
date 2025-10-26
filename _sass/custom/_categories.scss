@@ -1,14 +1,14 @@
 /* ============================================
-   Cosmic Portals - Clean & Simple Version
-   宇宙大門主題 - 簡潔版
+   Cosmic Portals - Categories Page
+   宇宙大門 - 分類頁面
    ============================================ */
 
-// Color Palette
+// Color Variables
 $cosmic-void: #050810;
 $cosmic-text: #e8e8ff;
 $cosmic-dim: #9999bb;
 
-// Portal Colors  
+// Portal Colors
 $portal-ai: #D4A017;
 $portal-dev: #00B4D8;
 $portal-data: #5D8AA8;
@@ -19,49 +19,35 @@ $portal-green: #2E7D32;
 $portal-growth: #FF6F61;
 
 /* ============================================
-   Layout Fix - Simple Approach
+   Main Container
    ============================================ */
 
-// Hide sidebar completely on categories page
-.sidebar {
-  display: none;
-}
-
-// Make content full width
-.page__content {
-  width: 100%;
-  padding: 0;
-  float: none;
-}
-
-/* ============================================
-   Cosmic Portal Styles
-   ============================================ */
-
-// Main container
 .cosmic-portals {
   min-height: 100vh;
   background: $cosmic-void;
   padding: 3rem 2rem;
+  position: relative;
   
   @media (max-width: 768px) {
     padding: 2rem 1rem;
   }
 }
 
-// Cosmic background with stars
+/* ============================================
+   Cosmic Background
+   ============================================ */
+
 .cosmic-space {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: -1;
   pointer-events: none;
   background: radial-gradient(ellipse at top, #1a1f3a 0%, $cosmic-void 50%);
 }
 
-// Star layers
 .stars-layer {
   position: absolute;
   width: 100%;
@@ -76,16 +62,25 @@ $portal-growth: #FF6F61;
   opacity: 0.5;
 }
 
-.stars-slow { animation: starsMove 120s linear infinite; }
-.stars-medium { animation: starsMove 80s linear infinite reverse; opacity: 0.3; }
-.stars-fast { animation: starsMove 50s linear infinite; opacity: 0.2; }
+.stars-slow {
+  animation: starsMove 120s linear infinite;
+}
+
+.stars-medium {
+  animation: starsMove 80s linear infinite reverse;
+  opacity: 0.3;
+}
+
+.stars-fast {
+  animation: starsMove 50s linear infinite;
+  opacity: 0.2;
+}
 
 @keyframes starsMove {
   from { background-position: 0% 0%; }
   to { background-position: 100% 100%; }
 }
 
-// Nebula glow effect
 .nebula-glow {
   position: absolute;
   width: 100%;
@@ -192,10 +187,16 @@ $portal-growth: #FF6F61;
     background: rgba(15, 20, 40, 0.8);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 50px currentColor;
     
-    .portal-ring {
-      .ring-outer { transform: translate(-50%, -50%) rotate(180deg) scale(1.1); }
-      .ring-middle { transform: translate(-50%, -50%) rotate(-120deg) scale(1.05); }
-      .ring-inner { transform: translate(-50%, -50%) rotate(240deg); }
+    .ring-outer {
+      transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+    }
+    
+    .ring-middle {
+      transform: translate(-50%, -50%) rotate(-120deg) scale(1.05);
+    }
+    
+    .ring-inner {
+      transform: translate(-50%, -50%) rotate(240deg);
     }
     
     .core-glow {
@@ -206,10 +207,17 @@ $portal-growth: #FF6F61;
     .portal-icon {
       transform: scale(1.2) rotateY(360deg);
     }
+    
+    .portal-particles {
+      opacity: 1;
+    }
   }
 }
 
-// Portal rings
+/* ============================================
+   Portal Rings
+   ============================================ */
+
 .portal-ring {
   position: absolute;
   top: 50%;
@@ -259,7 +267,10 @@ $portal-growth: #FF6F61;
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-// Portal core
+/* ============================================
+   Portal Core
+   ============================================ */
+
 .portal-core {
   position: relative;
   display: flex;
@@ -289,7 +300,10 @@ $portal-growth: #FF6F61;
   filter: drop-shadow(0 0 10px currentColor);
 }
 
-// Portal content
+/* ============================================
+   Portal Content
+   ============================================ */
+
 .portal-content {
   position: relative;
   z-index: 1;
@@ -358,7 +372,10 @@ $portal-growth: #FF6F61;
   }
 }
 
-// Portal particles (hidden by default, shown on hover)
+/* ============================================
+   Portal Particles
+   ============================================ */
+
 .portal-particles {
   position: absolute;
   top: 0;
@@ -374,10 +391,6 @@ $portal-growth: #FF6F61;
     radial-gradient(1px 1px at 70% 60%, currentColor, transparent),
     radial-gradient(1px 1px at 50% 30%, currentColor, transparent);
   animation: particlesDrift 8s linear infinite;
-}
-
-.portal-card:hover .portal-particles {
-  opacity: 1;
 }
 
 @keyframes particlesDrift {
