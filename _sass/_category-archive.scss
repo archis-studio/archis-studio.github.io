@@ -83,36 +83,7 @@
   border-radius: 8px;
 }
 
-.post-item-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.75rem;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.post-item-header .post-date {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.4);
-  font-family: 'Courier New', monospace;
-}
-
-.post-item-header .post-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-}
-
-.post-item-header .tag {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.625rem;
-  background: rgba(79, 172, 254, 0.08);
-  border: 1px solid rgba(79, 172, 254, 0.2);
-  border-radius: 12px;
-  color: rgba(79, 172, 254, 0.8);
-  font-family: 'Courier New', monospace;
-}
+/* Removed - styling moved to footer */
 
 .post-item-title {
   font-size: 1.5rem;
@@ -142,34 +113,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.875rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.read-more-link {
-  color: #4facfe;
-  text-decoration: none;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
+.post-item-footer .post-date {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: 'Courier New', monospace;
+}
+
+.post-item-footer .post-tags {
+  display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.post-item-footer .tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  background: rgba(79, 172, 254, 0.08);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  color: rgba(79, 172, 254, 0.8);
+  font-family: 'Courier New', monospace;
   transition: all 0.3s ease;
 }
 
-.read-more-link .arrow {
-  transition: transform 0.3s ease;
-}
-
-.read-more-link:hover {
-  color: #ec87c0;
-}
-
-.read-more-link:hover .arrow {
-  transform: translateX(4px);
-}
-
-.reading-time {
-  color: rgba(255, 255, 255, 0.4);
-  font-family: 'Courier New', monospace;
+.post-item-footer .tag:hover {
+  background: rgba(79, 172, 254, 0.15);
+  border-color: rgba(79, 172, 254, 0.4);
 }
 
 .post-divider {
@@ -361,11 +337,6 @@
     font-size: 1.5rem;
   }
 
-  .post-item-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .post-item-title {
     font-size: 1.25rem;
   }
@@ -374,6 +345,10 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+  
+  .post-item-footer .post-tags {
+    width: 100%;
   }
 
   .category-post-item:hover {

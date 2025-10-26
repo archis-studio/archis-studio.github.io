@@ -37,7 +37,15 @@ layout: default
       {% if category_posts.size > 0 %}
         {% for post in category_posts %}
           <article class="category-post-item">
-            <div class="post-item-header">
+            <h2 class="post-item-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            
+            {% if post.excerpt %}
+              <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            {% endif %}
+            
+            <div class="post-item-footer">
               <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
                 {{ post.date | date: "%Y.%m.%d" }}
               </time>
@@ -48,23 +56,6 @@ layout: default
                   {% endfor %}
                 </div>
               {% endif %}
-            </div>
-            
-            <h2 class="post-item-title">
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-            </h2>
-            
-            {% if post.excerpt %}
-              <p class="post-item-excerpt">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-            {% endif %}
-            
-            <div class="post-item-footer">
-              <a href="{{ post.url | relative_url }}" class="read-more-link">
-                閱讀全文 <span class="arrow">→</span>
-              </a>
-              {% assign words = post.content | number_of_words %}
-              {% assign reading_time = words | divided_by: 200 | plus: 1 %}
-              <span class="reading-time">約 {{ reading_time }} 分鐘</span>
             </div>
           </article>
           
