@@ -3,24 +3,21 @@
    8 Category Cards with Autumn Noir Theme
    ============================================ */
 
-// CSS Variables
-:root {
-  // Category Colors (8 Colors)
-  --category-ai: #D4A017;        // Gold
-  --category-dev: #00B4D8;       // Cyan
-  --category-data: #5D8AA8;      // Blue
-  --category-marketing: #9370DB; // Purple
-  --category-quant: #FF9800;     // Orange
-  --category-reading: #8B7355;   // Brown
-  --category-green: #2E7D32;     // Green
-  --category-growth: #FF6F61;    // Coral
-  
-  // Base Colors
-  --category-bg: #1C1C1E;
-  --category-border: #2C2C2E;
-  --category-text: #E8E8E8;
-  --category-text-muted: #A0A0A5;
-}
+// SCSS Variables
+$category-ai: #D4A017;        // Gold
+$category-dev: #00B4D8;       // Cyan
+$category-data: #5D8AA8;      // Blue
+$category-marketing: #9370DB; // Purple
+$category-quant: #FF9800;     // Orange
+$category-reading: #8B7355;   // Brown
+$category-green: #2E7D32;     // Green
+$category-growth: #FF6F61;    // Coral
+
+// Base Colors
+$category-bg: #1C1C1E;
+$category-border: #2C2C2E;
+$category-text: #E8E8E8;
+$category-text-muted: #A0A0A5;
 
 // Page Container
 .categories-page {
@@ -38,7 +35,7 @@
   text-align: center;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 2px solid var(--category-border);
+  border-bottom: 2px solid $category-border;
   
   @media (max-width: 768px) {
     margin-bottom: 2rem;
@@ -50,7 +47,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 700;
-  color: var(--category-text);
+  color: $category-text;
   margin: 0 0 1rem;
   letter-spacing: 0.02em;
   
@@ -62,7 +59,7 @@
 .categories-subtitle {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.95rem;
-  color: var(--category-text-muted);
+  color: $category-text-muted;
   letter-spacing: 0.05em;
   margin: 0;
 }
@@ -85,8 +82,8 @@
 
 // Category Card Base
 .category-card {
-  background: var(--category-bg);
-  border: 1px solid var(--category-border);
+  background: $category-bg;
+  border: 1px solid $category-border;
   border-radius: 8px;
   padding: 2rem;
   transition: all 0.3s ease;
@@ -131,7 +128,7 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--category-border);
+  border-bottom: 1px solid $category-border;
 }
 
 .category-icon {
@@ -152,7 +149,7 @@
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--category-text);
+  color: $category-text;
   margin: 0 0 0.25rem;
   line-height: 1.2;
   
@@ -164,7 +161,7 @@
 .category-title-en {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: var(--category-text-muted);
+  color: $category-text-muted;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin: 0;
@@ -192,7 +189,7 @@
 .category-description {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--category-text-muted);
+  color: $category-text-muted;
   margin: 0 0 1.5rem;
 }
 
@@ -230,20 +227,20 @@
   .post-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
-    color: var(--category-text-muted);
+    color: $category-text-muted;
     min-width: 40px;
   }
   
   .post-title {
     font-size: 0.9rem;
-    color: var(--category-text);
+    color: $category-text;
     flex: 1;
   }
 }
 
 .category-empty {
   font-size: 0.9rem;
-  color: var(--category-text-muted);
+  color: $category-text-muted;
   font-style: italic;
   text-align: center;
   padding: 2rem 0;
@@ -253,7 +250,7 @@
 // Category Card Footer
 .category-card__footer {
   padding-top: 1rem;
-  border-top: 1px solid var(--category-border);
+  border-top: 1px solid $category-border;
 }
 
 .category-explore-btn {
@@ -281,66 +278,66 @@
 
 // Category Specific Colors
 .category-card--ai {
-  color: var(--category-ai);
+  color: $category-ai;
   
   &::before {
-    background: var(--category-ai);
+    background: $category-ai;
   }
 }
 
 .category-card--dev {
-  color: var(--category-dev);
+  color: $category-dev;
   
   &::before {
-    background: var(--category-dev);
+    background: $category-dev;
   }
 }
 
 .category-card--data {
-  color: var(--category-data);
+  color: $category-data;
   
   &::before {
-    background: var(--category-data);
+    background: $category-data;
   }
 }
 
 .category-card--marketing {
-  color: var(--category-marketing);
+  color: $category-marketing;
   
   &::before {
-    background: var(--category-marketing);
+    background: $category-marketing;
   }
 }
 
 .category-card--quant {
-  color: var(--category-quant);
+  color: $category-quant;
   
   &::before {
-    background: var(--category-quant);
+    background: $category-quant;
   }
 }
 
 .category-card--reading {
-  color: var(--category-reading);
+  color: $category-reading;
   
   &::before {
-    background: var(--category-reading);
+    background: $category-reading;
   }
 }
 
 .category-card--green {
-  color: var(--category-green);
+  color: $category-green;
   
   &::before {
-    background: var(--category-green);
+    background: $category-green;
   }
 }
 
 .category-card--growth {
-  color: var(--category-growth);
+  color: $category-growth;
   
   &::before {
-    background: var(--category-growth);
+    background: $category-growth;
   }
 }
 
@@ -348,11 +345,14 @@
 .category-card {
   animation: fadeInUp 0.5s ease backwards;
   
-  @for $i from 1 through 8 {
-    &:nth-child(#{$i}) {
-      animation-delay: #{$i * 0.08}s;
-    }
-  }
+  &:nth-child(1) { animation-delay: 0.08s; }
+  &:nth-child(2) { animation-delay: 0.16s; }
+  &:nth-child(3) { animation-delay: 0.24s; }
+  &:nth-child(4) { animation-delay: 0.32s; }
+  &:nth-child(5) { animation-delay: 0.40s; }
+  &:nth-child(6) { animation-delay: 0.48s; }
+  &:nth-child(7) { animation-delay: 0.56s; }
+  &:nth-child(8) { animation-delay: 0.64s; }
 }
 
 @keyframes fadeInUp {

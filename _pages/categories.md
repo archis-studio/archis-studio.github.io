@@ -1,8 +1,9 @@
 ---
-layout: page
+layout: single
 title: "分類導航"
 permalink: /categories/
 author_profile: false
+classes: wide
 ---
 
 <div class="categories-page">
