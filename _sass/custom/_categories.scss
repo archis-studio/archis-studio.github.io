@@ -1,0 +1,387 @@
+/* ============================================
+   Categories Page - Magazine Grid Style
+   8 Category Cards with Autumn Noir Theme
+   ============================================ */
+
+// CSS Variables
+:root {
+  // Category Colors (8 Colors)
+  --category-ai: #D4A017;        // Gold
+  --category-dev: #00B4D8;       // Cyan
+  --category-data: #5D8AA8;      // Blue
+  --category-marketing: #9370DB; // Purple
+  --category-quant: #FF9800;     // Orange
+  --category-reading: #8B7355;   // Brown
+  --category-green: #2E7D32;     // Green
+  --category-growth: #FF6F61;    // Coral
+  
+  // Base Colors
+  --category-bg: #1C1C1E;
+  --category-border: #2C2C2E;
+  --category-text: #E8E8E8;
+  --category-text-muted: #A0A0A5;
+}
+
+// Page Container
+.categories-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+}
+
+// Page Header
+.categories-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--category-border);
+  
+  @media (max-width: 768px) {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+.categories-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--category-text);
+  margin: 0 0 1rem;
+  letter-spacing: 0.02em;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.categories-subtitle {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  color: var(--category-text-muted);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+// Categories Grid Layout
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  
+  @media (max-width: 1024px) {
+    gap: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+// Category Card Base
+.category-card {
+  background: var(--category-bg);
+  border: 1px solid var(--category-border);
+  border-radius: 8px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  // Subtle gradient overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    
+    &::before {
+      opacity: 1;
+      box-shadow: 0 0 20px currentColor;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+// Category Card Header
+.category-card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--category-border);
+}
+
+.category-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px currentColor);
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.category-info {
+  flex: 1;
+}
+
+.category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--category-text);
+  margin: 0 0 0.25rem;
+  line-height: 1.2;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.category-title-en {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--category-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.category-count {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: currentColor;
+  padding: 0.25rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 1px solid currentColor;
+  line-height: 1;
+  min-width: 50px;
+  text-align: center;
+}
+
+// Category Card Body
+.category-card__body {
+  margin-bottom: 1.5rem;
+}
+
+.category-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--category-text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.category-posts-preview {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  li {
+    margin-bottom: 0.75rem;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-left-color: currentColor;
+      transform: translateX(4px);
+    }
+  }
+  
+  .post-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--category-text-muted);
+    min-width: 40px;
+  }
+  
+  .post-title {
+    font-size: 0.9rem;
+    color: var(--category-text);
+    flex: 1;
+  }
+}
+
+.category-empty {
+  font-size: 0.9rem;
+  color: var(--category-text-muted);
+  font-style: italic;
+  text-align: center;
+  padding: 2rem 0;
+  opacity: 0.7;
+}
+
+// Category Card Footer
+.category-card__footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--category-border);
+}
+
+.category-explore-btn {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: currentColor;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.5rem 1rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: currentColor;
+    color: #0E0E10;
+    transform: translateX(4px);
+    box-shadow: 0 0 16px currentColor;
+  }
+}
+
+// Category Specific Colors
+.category-card--ai {
+  color: var(--category-ai);
+  
+  &::before {
+    background: var(--category-ai);
+  }
+}
+
+.category-card--dev {
+  color: var(--category-dev);
+  
+  &::before {
+    background: var(--category-dev);
+  }
+}
+
+.category-card--data {
+  color: var(--category-data);
+  
+  &::before {
+    background: var(--category-data);
+  }
+}
+
+.category-card--marketing {
+  color: var(--category-marketing);
+  
+  &::before {
+    background: var(--category-marketing);
+  }
+}
+
+.category-card--quant {
+  color: var(--category-quant);
+  
+  &::before {
+    background: var(--category-quant);
+  }
+}
+
+.category-card--reading {
+  color: var(--category-reading);
+  
+  &::before {
+    background: var(--category-reading);
+  }
+}
+
+.category-card--green {
+  color: var(--category-green);
+  
+  &::before {
+    background: var(--category-green);
+  }
+}
+
+.category-card--growth {
+  color: var(--category-growth);
+  
+  &::before {
+    background: var(--category-growth);
+  }
+}
+
+// Scroll Animation (when page loads)
+.category-card {
+  animation: fadeInUp 0.5s ease backwards;
+  
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.08}s;
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Smooth Scroll Behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Target highlight when jumping to anchor
+.category-card:target {
+  animation: highlightPulse 1s ease;
+}
+
+@keyframes highlightPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 currentColor;
+  }
+  50% {
+    box-shadow: 0 0 0 8px transparent;
+    transform: scale(1.02);
+  }
+}
