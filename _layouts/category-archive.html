@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<div class="category-archive-page">
+  
+  <!-- Category Hero Section -->
+  <div class="category-hero" data-category="{{ page.category }}">
+    <div class="category-stars"></div>
+    <div class="category-hero-content">
+      <span class="category-icon">{{ page.icon }}</span>
+      <h1 class="category-title">{{ page.title }}</h1>
+      <p class="category-subtitle">{{ page.subtitle }}</p>
+      <div class="category-meta">
+        {% assign category_posts = site.categories[page.category] | where_exp: "post", "post.draft != true" %}
+        <span class="meta-item">{{ category_posts.size }} LOGS</span>
+        <span class="meta-divider">·</span>
+        <span class="meta-item">{{ page.category | upcase }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Posts Grid -->
+  <div class="category-posts-container">
+    {% if category_posts.size > 0 %}
+      <div class="posts-grid">
+        {% for post in category_posts %}
+          <article class="post-card">
+            <div class="post-card-header">
+              <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%Y.%m.%d" }}
+              </time>
+              {% if post.tags %}
+                <div class="post-tags">
+                  {% for tag in post.tags limit:2 %}
+                    <span class="tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            
+            <h2 class="post-title">
+              <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+            </h2>
+            
+            {% if post.excerpt %}
+              <p class="post-excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+            {% endif %}
+            
+            <div class="post-card-footer">
+              <a href="{{ post.url | relative_url }}" class="read-more">
+                READ MORE <span class="arrow">→</span>
+              </a>
+              {% if post.read_time %}
+                <span class="read-time">{{ post.read_time }} min</span>
+              {% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <div class="empty-icon">🌌</div>
+        <h3>此區域尚未開放</h3>
+        <p>暫無記錄，敬請期待未來更新</p>
+        <a href="/categories/" class="back-link">← 返回分類導航</a>
+      </div>
+    {% endif %}
+  </div>
+
+</div>
