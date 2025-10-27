@@ -68,7 +68,7 @@ classes: wide
             <span class="status-indicator active-indicator">● ACTIVE</span>
             <div class="item-skills">
               <span class="skill-tag">Energy Management System</span>
-              <span class="skill-tag">Streaming ETL</span>
+              <span class="skill-tag">Streaming Pipeline</span>
             </div>
             <span class="item-exp">+1500 EXP</span>
           </div>
@@ -113,12 +113,11 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <div class="item-skills">
-              <span class="skill-tag">CEDP</span>
+              <span class="skill-tag">CDP</span>
               <span class="skill-tag">Recommender System</span>
-              <span class="skill-tag">Data Engineering</span>
-              <span class="skill-tag">AWS Redshift</span>
-              <span class="skill-tag">GCP BigQuery</span>
-              <span class="skill-tag">GCP Looker</span>
+              <span class="skill-tag">Batch ETL</span>
+              <span class="skill-tag">Data Ingration</span>
+              <span class="skill-tag">Load Balancing Architecture</span>
             </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
