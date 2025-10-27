@@ -74,7 +74,7 @@ classes: wide
           </div>
           <div class="item-timeline">2025.09 - Present</div>
           <div class="item-header">
-            <div class="item-title">AIoT Backend Engineer</div>
+            <div class="item-title">SWE Specialist</div>
             <div class="item-badge">⚔️ Quest</div>
           </div>
           <div class="item-meta">
