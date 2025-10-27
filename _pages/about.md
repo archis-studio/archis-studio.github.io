@@ -116,7 +116,7 @@ classes: wide
               <span class="skill-tag">CDP</span>
               <span class="skill-tag">Recommender System</span>
               <span class="skill-tag">Batch ETL</span>
-              <span class="skill-tag">Data Ingration</span>
+              <span class="skill-tag">Data Integration</span>
               <span class="skill-tag">Load Balancing Architecture</span>
             </div>
             <span class="item-exp">+1000 EXP</span>
