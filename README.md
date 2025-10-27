@@ -1,31 +1,166 @@
-# Archis Studio Blog
-# Version 2.0.0 | Updated: 2025-10-26
+# ARCHIS.STUDIO
+## [ MEMORY IS THE NEW IMMORTALITY ]
+# Version 2.1.0 | Updated: 2025-10-27
 
-> **時尚與科技的完美融合** - 用 Editorial 風格分享 AI 工具、程式開發與像素藝術創作
+<div align="center">
 
-🎨 **Design Theme**: Autumn Noir Future (Fashion + Gaming + AI + Space)  
-⚡ **Tech Stack**: Jekyll 4.4.1 + Ruby 3.3.10 + Minimal Mistakes Theme  
-🌏 **Language**: 繁體中文 (Traditional Chinese)  
-🎮 **Style**: Terminal + RPG Pixel + Cyberpunk + Fashion Editorial
+### 🍂 時尚與科技的完美融合
+**一個融合四種美學的技術部落格**
+
+[🚀 探索文章](https://magicxcr7.github.io/posts/) · [🤖 關於我](https://magicxcr7.github.io/about/) · [📋 分類導航](https://magicxcr7.github.io/categories/)
+
+</div>
 
 ---
 
-## 🚀 Quick Start
+## ✨ 這是一個什麼樣的部落格？
 
-### For Developers
+**Archis Studio** 是一個跨越時尚、遊戲、AI 與太空美學的技術創作空間。
+
+### 🎭 四種風格，一種體驗
+
+- **🎨 Fashion Editorial** - 優雅的時尚雜誌排版，讓技術文章也能賞心悅目
+- **🍂 Autumn Noir** - 溫暖的秋日黑色基調，深邃而不失溫度
+- **🎮 Gaming Pixel** - 復古終端機介面與 RPG 風格設計，帶你回到像素時代
+- **🚀 AI Future Space** - 賽博龐克的未來感，探索 AI 與科技的無限可能
+
+### 💡 適合誰來閱讀？
+
+- 🤖 **AI 工具愛好者** - 實戰教學與應用案例
+- 💻 **程式開發者** - Backend、Data Science、Fullstack 經驗分享
+- 🎮 **設計與創意工作者** - 像素藝術、設計系統、視覺美學
+- 📚 **終身學習者** - 閱讀筆記、成長旅程、跨領域探索
+
+---
+
+## 🎨 設計亮點
+
+### 🖥️ 終端機風格關於頁 (Terminal About)
+像駭客般探索作者背景 - 完整的類終端機介面，展示 RPG 風格的職涯旅程：
+- **Player Card** - 遊戲角色卡風格的個人資訊
+- **Journey Timeline** - ACTIVE/ARCHIVED 狀態標籤的經歷時間軸
+- **Skill System** - 動態技能條展示專業能力
+- **Achievement Badges** - 解鎖成就系統
+
+[→ 查看關於頁面](https://magicxcr7.github.io/about/)
+
+### 📰 時尚雜誌文章庫 (Fashion Archive)
+如同翻閱時尚雜誌般優雅的文章瀏覽體驗：
+- **3 欄卡片網格** - 平衡視覺與資訊密度
+- **統一卡片尺寸** - 整齊一致的編輯排版
+- **分類色彩標籤** - 8 色語義化配色系統
+- **響應式設計** - 手機、平板、桌面完美適配
+
+[→ 瀏覽文章庫](https://magicxcr7.github.io/posts/)
+
+### 🏠 動態首頁 (Hero + Featured)
+第一眼就抓住注意力：
+- **8 Skill Badges** - 動畫互動式技能徽章，每個分類獨特配色
+- **精選推薦** - 4 篇文章精選展示
+- **分類導航** - 快速跳轉到感興趣的主題
+
+[→ 造訪首頁](https://magicxcr7.github.io/)
+
+### 📖 純粹閱讀體驗 (Clean Reading)
+回歸內容本質的文章頁面：
+- **無側邊欄干擾** - 專注於文章內容
+- **TOC 目錄** - 快速導航長文章
+- **優化字型排版** - 舒適的閱讀體驗
+- **語法高亮** - 程式碼清晰易讀
+
+### 🎯 8 大內容分類
+
+| 分類 | 主題 | 色彩 |
+|------|------|------|
+| 🤖 **AI 工具** | ChatGPT, Claude, AI 應用 | 科技藍 |
+| 💻 **軟體開發** | Backend, Frontend, DevOps | 經典紫 |
+| 📊 **資料科學** | Python, ML, Data Analysis | 數據橙 |
+| 🌐 **數位行銷** | SEO, Content, Social Media | 活力粉 |
+| 💹 **量化交易** | Trading, Crypto, Analytics | 財富金 |
+| 📘 **閱讀筆記** | 書評、學習心得 | 知識青 |
+| 🌱 **綠色能源** | Sustainability, Green Tech | 自然綠 |
+| 🎯 **成長旅程** | 職涯、自我提升 | 成長紅 |
+
+---
+
+## 🛣️ 專案狀態與路線圖
+
+### ✅ 已完成功能 (v2.1)
+
+**第一階段：核心設計系統** ✅
+- Design System (Autumn Noir Future 四風格融合)
+- 8 色語義化配色系統
+- 響應式設計框架
+
+**第二階段：首頁與導航** ✅
+- Hero Section with 8 Skill Badges
+- Featured Spotlight (精選推薦)
+- Categories Navigation (分類導航)
+- 動畫互動效果
+
+**第三階段：關於頁面** ✅
+- Terminal 風格介面
+- RPG Player Card
+- Journey Timeline (ACTIVE/ARCHIVED 系統)
+- Skills & Achievements 展示
+
+**第四階段：文章系統** ✅
+- Posts Archive (時尚雜誌排版)
+- Post Single Page (純粹閱讀體驗)
+- TOC 目錄側邊欄
+- 分類頁面設計
+
+**第五階段：體驗優化** ✅
+- 移動端優化
+- 載入效能優化
+- 樣式精修
+
+### 🚧 未來規劃 (Phase 10+)
+
+**互動增強**
+- [ ] 搜尋功能
+- [ ] 深色/淺色模式切換
+- [ ] 文章評論系統
+
+**內容擴充**
+- [ ] 作品集頁面 (Portfolio)
+- [ ] 證書展示頁
+- [ ] 專案展示頁
+
+**效能與 SEO**
+- [ ] 圖片優化與 lazy loading
+- [ ] SEO 元標籤優化
+- [ ] Analytics 追蹤
+
+**社群互動**
+- [ ] RSS 訂閱
+- [ ] Newsletter 功能
+- [ ] Social sharing 優化
+
+---
+
+## 🚀 快速開始
+
+### 給一般讀者
+直接造訪 **[https://magicxcr7.github.io](https://magicxcr7.github.io)** 開始探索！
+
+### 給開發者
 ```bash
-# 1. Install dependencies
+# 1. Clone repository
+git clone https://github.com/magicxcr7/magicxcr7.github.io.git
+
+# 2. Install dependencies
 bundle install
 
-# 2. Start local server
+# 3. Start local server
 bundle exec jekyll serve --livereload
 
-# 3. Visit http://localhost:4000
+# 4. Visit http://localhost:4000
 ```
 
 📖 **完整開發指南**: 查看 [`DEVELOPMENT.md`](DEVELOPMENT.md)
 
-### For AI Agents
+### 給 AI Agents
 ```bash
 # Read AI collaboration guidelines first
 cat agents.MD
@@ -35,355 +170,155 @@ cat agents.MD
 
 ---
 
-## 🎨 Design Features (v2.0)
+## 🛠️ 技術架構
 
-### ✨ Implemented Features
-- **Hero Section**: 8 Skill Badges with unique color schemes & animations
-- **About Page**: Terminal + RPG Pixel style with cyberpunk effects
-- **Journey Timeline**: Active/Archive career & education history
-- **Posts Page**: Fashion magazine layout with 3-column card grid
-- **Article View**: Clean reading experience without sidebar, TOC only
-- **Responsive Design**: Mobile-first, optimized for all devices
+### 核心技術棧
 
-### 🎯 Key Pages
-- `/` - Home with Featured & Categories preview
-- `/about` - About with terminal-style journey timeline
-- `/posts` - All posts in fashion magazine grid layout
-- `/categories` - Browse by 8 main categories
-
-## 📖 Documentation Map
-
-### 🎯 Start Here
-
-| 文件 | 用途 | 對象 |
+| 分類 | 技術 | 版本 |
 |------|------|------|
-| `README.md` | 專案概覽與快速導航 | 所有人 |
-| `DEVELOPMENT.md` | 開發環境設定與指令 | 開發者 |
-| `agents.MD` | AI 協作規範與指引 | AI Agents |
-| `HOW-TO-EDIT-BIO.md` | Author Bio 編輯指南 | 內容編輯 |
-| `PROFILE-IMAGE-TODO.md` | 頭像圖片更新清單 | 維護者 |
+| **靜態網站生成器** | Jekyll | 4.4.1 |
+| **程式語言** | Ruby | 3.3.10 |
+| **基礎主題** | Minimal Mistakes | 4.27.3 |
+| **樣式系統** | SCSS/Sass | - |
+| **部署平台** | GitHub Pages | - |
 
-### 📋 Detailed Specifications
-
-完整的設計與實作規格請見 `docs/` 目錄：
-
-```
-docs/
-├── PROJECT.md          # 專案管理（目標 + 實作階段）
-├── DESIGN_SYSTEM.md    # 設計系統（色彩 + 字型 + 間距）
-├── LAYOUT.md           # 版面設計（Layout + Navigation）
-├── WORKFLOW.md         # 工作流程（內容策略 + AI 協作細節）
-└── ASSETS.md           # 資源管理（圖片 + Icon + 字型）
-```
-
----
-
-## 🎯 Project Overview
-
-### What is Archis Studio?
-AI Coding 教育部落格，專注於：
-- 🤖 AI 工具實戰教學
-- 💻 Backend 開發經驗分享
-- 📊 Data Science 應用案例
-- 🎮 Pixel Art 創作展示
-
-### Core Principles
-- **📋 Specification-Driven**: 所有功能都有明確規格文件
-- **🎨 Design System First**: 系統化、可擴展的設計
-- **🤖 AI-Collaborative**: 為人機協作優化的開發流程
-- **📱 Mobile-First**: 響應式設計，完美適配各種裝置
-
-### Design Philosophy
-融合四種風格的獨特美學：
-- 🎭 **Fashion Editorial** - 優雅的時尚編輯排版
-- 🍂 **Autumn Noir** - 溫暖的秋日黑色基調
-- 🎮 **Gaming Pixel Art** - 復古的像素藝術元素
-- 🚀 **AI Future Space** - 科幻的未來太空氛圍
-
----
-
-## 📁 Project Structure
+### 專案結構
 
 ```
 .
-├── docs/                   # 📋 完整規格文件系統
-├── _config.yml             # Jekyll 主要設定
-├── _data/                  # 資料檔案 (導航、作者等)
-├── _includes/              # 可重用模板元件
-├── _layouts/               # 頁面版面配置
-├── _sass/                  # SCSS 樣式系統
-│   └── design-system/      # 設計系統變數與元件
-├── _posts/                 # 部落格文章
+├── docs/                   # 📋 完整規格文件
+├── _config.yml             # Jekyll 設定
+├── _layouts/               # 自訂版面配置
+│   ├── home.html          # 首頁 layout
+│   ├── post.html          # 文章頁 layout
+│   └── posts.html         # 文章庫 layout
+├── _includes/              # 可重用元件
+│   ├── page__hero.html    # Hero section
+│   ├── masthead.html      # 導航列
+│   └── author-profile.html # 作者資訊
+├── _sass/                  # 樣式系統
+│   └── custom/            # 自訂樣式
+│       ├── _homepage.scss
+│       ├── _about.scss
+│       ├── _posts-archive.scss
+│       └── ...
+├── _posts/                 # 部落格文章 (Markdown)
 ├── _pages/                 # 靜態頁面
+│   ├── about.md
+│   ├── posts.html
+│   └── categories.md
 ├── assets/                 # 靜態資源
-│   ├── css/                # 編譯後的 CSS
-│   ├── images/             # 圖片資源
-│   └── js/                 # JavaScript
-├── README.md               # 專案概覽 (本文件)
-├── DEVELOPMENT.md          # 開發指南
-├── agents.MD               # AI 協作指南
-└── Gemfile                 # Ruby 依賴管理
+│   ├── css/
+│   ├── images/
+│   └── js/
+└── README.md              # 本文件
 ```
 
 ---
 
-## 🛠️ Tech Stack
+## 📖 文件導航
 
-| Category | Technology | Version |
-|----------|-----------|---------|
-| **Language** | Ruby | 3.3.10 |
-| **SSG** | Jekyll | 4.4.1 |
-| **Theme** | Minimal Mistakes | 4.27.3 |
-| **CSS** | SCSS | - |
-| **Deployment** | GitHub Pages / Actions | - |
-| **Version Control** | Git + GitHub | - |
+### 📚 給所有人
+
+| 文件 | 說明 |
+|------|------|
+| **README.md** (本文件) | 專案概覽、設計亮點、快速導航 |
+| **DEVELOPMENT.md** | 開發環境設定、指令操作、疑難排解 |
+| **HOW-TO-EDIT-BIO.md** | 如何更新作者資訊與 About 頁面 |
+
+### 🤖 給開發者與 AI
+
+| 文件 | 說明 |
+|------|------|
+| **agents.MD** | AI 協作規範、工作流程、品質標準 |
+| **docs/** | 完整設計與實作規格文件系統 |
+
+### 📋 完整規格文件 (docs/)
+
+深入了解設計系統與實作細節：
+
+- **DOC_INDEX.md** - 文件索引地圖
+- **PROJECT_CHARTER.md** - 專案目標與原則
+- **DESIGN_SYSTEM_SPEC.md** - 色彩、字型、間距規格
+- **LAYOUT_SPEC.md** - 版面設計規格
+- **NAVIGATION_SPEC.md** - 導航系統規格
+- **AI_COLLABORATION_GUIDE.md** - AI 協作指南
+- **IMPLEMENTATION_CHECKLIST.md** - 10 階段實作清單
 
 ---
 
-## 🤝 Contributing
+## 🤝 參與貢獻
 
-### For Humans
-1. 閱讀 [`docs/PROJECT_CHARTER.md`](docs/PROJECT_CHARTER.md) 了解專案目標
-2. 查看 [`docs/AI_COLLABORATION_GUIDE.md`](docs/AI_COLLABORATION_GUIDE.md) 學習協作流程
-3. 遵循規格驅動開發原則
-4. 提交前確保通過品質檢查
+### 給內容創作者
+有想法想分享？歡迎投稿！
+- 📧 Email: magic83w@gmail.com
+- 🐙 GitHub: 開 Issue 或 PR
 
-### For AI Agents
-1. 先閱讀 [`agents.MD`](agents.MD)
+### 給開發者
+1. Fork 這個專案
+2. 閱讀 `docs/PROJECT_CHARTER.md` 了解設計原則
+3. 查看 `docs/AI_COLLABORATION_GUIDE.md` 學習工作流程
+4. 遵循規格驅動開發 (Specification-Driven)
+5. 提交 PR 前確保通過品質檢查
+
+### 給 AI Agents
+1. **必讀**: `agents.MD` 
 2. 遵循 Specification-Driven Development
-3. 使用標準化的 commit message 格式
+3. 使用標準化 commit message 格式
 4. 標註 `Authored-by: <AI-Agent-Name>`
 
 ---
 
-## 📝 Documentation Standards
+## 📞 聯絡方式
 
-### Version Control
-每個文件都標註版本號與更新時間：
-```markdown
-# File Title
-# Version X.Y.Z | Updated: YYYY-MM-DD
-```
-
-### Update Rules
-- **Major (+1.0.0)**: 重大架構變更
-- **Minor (+0.1.0)**: 新增功能或規格
-- **Patch (+0.0.1)**: 錯誤修正或小幅調整
-
-### Change Tracking
-所有變更必須記錄在文件底部的 `CHANGELOG` 區塊。
+**作者**: Archi Chen  
+**Email**: magic83w@gmail.com  
+**GitHub**: [@magicxcr7](https://github.com/magicxcr7)  
+**網站**: [https://magicxcr7.github.io](https://magicxcr7.github.io)
 
 ---
 
-## 📊 Project Status
+## 📜 版本履歷
 
-### Current Phase
-- ✅ Phase 0-6: Foundation Complete
-  - Jekyll 4.4.1 + Ruby 3.3.10 環境
-  - Design System (Autumn Noir Future)
-  - Hero Section & Homepage
-  - Navigation & Sidebar
-  - Author Profile
-- ✅ Phase 7: Content Pages (About, Posts Archive)
-- 🚧 Phase 8: Post Template & Typography (In Progress)
-- ⏳ Phase 9-10: Interactive Features & Deployment
-
-### Completed Features
-- ✨ Gaming Terminal Style About Page
-- 🎨 Fashion Magazine Posts Archive
-- 📝 Post Single Page with TOC Sidebar
-- 🎭 8 Skill Categories with Custom Colors
-- 🖼️ Author Profile with Placeholder System
-
-### Roadmap
-查看 [`docs/IMPLEMENTATION_CHECKLIST.md`](docs/IMPLEMENTATION_CHECKLIST.md) 了解完整的 10 階段實作計畫。
-
----
-
-## 📞 Contact & Links
-
-- **Author**: Archi Chen
-- **Email**: magic83w@gmail.com
-- **GitHub**: [@magicxcr7](https://github.com/magicxcr7)
-- **Repository**: [magicxcr7.github.io](https://github.com/magicxcr7/magicxcr7.github.io)
-
----
-
-**Version**: 2.0.0 | **Updated**: 2025-10-26  
-**Maintained by**: Archi Chen & AI Assistants
-
----
-
-## 📝 CHANGELOG
+### v2.1.0 (2025-10-27)
+- 📝 **README 大幅優化** - 更適合一般讀者閱讀
+  - 重新設計開場與專案介紹
+  - 新增「設計亮點」章節，詳細說明 4 大頁面特色
+  - 新增 8 大分類表格與配色說明
+  - 簡化技術細節，突出使用者體驗
+  - 更新專案狀態為 Phase 9 完成
+  - 重組文件結構，更清晰的導航
+  - 移除重複內容，精簡至核心資訊
 
 ### v2.0.0 (2025-10-26)
-- ✅ About 頁面完成 (Gaming Terminal + RPG Style + Journey Timeline)
-- ✅ Posts Archive 頁面完成 (Fashion Magazine 3-column Grid Layout)  
-- ✅ Post Single 頁面完成 (TOC Sidebar Only + Optimized Typography)
-- ✅ 8 Skill Categories 顏色系統完成 (語義化配色)
-- ✅ Author Profile 重構完成 (Placeholder Avatar System)
-- ✅ Homepage 精簡設計 (4 Featured Cards + 8 Category Badges)
-- ✅ Hero Section 完成 (8 Skill Badges with Animations)
-- 📝 所有文件同步更新至 v2.0.0
+- ✅ **About 頁面完成** - Gaming Terminal + RPG Style + Journey Timeline
+- ✅ **Posts Archive 完成** - Fashion Magazine 3-column Grid Layout  
+- ✅ **Post Single 完成** - TOC Sidebar Only + Optimized Typography
+- ✅ **8 Skill Categories 顏色系統** - 語義化配色完成
+- ✅ **Author Profile 重構** - Placeholder Avatar System
+- ✅ **Homepage 精簡設計** - 4 Featured Cards + 8 Category Badges
+- ✅ **Hero Section 完成** - 8 Skill Badges with Animations
 
 ### v1.0.0 (2025-10-24)
 - 🎨 Autumn Noir Future 主題完整實作
 - 🏗️ Design System 建立
 - 🎯 Hero Section & Homepage 完成
 - 🧭 Navigation & Sidebar 完成
----
-
-## 📝 Recent Updates (v2.0.0)
-
-### 2025-10-26: Major Implementation Milestone
-
-#### Home Page (/)
-- ✅ Hero section with 8 custom skill badges
-- ✅ Animated skill badges with unique colors
-- ✅ Featured section (4 cards preview)
-- ✅ Categories section (8 categories matching skill badges)
-- ✅ Optimized mobile responsiveness
-
-#### About Page (/about)
-- ✅ Terminal command style header (`$ cat about.txt`)
-- ✅ RPG pixel art inspired layout
-- ✅ Cyberpunk visual effects
-- ✅ Journey timeline (career & education)
-- ✅ Active/Archive status indicators
-- ✅ Fashion-forward color scheme
-
-#### Posts Page (/posts)
-- ✅ Fashion magazine style grid layout
-- ✅ 3-column responsive card design
-- ✅ Uniform card sizing
-- ✅ Optimized spacing and readability
-- ✅ Category and date badges
-
-#### Article View
-- ✅ Clean reading layout without author sidebar
-- ✅ Table of Contents (TOC) sidebar only
-- ✅ Optimized typography for readability
-- ✅ Proper article metadata display
-
-#### Theme & Styling
-- ✅ Custom color schemes for 8 categories
-- ✅ Dark mode optimized (Autumn Noir base)
-- ✅ Gaming + Fashion fusion aesthetics
-- ✅ Pixel art accents throughout
-- ✅ Smooth animations and transitions
 
 ---
 
-## 🛠️ Configuration Files
+## 📄 授權條款
 
-### Key Files Structure
-```
-├── _config.yml              # Jekyll configuration
-├── _layouts/
-│   ├── home.html           # Home page layout
-│   ├── post.html           # Article page layout
-│   └── posts.html          # Posts archive layout
-├── _includes/
-│   ├── author-profile.html # Author sidebar
-│   ├── masthead.html       # Navigation header
-│   └── page__hero.html     # Hero section
-├── _pages/
-│   ├── about.md            # About page
-│   ├── posts.md            # Posts archive
-│   └── categories.md       # Categories page
-├── _sass/
-│   └── custom.scss         # Custom styling
-└── assets/
-    ├── css/main.scss       # Main stylesheet
-    └── images/             # Image assets
-```
-
-### Editing Content
-
-#### Update Author Bio
-See [`HOW-TO-EDIT-BIO.md`](HOW-TO-EDIT-BIO.md) for complete instructions.
-
-Quick edit locations:
-- **Author info**: `_config.yml` → `author:` section
-- **Journey timeline**: `_pages/about.md` → Journey items
-- **Profile images**: See [`PROFILE-IMAGE-TODO.md`](PROFILE-IMAGE-TODO.md)
-
-#### Create New Post
-```bash
-# Create new post file
-touch _posts/YYYY-MM-DD-post-title.md
-
-# Add front matter
----
-title: "Post Title"
-date: YYYY-MM-DD
-categories: [Category Name]
-tags: [tag1, tag2]
-excerpt: "Post summary"
-header:
-  teaser: /assets/images/post-image.jpg
----
-```
-
-#### Customize Skill Badges
-Edit `_includes/page__hero.html` → Skill Badges section  
-8 categories with custom colors defined in hero section.
+MIT License - 歡迎使用本專案作為你的 Jekyll 部落格模板。
 
 ---
 
-## 🚀 Deployment
+<div align="center">
 
-### GitHub Pages
-- **URL**: https://magicxcr7.github.io
-- **Branch**: `main`
-- **Build**: Automatic on push
+**Built with ❤️ by Archi Chen & AI Assistants**
 
-### Local Development
-```bash
-# Start server with live reload
-bundle exec jekyll serve --livereload
+🍂 Jekyll · ✨ Minimal Mistakes · 🤖 AI Collaboration
 
-# Build static site
-bundle exec jekyll build
+**[開始探索 →](https://magicxcr7.github.io)**
 
-# Check for broken links
-bundle exec htmlproofer ./_site
-```
-
----
-
-## 🤝 Contributing
-
-### For Developers
-1. Read `DEVELOPMENT.md` for setup
-2. Check `docs/` for specifications
-3. Follow `agents.MD` guidelines
-4. Test locally before committing
-5. Use Conventional Commits format
-
-### For AI Agents
-1. **Read first**: `agents.MD` (mandatory)
-2. **Check specs**: Always refer to `docs/` specifications
-3. **Plan before execute**: Use planning workflow for complex tasks
-4. **Commit properly**: Use Conventional Commits with `Authored-by: <Agent-Name>`
-5. **Never push**: All pushes require human approval
-
----
-
-## �� Support & Contact
-
-**Maintainer**: Archi Chen  
-**Project**: Archis Studio Blog  
-**Repository**: https://github.com/magicxcr7/magicxcr7.github.io
-
-For issues or suggestions, please open an issue on GitHub.
-
----
-
-## 📄 License
-
-MIT License - Feel free to use this as a template for your own Jekyll blog.
-
----
-
-**Built with ❤️ using Jekyll, Minimal Mistakes, and AI collaboration**
+</div>
