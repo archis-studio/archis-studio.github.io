@@ -2,16 +2,15 @@
 locale: "zh-TW"
 title: "Archis Studio"
 title_separator: "·"
-subtitle: "Crafting the Future: AI, Pixel Art & Autumn Vibes"
 name: "Archi Chen"
-description: "時尚與科技的完美融合 - 用 Editorial 風格分享 AI 工具、程式開發與像素藝術創作，讓技術學習如秋日般優雅而充滿詩意"
+description: "Archis Studio - 科技與靈魂的數位工坊。分享 AI 工具實戰教學（ChatGPT、Claude、Cursor）、Backend 開發經驗（Python、Node.js）、數據科學應用、量化交易策略、加密貨幣投資分析與數位創作心法。融合 Fashion Editorial、Gaming Pixel、AI Future 與 Space 美學，用程式碼記錄思考、用數據保存洞見，將每一次技術探索轉化為永恆的知識資產。適合開發者、AI 愛好者與終身學習者。"
 url: "https://magicxcr7.github.io"
 baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
 # teaser: "/assets/images/autumn-noir-teaser.jpg"  # TODO: Add teaser image
 # logo: "/assets/images/autumn-logo.png"            # TODO: Add logo image
 masthead_title: "Archis Studio"
-masthead_subtitle: "Crafting the Future: AI, Pixel Art & Autumn Vibes"
+masthead_subtitle: "Memory is the New Immortality"
 breadcrumbs: true
 words_per_minute: 200
 
