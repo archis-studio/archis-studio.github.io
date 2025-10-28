@@ -10,7 +10,7 @@
 ### 🍂 時尚與科技的完美融合
 **一個融合四種美學的技術部落格**
 
-[🚀 探索文章](https://magicxcr7.github.io/posts/) · [🤖 關於我](https://magicxcr7.github.io/about/) · [📋 分類導航](https://magicxcr7.github.io/categories/)
+[🚀 探索文章](https://archis-studio.github.io/posts/) · [🤖 關於我](https://archis-studio.github.io/about/) · [📋 分類導航](https://archis-studio.github.io/categories/)
 
 </div>
 
@@ -45,7 +45,7 @@
 - **Skill System** - 動態技能條展示專業能力
 - **Achievement Badges** - 解鎖成就系統
 
-[→ 查看關於頁面](https://magicxcr7.github.io/about/)
+[→ 查看關於頁面](https://archis-studio.github.io/about/)
 
 ### 📰 時尚雜誌文章庫 (Fashion Archive)
 如同翻閱時尚雜誌般優雅的文章瀏覽體驗：
@@ -54,7 +54,7 @@
 - **分類色彩標籤** - 8 色語義化配色系統
 - **響應式設計** - 手機、平板、桌面完美適配
 
-[→ 瀏覽文章庫](https://magicxcr7.github.io/posts/)
+[→ 瀏覽文章庫](https://archis-studio.github.io/posts/)
 
 ### 🏠 動態首頁 (Hero + Featured)
 第一眼就抓住注意力：
@@ -62,7 +62,7 @@
 - **精選推薦** - 4 篇文章精選展示
 - **分類導航** - 快速跳轉到感興趣的主題
 
-[→ 造訪首頁](https://magicxcr7.github.io/)
+[→ 造訪首頁](https://archis-studio.github.io/)
 
 ### 📖 純粹閱讀體驗 (Clean Reading)
 回歸內容本質的文章頁面：
@@ -145,12 +145,12 @@
 ## 🚀 快速開始
 
 ### 給一般讀者
-直接造訪 **[https://magicxcr7.github.io](https://magicxcr7.github.io)** 開始探索！
+直接造訪 **[https://archis-studio.github.io](https://archis-studio.github.io)** 開始探索！
 
 ### 給開發者
 ```bash
 # 1. Clone repository
-git clone https://github.com/magicxcr7/magicxcr7.github.io.git
+git clone https://github.com/archis-studio/archis-studio.github.io.git
 
 # 2. Install dependencies
 bundle install
@@ -276,8 +276,8 @@ cat agents.MD
 
 **作者**: Archi Chen  
 **Email**: magic83w@gmail.com  
-**GitHub**: [@magicxcr7](https://github.com/magicxcr7)  
-**網站**: [https://magicxcr7.github.io](https://magicxcr7.github.io)
+**GitHub**: [@archis-studio](https://github.com/archis-studio)  
+**網站**: [https://archis-studio.github.io](https://archis-studio.github.io)
 
 ---
 
@@ -321,6 +321,6 @@ MIT License - 歡迎使用本專案作為你的 Jekyll 部落格模板。
 
 🍂 Jekyll · ✨ Minimal Mistakes · 🤖 AI Collaboration
 
-**[開始探索 →](https://magicxcr7.github.io)**
+**[開始探索 →](https://archis-studio.github.io)**
 
 </div>

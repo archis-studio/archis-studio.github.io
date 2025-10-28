@@ -302,9 +302,9 @@ classes: wide
           <span class="contact-icon">📧</span>
           <span class="contact-text">magic83w@gmail.com</span>
         </a>
-        <a href="https://github.com/magicxcr7" target="_blank" class="contact-item">
+        <a href="https://github.com/archis-studio" target="_blank" class="contact-item">
           <span class="contact-icon">🐙</span>
-          <span class="contact-text">@magicxcr7</span>
+          <span class="contact-text">@archis-studio</span>
         </a>
       </div>
     </div>
