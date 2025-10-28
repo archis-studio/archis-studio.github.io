@@ -1,0 +1,263 @@
+// Comments Section Styling - Autumn Noir Design
+// Version 1.0.0 | Created: 2025-10-28
+// Fusion: Fashion Editorial + Autumn Noir + Gaming Pixel + AI Space
+
+// ========================================
+// Comments Container
+// ========================================
+.post-comments {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  position: relative;
+  
+  // Fashion Editorial: Elegant separator with gradient
+  border-top: 2px solid transparent;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    #D4A017 20%,  // autumn-gold
+    #B87333 50%,   // autumn-copper
+    #D4A017 80%,  // autumn-gold
+    transparent
+  );
+  background-size: 100% 2px;
+  background-position: top;
+  background-repeat: no-repeat;
+  
+  @media (max-width: 768px) {
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+}
+
+// ========================================
+// Comments Title
+// ========================================
+.post-comments__title {
+  // Fashion Editorial: Serif font for elegance
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.875rem;  // 30px
+  font-weight: 700;
+  color: #EDEDED;  // noir-text
+  margin-bottom: 2rem;
+  text-align: center;
+  
+  // Gaming Pixel: Subtle text shadow for depth
+  text-shadow: 
+    0 0 10px rgba(212, 160, 23, 0.3),  // autumn-gold glow
+    0 2px 4px rgba(0, 0, 0, 0.5);
+  
+  // AI Future: Subtle animation
+  animation: titleFadeIn 0.6s ease-out;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;  // 24px
+    margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ========================================
+// Giscus Wrapper
+// ========================================
+.giscus-wrapper {
+  margin-top: 2rem;
+  padding: 2rem;
+  
+  // Autumn Noir: Warm dark background with subtle gradient
+  background: linear-gradient(
+    135deg,
+    #1C1C1E 0%,      // noir-gray
+    #0E0E10 50%,     // noir-black
+    #1A1B2E 100%     // space-nebula
+  );
+  
+  // Gaming Pixel: Retro border style
+  border: 2px dashed #2C2C2E;  // noir-border
+  border-radius: 12px;
+  
+  // AI Future Space: Subtle glow effect
+  box-shadow: 
+    0 0 20px rgba(74, 144, 184, 0.1),    // space-comet
+    inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  
+  // Hover effect: Gaming neon glow
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: #4A90B8;  // space-comet
+    box-shadow: 
+      0 0 30px rgba(74, 144, 184, 0.2),
+      0 0 40px rgba(212, 160, 23, 0.1),  // autumn-gold
+      inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  }
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+}
+
+// ========================================
+// Giscus Theme Customization
+// ========================================
+.giscus {
+  // Override default Giscus styles to match our theme
+  
+  // Text colors
+  .gsc-comment-author {
+    color: #D4A017 !important;  // autumn-gold for author names
+    font-weight: 600;
+  }
+  
+  .gsc-comment-content {
+    color: #EDEDED !important;  // noir-text
+    line-height: 1.6;
+  }
+  
+  .gsc-timeline-header {
+    border-bottom-color: #2C2C2E !important;  // noir-border
+  }
+  
+  // Links
+  a {
+    color: #4A90B8 !important;  // space-comet
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: #D4A017 !important;  // autumn-gold
+      text-decoration: underline;
+    }
+  }
+  
+  // Buttons
+  .gsc-reactions-button,
+  .gsc-reply-button {
+    color: #A0A0A5 !important;  // noir-text-muted
+    transition: all 0.2s ease;
+    
+    &:hover {
+      color: #D4A017 !important;  // autumn-gold
+      background: rgba(212, 160, 23, 0.1) !important;
+    }
+  }
+  
+  // Input field
+  .gsc-comment-box-textarea {
+    background: #0E0E10 !important;  // noir-black
+    border-color: #2C2C2E !important;  // noir-border
+    color: #EDEDED !important;  // noir-text
+    font-family: 'Inter', -apple-system, sans-serif;
+    
+    &:focus {
+      border-color: #4A90B8 !important;  // space-comet
+      box-shadow: 0 0 0 3px rgba(74, 144, 184, 0.1) !important;
+    }
+  }
+  
+  // Submit button - Fashion accent
+  .gsc-comment-box-button {
+    background: linear-gradient(135deg, #D4A017, #B87333) !important;  // gold to copper
+    color: #0E0E10 !important;
+    font-weight: 600;
+    border: none !important;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: linear-gradient(135deg, #E5B028, #C98444) !important;
+      box-shadow: 0 4px 12px rgba(212, 160, 23, 0.3) !important;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// ========================================
+// Loading State
+// ========================================
+.giscus-frame {
+  // Add subtle loading animation
+  &:not(.giscus-frame--loaded) {
+    opacity: 0.7;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+// ========================================
+// Pixel Art Accent - Gaming Element
+// ========================================
+.post-comments::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  
+  // Gaming Pixel: 8-bit style icon
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D4A017'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  // AI Future: Glow effect
+  filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.5));
+  
+  animation: iconFloat 3s ease-in-out infinite;
+  
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+// ========================================
+// Dark Mode Enhancement
+// ========================================
+@media (prefers-color-scheme: dark) {
+  .post-comments {
+    // Enhance contrast in dark mode
+    .giscus-wrapper {
+      box-shadow: 
+        0 0 30px rgba(74, 144, 184, 0.15),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    }
+  }
+}
+
+// ========================================
+// Print Styles
+// ========================================
+@media print {
+  .post-comments {
+    display: none;  // Hide comments when printing
+  }
+}
