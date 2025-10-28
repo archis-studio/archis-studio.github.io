@@ -157,6 +157,7 @@ defaults:
       read_time: true
       share: true
       related: true
+      comments: true
   # _pages
   - scope:
       path: "_pages"
@@ -194,6 +195,18 @@ defaults:
       path: ""
     values:
       image: /favicon.png
+
+# Comments
+comments:
+  provider: "giscus"
+  giscus:
+    repo_id: "MDEwOlJlcG9zaXRvcnkzNDUyOTY2Mjg="
+    category_name: "Comments"
+    category_id: "DIC_kwDOFJTO9M4CxKZA"
+    discussion_term: "pathname"
+    reactions_enabled: "1"
+    theme: "gruvbox_dark"
+    lang: "zh-TW"
 
 # Analytics (Optional - uncomment to enable)
 analytics:
