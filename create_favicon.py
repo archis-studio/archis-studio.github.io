@@ -1,94 +1,138 @@
 #!/usr/bin/env python3
 """
 Generate Favicon for Archis Studio Blog
-Theme: Autumn Noir Future (Fashion + Gaming + AI + Space)
+Theme: Technology & Soul - "A" mark
+Blending: Circuit pattern + Rising light + Japanese minimalism
+Style: Futuristic Wabi-Sabi
 """
 
-from PIL import Image, ImageDraw, ImageFont
-import os
+from PIL import Image, ImageDraw
+import math
 
-# Design: "A" with pixel art style + future tech accent
-# Color: Autumn Noir (warm dark tones)
+# Design: Abstract "A" - circuit pattern meets rising light
+# Style: Futuristic minimalism with Japanese wabi-sabi essence
+# Colors: Dark graphite base + cyan/golden glow
+# Feeling: Intelligent, calm, visionary
 
 def create_favicon():
-    # Create 64x64 canvas (will generate multiple sizes)
+    # Create sizes for different contexts
     sizes = [64, 32, 16]
     
     for size in sizes:
-        # Create image with transparent background
+        # Transparent background for crisp overlay
         img = Image.new('RGBA', (size, size), (0, 0, 0, 0))
         draw = ImageDraw.Draw(img)
         
-        # Autumn Noir colors
-        bg_color = (20, 20, 25, 255)      # Deep noir black
-        accent_color = (198, 134, 88, 255) # Autumn warm orange
-        highlight = (139, 92, 246, 255)    # Future purple accent
+        # Futuristic minimalist palette
+        dark_graphite = (28, 32, 38, 255)      # Deep tech background
+        cyan_glow = (100, 255, 218, 255)       # Bright cyan edge light
+        golden_accent = (255, 200, 87, 255)     # Warm golden highlight
+        dim_cyan = (100, 255, 218, 180)        # Subtle glow
+        dim_gold = (255, 200, 87, 180)         # Subtle warmth
         
-        # Background - rounded square
-        margin = max(2, size // 16)
-        draw.rounded_rectangle(
-            [(margin, margin), (size - margin, size - margin)],
-            radius=max(3, size // 8),
-            fill=bg_color
-        )
+        center_x = size // 2
+        center_y = size // 2
+        margin = max(4, size // 8)
         
-        # Draw stylized "A" letterform
+        # Design: Abstract "A" mark with circuit + light aesthetic
+        # Wabi-sabi: imperfect, evolving, natural-technological harmony
+        
         if size >= 32:
-            # Larger version - more detail
-            center_x = size // 2
-            center_y = size // 2
+            # Base: Solid dark graphite rounded square (tech foundation)
+            bg_margin = 2
+            draw.rounded_rectangle(
+                [(bg_margin, bg_margin), (size - bg_margin, size - bg_margin)],
+                radius=max(4, size // 10),
+                fill=dark_graphite
+            )
             
-            # "A" shape with pixel art style
-            bar_width = max(2, size // 10)
+            # "A" geometry - clean, geometric, rising
+            stroke_width = max(2, size // 12)
             
-            # Left diagonal
-            points_left = [
-                (center_x - size//4, size - margin - 2),
-                (center_x - bar_width//2, margin + 4),
-                (center_x + bar_width//2, margin + 4),
-                (center_x - size//6, size - margin - 2)
-            ]
-            draw.polygon(points_left, fill=accent_color)
+            # Left stroke of "A" - cyan glow (technology)
+            left_top = (center_x - size // 6, margin)
+            left_bottom = (margin + 6, size - margin - 2)
+            left_inner_top = (center_x - size // 6 + stroke_width, margin)
+            left_inner_bottom = (margin + 6 + stroke_width, size - margin - 2)
             
-            # Right diagonal
-            points_right = [
-                (center_x + size//6, size - margin - 2),
-                (center_x - bar_width//2, margin + 4),
-                (center_x + bar_width//2, margin + 4),
-                (center_x + size//4, size - margin - 2)
-            ]
-            draw.polygon(points_right, fill=accent_color)
+            left_points = [left_top, left_bottom, left_inner_bottom, left_inner_top]
+            draw.polygon(left_points, fill=cyan_glow)
             
-            # Crossbar with future accent
-            bar_y = center_y + size//8
+            # Right stroke of "A" - golden glow (soul/light)
+            right_top = (center_x + size // 6, margin)
+            right_bottom = (size - margin - 6, size - margin - 2)
+            right_inner_top = (center_x + size // 6 - stroke_width, margin)
+            right_inner_bottom = (size - margin - 6 - stroke_width, size - margin - 2)
+            
+            right_points = [right_top, right_bottom, right_inner_bottom, right_inner_top]
+            draw.polygon(right_points, fill=golden_accent)
+            
+            # Crossbar - circuit pattern detail (blended color)
+            bar_y = center_y + size // 10
+            bar_height = stroke_width - 1
+            
+            # Main crossbar with subtle gradient effect (cyan to gold)
             draw.rectangle(
-                [(center_x - size//5, bar_y - bar_width//2),
-                 (center_x + size//5, bar_y + bar_width//2)],
-                fill=highlight
+                [(margin + 10, bar_y - bar_height // 2),
+                 (size - margin - 10, bar_y + bar_height // 2)],
+                fill=dim_cyan
+            )
+            
+            # Circuit-like nodes at crossbar ends (wabi-sabi detail)
+            node_size = max(1, stroke_width // 2)
+            # Left node - cyan
+            draw.ellipse(
+                [(margin + 10 - node_size, bar_y - node_size),
+                 (margin + 10 + node_size, bar_y + node_size)],
+                fill=cyan_glow
+            )
+            # Right node - golden
+            draw.ellipse(
+                [(size - margin - 10 - node_size, bar_y - node_size),
+                 (size - margin - 10 + node_size, bar_y + node_size)],
+                fill=golden_accent
+            )
+            
+            # Top apex - rising light point (golden)
+            apex_size = max(2, stroke_width)
+            draw.ellipse(
+                [(center_x - apex_size, margin - apex_size // 2),
+                 (center_x + apex_size, margin + apex_size * 1.5)],
+                fill=golden_accent
             )
             
         else:
-            # Simplified version for 16x16
-            center_x = size // 2
-            center_y = size // 2
+            # Simplified 16x16 version - minimal "A" mark
+            # Dark background
+            draw.rounded_rectangle(
+                [(1, 1), (size - 1, size - 1)],
+                radius=2,
+                fill=dark_graphite
+            )
             
-            # Simple triangle with bar
-            points = [
-                (center_x, margin + 2),
-                (margin + 2, size - margin - 1),
-                (center_x - 1, size - margin - 1),
-                (center_x - 1, center_y + 1),
-                (center_x + 1, center_y + 1),
-                (center_x + 1, size - margin - 1),
-                (size - margin - 2, size - margin - 1)
+            # Simple "A" triangle shape
+            # Left stroke - cyan
+            left_points = [
+                (center_x - 1, 3),
+                (3, size - 3),
+                (5, size - 3),
+                (center_x, 5)
             ]
-            draw.polygon(points, fill=accent_color)
+            draw.polygon(left_points, fill=cyan_glow)
+            
+            # Right stroke - golden
+            right_points = [
+                (center_x + 1, 3),
+                (size - 3, size - 3),
+                (size - 5, size - 3),
+                (center_x, 5)
+            ]
+            draw.polygon(right_points, fill=golden_accent)
             
             # Tiny crossbar
-            draw.line(
-                [(margin + 3, center_y + 1), (size - margin - 3, center_y + 1)],
-                fill=highlight,
-                width=1
+            draw.rectangle(
+                [(5, center_y), (size - 5, center_y + 1)],
+                fill=dim_cyan
             )
         
         # Save favicon
@@ -103,6 +147,10 @@ def create_favicon():
 
 if __name__ == '__main__':
     create_favicon()
-    print('\n✨ Favicon generation complete!')
+    print('\n✨ Futuristic Favicon generation complete!')
+    print('🔮 Theme: Technology & Soul - "A" Circuit + Light')
+    print('🎨 Style: Futuristic Wabi-Sabi Minimalism')
+    print('💠 Colors: Graphite + Cyan Glow + Golden Light')
     print('📁 Files: favicon.ico, favicon-64x64.png, favicon-32x32.png, favicon-16x16.png')
+    print('✨ Feeling: Intelligent, Calm, Visionary')
 
