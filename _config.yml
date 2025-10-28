@@ -8,8 +8,8 @@ description: "時尚與科技的完美融合 - 用 Editorial 風格分享 AI 工
 url: "https://magicxcr7.github.io"
 baseurl: ""
 repository: "magicxcr7/magicxcr7.github.io"
-teaser: "/assets/images/autumn-noir-teaser.jpg"
-logo: "/assets/images/autumn-logo.png"
+# teaser: "/assets/images/autumn-noir-teaser.jpg"  # TODO: Add teaser image
+# logo: "/assets/images/autumn-logo.png"            # TODO: Add logo image
 masthead_title: "Archis Studio"
 masthead_subtitle: "Crafting the Future: AI, Pixel Art & Autumn Vibes"
 breadcrumbs: true
@@ -78,6 +78,14 @@ exclude:
   - tmp
   - /docs
   - /test
+  # Documentation files
+  - "*.MD"
+  - agents.MD
+  - DEVELOPMENT.md
+  - HOW-TO-*.md
+  - PROFILE-IMAGE-TODO.md
+  - create_favicon.py
+  - "*.backup"
 keep_files:
   - .git
   - .svn
@@ -122,16 +130,6 @@ plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-remote-theme
-  - jekyll-seo-tag
-
-# Plugin whitelist for Jekyll 4.x
-whitelist:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-seo-tag
 
 # Archives
 category_archive:
@@ -157,7 +155,6 @@ defaults:
       layout: post
       author_profile: false
       read_time: true
-      comments: false
       share: true
       related: true
   # _pages
@@ -182,3 +179,25 @@ defaults:
 search: true
 search_full_content: true
 search_provider: lunr
+
+# SEO & Social Media
+social:
+  type: Person
+  name: Archi Chen
+  links:
+    - "https://github.com/magicxcr7"
+    - "https://www.linkedin.com/in/magicxcr7"
+
+# Open Graph defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /favicon.png
+
+# Analytics (Optional - uncomment to enable)
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "G-XXXXXXXXXX"
+#     anonymize_ip: true
