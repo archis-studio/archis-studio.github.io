@@ -15,8 +15,8 @@ import math
 # Feeling: Intelligent, calm, visionary
 
 def create_favicon():
-    # Create sizes for different contexts
-    sizes = [64, 32, 16]
+    # Create only necessary sizes: 32px (standard) for ICO generation
+    sizes = [32]
     
     for size in sizes:
         # Transparent background for crisp overlay
@@ -135,15 +135,13 @@ def create_favicon():
                 fill=dim_cyan
             )
         
-        # Save favicon
-        filename = f'favicon-{size}x{size}.png'
-        img.save(filename, 'PNG')
-        print(f'✓ Created {filename}')
+        # Save as favicon.png (modern standard)
+        img.save('favicon.png', 'PNG')
+        print(f'✓ Created favicon.png ({size}x{size})')
         
-        # Also save as favicon.ico for 32x32
-        if size == 32:
-            img.save('favicon.ico', format='ICO', sizes=[(32, 32)])
-            print(f'✓ Created favicon.ico')
+        # Save as favicon.ico for legacy browser compatibility
+        img.save('favicon.ico', format='ICO', sizes=[(32, 32)])
+        print(f'✓ Created favicon.ico')
 
 if __name__ == '__main__':
     create_favicon()
@@ -151,6 +149,7 @@ if __name__ == '__main__':
     print('🔮 Theme: Technology & Soul - "A" Circuit + Light')
     print('🎨 Style: Futuristic Wabi-Sabi Minimalism')
     print('💠 Colors: Graphite + Cyan Glow + Golden Light')
-    print('📁 Files: favicon.ico, favicon-64x64.png, favicon-32x32.png, favicon-16x16.png')
+    print('📁 Files: favicon.ico (legacy), favicon.png (modern standard)')
     print('✨ Feeling: Intelligent, Calm, Visionary')
+    print('\n💡 Simplified: Only essential files, modern browsers auto-scale')
 
