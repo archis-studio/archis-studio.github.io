@@ -4,9 +4,9 @@ title: "Archis Studio"
 title_separator: "·"
 name: "Archi Chen"
 description: "Archis Studio - 科技與靈魂的數位工坊。分享 AI 工具實戰教學（ChatGPT、Claude、Cursor）、Backend 開發經驗（Python、Node.js）、數據科學應用、量化交易策略、加密貨幣投資分析與數位創作心法。融合 Fashion Editorial、Gaming Pixel、AI Future 與 Space 美學，用程式碼記錄思考、用數據保存洞見，將每一次技術探索轉化為永恆的知識資產。適合開發者、AI 愛好者與終身學習者。"
-url: "https://magicxcr7.github.io"
+url: "https://archis-studio.github.io"
 baseurl: ""
-repository: "magicxcr7/magicxcr7.github.io"
+repository: "archis-studio/archis-studio.github.io"
 # teaser: "/assets/images/autumn-noir-teaser.jpg"  # TODO: Add teaser image
 # logo: "/assets/images/autumn-logo.png"            # TODO: Add logo image
 masthead_title: "Archis Studio"
@@ -29,7 +29,7 @@ author:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/magicxcr7"
+      url: "https://github.com/archis-studio"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/magicxcr7"
@@ -42,7 +42,7 @@ footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/magicxcr7"
+      url: "https://github.com/archis-studio"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:magic83w@gmail.com"
@@ -186,7 +186,7 @@ social:
   type: Person
   name: Archi Chen
   links:
-    - "https://github.com/magicxcr7"
+    - "https://github.com/archis-studio"
     - "https://www.linkedin.com/in/magicxcr7"
 
 # Open Graph defaults

@@ -91,7 +91,7 @@ source ~/.zshrc
 
 ```bash
 # 1. Navigate to project
-cd /path/to/magicxcr7.github.io
+cd /path/to/archis-studio.github.io
 
 # 2. Start development server
 bundle exec jekyll serve --livereload
