@@ -1,10 +1,10 @@
 # 🤖 AI Agents README
-# Version 3.0.0 | Updated: 2025-10-26
+# Version 3.1.0 | Updated: 2025-10-28
 
 > **For AI Assistants**: This document is your entry point to the Archis Studio Blog project.  
 > Read this first before any implementation work.
 
-> **v3.0 Update**: Documentation streamlined - 9 core files only (44% reduction)
+> **v3.1 Update**: Documentation optimized - clearer audience targeting
 
 ---
 
@@ -528,25 +528,30 @@ Let's build something beautiful together.
 ---
 
 **Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-26  
-**Version**: 3.0.0 - Documentation Streamlined  
+**Last Updated**: 2025-10-28  
+**Version**: 3.1.0 - Documentation Audience Optimized  
 **Status**: Ready for Phase 10 Enhancement
 
 ---
 
 ## 📝 CHANGELOG
 
+### v3.1.0 (2025-10-28)
+- **Documentation audience clarification**: 明確標示所有文件的閱讀受眾
+  - README.md → 訪客（開發者、讀者）
+  - agents.MD → AI Agents 入口
+  - docs/ → AI Agents 查閱手冊
+- **Version unified**: All core docs updated to v3.0.0 (2025-10-28)
+- **DOC_INDEX.md optimized**: Reduced from 378 to 122 lines (68% reduction)
+
 ### v3.0.0 (2025-10-26)
 - Documentation streamlined: 16 → 9 core files (44% reduction)
-- Removed redundant docs: DESIGN_SYSTEM.md, LAYOUT.md, ASSETS.md, PROJECT.md, WORKFLOW.md
-- Removed outdated docs: AUTUMN_NOIR_FUTURE_THEME.md, MINIMAL_MISTAKES_CUSTOMIZATION.md
-- Optimized CONTENT_STRATEGY.md: Focus on writing guidelines only
+- Removed redundant/outdated docs
 - Updated mandatory reading list
 
 ### v2.0.0 (2025-10-24)
 - Phase 9 完成：8 色配色系統完整實作
 - 更新專案狀態為 Core Features Complete
-- 完整實作清單與文件同步
 
 ### v1.0.0 (2025-10-11)
 - AI Agents 初版指南建立

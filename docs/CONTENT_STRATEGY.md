@@ -1,8 +1,7 @@
 # 內容策略 - Content Strategy  
-# Version 2.0.0 | Updated: 2025-10-26
+# Version 3.0.0 | Updated: 2025-10-28
 
-> **核心指南**: 文章創作規範、寫作標準、內容品質管理
-> **設計規範**: 請參考 DESIGN_SYSTEM_SPEC.md
+> **🤖 For AI Agents**: 本文件提供文章創作規範、寫作標準、內容品質管理指南
 
 ---
 
@@ -305,16 +304,18 @@ soft_skills: [學習方法, 時間管理, 溝通技巧, 團隊協作, 問題解�
 
 ## 📝 CHANGELOG
 
+### v3.0.0 (2025-10-28)
+- 版本號統一更新
+- 明確標示文件受眾（AI Agents）
+
 ### v2.0.0 (2025-10-26)
-- 移除與 DESIGN_SYSTEM_SPEC.md 重複的分類系統定義
-- 移除與 ASSET_SPEC.md 重複的視覺規範
-- 簡化為純內容創作指南
-- 聚焦於寫作規範與品質標準
+- 移除與其他文件重複的設計規範
+- 聚焦於內容創作指南
 
 ### v1.0.0 (2025-10-11)
 - 初版內容策略建立
 
 ---
 
-**維護者**: Archi Chen & AI Assistants  
-**最後更新**: 2025-10-26
+**Maintained by**: Archi Chen & AI Assistants  
+**Last Updated**: 2025-10-28

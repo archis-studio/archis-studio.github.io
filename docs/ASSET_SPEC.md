@@ -1,5 +1,7 @@
 # Asset 資源檔案規格書
-# Version 1.0.0 | Updated: 2025-10-16
+# Version 3.0.0 | Updated: 2025-10-28
+
+> **🤖 For AI Agents**: 本文件定義所有視覺資源規格與檔案管理規則
 
 ## 📁 資源檔案架構
 
@@ -411,7 +413,16 @@ body {
 
 ---
 
-**相關文件**:
-- `DESIGN_SYSTEM_SPEC.md` - 設計系統色彩與字型
-- `LAYOUT_SPEC.md` - 版面配置需求
-- `NAVIGATION_SPEC.md` - 導航圖示需求
+## 📝 CHANGELOG
+
+### v3.0.0 (2025-10-28)
+- 版本號統一更新
+- 明確標示文件受眾（AI Agents）
+
+### v1.0.0 (2025-10-16)
+- 建立資源檔案管理規格
+
+---
+
+**Maintained by**: Archi Chen & AI Assistants  
+**Last Updated**: 2025-10-28

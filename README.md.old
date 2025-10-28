@@ -1,9 +1,6 @@
 # ARCHIS.STUDIO
 ## [ MEMORY IS THE NEW IMMORTALITY ]
-# Version 3.0.0 | Updated: 2025-10-28
-
-> **📖 For Visitors**: 專案介紹、設計亮點、快速開始指南  
-> **🤖 For AI Agents**: 請閱讀 `agents.MD` 作為入口
+# Version 2.1.0 | Updated: 2025-10-27
 
 <div align="center">
 
@@ -281,46 +278,181 @@ cat agents.MD
 
 ---
 
-## 📜 版本履歷
+**Version**: 2.0.0 | **Updated**: 2025-10-26  
+**Maintained by**: Archi Chen & AI Assistants
 
-### v3.0.0 (2025-10-28)
-- 📚 **文件系統優化** - 明確受眾定位
-  - README.md 專注於訪客體驗（本文件）
-  - agents.MD 作為 AI Agents 入口
-  - docs/ 提供完整規格查閱
-- 🔄 **版本統一** - 所有核心文件更新至 v3.0.0
-- ✂️ **DOC_INDEX 精簡** - 從 378 行減至 122 行（68% 精簡）
+---
 
-### v2.1.0 (2025-10-27)
-- 📝 README 大幅優化 - 更適合一般讀者閱讀
-- 新增「設計亮點」章節
-- 新增 8 大分類表格與配色說明
+## 📝 CHANGELOG
 
 ### v2.0.0 (2025-10-26)
-- ✅ About 頁面完成 - Gaming Terminal + RPG Style
-- ✅ Posts Archive 完成 - Fashion Magazine Layout
-- ✅ Post Single 完成 - TOC + Typography
-- ✅ 8 色語義化配色系統完整實作
+- ✅ About 頁面完成 (Gaming Terminal + RPG Style + Journey Timeline)
+- ✅ Posts Archive 頁面完成 (Fashion Magazine 3-column Grid Layout)  
+- ✅ Post Single 頁面完成 (TOC Sidebar Only + Optimized Typography)
+- ✅ 8 Skill Categories 顏色系統完成 (語義化配色)
+- ✅ Author Profile 重構完成 (Placeholder Avatar System)
+- ✅ Homepage 精簡設計 (4 Featured Cards + 8 Category Badges)
+- ✅ Hero Section 完成 (8 Skill Badges with Animations)
+- 📝 所有文件同步更新至 v2.0.0
 
 ### v1.0.0 (2025-10-24)
 - 🎨 Autumn Noir Future 主題完整實作
 - 🏗️ Design System 建立
 - 🎯 Hero Section & Homepage 完成
+- 🧭 Navigation & Sidebar 完成
+---
+
+## 📝 Recent Updates (v2.0.0)
+
+### 2025-10-26: Major Implementation Milestone
+
+#### Home Page (/)
+- ✅ Hero section with 8 custom skill badges
+- ✅ Animated skill badges with unique colors
+- ✅ Featured section (4 cards preview)
+- ✅ Categories section (8 categories matching skill badges)
+- ✅ Optimized mobile responsiveness
+
+#### About Page (/about)
+- ✅ Terminal command style header (`$ cat about.txt`)
+- ✅ RPG pixel art inspired layout
+- ✅ Cyberpunk visual effects
+- ✅ Journey timeline (career & education)
+- ✅ Active/Archive status indicators
+- ✅ Fashion-forward color scheme
+
+#### Posts Page (/posts)
+- ✅ Fashion magazine style grid layout
+- ✅ 3-column responsive card design
+- ✅ Uniform card sizing
+- ✅ Optimized spacing and readability
+- ✅ Category and date badges
+
+#### Article View
+- ✅ Clean reading layout without author sidebar
+- ✅ Table of Contents (TOC) sidebar only
+- ✅ Optimized typography for readability
+- ✅ Proper article metadata display
+
+#### Theme & Styling
+- ✅ Custom color schemes for 8 categories
+- ✅ Dark mode optimized (Autumn Noir base)
+- ✅ Gaming + Fashion fusion aesthetics
+- ✅ Pixel art accents throughout
+- ✅ Smooth animations and transitions
 
 ---
 
-## 📄 授權條款
+## 🛠️ Configuration Files
 
-MIT License - 歡迎使用本專案作為你的 Jekyll 部落格模板。
+### Key Files Structure
+```
+├── _config.yml              # Jekyll configuration
+├── _layouts/
+│   ├── home.html           # Home page layout
+│   ├── post.html           # Article page layout
+│   └── posts.html          # Posts archive layout
+├── _includes/
+│   ├── author-profile.html # Author sidebar
+│   ├── masthead.html       # Navigation header
+│   └── page__hero.html     # Hero section
+├── _pages/
+│   ├── about.md            # About page
+│   ├── posts.md            # Posts archive
+│   └── categories.md       # Categories page
+├── _sass/
+│   └── custom.scss         # Custom styling
+└── assets/
+    ├── css/main.scss       # Main stylesheet
+    └── images/             # Image assets
+```
+
+### Editing Content
+
+#### Update Author Bio
+See [`HOW-TO-EDIT-BIO.md`](HOW-TO-EDIT-BIO.md) for complete instructions.
+
+Quick edit locations:
+- **Author info**: `_config.yml` → `author:` section
+- **Journey timeline**: `_pages/about.md` → Journey items
+- **Profile images**: See [`PROFILE-IMAGE-TODO.md`](PROFILE-IMAGE-TODO.md)
+
+#### Create New Post
+```bash
+# Create new post file
+touch _posts/YYYY-MM-DD-post-title.md
+
+# Add front matter
+---
+title: "Post Title"
+date: YYYY-MM-DD
+categories: [Category Name]
+tags: [tag1, tag2]
+excerpt: "Post summary"
+header:
+  teaser: /assets/images/post-image.jpg
+---
+```
+
+#### Customize Skill Badges
+Edit `_includes/page__hero.html` → Skill Badges section  
+8 categories with custom colors defined in hero section.
 
 ---
 
-<div align="center">
+## 🚀 Deployment
 
-**Built with ❤️ by Archi Chen & AI Assistants**
+### GitHub Pages
+- **URL**: https://magicxcr7.github.io
+- **Branch**: `main`
+- **Build**: Automatic on push
 
-🍂 Jekyll · ✨ Minimal Mistakes · 🤖 AI Collaboration
+### Local Development
+```bash
+# Start server with live reload
+bundle exec jekyll serve --livereload
 
-**[開始探索 →](https://magicxcr7.github.io)**
+# Build static site
+bundle exec jekyll build
 
-</div>
+# Check for broken links
+bundle exec htmlproofer ./_site
+```
+
+---
+
+## 🤝 Contributing
+
+### For Developers
+1. Read `DEVELOPMENT.md` for setup
+2. Check `docs/` for specifications
+3. Follow `agents.MD` guidelines
+4. Test locally before committing
+5. Use Conventional Commits format
+
+### For AI Agents
+1. **Read first**: `agents.MD` (mandatory)
+2. **Check specs**: Always refer to `docs/` specifications
+3. **Plan before execute**: Use planning workflow for complex tasks
+4. **Commit properly**: Use Conventional Commits with `Authored-by: <Agent-Name>`
+5. **Never push**: All pushes require human approval
+
+---
+
+## �� Support & Contact
+
+**Maintainer**: Archi Chen  
+**Project**: Archis Studio Blog  
+**Repository**: https://github.com/magicxcr7/magicxcr7.github.io
+
+For issues or suggestions, please open an issue on GitHub.
+
+---
+
+## 📄 License
+
+MIT License - Feel free to use this as a template for your own Jekyll blog.
+
+---
+
+**Built with ❤️ using Jekyll, Minimal Mistakes, and AI collaboration**

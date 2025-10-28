@@ -1,5 +1,7 @@
 # Navigation 導航規格書
-# Version 1.0.0 | Updated: 2025-10-16
+# Version 3.0.0 | Updated: 2025-10-28
+
+> **🤖 For AI Agents**: 本文件定義導航系統設計規格
 
 ## 🧭 導航架構
 
@@ -456,7 +458,16 @@ logo: "/assets/images/autumn-logo.png"
 
 ---
 
-**實作檔案**:
-- `_data/navigation.yml` - 選單結構
-- `_sass/custom/_masthead.scss` - 樣式定義
-- `_includes/masthead.html` - HTML 結構 (如需客製化)
+## 📝 CHANGELOG
+
+### v3.0.0 (2025-10-28)
+- 版本號統一更新
+- 明確標示文件受眾（AI Agents）
+
+### v1.0.0 (2025-10-16)
+- 建立導航系統規格
+
+---
+
+**Maintained by**: Archi Chen & AI Assistants  
+**Last Updated**: 2025-10-28

@@ -1,5 +1,7 @@
 # AI 協作指南 - AI Collaboration Guide
-# Version 1.6.0 | Updated: 2025-10-16
+# Version 3.0.0 | Updated: 2025-10-28
+
+> **🤖 For AI Agents**: 本文件定義 AI 協作流程、檔案操作規則、Git 工作流程
 
 ## 🔄 工作流程 (Workflows)
 
@@ -340,4 +342,20 @@ Closes #123
 
 ---
 
-**注意**: 此協作指南是活文件，會根據實際協作經驗持續改善更新。
+## 📝 CHANGELOG
+
+### v3.0.0 (2025-10-28)
+- 版本號統一更新
+- 明確標示文件受眾（AI Agents）
+
+### v1.6.0 (2025-10-16)
+- 新增簡化流程（Simple Tasks）
+- 優化工作流程說明
+
+### v1.0.0 (2025-10-11)
+- 建立 AI 協作基礎規範
+
+---
+
+**Maintained by**: Archi Chen & AI Assistants  
+**Last Updated**: 2025-10-28
