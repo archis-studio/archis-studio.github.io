@@ -196,8 +196,8 @@ defaults:
       image: /favicon.png
 
 # Analytics (Optional - uncomment to enable)
-# analytics:
-#   provider: "google-gtag"
-#   google:
-#     tracking_id: "G-XXXXXXXXXX"
-#     anonymize_ip: true
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-XCEC51K9N7"
+    anonymize_ip: true
