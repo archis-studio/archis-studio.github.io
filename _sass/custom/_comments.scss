@@ -185,20 +185,8 @@
 // Loading State
 // ========================================
 .giscus-frame {
-  // Add subtle loading animation
-  &:not(.giscus-frame--loaded) {
-    opacity: 0.7;
-    animation: pulse 1.5s ease-in-out infinite;
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.7;
-  }
-  50% {
-    opacity: 0.4;
-  }
+  // Smooth transition when loaded
+  transition: opacity 0.3s ease;
 }
 
 // ========================================
