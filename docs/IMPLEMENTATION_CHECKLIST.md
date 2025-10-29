@@ -575,7 +575,7 @@ Sidebar:
   
   title: "Archis Studio"
   description: "時尚與科技的完美融合"
-  url: "https://magicxcr7.github.io"
+  url: "https://archis-studio.github.io"
   ```
 
 - [ ] **Open Graph 設定**
