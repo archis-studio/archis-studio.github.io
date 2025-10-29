@@ -78,7 +78,7 @@ classes: wide
             <div class="item-badge">⚔️ Quest</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 Mobiusnx</span>
+            <span class="item-company">🏢 Energy Tech</span>
             <span class="item-location">📍 Taipei, Taiwan</span>
           </div>
         </div>
@@ -88,13 +88,10 @@ classes: wide
           <div class="item-status">
             <span class="status-indicator archived-indicator">◆ ARCHIVED</span>
             <div class="item-skills">
-              <span class="skill-tag">Crypto Trading</span>
               <span class="skill-tag">Life Coach</span>
               <span class="skill-tag">Instructional Design</span>
-              <span class="skill-tag">E-commerce</span>
-              <span class="skill-tag">Marketing</span>
-              <span class="skill-tag">Sales</span>
-              <span class="skill-tag">Branding</span>
+              <span class="skill-tag">E-commerce Operations</span>
+              <span class="skill-tag">Business Development</span>
             </div>
             <span class="item-exp">+1000 EXP</span>
           </div>
@@ -127,7 +124,7 @@ classes: wide
             <div class="item-badge">💼 Career</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 Ad2iction (TNL Mediagene)</span>
+            <span class="item-company">🏢 AdTech & MarTech</span>
             <span class="item-location">📍 Taipei, Taiwan</span>
           </div>
         </div>
@@ -150,7 +147,7 @@ classes: wide
             <div class="item-badge">💼 Career</div>
           </div>
           <div class="item-meta">
-            <span class="item-company">🏢 FIH Mobile Limited</span>
+            <span class="item-company">🏢 Manufacturing Tech</span>
             <span class="item-location">📍 New Taipei, Taiwan</span>
           </div>
         </div>
