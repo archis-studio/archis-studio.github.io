@@ -150,201 +150,9 @@ layout: default
   </div>
 </div>
 
-<!-- Tag Achievements Sidebar -->
-<aside class="tag-achievements">
-  <div class="achievements-container">
-    <div class="achievements-header">
-      <span class="achievements-icon">🏆</span>
-      <span class="achievements-title">標籤成就</span>
-    </div>
-    
-    <div class="achievements-progress">
-      <div class="progress-label">
-        <span>探索進度</span>
-        <span id="achievement-progress-text">0/6</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress-fill" id="achievement-progress-bar" style="width: 0%"></div>
-      </div>
-    </div>
-    
-    <div class="achievements-list" id="achievements-list">
-      <!-- Achievements will be dynamically populated -->
-    </div>
-  </div>
-</aside>
-
 <!-- JavaScript for Tag Cloud Interactions -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-  // ========================================
-  // Achievement System Configuration
-  // ========================================
-  const achievements = [
-    {
-      id: 'first-tag',
-      icon: '🎯',
-      name: '初次探索',
-      description: '點擊第一個標籤',
-      reward: '+10 EXP',
-      condition: (stats) => stats.tagsClicked >= 1
-    },
-    {
-      id: 'tag-explorer',
-      icon: '🗺️',
-      name: '標籤探險家',
-      description: '探索 5 個不同標籤',
-      reward: '+25 EXP',
-      condition: (stats) => stats.tagsClicked >= 5
-    },
-    {
-      id: 'tag-master',
-      icon: '👑',
-      name: '標籤大師',
-      description: '瀏覽所有標籤',
-      reward: '+50 EXP',
-      condition: (stats) => stats.tagsClicked >= stats.totalTags
-    },
-    {
-      id: 'search-pro',
-      icon: '🔍',
-      name: '搜尋達人',
-      description: '使用搜尋功能 3 次',
-      reward: '+15 EXP',
-      condition: (stats) => stats.searchesUsed >= 3
-    },
-    {
-      id: 'sort-expert',
-      icon: '📊',
-      name: '排序專家',
-      description: '嘗試所有排序方式',
-      reward: '+20 EXP',
-      condition: (stats) => stats.sortsUsed >= 3
-    },
-    {
-      id: 'article-reader',
-      icon: '📚',
-      name: '文章閱讀者',
-      description: '從標籤頁點擊文章',
-      reward: '+30 EXP',
-      condition: (stats) => stats.articlesOpened >= 1
-    }
-  ];
-  
-  // Load or initialize user stats
-  let userStats = JSON.parse(localStorage.getItem('tagPageStats') || '{}');
-  userStats = {
-    tagsClicked: userStats.tagsClicked || 0,
-    searchesUsed: userStats.searchesUsed || 0,
-    sortsUsed: userStats.sortsUsed || 0,
-    articlesOpened: userStats.articlesOpened || 0,
-    totalTags: document.querySelectorAll('.tag-cloud-item').length,
-    unlockedAchievements: userStats.unlockedAchievements || [],
-    clickedTags: userStats.clickedTags || []
-  };
-  
-  function saveStats() {
-    localStorage.setItem('tagPageStats', JSON.stringify(userStats));
-  }
-  
-  function checkAndUnlockAchievements() {
-    achievements.forEach(achievement => {
-      if (!userStats.unlockedAchievements.includes(achievement.id)) {
-        if (achievement.condition(userStats)) {
-          unlockAchievement(achievement);
-        }
-      }
-    });
-    updateAchievementsDisplay();
-  }
-  
-  function unlockAchievement(achievement) {
-    userStats.unlockedAchievements.push(achievement.id);
-    saveStats();
-    showAchievementToast(achievement);
-    playUnlockSound();
-  }
-  
-  function showAchievementToast(achievement) {
-    const toast = document.createElement('div');
-    toast.className = 'achievement-unlock-toast';
-    toast.innerHTML = `
-      <div class="toast-header">
-        <span class="toast-icon">${achievement.icon}</span>
-        <span class="toast-title">成就解鎖！</span>
-      </div>
-      <div class="toast-body">
-        <div class="toast-name">${achievement.name}</div>
-        <div class="toast-desc">${achievement.description}</div>
-        <div class="toast-reward">${achievement.reward}</div>
-      </div>
-    `;
-    
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 4000);
-  }
-  
-  function playUnlockSound() {
-    try {
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const now = audioContext.currentTime;
-      
-      // Achievement unlock chord (C-E-G-C major)
-      [523.25, 659.25, 783.99, 1046.50].forEach((freq, i) => {
-        const oscillator = audioContext.createOscillator();
-        const gainNode = audioContext.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioContext.destination);
-        
-        oscillator.frequency.value = freq;
-        oscillator.type = 'sine';
-        
-        const startTime = now + (i * 0.1);
-        gainNode.gain.setValueAtTime(0, startTime);
-        gainNode.gain.linearRampToValueAtTime(0.2, startTime + 0.01);
-        gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + 0.4);
-        
-        oscillator.start(startTime);
-        oscillator.stop(startTime + 0.4);
-      });
-    } catch(e) {}
-  }
-  
-  function updateAchievementsDisplay() {
-    const achievementsList = document.getElementById('achievements-list');
-    const progressBar = document.getElementById('achievement-progress-bar');
-    const progressText = document.getElementById('achievement-progress-text');
-    
-    const unlockedCount = userStats.unlockedAchievements.length;
-    const totalCount = achievements.length;
-    const progress = (unlockedCount / totalCount) * 100;
-    
-    progressBar.style.width = progress + '%';
-    progressText.textContent = `${unlockedCount}/${totalCount}`;
-    
-    achievementsList.innerHTML = achievements.map(achievement => {
-      const isUnlocked = userStats.unlockedAchievements.includes(achievement.id);
-      return `
-        <div class="achievement-item ${isUnlocked ? 'unlocked' : 'locked'}">
-          <span class="achievement-icon">${achievement.icon}</span>
-          <div class="achievement-info">
-            <div class="achievement-name">${achievement.name}</div>
-            <div class="achievement-desc">${achievement.description}</div>
-            ${isUnlocked ? `<div class="achievement-reward">${achievement.reward}</div>` : ''}
-          </div>
-        </div>
-      `;
-    }).join('');
-  }
-  
-  // Initialize achievements display
-  updateAchievementsDisplay();
-  
-  // ========================================
-  // Original functionality with achievement tracking
-  // ========================================
-  
   // Update statistics
   const totalTags = document.querySelectorAll('.tag-cloud-item').length;
   const totalPosts = Array.from(document.querySelectorAll('.tag-cloud-item'))
@@ -373,13 +181,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     clearBtn.style.display = query ? 'block' : 'none';
-    
-    // Track search usage
-    if (query.length > 0) {
-      userStats.searchesUsed++;
-      saveStats();
-      checkAndUnlockAchievements();
-    }
   });
   
   clearBtn.addEventListener('click', function() {
@@ -421,7 +222,6 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       const targetId = this.dataset.scrollTarget;
       const targetElement = document.getElementById(targetId);
-      const tagName = this.dataset.tag;
       
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -432,23 +232,6 @@ document.addEventListener('DOMContentLoaded', function() {
           targetElement.classList.remove('highlight-flash');
         }, 2000);
       }
-      
-      // Track tag clicks
-      if (!userStats.clickedTags.includes(tagName)) {
-        userStats.clickedTags.push(tagName);
-        userStats.tagsClicked = userStats.clickedTags.length;
-        saveStats();
-        checkAndUnlockAchievements();
-      }
-    });
-  });
-  
-  // Track article opens
-  document.querySelectorAll('.tag-post-card a').forEach(link => {
-    link.addEventListener('click', function() {
-      userStats.articlesOpened++;
-      saveStats();
-      checkAndUnlockAchievements();
     });
   });
   
