@@ -497,75 +497,7 @@
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
-}
-
-.tag-post-card {
-  background: linear-gradient(135deg, #181818, #121212);
-  border: 2px solid rgba(146, 99, 69, 0.2);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: all 0.3s ease;
   
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(221, 174, 128, 0.5);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    
-    .post-card-title a {
-      color: #DDB680;
-    }
-  }
-  
-  .post-card-image {
-    width: 100%;
-    height: 160px;
-    overflow: hidden;
-    
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-    
-    &:hover img {
-      transform: scale(1.05);
-    }
-  }
-  
-  .post-card-content {
-    padding: 1.25rem;
-  }
-  
-  .post-card-title {
-    font-size: 1.125rem;
-    margin: 0 0 0.75rem;
-    line-height: 1.4;
-    
-    a {
-      color: #ECDDD2;
-      text-decoration: none;
-      transition: color 0.3s ease;
-      
-      &:hover {
-        color: #DDB680;
-      }
-    }
-  }
-  
-  .post-card-meta {
-    display: flex;
-    gap: 1rem;
-    font-size: 0.8125rem;
-    color: #A8A8A8;
-    margin-bottom: 0.75rem;
-    font-family: 'JetBrains Mono', monospace;
-  }
-  
-  .post-card-excerpt {
-    font-size: 0.875rem;
-    color: #A8A8A8;
-    line-height: 1.6;
-    margin: 0;
-  }
+  // Use existing post-card styles from _posts-archive.scss
+  // No need for separate .tag-post-card styles
 }

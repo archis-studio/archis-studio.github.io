@@ -25,37 +25,7 @@ layout: default
         
         <div class="tag-posts-grid">
           {% for post in tag_posts %}
-            <article class="tag-post-card">
-              {% if post.header.teaser %}
-              <div class="post-card-image">
-                <a href="{{ post.url | relative_url }}">
-                  <img src="{{ post.header.teaser | relative_url }}" alt="{{ post.title }}">
-                </a>
-              </div>
-              {% endif %}
-              
-              <div class="post-card-content">
-                <h3 class="post-card-title">
-                  <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-                </h3>
-                
-                <div class="post-card-meta">
-                  <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
-                    📅 {{ post.date | date: "%Y.%m.%d" }}
-                  </time>
-                  
-                  {% if post.categories.size > 0 %}
-                  <span class="post-category">
-                    📁 {{ post.categories | first }}
-                  </span>
-                  {% endif %}
-                </div>
-                
-                {% if post.excerpt %}
-                <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
-                {% endif %}
-              </div>
-            </article>
+            {% include post-card.html %}
           {% endfor %}
         </div>
       </section>
