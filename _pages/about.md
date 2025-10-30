@@ -290,45 +290,6 @@ classes: wide
             </div>
           </div>
         </div>
-
-        <div class="skill-row">
-          <div class="skill-icon">🔥</div>
-          <div class="skill-info">
-            <div class="skill-name">Prometheus</div>
-            <div class="skill-bar-container">
-              <div class="skill-bar">
-                <div class="skill-fill" data-skill="82"></div>
-              </div>
-              <span class="skill-level">82</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-icon">📊</div>
-          <div class="skill-info">
-            <div class="skill-name">Grafana</div>
-            <div class="skill-bar-container">
-              <div class="skill-bar">
-                <div class="skill-fill" data-skill="85"></div>
-              </div>
-              <span class="skill-level">85</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="skill-row">
-          <div class="skill-icon">📈</div>
-          <div class="skill-info">
-            <div class="skill-name">Looker</div>
-            <div class="skill-bar-container">
-              <div class="skill-bar">
-                <div class="skill-fill" data-skill="80"></div>
-              </div>
-              <span class="skill-level">80</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
 
