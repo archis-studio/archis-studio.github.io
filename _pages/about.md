@@ -193,6 +193,19 @@ classes: wide
             <div class="skill-name">Python</div>
             <div class="skill-bar-container">
               <div class="skill-bar">
+                <div class="skill-fill" data-skill="95"></div>
+              </div>
+              <span class="skill-level">95</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-icon">🐘</div>
+          <div class="skill-info">
+            <div class="skill-name">PostgreSQL</div>
+            <div class="skill-bar-container">
+              <div class="skill-bar">
                 <div class="skill-fill" data-skill="90"></div>
               </div>
               <span class="skill-level">90</span>
@@ -201,40 +214,40 @@ classes: wide
         </div>
 
         <div class="skill-row">
-          <div class="skill-icon">⚡</div>
+          <div class="skill-icon">🍃</div>
           <div class="skill-info">
-            <div class="skill-name">JavaScript</div>
+            <div class="skill-name">MongoDB</div>
             <div class="skill-bar-container">
               <div class="skill-bar">
-                <div class="skill-fill" data-skill="85"></div>
+                <div class="skill-fill" data-skill="88"></div>
               </div>
-              <span class="skill-level">85</span>
+              <span class="skill-level">88</span>
             </div>
           </div>
         </div>
 
         <div class="skill-row">
-          <div class="skill-icon">⚛️</div>
+          <div class="skill-icon">🌊</div>
           <div class="skill-info">
-            <div class="skill-name">React</div>
+            <div class="skill-name">Airflow</div>
             <div class="skill-bar-container">
               <div class="skill-bar">
-                <div class="skill-fill" data-skill="80"></div>
+                <div class="skill-fill" data-skill="92"></div>
               </div>
-              <span class="skill-level">80</span>
+              <span class="skill-level">92</span>
             </div>
           </div>
         </div>
 
         <div class="skill-row">
-          <div class="skill-icon">🐙</div>
+          <div class="skill-icon">🔱</div>
           <div class="skill-info">
             <div class="skill-name">Git</div>
             <div class="skill-bar-container">
               <div class="skill-bar">
-                <div class="skill-fill" data-skill="85"></div>
+                <div class="skill-fill" data-skill="90"></div>
               </div>
-              <span class="skill-level">85</span>
+              <span class="skill-level">90</span>
             </div>
           </div>
         </div>
@@ -245,9 +258,74 @@ classes: wide
             <div class="skill-name">Docker</div>
             <div class="skill-bar-container">
               <div class="skill-bar">
-                <div class="skill-fill" data-skill="75"></div>
+                <div class="skill-fill" data-skill="85"></div>
               </div>
-              <span class="skill-level">75</span>
+              <span class="skill-level">85</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-icon">⚡</div>
+          <div class="skill-info">
+            <div class="skill-name">Redis</div>
+            <div class="skill-bar-container">
+              <div class="skill-bar">
+                <div class="skill-fill" data-skill="87"></div>
+              </div>
+              <span class="skill-level">87</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-icon">🐰</div>
+          <div class="skill-info">
+            <div class="skill-name">RabbitMQ</div>
+            <div class="skill-bar-container">
+              <div class="skill-bar">
+                <div class="skill-fill" data-skill="83"></div>
+              </div>
+              <span class="skill-level">83</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-icon">🔥</div>
+          <div class="skill-info">
+            <div class="skill-name">Prometheus</div>
+            <div class="skill-bar-container">
+              <div class="skill-bar">
+                <div class="skill-fill" data-skill="82"></div>
+              </div>
+              <span class="skill-level">82</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-icon">📊</div>
+          <div class="skill-info">
+            <div class="skill-name">Grafana</div>
+            <div class="skill-bar-container">
+              <div class="skill-bar">
+                <div class="skill-fill" data-skill="85"></div>
+              </div>
+              <span class="skill-level">85</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-row">
+          <div class="skill-icon">📈</div>
+          <div class="skill-info">
+            <div class="skill-name">Looker</div>
+            <div class="skill-bar-container">
+              <div class="skill-bar">
+                <div class="skill-fill" data-skill="80"></div>
+              </div>
+              <span class="skill-level">80</span>
             </div>
           </div>
         </div>
