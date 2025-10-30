@@ -219,25 +219,96 @@
     font-weight: 600;
   }
   
+  // H1 - Main Title Style (Editorial Magazine)
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #e6d4c6;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #d4a574;
+    position: relative;
+    letter-spacing: -0.5px;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, #c9a86f, transparent);
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 1.875rem;
+    }
+  }
+  
+  // H2 - Section Headers (With Code Comment Style)
   h2 {
     font-size: 1.625rem;
     padding-bottom: 0.5rem;
     border-bottom: 2px solid rgba(139, 92, 63, 0.3);
+    color: #e6d4c6;
+    font-weight: 700;
     
     &::before {
       content: '// ';
       color: #8b5c3f;
       font-weight: 400;
     }
+    
+    @media (max-width: 768px) {
+      font-size: 1.375rem;
+    }
   }
   
+  // H3 - Subsection Headers (Golden Accent)
   h3 {
     font-size: 1.3125rem;
     color: #c9a86f;
+    font-weight: 600;
+    position: relative;
+    padding-left: 1rem;
+    
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #d4a574;
+      font-weight: 700;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 1.125rem;
+    }
   }
   
+  // H4 - Minor Headers
   h4 {
     font-size: 1.0625rem;
+    color: #d4c4b4;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9375rem;
+  }
+  
+  // H5 & H6 - Smallest Headers
+  h5 {
+    font-size: 0.9375rem;
+    color: #b8b0a8;
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  h6 {
+    font-size: 0.875rem;
+    color: #999;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   
   // Links
@@ -253,74 +324,225 @@
     }
   }
   
-  // Lists
+  // Lists - Enhanced Typography
   ul, ol {
-    margin-bottom: 1.25rem;
-    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    line-height: 1.8;
     
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
+      padding-left: 0.5rem;
+      position: relative;
       
       &::marker {
+        color: #d4a574;
+        font-weight: 700;
+      }
+      
+      // Nested lists
+      ul, ol {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        
+        li::marker {
+          color: #8b5c3f;
+        }
+      }
+      
+      // List item with inline code
+      code {
+        font-size: 0.875em;
+      }
+    }
+  }
+  
+  // Unordered lists - Custom bullet
+  ul {
+    list-style-type: none;
+    
+    > li {
+      &::before {
+        content: '◆';
+        position: absolute;
+        left: -1.5rem;
+        color: #d4a574;
+        font-size: 0.75em;
+      }
+      
+      // Nested items
+      ul > li::before {
+        content: '▸';
         color: #8b5c3f;
       }
     }
   }
   
-  // Blockquotes - Magazine Style
-  blockquote {
-    margin: 1.75rem 0;
-    padding: 1.25rem 1.75rem;
-    background: linear-gradient(135deg, rgba(139, 92, 63, 0.1), rgba(139, 92, 63, 0.05));
-    border-left: 4px solid #8b5c3f;
-    font-style: italic;
-    color: #b8b8b8;
-    position: relative;
+  // Ordered lists - Enhanced numbering
+  ol {
+    counter-reset: item;
+    list-style-type: none;
     
-    &::before {
-      content: '"';
-      position: absolute;
-      top: -0.25rem;
-      left: 0.5rem;
-      font-size: 3.5rem;
-      color: rgba(139, 92, 63, 0.3);
-      font-family: Georgia, serif;
-      line-height: 1;
-    }
-    
-    p {
-      margin-bottom: 0.5rem;
+    > li {
+      counter-increment: item;
       
-      &:last-child {
-        margin-bottom: 0;
+      &::before {
+        content: counter(item) '.';
+        position: absolute;
+        left: -2rem;
+        color: #d4a574;
+        font-weight: 700;
+        font-family: 'Georgia', serif;
       }
     }
   }
   
-  // Code Blocks
+  // Blockquotes - Elegant Magazine Style
+  blockquote {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem 1.5rem 3rem;
+    background: 
+      linear-gradient(135deg, rgba(139, 92, 63, 0.12), rgba(139, 92, 63, 0.05)),
+      rgba(20, 20, 20, 0.4);
+    border-left: 4px solid #d4a574;
+    font-style: italic;
+    color: #c9c0b8;
+    position: relative;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 
+      0 2px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    
+    // Decorative quote mark
+    &::before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem;
+      left: 0.75rem;
+      font-size: 4rem;
+      color: rgba(212, 165, 116, 0.25);
+      font-family: Georgia, serif;
+      line-height: 1;
+      font-weight: 700;
+    }
+    
+    // Quote attribution style
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #8b5c3f);
+    }
+    
+    p {
+      margin-bottom: 0.75rem;
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+      
+      // Quote source/citation
+      &:last-of-type {
+        margin-top: 1rem;
+        font-size: 0.875rem;
+        color: #999;
+        font-style: normal;
+        text-align: right;
+        
+        &::before {
+          content: '— ';
+        }
+      }
+    }
+    
+    // Nested blockquote
+    blockquote {
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      border-left-width: 2px;
+      
+      &::before {
+        font-size: 2.5rem;
+      }
+    }
+  }
+  
+  // Code Blocks - Enhanced Styling
   pre, code {
-    font-family: 'Courier New', 'Consolas', monospace;
+    font-family: 'JetBrains Mono', 'Courier New', 'Consolas', monospace;
     font-size: 0.9em;
   }
   
+  // Inline Code
   code {
-    background: rgba(139, 92, 63, 0.15);
+    background: linear-gradient(135deg, rgba(139, 92, 63, 0.2), rgba(139, 92, 63, 0.15));
     color: #e6c79c;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    border: 1px solid rgba(139, 92, 63, 0.3);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3);
   }
   
+  // Code Blocks
   pre {
-    background: #1a1a1a;
-    padding: 1rem;
-    border-radius: 4px;
+    background: linear-gradient(135deg, #1a1a1a, #141414);
+    padding: 1.25rem 1.5rem;
+    border-radius: 6px;
     overflow-x: auto;
-    margin-bottom: 1.25rem;
-    border: 1px solid rgba(139, 92, 63, 0.2);
+    margin-bottom: 1.5rem;
+    border: 2px solid rgba(139, 92, 63, 0.25);
+    box-shadow: 
+      0 4px 16px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+    
+    // Code block indicator
+    &::before {
+      content: '</>';
+      position: absolute;
+      top: 0.5rem;
+      right: 0.75rem;
+      font-size: 0.75rem;
+      color: rgba(139, 92, 63, 0.4);
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
     
     code {
       background: none;
       padding: 0;
+      border: none;
+      box-shadow: none;
+      color: #e6d4c6;
+      font-weight: 400;
+      white-space: pre;
+    }
+    
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 4px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: rgba(139, 92, 63, 0.5);
+      border-radius: 4px;
+      
+      &:hover {
+        background: rgba(139, 92, 63, 0.7);
+      }
     }
   }
   
@@ -342,36 +564,133 @@
     }
   }
   
-  // Tables
+  // Tables - Editorial Data Display
   table {
     width: 100%;
-    margin: 1.75rem 0;
-    border-collapse: collapse;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 0.9375rem;
+    border: 2px solid rgba(139, 92, 63, 0.25);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     
     th, td {
-      padding: 0.75rem;
+      padding: 1rem 1.25rem;
       text-align: left;
-      border-bottom: 1px solid rgba(139, 92, 63, 0.2);
+      border-bottom: 1px solid rgba(139, 92, 63, 0.15);
     }
     
-    th {
-      background: rgba(139, 92, 63, 0.2);
-      color: #e8e8e8;
-      font-weight: 600;
+    // Table header
+    thead {
+      th {
+        background: linear-gradient(135deg, rgba(139, 92, 63, 0.3), rgba(139, 92, 63, 0.2));
+        color: #e6d4c6;
+        font-weight: 700;
+        font-family: 'Georgia', serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.8125rem;
+        border-bottom: 2px solid rgba(139, 92, 63, 0.4);
+        position: relative;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          right: 0;
+          height: 1px;
+          background: linear-gradient(90deg, transparent, #d4a574, transparent);
+        }
+      }
     }
     
-    tr:hover {
-      background: rgba(139, 92, 63, 0.05);
+    // Table body
+    tbody {
+      tr {
+        transition: all 0.2s ease;
+        
+        &:hover {
+          background: rgba(139, 92, 63, 0.08);
+        }
+        
+        &:last-child td {
+          border-bottom: none;
+        }
+        
+        // Zebra striping
+        &:nth-child(even) {
+          background: rgba(0, 0, 0, 0.15);
+          
+          &:hover {
+            background: rgba(139, 92, 63, 0.12);
+          }
+        }
+      }
+      
+      td {
+        color: #d4d4d4;
+        
+        // First column emphasis
+        &:first-child {
+          font-weight: 600;
+          color: #c9a86f;
+        }
+        
+        // Code in tables
+        code {
+          font-size: 0.875em;
+          padding: 0.15em 0.4em;
+        }
+      }
+    }
+    
+    // Responsive table scroll hint
+    @media (max-width: 768px) {
+      display: block;
+      overflow-x: auto;
+      
+      &::after {
+        content: '← Scroll →';
+        position: absolute;
+        bottom: 0.5rem;
+        right: 0.5rem;
+        font-size: 0.75rem;
+        color: rgba(139, 92, 63, 0.5);
+        pointer-events: none;
+      }
     }
   }
   
-  // Horizontal Rule
+  // Horizontal Rule - Elegant Divider
   hr {
     border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #8b5c3f, transparent);
-    margin: 2.5rem 0;
+    height: 3px;
+    background: linear-gradient(
+      to right, 
+      transparent 0%, 
+      rgba(139, 92, 63, 0.2) 20%,
+      #d4a574 50%, 
+      rgba(139, 92, 63, 0.2) 80%,
+      transparent 100%
+    );
+    margin: 3rem 0;
+    position: relative;
+    
+    // Decorative center dot
+    &::after {
+      content: '◆';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #0f0f0f;
+      padding: 0 0.75rem;
+      color: #d4a574;
+      font-size: 0.75rem;
+    }
   }
   
   @media (max-width: 768px) {
