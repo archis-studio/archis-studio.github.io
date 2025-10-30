@@ -9,7 +9,8 @@ header:
   teaser: /assets/images/posts/ai-tools-teaser.jepg
 ---
 
-在這個 AI 快速發展的時代，掌握正確的工具使用方法，已經成為提升工作效率的關鍵。
+# 前言
+在這個 AI 快速發展的時代，掌握正確的工具使用方法，已經成為提升工作效率的關鍵。<br><br>
 
 ## 為什麼要學習 AI 工具？
 
