@@ -743,3 +743,418 @@
     margin-top: 1rem;
   }
 }
+
+// =========================
+// Tag Cloud Section in Posts Archive
+// =========================
+.posts-tags-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 2px solid rgba(146, 99, 69, 0.3);
+}
+
+// Compact Tags Header
+.tags-header-compact {
+  text-align: center;
+  margin-bottom: 2rem;
+  
+  .tags-title-compact {
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ECDDD2;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    
+    .title-icon {
+      font-size: 1.5rem;
+      animation: iconFloat 3s ease-in-out infinite;
+      
+      &:last-child {
+        animation-delay: 1.5s;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .tags-subtitle-compact {
+    font-size: 1rem;
+    color: #A8A8A8;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+// Compact Statistics
+.tags-stats-compact {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  
+  @media (max-width: 768px) {
+    gap: 1rem;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      color: #DDB680;
+      text-shadow: 0 0 15px rgba(221, 174, 128, 0.4);
+      
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+      color: #A8A8A8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  }
+}
+
+// Compact Search & Sort Controls
+.tags-search-container-compact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.search-box-compact {
+  position: relative;
+  max-width: 350px;
+  flex: 1;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+  }
+  
+  .search-input-compact {
+    width: 100%;
+    padding: 0.75rem 2.5rem 0.75rem 2.75rem;
+    background: linear-gradient(135deg, #181818, #121212);
+    border: 2px solid rgba(146, 99, 69, 0.3);
+    border-radius: 8px;
+    color: #ECDDD2;
+    font-size: 0.875rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+    
+    &::placeholder {
+      color: #666;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: #DDB680;
+      box-shadow: 0 0 15px rgba(221, 174, 128, 0.3);
+    }
+  }
+  
+  .search-clear-compact {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #A8A8A8;
+    font-size: 1.125rem;
+    cursor: pointer;
+    display: none;
+    padding: 0.25rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #DDB680;
+    }
+  }
+}
+
+.sort-controls-compact {
+  display: flex;
+  gap: 0.5rem;
+  
+  .sort-btn-compact {
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, rgba(146, 99, 69, 0.2), rgba(146, 99, 69, 0.1));
+    border: 2px solid rgba(146, 99, 69, 0.3);
+    border-radius: 6px;
+    color: #A8A8A8;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(146, 99, 69, 0.3), rgba(146, 99, 69, 0.2));
+      border-color: rgba(221, 174, 128, 0.5);
+      color: #DDB680;
+      transform: translateY(-2px);
+    }
+    
+    &.active {
+      background: linear-gradient(135deg, rgba(221, 174, 128, 0.3), rgba(146, 99, 69, 0.3));
+      border-color: #DDB680;
+      color: #DDB680;
+      box-shadow: 0 0 12px rgba(221, 174, 128, 0.3);
+    }
+  }
+}
+
+// Compact Tag Cloud
+.tag-cloud-container-compact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: 
+    radial-gradient(ellipse at top, rgba(146, 99, 69, 0.05) 0%, transparent 50%),
+    rgba(18, 18, 18, 0.4);
+  border-radius: 12px;
+  border: 2px solid rgba(146, 99, 69, 0.2);
+  min-height: 200px;
+  
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
+}
+
+.tag-cloud-item-compact {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 1rem;
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.8), rgba(10, 10, 10, 0.8));
+  border: 2px solid;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  
+  .tag-name {
+    text-transform: lowercase;
+  }
+  
+  .tag-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 0.25rem;
+    background: currentColor;
+    color: #000;
+    border-radius: 3px;
+    font-size: 0.6875rem;
+    font-weight: 900;
+  }
+  
+  &.tag-xl {
+    font-size: 1.125rem;
+    padding: 0.875rem 1.25rem;
+    
+    .tag-count {
+      min-width: 24px;
+      height: 24px;
+      font-size: 0.75rem;
+    }
+    
+    &::after {
+      content: '🔥';
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      font-size: 1.125rem;
+      animation: fireFlicker 1.5s ease-in-out infinite;
+      filter: drop-shadow(0 0 6px rgba(255, 100, 0, 0.7));
+    }
+  }
+  
+  &.tag-lg {
+    font-size: 1rem;
+    padding: 0.75rem 1.125rem;
+    
+    .tag-count {
+      min-width: 22px;
+      height: 22px;
+    }
+    
+    &::after {
+      content: '✨';
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      font-size: 0.875rem;
+      animation: sparkle 2s ease-in-out infinite;
+      filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+    }
+  }
+  
+  &.tag-md {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+  }
+  
+  &.tag-sm {
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.875rem;
+    
+    .tag-count {
+      min-width: 18px;
+      height: 18px;
+      font-size: 0.625rem;
+    }
+  }
+  
+  &.tag-tech {
+    color: #4A90B8;
+    border-color: rgba(74, 144, 184, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 20px rgba(74, 144, 184, 0.5);
+      border-color: #4A90B8;
+    }
+  }
+  
+  &.tag-tutorial {
+    color: #5A8B5F;
+    border-color: rgba(90, 139, 95, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 20px rgba(90, 139, 95, 0.5);
+      border-color: #5A8B5F;
+    }
+  }
+  
+  &.tag-tool {
+    color: #DDB680;
+    border-color: rgba(221, 174, 128, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 20px rgba(221, 174, 128, 0.5);
+      border-color: #DDB680;
+    }
+  }
+  
+  &.tag-creative {
+    color: #9B59B6;
+    border-color: rgba(155, 89, 182, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 20px rgba(155, 89, 182, 0.5);
+      border-color: #9B59B6;
+    }
+  }
+  
+  &.tag-general {
+    color: #C97A8F;
+    border-color: rgba(201, 122, 143, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 20px rgba(201, 122, 143, 0.5);
+      border-color: #C97A8F;
+    }
+  }
+  
+  &:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(10, 10, 10, 0.95));
+  }
+  
+  &.search-match {
+    animation: searchPulse 0.5s ease;
+  }
+}
+
+@keyframes searchPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes fireFlicker {
+  0%, 100% { 
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  25% { 
+    transform: translateY(-2px) scale(1.1) rotate(-5deg);
+    opacity: 0.9;
+  }
+  50% { 
+    transform: translateY(-3px) scale(1.05) rotate(5deg);
+    opacity: 1;
+  }
+  75% { 
+    transform: translateY(-2px) scale(1.1) rotate(-3deg);
+    opacity: 0.95;
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: scale(1.2) rotate(180deg);
+    opacity: 1;
+  }
+}
