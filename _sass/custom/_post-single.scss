@@ -317,11 +317,20 @@
   
   // Images
   img {
-    max-width: 100%;
+    max-width: 75%;
     height: auto;
     border-radius: 4px;
-    margin: 1.75rem 0;
+    margin: 1.75rem auto;
+    display: block;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    
+    @media (max-width: 768px) {
+      max-width: 90%;
+    }
+    
+    @media (max-width: 480px) {
+      max-width: 100%;
+    }
   }
   
   // Tables
