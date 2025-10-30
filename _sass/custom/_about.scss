@@ -733,10 +733,15 @@
           animation: skillLoad 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
           width: 0;
           
-          &[data-skill="90"] { animation-delay: 0.1s; }
-          &[data-skill="85"] { animation-delay: 0.2s; }
-          &[data-skill="80"] { animation-delay: 0.3s; }
-          &[data-skill="75"] { animation-delay: 0.4s; }
+          &[data-skill="95"] { animation-delay: 0.1s; }
+          &[data-skill="92"] { animation-delay: 0.15s; }
+          &[data-skill="90"] { animation-delay: 0.2s; }
+          &[data-skill="88"] { animation-delay: 0.25s; }
+          &[data-skill="87"] { animation-delay: 0.3s; }
+          &[data-skill="85"] { animation-delay: 0.35s; }
+          &[data-skill="83"] { animation-delay: 0.4s; }
+          &[data-skill="82"] { animation-delay: 0.45s; }
+          &[data-skill="80"] { animation-delay: 0.5s; }
           
           &:after {
             content: '';
@@ -774,10 +779,15 @@
   }
 }
 
+.skill-fill[data-skill="95"] { --skill-width: 95%; }
+.skill-fill[data-skill="92"] { --skill-width: 92%; }
 .skill-fill[data-skill="90"] { --skill-width: 90%; }
+.skill-fill[data-skill="88"] { --skill-width: 88%; }
+.skill-fill[data-skill="87"] { --skill-width: 87%; }
 .skill-fill[data-skill="85"] { --skill-width: 85%; }
+.skill-fill[data-skill="83"] { --skill-width: 83%; }
+.skill-fill[data-skill="82"] { --skill-width: 82%; }
 .skill-fill[data-skill="80"] { --skill-width: 80%; }
-.skill-fill[data-skill="75"] { --skill-width: 75%; }
 
 @keyframes skillShimmer {
   0% { left: -50%; }
