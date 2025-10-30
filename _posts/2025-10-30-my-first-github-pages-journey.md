@@ -7,8 +7,21 @@ last_modified_at: 2025-10-30
 categories: [Growth, AI Tools]
 tags: [GitHub Pages, Jekyll, 創作旅程, 個人品牌, 部落格架設]
 featured: true
-permalink: /my-first-blog-adventure/
-description: "一句簡潔的 SEO 描述，50–160 字，說明文章能帶給讀者什麼價值。"
+permalink: /blog/my-first-blog-adventure/
+
 header:
+  overlay_image: /assets/images/posts/ai-tools-teaser.jepg
+  overlay_filter: 0.4
+  overlay_text_color: "white"
+  show_overlay_excerpt: true
+  caption: "Blog Journey © Archis Studio"
   teaser: /assets/images/posts/ai-tools-teaser.jepg
+
+image: /assets/images/posts/ai-tools-teaser.jepg
+image_alt: "Archis Studio 封面圖 - GitHub Pages 部落格冒險"
 ---
+
+## 序章
+哈
+居然要開始寫了
+明天再說
