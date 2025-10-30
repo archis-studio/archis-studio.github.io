@@ -3,10 +3,6 @@ layout: single
 title: "關於我"
 permalink: /about/
 author_profile: true
-toc: true
-toc_label: "目錄"
-toc_icon: "list"
-toc_sticky: true
 classes: wide
 ---
 
