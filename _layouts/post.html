@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<!-- Reading Progress Bar (Gaming Style) -->
+<div class="reading-progress-bar">
+  <div class="progress-fill"></div>
+  <div class="progress-pixel-dots"></div>
+</div>
+
 <div class="post-container">
   <article class="post-single">
     <!-- Post Header -->
@@ -164,62 +170,135 @@ layout: default
   </aside>
 </div>
 
-<!-- TOC Generation Script -->
+<!-- Gaming Features & TOC Script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // ========================================
+  // 1. TOC Generation
+  // ========================================
   const content = document.querySelector('.post-content');
   const tocNav = document.querySelector('#toc');
   
-  if (!content || !tocNav) return;
-  
-  // Find all headings
-  const headings = content.querySelectorAll('h2, h3, h4');
-  
-  if (headings.length === 0) {
-    document.querySelector('.post-toc').style.display = 'none';
-    return;
+  if (content && tocNav) {
+    const headings = content.querySelectorAll('h2, h3, h4');
+    
+    if (headings.length === 0) {
+      document.querySelector('.post-toc').style.display = 'none';
+    } else {
+      let tocHTML = '<ul class="toc-list">';
+      
+      headings.forEach((heading, index) => {
+        const level = heading.tagName.toLowerCase();
+        const text = heading.textContent;
+        const id = `heading-${index}`;
+        heading.id = id;
+        
+        const className = `toc-item toc-item--${level}`;
+        tocHTML += `<li class="${className}"><a href="#${id}" class="toc-link">${text}</a></li>`;
+      });
+      
+      tocHTML += '</ul>';
+      tocNav.innerHTML = tocHTML;
+      
+      // Active state on scroll
+      const tocLinks = tocNav.querySelectorAll('.toc-link');
+      
+      function updateActiveLink() {
+        let current = '';
+        headings.forEach(heading => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top <= 100) current = heading.id;
+        });
+        
+        tocLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', updateActiveLink);
+      updateActiveLink();
+    }
   }
   
-  let tocHTML = '<ul class="toc-list">';
+  // ========================================
+  // 2. Reading Progress Bar (Gaming Style)
+  // ========================================
+  const progressBar = document.querySelector('.reading-progress-bar');
+  const progressFill = document.querySelector('.progress-fill');
   
-  headings.forEach((heading, index) => {
-    const level = heading.tagName.toLowerCase();
-    const text = heading.textContent;
-    const id = `heading-${index}`;
+  if (progressBar && progressFill) {
+    function updateProgress() {
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const trackLength = docHeight - windowHeight;
+      const percentage = Math.floor((scrollTop / trackLength) * 100);
+      
+      progressFill.style.width = percentage + '%';
+      progressFill.setAttribute('data-progress', percentage + '%');
+    }
     
-    // Add ID to heading
-    heading.id = id;
+    window.addEventListener('scroll', updateProgress);
+    updateProgress();
+  }
+  
+  // ========================================
+  // 3. Code Block Copy Button (Gaming XP)
+  // ========================================
+  const codeBlocks = document.querySelectorAll('pre');
+  
+  codeBlocks.forEach(block => {
+    // Create copy button
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'code-copy-btn';
+    copyBtn.innerHTML = '<span class="btn-icon">📋</span><span class="btn-text">Copy</span>';
+    copyBtn.setAttribute('aria-label', 'Copy code');
     
-    // Build TOC item
-    const className = `toc-item toc-item--${level}`;
-    tocHTML += `<li class="${className}"><a href="#${id}" class="toc-link">${text}</a></li>`;
+    block.style.position = 'relative';
+    block.appendChild(copyBtn);
+    
+    copyBtn.addEventListener('click', function() {
+      const code = block.querySelector('code');
+      const text = code ? code.textContent : block.textContent;
+      
+      navigator.clipboard.writeText(text).then(() => {
+        // Success animation
+        copyBtn.innerHTML = '<span class="btn-icon">✨</span><span class="btn-text">+10 XP</span>';
+        copyBtn.classList.add('copied');
+        
+        // Show floating XP
+        const xpFloat = document.createElement('div');
+        xpFloat.className = 'xp-float';
+        xpFloat.textContent = '+10 XP';
+        block.appendChild(xpFloat);
+        
+        setTimeout(() => xpFloat.remove(), 1000);
+        
+        // Reset button
+        setTimeout(() => {
+          copyBtn.innerHTML = '<span class="btn-icon">✓</span><span class="btn-text">Copied</span>';
+        }, 500);
+        
+        setTimeout(() => {
+          copyBtn.innerHTML = '<span class="btn-icon">📋</span><span class="btn-text">Copy</span>';
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    });
   });
   
-  tocHTML += '</ul>';
-  tocNav.innerHTML = tocHTML;
-  
-  // Active state on scroll
-  const tocLinks = tocNav.querySelectorAll('.toc-link');
-  
-  function updateActiveLink() {
-    let current = '';
-    
-    headings.forEach(heading => {
-      const rect = heading.getBoundingClientRect();
-      if (rect.top <= 100) {
-        current = heading.id;
-      }
-    });
-    
-    tocLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
-  }
-  
-  window.addEventListener('scroll', updateActiveLink);
-  updateActiveLink();
+  // ========================================
+  // 4. Heading Pixel Decorations
+  // ========================================
+  const h2Elements = content.querySelectorAll('h2');
+  h2Elements.forEach(h2 => {
+    const pixelDeco = document.createElement('span');
+    pixelDeco.className = 'heading-pixel-deco';
+    pixelDeco.textContent = '▸';
+    h2.prepend(pixelDeco);
+  });
 });
 </script>
