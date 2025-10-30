@@ -198,16 +198,6 @@
   p {
     margin-bottom: 1.25rem;
     text-align: justify;
-    
-    &:first-of-type::first-letter {
-      font-size: 3.2em;
-      line-height: 0.9;
-      float: left;
-      margin: 0.1em 0.15em 0 0;
-      color: #c9a86f;
-      font-family: 'Georgia', serif;
-      font-weight: 700;
-    }
   }
   
   // Headings
@@ -400,7 +390,7 @@
   // Blockquotes - Elegant Magazine Style
   blockquote {
     margin: 2rem 0;
-    padding: 1.5rem 2rem 1.5rem 3rem;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
     background: 
       linear-gradient(135deg, rgba(139, 92, 63, 0.12), rgba(139, 92, 63, 0.05)),
       rgba(20, 20, 20, 0.4);
@@ -418,23 +408,12 @@
       content: '"';
       position: absolute;
       top: 0.5rem;
-      left: 0.75rem;
-      font-size: 4rem;
-      color: rgba(212, 165, 116, 0.25);
+      left: 0.5rem;
+      font-size: 3rem;
+      color: rgba(212, 165, 116, 0.2);
       font-family: Georgia, serif;
       line-height: 1;
       font-weight: 700;
-    }
-    
-    // Quote attribution style
-    &::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 60px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #8b5c3f);
     }
     
     p {
@@ -445,19 +424,6 @@
       &:last-child {
         margin-bottom: 0;
       }
-      
-      // Quote source/citation
-      &:last-of-type {
-        margin-top: 1rem;
-        font-size: 0.875rem;
-        color: #999;
-        font-style: normal;
-        text-align: right;
-        
-        &::before {
-          content: '— ';
-        }
-      }
     }
     
     // Nested blockquote
@@ -467,7 +433,7 @@
       border-left-width: 2px;
       
       &::before {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
     }
   }
