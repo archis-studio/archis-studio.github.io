@@ -333,14 +333,55 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(toast);
     
-    // Play sound effect (optional - silent fallback)
-    try {
-      const audio = new Audio('data:audio/wav;base64,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');
-      audio.volume = 0.3;
-      audio.play().catch(() => {});
-    } catch(e) {}
+    // Play elegant achievement sound
+    playAchievementSound();
     
     setTimeout(() => toast.remove(), 4000);
+  }
+  
+  function playAchievementSound() {
+    try {
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      
+      // Create a more elegant multi-tone achievement sound
+      const now = audioContext.currentTime;
+      
+      // First note - C5 (523.25 Hz)
+      playNote(audioContext, 523.25, now, 0.15, 0.3);
+      
+      // Second note - E5 (659.25 Hz)
+      playNote(audioContext, 659.25, now + 0.15, 0.15, 0.3);
+      
+      // Third note - G5 (783.99 Hz)
+      playNote(audioContext, 783.99, now + 0.3, 0.2, 0.4);
+      
+      // Fourth note - C6 (1046.50 Hz) - Higher octave for sparkle
+      playNote(audioContext, 1046.50, now + 0.5, 0.3, 0.25);
+      
+    } catch(e) {
+      console.log('Audio not supported');
+    }
+  }
+  
+  function playNote(audioContext, frequency, startTime, duration, volume) {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+    
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+    
+    oscillator.type = 'sine';
+    oscillator.frequency.setValueAtTime(frequency, startTime);
+    
+    // Smooth volume envelope (attack-decay-sustain-release)
+    gainNode.gain.setValueAtTime(0, startTime);
+    gainNode.gain.linearRampToValueAtTime(volume, startTime + 0.01); // Attack
+    gainNode.gain.exponentialRampToValueAtTime(volume * 0.7, startTime + duration * 0.3); // Decay
+    gainNode.gain.setValueAtTime(volume * 0.5, startTime + duration * 0.7); // Sustain
+    gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration); // Release
+    
+    oscillator.start(startTime);
+    oscillator.stop(startTime + duration);
   }
   
   window.addEventListener('scroll', checkScrollBottom);
