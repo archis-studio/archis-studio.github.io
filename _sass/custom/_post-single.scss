@@ -14,10 +14,13 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: rgba(0, 0, 0, 0.5);
+  height: 6px;
+  background: rgba(0, 0, 0, 0.8);
   z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 3px 12px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(232, 180, 244, 0.3);
+  border-bottom: 1px solid rgba(212, 165, 116, 0.3);
   
   .progress-fill {
     height: 100%;
@@ -32,17 +35,18 @@
     transition: width 0.1s ease;
     position: relative;
     box-shadow: 
-      0 0 10px rgba(232, 180, 244, 0.6),
-      0 0 20px rgba(255, 182, 193, 0.4);
+      0 0 15px rgba(232, 180, 244, 0.8),
+      0 0 30px rgba(255, 182, 193, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
     
     // Pixel art effect
     &::after {
       content: attr(data-progress);
       position: absolute;
-      right: 8px;
+      right: 10px;
       top: 50%;
       transform: translateY(-50%);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 900;
       color: #fff;
       font-family: 'JetBrains Mono', monospace;
@@ -50,7 +54,8 @@
         1px 1px 0 #000,
         -1px -1px 0 #000,
         1px -1px 0 #000,
-        -1px 1px 0 #000;
+        -1px 1px 0 #000,
+        0 0 8px rgba(255, 182, 193, 0.8);
       letter-spacing: 1px;
     }
   }
@@ -155,6 +160,203 @@
   100% {
     opacity: 0;
     transform: translateY(-40px) scale(1.5);
+  }
+}
+
+// =========================
+// Gaming Feature: Achievement Unlocked
+// =========================
+.achievement-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
+  border: 3px solid #d4a574;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  min-width: 320px;
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(212, 165, 116, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  z-index: 10000;
+  animation: slideInRight 0.5s ease, slideOutRight 0.5s ease 3.5s forwards;
+  
+  .achievement-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+    
+    .achievement-icon {
+      font-size: 2rem;
+      animation: iconBounce 0.6s ease;
+    }
+    
+    .achievement-title {
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #d4a574;
+      font-family: 'JetBrains Mono', monospace;
+    }
+  }
+  
+  .achievement-body {
+    padding-left: 2.75rem;
+    
+    .achievement-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e6d4c6;
+      margin-bottom: 0.25rem;
+    }
+    
+    .achievement-desc {
+      font-size: 0.8125rem;
+      color: #999;
+      font-style: italic;
+    }
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2) rotate(-10deg); }
+  50% { transform: scale(1.1); }
+  75% { transform: scale(1.2) rotate(10deg); }
+}
+
+// =========================
+// Gaming Feature: Link Hover Tooltip
+// =========================
+.post-content a {
+  position: relative;
+  
+  &::before {
+    content: '⚡ Click to explore';
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: linear-gradient(135deg, rgba(20, 20, 20, 0.95), rgba(10, 10, 10, 0.95));
+    border: 2px solid #d4a574;
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    color: #e6c79c;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 
+      0 4px 12px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(212, 165, 116, 0.3);
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #d4a574;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 100;
+    transition: all 0.3s ease;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+// =========================
+// Gaming Feature: Scroll Particle Effects
+// =========================
+.scroll-particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  
+  .particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: #d4a574;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 3s ease-in-out infinite;
+    box-shadow: 0 0 4px rgba(212, 165, 116, 0.6);
+    
+    &:nth-child(1) { left: 10%; animation-delay: 0s; }
+    &:nth-child(2) { left: 25%; animation-delay: 0.5s; }
+    &:nth-child(3) { left: 40%; animation-delay: 1s; }
+    &:nth-child(4) { left: 60%; animation-delay: 1.5s; }
+    &:nth-child(5) { left: 75%; animation-delay: 2s; }
+    &:nth-child(6) { left: 90%; animation-delay: 2.5s; }
+  }
+}
+
+@keyframes particleFloat {
+  0% {
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+    transform: translateY(-20px) scale(0.5);
   }
 }
 

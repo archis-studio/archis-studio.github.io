@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // ========================================
-  // 3. Code Block Copy Button (Gaming XP)
+  // 3. Code Block Copy Button (Gaming EXP)
   // ========================================
   const codeBlocks = document.querySelectorAll('pre');
   
@@ -266,16 +266,16 @@ document.addEventListener('DOMContentLoaded', function() {
       
       navigator.clipboard.writeText(text).then(() => {
         // Success animation
-        copyBtn.innerHTML = '<span class="btn-icon">✨</span><span class="btn-text">+10 XP</span>';
+        copyBtn.innerHTML = '<span class="btn-icon">✨</span><span class="btn-text">+10 EXP</span>';
         copyBtn.classList.add('copied');
         
-        // Show floating XP
-        const xpFloat = document.createElement('div');
-        xpFloat.className = 'xp-float';
-        xpFloat.textContent = '+10 XP';
-        block.appendChild(xpFloat);
+        // Show floating EXP
+        const expFloat = document.createElement('div');
+        expFloat.className = 'xp-float';
+        expFloat.textContent = '+10 EXP';
+        block.appendChild(expFloat);
         
-        setTimeout(() => xpFloat.remove(), 1000);
+        setTimeout(() => expFloat.remove(), 1000);
         
         // Reset button
         setTimeout(() => {
@@ -299,6 +299,74 @@ document.addEventListener('DOMContentLoaded', function() {
     pixelDeco.className = 'heading-pixel-deco';
     pixelDeco.textContent = '▸';
     h2.prepend(pixelDeco);
+  });
+  
+  // ========================================
+  // 5. Achievement: Read to Bottom
+  // ========================================
+  let achievementShown = false;
+  
+  function checkScrollBottom() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight;
+    const clientHeight = window.innerHeight;
+    
+    if (scrollTop + clientHeight >= scrollHeight - 100 && !achievementShown) {
+      achievementShown = true;
+      showAchievement('🏆', 'Achievement Unlocked!', 'Knowledge Seeker', 'Read the entire article');
+    }
+  }
+  
+  function showAchievement(icon, title, name, desc) {
+    const toast = document.createElement('div');
+    toast.className = 'achievement-toast';
+    toast.innerHTML = `
+      <div class="achievement-header">
+        <div class="achievement-icon">${icon}</div>
+        <div class="achievement-title">${title}</div>
+      </div>
+      <div class="achievement-body">
+        <div class="achievement-name">${name}</div>
+        <div class="achievement-desc">${desc}</div>
+      </div>
+    `;
+    
+    document.body.appendChild(toast);
+    
+    // Play sound effect (optional - silent fallback)
+    try {
+      const audio = new Audio('data:audio/wav;base64,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');
+      audio.volume = 0.3;
+      audio.play().catch(() => {});
+    } catch(e) {}
+    
+    setTimeout(() => toast.remove(), 4000);
+  }
+  
+  window.addEventListener('scroll', checkScrollBottom);
+  
+  // ========================================
+  // 6. Scroll Particles Effect
+  // ========================================
+  const particlesContainer = document.createElement('div');
+  particlesContainer.className = 'scroll-particles';
+  for (let i = 0; i < 6; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particlesContainer.appendChild(particle);
+  }
+  document.body.appendChild(particlesContainer);
+  
+  let lastScroll = 0;
+  window.addEventListener('scroll', function() {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      // Scrolling down
+      particlesContainer.style.display = 'block';
+    } else {
+      particlesContainer.style.display = 'none';
+    }
+    lastScroll = currentScroll;
   });
 });
 </script>
