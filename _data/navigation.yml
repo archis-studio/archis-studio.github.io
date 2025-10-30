@@ -11,6 +11,9 @@ main:
   - title: "🗂️ 分類"
     url: /categories/
     
+  - title: "🏷️ 標籤"
+    url: /tags/
+    
   - title: "🎓 證書"
     url: /certificates/
     
