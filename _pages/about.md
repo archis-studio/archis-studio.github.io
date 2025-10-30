@@ -3,6 +3,8 @@ layout: single
 title: "關於我"
 permalink: /about/
 author_profile: true
+sidebar:
+  nav: "sidebar"
 classes: wide
 ---
 
