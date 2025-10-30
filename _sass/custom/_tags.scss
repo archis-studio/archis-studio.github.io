@@ -1,0 +1,517 @@
+// ================================
+// Tags Page - Tag Cloud
+// Gaming Pixel Art Style
+// Autumn Noir Color Theme
+// ================================
+
+// =========================
+// Tags Page Container
+// =========================
+.tags-page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.25rem;
+  }
+}
+
+// =========================
+// Page Header
+// =========================
+.tags-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  .tags-title {
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ECDDD2;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    
+    .title-icon {
+      font-size: 2rem;
+      animation: iconFloat 3s ease-in-out infinite;
+      
+      &:last-child {
+        animation-delay: 1.5s;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+      flex-wrap: wrap;
+    }
+  }
+  
+  .tags-subtitle {
+    font-size: 1.125rem;
+    color: #A8A8A8;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+// =========================
+// Statistics
+// =========================
+.tags-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      font-family: 'JetBrains Mono', monospace;
+      color: #DDB680;
+      text-shadow: 0 0 20px rgba(221, 174, 128, 0.5);
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .stat-label {
+      font-size: 0.875rem;
+      color: #A8A8A8;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  }
+}
+
+// =========================
+// Search & Sort Controls
+// =========================
+.tags-search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.125rem;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    width: 100%;
+    padding: 0.875rem 3rem 0.875rem 3rem;
+    background: linear-gradient(135deg, #181818, #121212);
+    border: 2px solid rgba(146, 99, 69, 0.3);
+    border-radius: 8px;
+    color: #ECDDD2;
+    font-size: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+    
+    &::placeholder {
+      color: #666;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: #DDB680;
+      box-shadow: 0 0 20px rgba(221, 174, 128, 0.3);
+    }
+  }
+  
+  .search-clear {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #A8A8A8;
+    font-size: 1.25rem;
+    cursor: pointer;
+    display: none;
+    padding: 0.25rem;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: #DDB680;
+    }
+  }
+}
+
+.sort-controls {
+  display: flex;
+  gap: 0.75rem;
+  
+  .sort-btn {
+    padding: 0.75rem 1.25rem;
+    background: linear-gradient(135deg, rgba(146, 99, 69, 0.2), rgba(146, 99, 69, 0.1));
+    border: 2px solid rgba(146, 99, 69, 0.3);
+    border-radius: 6px;
+    color: #A8A8A8;
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    
+    &:hover {
+      background: linear-gradient(135deg, rgba(146, 99, 69, 0.3), rgba(146, 99, 69, 0.2));
+      border-color: rgba(221, 174, 128, 0.5);
+      color: #DDB680;
+      transform: translateY(-2px);
+    }
+    
+    &.active {
+      background: linear-gradient(135deg, rgba(221, 174, 128, 0.3), rgba(146, 99, 69, 0.3));
+      border-color: #DDB680;
+      color: #DDB680;
+      box-shadow: 0 0 15px rgba(221, 174, 128, 0.3);
+    }
+  }
+}
+
+// =========================
+// Tag Cloud
+// =========================
+.tag-cloud-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: 
+    radial-gradient(ellipse at top, rgba(146, 99, 69, 0.05) 0%, transparent 50%),
+    rgba(18, 18, 18, 0.4);
+  border-radius: 12px;
+  border: 2px solid rgba(146, 99, 69, 0.2);
+  margin-bottom: 3rem;
+  min-height: 300px;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem 1rem;
+  }
+}
+
+.tag-cloud-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.8), rgba(10, 10, 10, 0.8));
+  border: 2px solid;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  
+  // Pixel art corner
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+  
+  .tag-name {
+    text-transform: lowercase;
+  }
+  
+  .tag-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    padding: 0 0.375rem;
+    background: currentColor;
+    color: #000;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 900;
+  }
+  
+  // Size variants
+  &.tag-xl {
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem;
+    
+    .tag-count {
+      min-width: 28px;
+      height: 28px;
+      font-size: 0.875rem;
+    }
+  }
+  
+  &.tag-lg {
+    font-size: 1.125rem;
+    padding: 0.875rem 1.375rem;
+    
+    .tag-count {
+      min-width: 26px;
+      height: 26px;
+    }
+  }
+  
+  &.tag-md {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+  
+  &.tag-sm {
+    font-size: 0.875rem;
+    padding: 0.625rem 1rem;
+    
+    .tag-count {
+      min-width: 20px;
+      height: 20px;
+      font-size: 0.6875rem;
+    }
+  }
+  
+  // Color variants
+  &.tag-tech {
+    color: #4A90B8;
+    border-color: rgba(74, 144, 184, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 25px rgba(74, 144, 184, 0.5);
+      border-color: #4A90B8;
+    }
+  }
+  
+  &.tag-tutorial {
+    color: #5A8B5F;
+    border-color: rgba(90, 139, 95, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 25px rgba(90, 139, 95, 0.5);
+      border-color: #5A8B5F;
+    }
+  }
+  
+  &.tag-tool {
+    color: #DDB680;
+    border-color: rgba(221, 174, 128, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 25px rgba(221, 174, 128, 0.5);
+      border-color: #DDB680;
+    }
+  }
+  
+  &.tag-creative {
+    color: #9B59B6;
+    border-color: rgba(155, 89, 182, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 25px rgba(155, 89, 182, 0.5);
+      border-color: #9B59B6;
+    }
+  }
+  
+  &.tag-general {
+    color: #C97A8F;
+    border-color: rgba(201, 122, 143, 0.5);
+    
+    &:hover {
+      box-shadow: 0 0 25px rgba(201, 122, 143, 0.5);
+      border-color: #C97A8F;
+    }
+  }
+  
+  // Hover effects
+  &:hover {
+    transform: translateY(-4px) scale(1.05);
+    background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(10, 10, 10, 0.95));
+  }
+  
+  // Search match highlight
+  &.search-match {
+    animation: searchPulse 0.5s ease;
+  }
+}
+
+@keyframes searchPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+// =========================
+// Tag Details Section
+// =========================
+.tag-detail-section {
+  margin-bottom: 4rem;
+  scroll-margin-top: 100px;
+  
+  &.highlight-flash {
+    animation: highlightFlash 2s ease;
+  }
+}
+
+@keyframes highlightFlash {
+  0%, 100% { background: transparent; }
+  50% { background: rgba(221, 174, 128, 0.1); }
+}
+
+.tag-detail-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(146, 99, 69, 0.3);
+  
+  .tag-detail-title {
+    font-family: 'Georgia', 'Noto Serif TC', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ECDDD2;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+    .tag-icon {
+      font-size: 1.5rem;
+    }
+    
+    .tag-detail-count {
+      font-size: 1rem;
+      color: #A8A8A8;
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+}
+
+// =========================
+// Tag Posts Grid
+// =========================
+.tag-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tag-post-card {
+  background: linear-gradient(135deg, #181818, #121212);
+  border: 2px solid rgba(146, 99, 69, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(221, 174, 128, 0.5);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    
+    .post-card-title a {
+      color: #DDB680;
+    }
+  }
+  
+  .post-card-image {
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  
+  .post-card-content {
+    padding: 1.25rem;
+  }
+  
+  .post-card-title {
+    font-size: 1.125rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.4;
+    
+    a {
+      color: #ECDDD2;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #DDB680;
+      }
+    }
+  }
+  
+  .post-card-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.8125rem;
+    color: #A8A8A8;
+    margin-bottom: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  .post-card-excerpt {
+    font-size: 0.875rem;
+    color: #A8A8A8;
+    line-height: 1.6;
+    margin: 0;
+  }
+}
