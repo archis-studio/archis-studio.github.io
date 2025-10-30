@@ -28,6 +28,97 @@ permalink: /posts/
     {% endfor %}
   </div>
 
+  <!-- Tag Cloud Section -->
+  <section class="posts-tags-section">
+    <!-- Tags Header -->
+    <header class="tags-header-compact">
+      <h2 class="tags-title-compact">
+        <span class="title-icon">🏷️</span>
+        探索標籤
+        <span class="title-icon">✨</span>
+      </h2>
+      <p class="tags-subtitle-compact">按標籤瀏覽文章</p>
+      
+      <!-- Statistics -->
+      <div class="tags-stats-compact">
+        <div class="stat-item">
+          <span class="stat-number" id="posts-total-tags">0</span>
+          <span class="stat-label">標籤</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="posts-total-posts">0</span>
+          <span class="stat-label">文章</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Search & Sort Controls -->
+    <div class="tags-search-container-compact">
+      <div class="search-box-compact">
+        <span class="search-icon">🔍</span>
+        <input type="text" 
+               id="posts-tag-search" 
+               class="search-input-compact" 
+               placeholder="搜尋標籤...">
+        <button class="search-clear-compact" id="posts-clear-search">✕</button>
+      </div>
+      
+      <!-- Sort Controls -->
+      <div class="sort-controls-compact">
+        <button class="sort-btn-compact active" data-sort="popular">
+          🔥 熱門
+        </button>
+        <button class="sort-btn-compact" data-sort="name">
+          🔤 名稱
+        </button>
+      </div>
+    </div>
+
+    <!-- Tag Cloud -->
+    <div class="tag-cloud-container-compact">
+      {% assign sorted_tags = site.tags | sort %}
+      
+      {% for tag in sorted_tags %}
+        {% assign tag_name = tag[0] %}
+        {% assign tag_posts = tag[1] %}
+        {% assign post_count = tag_posts | size %}
+        
+        <!-- Determine tag size class -->
+        {% if post_count >= 10 %}
+          {% assign size_class = "tag-xl" %}
+        {% elsif post_count >= 5 %}
+          {% assign size_class = "tag-lg" %}
+        {% elsif post_count >= 3 %}
+          {% assign size_class = "tag-md" %}
+        {% else %}
+          {% assign size_class = "tag-sm" %}
+        {% endif %}
+        
+        <!-- Determine tag category color -->
+        {% assign lower_tag = tag_name | downcase %}
+        {% if lower_tag contains "ai" or lower_tag contains "python" or lower_tag contains "javascript" or lower_tag contains "code" or lower_tag contains "dev" %}
+          {% assign color_class = "tag-tech" %}
+        {% elsif lower_tag contains "tutorial" or lower_tag contains "guide" or lower_tag contains "教學" or lower_tag contains "入門" %}
+          {% assign color_class = "tag-tutorial" %}
+        {% elsif lower_tag contains "tool" or lower_tag contains "github" or lower_tag contains "jekyll" or lower_tag contains "productivity" %}
+          {% assign color_class = "tag-tool" %}
+        {% elsif lower_tag contains "design" or lower_tag contains "pixel" or lower_tag contains "art" or lower_tag contains "creative" %}
+          {% assign color_class = "tag-creative" %}
+        {% else %}
+          {% assign color_class = "tag-general" %}
+        {% endif %}
+        
+        <a href="{{ '/tags/' | relative_url }}#tag-{{ tag_name | slugify }}" 
+           class="tag-cloud-item-compact {{ size_class }} {{ color_class }}"
+           data-tag="{{ tag_name }}"
+           data-count="{{ post_count }}">
+          <span class="tag-name">{{ tag_name }}</span>
+          <span class="tag-count">{{ post_count }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+
   <!-- Pagination (future) -->
   <!-- {% if paginator.total_pages > 1 %}
   <nav class="pagination">
@@ -35,3 +126,68 @@ permalink: /posts/
   </nav>
   {% endif %} -->
 </div>
+
+<!-- JavaScript for Tag Cloud in Posts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Update statistics
+  const totalTags = document.querySelectorAll('.tag-cloud-item-compact').length;
+  const totalPosts = Array.from(document.querySelectorAll('.tag-cloud-item-compact'))
+    .reduce((sum, tag) => sum + parseInt(tag.dataset.count), 0);
+  
+  document.getElementById('posts-total-tags').textContent = totalTags;
+  document.getElementById('posts-total-posts').textContent = totalPosts;
+  
+  // Search functionality
+  const searchInput = document.getElementById('posts-tag-search');
+  const clearBtn = document.getElementById('posts-clear-search');
+  const tagItems = document.querySelectorAll('.tag-cloud-item-compact');
+  
+  searchInput.addEventListener('input', function() {
+    const query = this.value.toLowerCase();
+    
+    tagItems.forEach(tag => {
+      const tagName = tag.dataset.tag.toLowerCase();
+      if (tagName.includes(query)) {
+        tag.style.display = 'inline-flex';
+        tag.classList.add('search-match');
+      } else {
+        tag.style.display = 'none';
+        tag.classList.remove('search-match');
+      }
+    });
+    
+    clearBtn.style.display = query ? 'block' : 'none';
+  });
+  
+  clearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    searchInput.dispatchEvent(new Event('input'));
+    searchInput.focus();
+  });
+  
+  // Sort functionality
+  const sortBtns = document.querySelectorAll('.sort-btn-compact');
+  const tagCloud = document.querySelector('.tag-cloud-container-compact');
+  
+  sortBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      sortBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      const sortType = this.dataset.sort;
+      const tagsArray = Array.from(tagItems);
+      
+      tagsArray.sort((a, b) => {
+        if (sortType === 'popular') {
+          return parseInt(b.dataset.count) - parseInt(a.dataset.count);
+        } else if (sortType === 'name') {
+          return a.dataset.tag.localeCompare(b.dataset.tag);
+        }
+      });
+      
+      tagsArray.forEach(tag => tagCloud.appendChild(tag));
+    });
+  });
+});
+</script>
