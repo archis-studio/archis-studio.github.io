@@ -163,7 +163,7 @@
 // Featured Image
 // =========================
 .post-featured-image {
-  max-width: 60%;
+  max-width: 68%;
   width: 100%;
   margin: 0 auto 2.5rem;
   border-radius: 4px;
@@ -171,7 +171,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   
   @media (max-width: 768px) {
-    max-width: 80%;
+    max-width: 85%;
   }
   
   @media (max-width: 480px) {
@@ -326,7 +326,7 @@
   
   // Images
   img {
-    max-width: 60%;
+    max-width: 68%;
     height: auto;
     border-radius: 4px;
     margin: 1.75rem auto;
@@ -334,7 +334,7 @@
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     
     @media (max-width: 768px) {
-      max-width: 80%;
+      max-width: 85%;
     }
     
     @media (max-width: 480px) {
