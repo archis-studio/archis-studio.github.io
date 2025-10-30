@@ -51,6 +51,11 @@ sidebar:
       - title: "🎯 成長旅程"
         url: "/categories/growth/"
 
+  - title: "🏷️ 探索標籤"
+    children:
+      - title: "☁️ 標籤雲"
+        url: "/tags/"
+
   - title: "🔗 社群連結"
     children:
       - title: "GitHub"
