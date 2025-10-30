@@ -1,6 +1,7 @@
 ---
 title: "我的第一個 GitHub Pages：從零開始的部落格冒險"
 excerpt: "Archis Studio 首篇文章：從零開始架設 GitHub Pages 部落格，記錄技術、創作與個人品牌的成長旅程。"
+description: "Archis Studio 首篇文章：從零開始架設 GitHub Pages 部落格，記錄技術、創作與個人品牌的成長旅程。"
 date: 2025-10-30
 last_modified_at: 2025-10-30
 categories: [Growth, AI Tools]
