@@ -55,10 +55,10 @@ section {
 }
 
 .section-title {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: $serif-editorial;
   font-size: 1.8rem;
-  font-weight: 700;
-  color: #D4A017;
+  font-weight: $font-weight-bold;
+  color: $autumn-gold;
   margin-bottom: 3rem;
   text-align: center;
   letter-spacing: -0.02em;
@@ -547,158 +547,10 @@ section {
     &:hover::before {
       left: 100%;
     }
-    
-    // 1. AI 工具 - Luxury Gold (Premium & Cutting Edge)
-    &--ai {
-      border-color: #D4A017;
-      color: #D4A017;
-      background: linear-gradient(135deg, rgba(212, 160, 23, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(212, 160, 23, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(212, 160, 23, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(212, 160, 23, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(212, 160, 23, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #FFCC33;
-        color: #FFCC33;
-      }
-    }
-    
-    // 2. 軟體開發 - Tech Cyan (Professional & Modern)
-    &--dev {
-      border-color: #00B4D8;
-      color: #00B4D8;
-      background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(0, 180, 216, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(0, 180, 216, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #48CAE4;
-        color: #48CAE4;
-      }
-    }
-    
-    // 3. 資料科學 - Data Blue (Analytical & Trustworthy)
-    &--data {
-      border-color: #5D8AA8;
-      color: #5D8AA8;
-      background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(93, 138, 168, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(93, 138, 168, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(93, 138, 168, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(93, 138, 168, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #7BA8C0;
-        color: #7BA8C0;
-      }
-    }
-    
-    // 4. 數位行銷 - Creative Purple (Innovative & Dynamic)
-    &--marketing {
-      border-color: #9370DB;
-      color: #9370DB;
-      background: linear-gradient(135deg, rgba(147, 112, 219, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(147, 112, 219, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(147, 112, 219, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(147, 112, 219, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #B19CD9;
-        color: #B19CD9;
-      }
-    }
-    
-    // 5. 量化交易 - Finance Gold Orange (Wall Street & Trading)
-    &--quant {
-      border-color: #FF9800;
-      color: #FF9800;
-      background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(255, 152, 0, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(255, 152, 0, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(255, 152, 0, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(255, 152, 0, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #FFB74D;
-        color: #FFB74D;
-      }
-    }
-    
-    // 6. 閱讀筆記 - Book Brown Sepia (Vintage Library)
-    &--reading {
-      border-color: #8B7355;
-      color: #C4A777;
-      background: linear-gradient(135deg, rgba(139, 115, 85, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(139, 115, 85, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(139, 115, 85, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(196, 167, 119, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(139, 115, 85, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #D4B896;
-        color: #E5D4B5;
-      }
-    }
-    
-    // 7. 綠色能源 - Renewable Green (Nature & Sustainability)
-    &--green {
-      border-color: #2E7D32;
-      color: #66BB6A;
-      background: linear-gradient(135deg, rgba(46, 125, 50, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(46, 125, 50, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(102, 187, 106, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(46, 125, 50, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #81C784;
-        color: #A5D6A7;
-      }
-    }
-    
-    // 8. 成長旅程 - Warm Coral (Personal & Inspiring)
-    &--growth {
-      border-color: #FF6F61;
-      color: #FF6F61;
-      background: linear-gradient(135deg, rgba(255, 111, 97, 0.15), rgba(28, 28, 30, 0.75));
-      box-shadow: 0 0 15px rgba(255, 111, 97, 0.2);
-      
-      &:hover {
-        background: linear-gradient(135deg, rgba(255, 111, 97, 0.3), rgba(28, 28, 30, 0.75));
-        box-shadow: 
-          0 0 25px rgba(255, 111, 97, 0.8),
-          0 6px 12px rgba(0, 0, 0, 0.5),
-          inset 0 0 20px rgba(255, 111, 97, 0.2);
-        transform: translateY(-4px) scale(1.05);
-        border-color: #FF8A80;
-        color: #FF8A80;
-      }
-    }
+
+    // 8 色分類 Badge - 使用 Design System Mixin 自動生成
+    // 來源：_sass/design-system/_mixins.scss → generate-category-badges()
+    @include generate-category-badges('--');
   }
   
   // CTA Buttons - Pixel Style
@@ -841,40 +693,40 @@ section {
   padding: 0.75rem 2rem;
   border-radius: 4px;
   text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  
+  font-weight: $font-weight-semibold;
+  transition: all $transition-base;
+
   &.btn-primary {
-    background: #D4A017;
-    color: #0E0E10;
-    
+    background: $autumn-gold;
+    color: $noir-black;
+
     &:hover {
-      background: lighten(#D4A017, 10%);
+      background: lighten($autumn-gold, 10%);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(212, 160, 23, 0.4);
+      box-shadow: 0 4px 12px rgba($autumn-gold, 0.4);
     }
   }
-  
+
   &.btn-secondary {
     background: transparent;
-    color: #D4A017;
-    border: 2px solid #D4A017;
-    
+    color: $autumn-gold;
+    border: 2px solid $autumn-gold;
+
     &:hover {
-      background: rgba(212, 160, 23, 0.1);
+      background: rgba($autumn-gold, 0.1);
       transform: translateY(-2px);
     }
   }
-  
+
   &.btn-outline {
     background: transparent;
-    color: #C5C5C5;
-    border: 1px solid rgba(197, 197, 197, 0.3);
-    
+    color: $noir-text-muted;
+    border: 1px solid rgba($noir-text-muted, 0.3);
+
     &:hover {
-      color: #D4A017;
-      border-color: #D4A017;
-      background: rgba(212, 160, 23, 0.05);
+      color: $autumn-gold;
+      border-color: $autumn-gold;
+      background: rgba($autumn-gold, 0.05);
     }
   }
 }
@@ -921,10 +773,10 @@ section {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, 
-      #d4a574 0%, 
-      #8b5c3f 50%, 
-      #d4a574 100%
+    background: linear-gradient(90deg,
+      $autumn-copper 0%,
+      darken($autumn-copper, 15%) 50%,
+      $autumn-copper 100%
     );
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -1160,166 +1012,10 @@ section {
     font-size: 0.75rem;
     opacity: 0.7;
   }
-  
-  // AI 工具 - Premium Gold
-  &.skill-category--ai {
-    border-color: #D4A017;
-    color: #D4A017;
-    background: linear-gradient(135deg, rgba(212, 160, 23, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(212, 160, 23, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(212, 160, 23, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(212, 160, 23, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(212, 160, 23, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #FFCC33;
-      
-      .skill-name { color: #FFCC33; }
-    }
-  }
-  
-  // 軟體開發 - Tech Cyan
-  &.skill-category--dev {
-    border-color: #00B4D8;
-    color: #00B4D8;
-    background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(0, 180, 216, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(0, 180, 216, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(0, 180, 216, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(0, 180, 216, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #48CAE4;
-      
-      .skill-name { color: #48CAE4; }
-    }
-  }
-  
-  // 資料科學 - Data Blue
-  &.skill-category--data {
-    border-color: #5D8AA8;
-    color: #5D8AA8;
-    background: linear-gradient(135deg, rgba(93, 138, 168, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(93, 138, 168, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(93, 138, 168, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(93, 138, 168, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(93, 138, 168, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #7BA8C0;
-      
-      .skill-name { color: #7BA8C0; }
-    }
-  }
-  
-  // 數位行銷 - Creative Purple
-  &.skill-category--marketing {
-    border-color: #9370DB;
-    color: #9370DB;
-    background: linear-gradient(135deg, rgba(147, 112, 219, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(147, 112, 219, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(147, 112, 219, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(147, 112, 219, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(147, 112, 219, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #B19CD9;
-      
-      .skill-name { color: #B19CD9; }
-    }
-  }
-  
-  // 量化交易 - Finance Orange
-  &.skill-category--quant {
-    border-color: #FF9800;
-    color: #FF9800;
-    background: linear-gradient(135deg, rgba(255, 152, 0, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(255, 152, 0, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(255, 152, 0, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(255, 152, 0, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(255, 152, 0, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #FFB74D;
-      
-      .skill-name { color: #FFB74D; }
-    }
-  }
-  
-  // 閱讀筆記 - Book Brown
-  &.skill-category--reading {
-    border-color: #8B7355;
-    color: #C4A777;
-    background: linear-gradient(135deg, rgba(139, 115, 85, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(139, 115, 85, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(139, 115, 85, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(196, 167, 119, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(139, 115, 85, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #D4B896;
-      
-      .skill-name { color: #E5D4B5; }
-    }
-  }
-  
-  // 綠色能源 - Forest Green
-  &.skill-category--green {
-    border-color: #2E7D32;
-    color: #66BB6A;
-    background: linear-gradient(135deg, rgba(46, 125, 50, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(46, 125, 50, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(46, 125, 50, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(102, 187, 106, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(46, 125, 50, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #81C784;
-      
-      .skill-name { color: #A5D6A7; }
-    }
-  }
-  
-  // 成長旅程 - Warm Coral
-  &.skill-category--growth {
-    border-color: #FF6F61;
-    color: #FF6F61;
-    background: linear-gradient(135deg, rgba(255, 111, 97, 0.15), rgba(28, 28, 30, 0.75));
-    box-shadow: 0 0 15px rgba(255, 111, 97, 0.2);
-    
-    &:hover {
-      background: linear-gradient(135deg, rgba(255, 111, 97, 0.3), rgba(28, 28, 30, 0.75));
-      box-shadow: 
-        0 0 25px rgba(255, 111, 97, 0.7),
-        0 6px 12px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(255, 111, 97, 0.2);
-      transform: translateY(-4px) scale(1.05);
-      border-color: #FF8A80;
-      
-      .skill-name { color: #FF8A80; }
-    }
-  }
+
+  // 8 色分類樣式 - 使用 Design System Mixin 自動生成
+  // 來源：_sass/design-system/_mixins.scss → generate-category-badges()
+  @include generate-category-badges('.skill-category--');
 }
 
 // Explore Button
@@ -1328,24 +1024,24 @@ section {
   align-items: center;
   gap: 0.5rem;
   padding: 0.9rem 2.5rem;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: $monospace;
   font-size: 0.9rem;
-  font-weight: 600;
-  color: #D4A017;
+  font-weight: $font-weight-semibold;
+  color: $autumn-gold;
   background: transparent;
-  border: 2px solid rgba(212, 160, 23, 0.4);
+  border: 2px solid rgba($autumn-gold, 0.4);
   border-radius: 6px;
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  transition: all 0.3s ease;
-  
+  transition: all $transition-base;
+
   &:hover {
     color: #FFFFFF;
-    background: rgba(212, 160, 23, 0.2);
-    border-color: #D4A017;
+    background: rgba($autumn-gold, 0.2);
+    border-color: $autumn-gold;
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(212, 160, 23, 0.3);
+    box-shadow: 0 8px 20px rgba($autumn-gold, 0.3);
   }
 }
 
@@ -1363,13 +1059,13 @@ section {
   .hint {
     font-size: 0.9rem;
     color: rgba(232, 232, 232, 0.4);
-    
+
     code {
-      background: rgba(212, 160, 23, 0.1);
+      background: rgba($autumn-gold, 0.1);
       padding: 0.2rem 0.5rem;
       border-radius: 3px;
-      color: #D4A017;
-      font-family: 'JetBrains Mono', monospace;
+      color: $autumn-gold;
+      font-family: $monospace;
     }
   }
 }
