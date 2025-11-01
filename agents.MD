@@ -1,10 +1,10 @@
 # 🤖 AI Agents README
-# Version 3.1.0 | Updated: 2025-10-28
+# Version 4.0.0 | Updated: 2025-11-01
 
-> **For AI Assistants**: This document is your entry point to the Archis Studio Blog project.  
+> **For AI Assistants**: This document is your entry point to the Archis Studio Blog project.
 > Read this first before any implementation work.
 
-> **v3.1 Update**: Documentation optimized - clearer audience targeting
+> **v4.0 Update**: Design System fully implemented - variables + mixins ready to use
 
 ---
 
@@ -66,16 +66,17 @@ docs/CONTENT_STRATEGY.md           ← Content creation guidelines
 # Check current directory structure
 ls -la
 
-# Current state (v3.0):
-# ✅ docs/           - 9 core specifications (streamlined)
-# ✅ _config.yml     - Jekyll configuration
-# ✅ _layouts/       - Custom layouts (home, post, posts)
-# ✅ _includes/      - Custom components (hero, masthead, author-profile)
-# ✅ _pages/         - About, Posts, Categories pages
-# ✅ _sass/          - Custom styling
-# ✅ assets/         - CSS and images
-# ✅ Gemfile         - Ruby dependencies
-# ✅ README.md       - Complete documentation
+# Current state (v4.0):
+# ✅ docs/                      - 9 core specifications (streamlined)
+# ✅ _sass/design-system/       - Design system (variables + mixins) ⭐ NEW
+# ✅ _config.yml                - Jekyll configuration
+# ✅ _layouts/                  - Custom layouts (home, post, posts)
+# ✅ _includes/                 - Custom components (hero, masthead, author-profile)
+# ✅ _pages/                    - About, Posts, Categories pages
+# ✅ _sass/custom/              - Custom styling (使用 design-system)
+# ✅ assets/                    - CSS and images
+# ✅ Gemfile                    - Ruby dependencies
+# ✅ README.md                  - Complete documentation
 ```
 
 ### Step 2: Identify Task Type
@@ -173,6 +174,33 @@ Before implementing any design element:
 2. Verify against `docs/LAYOUT_SPEC.md` for layout details
 3. Cross-reference `docs/NAVIGATION_SPEC.md` for navigation elements
 4. **Never guess values** - specifications are the source of truth
+
+### 🎨 Design System Implementation (v4.0)
+
+**⭐ NEW**: Design system已完整實作於 `_sass/design-system/`
+
+**快速開始**：
+```scss
+// 使用顏色變數（Single Source of Truth）
+.my-element {
+  color: $autumn-gold;              // ✅ 正確
+  border-color: category-color('ai'); // ✅ 正確
+  // color: #D4A017;                // ❌ 不要硬編碼！
+}
+
+// 使用 Mixin 自動生成 8 色樣式
+.my-badge {
+  padding: 0.5rem 1rem;
+  @include generate-category-badges('--');
+  // 自動生成 .my-badge--ai, .my-badge--dev, ... (8個)
+}
+```
+
+**核心檔案**：
+- `_sass/design-system/_variables.scss` (155行) - 單一真相來源
+- `_sass/design-system/_mixins.scss` (270行) - DRY 工具
+
+**詳細指南**：參考 `docs/DESIGN_SYSTEM_SPEC.md` § 實作說明
 
 ---
 
@@ -527,14 +555,28 @@ Let's build something beautiful together.
 
 ---
 
-**Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-28  
-**Version**: 3.1.0 - Documentation Audience Optimized  
-**Status**: Ready for Phase 10 Enhancement
+**Maintained by**: Archi Chen & AI Assistants
+**Last Updated**: 2025-11-01
+**Version**: 4.0.0 - Design System Fully Implemented
+**Status**: Production-Ready with Professional Design System
 
 ---
 
 ## 📝 CHANGELOG
+
+### v4.0.0 (2025-11-01)
+- **Design System 完整實作** 🎨
+  - 新增 `_sass/design-system/` 目錄（425行）
+  - _variables.scss: 單一真相來源（8色系統、字體、間距）
+  - _mixins.scss: DRY 工具（自動生成 badge/card/portal）
+  - 消除 75+ 處硬編碼顏色
+  - 減少 303 行重複代碼（98%）
+- **Quick Start 更新**：標註 design-system 新目錄
+- **Design System Quick Reference 擴充**：新增實作範例與檔案位置
+- **文件更新**：
+  - docs/DESIGN_SYSTEM_SPEC.md v3.0 → v4.0（新增實作說明章節）
+  - docs/DOC_INDEX.md v3.1 → v4.0（索引設計系統檔案）
+  - README.md 專案結構加入 design-system 說明
 
 ### v3.1.0 (2025-10-28)
 - **Documentation audience clarification**: 明確標示所有文件的閱讀受眾

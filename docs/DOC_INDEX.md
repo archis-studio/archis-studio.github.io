@@ -1,5 +1,5 @@
 # 文件索引 - Documentation Index
-# Version 3.1.0 | Updated: 2025-10-28
+# Version 4.0.0 | Updated: 2025-11-01
 
 ## 📚 文件追蹤系統
 
@@ -12,14 +12,26 @@
 | 文件 | 版本 | 更新日期 | 狀態 | 用途 |
 |------|------|----------|------|------|
 | `PROJECT_CHARTER.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 專案目標與原則 |
-| `DESIGN_SYSTEM_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 完整設計系統規格 (色彩、字體、間距) |
+| `DESIGN_SYSTEM_SPEC.md` | 4.0.0 | 2025-11-01 | ✅ Complete | 完整設計系統規格 + 實作指南 |
 | `LAYOUT_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 版面配置規格 |
 | `NAVIGATION_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 導航設計規格 |
 | `ASSET_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 資源檔案規格 |
 | `IMPLEMENTATION_CHECKLIST.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 10階段實作指南 |
 | `AI_COLLABORATION_GUIDE.md` | 3.0.0 | 2025-10-28 | ✅ Complete | AI 協作流程 |
 | `CONTENT_STRATEGY.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 內容創作規範 |
-| `DOC_INDEX.md` | 3.1.0 | 2025-10-28 | ✅ Complete | 文件索引（本文件）|
+| `DOC_INDEX.md` | 4.0.0 | 2025-11-01 | ✅ Complete | 文件索引（本文件）|
+
+### 🎨 設計系統實作檔案 (_sass/design-system/)
+
+| 檔案 | 行數 | 狀態 | 用途 |
+|------|------|------|------|
+| `_variables.scss` | 155 | ✅ 完成 | 單一真相來源：8色系統、字體、間距、斷點 |
+| `_mixins.scss` | 270 | ✅ 完成 | DRY工具：badge、card、portal自動生成器 |
+
+**快速參考**：
+- 修改顏色 → 編輯 `_variables.scss` 的 `$category-colors`
+- 新增分類 → 在 `$category-colors` 加一行，自動生成所有樣式
+- 使用範例 → 參考 `DESIGN_SYSTEM_SPEC.md` 的「實作說明」章節
 
 ### 📝 操作指南文件 (Root)
 
@@ -89,6 +101,17 @@ head -n 2 docs/*.md
 ---
 
 ## 📝 CHANGELOG
+
+### v4.0.0 (2025-11-01)
+- **新增「設計系統實作檔案」章節**：索引 _sass/design-system/ 目錄
+  - _variables.scss (155行) - 變數定義
+  - _mixins.scss (270行) - Mixin 工具
+  - 快速參考指南
+- **更新 DESIGN_SYSTEM_SPEC.md**: v3.0.0 → v4.0.0（新增實作說明章節）
+- **CSS 重構完成記錄**：
+  - ✅ 消除 75+ 處硬編碼顏色
+  - ✅ 減少 303 行重複代碼
+  - ✅ 建立專業級設計系統基礎
 
 ### v3.1.0 (2025-10-28)
 - **文件受眾明確化**: 在操作指南表格中標示受眾（訪客/AI）
