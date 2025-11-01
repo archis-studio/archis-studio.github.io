@@ -1,0 +1,270 @@
+/* ============================================
+   Design System - Mixins
+   Version 1.0.0 | Created: 2025-11-01
+
+   可重用的樣式生成器，遵循 DRY 原則
+   符合 SOLID 的開放封閉原則（Open/Closed Principle）
+   ============================================ */
+
+// ==========================================
+// Category Badge Mixin
+// 為分類 badge 生成一致的樣式
+// 自動處理 hover 狀態、陰影、過渡效果
+// ==========================================
+
+@mixin category-badge($color, $hover-color: null) {
+  // 如果沒有指定 hover 顏色，自動生成亮 10% 的顏色
+  $hover: if($hover-color, $hover-color, lighten($color, 10%));
+
+  // 基礎樣式
+  border-color: $color;
+  color: $color;
+  background: linear-gradient(
+    135deg,
+    rgba($color, 0.15),
+    rgba($noir-gray, 0.75)
+  );
+  box-shadow: 0 0 15px rgba($color, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  // Hover 狀態
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      rgba($color, 0.3),
+      rgba($noir-gray, 0.75)
+    );
+    box-shadow:
+      0 0 25px rgba($color, 0.8),
+      0 6px 12px rgba(0, 0, 0, 0.5),
+      inset 0 0 20px rgba($color, 0.2);
+    transform: translateY(-4px) scale(1.05);
+    border-color: $hover;
+    color: $hover;
+  }
+}
+
+// ==========================================
+// 自動生成所有分類 Badge 樣式
+// 基於 $category-colors Map 自動生成
+//
+// 使用範例：
+// .featured-badge {
+//   @include generate-category-badges('--');
+// }
+//
+// 生成：
+// .featured-badge--ai { ... }
+// .featured-badge--dev { ... }
+// ...
+// ==========================================
+
+@mixin generate-category-badges($prefix: '--') {
+  @each $name, $color in $category-colors {
+    &#{$prefix}#{$name} {
+      @include category-badge($color);
+    }
+  }
+}
+
+// ==========================================
+// Category Card Mixin (適用於卡片樣式)
+// 比 badge 更大的區塊元素
+// ==========================================
+
+@mixin category-card($color, $hover-color: null) {
+  $hover: if($hover-color, $hover-color, lighten($color, 10%));
+
+  border: 2px solid rgba($color, 0.3);
+  background: linear-gradient(
+    135deg,
+    rgba($color, 0.1),
+    rgba($noir-black, 0.9)
+  );
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $color;
+    background: linear-gradient(
+      135deg,
+      rgba($color, 0.2),
+      rgba($noir-black, 0.85)
+    );
+    box-shadow:
+      0 8px 24px rgba($color, 0.3),
+      0 0 40px rgba($color, 0.2);
+    transform: translateY(-8px);
+  }
+
+  // 卡片標題使用分類顏色
+  .card-title,
+  h2, h3, h4 {
+    color: $color;
+  }
+
+  // 卡片連結 hover 效果
+  a:hover {
+    color: $hover;
+  }
+}
+
+// ==========================================
+// 自動生成所有分類 Card 樣式
+// ==========================================
+
+@mixin generate-category-cards($prefix: '--') {
+  @each $name, $color in $category-colors {
+    &#{$prefix}#{$name} {
+      @include category-card($color);
+    }
+  }
+}
+
+// ==========================================
+// Portal Ring Mixin (宇宙大門樣式)
+// 用於 Categories 頁面的 Portal 效果
+// ==========================================
+
+@mixin portal-ring($color, $size: 200px) {
+  position: relative;
+  width: $size;
+  height: $size;
+
+  // 外圈發光環
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 0deg,
+      transparent,
+      $color,
+      transparent 360deg
+    );
+    animation: portal-rotate 4s linear infinite;
+    filter: blur(8px);
+    opacity: 0.6;
+  }
+
+  // 內圈底色
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle,
+      rgba($color, 0.2),
+      rgba($noir-black, 0.95) 70%
+    );
+    border: 2px solid rgba($color, 0.5);
+  }
+}
+
+@keyframes portal-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+// ==========================================
+// 自動生成所有分類 Portal 樣式
+// ==========================================
+
+@mixin generate-category-portals($prefix: 'portal-') {
+  @each $name, $color in $category-colors {
+    .#{$prefix}#{$name} {
+      @include portal-ring($color);
+    }
+  }
+}
+
+// ==========================================
+// Glow Text Mixin (發光文字效果)
+// 用於標題、強調文字
+// ==========================================
+
+@mixin glow-text($color, $intensity: 0.8) {
+  color: $color;
+  text-shadow:
+    0 0 10px rgba($color, $intensity * 0.5),
+    0 0 20px rgba($color, $intensity * 0.3),
+    0 0 30px rgba($color, $intensity * 0.2);
+  transition: text-shadow $transition-base;
+
+  &:hover {
+    text-shadow:
+      0 0 15px rgba($color, $intensity),
+      0 0 30px rgba($color, $intensity * 0.6),
+      0 0 45px rgba($color, $intensity * 0.4);
+  }
+}
+
+// ==========================================
+// Responsive Typography Mixin
+// 響應式字體大小
+// ==========================================
+
+@mixin responsive-font($min-size, $max-size, $min-width: $breakpoint-sm, $max-width: $breakpoint-xl) {
+  font-size: $min-size;
+
+  @media (min-width: $min-width) {
+    font-size: calc(#{$min-size} + (#{strip-units($max-size)} - #{strip-units($min-size)}) * ((100vw - #{$min-width}) / (#{strip-units($max-width)} - #{strip-units($min-width)})));
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}
+
+// 輔助函數：移除單位
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+// ==========================================
+// Container Padding Mixin
+// 統一的容器內距管理
+// ==========================================
+
+@mixin container-padding($vertical: 3rem, $horizontal: 2rem) {
+  padding: $vertical $horizontal;
+
+  @media (max-width: $breakpoint-md) {
+    padding: calc(#{$vertical} * 0.8) calc(#{$horizontal} * 0.75);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: calc(#{$vertical} * 0.6) calc(#{$horizontal} * 0.5);
+  }
+}
+
+// ==========================================
+// Glass Morphism Effect
+// 玻璃擬態效果
+// ==========================================
+
+@mixin glass-effect($opacity: 0.1, $blur: 10px) {
+  background: rgba($noir-gray, $opacity);
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+// ==========================================
+// Neon Border Mixin
+// 霓虹邊框效果
+// ==========================================
+
+@mixin neon-border($color, $width: 2px) {
+  border: $width solid $color;
+  box-shadow:
+    0 0 10px rgba($color, 0.5),
+    inset 0 0 10px rgba($color, 0.3);
+
+  &:hover {
+    box-shadow:
+      0 0 20px rgba($color, 0.8),
+      inset 0 0 20px rgba($color, 0.5);
+  }
+}

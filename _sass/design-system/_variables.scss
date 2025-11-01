@@ -1,0 +1,155 @@
+/* ============================================
+   Design System - Variables
+   Version 1.0.0 | Created: 2025-11-01
+
+   單一真相來源（Single Source of Truth）
+   所有顏色定義集中管理，遵循 DRY 原則
+   ============================================ */
+
+// ==========================================
+// 8 色語義化配色系統
+// 每個分類對應一個專屬顏色，用於 badges、cards、標籤等
+// ==========================================
+
+$category-colors: (
+  'ai':        #D4A017,  // AI 工具 - Premium Gold (Luxury & Cutting Edge)
+  'dev':       #00B4D8,  // 軟體開發 - Tech Cyan (Professional & Modern)
+  'data':      #5D8AA8,  // 資料科學 - Data Blue (Analytical & Trustworthy)
+  'marketing': #9370DB,  // 數位行銷 - Creative Purple (Innovative & Dynamic)
+  'quant':     #FF9800,  // 量化交易 - Finance Orange (Wall Street & Trading)
+  'reading':   #8B7355,  // 閱讀筆記 - Book Brown (Intellectual & Classic)
+  'green':     #2E7D32,  // 綠色能源 - Forest Green (Sustainable & Natural)
+  'growth':    #FF6F61   // 成長旅程 - Warm Coral (Personal & Aspirational)
+);
+
+// ==========================================
+// 輔助函數 - 獲取分類顏色
+// 使用方式：category-color('ai') → #D4A017
+// ==========================================
+
+@function category-color($name) {
+  @if map-has-key($category-colors, $name) {
+    @return map-get($category-colors, $name);
+  } @else {
+    @warn "分類顏色 '#{$name}' 不存在於 $category-colors 中";
+    @return #D4A017; // 預設返回 AI 工具顏色
+  }
+}
+
+// ==========================================
+// Autumn Noir 核心色彩
+// 來自 Design System 規格書
+// ==========================================
+
+// 深色基調 (Dark Mode Base)
+$noir-black: #0E0E10;        // 深邃黑 - 主背景
+$noir-gray: #1C1C1E;         // 暖灰 - 中層背景
+$noir-border: #2C2C2E;       // 邊框灰
+$noir-text: #EDEDED;         // 主文字 - 溫暖白
+$noir-text-muted: #A0A0A5;   // 次要文字 - 優雅灰
+
+// ==========================================
+// Fashion Editorial 色彩調色盤
+// ==========================================
+
+$autumn-gold: #D4A017;       // 秋日金 - 主要強調色
+$autumn-burgundy: #8B3A3A;   // 勃艮第紅 - 時尚重點
+$autumn-moss: #6B8E23;       // 苔蘚綠 - 自然元素
+$autumn-copper: #B87333;     // 銅棕色 - 金屬質感
+$autumn-cream: #F5DEB3;      // 奶油色 - 柔和對比
+
+// ==========================================
+// AI Future Space 色彩
+// ==========================================
+
+$space-void: #0F0F12;        // 太空虛空
+$space-nebula: #1A1B2E;      // 星雲紫
+$space-comet: #4A90B8;       // 彗星藍
+$space-aurora: #5A8B5F;      // 極光綠
+$space-starlight: #E8E1D3;   // 星光白
+
+// ==========================================
+// Gaming Pixel Art 色彩
+// ==========================================
+
+$ai-neural: #9B59B6;         // AI 神經紫
+$pixel-cyan: #17A2B8;        // 像素青
+$gaming-neon: #E74C3C;       // 遊戲霓虹
+$retro-neon-pink: #C97A8F;   // 復古霓虹粉
+$retro-amber: #D4B36A;       // 琥珀黃
+
+// ==========================================
+// Spacing System (間距系統)
+// 基於 8px grid system
+// ==========================================
+
+$space-0:  0;
+$space-1:  0.25rem;  // 4px
+$space-2:  0.5rem;   // 8px
+$space-3:  0.75rem;  // 12px
+$space-4:  1rem;     // 16px
+$space-5:  1.25rem;  // 20px
+$space-6:  1.5rem;   // 24px
+$space-8:  2rem;     // 32px
+$space-10: 2.5rem;   // 40px
+$space-12: 3rem;     // 48px
+$space-16: 4rem;     // 64px
+$space-20: 5rem;     // 80px
+$space-24: 6rem;     // 96px
+$space-32: 8rem;     // 128px
+
+// ==========================================
+// Typography System (文字系統)
+// ==========================================
+
+// Font Families
+$serif-editorial: 'Playfair Display', 'Georgia', serif;
+$sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$monospace: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+$font-chinese: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+
+// Font Sizes (基於 1.25 倍率的 modular scale)
+$font-size-xs:   0.75rem;   // 12px
+$font-size-sm:   0.875rem;  // 14px
+$font-size-base: 1rem;      // 16px
+$font-size-lg:   1.125rem;  // 18px
+$font-size-xl:   1.25rem;   // 20px
+$font-size-2xl:  1.5rem;    // 24px
+$font-size-3xl:  1.875rem;  // 30px
+$font-size-4xl:  2.25rem;   // 36px
+$font-size-5xl:  3rem;      // 48px
+$font-size-6xl:  4rem;      // 64px
+
+// Font Weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Line Heights
+$line-height-tight: 1.25;
+$line-height-snug: 1.375;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.625;
+$line-height-loose: 2;
+
+// ==========================================
+// Breakpoints (響應式斷點)
+// ==========================================
+
+$breakpoint-xs: 480px;
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// ==========================================
+// 過渡效果（Transitions）
+// ==========================================
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);

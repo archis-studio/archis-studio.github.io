@@ -8,6 +8,10 @@
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'dark' }}";
 @import "minimal-mistakes";
 
+// Design System - Variables & Mixins (Single Source of Truth)
+@import "design-system/variables";
+@import "design-system/mixins";
+
 // Custom Styles
 @import "custom/navigation";
 @import "custom/sidebar";
