@@ -36,7 +36,7 @@
   background: 
     linear-gradient(105deg, rgba(20, 20, 20, 0.98) 0%, rgba(15, 15, 15, 0.95) 60%, rgba(25, 25, 25, 0.92) 100%);
   border: none;
-  border-left: 4px solid #d4a574;
+  border-left: 4px solid $autumn-copper;
   border-radius: 0;
   box-shadow: 
     0 2px 12px rgba(0, 0, 0, 0.5),
@@ -70,9 +70,9 @@
     width: 3px;
     height: 50%;
     background: linear-gradient(180deg, 
-      #d4a574 0%, 
+      $autumn-copper 0%, 
       rgba(212, 165, 116, 0.5) 50%,
-      #d4a574 100%
+      $autumn-copper 100%
     );
     opacity: 0.6;
   }
@@ -196,7 +196,7 @@
     }
     
     .stat-value {
-      color: #d4a574;
+      color: $autumn-copper;
       font-weight: 700;
       font-size: 0.875rem;
       font-family: 'Courier New', monospace;
@@ -360,9 +360,9 @@
     width: 100%;
     height: 3px;
     background: linear-gradient(90deg, 
-      #d4a574 0%, 
+      $autumn-copper 0%, 
       #8b5c3f 50%, 
-      #d4a574 100%
+      $autumn-copper 100%
     );
     opacity: 0;
     transition: opacity 0.3s ease;
@@ -386,7 +386,7 @@
     }
     
     .post-card__title a {
-      color: #d4a574;
+      color: $autumn-copper;
     }
   }
 }
@@ -548,7 +548,7 @@
       left: 0;
       width: 0;
       height: 1px;
-      background: #d4a574;
+      background: $autumn-copper;
       transition: width 0.3s ease;
     }
     
@@ -600,7 +600,7 @@
 }
 
 .post-date {
-  color: #d4a574;
+  color: $autumn-copper;
   font-size: 0.75rem; // 配合 4 欄
   font-weight: 500;
   letter-spacing: 0.5px;
@@ -624,7 +624,7 @@
   transition: color 0.3s ease;
   
   &:hover {
-    color: #d4a574;
+    color: $autumn-copper;
   }
   
   @media (max-width: 1400px) {
@@ -694,7 +694,7 @@
 .back-link {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  color: #d4a574;
+  color: $autumn-copper;
   text-decoration: none;
   font-family: 'Courier New', monospace;
   font-size: 0.875rem;
