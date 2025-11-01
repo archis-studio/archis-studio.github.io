@@ -8,15 +8,16 @@ $cosmic-void: #050810;
 $cosmic-text: #e8e8ff;
 $cosmic-dim: #9999bb;
 
-// Portal Colors
-$portal-ai: #D4A017;
-$portal-dev: #00B4D8;
-$portal-data: #5D8AA8;
-$portal-marketing: #9370DB;
-$portal-quant: #FF9800;
-$portal-reading: #8B7355;
-$portal-green: #2E7D32;
-$portal-growth: #FF6F61;
+// Portal Colors - 使用 Design System 統一定義
+// 來源：_sass/design-system/_variables.scss → $category-colors
+$portal-ai: category-color('ai');
+$portal-dev: category-color('dev');
+$portal-data: category-color('data');
+$portal-marketing: category-color('marketing');
+$portal-quant: category-color('quant');
+$portal-reading: category-color('reading');
+$portal-green: category-color('green');
+$portal-growth: category-color('growth');
 
 /* ============================================
    Main Container
