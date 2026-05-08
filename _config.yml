@@ -22,8 +22,8 @@ minimal_mistakes_skin: "dark" # Base skin, will be overridden by custom Autumn N
 # Author - Fashion Editorial Style
 author:
   name: "Archi Chen"
-  avatar: "/assets/images/placeholder-avatar.svg"
-  bio: "Software Engineer, NYCU CS Master's | 記錄我在職業生涯上點滴的所學、所知、所見、所思，分享給有緣的你。"
+  avatar: "/assets/images/profile_picture_xaos_engineer.png"
+  bio: "Software Engineer, NYCU CS Master's | 記錄我在職業生涯上點滴的所學、所知、所見、所思。"
   location: "Taipei, Taiwan"
   email: "magic83w@gmail.com"
   links:
