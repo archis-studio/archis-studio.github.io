@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.2.0 | Updated: 2026-10-24
+Version 4.2.1 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -38,7 +38,7 @@ BUNDLE_FROZEN=true bundle exec ruby scripts/validate.rb
 | 選單與導覽 | `_includes/masthead.html`、`assets/js/navigation.js`、`_sass/custom/_navigation.scss` | `test/navigation_test.rb`、`test/navigation_test.cjs` |
 | 文章目錄、標籤、閱讀時間 | `_layouts/post.html`、`_layouts/tags.html`、`_includes/tag-cloud-compact.html` | navigation 測試、production 驗證 |
 | 首頁與動態效果 | `_layouts/home.html`、`_includes/page__hero.html`、主樣式、文章模板 | `test/motion_test.cjs`、navigation 測試、瀏覽器預覽 |
-| 視覺與元件 | `assets/css/main.scss` → `_sass/design-system/`、`_sass/custom/` | production 驗證、響應式與鍵盤預覽 |
+| 視覺與元件 | `assets/css/main.scss` → `_sass/design-system/`、`_sass/shared/`、`_sass/custom/` | production 驗證、響應式與鍵盤預覽 |
 | 作者與 About | `_config.yml` 的 `author`、`_includes/author-profile.html`、`_pages/about.md` | production 驗證、側欄與 About 預覽 |
 | 文件連結 | `scripts/check-documentation-links.rb`、根目錄 Markdown 與 `docs/` | `test/documentation_links_test.rb`、直接執行檢查工具 |
 | 設定與 CI | `_config.yml`、`.github/workflows/validate.yml`、`scripts/validate.rb` | `test/config_test.rb`、production 驗證 |
@@ -67,7 +67,7 @@ Markdown／YAML → Liquid layout／include → 靜態 HTML；SCSS → CSS；Pag
 | 環境與設定 | `.ruby-version`、`Gemfile`、`Gemfile.lock`、`_config.yml` |
 | 內容 | `_posts/`、`_pages/`；front matter 與 scoped defaults 決定 layout／網址 |
 | 頁面與元件 | `_layouts/`、`_includes/`；文章庫位於 `_pages/posts.html` |
-| 樣式 | `assets/css/main.scss`、`_sass/design-system/`、`_sass/custom/` |
+| 樣式 | `assets/css/main.scss`、`_sass/design-system/`、`_sass/shared/`、`_sass/custom/` |
 | 互動與資源 | `assets/js/`、部分模板 inline script、`assets/images/` |
 | 驗證 | `test/`、`scripts/validate.rb`、`.github/workflows/validate.yml` |
 
@@ -123,7 +123,7 @@ author_profile: true
 ---
 ```
 
-樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins；約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
+樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins。共用動畫集中於 `_sass/shared/_animations.scss`，在頁面樣式之後載入以保留目前優先順序；不同效果的同名動畫仍待個別整理。約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
 
 ## 作者資料設定
 
@@ -235,6 +235,10 @@ Markdown 章節採常用 GitHub 標題錨點規則，支援中文、格式化文
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.2.1 (2026-10-24)
+
+- 補上共用動畫來源與載入順序，保留現有動畫效果。
 
 ### v4.2.0 (2026-10-24)
 

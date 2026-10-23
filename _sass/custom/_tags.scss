@@ -58,11 +58,6 @@
   }
 }
 
-@keyframes iconFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
 // =========================
 // Statistics
 // =========================
@@ -405,11 +400,6 @@
   }
 }
 
-@keyframes searchPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-}
-
 // Fire flicker animation for hot tags
 @keyframes fireFlicker {
   0%, 100% { 
@@ -427,18 +417,6 @@
   75% { 
     transform: translateY(-2px) scale(1.1) rotate(-3deg);
     opacity: 0.95;
-  }
-}
-
-// Sparkle animation for trending tags
-@keyframes sparkle {
-  0%, 100% { 
-    transform: scale(1) rotate(0deg);
-    opacity: 0.8;
-  }
-  50% { 
-    transform: scale(1.2) rotate(180deg);
-    opacity: 1;
   }
 }
 

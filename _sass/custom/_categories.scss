@@ -77,11 +77,6 @@ $portal-growth: category-color('growth');
   opacity: 0.2;
 }
 
-@keyframes starsMove {
-  from { background-position: 0% 0%; }
-  to { background-position: 100% 100%; }
-}
-
 .nebula-glow {
   position: absolute;
   width: 100%;
