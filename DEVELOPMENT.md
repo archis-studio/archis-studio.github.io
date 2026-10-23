@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.0.2 | Updated: 2026-10-23
+Version 4.1.0 | Updated: 2026-10-23
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -221,37 +221,13 @@ production 驗證結束後清除暫存目錄，不依賴舊 `_site`；不執行�
 
 ## 現行互動約定
 
-修改相關功能時需維持下列行為；對應檔案與測試見[修改入口](#修改入口)。
-
-### 文章導覽與首頁驗證
-
-- 文章標籤連結與標籤頁統一採用 `tag-` 錨點；標籤名稱應統一大小寫，避免 slug 相同造成重複 ID。
-- 目錄保留 Markdown／自訂 heading ID；只有缺少 ID 時才生成不撞名的 fallback，標題以文字節點呈現。
-- 首頁精選最多四篇；沒有精選時顯示最新四篇，有少量精選時不混入其他文章。
-- 標籤／文章總數由 Liquid 直接輸出，不加總每個標籤的文章數，因此不會重複計算。
-- `test/navigation_test.rb`、`test/navigation_test.cjs` 分別檢查模板輸出與實際 inline JavaScript。`npm test --prefix test` 執行全部 `*_test.cjs`。
-- production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間以移除 HTML、修剪首尾空白後的字元數計算：每 500 字元一分鐘，向上取整，至少一分鐘；不區分中英文，不新增手動設定欄位。
-
-### 動態效果與音效
-
-- 直接尊重系統 `prefers-reduced-motion: reduce`，不新增設定面板或偏好儲存。
-- 首頁 Matrix 僅在可見畫面、分頁未隱藏且允許動態效果時繪製；離開畫面／切換分頁暫停，返回時恢復。支援執行中切換系統偏好與重新計算視窗縮放後的欄數；以現代瀏覽器的 matchMedia、IntersectionObserver 與標準 change 事件為支援範圍，不維護舊 API 相容分支。
-- 主樣式在減少動態效果模式下將動畫／transition 縮短至近乎即時，取消延遲與平滑捲動，同時保留動畫完成狀態，避免 About 技能條停在零寬度。搜尋視窗與閱讀完成提示保留可見狀態。
-- 文章在減少動態效果模式下不建立捲動粒子或浮動 EXP；複製文字與成功回饋仍可使用。
-- 閱讀完成提示在所有模式下都不播放音效，每篇頁面只顯示一次，保留文字狀態通知。
-- `test/motion_test.cjs` 在 DOM 測試中模擬瀏覽器 Canvas／排程／可見性邊界，驗證暫停、恢復與偏好變更。它不取代真實瀏覽器的 CSS 動畫、版面或耗電測量。
-
-手動檢查：在系統或 DevTools 切換減少動態效果，確認首頁、搜尋、About 技能條、複製按鈕與閱讀完成提示仍可使用；一般模式的 Matrix 離開畫面後暫停，返回後恢復。
-
-### 搜尋與導覽精簡
-
-- `_config.yml` 的 `search: false` 只關閉 Minimal Mistakes 內建搜尋，避免重複輸出搜尋表單與 Lunr scripts。自訂搜尋由 masthead 直接引入，仍正常使用；不需重新開啟主題搜尋。
-- 導覽互動統一由既有 `assets/js/navigation.js` 負責，使用 `.masthead__menu`、`.mobile-toggle` 與 `.nav-link`。masthead 不再重複輸出 inline 導覽程式，也不注入舊選單的 scroll-lock 樣式；移除未使用的 `.visible-links.show` 與 `slideDown` 動畫。
-- 保留目前選單開關、點擊連結收合、當前網址標示與捲動狀態；初始化會同步已還原的捲動位置。
-- 標籤頁移除不會觸發的 fragment-only 事件處理，沿用原生錨點；搜尋與排序仍由 tag cloud 元件負責。減少動態效果仍由全站 CSS 處理。
-- production 驗證會攔下主題搜尋表單／Lunr scripts 回歸，並確認自訂搜尋覆蓋層只有一份。
+頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.1.0 (2026-10-23)
+
+- 完整互動約定移交 Layout；保留原章節連結入口，操作與驗證方式仍在本指南。
 
 ### v4.0.2 (2026-10-23)
 

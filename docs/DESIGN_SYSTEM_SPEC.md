@@ -1,6 +1,6 @@
 # Design System 設計與實作參考
 
-Version 5.0.0 | Updated: 2026-10-23
+Version 5.0.1 | Updated: 2026-10-23
 
 供人／Agent 維護視覺與共用樣式。本文區分設計約束、已定義工具與尚未實作的舊示意；不以程式現況授權改變設計。頁面與互動見 [Layout](LAYOUT_SPEC.md)，操作及驗證見 [Development](../DEVELOPMENT.md)。
 
@@ -89,7 +89,7 @@ Version 5.0.0 | Updated: 2026-10-23
 | `$breakpoint-xl` | 1280px |
 | `$breakpoint-2xl` | 1536px |
 
-此表不是所有元件的實際切換表。現有樣式亦含 1400px、968px、64em、767／768／769px 等頁面條件，需查對應 partial；不因表格存在而統一改寫。頁面邊界由 Layout 後續核對。
+此表不是所有元件的實際切換表。現有樣式亦含 1400px、968px、64em、767／768／769px 等頁面條件，需查對應 partial；不因表格存在而統一改寫。頁面邊界見 [Layout](LAYOUT_SPEC.md#響應式與共用區域)。
 
 過渡使用 `$transition-fast`、`$transition-base`、`$transition-slow`，值依序為 `0.15s ease`、`0.3s cubic-bezier(0.4, 0, 0.2, 1)`、`0.5s cubic-bezier(0.4, 0, 0.2, 1)`。元件中仍有直接定義的 duration／easing，不宣稱已全部集中管理。
 
@@ -156,7 +156,7 @@ Version 5.0.0 | Updated: 2026-10-23
 - 一般文字對比至少 4.5:1，大字至少 3:1。大字依 W3C 為至少 18pt（24 CSS px），或 14pt（約 18.7 CSS px）粗體，不能把所有 18px 文字視為大字。定義見 [W3C 對比說明](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)。
 - 控制項與傳達必要資訊的圖形依非文字對比要求核對；舊 3:1 目標保留，不代表所有裝飾、logo 或停用狀態同一適用範圍。
 - 保留語意 HTML、必要可存取名稱、鍵盤操作、可見焦點、圖片替代文字與螢幕閱讀器可讀性。不要為沿用舊 focus 示例，重建未定義的 `$accent-blue`。
-- 系統 `prefers-reduced-motion: reduce` 由主樣式縮短動畫／transition、取消延遲和平滑捲動，並保留完成狀態及搜尋／提示可見性。Matrix、粒子與閱讀完成提示的完整行為暫見 [Development](../DEVELOPMENT.md#現行互動約定)，待 B2 移交 Layout。
+- 系統 `prefers-reduced-motion: reduce` 由主樣式縮短動畫／transition、取消延遲和平滑捲動，並保留完成狀態及搜尋／提示可見性。Matrix、粒子與閱讀完成提示的完整行為見 [Layout](LAYOUT_SPEC.md#動態效果與音效約定)。
 
 token 或編譯通過不代表配色、焦點、響應式或瀏覽器已達標。視覺修改仍需真實瀏覽器、不同寬度、鍵盤與減少動態效果預覽；需要時量測實際對比，不以未勾選或歷史統計替代驗證。
 
@@ -180,6 +180,10 @@ token 或編譯通過不代表配色、焦點、響應式或瀏覽器已達標�
 本次改寫前完整規格保留於 commit `2ab75a5` 的本檔；舊元件 SCSS、精確示意值、效益統計與建置 checklist 可由 Git 追溯。Asset 與圖片 README 仍保留原位，尚未封存。逐項接收與未完成範圍見[整理計畫](superpowers/plans/2026-10-23-documentation-reorganization.md)。
 
 ## CHANGELOG
+
+### v5.0.1 (2026-10-23)
+
+- 頁面斷點與動態效果的完整行為改連已整併的 Layout。
 
 ### v5.0.0 (2026-10-23)
 

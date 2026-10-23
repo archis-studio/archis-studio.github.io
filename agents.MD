@@ -1,5 +1,5 @@
 # Agent 協作規範
-# Version 5.0.4 | Updated: 2026-10-23
+# Version 5.0.5 | Updated: 2026-10-23
 
 本文件是 Agent 的專案入口，定義修改邊界、工作流程與驗證要求。專案定位見 [README](README.md)，操作指令見 [DEVELOPMENT](DEVELOPMENT.md)，主題規格由[文件索引](docs/DOC_INDEX.md)導覽。
 
@@ -23,13 +23,13 @@
 |---|---|
 | 環境、套件、測試、部署 | [DEVELOPMENT.md](DEVELOPMENT.md) 與實際設定／lockfile／workflow |
 | 視覺與元件 | [Design System](docs/DESIGN_SYSTEM_SPEC.md)、[Layout](docs/LAYOUT_SPEC.md)、相關 SCSS／模板 |
-| 導覽與搜尋 | [Layout](docs/LAYOUT_SPEC.md)、[Navigation](docs/NAVIGATION_SPEC.md)、[現行互動約定](DEVELOPMENT.md#現行互動約定) |
+| 頁面、導覽與搜尋 | [Layout](docs/LAYOUT_SPEC.md)、對應模板／JS／SCSS；操作與驗證查 Development |
 | 發文、分類、標籤 | [建立內容](DEVELOPMENT.md#建立內容)與兩篇既有範例 |
 | 協助整理文章 | [寫作參考](docs/CONTENT_STRATEGY.md)；作者自行把關，不設字數、固定結構、語言格式或發文排程門檻 |
-| 圖片、頭像、作者簡介 | [Asset](docs/ASSET_SPEC.md)、[圖片處理](DEVELOPMENT.md#圖片處理)、[作者資料](DEVELOPMENT.md#作者資料設定) |
+| 圖片、頭像、作者簡介 | [圖片處理](DEVELOPMENT.md#圖片處理)、[作者資料](DEVELOPMENT.md#作者資料設定)；視覺原則查 Design |
 | 文件整理與歷史決策 | [索引](docs/DOC_INDEX.md)及對應計畫；不把歷史構想直接當成新需求 |
 
-Content 是可選寫作參考，內容與發布由作者決定；Design 已完成 B1 校正，可用 API 與已知落差分開記錄；Layout／Navigation 與 Asset 剩餘內容仍在整理中。遇到舊版本號、錯誤路徑或互相矛盾的敘述，對照實作確認事實並記錄落差；涉及設計、內容政策或需求選擇時請使用者決定。程式現況只證明目前行為，不代表修改規範已獲授權。
+Content 是可選寫作參考，內容與發布由作者決定；Design 已完成 B1 校正，可用 API 與已知落差分開記錄；Layout 已接收 Navigation 與完整互動約定；舊 Navigation／Asset 只作來源追溯，尚未封存。遇到舊版本號、錯誤路徑或互相矛盾的敘述，對照實作確認事實並記錄落差；涉及設計、內容政策或需求選擇時請使用者決定。程式現況只證明目前行為，不代表修改規範已獲授權。
 
 ## 修改流程
 
@@ -82,6 +82,10 @@ GitHub Pages 的驗證與部署分開；依[部署說明](DEVELOPMENT.md#部署�
 - 文件連結使用 repository 內的相對路徑；變更後檢查目標與章節存在。
 
 ## CHANGELOG
+
+### v5.0.5 (2026-10-23)
+
+- Layout 成為頁面／導覽／互動主入口；圖片與作者操作直達 Development，舊來源留待封存。
 
 ### v5.0.4 (2026-10-23)
 
