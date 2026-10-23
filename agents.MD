@@ -1,5 +1,5 @@
 # Agent 協作規範
-# Version 5.0.6 | Updated: 2026-10-24
+# Version 5.0.7 | Updated: 2026-10-24
 
 本文件是 Agent 的專案入口，定義修改邊界、工作流程與驗證要求。專案定位見 [README](README.md)，操作指令見 [DEVELOPMENT](DEVELOPMENT.md)，主題規格由[文件索引](docs/DOC_INDEX.md)導覽。
 
@@ -74,7 +74,8 @@ GitHub Pages 的驗證與部署分開；依[部署說明](DEVELOPMENT.md#部署�
 ## 文件維護規則
 
 - 一項資訊指定一個主要維護位置，其他文件連回該處；責任分工見[文件索引](docs/DOC_INDEX.md)。不為固定文件數或行數刪去有效決策。
-- 本階段保留文件標頭 `Version X.Y.Z | Updated: YYYY-MM-DD` 與 CHANGELOG。重大結構調整升 major、新章節升 minor、小修正升 patch。
+- 現行指南保留標頭 `Version X.Y.Z | Updated: YYYY-MM-DD`；重大結構調整升 major、新章節升 minor、小修正升 patch。這些是文件版本，不當作全站發行版本。
+- CHANGELOG 可內嵌或由原文件連到獨立紀錄；Development 統一維護於 [文件變更紀錄](docs/history/development.md)，其他文件維持原處。獨立紀錄標明來源與版本歸屬，不再建立另一套文件版本；保留既有歷史，後續記重要變更，逐次修改由 Git 追蹤。
 - 索引只在責任、路徑、閱讀順序或狀態改變時更新；不再重抄各檔版本、行數或測試數量。
 - 版本與環境以設定、lockfile、workflow 為來源；文件若保留快照需註明查核日期。品質目標、已驗證結果與未採用構想分開敘述。
 - 需要封存時，先確認有效資訊有去向，保留來源路徑／時間背景並更新引用；完成計畫供追溯，不取代現行規格。
@@ -82,6 +83,10 @@ GitHub Pages 的驗證與部署分開；依[部署說明](DEVELOPMENT.md#部署�
 - 文件連結使用 repository 內的相對路徑；變更後檢查目標與章節存在。
 
 ## CHANGELOG
+
+### v5.0.7 (2026-10-24)
+
+- 允許獨立維護文件變更紀錄，指定 Development 紀錄入口並區分文件與網站版本。
 
 ### v5.0.6 (2026-10-24)
 
