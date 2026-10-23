@@ -1,5 +1,5 @@
 # 文件索引 - Documentation Index
-# Version 4.0.1 | Updated: 2026-10-23
+# Version 4.0.2 | Updated: 2026-10-23
 
 ## 📚 文件追蹤系統
 
@@ -19,7 +19,7 @@
 | `IMPLEMENTATION_CHECKLIST.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 10階段實作指南 |
 | `AI_COLLABORATION_GUIDE.md` | 3.0.0 | 2025-10-28 | ✅ Complete | AI 協作流程 |
 | `CONTENT_STRATEGY.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 內容創作規範 |
-| `DOC_INDEX.md` | 4.0.1 | 2026-10-23 | ✅ Complete | 文件索引（本文件）|
+| `DOC_INDEX.md` | 4.0.2 | 2026-10-23 | ✅ Complete | 文件索引（本文件）|
 
 ### 🎨 設計系統實作檔案 (_sass/design-system/)
 
@@ -39,7 +39,7 @@
 |------|------|------|------|------|
 | `README.md` | 3.0.0 | 👥 訪客 | ✅ Complete | 專案介紹與快速開始 |
 | `agents.MD` | 3.0.0 | 🤖 AI | ✅ Complete | AI Agent 入口與指引 |
-| `DEVELOPMENT.md` | 2.0.1 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
+| `DEVELOPMENT.md` | 2.0.2 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
 | `HOW-TO-EDIT-BIO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Author Bio 編輯指南 |
 | `PROFILE-IMAGE-TODO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Profile 頭像替換指南 |
 | `assets/images/README.md` | 3.0.0 | 🤖 AI | ✅ Complete | 圖片資源規格 |
@@ -50,6 +50,10 @@
 - `test/config_test.rb`：重複 YAML key、scoped defaults 與文章 HTML 檢查。
 - `.github/workflows/validate.yml`：PR／push／手動驗證，不部署。
 - `docs/superpowers/plans/2026-10-23-pages-validation.md`：第一階段範圍、驗收與執行記錄。
+- `assets/js/search.js`：安全文字搜尋與 modal 鍵盤互動。
+- `test/search_test.cjs`、`test/search_data_test.rb`：搜尋 DOM 行為與 Liquid 資料回歸測試。
+- `test/package.json`、`test/package-lock.json`：僅用於測試的 jsdom 依賴。
+- `docs/superpowers/plans/2026-10-23-search-reliability.md`：第二階段搜尋修正計畫。
 - 操作方式與限制：參考 `DEVELOPMENT.md` 的 Deployment 與 Testing & Quality。
 
 ### 📖 AI Agent 閱讀順序
@@ -109,6 +113,10 @@ head -n 2 docs/*.md
 ---
 
 ## 📝 CHANGELOG
+
+### v4.0.2 (2026-10-23)
+- 索引搜尋實作、DOM／Liquid 測試與第二階段計畫。
+- 同步 DEVELOPMENT.md v2.0.2。
 
 ### v4.0.1 (2026-10-23)
 - 索引第一階段建置驗證工具與實作計畫。

@@ -1,5 +1,5 @@
 <!-- Search Overlay - Cosmic Portal Theme -->
-<div class="search-overlay" id="searchOverlay">
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-labelledby="searchTitle" aria-hidden="true">
   <!-- Starfield background -->
   <div class="search-overlay__starfield" aria-hidden="true"></div>
   
@@ -13,7 +13,7 @@
     <!-- Search header -->
     <div class="search-header">
       <div class="search-icon">🔍</div>
-      <h2 class="search-title">SEARCH PORTAL</h2>
+      <h2 class="search-title" id="searchTitle">SEARCH PORTAL</h2>
       <p class="search-subtitle">探索知識圖譜</p>
     </div>
     
@@ -26,6 +26,7 @@
         placeholder="輸入關鍵字開始搜尋..."
         autocomplete="off"
         aria-label="搜尋"
+        aria-describedby="searchShortcuts"
       >
       <div class="search-input-glow"></div>
     </div>
@@ -42,8 +43,10 @@
       </div>
     </div>
     
+    <p class="visually-hidden" id="searchStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+
     <!-- Keyboard shortcuts -->
-    <div class="search-shortcuts">
+    <div class="search-shortcuts" id="searchShortcuts">
       <span class="shortcut"><kbd>↑</kbd><kbd>↓</kbd> 導航</span>
       <span class="shortcut"><kbd>Enter</kbd> 開啟</span>
       <span class="shortcut"><kbd>ESC</kbd> 關閉</span>
@@ -51,291 +54,40 @@
   </div>
 </div>
 
-<!-- Search data -->
-<script>
-window.searchData = {
-  posts: [
+<!-- Search data is JSON, not executable JavaScript. -->
+{%- capture search_data -%}
+{
+  "posts": [
     {%- for post in site.posts -%}
     {
-      title: {{ post.title | jsonify }},
-      url: {{ post.url | relative_url | jsonify }},
-      date: {{ post.date | date: "%Y-%m-%d" | jsonify }},
-      categories: {{ post.categories | jsonify }},
-      tags: {{ post.tags | default: empty_array | jsonify }},
-      excerpt: {{ post.excerpt | strip_html | truncatewords: 30 | jsonify }}
+      "title": {{ post.title | jsonify }},
+      "url": {{ post.url | relative_url | jsonify }},
+      "date": {{ post.date | date: "%Y-%m-%d" | jsonify }},
+      "categories": {{ post.categories | jsonify }},
+      "tags": {{ post.tags | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | truncatewords: 30 | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   ],
-  categories: [
+  "categories": [
     {%- assign category_pages = site.pages | where_exp: "page", "page.layout == 'category-archive'" -%}
     {%- for category in site.categories -%}
     {%- assign cat_name = category[0] -%}
     {%- assign cat_page = category_pages | where: "category", cat_name | first -%}
-    {%- assign cat_url = cat_page.permalink | default: cat_name | append: '/' | prepend: '/categories/' -%}
+    {%- if cat_page -%}
+      {%- assign cat_url = cat_page.url | default: cat_page.permalink -%}
+    {%- else -%}
+      {%- assign cat_slug = cat_name | slugify -%}
+      {%- assign cat_url = '/categories/' | append: cat_slug | append: '/' -%}
+    {%- endif -%}
     {
-      name: {{ cat_name | jsonify }},
-      count: {{ category[1].size }},
-      url: {{ cat_url | relative_url | jsonify }}
+      "name": {{ cat_name | jsonify }},
+      "count": {{ category[1].size }},
+      "url": {{ cat_url | relative_url | jsonify }}
     }{% unless forloop.last %},{% endunless %}
     {%- endfor -%}
   ]
-};
-</script>
-
-<!-- Search functionality -->
-<script>
-(function() {
-  'use strict';
-  
-  const overlay = document.getElementById('searchOverlay');
-  const searchInput = document.getElementById('searchInput');
-  const searchResults = document.getElementById('searchResults');
-  
-  let selectedIndex = -1;
-  let searchResultItems = [];
-  
-  // Open search
-  function openSearch(e) {
-    if (e) e.preventDefault();
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => searchInput.focus(), 100);
-  }
-  
-  // Close search
-  function closeSearch(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-    searchInput.value = '';
-    selectedIndex = -1;
-    showWelcome();
-  }
-  
-  // Initialize after DOM loaded
-  function initialize() {
-    const searchToggle = document.querySelector('.search-toggle');
-    const searchClose = document.querySelector('.search-close');
-    
-    // Bind search toggle
-    if (searchToggle) {
-      searchToggle.addEventListener('click', openSearch);
-    }
-    
-    // Bind close button with multiple methods for reliability
-    if (searchClose) {
-      searchClose.addEventListener('click', closeSearch);
-      searchClose.addEventListener('touchend', closeSearch);
-    }
-    
-    // Initialize stats
-    const totalPostsEl = document.getElementById('totalPosts');
-    const totalCategoriesEl = document.getElementById('totalCategories');
-    if (totalPostsEl) totalPostsEl.textContent = window.searchData.posts.length;
-    if (totalCategoriesEl) totalCategoriesEl.textContent = window.searchData.categories.length;
-  }
-  
-  // Call initialize when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initialize);
-  } else {
-    initialize();
-  }
-  
-  // Show welcome message
-  function showWelcome() {
-    searchResults.innerHTML = `
-      <div class="search-welcome">
-        <div class="search-welcome__icon">🌌</div>
-        <p>開始探索文章、分類和標籤</p>
-        <div class="search-stats">
-          <span class="stat-item">📝 <span>${window.searchData.posts.length}</span> 篇文章</span>
-          <span class="stat-item">🏷️ <span>${window.searchData.categories.length}</span> 個分類</span>
-        </div>
-      </div>
-    `;
-  }
-  
-  // Search function
-  function performSearch(query) {
-    if (!query.trim()) {
-      showWelcome();
-      return;
-    }
-    
-    const lowerQuery = query.toLowerCase();
-    const results = {
-      posts: [],
-      categories: []
-    };
-    
-    // Search posts
-    window.searchData.posts.forEach(post => {
-      let score = 0;
-      if (post.title.toLowerCase().includes(lowerQuery)) score += 10;
-      if (post.excerpt.toLowerCase().includes(lowerQuery)) score += 5;
-      if (post.categories.some(cat => cat.toLowerCase().includes(lowerQuery))) score += 8;
-      if (post.tags && post.tags.some(tag => tag.toLowerCase().includes(lowerQuery))) score += 6;
-      
-      if (score > 0) {
-        results.posts.push({ ...post, score });
-      }
-    });
-    
-    // Search categories
-    window.searchData.categories.forEach(cat => {
-      if (cat.name.toLowerCase().includes(lowerQuery)) {
-        results.categories.push(cat);
-      }
-    });
-    
-    // Sort by score
-    results.posts.sort((a, b) => b.score - a.score);
-    
-    // Display results
-    displayResults(results, query);
-  }
-  
-  // Display results
-  function displayResults(results, query) {
-    if (results.posts.length === 0 && results.categories.length === 0) {
-      searchResults.innerHTML = `
-        <div class="search-no-results">
-          <div class="search-no-results__icon">🔭</div>
-          <p>找不到「${query}」的相關結果</p>
-          <small>試試其他關鍵字</small>
-        </div>
-      `;
-      return;
-    }
-    
-    let html = '';
-    
-    // Categories
-    if (results.categories.length > 0) {
-      html += '<div class="search-section"><h3 class="search-section__title">🏷️ 分類</h3>';
-      results.categories.forEach(cat => {
-        html += `
-          <a href="${cat.url}" class="search-result-item" data-type="category">
-            <div class="search-result__icon">📁</div>
-            <div class="search-result__content">
-              <div class="search-result__title">${highlightMatch(cat.name, query)}</div>
-              <div class="search-result__meta">${cat.count} 篇文章</div>
-            </div>
-          </a>
-        `;
-      });
-      html += '</div>';
-    }
-    
-    // Posts
-    if (results.posts.length > 0) {
-      html += '<div class="search-section"><h3 class="search-section__title">📝 文章</h3>';
-      results.posts.slice(0, 10).forEach(post => {
-        html += `
-          <a href="${post.url}" class="search-result-item" data-type="post">
-            <div class="search-result__icon">📄</div>
-            <div class="search-result__content">
-              <div class="search-result__title">${highlightMatch(post.title, query)}</div>
-              <div class="search-result__excerpt">${highlightMatch(post.excerpt, query)}</div>
-              <div class="search-result__meta">
-                <span class="meta-date">${post.date}</span>
-                ${post.categories.map(cat => `<span class="meta-tag">${cat}</span>`).join('')}
-              </div>
-            </div>
-          </a>
-        `;
-      });
-      html += '</div>';
-      
-      if (results.posts.length > 10) {
-        html += `<div class="search-more">還有 ${results.posts.length - 10} 個結果...</div>`;
-      }
-    }
-    
-    searchResults.innerHTML = html;
-    searchResultItems = Array.from(searchResults.querySelectorAll('.search-result-item'));
-    selectedIndex = -1;
-  }
-  
-  // Highlight matching text
-  function highlightMatch(text, query) {
-    if (!query.trim()) return text;
-    const regex = new RegExp(`(${query})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
-  }
-  
-  // Keyboard navigation
-  function updateSelection() {
-    searchResultItems.forEach((item, index) => {
-      if (index === selectedIndex) {
-        item.classList.add('selected');
-        item.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-      } else {
-        item.classList.remove('selected');
-      }
-    });
-  }
-  
-  // Event listeners for overlay background click
-  if (overlay) {
-    overlay.addEventListener('click', function(e) {
-      // Only close if clicking directly on overlay (not on children)
-      if (e.target === overlay) {
-        closeSearch(e);
-      }
-    });
-  }
-  
-  // ESC key to close
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && overlay.classList.contains('active')) {
-      closeSearch(e);
-    }
-  });
-  
-  if (searchInput) {
-    searchInput.addEventListener('input', function(e) {
-      performSearch(e.target.value);
-    });
-    
-    searchInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closeSearch(e);
-      } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (selectedIndex < searchResultItems.length - 1) {
-          selectedIndex++;
-          updateSelection();
-        }
-      } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        if (selectedIndex > 0) {
-          selectedIndex--;
-          updateSelection();
-        }
-      } else if (e.key === 'Enter') {
-        e.preventDefault();
-        if (selectedIndex >= 0 && searchResultItems[selectedIndex]) {
-          searchResultItems[selectedIndex].click();
-        }
-      }
-    });
-  }
-  
-  // Global keyboard shortcut: Cmd/Ctrl + K
-  document.addEventListener('keydown', function(e) {
-    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
-      e.preventDefault();
-      if (overlay.classList.contains('active')) {
-        closeSearch(e);
-      } else {
-        openSearch(e);
-      }
-    }
-  });
-})();
-</script>
+}
+{%- endcapture -%}
+<script type="application/json" id="searchData">{{ search_data | replace: '<', '\u003c' }}</script>
+<script src="{{ '/assets/js/search.js' | relative_url }}" defer></script>

@@ -23,6 +23,15 @@ jobs:
         with:
           bundler-cache: true
       - name: Check configuration regressions
-        run: bundle exec ruby test/config_test.rb
+        run: bundle exec ruby -Itest -e 'Dir["test/*_test.rb"].sort.each { |file| require_relative file }'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: test/package-lock.json
+      - name: Install search test dependencies
+        run: npm ci --prefix test --ignore-scripts --no-audit --no-fund
+      - name: Check search interactions
+        run: npm test --prefix test
       - name: Build and validate production output
         run: bundle exec ruby scripts/validate.rb

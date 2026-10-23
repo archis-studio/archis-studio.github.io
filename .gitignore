@@ -49,6 +49,7 @@ Thumbs.db
 
 # Cache
 .cache/
+node_modules/
 
 # Backup files
 *.bak

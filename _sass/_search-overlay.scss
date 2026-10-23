@@ -347,6 +347,11 @@
 
 /* Search result items */
 .search-result-item {
+  &:focus-visible {
+    outline: 2px solid $autumn-gold;
+    outline-offset: 2px;
+  }
+
   display: flex;
   gap: 1rem;
   padding: 0.875rem;

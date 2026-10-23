@@ -29,6 +29,7 @@ module SiteValidation
     require "nokogiri"
     require "tmpdir"
     require "uri"
+    require "json"
 
     root = File.expand_path("..", __dir__)
     Dir.chdir(root) do
@@ -62,6 +63,17 @@ module SiteValidation
         end
 
         documents.each do |document|
+          search_data = document.at_css('script#searchData[type="application/json"]')
+          raise Error, "Missing search JSON data" unless search_data
+          search = JSON.parse(search_data.text)
+          raise Error, "Search index omits published posts" unless search.fetch("posts").size == site.posts.docs.size
+          (search.fetch("posts") + search.fetch("categories")).each do |entry|
+            path = URI::DEFAULT_PARSER.unescape(entry.fetch("url"))
+            baseurl = site.baseurl.to_s
+            path = path.delete_prefix(baseurl) unless baseurl.empty?
+            output = File.join(destination, path.delete_prefix("/"), "index.html")
+            raise Error, "Broken search destination: #{entry.fetch('url')}" unless File.file?(output)
+          end
           document.css("img[src], script[src], link[rel='stylesheet'][href]").each do |element|
             url = element["src"] || element["href"]
             next unless url.start_with?("/") && !url.start_with?("//")
@@ -77,7 +89,7 @@ module SiteValidation
         %w[scripts test docs].each do |directory|
           raise Error, "Development files published: #{directory}" if File.exist?(File.join(destination, directory))
         end
-        puts "PASS: production build, #{site.posts.docs.size} article layouts, #{documents.size} pages, local assets and publish exclusions"
+        puts "PASS: production build, #{site.posts.docs.size} article layouts, #{documents.size} pages, search destinations, local assets and publish exclusions"
       end
     end
   end

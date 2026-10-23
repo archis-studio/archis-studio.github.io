@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.1 | Updated: 2026-10-23
+# Version 2.0.2 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -291,8 +291,9 @@ GitHub Pages API 於 2026-10-23 確認：`build_type: legacy`，從 `main` 分�
 `.github/workflows/validate.yml` 在 PR、push 或手動執行時：
 
 1. 依 `.ruby-version` 與 `Gemfile.lock` 安裝套件，啟用 `BUNDLE_FROZEN`，禁止自動改寫 lockfile。
-2. 執行 `bundle exec ruby test/config_test.rb`。
-3. 執行 `bundle exec ruby scripts/validate.rb`。
+2. 執行 `test/*_test.rb` 的 Ruby 設定／Liquid 回歸測試。
+3. 使用 Node 24 與 `test/package-lock.json` 安裝 jsdom 測試依賴，執行搜尋 DOM 測試。
+4. 執行 `bundle exec ruby scripts/validate.rb`。
 
 驗證工作僅使用 `contents: read`，不要求部署 secret、不發布網站、不修改 Pages 設定。它與 legacy Pages 部署獨立運作；如果要在合併前強制通過，需另行設定 branch protection required status check：`Validate site / validate`（以 GitHub 顯示的 check 名稱為準）。直接 push 到 main 仍可能觸發部署，不會等待這個驗證工作。
 
@@ -350,7 +351,9 @@ $custom-color: #D4A017;
 
 ```bash
 bundle check
-bundle exec ruby test/config_test.rb
+bundle exec ruby -Itest -e 'Dir["test/*_test.rb"].sort.each { |file| require_relative file }'
+npm ci --prefix test --ignore-scripts --no-audit --no-fund
+npm test --prefix test
 bundle exec ruby scripts/validate.rb
 ```
 
@@ -359,6 +362,14 @@ bundle exec ruby scripts/validate.rb
 遠端主題需要網路；下載失敗時應排除網路問題後重試，不要跳過檢查。這個 smoke check 不執行瀏覽器 JavaScript、不驗證所有連結或第三方服務，不取代響應式／視覺測試。
 
 補充診斷可使用 `bundle exec jekyll doctor`，但它不會驗證所有 HTML 與連結。
+
+### 搜尋回歸測試
+
+需要 Node 24（jsdom 28.1.0 支援 Node >=24.0.0）。Node 只用於測試，不參與 legacy Pages 的網站建置。`test/` 與 `node_modules/` 不會發布。
+
+`test/search_test.cjs` 使用 jsdom 執行實際 `assets/js/search.js`，涵蓋中文／特殊符號、文字安全呈現、結果排序與上限、清空選取、IME、Tab／Escape 與焦點還原。`test/search_data_test.rb` 驗證 Liquid 輸出的分類 URL、baseurl 與 JSON script 安全。
+
+jsdom 不實作真實瀏覽器版面，仍需手動確認手機／平板／桌面搜尋視窗、可見焦點與捲動。
 
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
@@ -383,12 +394,16 @@ bundle exec ruby scripts/validate.rb
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.1
+**Version**: 2.0.2
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.2 (2026-10-23)
+- 新增搜尋 DOM／Liquid 回歸測試與 Node 測試環境說明。
+- 驗證 workflow 執行全部 Ruby 測試與搜尋互動測試。
 
 ### v2.0.1 (2026-10-23)
 - 校正實際 Jekyll／主題版本與 legacy Pages 部署方式。
