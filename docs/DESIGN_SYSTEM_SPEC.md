@@ -1,585 +1,192 @@
-# Design System 規格書
-# Version 4.0.1 | Updated: 2026-10-23
+# Design System 設計與實作參考
 
-> **🤖 For Agents**: 本文件定義完整設計系統規格（色彩、字體、間距、元件）及實作指南
+Version 5.0.0 | Updated: 2026-10-23
 
-## 🎨 設計原則
+供人／Agent 維護視覺與共用樣式。本文區分設計約束、已定義工具與尚未實作的舊示意；不以程式現況授權改變設計。頁面與互動見 [Layout](LAYOUT_SPEC.md)，操作及驗證見 [Development](../DEVELOPMENT.md)。
 
-**Jekyll 基礎**: Minimal Mistakes Theme + Dark Mode
+## 設計原則
 
-**四重風格融合**:
-- 🎭 **Fashion Editorial**: 時尚編輯版面，優雅排版
-- 🍂 **Autumn Noir**: 秋日黑色美學，溫暖深色調
-- 🎮 **Gaming Pixel Art**: 遊戲像素風格，復古科技感
-- 🚀 **AI Future Space**: 人工智慧未來太空，科幻元素
+以 Jekyll／Minimal Mistakes 的深色主題為基礎，保留四種風格：Fashion Editorial 的文字層次與留白、Autumn Noir 的深色暖調、Gaming Pixel Art 的像素與終端機元素、AI Future Space 的太空與未來感。
 
-**Keep It Simple**: 內容優先，系統化可擴展
+內容優先、Typography First、mobile-first、跨頁一致與可及性仍是約束。顏色、字型、間距優先沿用現有 token 與元件；只覆寫必要主題樣式，避免為效果增加閱讀干擾。設計變更需在使用者授權範圍內；落差見[已知落差](#已知落差)。
 
----
+## 實作入口
 
-## 🎨 色彩系統
+| 來源 | 責任 |
+|---|---|
+| [variables](../_sass/design-system/_variables.scss) | 分類色、背景／文字色、字型、字級、行高、字重、間距、斷點與 transition |
+| [mixins](../_sass/design-system/_mixins.scss) | 分類樣式生成器、視覺與響應式工具 |
+| [main.scss](../assets/css/main.scss) | 先載入主題 skin／主題，再載入 variables、mixins、custom partials 與搜尋樣式；末尾處理減少動態效果 |
+| [custom](../_sass/custom/) | 各頁面與元件的實際樣式；不是所有樣式都已使用共用 token |
+| [custom head](../_includes/head/custom.html) | 額外字型載入與 favicon 引用 |
 
-### Autumn Noir 核心色彩
+改元件時依序找模板、class 與樣式來源；工具「已定義」不代表每個頁面都採用。不要重設整份 `$category-colors`、複製主題 import 或為符合舊文件新增空 partial。
+
+## Tokens 與使用方式
+
+### 色彩與分類
+
+精確色值以 variables 為主要維護位置，不在文件重建另一份完整調色盤。現有色彩家族如下：
+
+| 語義 | 變數 |
+|---|---|
+| 深色背景、邊框與文字 | `$noir-black`、`$noir-gray`、`$noir-border`、`$noir-text`、`$noir-text-muted` |
+| 秋日暖色 | `$autumn-gold`、`$autumn-burgundy`、`$autumn-moss`、`$autumn-copper`、`$autumn-cream` |
+| 太空色 | `$space-void`、`$space-nebula`、`$space-comet`、`$space-aurora`、`$space-starlight` |
+| 遊戲／未來點綴 | `$ai-neural`、`$pixel-cyan`、`$gaming-neon`、`$retro-neon-pink`、`$retro-amber` |
+
+分類以 `$category-colors` 管理，透過 `category-color('ai')` 等函數取得。key 與文章分類名稱不同：
+
+| 樣式 key | 文章分類 |
+|---|---|
+| `ai` | `AI Tools` |
+| `dev` | `Software Dev` |
+| `data` | `Data Science` |
+| `marketing` | `Marketing` |
+| `quant` | `Quant Trading` |
+| `reading` | `Reading` |
+| `green` | `Green Energy` |
+| `growth` | `Growth` |
+
+未知 key 會警告並返回預設金色，這是 fallback，不代表新分類已建立。新增分類須另確認內容名稱、分類頁／路由、模板 key 與樣式；只改 map 只會影響使用該 map 的輸出。
+
+以下 SCSS 是用法示例，放在已載入 variables／mixins 的 custom partial 中；不代表網站已有 `.example-*` 元件：
+
 ```scss
-// 深色基調 (Dark Mode Base)
-$noir-black: #0E0E10;     // 深邃黑 - 主背景
-$noir-gray: #1C1C1E;      // 暖灰 - 中層背景  
-$noir-border: #2C2C2E;    // 邊框灰
-$noir-text: #EDEDED;      // 主文字 - 溫暖白
-$noir-text-muted: #A0A0A5; // 次要文字 - 優雅灰
-```
-
-### Fashion Editorial 色彩調色盤
-```scss
-$autumn-gold: #D4A017;    // 秋日金 - 主要強調色
-$autumn-burgundy: #8B3A3A; // 勃艮第紅 - 時尚重點
-$autumn-moss: #6B8E23;    // 苔蘚綠 - 自然元素
-$autumn-copper: #B87333;  // 銅棕色 - 金屬質感
-$autumn-cream: #F5DEB3;   // 奶油色 - 柔和對比
-```
-
-### AI Future Space 色彩
-```scss
-$space-void: #0F0F12;     // 太空虛空
-$space-nebula: #1A1B2E;   // 星雲紫
-$space-comet: #4A90B8;    // 彗星藍
-$space-aurora: #5A8B5F;   // 極光綠
-$space-starlight: #E8E1D3; // 星光白
-```
-
-### Gaming Pixel Art 色彩
-```scss
-$ai-neural: #9B59B6;      // AI 神經紫
-$pixel-cyan: #17A2B8;     // 像素青
-$gaming-neon: #E74C3C;    // 遊戲霓虹
-$retro-neon-pink: #C97A8F; // 復古霓虹粉
-$retro-amber: #D4B36A;    // 琥珀黃
-```
-
----
-
-## ✍️ Typography System (文字系統)
-
-### Font Families (字型家族)
-```scss
-// Fashion Editorial 字型
-$serif-editorial: 'Playfair Display', 'Georgia', serif; // 時尚編輯標題
-$sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; // 現代內文
-
-// Gaming Pixel Art 字型  
-$pixel-font: 'JetBrains Mono', monospace; // 像素風格程式碼
-$monospace: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
-
-// AI Future 字型
-$futura-font: 'Futura', 'Arial', sans-serif; // 未來感標題
-
-// 繁體中文字型
-$font-chinese: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-```
-
-### Typography Scale (文字比例)
-```scss
-// 基於 1.25 倍率的 modular scale
-$font-size-xs:   0.75rem;   // 12px - 小標籤、輔助資訊
-$font-size-sm:   0.875rem;  // 14px - 次要文字、說明
-$font-size-base: 1rem;      // 16px - 內文、基礎文字
-$font-size-lg:   1.125rem;  // 18px - 重要文字、引言
-$font-size-xl:   1.25rem;   // 20px - 小標題
-$font-size-2xl:  1.5rem;    // 24px - 中標題  
-$font-size-3xl:  1.875rem;  // 30px - 大標題
-$font-size-4xl:  2.25rem;   // 36px - 主標題
-$font-size-5xl:  3rem;      // 48px - 特大標題
-$font-size-6xl:  4rem;      // 64px - 展示標題
-```
-
-### Line Heights (行高)
-```scss
-$line-height-tight: 1.25;   // 緊密 - 大標題
-$line-height-snug: 1.375;   // 適中 - 小標題  
-$line-height-normal: 1.5;   // 標準 - 內文
-$line-height-relaxed: 1.625; // 寬鬆 - 長文章
-$line-height-loose: 2;      // 極寬 - 特殊用途
-```
-
-### Font Weights (字重)
-```scss
-$font-weight-light: 300;
-$font-weight-normal: 400;
-$font-weight-medium: 500;
-$font-weight-semibold: 600;
-$font-weight-bold: 700;
-$font-weight-extrabold: 800;
-```
-
----
-
-## 📏 Spacing System (間距系統)
-
-### Spacing Scale (間距比例)
-```scss
-// 基於 8px grid system
-$space-0:  0;
-$space-1:  0.25rem;  // 4px
-$space-2:  0.5rem;   // 8px  
-$space-3:  0.75rem;  // 12px
-$space-4:  1rem;     // 16px
-$space-5:  1.25rem;  // 20px
-$space-6:  1.5rem;   // 24px
-$space-8:  2rem;     // 32px
-$space-10: 2.5rem;   // 40px
-$space-12: 3rem;     // 48px
-$space-16: 4rem;     // 64px
-$space-20: 5rem;     // 80px
-$space-24: 6rem;     // 96px
-$space-32: 8rem;     // 128px
-```
-
-### Container Sizes (容器尺寸)
-```scss
-// Responsive container widths
-$container-xs: 480px;   // 手機橫向
-$container-sm: 640px;   // 小平板
-$container-md: 768px;   // 大平板
-$container-lg: 1024px;  // 小筆電
-$container-xl: 1280px;  // 大螢幕
-$container-2xl: 1536px; // 超大螢幕
-
-// Content max-widths  
-$content-width: 65ch;   // 最佳閱讀寬度
-$prose-width: 75ch;     // 長文章寬度
-```
-
----
-
-## 🔲 Component System (元件系統)
-
-### Button Components (按鈕元件)
-```scss
-// Base button styles
-.btn {
-  // 基礎樣式
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: $space-3 $space-6;
-  font-family: $font-primary;
-  font-weight: $font-weight-medium;
-  text-decoration: none;
-  border-radius: 0.375rem;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: 1px solid transparent;
-
-  // Sizes
-  &--sm { padding: $space-2 $space-4; font-size: $font-size-sm; }
-  &--md { padding: $space-3 $space-6; font-size: $font-size-base; } // default
-  &--lg { padding: $space-4 $space-8; font-size: $font-size-lg; }
-
-  // Variants
-  &--primary {
-    background-color: $accent-blue;
-    color: $primary-50;
-    &:hover { background-color: darken($accent-blue, 8%); }
-  }
-
-  &--secondary {
-    background-color: $primary-200;
-    color: $primary-800;
-    &:hover { background-color: $primary-300; }
-  }
-
-  &--outline {
-    background-color: transparent;
-    color: $accent-blue;
-    border-color: $accent-blue;
-    &:hover {
-      background-color: $accent-blue;
-      color: $primary-50;
-    }
-  }
+.example-label {
+  color: category-color('ai');
+  border-color: $noir-border;
+  padding: $space-2 $space-4;
 }
 ```
 
-### Card Components (卡片元件)
+### 字型與文字層次
+
+| 現有 token | 用途與限制 |
+|---|---|
+| `$serif-editorial` | Playfair Display／Georgia／serif，用於 editorial 文字 |
+| `$sans-serif` | Inter／系統 sans-serif 堆疊 |
+| `$monospace` | JetBrains Mono／SF Mono／Monaco／Consolas／monospace 堆疊 |
+| `$font-chinese` | Noto Sans TC／PingFang TC／Microsoft JhengHei／sans-serif 堆疊 |
+| `$font-size-xs` 至 `$font-size-6xl` | 現有字級尺度；名稱與值查 variables，不能由倍率推算不存在的 token |
+| `$font-weight-light` 至 `$font-weight-extrabold` | 字重尺度；載入的字型是否提供相應字重仍需核對 |
+| `$line-height-tight`、`$line-height-snug`、`$line-height-normal`、`$line-height-relaxed`、`$line-height-loose` | 精確行高查 variables |
+
+字型堆疊不等於字型已下載。custom head 明確載入 Google Fonts 的 Playfair Display 400／700；各元件另有 Georgia、Courier New、Noto Serif TC 等直接宣告。實際字型取決於主題／外部載入、裝置安裝與 fallback，不保證所有頁面使用相同字體。
+
+### 間距、斷點與過渡
+
+間距使用 variables 中實際存在的 `$space-*`，例如 `$space-1` 為 `0.25rem`、`$space-2` 為 `0.5rem`、`$space-4` 為 `1rem`；不是 0–32 每個數字都已定義。舊文件以 8px grid 描述設計意圖，現有尺度另含 4px 步進；本次不重定義或調整間距。
+
+現有獨立斷點變數：
+
+| Token | 值 |
+|---|---|
+| `$breakpoint-xs` | 480px |
+| `$breakpoint-sm` | 640px |
+| `$breakpoint-md` | 768px |
+| `$breakpoint-lg` | 1024px |
+| `$breakpoint-xl` | 1280px |
+| `$breakpoint-2xl` | 1536px |
+
+此表不是所有元件的實際切換表。現有樣式亦含 1400px、968px、64em、767／768／769px 等頁面條件，需查對應 partial；不因表格存在而統一改寫。頁面邊界由 Layout 後續核對。
+
+過渡使用 `$transition-fast`、`$transition-base`、`$transition-slow`，值依序為 `0.15s ease`、`0.3s cubic-bezier(0.4, 0, 0.2, 1)`、`0.5s cubic-bezier(0.4, 0, 0.2, 1)`。元件中仍有直接定義的 duration／easing，不宣稱已全部集中管理。
+
+## Mixins 與元件沿用
+
+以下 API 定義於 mixins；參數名稱與預設值以來源為準：
+
+| API | 行為與使用範圍 |
+|---|---|
+| `category-badge($color, $hover-color: null)` | 單一 badge 的分類色、背景、陰影與 hover；尺寸／基礎版面由呼叫處提供 |
+| `generate-category-badges($prefix: '--')` | 對目前 selector 附加 prefix 與分類 key；首頁已有呼叫 |
+| `category-card($color, $hover-color: null)` | 卡片背景、邊框、hover，及巢狀標題／連結色；不包含完整卡片結構 |
+| `generate-category-cards($prefix: '--')` | 對目前 selector 生成分類 modifier；已定義，不代表現有卡片都使用它 |
+| `portal-ring($color, $size: 200px)` | 相對定位、尺寸與偽元素；使用同檔的 `portal-rotate` keyframes |
+| `generate-category-portals($prefix: 'portal-')` | 生成子 selector，與 badge／card 的 modifier 生成方式不同；不等同分類頁現有 portal 實作 |
+| `glow-text($color, $intensity: 0.8)` | 文字與 hover 發光 |
+| `glass-effect($opacity: 0.1, $blur: 10px)` | 透明背景、模糊與邊框；實際可讀性需預覽 |
+| `neon-border($color, $width: 2px)` | 邊框與 hover 發光 |
+| `responsive-font($min-size, $max-size, $min-width: $breakpoint-sm, $max-width: $breakpoint-xl)` | 使用 `strip-units($number)` 的流動字級計算；定義存在，不代表所有單位組合或頁面已驗證 |
+| `container-padding($vertical: 3rem, $horizontal: 2rem)` | 在 md／sm 的 max-width 條件縮小內距；不是全站容器寬度設定 |
+
+可編譯的生成器示例：
+
 ```scss
-.card {
-  background-color: $primary-50;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba($primary-900, 0.1);
-  overflow: hidden;
-  transition: box-shadow 0.2s ease;
-
-  &:hover {
-    box-shadow: 0 4px 12px rgba($primary-900, 0.15);
-  }
-
-  &__header {
-    padding: $space-6;
-    border-bottom: 1px solid $primary-200;
-  }
-
-  &__body {
-    padding: $space-6;
-  }
-
-  &__footer {
-    padding: $space-4 $space-6;
-    background-color: $primary-100;
-    border-top: 1px solid $primary-200;
-  }
-}
-```
-
-### Navigation Components (導航元件)
-```scss
-.nav {
-  &__item {
-    color: $primary-600;
-    text-decoration: none;
-    font-weight: $font-weight-medium;
-    padding: $space-2 $space-4;
-    border-radius: 0.25rem;
-    transition: all 0.2s ease;
-
-    &:hover {
-      color: $accent-blue;
-      background-color: $primary-100;
-    }
-
-    &--active {
-      color: $accent-blue;
-      background-color: rgba($accent-blue, 0.1);
-    }
-  }
-}
-```
-
----
-
-## 📱 Responsive Design (響應式設計)
-
-### Breakpoints (中斷點)
-```scss
-$breakpoints: (
-  'xs': 0,
-  'sm': 640px,
-  'md': 768px,  
-  'lg': 1024px,
-  'xl': 1280px,
-  '2xl': 1536px
-);
-```
-
-### Responsive Mixins (響應式 Mixins)
-```scss
-@mixin respond-to($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
-    $value: map-get($breakpoints, $breakpoint);
-    @if $value > 0 {
-      @media (min-width: $value) { @content; }
-    } @else {
-      @content;
-    }
-  }
-}
-```
-
----
-
-## ♿ Accessibility (無障礙設計)
-
-### Color Contrast (色彩對比)
-- 標準文字: 最少 4.5:1 對比度
-- 大文字 (18px+): 最少 3:1 對比度  
-- 非文字元素: 最少 3:1 對比度
-
-### Focus States (焦點狀態)
-```scss
-.focus-visible {
-  outline: 2px solid $accent-blue;
-  outline-offset: 2px;
-}
-```
-
-### Screen Reader Support (螢幕閱讀器支援)
-```scss
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-```
-
----
-
-## 🎭 Animation System (動畫系統)
-
-### Easing Functions (緩動函數)
-```scss
-$ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
-$ease-in-out-quint: cubic-bezier(0.83, 0, 0.17, 1);
-```
-
-### Animation Durations (動畫時長)
-```scss
-$duration-fast: 150ms;
-$duration-normal: 250ms;
-$duration-slow: 350ms;
-```
-
----
-
-## 📐 Layout System (版面系統)
-
-### Grid System (網格系統)
-```scss
-.grid {
-  display: grid;
-  gap: $space-6;
-  
-  &--cols-1 { grid-template-columns: 1fr; }
-  &--cols-2 { grid-template-columns: repeat(2, 1fr); }
-  &--cols-3 { grid-template-columns: repeat(3, 1fr); }
-  &--cols-4 { grid-template-columns: repeat(4, 1fr); }
-
-  // Responsive variants
-  @include respond-to('md') {
-    &--md-cols-2 { grid-template-columns: repeat(2, 1fr); }
-    &--md-cols-3 { grid-template-columns: repeat(3, 1fr); }
-  }
-
-  @include respond-to('lg') {
-    &--lg-cols-3 { grid-template-columns: repeat(3, 1fr); }
-    &--lg-cols-4 { grid-template-columns: repeat(4, 1fr); }
-  }
-}
-```
-
----
-
-## 💻 實作說明 (Implementation Guide)
-
-### 檔案結構
-
-設計系統已完整實作於以下檔案：
-
-```
-_sass/
-├── design-system/              ← 設計系統核心
-│   ├── _variables.scss         (155 行) - 變數定義
-│   └── _mixins.scss            (270 行) - Mixin 工具
-│
-└── custom/                     ← 自訂樣式（使用設計系統）
-    ├── _homepage.scss          - 首頁樣式
-    ├── _categories.scss        - 分類頁樣式
-    ├── _posts-archive.scss     - 文章列表樣式
-    └── ...
-```
-
-### 核心檔案說明
-
-#### 1. `_sass/design-system/_variables.scss`
-
-**用途**：單一真相來源（Single Source of Truth）
-
-**內容**：
-- **8 色語義化分類系統** (`$category-colors` Map)
-  - AI 工具: #D4A017
-  - 軟體開發: #00B4D8
-  - 資料科學: #5D8AA8
-  - 數位行銷: #9370DB
-  - 量化交易: #FF9800
-  - 閱讀筆記: #8B7355
-  - 綠色能源: #2E7D32
-  - 成長旅程: #FF6F61
-
-- **Autumn Noir 核心色彩**
-  - $noir-black, $noir-gray, $noir-border, $noir-text
-
-- **Fashion Editorial 色彩**
-  - $autumn-gold, $autumn-burgundy, $autumn-moss, $autumn-copper
-
-- **AI Future Space 色彩**
-  - $space-void, $space-nebula, $space-comet
-
-- **Typography System**
-  - 字型家族: $serif-editorial, $monospace
-  - 字體大小: $font-size-xs ~ $font-size-6xl
-  - 字重: $font-weight-light ~ $font-weight-extrabold
-
-- **Spacing System** (8px grid)
-  - $space-0 ~ $space-32
-
-- **Breakpoints**
-  - $breakpoint-xs ~ $breakpoint-2xl
-
-- **Transitions**
-  - $transition-fast, $transition-base, $transition-slow
-
-**函數**：
-```scss
-category-color($name)  // 獲取分類顏色
-// 例如：category-color('ai') → #D4A017
-```
-
-#### 2. `_sass/design-system/_mixins.scss`
-
-**用途**：可重用的樣式生成器（DRY 原則）
-
-**核心 Mixins**：
-
-**① 分類 Badge 自動生成**
-```scss
-@mixin category-badge($color, $hover-color: null)
-// 為單一分類生成完整 badge 樣式（含 hover 效果）
-
-@mixin generate-category-badges($prefix: '--')
-// 自動生成所有 8 個分類的 badge 樣式
-// 使用範例：
-.featured-badge {
-  @include generate-category-badges('--');
-}
-// 自動生成：.featured-badge--ai, .featured-badge--dev, ...
-```
-
-**② 分類 Card 樣式**
-```scss
-@mixin category-card($color, $hover-color: null)
-// 卡片元件樣式
-
-@mixin generate-category-cards($prefix: '--')
-// 自動生成所有分類的 card 樣式
-```
-
-**③ Portal Ring（宇宙大門效果）**
-```scss
-@mixin portal-ring($color, $size: 200px)
-// 用於 Categories 頁面的發光環效果
-
-@mixin generate-category-portals($prefix: 'portal-')
-// 自動生成所有分類的 portal 樣式
-```
-
-**④ 其他輔助 Mixins**
-```scss
-@mixin glow-text($color, $intensity: 0.8)        // 發光文字
-@mixin glass-effect($opacity: 0.1, $blur: 10px)  // 玻璃擬態
-@mixin neon-border($color, $width: 2px)          // 霓虹邊框
-@mixin responsive-font($min, $max, ...)          // 響應式字體
-@mixin container-padding($vertical, $horizontal) // 容器內距
-```
-
-### 使用方式
-
-#### 引用設計系統
-
-在 `assets/css/main.scss` 中已自動引入：
-```scss
-@import "design-system/variables";
-@import "design-system/mixins";
-```
-
-#### 使用顏色變數
-
-**✅ 正確做法**：
-```scss
-.my-element {
-  color: $autumn-gold;              // 使用變數
-  border-color: category-color('ai'); // 使用函數
-}
-```
-
-**❌ 錯誤做法**：
-```scss
-.my-element {
-  color: #D4A017;  // 不要硬編碼！
-}
-```
-
-#### 使用 Mixin 生成樣式
-
-**自動生成 8 色 Badge**：
-```scss
-.my-badge {
-  // 基礎樣式
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-
-  // 自動生成 8 色變體
+.example-badge {
   @include generate-category-badges('--');
 }
 
-// 輸出：
-// .my-badge--ai { ... }
-// .my-badge--dev { ... }
-// ... (8 個)
-```
+.example-card {
+  @include category-card(category-color('dev'));
+}
 
-**單獨使用 Badge 樣式**：
-```scss
-.special-badge {
-  @include category-badge($autumn-gold);
+.example-portals {
+  @include generate-category-portals();
 }
 ```
 
-### 新增分類
+會產生 `.example-badge--ai` 等 modifier，以及 `.example-portals .portal-ai` 等子 selector。先確認模板 class 對得上，再使用生成器；不要只根據 mixin 名稱猜 selector。
 
-**步驟**：
-1. 在 `_variables.scss` 的 `$category-colors` 中新增顏色
-2. 完成！所有使用 mixin 的地方自動生成新分類樣式
+實際沿用入口：
 
-```scss
-// _sass/design-system/_variables.scss
-$category-colors: (
-  'ai': #D4A017,
-  // ... 其他 7 色
-  'web3': #7B3FF2  // ← 新增這一行
-);
+| 元件 | 來源 |
+|---|---|
+| 首頁精選分類 badge／技能徽章 | [homepage SCSS](../_sass/custom/_homepage.scss)，分別使用 `--` 與 `.skill-category--` prefix |
+| 共用文章卡片 | [post-card include](../_includes/post-card.html)、[文章庫 SCSS](../_sass/custom/_posts-archive.scss) |
+| 導覽與搜尋 | [masthead](../_includes/masthead.html)、[navigation SCSS](../_sass/custom/_navigation.scss)、[search SCSS](../_sass/_search-overlay.scss) |
+| 分類 portal | [categories SCSS](../_sass/custom/_categories.scss)，目前採頁面自訂樣式及分類色函數 |
 
-// 自動生效於所有使用 generate-category-badges() 的地方！
-```
+## 品牌、圖示與圖片原則
 
-### 效益統計
+本節接收 Asset 與圖片 README 中仍適用的視覺意圖，操作仍只在 Development 維護：
 
-| 指標 | 優化前 | 優化後 | 改善 |
-|------|-------|-------|------|
-| 硬編碼顏色 | 75+ 處 | 0 處 | ✅ 100% |
-| 重複代碼 | 311 行 | 6 行 | ↓ 98% |
-| Homepage 行數 | 1,429 | 1,125 | ↓ 21% |
-| 修改一個顏色 | 75 處 | 1 處 | ↓ 99% |
-| 新增分類成本 | ~150 行 | 1 行 | ↓ 99% |
+- 維持深色暖調、專業而有個性的 Fashion／Gaming／Future Space 組合；裝飾不得妨礙正文、控制項與焦點可見性。
+- 圖示維持可辨識、跨頁一致的風格與設計色彩；舊 24×24 SVG 是原基準示意，不代表目前所有 emoji、CSS 像素圖示、Font Awesome 或主題圖示都採此尺寸。沿用現有來源，不要求重建一套 SVG 圖庫。
+- 頭像主體置中、背景不搶焦點、有清楚對比；專業照片或插畫皆可。保留圓形裁切的原視覺意圖，不新增多尺寸檔案或更換現有頭像。
+- 向量資源保留比例與清晰度，點陣資源注意裁切與畫質；WebP 壓縮需目視檢查。封面與頭像沿用[圖片處理](../DEVELOPMENT.md#圖片處理)的單圖契約；舊社群 1200×630 是原規劃尺寸，不強制新裁切或第二張圖。
+- 品牌目前在 masthead 顯示 `ARCHIS.STUDIO`／`DIGITAL·COMPASS` 與 CSS pixel rocket；favicon 由 custom head 引用根目錄 [favicon.ico](../favicon.ico)／[favicon.png](../favicon.png)，全域分享 fallback 由 `_config.yml` 的 `image` 指向 favicon.png。頁面可覆寫分享圖片，不能把舊 branding／social 目錄示例當成已存在資源。
+- 不為舊字型 preload 範例新增 Inter／JetBrains Mono 本地檔；是否改字型載入另立需求，避免重複載入。
 
----
+## 無障礙與動態效果
 
-## ✅ 實作檢查清單 (Implementation Checklist)
+以 WCAG 2.1 AA 為原有目標，功能與驗證結果分開描述：
 
-### Design Token 實作
-- [ ] 所有 color variables 定義完成
-- [ ] Typography scale 建立完成
-- [ ] Spacing system 建立完成
-- [ ] Responsive breakpoints 設定完成
+- 一般文字對比至少 4.5:1，大字至少 3:1。大字依 W3C 為至少 18pt（24 CSS px），或 14pt（約 18.7 CSS px）粗體，不能把所有 18px 文字視為大字。定義見 [W3C 對比說明](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html)。
+- 控制項與傳達必要資訊的圖形依非文字對比要求核對；舊 3:1 目標保留，不代表所有裝飾、logo 或停用狀態同一適用範圍。
+- 保留語意 HTML、必要可存取名稱、鍵盤操作、可見焦點、圖片替代文字與螢幕閱讀器可讀性。不要為沿用舊 focus 示例，重建未定義的 `$accent-blue`。
+- 系統 `prefers-reduced-motion: reduce` 由主樣式縮短動畫／transition、取消延遲和平滑捲動，並保留完成狀態及搜尋／提示可見性。Matrix、粒子與閱讀完成提示的完整行為暫見 [Development](../DEVELOPMENT.md#現行互動約定)，待 B2 移交 Layout。
 
-### Component 實作  
-- [ ] Base components (Button, Card, Nav) 建立
-- [ ] Responsive behavior 測試完成
-- [ ] Accessibility attributes 新增完成
-- [ ] Browser compatibility 驗證完成
+token 或編譯通過不代表配色、焦點、響應式或瀏覽器已達標。視覺修改仍需真實瀏覽器、不同寬度、鍵盤與減少動態效果預覽；需要時量測實際對比，不以未勾選或歷史統計替代驗證。
 
-### Documentation
-- [ ] Component usage examples 建立
-- [ ] Code snippets 提供完整
-- [ ] Implementation notes 記錄清楚
+## 已知落差
 
----
+| 原文件內容 | 核對結果與保留方式 |
+|---|---|
+| `$accent-blue`、`$primary-*`、`$font-primary` 與通用 `.btn`／`.card`／`.nav` SCSS | 原示例不是目前設計系統可直接使用的 component API；保留其按鈕層次、卡片區塊與狀態意圖於舊版，現在引用真實元件，不自行另定配色 |
+| `$pixel-font`、`$futura-font` | 原字型意圖未定義於現有 variables；不自行新增或視為已載入 |
+| `$container-*`、`$content-width: 65ch`、`$prose-width: 75ch` | 原容器／閱讀寬度意圖未定義為這些 token；現有頁面使用各自 max-width，未決定統一 |
+| `$breakpoints` map 的 xs=0 與 `respond-to()` | 舊示意與現有獨立 `$breakpoint-xs: 480px` 不同；原 map、工具與 `.grid--*` 並非現有共用 API，不新增它們來遷就文件 |
+| `$ease-*`、`$duration-*` 與固定 grid 示例 | 原動畫／版面示意未集中為這些共用 token；保留設計背景，沿用現有 transition 與頁面樣式，不改動時長或欄數 |
+| 8px grid、1.25 modular scale | 舊理念不能直接推算完整數值；現有間距含 4px 步進，字級亦非每階嚴格 1.25 倍，本次不重做尺度 |
+| 所有元件已規格化、硬編碼為零、重複減少 98% 等 | 舊實作時期的宣稱，非本次量測；仍有硬編碼與頁面特定值，不當成目前品質保證 |
+| Asset 的背景／placeholder／branding 清單、多尺寸圖與字型 preload | 原規劃不等於已建資源或本次需求；圖片工具、已用資源與後續範圍以 Development／整理計畫為準 |
 
-## 📝 CHANGELOG
+這些落差不授權改程式、撤銷設計意圖或新增元件。若要採用舊構想或統一設計值，需另列選項、影響與驗證後取得使用者決定。
+
+## 歷史來源
+
+本次改寫前完整規格保留於 commit `2ab75a5` 的本檔；舊元件 SCSS、精確示意值、效益統計與建置 checklist 可由 Git 追溯。Asset 與圖片 README 仍保留原位，尚未封存。逐項接收與未完成範圍見[整理計畫](superpowers/plans/2026-10-23-documentation-reorganization.md)。
+
+## CHANGELOG
+
+### v5.0.0 (2026-10-23)
+
+- 依 variables／mixins／元件來源重整查閱方式，提供可驗證的用法示例。
+- 接收品牌、圖示與圖片視覺原則，區分字型宣告、資源載入與歷史構想。
+- 保留設計意圖與未決落差；修正對比大字單位，不改網站樣式或設定。
+
 
 ### v4.0.1 (2026-10-23)
 
@@ -608,7 +215,5 @@ $category-colors: (
 ### v1.0.0 (2025-10-11)
 - 建立 Design System 基礎規格
 
----
 
 **Maintained by**: Archi Chen & Agents
-**Last Updated**: 2026-10-23

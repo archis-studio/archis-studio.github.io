@@ -1,7 +1,7 @@
 # 文件索引
-# Version 5.0.5 | Updated: 2026-10-23
+# Version 5.0.6 | Updated: 2026-10-23
 
-供人／Agent 依任務找到主要文件。入口文件已整理，第三階段 A 已完成範例與發文指南；Content 已改為可選寫作參考，其餘主題規格待校正；原指南尚未封存。不以舊版 Complete 標籤判定內容與現況一致。
+供人／Agent 依任務找到主要文件。入口文件已整理，第三階段 A 已完成範例與發文指南；Content 已改為可選寫作參考，Design 已完成 B1 來源與範例校正；Layout／Navigation 待 B2 整併，原指南尚未封存。不以舊版 Complete 標籤判定內容與現況一致。
 
 ## 依任務查找
 
@@ -24,13 +24,13 @@
 | [README.md](../README.md) | 定位、範圍、現有能力與最短啟動入口 | 第二階段已整理 |
 | [agents.MD](../agents.MD) | Agent 授權邊界、修改流程、Git 與文件規則 | 第二階段已整理 |
 | [DEVELOPMENT.md](../DEVELOPMENT.md) | 架構、環境、測試、部署與排錯 | 操作優先；提供修改／測試入口，保留現行契約 |
-| [DESIGN_SYSTEM_SPEC.md](DESIGN_SYSTEM_SPEC.md) | 設計原則與 tokens／元件約束 | 待第三階段核對規格與實作落差 |
+| [DESIGN_SYSTEM_SPEC.md](DESIGN_SYSTEM_SPEC.md) | 設計約束、tokens／mixins、元件入口與已知落差 | B1 已校正，接收視覺原則；不代表全部落差已消除 |
 | [LAYOUT_SPEC.md](LAYOUT_SPEC.md) | 頁面結構、導覽、搜尋與互動 | 待第三階段整併 Navigation 與互動契約 |
 | [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) | 可選寫作建議與 Agent 協助方式 | 已依作者決定取消硬性寫作與排程要求 |
-| [ASSET_SPEC.md](ASSET_SPEC.md) | 待轉移的視覺／品牌規範與舊資源方案 | 操作查 Development；有效視覺規範待 Design／Layout 接收 |
+| [ASSET_SPEC.md](ASSET_SPEC.md) | 待轉移的視覺／品牌規範與舊資源方案 | 操作查 Development；通用視覺原則已到 Design，剩餘頁面內容待 B2 核對 |
 | [DOC_INDEX.md](DOC_INDEX.md) | 任務路由、文件責任及歷史入口 | 第二階段已整理 |
 
-原八份分工已調整：日常發文以 Development 與既有範例為入口，Content 保留簡短的寫作參考；Asset 待有效視覺規範轉移後評估封存。各文件自行維護版本與 CHANGELOG，索引不重複抄寫版本、日期、行數或測試數量。
+原八份分工已調整：日常發文以 Development 與既有範例為入口，Content 保留簡短的寫作參考；Asset 的通用視覺原則已轉入 Design，待其餘內容核對後評估封存。各文件自行維護版本與 CHANGELOG，索引不重複抄寫版本、日期、行數或測試數量。
 
 尚未校正的主題規格仍有約束效力；其中舊環境版本、檔案範例與功能進度需對照實作。操作以開發指南的已核對內容為準，設計政策不因程式現況自動改寫。文章由作者自行把關；舊發布節奏、篇幅、固定結構與語言格式要求已取消，決策由整理計畫追溯。
 
@@ -56,7 +56,7 @@
 | [AI_COLLABORATION_GUIDE.md](AI_COLLABORATION_GUIDE.md) | 核心協作規則已吸收到 agents；相衝突的自動 commit 流程由 agents 取代 |
 | [HOW-TO-EDIT-BIO.md](../HOW-TO-EDIT-BIO.md) | 作者設定操作已吸收到 Development；舊文案範例保留供追溯 |
 | [NAVIGATION_SPEC.md](NAVIGATION_SPEC.md) | 尚待整併至 Layout；與當前導覽／搜尋差異列於整理方案 |
-| [assets/images/README.md](../assets/images/README.md) | 有效視覺建議待 Design 接收；現行封面與頭像操作查 Development |
+| [assets/images/README.md](../assets/images/README.md) | 構圖與視覺建議已由 Design 接收；頭像操作查 Development，原文留待最後封存 |
 | [IMPLEMENTATION_CHECKLIST.md](IMPLEMENTATION_CHECKLIST.md) | 建站階段與歷史設計背景，待封存；不作為目前待辦清單 |
 | 原索引的 `PROFILE-IMAGE-TODO.md` 引用 | repository 查無此檔，不另建空文件；目前共用 WebP 頭像見 Development |
 
@@ -72,6 +72,10 @@
 完整舊版索引與變更紀錄可由 Git 追溯，整理前基準為 `d6b054a`。封存須待有效內容搬移與引用更新後進行。
 
 ## CHANGELOG
+
+### v5.0.6 (2026-10-23)
+
+- 同步 B1 設計來源／範例與 Asset 視覺原則接收狀態，保留 B2 與封存待辦。
 
 ### v5.0.5 (2026-10-23)
 
