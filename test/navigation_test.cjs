@@ -102,14 +102,87 @@ test('TOC is hidden when an article has no headings', async t => {
   assert.equal(document.querySelector('.post-toc').style.display, 'none');
 });
 
-test('tag interactions preserve the server-rendered unique article count', async t => {
-  const dom = new JSDOM(`<span id="tags-total-tags">2</span><span id="tags-total-posts">1</span>
-    <div id="tags-tag-cloud"><a class="tag-cloud-item-compact" data-group="tags" data-tag="AI" data-count="1">AI</a>
-    <a class="tag-cloud-item-compact" data-group="tags" data-tag="ChatGPT" data-count="1">ChatGPT</a></div>`, { runScripts: 'outside-only' });
+const tagCloudSource = fs.readFileSync(path.join(root, '_includes/tag-cloud-compact.html'), 'utf8')
+  .match(/<script>([\s\S]*?)<\/script>/)[1];
+
+async function tagCloud(t, prefix) {
+  const tags = [['gamma', 7], ['AlphaAI', 2], ['zebra', 10], ['Betaai', 3]];
+  const dom = new JSDOM(`<span id="${prefix}-total-tags">4</span>
+    <span id="${prefix}-total-posts">12</span>
+    <input id="${prefix}-tag-search">
+    <button id="${prefix}-clear-search" style="display:none">Clear</button>
+    <button class="sort-btn-compact active" data-sort="popular" data-group="${prefix}">Popular</button>
+    <button class="sort-btn-compact" data-sort="name" data-group="${prefix}">Name</button>
+    <div id="${prefix}-tag-cloud">${tags.map(([name, count]) =>
+      `<a class="tag-cloud-item-compact" data-group="${prefix}" data-tag="${name}" data-count="${count}">${name}</a>`
+    ).join('')}</div>`, { runScripts: 'outside-only' });
   t.after(() => dom.window.close());
-  const source = fs.readFileSync(path.join(root, '_includes/tag-cloud-compact.html'), 'utf8')
-    .match(/<script>([\s\S]*?)<\/script>/)[1].replaceAll('{{ include.id_prefix }}', 'tags');
-  dom.window.eval(source);
+  dom.window.eval(tagCloudSource.replaceAll('{{ include.id_prefix }}', prefix));
   await new Promise(resolve => dom.window.document.addEventListener('DOMContentLoaded', resolve, { once: true }));
-  assert.equal(dom.window.document.getElementById('tags-total-posts').textContent, '1');
-});
+  const document = dom.window.document;
+  const input = document.getElementById(`${prefix}-tag-search`);
+  return {
+    document,
+    input,
+    clear: document.getElementById(`${prefix}-clear-search`),
+    items() { return Array.from(document.querySelectorAll('.tag-cloud-item-compact')); },
+    search(query) {
+      input.value = query;
+      input.dispatchEvent(new dom.window.Event('input'));
+    },
+    sort(order) { document.querySelector(`[data-sort="${order}"]`).click(); },
+    assertCounts() {
+      assert.equal(document.getElementById(`${prefix}-total-tags`).textContent, '4');
+      assert.equal(document.getElementById(`${prefix}-total-posts`).textContent, '12');
+    }
+  };
+}
+
+for (const prefix of ['posts', 'tags']) {
+  test(`${prefix} tag search matches case-insensitive substrings and handles no results`, async t => {
+    const view = await tagCloud(t, prefix);
+    for (const [query, expected] of [
+      ['AI', ['AlphaAI', 'Betaai']],
+      ['phaa', ['AlphaAI']],
+      ['__missing__', []]
+    ]) {
+      view.search(query);
+      const visible = view.items().filter(item => item.style.display !== 'none');
+      assert.deepEqual(visible.map(item => item.dataset.tag), expected);
+      for (const item of view.items()) {
+        assert.equal(item.classList.contains('search-match'), expected.includes(item.dataset.tag));
+      }
+      assert.equal(view.clear.style.display, 'block');
+      view.assertCounts();
+    }
+  });
+
+  test(`${prefix} tag clear restores all results and returns focus to search`, async t => {
+    const view = await tagCloud(t, prefix);
+    view.search('__missing__');
+    view.clear.click();
+    assert.equal(view.input.value, '');
+    assert.deepEqual(view.items().filter(item => item.style.display !== 'none').map(item => item.dataset.tag),
+      ['gamma', 'AlphaAI', 'zebra', 'Betaai']);
+    assert.equal(view.clear.style.display, 'none');
+    assert.equal(view.document.activeElement, view.input);
+    view.assertCounts();
+  });
+
+  test(`${prefix} tag sorting uses numeric popularity and names without resetting the filter or counts`, async t => {
+    const view = await tagCloud(t, prefix);
+    view.search('AI');
+    for (const [order, expected] of [
+      ['popular', ['zebra', 'gamma', 'Betaai', 'AlphaAI']],
+      ['name', ['AlphaAI', 'Betaai', 'gamma', 'zebra']]
+    ]) {
+      view.sort(order);
+      assert.deepEqual(view.items().map(item => item.dataset.tag), expected);
+      assert.deepEqual(view.items().filter(item => item.style.display !== 'none').map(item => item.dataset.tag),
+        expected.filter(name => ['AlphaAI', 'Betaai'].includes(name)));
+      assert.equal(view.input.value, 'AI');
+      assert.deepEqual(Array.from(view.document.querySelectorAll('.sort-btn-compact.active')).map(button => button.dataset.sort), [order]);
+      view.assertCounts();
+    }
+  });
+}
