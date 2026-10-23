@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.2.1 | Updated: 2026-10-24
+Version 4.2.2 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -123,7 +123,7 @@ author_profile: true
 ---
 ```
 
-樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins。共用動畫集中於 `_sass/shared/_animations.scss`，在頁面樣式之後載入以保留目前優先順序；不同效果的同名動畫仍待個別整理。約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
+樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins。共用動畫集中於 `_sass/shared/_animations.scss`，在頁面樣式之前載入；不同效果使用元件專屬動畫名稱，避免依賴載入順序覆蓋。約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
 
 ## 作者資料設定
 
@@ -235,6 +235,10 @@ Markdown 章節採常用 GitHub 標題錨點規則，支援中文、格式化文
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.2.2 (2026-10-24)
+
+- 導覽列、證照、搜尋、About 與標籤火焰動畫分別命名，共用動畫改於頁面樣式之前載入。
 
 ### v4.2.1 (2026-10-24)
 

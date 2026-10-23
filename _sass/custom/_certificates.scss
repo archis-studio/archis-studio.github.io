@@ -26,10 +26,10 @@
   height: 2px;
   background: white;
   border-radius: 50%;
-  animation: twinkle 3s infinite;
+  animation: certificateStarTwinkle 3s infinite;
 }
 
-@keyframes twinkle {
+@keyframes certificateStarTwinkle {
   0%, 100% { opacity: 0.3; }
   50% { opacity: 1; }
 }

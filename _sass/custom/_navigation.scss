@@ -83,7 +83,7 @@
     height: 1px;
     background: var(--nav-text);
     border-radius: 50%;
-    animation: twinkle 2s ease-in-out infinite;
+    animation: navStarTwinkle 2s ease-in-out infinite;
     box-shadow: 
       // White stars
       50px 10px 0 0 rgba(255, 255, 255, 0.8),
@@ -126,7 +126,7 @@
     height: 2px;
     background: var(--nav-gold);
     border-radius: 50%;
-    animation: twinkle 3s ease-in-out infinite;
+    animation: navStarTwinkle 3s ease-in-out infinite;
     animation-delay: 1s;
     box-shadow: 
       // Gold stars
@@ -165,11 +165,11 @@
 // Shooting stars animation
 .masthead__starfield {
   &:hover::before {
-    animation: twinkle 1.5s ease-in-out infinite, shootingStar 2s linear infinite;
+    animation: navStarTwinkle 1.5s ease-in-out infinite, shootingStar 2s linear infinite;
   }
 }
 
-@keyframes twinkle {
+@keyframes navStarTwinkle {
   0%, 100% { opacity: 0.4; }
   50% { opacity: 1; }
 }

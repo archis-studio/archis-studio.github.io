@@ -295,7 +295,7 @@
       top: -8px;
       right: -8px;
       font-size: 1.25rem;
-      animation: fireFlicker 1.5s ease-in-out infinite;
+      animation: tagFireFlicker 1.5s ease-in-out infinite;
       filter: drop-shadow(0 0 8px rgba(255, 100, 0, 0.8));
     }
   }
@@ -401,7 +401,7 @@
 }
 
 // Fire flicker animation for hot tags
-@keyframes fireFlicker {
+@keyframes tagFireFlicker {
   0%, 100% { 
     transform: translateY(0) scale(1);
     opacity: 1;

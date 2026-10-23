@@ -12,6 +12,9 @@
 @import "design-system/variables";
 @import "design-system/mixins";
 
+// Shared animations
+@import "shared/animations";
+
 // Custom Styles
 @import "custom/navigation";
 @import "custom/sidebar";
@@ -24,9 +27,6 @@
 @import "custom/certificates";
 @import "custom/comments";         // Giscus comments styling
 @import "search-overlay";
-
-// Keep shared keyframes after page styles to preserve current animation precedence.
-@import "shared/animations";
 
 // Respect OS motion preferences while retaining animation end states (e.g. skill bars).
 @media (prefers-reduced-motion: reduce) {

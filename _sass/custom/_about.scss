@@ -913,7 +913,7 @@
   
   // Unlocked pulse animation
   &.unlocked .achievement-icon {
-    animation: iconFloat 3s ease-in-out infinite;
+    animation: achievementIconFloat 3s ease-in-out infinite;
   }
 }
 
@@ -935,7 +935,7 @@
   }
 }
 
-@keyframes iconFloat {
+@keyframes achievementIconFloat {
   0%, 100% {
     transform: translateY(0) scale(1);
   }
