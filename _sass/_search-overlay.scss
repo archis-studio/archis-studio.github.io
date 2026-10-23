@@ -56,9 +56,12 @@
 /* Search container */
 .search-container {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 90%;
   max-width: 800px;
   max-height: 85vh;
+  overflow-y: auto;
   background: rgba(20, 20, 30, 0.95);
   border: 1px solid rgba(138, 118, 98, 0.3);
   border-radius: 16px;
@@ -69,6 +72,12 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   animation: slideIn 0.4s ease-out;
+
+  > .search-header,
+  > .search-input-wrapper,
+  > .search-shortcuts {
+    flex-shrink: 0;
+  }
   
   @keyframes slideIn {
     from {
@@ -230,6 +239,8 @@
 
 /* Search results */
 .search-results {
+  flex: 0 1 auto;
+  min-height: $space-24;
   max-height: 50vh;
   overflow-y: auto;
   margin-bottom: 1rem;

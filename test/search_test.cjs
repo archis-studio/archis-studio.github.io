@@ -142,6 +142,30 @@ test('close restores previous overflow and shortcut opener across repeated opens
   assert.equal(view.document.activeElement, outside);
 });
 
+test('reopening search resets panel and result scrolling before focusing the input', async t => {
+  const view = await setup(t);
+  const panel = view.document.querySelector('.search-container');
+  const results = view.document.getElementById('searchResults');
+  let scrollAtFocus;
+  view.input.addEventListener('focus', () => {
+    scrollAtFocus = [panel.scrollTop, results.scrollTop];
+  });
+  for (const opener of ['button', 'shortcut']) {
+    view.query('API');
+    view.document.querySelector('.search-result-item').focus();
+    panel.scrollTop = 57;
+    results.scrollTop = 180;
+    view.key(view.document.activeElement, 'Escape');
+    if (opener === 'button') view.toggle.click();
+    else view.key(view.toggle, 'k', { ctrlKey: true });
+    assert.equal(panel.scrollTop, 0, opener);
+    assert.equal(results.scrollTop, 0, opener);
+    assert.deepEqual(scrollAtFocus, [0, 0], opener);
+    assert.equal(view.input.value, '');
+    assert.equal(view.document.activeElement, view.input);
+  }
+});
+
 test('background controls are inert only while the search modal is open', async t => {
   const view = await setup(t);
   const outside = view.document.getElementById('outside');

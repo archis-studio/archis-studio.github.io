@@ -456,10 +456,6 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  
-  @media (max-width: 768px) {
-    display: none;
-  }
 }
 
 .action-btn {

@@ -4,11 +4,12 @@
 
   function initialize() {
     const overlay = document.getElementById('searchOverlay');
+    const panel = document.querySelector('.search-container');
     const input = document.getElementById('searchInput');
     const results = document.getElementById('searchResults');
     const dataElement = document.getElementById('searchData');
     const toggle = document.querySelector('.search-toggle');
-    if (!overlay || !input || !results || !dataElement || !toggle) return;
+    if (!overlay || !panel || !input || !results || !dataElement || !toggle) return;
 
     const data = JSON.parse(dataElement.textContent);
     const status = document.getElementById('searchStatus');
@@ -76,6 +77,8 @@
         });
         if (branch.parentElement === document.body) break;
       }
+      panel.scrollTop = 0;
+      results.scrollTop = 0;
       input.focus();
     }
 

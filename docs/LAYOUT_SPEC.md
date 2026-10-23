@@ -1,8 +1,8 @@
 # 頁面結構與互動
 
-Version 4.0.1 | Updated: 2026-10-24
+Version 4.0.2 | Updated: 2026-10-24
 
-供人／Agent 查找頁面組成、互動約定及實作來源。設計原則與 tokens 見 [Design System](DESIGN_SYSTEM_SPEC.md)，修改入口、測試指令與部署見 [Development](../DEVELOPMENT.md)。本次核對的是來源與既有測試，不代表重新完成瀏覽器、無障礙或效能量測。
+供人／Agent 查找頁面組成、互動約定及實作來源。設計原則與 tokens 見 [Design System](DESIGN_SYSTEM_SPEC.md)，修改入口、測試指令與部署見 [Development](../DEVELOPMENT.md)。來源、DOM 測試、瀏覽器與效能量測各有驗證範圍，不能互相替代。
 
 ## 頁面與模板對照
 
@@ -46,8 +46,9 @@ Version 4.0.1 | Updated: 2026-10-24
 
 ### 搜尋操作與焦點
 
-- 搜尋按鈕或 Cmd／Ctrl+K 開啟；快捷鍵可再次關閉。關閉鈕、覆蓋層本身的背景點擊、Escape 可關閉。
-- 開啟時聚焦輸入框、限制背景捲動，將背景設為 inert；關閉時還原原有 overflow 與新增的 inert 狀態，焦點回到開啟者，失效時回搜尋按鈕。
+- 搜尋按鈕在手機與桌面均保留；按鈕或 Cmd／Ctrl+K 開啟，快捷鍵可再次關閉。關閉鈕、覆蓋層本身的背景點擊、Escape 可關閉。
+- 對話框受視窗高度限制，結果區依剩餘空間縮小並捲動；極短視窗可捲動整個面板，保留輸入、結果與關閉控制的可達性。
+- 開啟時先重設面板與結果區捲動位置，再聚焦輸入框、限制背景捲動，將背景設為 inert；關閉時還原原有 overflow 與新增的 inert 狀態，焦點回到開啟者，失效時回搜尋按鈕。
 - 維持 dialog／`aria-modal`／`aria-hidden`／狀態通知與 toggle 關聯，Tab／Shift+Tab 循環在覆蓋層內，外移焦點會拉回輸入框。
 - 輸入框的上下鍵選取結果，Enter 開啟有效選取；IME 組字期間不攔截相關快捷鍵，避免中文選字誤導覽。
 
@@ -160,6 +161,11 @@ certificates layout 由 `page.certificates` 產生卡片與分類篩選，圖片
 舊 Layout 完整內容可由 commit `94dfac1` 的本檔追溯；[Navigation 原文](archive/NAVIGATION_SPEC.md)已封存，現行行為約定以本文件為準。Asset 的通用視覺原則已在 Design，剩餘頁面結構／載入／裝飾構想已於本文件分清實作與歷史；[Asset 原文](archive/ASSET_SPEC.md)已封存。
 
 ## CHANGELOG
+
+### v4.0.2 (2026-10-24)
+
+- 搜尋入口保留手機顯示，補上結果區與短視窗面板的捲動約定。
+- 搜尋重開時重設捲動位置，避免短視窗的關閉控制被舊位置裁切。
 
 ### v4.0.1 (2026-10-24)
 
