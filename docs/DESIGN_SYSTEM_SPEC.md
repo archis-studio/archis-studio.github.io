@@ -1,6 +1,6 @@
 # Design System 設計與實作參考
 
-Version 5.0.1 | Updated: 2026-10-23
+Version 5.1.0 | Updated: 2026-10-24
 
 供人／Agent 維護視覺與共用樣式。本文區分設計約束、已定義工具與尚未實作的舊示意；不以程式現況授權改變設計。頁面與互動見 [Layout](LAYOUT_SPEC.md)，操作及驗證見 [Development](../DEVELOPMENT.md)。
 
@@ -160,6 +160,21 @@ Version 5.0.1 | Updated: 2026-10-23
 
 token 或編譯通過不代表配色、焦點、響應式或瀏覽器已達標。視覺修改仍需真實瀏覽器、不同寬度、鍵盤與減少動態效果預覽；需要時量測實際對比，不以未勾選或歷史統計替代驗證。
 
+### 原階段品質目標
+
+舊實作清單的下列目標保留為後續量測參考，尚未在本次量測，不代表已達標，也不新增 CI 或發布門檻。README 的 PageSpeed >90 是長期方向，下表保留原建站階段不同裝置與工具的驗收背景：
+
+| 原指標 | 原目標 |
+|---|---|
+| PageSpeed Desktop | >90 |
+| PageSpeed Mobile | >85 |
+| Lighthouse Performance | >90 |
+| Lighthouse Accessibility | >95 |
+| Lighthouse Best Practices | >90 |
+| Lighthouse SEO | >95 |
+
+來源：[封存實作清單](archive/IMPLEMENTATION_CHECKLIST.md)。自動測試／建置與上述評分量測不同，需另記工具、環境、頁面與時間。
+
 ## 已知落差
 
 | 原文件內容 | 核對結果與保留方式 |
@@ -177,9 +192,13 @@ token 或編譯通過不代表配色、焦點、響應式或瀏覽器已達標�
 
 ## 歷史來源
 
-本次改寫前完整規格保留於 commit `2ab75a5` 的本檔；舊元件 SCSS、精確示意值、效益統計與建置 checklist 可由 Git 追溯。Asset 與圖片 README 仍保留原位，尚未封存。逐項接收與未完成範圍見[整理計畫](superpowers/plans/2026-10-23-documentation-reorganization.md)。
+本次改寫前完整規格保留於 commit `2ab75a5` 的本檔；舊元件 SCSS、精確示意值、效益統計與建置 checklist 可由 Git 追溯。[Asset 原文](archive/ASSET_SPEC.md)與[圖片 README](archive/assets-images-README.md)已封存，僅供歷史追溯。逐項接收與未完成範圍見[整理計畫](superpowers/plans/2026-10-23-documentation-reorganization.md)。
 
 ## CHANGELOG
+
+### v5.1.0 (2026-10-24)
+
+- 更新封存來源，保留舊實作清單的裝置／Lighthouse 品質目標為未量測參考，現行原則不變。
 
 ### v5.0.1 (2026-10-23)
 

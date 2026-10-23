@@ -1,6 +1,6 @@
 # 頁面結構與互動
 
-Version 4.0.0 | Updated: 2026-10-23
+Version 4.0.1 | Updated: 2026-10-24
 
 供人／Agent 查找頁面組成、互動約定及實作來源。設計原則與 tokens 見 [Design System](DESIGN_SYSTEM_SPEC.md)，修改入口、測試指令與部署見 [Development](../DEVELOPMENT.md)。本次核對的是來源與既有測試，不代表重新完成瀏覽器、無障礙或效能量測。
 
@@ -157,9 +157,13 @@ certificates layout 由 `page.certificates` 產生卡片與分類篩選，圖片
 | role=menubar／menuitem、aria-current、sr-only 示意與 focus SCSS | 原可及性意圖保留，現行標記與狀態逐元件核對；搜尋已有焦點管理不代表其他控制項同樣完成 |
 | 品質 checklist 與動畫效能目標 | 不將空白勾選當成當前全部未完成，也不將來源存在當成瀏覽器實測通過 |
 
-舊 Layout 完整內容可由 commit `94dfac1` 的本檔追溯；[Navigation 原文](NAVIGATION_SPEC.md)仍在原位，已整併的行為以本文件為準。Asset 的通用視覺原則已在 Design，剩餘頁面結構／載入／裝飾構想已於本文件分清實作與歷史；原文尚未封存。
+舊 Layout 完整內容可由 commit `94dfac1` 的本檔追溯；[Navigation 原文](archive/NAVIGATION_SPEC.md)已封存，現行行為約定以本文件為準。Asset 的通用視覺原則已在 Design，剩餘頁面結構／載入／裝飾構想已於本文件分清實作與歷史；[Asset 原文](archive/ASSET_SPEC.md)已封存。
 
 ## CHANGELOG
+
+### v4.0.1 (2026-10-24)
+
+- 更新 Navigation／Asset 歷史來源的封存位置，不變更頁面或互動約定。
 
 ### v4.0.0 (2026-10-23)
 

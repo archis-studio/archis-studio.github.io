@@ -1,5 +1,5 @@
 # ARCHIS.STUDIO
-# Version 4.0.1 | Updated: 2026-10-23
+# Version 4.0.2 | Updated: 2026-10-24
 
 **MEMORY IS THE NEW IMMORTALITY**
 
@@ -27,7 +27,7 @@ Archis Studio 是以繁體中文分享 AI 工具、Backend、Data Science 與跨
 - 尊重系統減少動態效果偏好；Matrix 在不可見時暫停，閱讀完成提示保持靜音。
 - Ruby、DOM 回歸測試與 production 建置驗證，協助檢查 GitHub Pages 相容性。
 
-八個內容領域包含 AI 工具、軟體開發、資料科學、數位行銷、量化交易、閱讀筆記、綠色能源與成長旅程。文章欄位及分類命名見[內容規範](docs/CONTENT_STRATEGY.md)；目前可用的最小範例見[開發指南](DEVELOPMENT.md#建立內容)。
+八個內容領域包含 AI 工具、軟體開發、資料科學、數位行銷、量化交易、閱讀筆記、綠色能源與成長旅程。文章範例、欄位及分類命名見[發文指南](DEVELOPMENT.md#建立內容)；內容取捨與發布由作者決定，可選建議見[寫作參考](docs/CONTENT_STRATEGY.md)。
 
 舊文件中的 Phase 0–10 是建站歷史。尚未採用的構想與待確認的第三方服務，不視為目前待辦或已驗證能力。
 
@@ -54,7 +54,7 @@ bundle exec jekyll serve
 
 修改前先查相關規格與實作，完成驗證後再依使用者指示提交。歡迎以 Issue 或 PR 討論內容與改善建議。
 
-文件正分階段整併：四份入口已整理，四份主題規格仍待校正。原指南與規格保留原位，差異與去向記錄於[整理方案](docs/superpowers/plans/2026-10-23-documentation-reorganization.md)。
+日常維護依文件入口查閱；舊指南保留於 [docs/archive](docs/archive/)，已完成計畫與歷史去向由[文件索引](docs/DOC_INDEX.md#歷史與封存)導覽。
 
 ## 聯絡與授權
 
@@ -63,6 +63,10 @@ bundle exec jekyll serve
 原 README 標示 MIT License，歡迎作為 Jekyll 部落格模板。目前 repository 尚無獨立 `LICENSE` 檔；本次整理保留原授權說明，不另行制定授權條款。
 
 ## CHANGELOG
+
+### v4.0.2 (2026-10-24)
+
+- 更新現行發文入口與歷史封存導覽，移除整併中的過渡狀態。
 
 ### v4.0.1 (2026-10-23)
 

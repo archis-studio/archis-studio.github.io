@@ -1,7 +1,17 @@
+> **歷史文件（已封存）**
+>
+> 原路徑：`docs/ASSET_SPEC.md` · 來源 commit：`71bafa8` · 封存日期：2026-10-24
+>
+> 現行入口：[DEVELOPMENT.md](../../DEVELOPMENT.md) · [DESIGN_SYSTEM_SPEC.md](../DESIGN_SYSTEM_SPEC.md) · [LAYOUT_SPEC.md](../LAYOUT_SPEC.md)
+>
+> 本文保留當時的規範、進度與構想，不作為現行操作、授權或待辦；其中未提交、未上線、未完成等敘述僅代表當時狀態。舊版的寫作限制以現行寫作參考與作者指示為準。原正文保留，僅調整相對連結以配合搬移。
+
+---
+
 # Asset 資源檔案規格書
 # Version 3.0.3 | Updated: 2026-10-23
 
-> **整理狀態**：本檔保留原資源方案，尚未封存。現行封面／頭像操作見 [Development](../DEVELOPMENT.md#圖片處理)，已接收的視覺原則見 [Design System](DESIGN_SYSTEM_SPEC.md#品牌圖示與圖片原則)。下方目錄、檔名與多尺寸範例不代表資源已建立；頁面特定內容與未採用構想已由 [Layout](LAYOUT_SPEC.md#舊方案與已知落差)核對；原文保留供最後封存，不再作為現行操作入口。
+> **整理狀態**：本檔保留原資源方案，尚未封存。現行封面／頭像操作見 [Development](../../DEVELOPMENT.md#圖片處理)，已接收的視覺原則見 [Design System](../DESIGN_SYSTEM_SPEC.md#品牌圖示與圖片原則)。下方目錄、檔名與多尺寸範例不代表資源已建立；頁面特定內容與未採用構想已由 [Layout](../LAYOUT_SPEC.md#舊方案與已知落差)核對；原文保留供最後封存，不再作為現行操作入口。
 
 ## 📁 資源檔案架構
 

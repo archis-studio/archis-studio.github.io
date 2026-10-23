@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.1.0 | Updated: 2026-10-23
+Version 4.1.1 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -106,7 +106,7 @@ Markdown／YAML → Liquid layout／include → 靜態 HTML；SCSS → CSS；Pag
 
 兩篇範例本身是已發布文章，也參與搜尋、分類與精選，複製時不要覆寫原檔。較完整範例沿用現有 275×183 圖片示範欄位；這不是新圖片的建議解析度，也不需為範例維護第二張圖片。
 
-作者自行決定內容與發布時機；可選建議見[寫作參考](docs/CONTENT_STRATEGY.md)。圖片操作見[圖片處理](#圖片處理)，其他資源約束仍見 [Asset](docs/ASSET_SPEC.md)。
+作者自行決定內容與發布時機；可選建議見[寫作參考](docs/CONTENT_STRATEGY.md)。圖片操作見[圖片處理](#圖片處理)，視覺與資源原則見 [Design System](docs/DESIGN_SYSTEM_SPEC.md#品牌圖示與圖片原則)。
 
 ### 新增頁面與樣式
 
@@ -224,6 +224,10 @@ production 驗證結束後清除暫存目錄，不依賴舊 `_site`；不執行�
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.1.1 (2026-10-24)
+
+- 資源約束直達 Design，舊 Asset 手冊已封存。
 
 ### v4.1.0 (2026-10-23)
 

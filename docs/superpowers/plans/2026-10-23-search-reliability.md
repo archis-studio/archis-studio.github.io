@@ -1,5 +1,9 @@
 # Search Reliability Implementation Plan
-# Version 1.0.0 | Updated: 2026-10-23
+# Version 1.0.1 | Updated: 2026-10-24
+
+> **歷史計畫：實作已完成** · 標示日期：2026-10-24
+>
+> 下方保留當時的範圍、測試與限制；未 commit／push、待 CI／瀏覽器驗證等狀態只描述當時，不代表目前部署結果或現在的授權。現行操作：[DEVELOPMENT.md](../../../DEVELOPMENT.md) · [LAYOUT_SPEC.md](../../../docs/LAYOUT_SPEC.md)。
 
 **Goal:** Fix literal search, safe rendering, category destinations and modal keyboard behavior without changing search appearance or deployment.
 **Spec:** User approved the five search improvements proposed in the conversation and asked to continue after pushing phase 1.
@@ -28,3 +32,9 @@ Normal case-insensitive title/excerpt/category/tag scoring and ten-post limit re
 - Independent reviewer reran all DOM tests and found no actionable regressions.
 - Existing Minimal Mistakes 4.27.0 CSS lacks sr-only; status uses its existing visually-hidden helper instead.
 - True browser layout/scrolling/responsive verification remains unperformed. Remote CI for these changes requires a later user commit/push. Ruby lockfile and Pages settings remain unchanged.
+
+## CHANGELOG
+
+### v1.0.1 (2026-10-24)
+
+- 補上歷史狀態與現行指南入口，保留當時執行紀錄與驗證限制。

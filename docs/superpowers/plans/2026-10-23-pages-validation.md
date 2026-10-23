@@ -1,5 +1,9 @@
 # GitHub Pages Validation Implementation Plan
-# Version 1.0.0 | Updated: 2026-10-23
+# Version 1.0.1 | Updated: 2026-10-24
+
+> **歷史計畫：實作已完成** · 標示日期：2026-10-24
+>
+> 下方保留當時的範圍、測試與限制；未 commit／push、待 CI／瀏覽器驗證等狀態只描述當時，不代表目前部署結果或現在的授權。現行操作：[DEVELOPMENT.md](../../../DEVELOPMENT.md)。
 
 **Goal:** Restore front matter defaults and catch build/output regressions before publishing.
 **Architecture:** Keep github-pages 232, Jekyll 3.10.0, the existing lockfile and Minimal Mistakes 4.27.0. Add a read-only validation workflow independent of legacy Pages deployment.
@@ -44,3 +48,9 @@ Local sandbox DNS initially blocked remote-theme download; permitted network exe
 - Independent read-only review: no important findings.
 - Browser/responsive verification not performed: no browser tooling installed. GitHub Actions has not run because changes remain uncommitted and unpushed.
 - A trial assertion expecting baseline articles to lack layout was rejected by evidence; inspection of jekyll-default-layout identified the existing fallback. The YAML configuration regression remains confirmed.
+
+## CHANGELOG
+
+### v1.0.1 (2026-10-24)
+
+- 補上歷史狀態與現行指南入口，保留當時執行紀錄與驗證限制。

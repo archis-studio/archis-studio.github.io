@@ -1,3 +1,13 @@
+> **歷史文件（已封存）**
+>
+> 原路徑：`docs/PROJECT_CHARTER.md` · 來源 commit：`71bafa8` · 封存日期：2026-10-24
+>
+> 現行入口：[README.md](../../README.md) · [agents.MD](../../agents.MD) · [DESIGN_SYSTEM_SPEC.md](../DESIGN_SYSTEM_SPEC.md)
+>
+> 本文保留當時的規範、進度與構想，不作為現行操作、授權或待辦；其中未提交、未上線、未完成等敘述僅代表當時狀態。舊版的寫作限制以現行寫作參考與作者指示為準。原正文保留，僅調整相對連結以配合搬移。
+
+---
+
 # 專案憲章 - Project Charter
 # Version 3.0.1 | Updated: 2026-10-23
 
