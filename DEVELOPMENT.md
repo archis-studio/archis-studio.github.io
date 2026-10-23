@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.2.9 | Updated: 2026-10-24
+Version 4.2.10 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -37,7 +37,7 @@ BUNDLE_FROZEN=true bundle exec ruby scripts/validate.rb
 | 搜尋 | `assets/js/search.js`、`_includes/search-overlay.html` | `test/search_data_test.rb`、`test/search_test.cjs` |
 | 選單與導覽 | `_includes/masthead.html`、`assets/js/navigation.js`、`_sass/custom/_navigation.scss` | `test/navigation_test.rb`、`test/navigation_test.cjs` |
 | 文章目錄、標籤、閱讀時間 | `_layouts/post.html`、`_layouts/tags.html`、`_includes/tag-cloud-compact.html` | navigation 測試、production 驗證 |
-| 首頁與動態效果 | `_layouts/home.html`、`_includes/page__hero.html`、主樣式、文章模板 | `test/motion_test.cjs`、navigation 測試、瀏覽器預覽 |
+| 首頁與動態效果 | `index.html`、`_layouts/home.html`、`_includes/page__hero.html`、主樣式、文章模板 | `test/motion_test.cjs`、navigation 測試、production 驗證、瀏覽器預覽 |
 | 視覺與元件 | `assets/css/main.scss` → `_sass/design-system/`、`_sass/shared/`、`_sass/components/`、`_sass/custom/` | production 驗證、響應式與鍵盤預覽 |
 | 作者與 About | `_config.yml` 的 `author`、`_includes/author-profile.html`、`_pages/about.md` | production 驗證、側欄與 About 預覽 |
 | 文件連結 | `scripts/check-documentation-links.rb`、根目錄 Markdown 與 `docs/` | `test/documentation_links_test.rb`、直接執行檢查工具 |
@@ -186,7 +186,7 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 | 文件連結 | 根目錄 Markdown 與 `docs/`（含封存／計畫）的本地檔案與 Markdown 章節；不發送外部請求 |
 | Ruby 測試 | 設定、Liquid、文件檢查器、搜尋 JSON／URL 安全、圖片與導覽契約 |
 | DOM 測試 | 執行搜尋與模板互動，涵蓋排序、上限、特殊字元、IME、Tab／Escape、焦點還原及動態偏好；jsdom 不實作真實版面與 CSS 動畫 |
-| production 驗證 | 重複 YAML key、全新暫存建置、主要頁面與全部已發布文章、分類、標籤連結／唯一 ID、統計、首頁卡片上限、本地資源、發布排除與重複搜尋輸出 |
+| production 驗證 | 重複 YAML key、全新暫存建置、主要頁面與全部已發布文章、分類、標籤連結／唯一 ID、統計、首頁卡片上限、[Hero／Canvas 唯一性與位置](docs/LAYOUT_SPEC.md#首頁)、本地資源、發布排除與重複搜尋輸出 |
 | 瀏覽器預覽 | Chrome／Edge、Firefox、Safari／iOS；手機、平板、桌面檢查版面、圖片、焦點、鍵盤與捲動 |
 
 production 驗證結束後清除暫存目錄，不依賴舊 `_site`；不執行瀏覽器 JavaScript、不驗證全部外部連結、第三方服務或效能分數。DOM 的 Canvas／排程模擬不等於動畫或耗電量測。

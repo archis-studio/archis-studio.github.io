@@ -43,4 +43,35 @@ class ConfigTest < Minitest::Test
       assert SiteValidation.check_html(path, "article.post-single .post-content")
     end
   end
+
+  def test_homepage_validation_accepts_hero_before_columns_in_one_main_landmark
+    document = Nokogiri::HTML(homepage_markup)
+    assert_same document, SiteValidation.check_homepage(document)
+  end
+
+  def test_homepage_validation_rejects_missing_duplicate_or_misplaced_hero_elements
+    hero = '<section class="page-hero"><canvas id="matrixCanvas"></canvas></section>'
+    columns = '<div id="main"><article class="home-page"></article></div>'
+    {
+      "missing hero" => "<main>#{columns}</main>",
+      "duplicate hero" => "<main>#{hero}#{hero}#{columns}</main>",
+      "missing canvas" => homepage_markup.sub('<canvas id="matrixCanvas"></canvas>', ''),
+      "duplicate canvas" => homepage_markup.sub('</main>', '<canvas id="matrixCanvas"></canvas></main>'),
+      "hero inside columns" => "<main><div id=\"main\">#{hero}<article class=\"home-page\"></article></div></main>",
+      "hero outside landmark" => "#{hero}<main>#{columns}</main>",
+      "hero after columns" => "<main>#{columns}#{hero}</main>",
+      "duplicate landmarks" => homepage_markup + '<div role="main"></div>'
+    }.each do |scenario, markup|
+      assert_raises(SiteValidation::Error, scenario) do
+        SiteValidation.check_homepage(Nokogiri::HTML(markup))
+      end
+    end
+  end
+
+  private
+
+  def homepage_markup
+    '<main><section class="page-hero"><canvas id="matrixCanvas"></canvas></section>' \
+      '<div id="main"><article class="home-page"></article></div></main>'
+  end
 end

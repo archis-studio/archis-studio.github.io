@@ -48,6 +48,22 @@ class NavigationTest < Minitest::Test
     assert tags.at_css("[id='#{href.split('#').last}']")
   end
 
+  def test_hero_omits_missing_empty_and_whitespace_only_descriptions
+    [{}, { "description" => nil }, { "description" => "" }, { "description" => " \n\t" }].each do |fields|
+      document = render("_includes/page__hero.html", { "page" => { "hero" => { "title" => "Studio" }.merge(fields) } })
+      assert_nil document.at_css(".page-hero__description"), fields.inspect
+    end
+  end
+
+  def test_hero_preserves_a_nonempty_description
+    description = "  Build and learn together  "
+    document = render("_includes/page__hero.html", {
+      "page" => { "hero" => { "title" => "Studio", "description" => description } }
+    })
+    assert_equal 1, document.css(".page-hero__description").size
+    assert_equal description, document.at_css(".page-hero__description").text
+  end
+
   def test_tag_statistics_count_posts_once_without_javascript
     entries = posts(2)
     document = render("_includes/tag-cloud-compact.html", {

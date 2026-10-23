@@ -24,6 +24,24 @@ module SiteValidation
     document
   end
 
+  def self.check_homepage(document)
+    heroes = document.css(".page-hero")
+    raise Error, "Homepage must contain exactly one Hero" unless heroes.size == 1
+    hero = heroes.first
+    unless document.css("#matrixCanvas").size == 1 && hero.at_css("canvas#matrixCanvas")
+      raise Error, "Homepage must contain one Matrix canvas inside the Hero"
+    end
+    landmarks = document.css("main, [role='main']")
+    columns = document.css("#main")
+    unless landmarks.size == 1 && columns.size == 1 && columns.first.at_css(".home-page")
+      raise Error, "Homepage must contain one main landmark and one content region"
+    end
+    unless landmarks.first.css(".page-hero, #main").to_a == [hero, columns.first]
+      raise Error, "Homepage Hero must precede and sit outside the columns within main"
+    end
+    document
+  end
+
   def self.run
     require "jekyll"
     require "nokogiri"
@@ -52,6 +70,7 @@ module SiteValidation
           [route, check_html(File.join(destination, route.delete_prefix("/"), "index.html"), selector)]
         end
         documents = route_documents.values
+        check_homepage(route_documents.fetch("/"))
         raise Error, "Homepage shows more than four featured posts" if route_documents.fetch("/").css(".featured-card").size > 4
         tag_page = route_documents.fetch("/tags/")
         tag_ids = tag_page.css(".tag-detail-section[id]").map { |section| section["id"] }

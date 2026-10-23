@@ -46,7 +46,8 @@
       <p class="page-hero__subtitle">{{ page.hero.subtitle }}</p>
     {% endif %}
     
-    {% if page.hero.description %}
+    {% assign hero_description = page.hero.description | default: '' | strip %}
+    {% if hero_description != empty %}
       <p class="page-hero__description typing-text">{{ page.hero.description }}</p>
     {% endif %}
     
