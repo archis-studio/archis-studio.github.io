@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.1.1 | Updated: 2026-10-24
+Version 4.2.0 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -20,6 +20,7 @@ bundle exec jekyll serve
 
 ```bash
 bundle check
+BUNDLE_FROZEN=true bundle exec ruby scripts/check-documentation-links.rb
 BUNDLE_FROZEN=true bundle exec ruby -Itest -e 'Dir["test/*_test.rb"].sort.each { |file| require_relative file }'
 npm test --prefix test
 BUNDLE_FROZEN=true bundle exec ruby scripts/validate.rb
@@ -39,6 +40,7 @@ BUNDLE_FROZEN=true bundle exec ruby scripts/validate.rb
 | 首頁與動態效果 | `_layouts/home.html`、`_includes/page__hero.html`、主樣式、文章模板 | `test/motion_test.cjs`、navigation 測試、瀏覽器預覽 |
 | 視覺與元件 | `assets/css/main.scss` → `_sass/design-system/`、`_sass/custom/` | production 驗證、響應式與鍵盤預覽 |
 | 作者與 About | `_config.yml` 的 `author`、`_includes/author-profile.html`、`_pages/about.md` | production 驗證、側欄與 About 預覽 |
+| 文件連結 | `scripts/check-documentation-links.rb`、根目錄 Markdown 與 `docs/` | `test/documentation_links_test.rb`、直接執行檢查工具 |
 | 設定與 CI | `_config.yml`、`.github/workflows/validate.yml`、`scripts/validate.rb` | `test/config_test.rb`、production 驗證 |
 
 Ruby 單檔測試：`bundle exec ruby -Itest test/post_image_test.rb`；DOM 單檔測試：`node --test test/search_test.cjs`。依任務替換檔名；完整驗證使用上方指令。
@@ -177,7 +179,8 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 
 | 檢查 | 範圍與限制 |
 |---|---|
-| Ruby 測試 | 設定、Liquid、搜尋 JSON／URL 安全、圖片與導覽契約 |
+| 文件連結 | 根目錄 Markdown 與 `docs/`（含封存／計畫）的本地檔案與 Markdown 章節；不發送外部請求 |
+| Ruby 測試 | 設定、Liquid、文件檢查器、搜尋 JSON／URL 安全、圖片與導覽契約 |
 | DOM 測試 | 執行搜尋與模板互動，涵蓋排序、上限、特殊字元、IME、Tab／Escape、焦點還原及動態偏好；jsdom 不實作真實版面與 CSS 動畫 |
 | production 驗證 | 重複 YAML key、全新暫存建置、主要頁面與全部已發布文章、分類、標籤連結／唯一 ID、統計、首頁卡片上限、本地資源、發布排除與重複搜尋輸出 |
 | 瀏覽器預覽 | Chrome／Edge、Firefox、Safari／iOS；手機、平板、桌面檢查版面、圖片、焦點、鍵盤與捲動 |
@@ -186,11 +189,19 @@ production 驗證結束後清除暫存目錄，不依賴舊 `_site`；不執行�
 
 動態效果修改需切換減少動態效果，確認搜尋、About 技能條、複製按鈕與閱讀提示仍可用；一般模式確認 Matrix 離開畫面暫停、返回恢復。未執行的檢查需明列。
 
+### 文件連結檢查
+
+`bundle exec ruby scripts/check-documentation-links.rb` 在專案根目錄執行，掃描根目錄 `.md`／`.MD` 與 `docs/` 下的 Markdown。使用既有 CommonMarker GFM parser，檢查一般／參照式連結與 Markdown 圖片，支援 `<details>` 內的 Markdown，忽略 code fence（含延伸至檔尾的未關閉區塊）、inline code 與註解內的示例。
+
+Markdown 章節採常用 GitHub 標題錨點規則，支援中文、格式化文字、重複標題及 HTML `id`／`a name` 錨點；規則參考 [GitHub 文件](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#section-links)。路徑支援相對／根目錄路徑與 URL encoding，不把 `+` 當成空格，也不允許連結或 symlink 越出 repository。
+
+失敗會一次列出 `來源檔案:行號: 原因: 目標` 並以非零狀態結束；CI 在 Ruby 測試後獨立執行。非 Markdown 檔只查存在，外部網址、Jekyll／Liquid 產生的網站路由及瀏覽器 HTML 錨點不在檢查範圍。它不取代 production 或瀏覽器驗證，歷史文件中的純文字舊路徑也不會被視為連結。
+
 ## 部署與上線
 
 2026-10-23 Pages API 查核：`build_type: legacy`，來源 `main` 根目錄 `/`；現況以 Settings → Pages 為準。`.ruby-version` 控制本機與驗證 CI，不控制 Pages 內建環境。
 
-[Validate site](.github/workflows/validate.yml) 於 PR、push、手動觸發，使用 frozen lockfile、Ruby 測試、Node 24 DOM 測試與 production 驗證。權限為 `contents: read`，不需部署 secret、不發布網站或修改 Pages。
+[Validate site](.github/workflows/validate.yml) 於 PR、push、手動觸發，使用 frozen lockfile、Ruby 測試、離線文件連結檢查、Node 24 DOM 測試與 production 驗證。權限為 `contents: read`，不需部署 secret、不發布網站或修改 Pages。
 
 直接 push main 可觸發 legacy 部署，不會等待驗證 CI。若要強制合併前檢查，另設 branch protection required status check，名稱依 GitHub 顯示為準。
 
@@ -224,6 +235,10 @@ production 驗證結束後清除暫存目錄，不依賴舊 `_site`；不執行�
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.2.0 (2026-10-24)
+
+- 新增不需網路或額外套件的文件連結檢查，說明操作、範圍與限制，CI 自動執行。
 
 ### v4.1.1 (2026-10-24)
 

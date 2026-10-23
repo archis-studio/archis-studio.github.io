@@ -1,6 +1,6 @@
 # 文件索引
 
-Version 6.0.0 | Updated: 2026-10-24
+Version 6.0.1 | Updated: 2026-10-24
 
 供人／Agent 依任務查找現行文件。舊指南與已完成計畫只供追溯，不代表目前規則、進度或授權。
 
@@ -41,6 +41,7 @@ Version 6.0.0 | Updated: 2026-10-24
 | 設計工具與樣式 | [variables](../_sass/design-system/_variables.scss)、[mixins](../_sass/design-system/_mixins.scss)、[main.scss](../assets/css/main.scss) |
 | 搜尋與導覽 | [search.js](../assets/js/search.js)、[navigation.js](../assets/js/navigation.js)、[masthead](../_includes/masthead.html) |
 | 文章圖片 | [共用 include](../_includes/post-image.html)、[圖片工具](../scripts/generate-post-images.sh) |
+| 文件連結驗證 | [離線檢查器](../scripts/check-documentation-links.rb)、[測試](../test/documentation_links_test.rb)、[操作與限制](../DEVELOPMENT.md#文件連結檢查) |
 | 自動驗證 | [workflow](../.github/workflows/validate.yml)、[validator](../scripts/validate.rb)、[測試](../test/) |
 
 ## 歷史與封存
@@ -66,6 +67,10 @@ Version 6.0.0 | Updated: 2026-10-24
 [文件整理紀錄](superpowers/plans/2026-10-23-documentation-reorganization.md)保留逐章去向、決策與驗收。歷史中的「未 commit／push」只代表當時狀態；整份計畫不會持續同步測試數量或遠端部署結果。
 
 ## CHANGELOG
+
+### v6.0.1 (2026-10-24)
+
+- 索引文件連結檢查工具、回歸測試與使用範圍。
 
 ### v6.0.0 (2026-10-24)
 

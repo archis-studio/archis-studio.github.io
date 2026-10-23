@@ -22,8 +22,10 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: Check configuration regressions
+      - name: Check Ruby regressions
         run: bundle exec ruby -Itest -e 'Dir["test/*_test.rb"].sort.each { |file| require_relative file }'
+      - name: Check documentation links
+        run: bundle exec ruby scripts/check-documentation-links.rb
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
