@@ -268,8 +268,10 @@ document.addEventListener('DOMContentLoaded', function() {
     copyBtn.innerHTML = '<span class="btn-icon">📋</span><span class="btn-text">Copy</span>';
     copyBtn.setAttribute('aria-label', 'Copy code');
     
-    block.style.position = 'relative';
-    block.appendChild(copyBtn);
+    const wrapper = document.createElement('div');
+    wrapper.className = 'post-code-block';
+    block.before(wrapper);
+    wrapper.append(block, copyBtn);
     
     copyBtn.addEventListener('click', function() {
       const code = block.querySelector('code');
@@ -284,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function() {
           const expFloat = document.createElement('div');
           expFloat.className = 'xp-float';
           expFloat.textContent = '+10 EXP';
-          block.appendChild(expFloat);
+          wrapper.appendChild(expFloat);
           setTimeout(() => expFloat.remove(), 1000);
         }
 

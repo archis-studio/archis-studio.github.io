@@ -1,6 +1,6 @@
 # 頁面結構與互動
 
-Version 4.0.4 | Updated: 2026-10-24
+Version 4.0.5 | Updated: 2026-10-24
 
 供人／Agent 查找頁面組成、互動約定及實作來源。設計原則與 tokens 見 [Design System](DESIGN_SYSTEM_SPEC.md)，修改入口、測試指令與部署見 [Development](../DEVELOPMENT.md)。來源、DOM 測試、瀏覽器與效能量測各有驗證範圍，不能互相替代。
 
@@ -77,7 +77,8 @@ post layout 輸出主標題、日期、分類、標籤、閱讀時間、可選�
 - TOC 由 JavaScript 掃描正文 H2／H3／H4，保留 Markdown／自訂 heading ID，缺 ID 才生成不撞名 fallback；標題以文字節點呈現，href 對 ID 編碼。無標題時隱藏目錄。
 - 捲動更新目錄目前項目與閱讀進度。目錄為自訂實作，不由主題 `toc`／`toc_sticky` 選項控制。
 - 圖片由 [post-image](../_includes/post-image.html) 輸出，封面 eager／高優先權，卡片 lazy；選圖與尺寸契約維持 [Development](../DEVELOPMENT.md#圖片處理) 的單一說明。
-- 複製按鈕保留成功文字回饋；浮動 EXP／粒子與閱讀完成提示遵循下方動態約定。
+- 程式碼區塊使用既有 `$font-size-sm` 與 `$line-height-normal`，內層 `code` 繼承區塊字級，避免語法高亮容器與 `em` 累乘縮小；保留高亮與區塊內水平捲動，頂部預留複製按鈕空間，避免遮住第一行。行內程式碼維持原有相對字級。
+- 複製按鈕與 EXP 回饋置於 `pre` 的非捲動外層，水平捲動後按鈕仍可操作，也不混入複製內容；保留成功文字回饋。浮動 EXP／粒子與閱讀完成提示遵循下方動態約定。閱讀提示在 480px 以下使用左右安全間距，不沿用桌面的最小寬度。
 
 ### 文章庫與單一分類
 
@@ -165,6 +166,11 @@ certificates layout 由 `page.certificates` 產生卡片與分類篩選，圖片
 舊 Layout 完整內容可由 commit `94dfac1` 的本檔追溯；[Navigation 原文](archive/NAVIGATION_SPEC.md)已封存，現行行為約定以本文件為準。Asset 的通用視覺原則已在 Design，剩餘頁面結構／載入／裝飾構想已於本文件分清實作與歷史；[Asset 原文](archive/ASSET_SPEC.md)已封存。
 
 ## CHANGELOG
+
+### v4.0.5 (2026-10-24)
+
+- 程式碼區塊改用明確字級並由內層繼承，窄螢幕閱讀提示改為左右留白的自適應寬度。
+- 複製控制移至非捲動外層，補上重複複製與文字完整性的回歸測試。
 
 ### v4.0.4 (2026-10-24)
 

@@ -94,8 +94,8 @@ test('Matrix initially offscreen waits until the observer reports visibility', t
   assert.equal(view.draw(), 10);
 });
 
-async function article(t, reduced) {
-  const dom = new JSDOM('<article class="post-content"><h2 id="intro">Intro</h2><pre><code>sample</code></pre></article><aside class="post-toc"><nav id="toc"></nav></aside>', {
+async function article(t, reduced, codeMarkup = '<pre><code>sample</code></pre>') {
+  const dom = new JSDOM(`<article class="post-content"><h2 id="intro">Intro</h2>${codeMarkup}</article><aside class="post-toc"><nav id="toc"></nav></aside>`, {
     runScripts: 'outside-only'
   });
   t.after(() => dom.window.close());
@@ -130,6 +130,31 @@ test('reduced-motion articles keep TOC and copy feedback without decorative part
   assert.equal(view.document.querySelector('.xp-float'), null);
   assert.ok(view.document.querySelector('.code-copy-btn').classList.contains('copied'));
 });
+
+for (const reduced of [false, true]) {
+  test(`copy controls stay outside scrollable code and preserve text across repeated copies (reduced=${reduced})`, async t => {
+    const view = await article(t, reduced, '<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fenced code</code></pre></div></div>' +
+      '<figure class="highlight"><pre><code>highlighted code</code></pre></figure>' +
+      '<pre>plain &lt;text&gt;</pre>');
+    const blocks = view.document.querySelectorAll('pre');
+    const buttons = view.document.querySelectorAll('.code-copy-btn');
+    assert.equal(buttons.length, blocks.length);
+    for (const [index, block] of blocks.entries()) {
+      const button = buttons[index];
+      const expected = block.textContent;
+      assert.equal(button.closest('pre'), null);
+      assert.equal(button.parentElement, block.parentElement);
+      block.scrollLeft = 300;
+      for (let attempt = 0; attempt < 2; attempt++) {
+        button.click();
+        await new Promise(resolve => setImmediate(resolve));
+        assert.equal(view.copiedText(), expected);
+        assert.equal(block.textContent, expected);
+        assert.ok(button.classList.contains('copied'));
+      }
+    }
+  });
+}
 
 test('particles are removed and recreated when motion preference changes', async t => {
   const view = await article(t, false);
