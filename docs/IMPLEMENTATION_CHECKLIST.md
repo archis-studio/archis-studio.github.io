@@ -1,7 +1,7 @@
 # Implementation 實作檢查清單
-# Version 3.0.0 | Updated: 2025-10-28
+# Version 3.0.1 | Updated: 2026-10-23
 
-> **🤖 For AI Agents**: 本文件提供 10 階段實作指南與進度追蹤
+> **🤖 For Agents**: 本文件提供 10 階段實作指南與進度追蹤
 
 ## 🎯 專案實作指南
 
@@ -346,6 +346,10 @@ Sidebar:
 
 ## 📝 CHANGELOG
 
+### v3.0.1 (2026-10-23)
+
+- 維護協作對象改稱人／Agent；技術規範與專案目標不變。
+
 ### v2.0.0 (2025-10-26)
 - ✅ Phase 1-9 全部完成
 - 詳細記錄 About 頁面實作 (Terminal + RPG + Cyberpunk)
@@ -361,8 +365,8 @@ Sidebar:
 
 ---
 
-**Maintained By**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-26
+**Maintained By**: Archi Chen & Agents
+**Last Updated**: 2026-10-23
   - [ ] Autumn Noir 色彩系統
   - [ ] Future Space 色彩系統
   - [ ] AI Gaming 色彩系統
@@ -681,14 +685,14 @@ Sidebar:
 
 ## 📚 參考文件
 
-🤖 **AI Agents**: 實作時請查閱以下規格文件
+🤖 **Agents**: 實作時請查閱以下規格文件
 
 1. `PROJECT_CHARTER.md` - 專案目標與原則
 2. `DESIGN_SYSTEM_SPEC.md` - 設計系統規格
 3. `LAYOUT_SPEC.md` - 版面配置規格
 4. `NAVIGATION_SPEC.md` - 導航設計規格
 5. `ASSET_SPEC.md` - 資源檔案規格
-6. `AI_COLLABORATION_GUIDE.md` - AI 協作流程
+6. `AI_COLLABORATION_GUIDE.md` - Agent 協作流程
 
 ---
 
@@ -696,7 +700,7 @@ Sidebar:
 
 ### v3.0.0 (2025-10-28)
 - 版本號統一更新
-- 明確標示文件受眾（AI Agents）
+- 明確標示文件受眾（Agents）
 - 移除已刪除文件的引用
 
 ### v2.0.0 (2025-10-26)
@@ -708,5 +712,5 @@ Sidebar:
 
 ---
 
-**Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-28
+**Maintained by**: Archi Chen & Agents
+**Last Updated**: 2026-10-23

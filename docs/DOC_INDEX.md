@@ -1,7 +1,7 @@
 # 文件索引
-# Version 5.0.0 | Updated: 2026-10-23
+# Version 5.0.2 | Updated: 2026-10-23
 
-供人類與 AI 依任務找到主要文件。本次整理進行到第二階段：四份入口已重整，四份主題規格待校正；原始指南仍保留原位，尚未封存。不以舊版 Complete 標籤判定內容與現況一致。
+供人／Agent 依任務找到主要文件。入口文件已整理，第三階段 A 已完成範例與發文指南；主題規格仍待校正，原指南尚未封存。不以舊版 Complete 標籤判定內容與現況一致。
 
 ## 依任務查找
 
@@ -16,20 +16,20 @@
 | 共用封面、頭像與作者簡介 | [圖片處理](../DEVELOPMENT.md#圖片處理)、[作者資料設定](../DEVELOPMENT.md#作者資料設定)及 [Asset](ASSET_SPEC.md) |
 | 查看整理去向、衝突與後續批次 | [文件整理方案](superpowers/plans/2026-10-23-documentation-reorganization.md) |
 
-## 八份常用文件的分工
+## 文件責任與整理狀態
 
 | 文件 | 主要責任 | 整理狀態 |
 |---|---|---|
 | [README.md](../README.md) | 定位、範圍、現有能力與最短啟動入口 | 第二階段已整理 |
-| [agents.MD](../agents.MD) | AI 授權邊界、修改流程、Git 與文件規則 | 第二階段已整理 |
-| [DEVELOPMENT.md](../DEVELOPMENT.md) | 架構、環境、測試、部署與排錯 | 第二階段已整理；暫留圖片／互動契約 |
+| [agents.MD](../agents.MD) | Agent 授權邊界、修改流程、Git 與文件規則 | 第二階段已整理 |
+| [DEVELOPMENT.md](../DEVELOPMENT.md) | 架構、環境、測試、部署與排錯 | 操作優先；提供修改／測試入口，保留現行契約 |
 | [DESIGN_SYSTEM_SPEC.md](DESIGN_SYSTEM_SPEC.md) | 設計原則與 tokens／元件約束 | 待第三階段核對規格與實作落差 |
 | [LAYOUT_SPEC.md](LAYOUT_SPEC.md) | 頁面結構、導覽、搜尋與互動 | 待第三階段整併 Navigation 與互動契約 |
-| [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) | 寫作、文章欄位、分類標籤、發布政策 | 待第三階段校正範例與衝突 |
-| [ASSET_SPEC.md](ASSET_SPEC.md) | 圖片、頭像、命名與資源操作 | 待第三階段吸收現行圖片契約 |
+| [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) | 寫作、文章欄位、分類標籤、發布政策 | 範例與操作已集中於 Development；剩餘政策待評估 |
+| [ASSET_SPEC.md](ASSET_SPEC.md) | 圖片、頭像、命名與資源操作 | 現行操作保留於 Development；剩餘規範待評估 |
 | [DOC_INDEX.md](DOC_INDEX.md) | 任務路由、文件責任及歷史入口 | 第二階段已整理 |
 
-八份是責任分工，不是文件數量上限。各文件自行維護版本與 CHANGELOG，索引不重複抄寫版本、日期、行數或測試數量。
+原八份分工已調整：日常發文以 Development 與既有範例為入口，Content／Asset 是否獨立保留，待剩餘規範評估後決定。各文件自行維護版本與 CHANGELOG，索引不重複抄寫版本、日期、行數或測試數量。
 
 尚未校正的主題規格仍有約束效力；其中舊環境版本、檔案範例與功能進度需對照實作。操作以開發指南的已核對內容為準，設計政策不因程式現況自動改寫。文章發布節奏與範例註解語言等政策衝突保留原文，待內容階段處理。
 
@@ -71,6 +71,15 @@
 完整舊版索引與變更紀錄可由 Git 追溯，整理前基準為 `d6b054a`。封存須待有效內容搬移與引用更新後進行。
 
 ## CHANGELOG
+
+### v5.0.2 (2026-10-23)
+
+- 同步 Development 操作優先編排、目前進度與人／Agent 稱呼。
+
+### v5.0.1 (2026-10-23)
+
+- 同步以既有文章範例與 Development 為發文入口，不預設 Content／Asset 必須獨立維護。
+
 
 ### v5.0.0 (2026-10-23)
 

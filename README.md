@@ -1,9 +1,9 @@
 # ARCHIS.STUDIO
-# Version 4.0.0 | Updated: 2026-10-23
+# Version 4.0.1 | Updated: 2026-10-23
 
 **MEMORY IS THE NEW IMMORTALITY**
 
-Archis Studio 是以繁體中文分享 AI 工具、Backend、Data Science 與跨領域學習的技術部落格。網站以 Jekyll 與 Minimal Mistakes 為基礎，部署於 GitHub Pages，供人類與 AI 共同維護。
+Archis Studio 是以繁體中文分享 AI 工具、Backend、Data Science 與跨領域學習的技術部落格。網站以 Jekyll 與 Minimal Mistakes 為基礎，部署於 GitHub Pages，供人／Agent 共同維護。
 
 [探索文章](https://archis-studio.github.io/posts/) · [關於作者](https://archis-studio.github.io/about/) · [分類導航](https://archis-studio.github.io/categories/)
 
@@ -15,7 +15,7 @@ Archis Studio 是以繁體中文分享 AI 工具、Backend、Data Science 與跨
 
 專案範圍包括主題客製化、Design System、響應式部落格、內容管理流程，以及 SEO 與效能改善。不包含電子商務、多語言網站、複雜 JavaScript application 或動態後端；留言服務是原規劃允許的例外，是否啟用需依設定與實際服務確認。
 
-品質目標包含元件規格完整、PageSpeed 超過 90、WCAG 2.1 AA、手機閱讀品質，以及人類與 AI 能順利接手。這些是持續改善的目標；達成情況需附測量條件與驗證結果。
+品質目標包含元件規格完整、PageSpeed 超過 90、WCAG 2.1 AA、手機閱讀品質，以及人／Agent 能順利接手。這些是持續改善的目標；達成情況需附測量條件與驗證結果。
 
 ## 現有能力
 
@@ -49,7 +49,7 @@ bundle exec jekyll serve
 | 需要了解的事 | 文件 |
 |---|---|
 | 專案如何運作、如何測試與部署 | [DEVELOPMENT.md](DEVELOPMENT.md) |
-| AI 的修改邊界、工作流程與 Git 規則 | [agents.MD](agents.MD) |
+| Agent 的修改邊界、工作流程與 Git 規則 | [agents.MD](agents.MD) |
 | 設計、版面、內容與資源該查哪裡 | [文件索引](docs/DOC_INDEX.md) |
 
 修改前先查相關規格與實作，完成驗證後再依使用者指示提交。歡迎以 Issue 或 PR 討論內容與改善建議。
@@ -64,6 +64,10 @@ bundle exec jekyll serve
 
 ## CHANGELOG
 
+### v4.0.1 (2026-10-23)
+
+- 維護協作對象改稱人／Agent。
+
 ### v4.0.0 (2026-10-23)
 
 - 整併專案憲章的目標、範圍與品質原則，區分目標與實測成果。
@@ -71,7 +75,7 @@ bundle exec jekyll serve
 
 ### 歷史摘要
 
-- v3.0.0 (2025-10-28)：區分訪客與 AI 文件入口。
+- v3.0.0 (2025-10-28)：區分訪客與 Agent 文件入口。
 - v2.1.0 (2025-10-27)：加入設計亮點與內容分類介紹。
 - v2.0.0 (2025-10-26)：記錄 About、文章庫與文章版型實作。
 - v1.0.0 (2025-10-24)：建立 Autumn Noir Future 與 Design System。

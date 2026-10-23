@@ -1,7 +1,7 @@
 # Design System 規格書
-# Version 4.0.0 | Updated: 2025-11-01
+# Version 4.0.1 | Updated: 2026-10-23
 
-> **🤖 For AI Agents**: 本文件定義完整設計系統規格（色彩、字體、間距、元件）及實作指南
+> **🤖 For Agents**: 本文件定義完整設計系統規格（色彩、字體、間距、元件）及實作指南
 
 ## 🎨 設計原則
 
@@ -581,6 +581,10 @@ $category-colors: (
 
 ## 📝 CHANGELOG
 
+### v4.0.1 (2026-10-23)
+
+- 維護協作對象改稱人／Agent；技術規範與專案目標不變。
+
 ### v4.0.0 (2025-11-01)
 - **新增「實作說明」章節** (💻 Implementation Guide)
   - 詳細說明設計系統檔案結構（_sass/design-system/）
@@ -595,7 +599,7 @@ $category-colors: (
 
 ### v3.0.0 (2025-10-28)
 - 版本號統一更新
-- 明確標示文件受眾（AI Agents）
+- 明確標示文件受眾（Agents）
 
 ### v1.2.0 (2025-10-16)
 - 四重風格融合設計系統定義
@@ -606,5 +610,5 @@ $category-colors: (
 
 ---
 
-**Maintained by**: Archi Chen & AI Assistants
-**Last Updated**: 2025-11-01
+**Maintained by**: Archi Chen & Agents
+**Last Updated**: 2026-10-23

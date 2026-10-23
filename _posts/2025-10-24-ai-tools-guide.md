@@ -4,9 +4,13 @@ categories: [AI Tools]
 tags: [ai-tools, tutorial, ChatGPT, productivity]
 featured: true
 excerpt: "探索 AI 工具的實際應用場景，從 ChatGPT 到各種專業工具，讓 AI 成為你的最佳助手。"
+header:
+  image: /assets/images/posts/ai-tools-teaser.jpeg
+  image_width: 275
+  image_height: 183
+image: /assets/images/posts/ai-tools-teaser.jpeg
+image_alt: "AI 工具實戰文章封面"
 ---
-
-# AI 工具實戰指南
 
 在這個 AI 蓬勃發展的時代，掌握各種 AI 工具已經成為必備技能。
 

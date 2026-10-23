@@ -1,7 +1,7 @@
-# AI 協作規範
-# Version 5.0.0 | Updated: 2026-10-23
+# Agent 協作規範
+# Version 5.0.1 | Updated: 2026-10-23
 
-本文件是 AI 的專案入口，定義修改邊界、工作流程與驗證要求。專案定位見 [README](README.md)，操作指令見 [DEVELOPMENT](DEVELOPMENT.md)，主題規格由[文件索引](docs/DOC_INDEX.md)導覽。
+本文件是 Agent 的專案入口，定義修改邊界、工作流程與驗證要求。專案定位見 [README](README.md)，操作指令見 [DEVELOPMENT](DEVELOPMENT.md)，主題規格由[文件索引](docs/DOC_INDEX.md)導覽。
 
 ## 指令與授權
 
@@ -36,7 +36,7 @@
 2. 小幅修正可直接執行；多檔案重構或新功能先說明範圍、預期效果與驗證方式，依已確認方案分批實作。
 3. 採用最小必要修改，沿用既有模式；修改後重新閱讀 diff。新增行為先定義預期結果，修錯時保留有意義的回歸驗證。
 4. 執行與變更相符的檢查，依[開發指南](DEVELOPMENT.md#測試與驗證)驗證；同步更新受影響的現行文件。
-5. 回報改了什麼、原因、驗證結果、限制與 Git 狀態，讓人類可直接審閱。沒有執行的檢查不得宣稱通過。
+5. 回報改了什麼、原因、驗證結果、限制與 Git 狀態，讓人可直接審閱。沒有執行的檢查不得宣稱通過。
 
 需求不明時，先完成不依賴答案的調查；需要決策時提供背景、選項、影響與建議。失敗時回報動作、實際錯誤、判斷依據與下一步，不能以略過驗證當成完成。
 
@@ -66,7 +66,7 @@
 Authored-by: GPT
 ```
 
-類型包括 `feat`、`fix`、`docs`、`style`、`refactor`、`test`、`chore`。AI trailer 依實際協作者填寫：ChatGPT／Codex 使用 `GPT`，其他為 `Claude`、`Q`、`Copilot`、`Gemini`；人類自行撰寫的提交不需 AI trailer。
+類型包括 `feat`、`fix`、`docs`、`style`、`refactor`、`test`、`chore`。Agent trailer 依實際協作者填寫：ChatGPT／Codex 使用 `GPT`，其他為 `Claude`、`Q`、`Copilot`、`Gemini`；人自行撰寫的提交不需 Agent trailer。
 
 GitHub Pages 的驗證與部署分開；依[部署說明](DEVELOPMENT.md#部署與上線)確認實際 Pages 結果，不能只憑本機建置成功宣稱已上線。
 
@@ -77,9 +77,14 @@ GitHub Pages 的驗證與部署分開；依[部署說明](DEVELOPMENT.md#部署�
 - 索引只在責任、路徑、閱讀順序或狀態改變時更新；不再重抄各檔版本、行數或測試數量。
 - 版本與環境以設定、lockfile、workflow 為來源；文件若保留快照需註明查核日期。品質目標、已驗證結果與未採用構想分開敘述。
 - 需要封存時，先確認有效資訊有去向，保留來源路徑／時間背景並更新引用；完成計畫供追溯，不取代現行規格。
+- 協作對象統一稱為「人／Agent」；AI 工具、文章主題與設計風格等技術用語保留原稱。
 - 文件連結使用 repository 內的相對路徑；變更後檢查目標與章節存在。
 
 ## CHANGELOG
+
+### v5.0.1 (2026-10-23)
+
+- 協作對象稱呼統一為人／Agent，保留既有授權與 attribution 規則。
 
 ### v5.0.0 (2026-10-23)
 

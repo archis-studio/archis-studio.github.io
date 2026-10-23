@@ -1,7 +1,7 @@
 # Navigation 導航規格書
-# Version 3.0.0 | Updated: 2025-10-28
+# Version 3.0.1 | Updated: 2026-10-23
 
-> **🤖 For AI Agents**: 本文件定義導航系統設計規格
+> **🤖 For Agents**: 本文件定義導航系統設計規格
 
 ## 🧭 導航架構
 
@@ -460,14 +460,18 @@ logo: "/assets/images/autumn-logo.png"
 
 ## 📝 CHANGELOG
 
+### v3.0.1 (2026-10-23)
+
+- 維護協作對象改稱人／Agent；技術規範與專案目標不變。
+
 ### v3.0.0 (2025-10-28)
 - 版本號統一更新
-- 明確標示文件受眾（AI Agents）
+- 明確標示文件受眾（Agents）
 
 ### v1.0.0 (2025-10-16)
 - 建立導航系統規格
 
 ---
 
-**Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-28
+**Maintained by**: Archi Chen & Agents
+**Last Updated**: 2026-10-23

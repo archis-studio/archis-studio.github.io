@@ -1,7 +1,7 @@
-# AI 協作指南 - AI Collaboration Guide
-# Version 3.0.0 | Updated: 2025-10-28
+# Agent 協作指南 - Agent Collaboration Guide
+# Version 3.0.1 | Updated: 2026-10-23
 
-> **🤖 For AI Agents**: 本文件定義 AI 協作流程、檔案操作規則、Git 工作流程
+> **🤖 For Agents**: 本文件定義 Agent 協作流程、檔案操作規則、Git 工作流程
 
 ## 🔄 工作流程 (Workflows)
 
@@ -15,7 +15,7 @@
 
 2. ✅ 確認 (Confirm)  
    - 簡要回報完成內容
-   - 等待人類確認
+   - 等待人確認
 ```
 
 ### 🏗️ 完整流程 (Complex Tasks)
@@ -30,7 +30,7 @@
    - 目標確認 (Goal Confirmation)
 
 2. ✅ 確認階段 (Confirmation)
-   - 與人類討論並確認計劃
+   - 與人討論並確認計劃
    - 調整方案直到滿意
 
 3. 🛠️ 實作階段 (Implementation)
@@ -54,7 +54,7 @@
 
 **Git 規則**:
 - ✅ 可執行: `git status`, `git diff`, `git add`, `git commit`
-- ❌ 禁止: `git push` (需人類確認)
+- ❌ 禁止: `git push` (需人確認)
 
 ## 🎯 品質檢查
 
@@ -68,6 +68,10 @@
 
 ## 📝 CHANGELOG
 
+### v3.0.1 (2026-10-23)
+
+- 維護協作對象改稱人／Agent；技術規範與專案目標不變。
+
 ### v1.6.0 (2025-10-16)
 - 新增簡化流程 (Simple Tasks) 適用於小幅修改
 - 區分簡單任務與複雜任務的工作流程
@@ -75,9 +79,9 @@
 - 提升簡單任務的協作效率
 
 ### v1.5.0 (2025-10-15)
-- 新增 AI Agent 識別規範於 commit message
-- 建立多 AI 協作的標準化流程
-- 定義 AI agent 命名規則與格式
+- 新增 Agent 識別規範於 commit message
+- 建立多 Agent 協作的標準化流程
+- 定義 Agent 命名規則與格式
 
 ### v1.3.0 (2025-10-14)
 - 新增「錯誤處理」標準流程
@@ -85,11 +89,11 @@
 - 整合並精簡溝通協定結構
 
 ### v1.2.0 (2025-10-11)
-- 新增 AI Agent 互換性設計標準
+- 新增 Agent 互換性設計標準
 - 建立標準化規劃格式模板
 - 定義 Conventional Commits 規範
 - 新增進度回報標準格式
-- 確保任何 AI assistant 都能順利接手
+- 確保任何 Agent 都能順利接手
 
 ### v1.1.0 (2025-10-11)
 - Enhanced 協作工作流程 (4階段模式)
@@ -111,14 +115,14 @@
 
 ### Git 操作標準規範
 - ✅ **允許**: `git status`, `git diff`, `git add`, `git commit`
-- ❌ **禁止**: `git push origin main` (需人類明確指令)
+- ❌ **禁止**: `git push origin main` (需人明確指令)
 - 📝 **Commit 策略**: 
   - 每完成一個功能模組就 commit
-  - 使用 Conventional Commits 格式 + AI Agent 識別
+  - 使用 Conventional Commits 格式 + Agent 識別
   - 所有 commits 保持在本地，等確認後再 push
 
-### AI Agent 識別規範
-每個 AI assistant 在 commit message 中必須標註自己的身份。我們採用 Git 標準的 `trailer` 格式。
+### Agent 識別規範
+每個 Agent 在 commit message 中必須標註自己的身份。我們採用 Git 標準的 `trailer` 格式。
 
 **格式**:
 ```
@@ -129,7 +133,7 @@
 Authored-by: <ai-agent-name>
 ```
 
-**AI Agent 命名規則**:
+**Agent 命名規則**:
 - **Amazon Q**: `Q`
 - **Claude**: `Claude`
 - **ChatGPT**: `GPT`
@@ -154,12 +158,12 @@ git commit -m "fix(css): resolve infinite scroll issue
 >
 > Authored-by: Q"
 
-# 人類的 commit (不需要標註)
+# 人的 commit (不需要標註)
 git commit -m "docs: update project requirements"
 ```
 
 ### 決策請求標準格式
-AI 需要人類決策時的標準格式：
+Agent 需要人決策時的標準格式：
 
 ```markdown  
 ## 🤔 需要您的決定
@@ -176,11 +180,11 @@ B) [選項 B 描述]
    - 優點: [列出優點]
    - 缺點: [列出缺點]
 
-**建議**: [AI 的推薦選項與理由]
+**建議**: [Agent 的推薦選項與理由]
 ```
 
 ### 錯誤處理標準格式 (Error Handling Protocol)
-當操作失敗或發生非預期錯誤時，AI 應使用此格式回報：
+當操作失敗或發生非預期錯誤時，Agent 應使用此格式回報：
 
 ```markdown
 ## ⚠️ 錯誤報告 (Error Report)
@@ -191,7 +195,7 @@ B) [選項 B 描述]
 [貼上完整的錯誤訊息]
 ```
 **初步分析**: [對錯誤原因的初步判斷]
-**建議操作**: [建議下一步如何處理，或請求人類指示]
+**建議操作**: [建議下一步如何處理，或請求人指示]
 ```
 
 ### 進度回報格式
@@ -235,7 +239,7 @@ B) [選項 B 描述]
 3. **驗證結果**: 修改後重新讀取確認結果正確
 
 ### Git Commit 標準格式
-使用 Conventional Commits 規範，確保任何 AI 都能理解：
+使用 Conventional Commits 規範，確保任何 Agent 都能理解：
 
 ```
 <type>(<scope>): <description>
@@ -314,13 +318,13 @@ Closes #123
 
 ## 🚫 限制與禁止事項
 
-### AI Assistant 不得執行
+### Agent 不得執行
 - 修改 Git remote 設定
 - 推送到 remote repository
 - 刪除重要設定檔案 (如 `_config.yml`)
 - 修改 protected 區域的設定
 
-### 需要人類確認的操作
+### 需要人確認的操作
 - 所有 Git commits
 - 重要設定檔案修改
 - 新增/刪除主要頁面
@@ -346,16 +350,16 @@ Closes #123
 
 ### v3.0.0 (2025-10-28)
 - 版本號統一更新
-- 明確標示文件受眾（AI Agents）
+- 明確標示文件受眾（Agents）
 
 ### v1.6.0 (2025-10-16)
 - 新增簡化流程（Simple Tasks）
 - 優化工作流程說明
 
 ### v1.0.0 (2025-10-11)
-- 建立 AI 協作基礎規範
+- 建立 Agent 協作基礎規範
 
 ---
 
-**Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-28
+**Maintained by**: Archi Chen & Agents
+**Last Updated**: 2026-10-23

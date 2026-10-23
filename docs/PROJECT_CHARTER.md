@@ -1,7 +1,7 @@
 # 專案憲章 - Project Charter
-# Version 3.0.0 | Updated: 2025-10-28
+# Version 3.0.1 | Updated: 2026-10-23
 
-> **🤖 For AI Agents**: 本文件定義專案核心目標、設計原則與成功標準
+> **🤖 For Agents**: 本文件定義專案核心目標、設計原則與成功標準
 
 ## 🎨 設計原則
 
@@ -13,22 +13,26 @@
 **技術原則**:
 - Jekyll + Minimal Mistakes 基礎
 - 規格驅動開發
-- AI 協作友善
+- Agent 協作友善
 
 ## ✅ 成功標準
 
 - [ ] Design System 建立完成
 - [ ] 網站效能 > 90 分
 - [ ] Mobile 完美適配
-- [ ] AI 可順利協作開發
+- [ ] Agent 可順利協作開發
 
 ---
 
 ## 📝 CHANGELOG
 
+### v3.0.1 (2026-10-23)
+
+- 維護協作對象改稱人／Agent；技術規範與專案目標不變。
+
 ### v3.0.0 (2025-10-28)
 - 版本號統一更新
-- 明確標示文件受眾（AI Agents）
+- 明確標示文件受眾（Agents）
 
 ### v1.0.0 (2025-10-11)
 - 建立專案基礎架構
@@ -87,7 +91,7 @@
 - **Specification-Driven Development**: 規格先行，實作跟進
 - **Component-Based Architecture**: 可重用的 UI components
 - **Version Controlled Design**: Design decisions 的版本控制
-- **AI-Collaborative Workflow**: 人機協作的開發流程
+- **Agent Collaboration Workflow**: 人與 Agent 協作的開發流程
 
 ## 📝 內容策略
 
@@ -103,20 +107,20 @@
 - **Code Comments**: 英文
 - **Documentation**: 中英並重，以讀者需求為主
 
-## 🤖 AI 協作原則
+## 🤖 Agent 協作原則
 
-### AI Assistant 角色
+### Agent 角色
 1. **Design System Executor**: 依據規格實作 components
 2. **Content Structure Optimizer**: 優化文章架構與 SEO
 3. **Code Quality Assurance**: 確保 code 品質與一致性
 4. **Specification Maintainer**: 維護與更新規格文件
 
 ### 協作工作流程
-1. **需求定義**: 人類提供高層次目標
-2. **規格制定**: AI 提出詳細實作規格
-3. **選項決策**: 人類從 AI 提供的選項中做決定
-4. **實作執行**: AI 執行實作工作
-5. **品質驗證**: 人類驗證最終結果
+1. **需求定義**: 人提供高層次目標
+2. **規格制定**: Agent 提出詳細實作規格
+3. **選項決策**: 人從 Agent 提供的選項中做決定
+4. **實作執行**: Agent 執行實作工作
+5. **品質驗證**: 人驗證最終結果
 
 ## ✅ 成功指標
 
