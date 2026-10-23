@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.2.3 | Updated: 2026-10-24
+Version 4.2.4 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -38,7 +38,7 @@ BUNDLE_FROZEN=true bundle exec ruby scripts/validate.rb
 | 選單與導覽 | `_includes/masthead.html`、`assets/js/navigation.js`、`_sass/custom/_navigation.scss` | `test/navigation_test.rb`、`test/navigation_test.cjs` |
 | 文章目錄、標籤、閱讀時間 | `_layouts/post.html`、`_layouts/tags.html`、`_includes/tag-cloud-compact.html` | navigation 測試、production 驗證 |
 | 首頁與動態效果 | `_layouts/home.html`、`_includes/page__hero.html`、主樣式、文章模板 | `test/motion_test.cjs`、navigation 測試、瀏覽器預覽 |
-| 視覺與元件 | `assets/css/main.scss` → `_sass/design-system/`、`_sass/shared/`、`_sass/custom/` | production 驗證、響應式與鍵盤預覽 |
+| 視覺與元件 | `assets/css/main.scss` → `_sass/design-system/`、`_sass/shared/`、`_sass/components/`、`_sass/custom/` | production 驗證、響應式與鍵盤預覽 |
 | 作者與 About | `_config.yml` 的 `author`、`_includes/author-profile.html`、`_pages/about.md` | production 驗證、側欄與 About 預覽 |
 | 文件連結 | `scripts/check-documentation-links.rb`、根目錄 Markdown 與 `docs/` | `test/documentation_links_test.rb`、直接執行檢查工具 |
 | 設定與 CI | `_config.yml`、`.github/workflows/validate.yml`、`scripts/validate.rb` | `test/config_test.rb`、production 驗證 |
@@ -67,7 +67,7 @@ Markdown／YAML → Liquid layout／include → 靜態 HTML；SCSS → CSS；Pag
 | 環境與設定 | `.ruby-version`、`Gemfile`、`Gemfile.lock`、`_config.yml` |
 | 內容 | `_posts/`、`_pages/`；front matter 與 scoped defaults 決定 layout／網址 |
 | 頁面與元件 | `_layouts/`、`_includes/`；文章庫位於 `_pages/posts.html` |
-| 樣式 | `assets/css/main.scss`、`_sass/design-system/`、`_sass/shared/`、`_sass/custom/` |
+| 樣式 | `assets/css/main.scss`、`_sass/design-system/`、`_sass/shared/`、`_sass/components/`、`_sass/custom/` |
 | 互動與資源 | `assets/js/`、部分模板 inline script、`assets/images/` |
 | 驗證 | `test/`、`scripts/validate.rb`、`.github/workflows/validate.yml` |
 
@@ -124,6 +124,8 @@ author_profile: true
 ```
 
 樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins。共用動畫集中於 `_sass/shared/_animations.scss`，在頁面樣式之前載入；不同效果使用元件專屬動畫名稱，避免依賴載入順序覆蓋。約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
+
+跨頁元件放在 `_sass/components/`；compact tag cloud 對應 `_includes/tag-cloud-compact.html` 與 `_sass/components/_tag-cloud-compact.scss`。目前緊接文章列表樣式載入，以保留原有 cascade 順序。
 
 首頁內容區塊、About、文章留言與標籤區塊的間距由各自 custom partial 管理；避免用全域 `section` 規則設定頁面留白。
 
@@ -237,6 +239,10 @@ Markdown 章節採常用 GitHub 標題錨點規則，支援中文、格式化文
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.2.4 (2026-10-24)
+
+- 將 compact tag cloud 樣式抽為共用元件，保留頁面容器、間距與載入順序。
 
 ### v4.2.3 (2026-10-24)
 
