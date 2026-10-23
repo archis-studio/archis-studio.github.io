@@ -66,4 +66,14 @@ class NavigationTest < Minitest::Test
     collisions = names.group_by { |name| Jekyll::Utils.slugify(name) }.select { |_slug, tags| tags.size > 1 }
     assert_empty collisions
   end
+
+  def test_reading_time_rounds_up_every_500_text_characters_with_a_one_minute_minimum
+    { 0 => 1, 1 => 1, 499 => 1, 500 => 1, 501 => 2, 1000 => 2, 1200 => 3, 3000 => 6 }.each do |length, minutes|
+      document = render("_layouts/post.html", {
+        "page" => { "title" => "Example" }, "site" => { "related_posts" => [] },
+        "content" => "\n<p class=\"article-text\">#{'文' * length}</p>\n"
+      })
+      assert_equal "約 #{minutes} 分鐘閱讀", document.at_css(".reading-time").text.strip, "#{length} text characters"
+    end
+  end
 end

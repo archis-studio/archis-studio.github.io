@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.4 | Updated: 2026-10-23
+# Version 2.0.5 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -399,7 +399,7 @@ header:
 - 首頁精選最多四篇；沒有精選時顯示最新四篇，有少量精選時不混入其他文章。
 - 標籤／文章總數由 Liquid 直接輸出，不加總每個標籤的文章數，因此不會重複計算。
 - `test/navigation_test.rb`、`test/navigation_test.cjs` 分別檢查模板輸出與實際 inline JavaScript。`npm test --prefix test` 執行全部 `*_test.cjs`。
-- production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間估算方式此次不變。
+- production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間以移除 HTML、修剪首尾空白後的字元數計算：每 500 字元一分鐘，向上取整，至少一分鐘；不區分中英文，不新增手動設定欄位。
 
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
@@ -424,12 +424,15 @@ header:
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.4
+**Version**: 2.0.5
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.5 (2026-10-23)
+- 閱讀時間簡化為每 500 字元一分鐘，補上取整與最小值邊界測試。
 
 ### v2.0.4 (2026-10-23)
 - 記錄文章標籤、目錄錨點、首頁精選上限與唯一文章統計規則。
