@@ -1,0 +1,14 @@
+{%- assign image_post = include.post -%}
+{%- assign image_src = image_post.header.image | default: image_post.header.teaser -%}
+{%- if image_post.header.image -%}
+  {%- assign image_width = image_post.header.image_width -%}
+  {%- assign image_height = image_post.header.image_height -%}
+{%- else -%}
+  {%- assign image_width = image_post.header.teaser_width -%}
+  {%- assign image_height = image_post.header.teaser_height -%}
+{%- endif -%}
+{%- if image_src -%}
+<img src="{{ image_src | relative_url | escape }}" alt="{{ image_post.image_alt | default: image_post.title | escape }}"
+     {% if image_width and image_height %}width="{{ image_width }}" height="{{ image_height }}"{% endif %}
+     {% if include.variant == 'cover' %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+{%- endif -%}

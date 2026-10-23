@@ -15,7 +15,9 @@ header:
   overlay_text_color: "white"
   show_overlay_excerpt: true
   caption: "Blog Journey © Archis Studio"
-  teaser: /assets/images/posts/251031-blog-helloween-banner.png
+  image: /assets/images/posts/251031-blog-helloween-banner-cover.webp
+  image_width: 780
+  image_height: 520
 
 image: /assets/images/posts/251031-blog-helloween-banner.png
 image_alt: "Archis Studio 封面圖 - GitHub Pages 部落格冒險"

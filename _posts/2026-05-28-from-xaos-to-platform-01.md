@@ -15,7 +15,9 @@ header:
   overlay_text_color: "white"
   show_overlay_excerpt: true
   caption: "Blog Journey © Archis Studio"
-  teaser: /assets/images/posts/260531-blog-software-banner.png
+  image: /assets/images/posts/260531-blog-software-banner-cover.webp
+  image_width: 1280
+  image_height: 891
 
 image: /assets/images/posts/260531-blog-software-banner.png
 ---

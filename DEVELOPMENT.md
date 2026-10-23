@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.2 | Updated: 2026-10-23
+# Version 2.0.3 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -371,6 +371,27 @@ bundle exec ruby scripts/validate.rb
 
 jsdom 不實作真實瀏覽器版面，仍需手動確認手機／平板／桌面搜尋視窗、可見焦點與捲動。
 
+### 共用文章封面
+
+本機需要 ImageMagick（`magick`），GitHub Pages 不需要安裝圖片工具。產生後的圖片直接加入版本控制：
+
+```bash
+bash scripts/generate-post-images.sh assets/images/posts/example.png
+```
+
+程式保留原圖、維持比例、不放大，只產生一張最大寬度 1280px 的 `example-cover.webp`（quality 82），供首頁卡片、文章列表、相關文章與文章頁共用。如果轉換後不比原圖小，會移除該衍生檔並提示繼續使用原圖。請目視檢查畫質，再填入實際尺寸：
+
+```yaml
+header:
+  image: /assets/images/posts/example-cover.webp
+  image_width: 1280
+  image_height: 853
+```
+
+高度僅為範例，必須填入檔案的實際尺寸。`_includes/post-image.html` 在所有位置優先使用同一個 `header.image`：卡片延遲載入；文章封面立即載入並提高優先權。舊文章只有 `header.teaser` 時仍可 fallback；缺少尺寸的舊圖不會輸出假的尺寸值。不需要另外維護縮圖或重複的 teaser 欄位。
+
+頂層 `image` 是社群分享圖片，本次保留原始 PNG/JPEG。既有 CSS 控制卡片裁切，不改變圖片本身構圖。`test/post_image_test.rb` 由既有 Ruby workflow 自動執行，Pages 使用已生成的檔案，不執行圖片轉換。
+
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
 - **Firefox**: Secondary testing
@@ -394,12 +415,16 @@ jsdom 不實作真實瀏覽器版面，仍需手動確認手機／平板／桌�
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.2
+**Version**: 2.0.3
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.3 (2026-10-23)
+- 新增本機圖片壓縮流程與共用封面載入規則；依使用者決定，每篇只維護一張壓縮圖。
+- 說明保留原圖、只縮不放大與轉換未節省容量時的處理。
 
 ### v2.0.2 (2026-10-23)
 - 新增搜尋 DOM／Liquid 回歸測試與 Node 測試環境說明。

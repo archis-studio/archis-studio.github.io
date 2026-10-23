@@ -35,8 +35,8 @@ hero:
         {% for post in featured_posts %}
           <article class="featured-card">
             <div class="featured-card-image">
-              {% if post.header.image %}
-                <img src="{{ post.header.image | relative_url }}" alt="{{ post.title }}">
+              {% if post.header.teaser or post.header.image %}
+                {% include post-image.html post=post %}
               {% else %}
                 <div class="featured-card-placeholder">
                   <span class="placeholder-icon">✦</span>
