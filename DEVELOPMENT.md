@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.5 | Updated: 2026-10-23
+# Version 2.0.6 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -401,6 +401,16 @@ header:
 - `test/navigation_test.rb`、`test/navigation_test.cjs` 分別檢查模板輸出與實際 inline JavaScript。`npm test --prefix test` 執行全部 `*_test.cjs`。
 - production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間以移除 HTML、修剪首尾空白後的字元數計算：每 500 字元一分鐘，向上取整，至少一分鐘；不區分中英文，不新增手動設定欄位。
 
+### 頭像壓縮
+
+全站使用一張 400x400 WebP，原始 PNG 保留。重新產生不需要擴充圖片工具或安裝 Pages 套件：
+
+```bash
+magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400x>' -strip -quality 82 assets/images/profile_picture_xaos_engineer.webp
+```
+
+`_config.yml` 的 `author.avatar` 指向 WebP；`avatar_width`／`avatar_height` 填入實際檔案尺寸，模板僅在兩者都有設定時輸出，既有 CSS 繼續控制顯示大小。
+
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
 - **Firefox**: Secondary testing
@@ -424,12 +434,15 @@ header:
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.5
+**Version**: 2.0.6
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.6 (2026-10-23)
+- 改用單張 400x400 WebP 頭像，補上尺寸與重製指令，保留原圖。
 
 ### v2.0.5 (2026-10-23)
 - 閱讀時間簡化為每 500 字元一分鐘，補上取整與最小值邊界測試。

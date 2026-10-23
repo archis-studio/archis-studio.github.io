@@ -22,7 +22,9 @@ minimal_mistakes_skin: "dark" # Base skin, will be overridden by custom Autumn N
 # Author - Fashion Editorial Style
 author:
   name: "Archi Chen"
-  avatar: "/assets/images/profile_picture_xaos_engineer.png"
+  avatar: "/assets/images/profile_picture_xaos_engineer.webp"
+  avatar_width: 400
+  avatar_height: 400
   bio: "Software Engineer, NYCU CS Master's | 記錄我在職業生涯上點滴的所學、所知、所見、所思。"
   location: "Taipei, Taiwan"
   email: "magic83w@gmail.com"
