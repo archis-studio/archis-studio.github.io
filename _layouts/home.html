@@ -2,10 +2,14 @@
 layout: default
 ---
 
-<div id="main" role="main">
-  <article class="page home-page" itemscope itemtype="https://schema.org/CreativeWork">
-    {{ content }}
-  </article>
-  
-  {% include sidebar.html %}
-</div>
+<main>
+  {% include page__hero.html %}
+
+  <div id="main">
+    <article class="page home-page" itemscope itemtype="https://schema.org/CreativeWork">
+      {{ content }}
+    </article>
+
+    {% include sidebar.html %}
+  </div>
+</main>

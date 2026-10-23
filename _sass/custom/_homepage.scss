@@ -90,13 +90,9 @@
   text-align: center;
   padding: calc(var(--nav-height) + 3rem) 2rem 3rem;
   
-  // Full width - break out of parent container completely
-  width: 100vw;
+  // The home layout places the full-width hero before the content/sidebar columns.
+  width: 100%;
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   margin-top: 0;
   margin-bottom: 2rem;
   
@@ -107,11 +103,6 @@
     min-height: 55vh;
     padding: calc(var(--nav-height) + 4rem) 3rem 4rem;
     margin-bottom: 3rem;
-    
-    // Calculate from viewport, not parent
-    // Parent is calc(100% - 300px), we need to add that back
-    width: 100vw;
-    max-width: none;
   }
   
   // Matrix Rain Canvas
@@ -263,6 +254,8 @@
   
   // Content Container
   &__content {
+    width: 100%;
+    min-width: 0;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
@@ -288,7 +281,7 @@
         rgba(74, 144, 184, 0.15) 50%,
         rgba(231, 76, 60, 0.15) 100%
       );
-      padding: 0.8rem 2.5rem;
+      padding: 0.8rem 5%;
       border-radius: 6px;
       text-shadow: 
         0 0 10px rgba(212, 160, 23, 0.8),
@@ -344,12 +337,13 @@
   // Title with Glitch Effect - Black White Deep Gray
   &__title {
     font-family: 'JetBrains Mono', 'Courier New', monospace;
-    font-size: 2.5rem;
+    font-size: clamp($font-size-2xl, 7.5vw, 2.5rem);
     font-weight: 700;
     color: #FFFFFF;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
+    overflow-wrap: anywhere;
     // Sharp triple-tone glow: black, white, deep gray
     text-shadow: 
       0 0 2px rgba(255, 255, 255, 1),      // Sharp white edge
@@ -369,6 +363,7 @@
     .glitch {
       position: relative;
       display: inline-block;
+      max-width: 100%;
       
       &::before,
       &::after {

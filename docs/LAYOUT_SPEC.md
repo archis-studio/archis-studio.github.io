@@ -1,6 +1,6 @@
 # 頁面結構與互動
 
-Version 4.0.2 | Updated: 2026-10-24
+Version 4.0.3 | Updated: 2026-10-24
 
 供人／Agent 查找頁面組成、互動約定及實作來源。設計原則與 tokens 見 [Design System](DESIGN_SYSTEM_SPEC.md)，修改入口、測試指令與部署見 [Development](../DEVELOPMENT.md)。來源、DOM 測試、瀏覽器與效能量測各有驗證範圍，不能互相替代。
 
@@ -58,7 +58,7 @@ Version 4.0.2 | Updated: 2026-10-24
 
 ### 首頁
 
-`index.html` 將 Hero、精選與八分類入口放進 home layout；該 layout 再引入主題 sidebar。Hero 由 `page.hero` 的標題、文字與 CTA 資料控制，並包含徽章、裝飾及 Matrix Canvas。
+home layout 在 `#main` 雙欄區域之前輸出滿版 Hero；`index.html` 提供下方精選與八分類內容，主題 sidebar 與內容欄並列，從 Hero 下方開始。Hero 由 `page.hero` 的標題、文字與 CTA 資料控制，並包含徽章、裝飾及 Matrix Canvas。窄螢幕的 Hero 標題採局部流動字級與換行保護，不重設全站文字尺度。
 
 精選依 `site.posts` 順序取 `featured: true`，最多四篇；只有沒有精選時才改取最新四篇。有少量精選時不混入其他文章。沒有文章時顯示空狀態。首頁精選卡片不是共用 post-card 的完整結構，但圖片仍共用 post-image。
 
@@ -161,6 +161,10 @@ certificates layout 由 `page.certificates` 產生卡片與分類篩選，圖片
 舊 Layout 完整內容可由 commit `94dfac1` 的本檔追溯；[Navigation 原文](archive/NAVIGATION_SPEC.md)已封存，現行行為約定以本文件為準。Asset 的通用視覺原則已在 Design，剩餘頁面結構／載入／裝飾構想已於本文件分清實作與歷史；[Asset 原文](archive/ASSET_SPEC.md)已封存。
 
 ## CHANGELOG
+
+### v4.0.3 (2026-10-24)
+
+- Hero 移至首頁雙欄區域上方，移除 viewport 負 margin 定位，限制內容寬度並改善窄螢幕標題。
 
 ### v4.0.2 (2026-10-24)
 
