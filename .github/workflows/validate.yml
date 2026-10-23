@@ -31,9 +31,9 @@ jobs:
           node-version: '24'
           cache: npm
           cache-dependency-path: test/package-lock.json
-      - name: Install search test dependencies
+      - name: Install JavaScript test dependencies
         run: npm ci --prefix test --ignore-scripts --no-audit --no-fund
-      - name: Check search interactions
+      - name: Check JavaScript interactions
         run: npm test --prefix test
       - name: Build and validate production output
         run: bundle exec ruby scripts/validate.rb

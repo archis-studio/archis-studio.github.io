@@ -58,6 +58,31 @@ class NavigationTest < Minitest::Test
     assert_equal "3", document.at_css("#tags-total-tags").text
   end
 
+  def test_tag_cloud_markup_provides_script_controls_and_data_for_each_prefix
+    entries = posts(2)
+    %w[posts tags].each do |prefix|
+      document = render("_includes/tag-cloud-compact.html", {
+        "include" => { "id_prefix" => prefix },
+        "site" => { "posts" => entries, "tags" => [["ChatGPT", entries.first(1)], ["AI", entries]] }
+      })
+      ids = document.css("[id]").map { |node| node["id"] }
+      assert_equal ids.uniq, ids, "#{prefix}: duplicate control ID"
+      assert_equal 1, document.css("input.search-input-compact[id='#{prefix}-tag-search']").size
+      assert_equal 1, document.css("button.search-clear-compact[id='#{prefix}-clear-search']").size
+      clouds = document.css(".tag-cloud-container-compact[id='#{prefix}-tag-cloud']")
+      assert_equal 1, clouds.size
+
+      buttons = document.css(".sort-controls-compact button.sort-btn-compact")
+      assert_equal [["name", prefix], ["popular", prefix]], buttons.map { |node|
+        [node["data-sort"], node["data-group"]]
+      }.sort
+      items = clouds.first.css("a.tag-cloud-item-compact")
+      assert_equal [["AI", "2", prefix], ["ChatGPT", "1", prefix]], items.map { |node|
+        [node["data-tag"], node["data-count"], node["data-group"]]
+      }
+    end
+  end
+
   def test_published_tag_names_do_not_collide_after_slugification
     names = Dir["_posts/*.md"].flat_map do |path|
       data = YAML.unsafe_load(File.read(path)[/\A---\n(.*?)\n---/m, 1])
