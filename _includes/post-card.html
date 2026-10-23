@@ -43,11 +43,11 @@
 
     <!-- Meta Info -->
     <div class="post-card__meta">
-      <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">
+      <time class="post-card__date" datetime="{{ post.date | date_to_xmlschema }}">
         {{ post.date | date: "%Y.%m.%d" }}
       </time>
       {% if post.tags.size > 0 %}
-      <div class="post-tags">
+      <div class="post-card__tags">
         {% for tag in post.tags limit:3 %}
           <span class="tag">#{{ tag }}</span>
         {% endfor %}

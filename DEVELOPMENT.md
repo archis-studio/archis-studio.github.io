@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.2.5 | Updated: 2026-10-24
+Version 4.2.6 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -125,7 +125,7 @@ author_profile: true
 
 樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins。共用動畫集中於 `_sass/shared/_animations.scss`，在頁面樣式之前載入；不同效果使用元件專屬動畫名稱，避免依賴載入順序覆蓋。約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
 
-跨頁元件放在 `_sass/components/`，依對應 include 命名：`post-card` 管理文章卡片，`tag-cloud-compact` 管理精簡標籤雲。兩者接在文章列表樣式之後載入；卡片保留舊 `.post-date`／`.post-tags` selector，須在文章內頁樣式之前載入，避免改變目前 cascade。
+跨頁元件放在 `_sass/components/`，依對應 include 命名：`post-card` 管理文章卡片，`tag-cloud-compact` 管理精簡標籤雲。兩者接在文章列表樣式之後載入；卡片使用 `.post-card__date`／`.post-card__tags`，文章內頁使用自己的 `.post-date`／`.post-tags`，分別維護日期與標籤樣式。
 
 首頁內容區塊、About、文章留言與標籤區塊的間距由各自 custom partial 管理；避免用全域 `section` 規則設定頁面留白。
 
@@ -239,6 +239,10 @@ Markdown 章節採常用 GitHub 標題錨點規則，支援中文、格式化文
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.2.6 (2026-10-24)
+
+- 卡片 metadata 改用專屬 class，將原先互相繼承的宣告歸回各元件，保留既有外觀。
 
 ### v4.2.5 (2026-10-24)
 
