@@ -50,7 +50,7 @@ layout: default
     {% if page.tags.size > 0 %}
     <div class="post-tags">
       {% for tag in page.tags %}
-        <a href="{{ site.baseurl }}/tags/#{{ tag | slugify }}" class="tag-link">#{{ tag }}</a>
+        <a href="{{ '/tags/' | relative_url }}#tag-{{ tag | slugify }}" class="tag-link">#{{ tag | escape }}</a>
       {% endfor %}
     </div>
     {% endif %}
@@ -184,20 +184,31 @@ document.addEventListener('DOMContentLoaded', function() {
     if (headings.length === 0) {
       document.querySelector('.post-toc').style.display = 'none';
     } else {
-      let tocHTML = '<ul class="toc-list">';
+      const tocList = document.createElement('ul');
+      tocList.className = 'toc-list';
       
       headings.forEach((heading, index) => {
         const level = heading.tagName.toLowerCase();
         const text = heading.textContent;
-        const id = `heading-${index}`;
-        heading.id = id;
+        if (!heading.id) {
+          const baseId = `heading-${index}`;
+          let id = baseId;
+          let suffix = 1;
+          while (document.getElementById(id)) id = `${baseId}-${suffix++}`;
+          heading.id = id;
+        }
         
-        const className = `toc-item toc-item--${level}`;
-        tocHTML += `<li class="${className}"><a href="#${id}" class="toc-link">${text}</a></li>`;
+        const item = document.createElement('li');
+        item.className = `toc-item toc-item--${level}`;
+        const link = document.createElement('a');
+        link.className = 'toc-link';
+        link.setAttribute('href', `#${encodeURIComponent(heading.id)}`);
+        link.textContent = text;
+        item.appendChild(link);
+        tocList.appendChild(item);
       });
       
-      tocHTML += '</ul>';
-      tocNav.innerHTML = tocHTML;
+      tocNav.replaceChildren(tocList);
       
       // Active state on scroll
       const tocLinks = tocNav.querySelectorAll('.toc-link');
@@ -211,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         tocLinks.forEach(link => {
           link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
+          if (link.getAttribute('href') === `#${encodeURIComponent(current)}`) {
             link.classList.add('active');
           }
         });

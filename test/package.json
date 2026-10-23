@@ -2,7 +2,7 @@
   "name": "archis-search-tests",
   "private": true,
   "scripts": {
-    "test": "node --test search_test.cjs"
+    "test": "node --test *_test.cjs"
   },
   "devDependencies": {
     "jsdom": "28.1.0"

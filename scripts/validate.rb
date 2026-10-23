@@ -48,13 +48,22 @@ module SiteValidation
           "/categories/" => "h1", "/about/" => "h1",
           "/tags/" => ".tags-page-container", "/certificates/" => "h1"
         }
-        documents = routes.map do |route, selector|
-          check_html(File.join(destination, route.delete_prefix("/"), "index.html"), selector)
+        route_documents = routes.to_h do |route, selector|
+          [route, check_html(File.join(destination, route.delete_prefix("/"), "index.html"), selector)]
         end
+        documents = route_documents.values
+        raise Error, "Homepage shows more than four featured posts" if route_documents.fetch("/").css(".featured-card").size > 4
+        tag_page = route_documents.fetch("/tags/")
+        tag_ids = tag_page.css(".tag-detail-section[id]").map { |section| section["id"] }
+        raise Error, "Duplicate tag section IDs" unless tag_ids.uniq.size == tag_ids.size
+        raise Error, "Incorrect tag page article count" unless tag_page.at_css("#tags-total-posts")&.text == site.posts.docs.size.to_s
         site.posts.docs.each do |post|
           path = post.destination(destination)
           document = check_html(path, "article.post-single .post-content")
           raise Error, "Missing article title: #{path}" unless document.at_css("h1.post-title")
+          document.css(".tag-link").each do |link|
+            raise Error, "Broken article tag link: #{link['href']}" unless tag_ids.include?(link["href"].split("#", 2).last)
+          end
           documents << document
         end
         raise Error, "No published posts found" if site.posts.docs.empty?

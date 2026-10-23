@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.3 | Updated: 2026-10-23
+# Version 2.0.4 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -392,6 +392,15 @@ header:
 
 頂層 `image` 是社群分享圖片，本次保留原始 PNG/JPEG。既有 CSS 控制卡片裁切，不改變圖片本身構圖。`test/post_image_test.rb` 由既有 Ruby workflow 自動執行，Pages 使用已生成的檔案，不執行圖片轉換。
 
+### 文章導覽與首頁驗證
+
+- 文章標籤連結與標籤頁統一採用 `tag-` 錨點；標籤名稱應統一大小寫，避免 slug 相同造成重複 ID。
+- 目錄保留 Markdown／自訂 heading ID；只有缺少 ID 時才生成不撞名的 fallback，標題以文字節點呈現。
+- 首頁精選最多四篇；沒有精選時顯示最新四篇，有少量精選時不混入其他文章。
+- 標籤／文章總數由 Liquid 直接輸出，不加總每個標籤的文章數，因此不會重複計算。
+- `test/navigation_test.rb`、`test/navigation_test.cjs` 分別檢查模板輸出與實際 inline JavaScript。`npm test --prefix test` 執行全部 `*_test.cjs`。
+- production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間估算方式此次不變。
+
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
 - **Firefox**: Secondary testing
@@ -415,12 +424,16 @@ header:
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.3
+**Version**: 2.0.4
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.4 (2026-10-23)
+- 記錄文章標籤、目錄錨點、首頁精選上限與唯一文章統計規則。
+- 新增導覽模板／DOM 回歸測試及 production 驗證說明。
 
 ### v2.0.3 (2026-10-23)
 - 新增本機圖片壓縮流程與共用封面載入規則；依使用者決定，每篇只維護一張壓縮圖。

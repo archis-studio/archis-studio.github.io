@@ -15,11 +15,11 @@
   <!-- Statistics -->
   <div class="tags-stats-compact">
     <div class="stat-item">
-      <span class="stat-number" id="{{ include.id_prefix }}-total-tags">0</span>
+      <span class="stat-number" id="{{ include.id_prefix }}-total-tags">{{ site.tags | size }}</span>
       <span class="stat-label">標籤</span>
     </div>
     <div class="stat-item">
-      <span class="stat-number" id="{{ include.id_prefix }}-total-posts">0</span>
+      <span class="stat-number" id="{{ include.id_prefix }}-total-posts">{{ site.posts | size }}</span>
       <span class="stat-label">文章</span>
     </div>
   </div>
@@ -100,17 +100,7 @@
   const prefix = '{{ include.id_prefix }}';
   
   document.addEventListener('DOMContentLoaded', function() {
-    // Update statistics
     const tagItems = document.querySelectorAll(`.tag-cloud-item-compact[data-group="${prefix}"]`);
-    const totalTags = tagItems.length;
-    const totalPosts = Array.from(tagItems)
-      .reduce((sum, tag) => sum + parseInt(tag.dataset.count), 0);
-    
-    const totalTagsEl = document.getElementById(`${prefix}-total-tags`);
-    const totalPostsEl = document.getElementById(`${prefix}-total-posts`);
-    
-    if (totalTagsEl) totalTagsEl.textContent = totalTags;
-    if (totalPostsEl) totalPostsEl.textContent = totalPosts;
     
     // Search functionality
     const searchInput = document.getElementById(`${prefix}-tag-search`);

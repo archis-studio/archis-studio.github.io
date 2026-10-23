@@ -1,5 +1,5 @@
 # 文件索引 - Documentation Index
-# Version 4.0.3 | Updated: 2026-10-23
+# Version 4.0.4 | Updated: 2026-10-23
 
 ## 📚 文件追蹤系統
 
@@ -19,7 +19,7 @@
 | `IMPLEMENTATION_CHECKLIST.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 10階段實作指南 |
 | `AI_COLLABORATION_GUIDE.md` | 3.0.0 | 2025-10-28 | ✅ Complete | AI 協作流程 |
 | `CONTENT_STRATEGY.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 內容創作規範 |
-| `DOC_INDEX.md` | 4.0.3 | 2026-10-23 | ✅ Complete | 文件索引（本文件）|
+| `DOC_INDEX.md` | 4.0.4 | 2026-10-23 | ✅ Complete | 文件索引（本文件）|
 
 ### 🎨 設計系統實作檔案 (_sass/design-system/)
 
@@ -39,7 +39,7 @@
 |------|------|------|------|------|
 | `README.md` | 3.0.0 | 👥 訪客 | ✅ Complete | 專案介紹與快速開始 |
 | `agents.MD` | 3.0.0 | 🤖 AI | ✅ Complete | AI Agent 入口與指引 |
-| `DEVELOPMENT.md` | 2.0.3 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
+| `DEVELOPMENT.md` | 2.0.4 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
 | `HOW-TO-EDIT-BIO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Author Bio 編輯指南 |
 | `PROFILE-IMAGE-TODO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Profile 頭像替換指南 |
 | `assets/images/README.md` | 3.0.0 | 🤖 AI | ✅ Complete | 圖片資源規格 |
@@ -58,6 +58,7 @@
 - `scripts/generate-post-images.sh`：本機產生一張共用 WebP 封面，保留原圖。
 - `test/post_image_test.rb`：圖片選擇、尺寸、fallback 與載入策略回歸測試。
 - `docs/superpowers/plans/2026-10-23-post-images.md`：文章圖片最佳化計畫。
+- `test/navigation_test.rb`、`test/navigation_test.cjs`：標籤連結、目錄錨點、精選上限與統計回歸測試。
 - 操作方式與限制：參考 `DEVELOPMENT.md` 的 Deployment 與 Testing & Quality。
 
 ### 📖 AI Agent 閱讀順序
@@ -117,6 +118,10 @@ head -n 2 docs/*.md
 ---
 
 ## 📝 CHANGELOG
+
+### v4.0.4 (2026-10-23)
+- 索引導覽模板／DOM 回歸測試。
+- 同步 DEVELOPMENT.md v2.0.4。
 
 ### v4.0.3 (2026-10-23)
 - 索引文章圖片共用模板、壓縮工具與測試。
