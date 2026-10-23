@@ -45,8 +45,9 @@
   }
 }
 
-// Section Spacing - Increased breathing room
-section {
+// Homepage content sections; the hero defines its own spacing.
+.featured-spotlight,
+.categories-navigation {
   padding: 5rem 0;
   
   @media (max-width: 768px) {
@@ -1080,10 +1081,6 @@ section {
 }
 
 @media (max-width: 768px) {
-  section {
-    padding: 3rem 0;
-  }
-  
   .container {
     padding: 0 1rem;
   }

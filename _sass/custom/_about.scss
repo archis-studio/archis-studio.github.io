@@ -8,6 +8,15 @@
 // Accent: Soft Cosmic Blue (#6b8cae, #4a6b8a)
 // Neutral: Deep Blacks & Warm Grays
 
+// Preserve spacing on the theme single layout used by About.
+.layout--single .page__content {
+  padding: 5rem 0;
+
+  @media (max-width: 768px) {
+    padding: 3rem 0;
+  }
+}
+
 // ============================================
 // Terminal Window (Pixel Art Container)
 // ============================================

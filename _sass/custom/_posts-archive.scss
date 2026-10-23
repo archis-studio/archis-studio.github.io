@@ -745,8 +745,12 @@
 .posts-tags-section,
 .tags-page-cloud-section {
   margin-top: 4rem;
-  padding-top: 3rem;
+  padding: 3rem 0 5rem;
   border-top: 2px solid rgba(146, 99, 69, 0.3);
+
+  @media (max-width: 768px) {
+    padding-bottom: 3rem;
+  }
 }
 
 .tags-page-container {

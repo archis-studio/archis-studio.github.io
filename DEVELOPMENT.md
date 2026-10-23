@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.2.2 | Updated: 2026-10-24
+Version 4.2.3 | Updated: 2026-10-24
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -125,6 +125,8 @@ author_profile: true
 
 樣式從 `assets/css/main.scss` 追蹤 import，使用既有 variables／mixins。共用動畫集中於 `_sass/shared/_animations.scss`，在頁面樣式之前載入；不同效果使用元件專屬動畫名稱，避免依賴載入順序覆蓋。約束見 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
 
+首頁內容區塊、About、文章留言與標籤區塊的間距由各自 custom partial 管理；避免用全域 `section` 規則設定頁面留白。
+
 ## 作者資料設定
 
 全站作者名稱、簡介、位置、信箱與頭像位於 `_config.yml` 的 `author`。側欄由 `_includes/author-profile.html` 顯示，bio 經 `markdownify` 處理；About 的正文、職涯與技能另在 `_pages/about.md`，修改 bio 不會同步改寫 About。
@@ -235,6 +237,10 @@ Markdown 章節採常用 GitHub 標題錨點規則，支援中文、格式化文
 頁面結構、搜尋／導覽、TOC／標籤、精選／統計、閱讀時間及動態效果的完整約定集中於 [Layout](docs/LAYOUT_SPEC.md)。修改位置見[修改入口](#修改入口)，驗證指令與限制見[測試與驗證](#測試與驗證)。
 
 ## CHANGELOG
+
+### v4.2.3 (2026-10-24)
+
+- 將全域 section 間距歸回各頁面元件，保留既有尺寸與斷點。
 
 ### v4.2.2 (2026-10-24)
 
