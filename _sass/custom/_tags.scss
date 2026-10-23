@@ -482,6 +482,6 @@
     grid-template-columns: 1fr;
   }
   
-  // Use existing post-card styles from _posts-archive.scss
+  // Use shared post-card styles from components/_post-card.scss
   // No need for separate .tag-post-card styles
 }

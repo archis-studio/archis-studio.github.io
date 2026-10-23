@@ -20,7 +20,8 @@
 @import "custom/sidebar";
 @import "custom/homepage";
 @import "custom/about";
-@import "custom/posts-archive";    // Unified card grid for posts & categories
+@import "custom/posts-archive";    // Archive layouts and page sections
+@import "components/post-card";   // Keep before article styles for legacy metadata selectors
 @import "components/tag-cloud-compact"; // Preserve component cascade order
 @import "custom/post-single";
 @import "custom/categories";
