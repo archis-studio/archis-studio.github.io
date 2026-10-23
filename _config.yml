@@ -78,6 +78,7 @@ exclude:
   - tmp
   - /docs
   - /test
+  - /scripts
   # Documentation files
   - "*.MD"
   - agents.MD
@@ -147,6 +148,11 @@ compress_html:
 
 # Defaults
 defaults:
+  # Global Open Graph fallback; explicit page/post images take precedence.
+  - scope:
+      path: ""
+    values:
+      image: /favicon.png
   # _posts
   - scope:
       path: ""
@@ -188,13 +194,6 @@ social:
   links:
     - "https://github.com/archis-studio"
     - "https://www.linkedin.com/in/magicxcr7"
-
-# Open Graph defaults
-defaults:
-  - scope:
-      path: ""
-    values:
-      image: /favicon.png
 
 # Comments
 comments:

@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.0 | Updated: 2025-10-26
+# Version 2.0.1 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -13,7 +13,7 @@
 - **OS**: macOS / Linux / Windows WSL
 - **Ruby**: 3.3.10 (via rbenv)
 - **Bundler**: 2.5.22
-- **Jekyll**: 4.4.1
+- **Jekyll**: 3.10.0
 
 ### Initial Setup
 
@@ -151,7 +151,7 @@ bundle exec jekyll serve --livereload --force_polling
 # Check versions
 ruby --version          # Should show: 3.3.10
 bundle --version        # Should show: 2.5.22
-bundle exec jekyll -v   # Should show: 4.4.1
+bundle exec jekyll -v   # Should show: 3.10.0
 
 # Update dependencies
 bundle update           # Update all gems
@@ -280,52 +280,30 @@ Jekyll 會自動偵測 SCSS 變更並重新編譯，LiveReload 會自動刷新�
 
 ## 📦 Deployment
 
-### GitHub Actions (Required for Jekyll 4.x)
+### 現有部署方式
 
-由於使用 Jekyll 4.4.1，GitHub Pages 無法直接建置（僅支援 3.9.x）。需要使用 GitHub Actions。
+GitHub Pages API 於 2026-10-23 確認：`build_type: legacy`，從 `main` 分支根目錄 `/` 建置。實際部署狀態與來源應以 repository Settings → Pages 為準。
 
-**Workflow 範例** (`.github/workflows/jekyll.yml`):
-```yaml
-name: Deploy Jekyll site
+本專案使用 `github-pages ~> 232`，lockfile 中的 Jekyll 為 3.10.0、Minimal Mistakes 固定為 4.27.0。`.ruby-version` 為本機與驗證 workflow 的 Ruby 版本來源；它不控制 GitHub Pages 的內建建置環境。
 
-on:
-  push:
-    branches: [ main ]
+### 自動驗證（不部署）
 
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3.10'
-          bundler-cache: true
-      
-      - name: Build site
-        run: bundle exec jekyll build
-        
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
-```
+`.github/workflows/validate.yml` 在 PR、push 或手動執行時：
 
-### Manual Deployment Steps
-```bash
-# 1. Ensure all changes committed
-git status
+1. 依 `.ruby-version` 與 `Gemfile.lock` 安裝套件，啟用 `BUNDLE_FROZEN`，禁止自動改寫 lockfile。
+2. 執行 `bundle exec ruby test/config_test.rb`。
+3. 執行 `bundle exec ruby scripts/validate.rb`。
 
-# 2. Build locally (optional - test first)
-bundle exec jekyll build
+驗證工作僅使用 `contents: read`，不要求部署 secret、不發布網站、不修改 Pages 設定。它與 legacy Pages 部署獨立運作；如果要在合併前強制通過，需另行設定 branch protection required status check：`Validate site / validate`（以 GitHub 顯示的 check 名稱為準）。直接 push 到 main 仍可能觸發部署，不會等待這個驗證工作。
 
-# 3. Push to GitHub
-git push origin main
+### 更新上線流程
 
-# 4. GitHub Actions will auto-build and deploy
-```
+1. 先在本機執行下方驗證指令。
+2. 在 PR 檢查 `Validate site` 通過，並完成頁面預覽。
+3. 人類確認後才 commit／push／merge，依當次指示操作。
+4. 確認 GitHub Pages 實際建置與部署成功，再檢查線上頁面。
+
+本機驗證不等於遠端部署成功；GitHub 權限、服務狀態與網路仍可能造成獨立失敗。
 
 ---
 
@@ -368,17 +346,19 @@ $custom-color: #D4A017;
 
 ## 🧪 Testing & Quality
 
-### Pre-commit Checks
+### 提交前驗證
+
 ```bash
-# Validate HTML/links
-bundle exec jekyll doctor
-
-# Build performance check
-bundle exec jekyll build --profile
-
-# Check for broken links (if installed)
-bundle exec htmlproofer ./_site --disable-external
+bundle check
+bundle exec ruby test/config_test.rb
+bundle exec ruby scripts/validate.rb
 ```
+
+驗證程式會檢查設定／資料／workflow YAML 的重複 key，在全新的暫存目錄執行 production build，檢查主要頁面、所有已發布文章版型、分類頁、本地圖片／script／stylesheet 資源，以及開發檔案排除規則。暫存輸出在結束時自動清除，不使用舊 `_site` 判定成功。
+
+遠端主題需要網路；下載失敗時應排除網路問題後重試，不要跳過檢查。這個 smoke check 不執行瀏覽器 JavaScript、不驗證所有連結或第三方服務，不取代響應式／視覺測試。
+
+補充診斷可使用 `bundle exec jekyll doctor`，但它不會驗證所有 HTML 與連結。
 
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
@@ -402,13 +382,17 @@ bundle exec htmlproofer ./_site --disable-external
 
 ---
 
-**Last Updated**: 2025-10-26  
-**Version**: 2.0.0  
-**Jekyll**: 4.4.1 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.3
+**Last Updated**: 2026-10-23
+**Version**: 2.0.1
+**Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.1 (2026-10-23)
+- 校正實際 Jekyll／主題版本與 legacy Pages 部署方式。
+- 新增 production 輸出驗證與自動檢查說明，區分驗證與部署。
 
 ### v2.0.0 (2025-10-26)
 - ✅ Core implementation complete

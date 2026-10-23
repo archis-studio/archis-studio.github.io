@@ -1,5 +1,5 @@
 # 文件索引 - Documentation Index
-# Version 4.0.0 | Updated: 2025-11-01
+# Version 4.0.1 | Updated: 2026-10-23
 
 ## 📚 文件追蹤系統
 
@@ -19,7 +19,7 @@
 | `IMPLEMENTATION_CHECKLIST.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 10階段實作指南 |
 | `AI_COLLABORATION_GUIDE.md` | 3.0.0 | 2025-10-28 | ✅ Complete | AI 協作流程 |
 | `CONTENT_STRATEGY.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 內容創作規範 |
-| `DOC_INDEX.md` | 4.0.0 | 2025-11-01 | ✅ Complete | 文件索引（本文件）|
+| `DOC_INDEX.md` | 4.0.1 | 2026-10-23 | ✅ Complete | 文件索引（本文件）|
 
 ### 🎨 設計系統實作檔案 (_sass/design-system/)
 
@@ -39,10 +39,18 @@
 |------|------|------|------|------|
 | `README.md` | 3.0.0 | 👥 訪客 | ✅ Complete | 專案介紹與快速開始 |
 | `agents.MD` | 3.0.0 | 🤖 AI | ✅ Complete | AI Agent 入口與指引 |
-| `DEVELOPMENT.md` | 3.0.0 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
+| `DEVELOPMENT.md` | 2.0.1 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
 | `HOW-TO-EDIT-BIO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Author Bio 編輯指南 |
 | `PROFILE-IMAGE-TODO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Profile 頭像替換指南 |
 | `assets/images/README.md` | 3.0.0 | 🤖 AI | ✅ Complete | 圖片資源規格 |
+
+### 建置驗證與第一階段改善
+
+- `scripts/validate.rb`：production 建置與輸出 smoke check。
+- `test/config_test.rb`：重複 YAML key、scoped defaults 與文章 HTML 檢查。
+- `.github/workflows/validate.yml`：PR／push／手動驗證，不部署。
+- `docs/superpowers/plans/2026-10-23-pages-validation.md`：第一階段範圍、驗收與執行記錄。
+- 操作方式與限制：參考 `DEVELOPMENT.md` 的 Deployment 與 Testing & Quality。
 
 ### 📖 AI Agent 閱讀順序
 
@@ -102,6 +110,10 @@ head -n 2 docs/*.md
 
 ## 📝 CHANGELOG
 
+### v4.0.1 (2026-10-23)
+- 索引第一階段建置驗證工具與實作計畫。
+- 同步 DEVELOPMENT.md v2.0.1。
+
 ### v4.0.0 (2025-11-01)
 - **新增「設計系統實作檔案」章節**：索引 _sass/design-system/ 目錄
   - _variables.scss (155行) - 變數定義
@@ -142,4 +154,4 @@ head -n 2 docs/*.md
 ---
 
 **Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2025-10-28
+**Last Updated**: 2026-10-23

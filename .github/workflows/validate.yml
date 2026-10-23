@@ -1,0 +1,28 @@
+name: Validate site
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      BUNDLE_FROZEN: "true"
+      JEKYLL_ENV: production
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: Check configuration regressions
+        run: bundle exec ruby test/config_test.rb
+      - name: Build and validate production output
+        run: bundle exec ruby scripts/validate.rb
