@@ -423,10 +423,9 @@
 }
 
 // =========================
-// Tag Cloud Section in Posts Archive & Tags Page
+// Tag Cloud Section in Posts Archive
 // =========================
-.posts-tags-section,
-.tags-page-cloud-section {
+.posts-tags-section {
   margin-top: 4rem;
   padding: 3rem 0 5rem;
   border-top: 2px solid rgba(146, 99, 69, 0.3);
@@ -434,20 +433,4 @@
   @media (max-width: 768px) {
     padding-bottom: 3rem;
   }
-}
-
-.tags-page-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 3rem 2rem;
-  
-  @media (max-width: 768px) {
-    padding: 2rem 1.25rem;
-  }
-}
-
-.tags-page-cloud-section {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: none;
 }

@@ -17,6 +17,17 @@
   }
 }
 
+// Tag cloud section spacing belongs to this page, not the shared component.
+.tags-page-cloud-section {
+  margin-top: 0;
+  padding: 0 0 5rem;
+  border-top: none;
+
+  @media (max-width: 768px) {
+    padding-bottom: 3rem;
+  }
+}
+
 // =========================
 // Page Header
 // =========================
