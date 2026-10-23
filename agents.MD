@@ -1,599 +1,97 @@
-# 🤖 AI Agents README
-# Version 4.0.0 | Updated: 2025-11-01
+# AI 協作規範
+# Version 5.0.0 | Updated: 2026-10-23
 
-> **For AI Assistants**: This document is your entry point to the Archis Studio Blog project.
-> Read this first before any implementation work.
+本文件是 AI 的專案入口，定義修改邊界、工作流程與驗證要求。專案定位見 [README](README.md)，操作指令見 [DEVELOPMENT](DEVELOPMENT.md)，主題規格由[文件索引](docs/DOC_INDEX.md)導覽。
 
-> **v4.0 Update**: Design System fully implemented - variables + mixins ready to use
+## 指令與授權
 
----
+- 優先遵循系統、開發者與當次使用者指示；本文件補充專案慣例。
+- 使用者已明確授權的工作應持續完成；例行實作選擇不需重複確認。
+- 預設只修改與驗證，**不自行 stage、commit 或 push**。使用者要求提供 commit message，也不代表授權執行 commit。
+- Git remote 設定不得修改；不得刪除重要設定檔或修改 protected 區域。
+- 重要設定、主要頁面的新增／刪除，以及 Design System 規格變更，需使用者明確授權該範圍。不得因實作與規格不同，便自行改寫規格。
+- 不刪除文件；整併後以保留來源、更新引用及封存處理。封存亦須在當次任務授權範圍內。
+- 不擅自改變專案目標、加入需求以外功能，或引入未定義的顏色與字型。
 
-## 🎯 Project Overview
+本次入口整理後，協作與 Git 流程以本文件為準。舊 [AI_COLLABORATION_GUIDE](docs/AI_COLLABORATION_GUIDE.md) 中「每步自動 commit」等相衝突規則不再適用；尚未整併的設計、內容及資源規範仍需查閱，不能一律視為失效。
 
-**Project**: Archis Studio Blog  
-**Type**: Specification-Driven Jekyll Static Site  
-**Theme**: Autumn Noir Future (Fashion + Gaming + AI + Space)  
-**Base**: Jekyll 4.x + Minimal Mistakes Theme  
-**Language**: Traditional Chinese (zh-TW) with English technical terms  
-**Status**: v2.0 - Core features implemented ✅
+## 依任務閱讀
 
----
+首次接手先讀本文件、[文件索引](docs/DOC_INDEX.md)與[開發指南的架構地圖](DEVELOPMENT.md#架構地圖)，再依任務查閱：
 
-## 📚 Critical: Read These First
+| 任務 | 必要參考 |
+|---|---|
+| 環境、套件、測試、部署 | [DEVELOPMENT.md](DEVELOPMENT.md) 與實際設定／lockfile／workflow |
+| 視覺與元件 | [Design System](docs/DESIGN_SYSTEM_SPEC.md)、[Layout](docs/LAYOUT_SPEC.md)、相關 SCSS／模板 |
+| 導覽與搜尋 | [Layout](docs/LAYOUT_SPEC.md)、[Navigation](docs/NAVIGATION_SPEC.md)、[現行互動約定](DEVELOPMENT.md#現行互動約定) |
+| 寫作、分類、標籤 | [Content](docs/CONTENT_STRATEGY.md)、[建立內容](DEVELOPMENT.md#建立內容) |
+| 圖片、頭像、作者簡介 | [Asset](docs/ASSET_SPEC.md)、[圖片處理](DEVELOPMENT.md#圖片處理)、[作者資料](DEVELOPMENT.md#作者資料設定) |
+| 文件整理與歷史決策 | [索引](docs/DOC_INDEX.md)及對應計畫；不把歷史構想直接當成新需求 |
 
-### 1️⃣ **Mandatory Reading** (Read in Order)
-```
-1. agents.MD (this file)          ← You are here
-2. docs/DOC_INDEX.md              ← Documentation map
-3. docs/PROJECT_CHARTER.md         ← Project goals & principles
-4. docs/AI_COLLABORATION_GUIDE.md  ← Collaboration workflows
-5. docs/DESIGN_SYSTEM_SPEC.md      ← Design system specifications
-```
+四份主題規格仍在整理中。遇到舊版本號、錯誤路徑或互相矛盾的敘述，對照實作確認事實並記錄落差；涉及設計、內容政策或需求選擇時請使用者決定。程式現況只證明目前行為，不代表修改規範已獲授權。
 
-### 2️⃣ **Implementation References**
-```
-docs/IMPLEMENTATION_CHECKLIST.md   ← 10-phase implementation guide
-docs/LAYOUT_SPEC.md                ← Layout specifications
-docs/NAVIGATION_SPEC.md            ← Navigation design
-docs/ASSET_SPEC.md                 ← Asset management
-docs/CONTENT_STRATEGY.md           ← Content creation guidelines
-```
+## 修改流程
 
-> **Note**: 7 redundant/outdated docs removed in v3.0 for clarity
+1. 用 `git status` 確認既有變更；先讀目標檔、相關規格、呼叫處與測試，不覆蓋他人的工作。
+2. 小幅修正可直接執行；多檔案重構或新功能先說明範圍、預期效果與驗證方式，依已確認方案分批實作。
+3. 採用最小必要修改，沿用既有模式；修改後重新閱讀 diff。新增行為先定義預期結果，修錯時保留有意義的回歸驗證。
+4. 執行與變更相符的檢查，依[開發指南](DEVELOPMENT.md#測試與驗證)驗證；同步更新受影響的現行文件。
+5. 回報改了什麼、原因、驗證結果、限制與 Git 狀態，讓人類可直接審閱。沒有執行的檢查不得宣稱通過。
 
----
+需求不明時，先完成不依賴答案的調查；需要決策時提供背景、選項、影響與建議。失敗時回報動作、實際錯誤、判斷依據與下一步，不能以略過驗證當成完成。
 
-## 🔑 Core Principles (Keep It Simple)
+## 實作品質
 
-### Design Principles
-- **Content First**: Minimal visual distraction
-- **Systematic Design**: Scalable & maintainable
-- **Mobile-First**: Responsive across all devices
-- **Dark Mode**: Autumn Noir aesthetic base
+- 保持 Jekyll／Minimal Mistakes 相容性，只覆寫必要檔案，保留主題升級能力。
+- SCSS 使用 `_sass/design-system/_variables.scss` 與 `_mixins.scss`；顏色、字型、間距與斷點需查規格與既有 token，不猜值或增加平行設定。
+- 元件遵循既有 BEM 命名；HTML 使用語意結構、必要的 ARIA 與圖片 alt；JavaScript 採 ES6+ 與漸進式增強，避免重複程式與不必要的依賴。
+- UI 修改確認手機、平板、桌面，涵蓋 320px–1920px；依現有規格檢查 <768px、768px–1024px、>1024px 區間及實際元件斷點，不由此重新定義全站 breakpoint。
+- 以 WCAG 2.1 AA 為目標，檢查對比、鍵盤、焦點與系統減少動態效果。一般文字對比至少 4.5:1，大字至少 3:1。
+- DOM 測試、production build、真實瀏覽器與效能測量各有範圍，不能互相替代；只對已驗證的項目作完成聲明。
+- 定期檢查外部連結、圖片體積、SEO 資料與元件規格；當次任務不需為無關項目增加改動。
 
-### Development Principles
-- **Specification-Driven**: All features have clear specs in `docs/`
-- **AI-Collaborative**: Designed for human-AI partnership
-- **Version Controlled**: Track all changes with proper commit messages
-- **Quality First**: Test thoroughly before committing
+設計決策在對應規格記錄背景、理由、替代方案、實作限制與後續空間。討論與說明使用繁體中文、技術術語保留英文；專案程式與註解使用英文。文章中的程式範例仍查內容規範，其註解語言衝突留待內容整併時處理，不在本次改動文章。
 
----
+## Git 規則
 
-## 🚀 Quick Start Guide
+`git status`、`git diff`、`git log` 等唯讀操作可直接進行。stage、commit、push、merge 依當次使用者明確指示操作；授權 commit 不等於授權 push。提交時保持單一目的，不混入既有無關變更。
 
-### Step 1: Understand Current State
-```bash
-# Check current directory structure
-ls -la
+使用 Conventional Commits：
 
-# Current state (v4.0):
-# ✅ docs/                      - 9 core specifications (streamlined)
-# ✅ _sass/design-system/       - Design system (variables + mixins) ⭐ NEW
-# ✅ _config.yml                - Jekyll configuration
-# ✅ _layouts/                  - Custom layouts (home, post, posts)
-# ✅ _includes/                 - Custom components (hero, masthead, author-profile)
-# ✅ _pages/                    - About, Posts, Categories pages
-# ✅ _sass/custom/              - Custom styling (使用 design-system)
-# ✅ assets/                    - CSS and images
-# ✅ Gemfile                    - Ruby dependencies
-# ✅ README.md                  - Complete documentation
-```
-
-### Step 2: Identify Task Type
-
-**Simple Task** (文件修正、小更新、錯誤修復):
-- Execute → Confirm
-- Direct implementation, then commit
-
-**Complex Task** (新功能、重構、多檔案變更):
-- Plan → Confirm → Implement → Verify
-- Detailed planning before execution
-
-### Step 3: Follow Workflows
-Refer to `docs/AI_COLLABORATION_GUIDE.md` for detailed workflows.
-
----
-
-## 📋 Implementation Phases (Current: Phase 9 Complete)
-
-### Phase 0-9: ✅ COMPLETED
-- ✅ Phase 0: Project cleanup
-- ✅ Phase 1-3: Basic setup & design system
-- ✅ Phase 4-5: Home page (Hero + Featured + Categories)
-- ✅ Phase 6: About page (Terminal + RPG + Journey timeline)
-- ✅ Phase 7-8: Posts archive & article template
-- ✅ Phase 9: Style optimization & responsive design
-
-### Phase 10: ⏳ Future Enhancements
-- [ ] Search functionality
-- [ ] Comment system
-- [ ] SEO optimization
-- [ ] Performance monitoring
-- [ ] Analytics integration
-
-**Current Implementation Status**: 90% complete (9/10 phases)
-
----
-
-## 🎨 Design System Quick Reference
-
-**⚠️ Important**: This is conceptual overview only. For exact values, colors, and specifications, always refer to `docs/DESIGN_SYSTEM_SPEC.md`.
-
-### Design Concept: Four-Style Fusion
-Our design system blends four distinct aesthetics:
-
-1. **🎭 Fashion Editorial**
-   - Elegant typography with serif headlines
-   - Editorial-style layouts
-   - Sophisticated spacing and proportions
-
-2. **🍂 Autumn Noir** 
-   - Dark mode foundation with warm tones
-   - Deep blacks and rich autumn colors
-   - Cozy, intimate atmosphere
-
-3. **🎮 Gaming Pixel Art**
-   - Retro-futuristic accents
-   - Monospace fonts for code
-   - Pixel-perfect alignment
-
-4. **🚀 AI Future Space**
-   - Cosmic gradients and starfield effects
-   - Futuristic color accents
-   - Holographic and sci-fi elements
-
-### Key System Components
-
-**Color Philosophy**:
-- Base: Dark backgrounds (Noir aesthetic)
-- Accents: Autumn warm tones + Future cool tones
-- Contrast: High readability, WCAG AA compliant
-- See `docs/DESIGN_SYSTEM_SPEC.md` § 色彩系統 for exact values
-
-**Typography Approach**:
-- Headlines: Serif fonts (Fashion editorial feel)
-- Body: Sans-serif (Modern readability)
-- Code: Monospace (Pixel/gaming aesthetic)
-- See `docs/DESIGN_SYSTEM_SPEC.md` § Typography System for font stacks and scales
-
-**Spacing Strategy**:
-- Based on 8px grid system
-- Consistent, predictable spacing
-- Responsive scaling across breakpoints
-- See `docs/DESIGN_SYSTEM_SPEC.md` § Spacing System for exact values
-
-**Component Style**:
-- Minimal Mistakes foundation
-- Custom overlays for theme fusion
-- Reusable, modular components
-- See `docs/LAYOUT_SPEC.md` and `docs/NAVIGATION_SPEC.md` for details
-
-### 📖 Always Reference Documentation
-Before implementing any design element:
-1. Check `docs/DESIGN_SYSTEM_SPEC.md` for exact specifications
-2. Verify against `docs/LAYOUT_SPEC.md` for layout details
-3. Cross-reference `docs/NAVIGATION_SPEC.md` for navigation elements
-4. **Never guess values** - specifications are the source of truth
-
-### 🎨 Design System Implementation (v4.0)
-
-**⭐ NEW**: Design system已完整實作於 `_sass/design-system/`
-
-**快速開始**：
-```scss
-// 使用顏色變數（Single Source of Truth）
-.my-element {
-  color: $autumn-gold;              // ✅ 正確
-  border-color: category-color('ai'); // ✅ 正確
-  // color: #D4A017;                // ❌ 不要硬編碼！
-}
-
-// 使用 Mixin 自動生成 8 色樣式
-.my-badge {
-  padding: 0.5rem 1rem;
-  @include generate-category-badges('--');
-  // 自動生成 .my-badge--ai, .my-badge--dev, ... (8個)
-}
-```
-
-**核心檔案**：
-- `_sass/design-system/_variables.scss` (155行) - 單一真相來源
-- `_sass/design-system/_mixins.scss` (270行) - DRY 工具
-
-**詳細指南**：參考 `docs/DESIGN_SYSTEM_SPEC.md` § 實作說明
-
----
-
-## 📁 File Operations Rules
-
-### Before Any Modification
-1. **Read First**: Always view file content before editing
-2. **Understand Context**: Check related files and dependencies
-3. **Check Specs**: Verify against documentation in `docs/`
-
-### During Modification
-1. **Minimal Changes**: Smallest possible changes to achieve goal
-2. **Precise Edits**: Use `str_replace` for exact modifications
-3. **Version Updates**: Update version numbers in document headers
-4. **Keep Consistency**: Follow existing patterns and conventions
-
-### After Modification
-1. **Verify**: Re-read file to confirm changes are correct
-2. **Test**: Check functionality works as expected
-3. **Document**: Update `docs/DOC_INDEX.md` if needed
-4. **Commit**: Use Conventional Commits format with AI attribution
-
----
-
-## 🔄 Git Workflow
-
-### Commit Message Format
-```
+```text
 <type>(<scope>): <description>
 
-[optional body with details]
+[optional body: behavior, reason, validation]
 
-Authored-by: <AI-Agent-Name>
+Authored-by: GPT
 ```
 
-### Commit Types
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: CSS/styling changes
-- `refactor`: Code restructuring
-- `test`: Testing related
-- `chore`: Maintenance tasks
+類型包括 `feat`、`fix`、`docs`、`style`、`refactor`、`test`、`chore`。AI trailer 依實際協作者填寫：ChatGPT／Codex 使用 `GPT`，其他為 `Claude`、`Q`、`Copilot`、`Gemini`；人類自行撰寫的提交不需 AI trailer。
 
-### AI Agent Names
-- **Claude** → `Authored-by: Claude`
-- **ChatGPT** → `Authored-by: GPT`
-- **Amazon Q** → `Authored-by: Q`
-- **Copilot** → `Authored-by: Copilot`
-- **Gemini** → `Authored-by: Gemini`
+GitHub Pages 的驗證與部署分開；依[部署說明](DEVELOPMENT.md#部署與上線)確認實際 Pages 結果，不能只憑本機建置成功宣稱已上線。
 
-### Git Rules
-✅ **Allowed**: `git status`, `git diff`, `git add`, `git commit`  
-❌ **Forbidden**: `git push` (requires human approval)
+## 文件維護規則
 
-### Commit Strategy
-- Commit after each logical unit of work
-- Keep commits atomic and focused
-- All commits stay local until human confirms
-- Clear, descriptive commit messages
+- 一項資訊指定一個主要維護位置，其他文件連回該處；責任分工見[文件索引](docs/DOC_INDEX.md)。不為固定文件數或行數刪去有效決策。
+- 本階段保留文件標頭 `Version X.Y.Z | Updated: YYYY-MM-DD` 與 CHANGELOG。重大結構調整升 major、新章節升 minor、小修正升 patch。
+- 索引只在責任、路徑、閱讀順序或狀態改變時更新；不再重抄各檔版本、行數或測試數量。
+- 版本與環境以設定、lockfile、workflow 為來源；文件若保留快照需註明查核日期。品質目標、已驗證結果與未採用構想分開敘述。
+- 需要封存時，先確認有效資訊有去向，保留來源路徑／時間背景並更新引用；完成計畫供追溯，不取代現行規格。
+- 文件連結使用 repository 內的相對路徑；變更後檢查目標與章節存在。
 
----
+## CHANGELOG
 
-## 🧪 Quality Checklist
+### v5.0.0 (2026-10-23)
 
-Before marking any task complete, verify:
+- 整併協作規則與修改邊界，統一為使用者指示後才 stage／commit／push。
+- 改為依任務閱讀，保留設計約束、驗證限制與文件保存要求。
+- 保留單檔版本與 CHANGELOG，索引停止重複追蹤版本表。
 
-### Design Compliance
-- [ ] Follows Design System specifications
-- [ ] Colors match specifications in `docs/DESIGN_SYSTEM_SPEC.md`
-- [ ] Typography uses correct font families and scales
-- [ ] Spacing follows specifications exactly
+### 歷史摘要
 
-### Responsive Design
-- [ ] Mobile (< 768px) layout tested
-- [ ] Tablet (768px - 1024px) layout tested
-- [ ] Desktop (> 1024px) layout tested
-- [ ] All breakpoints work correctly
+- v4.0.0 (2025-11-01)：加入 Design System 實作入口與使用要求。
+- v3.1.0／v3.0.0 (2025-10-28／26)：區分文件受眾、整理閱讀入口。
+- v2.0.0 (2025-10-24)：記錄核心功能階段。
+- v1.0.0 (2025-10-11)：建立協作規範。
 
-### Code Quality
-- [ ] Valid HTML/CSS/SCSS syntax
-- [ ] Minimal Mistakes conventions followed
-- [ ] No duplicate code
-- [ ] Comments added where necessary (sparingly)
-
-### Accessibility
-- [ ] Semantic HTML structure
-- [ ] ARIA labels where needed
-- [ ] Color contrast meets WCAG AA (4.5:1 minimum)
-- [ ] Keyboard navigation works
-
-### Documentation
-- [ ] Specifications followed exactly
-- [ ] Version numbers updated
-- [ ] Changes logged in CHANGELOG sections
-- [ ] `docs/DOC_INDEX.md` updated if needed
-
----
-
-## 🚫 Do NOT Do
-
-### Forbidden Actions
-- ❌ Modify Design System specs without human approval
-- ❌ Push to remote repository
-- ❌ Delete documentation files
-- ❌ Change project goals or principles
-- ❌ Add features not in specifications
-- ❌ Use colors/fonts not defined in specs
-- ❌ Ignore responsive design requirements
-- ❌ Skip quality checks
-
-### When in Doubt
-1. **Stop**: Don't guess or assume
-2. **Ask**: Request clarification from human
-3. **Propose**: Offer options with pros/cons
-4. **Wait**: Get approval before proceeding
-
----
-
-## 💡 Decision Request Template
-
-When you need human decision:
-
-```markdown
-## 🤔 Decision Required
-
-**Context**: [Brief situation description]
-**Question**: [Specific decision needed]
-
-**Option A**: [Description]
-- Pros: [List advantages]
-- Cons: [List disadvantages]
-
-**Option B**: [Description]
-- Pros: [List advantages]
-- Cons: [List disadvantages]
-
-**Recommendation**: [Your suggested option with reasoning]
-```
-
----
-
-## 📊 Progress Reporting
-
-### Simple Task Format
-```markdown
-## ✅ Completed
-
-- [Specific action taken]
-- Files modified: [list]
-- Commit: [hash]
-```
-
-### Complex Task Format
-```markdown
-## 🔄 Progress Report
-
-### ✅ Completed
-- [Specific tasks finished]
-
-### 🔧 Technical Details
-- [Methods/approaches used]
-- [Challenges and solutions]
-
-### 📝 Git Status
-- Commit: [hash]
-- Files: [list]
-- Next: [next steps]
-
-### 🧪 Testing
-- [ ] Functionality verified
-- [ ] Responsive design checked
-- [ ] Documentation updated
-- [ ] Specifications followed
-```
-
----
-
-## 🆘 Error Handling
-
-When errors occur:
-
-```markdown
-## ⚠️ Error Report
-
-**Action Attempted**: [What you tried to do]
-
-**Error Message**:
-```
-[Full error message here]
-```
-
-**Analysis**: [Your understanding of the cause]
-
-**Suggested Fix**: [Proposed solution or request for guidance]
-```
-
----
-
-## 🔍 Troubleshooting Guide
-
-### Common Issues
-
-**Issue**: Don't know where to start
-- **Solution**: Read `docs/DOC_INDEX.md` → Check current phase in `IMPLEMENTATION_CHECKLIST.md`
-
-**Issue**: Specification unclear
-- **Solution**: Ask human for clarification, propose interpretation options
-
-**Issue**: Conflicting requirements
-- **Solution**: Document the conflict, ask human for priority decision
-
-**Issue**: Tool/command not working
-- **Solution**: Report error with full context, suggest alternatives
-
-**Issue**: Need specific design value
-- **Solution**: Look up in `docs/DESIGN_SYSTEM_SPEC.md`, never guess or improvise
-
----
-
-## 📖 Documentation Standards
-
-### Version Format
-```
-# File Title
-# Version X.Y.Z | Updated: YYYY-MM-DD
-```
-
-### Version Increment Rules
-- **Major (+1.0.0)**: Significant architectural changes
-- **Minor (+0.1.0)**: New features or specifications
-- **Patch (+0.0.1)**: Bug fixes or small adjustments
-
-### Changelog Format
-```markdown
-## 📝 CHANGELOG
-
-### vX.Y.Z (YYYY-MM-DD)
-- Change description
-- Another change
-```
-
----
-
-## 🎯 Success Criteria
-
-A task is complete when:
-
-1. ✅ Specifications followed exactly
-2. ✅ Code quality standards met
-3. ✅ Responsive design working
-4. ✅ Accessibility requirements met
-5. ✅ Documentation updated
-6. ✅ Tested and verified
-7. ✅ Committed with proper message
-8. ✅ Human approved
-
----
-
-## 🤝 Collaboration Philosophy
-
-### Human-AI Partnership
-- **Human**: Sets goals, makes decisions, provides vision
-- **AI**: Executes plans, proposes solutions, ensures quality
-- **Together**: Build beautiful, functional, maintainable code
-
-### Communication Style
-- **Technical Terms**: English (API, Component, CSS, etc.)
-- **Discussion**: Traditional Chinese (繁體中文)
-- **Code**: English
-- **Docs**: Chinese for guides, English for technical specs
-
-### Respect Boundaries
-- AI agents are assistants, not decision makers
-- Always seek approval for significant changes
-- Provide options, not dictates
-- Be transparent about limitations
-
----
-
-## 📞 Getting Help
-
-### When Stuck
-1. Re-read relevant specification docs
-2. Check similar examples in specs
-3. Propose multiple solution options
-4. Ask human for guidance
-
-### Useful Commands
-```bash
-# Check documentation index
-cat docs/DOC_INDEX.md
-
-# Search for concept across docs
-grep -r "concept" docs/
-
-# Check current Git status
-git status
-
-# View recent commits
-git log --oneline -5
-
-# Check file structure
-tree -L 2 -a -I '.git'
-```
-
----
-
-## 🎓 Learning Resources
-
-### Understanding This Project
-- **Design Philosophy**: See `PROJECT_CHARTER.md` § Design Principles
-- **Technical Stack**: Jekyll + Minimal Mistakes → Official docs
-- **Workflow**: `AI_COLLABORATION_GUIDE.md` § Workflows
-- **Implementation**: `IMPLEMENTATION_CHECKLIST.md` (10 phases)
-
-### External Resources
-- **Jekyll**: https://jekyllrb.com/docs/
-- **Minimal Mistakes**: https://mmistakes.github.io/minimal-mistakes/docs/
-- **Conventional Commits**: https://www.conventionalcommits.org/
-- **WCAG Accessibility**: https://www.w3.org/WAI/WCAG21/quickref/
-
----
-
-## ✨ Final Notes
-
-### This Project Is Special
-- **Specification-Driven**: Every feature has a clear spec
-- **Design System First**: Consistent, scalable design
-- **AI-Friendly**: Built for human-AI collaboration
-- **Quality-Focused**: Excellence over speed
-
-### Your Role Matters
-As an AI agent, you are:
-- A **precise executor** of specifications
-- A **quality guardian** of the codebase
-- A **collaborative partner** to the human maintainer
-- A **documentation keeper** of changes
-
-### Keep It Simple
-- Follow specifications exactly
-- Make minimal necessary changes
-- Ask when uncertain
-- Test thoroughly
-- Document clearly
-
----
-
-**Welcome to the Archis Studio Blog project! 🍂✨**
-
-Let's build something beautiful together.
-
----
-
-**Maintained by**: Archi Chen & AI Assistants
-**Last Updated**: 2025-11-01
-**Version**: 4.0.0 - Design System Fully Implemented
-**Status**: Production-Ready with Professional Design System
-
----
-
-## 📝 CHANGELOG
-
-### v4.0.0 (2025-11-01)
-- **Design System 完整實作** 🎨
-  - 新增 `_sass/design-system/` 目錄（425行）
-  - _variables.scss: 單一真相來源（8色系統、字體、間距）
-  - _mixins.scss: DRY 工具（自動生成 badge/card/portal）
-  - 消除 75+ 處硬編碼顏色
-  - 減少 303 行重複代碼（98%）
-- **Quick Start 更新**：標註 design-system 新目錄
-- **Design System Quick Reference 擴充**：新增實作範例與檔案位置
-- **文件更新**：
-  - docs/DESIGN_SYSTEM_SPEC.md v3.0 → v4.0（新增實作說明章節）
-  - docs/DOC_INDEX.md v3.1 → v4.0（索引設計系統檔案）
-  - README.md 專案結構加入 design-system 說明
-
-### v3.1.0 (2025-10-28)
-- **Documentation audience clarification**: 明確標示所有文件的閱讀受眾
-  - README.md → 訪客（開發者、讀者）
-  - agents.MD → AI Agents 入口
-  - docs/ → AI Agents 查閱手冊
-- **Version unified**: All core docs updated to v3.0.0 (2025-10-28)
-- **DOC_INDEX.md optimized**: Reduced from 378 to 122 lines (68% reduction)
-
-### v3.0.0 (2025-10-26)
-- Documentation streamlined: 16 → 9 core files (44% reduction)
-- Removed redundant/outdated docs
-- Updated mandatory reading list
-
-### v2.0.0 (2025-10-24)
-- Phase 9 完成：8 色配色系統完整實作
-- 更新專案狀態為 Core Features Complete
-
-### v1.0.0 (2025-10-11)
-- AI Agents 初版指南建立
+完整歷史保留於 Git；整理前基準為 `d6b054a`。原協作指南目前仍保留原位，待後續封存。

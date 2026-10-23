@@ -1,191 +1,85 @@
-# 文件索引 - Documentation Index
-# Version 4.0.8 | Updated: 2026-10-23
+# 文件索引
+# Version 5.0.0 | Updated: 2026-10-23
 
-## 📚 文件追蹤系統
+供人類與 AI 依任務找到主要文件。本次整理進行到第二階段：四份入口已重整，四份主題規格待校正；原始指南仍保留原位，尚未封存。不以舊版 Complete 標籤判定內容與現況一致。
 
-**🤖 For AI Agents**: 使用此文件快速定位所需規格文件
+## 依任務查找
 
-> **本文件用途**: 提供文件地圖、版本追蹤、閱讀順序指引
+| 任務 | 從這裡開始 |
+|---|---|
+| 第一次接手 | [README](../README.md) → [agents](../agents.MD) → [架構地圖](../DEVELOPMENT.md#架構地圖) |
+| 啟動、安裝、排錯、套件升級 | [開發指南](../DEVELOPMENT.md#環境與啟動) |
+| 驗證修改、確認 Pages 上線流程 | [測試與驗證](../DEVELOPMENT.md#測試與驗證)、[部署與上線](../DEVELOPMENT.md#部署與上線) |
+| 調整視覺與元件 | [Design System](DESIGN_SYSTEM_SPEC.md)、[Layout](LAYOUT_SPEC.md) 與相關實作 |
+| 導覽、搜尋、文章互動 | [現行互動約定](../DEVELOPMENT.md#現行互動約定)、[Layout](LAYOUT_SPEC.md)、[Navigation](NAVIGATION_SPEC.md) |
+| 新增文章、分類、標籤 | [建立內容](../DEVELOPMENT.md#建立內容)及 [Content](CONTENT_STRATEGY.md) |
+| 共用封面、頭像與作者簡介 | [圖片處理](../DEVELOPMENT.md#圖片處理)、[作者資料設定](../DEVELOPMENT.md#作者資料設定)及 [Asset](ASSET_SPEC.md) |
+| 查看整理去向、衝突與後續批次 | [文件整理方案](superpowers/plans/2026-10-23-documentation-reorganization.md) |
 
-### 🗂️ 核心規格文件 (docs/)
+## 八份常用文件的分工
 
-| 文件 | 版本 | 更新日期 | 狀態 | 用途 |
-|------|------|----------|------|------|
-| `PROJECT_CHARTER.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 專案目標與原則 |
-| `DESIGN_SYSTEM_SPEC.md` | 4.0.0 | 2025-11-01 | ✅ Complete | 完整設計系統規格 + 實作指南 |
-| `LAYOUT_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 版面配置規格 |
-| `NAVIGATION_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 導航設計規格 |
-| `ASSET_SPEC.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 資源檔案規格 |
-| `IMPLEMENTATION_CHECKLIST.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 10階段實作指南 |
-| `AI_COLLABORATION_GUIDE.md` | 3.0.0 | 2025-10-28 | ✅ Complete | AI 協作流程 |
-| `CONTENT_STRATEGY.md` | 3.0.0 | 2025-10-28 | ✅ Complete | 內容創作規範 |
-| `DOC_INDEX.md` | 4.0.8 | 2026-10-23 | ✅ Complete | 文件索引（本文件）|
+| 文件 | 主要責任 | 整理狀態 |
+|---|---|---|
+| [README.md](../README.md) | 定位、範圍、現有能力與最短啟動入口 | 第二階段已整理 |
+| [agents.MD](../agents.MD) | AI 授權邊界、修改流程、Git 與文件規則 | 第二階段已整理 |
+| [DEVELOPMENT.md](../DEVELOPMENT.md) | 架構、環境、測試、部署與排錯 | 第二階段已整理；暫留圖片／互動契約 |
+| [DESIGN_SYSTEM_SPEC.md](DESIGN_SYSTEM_SPEC.md) | 設計原則與 tokens／元件約束 | 待第三階段核對規格與實作落差 |
+| [LAYOUT_SPEC.md](LAYOUT_SPEC.md) | 頁面結構、導覽、搜尋與互動 | 待第三階段整併 Navigation 與互動契約 |
+| [CONTENT_STRATEGY.md](CONTENT_STRATEGY.md) | 寫作、文章欄位、分類標籤、發布政策 | 待第三階段校正範例與衝突 |
+| [ASSET_SPEC.md](ASSET_SPEC.md) | 圖片、頭像、命名與資源操作 | 待第三階段吸收現行圖片契約 |
+| [DOC_INDEX.md](DOC_INDEX.md) | 任務路由、文件責任及歷史入口 | 第二階段已整理 |
 
-### 🎨 設計系統實作檔案 (_sass/design-system/)
+八份是責任分工，不是文件數量上限。各文件自行維護版本與 CHANGELOG，索引不重複抄寫版本、日期、行數或測試數量。
 
-| 檔案 | 行數 | 狀態 | 用途 |
-|------|------|------|------|
-| `_variables.scss` | 155 | ✅ 完成 | 單一真相來源：8色系統、字體、間距、斷點 |
-| `_mixins.scss` | 270 | ✅ 完成 | DRY工具：badge、card、portal自動生成器 |
+尚未校正的主題規格仍有約束效力；其中舊環境版本、檔案範例與功能進度需對照實作。操作以開發指南的已核對內容為準，設計政策不因程式現況自動改寫。文章發布節奏與範例註解語言等政策衝突保留原文，待內容階段處理。
 
-**快速參考**：
-- 修改顏色 → 編輯 `_variables.scss` 的 `$category-colors`
-- 新增分類 → 在 `$category-colors` 加一行，自動生成所有樣式
-- 使用範例 → 參考 `DESIGN_SYSTEM_SPEC.md` 的「實作說明」章節
+## 實作來源入口
 
-### 📝 操作指南文件 (Root)
+| 事實／行為 | 主要來源 |
+|---|---|
+| Ruby、套件與主題版本 | [Ruby](../.ruby-version)、[Gemfile](../Gemfile)、[lockfile](../Gemfile.lock)、[設定](../_config.yml) |
+| 樣式 token 與共用工具 | [variables](../_sass/design-system/_variables.scss)、[mixins](../_sass/design-system/_mixins.scss)、[樣式入口](../assets/css/main.scss) |
+| 搜尋與導覽 | [search.js](../assets/js/search.js)、[navigation.js](../assets/js/navigation.js)、[masthead](../_includes/masthead.html) |
+| 文章圖片 | [共用 include](../_includes/post-image.html)、[本機圖片工具](../scripts/generate-post-images.sh) |
+| 自動驗證 | [workflow](../.github/workflows/validate.yml)、[production validator](../scripts/validate.rb)、[測試目錄](../test/) |
 
-| 文件 | 版本 | 受眾 | 狀態 | 用途 |
-|------|------|------|------|------|
-| `README.md` | 3.0.0 | 👥 訪客 | ✅ Complete | 專案介紹與快速開始 |
-| `agents.MD` | 3.0.0 | 🤖 AI | ✅ Complete | AI Agent 入口與指引 |
-| `DEVELOPMENT.md` | 2.0.8 | 👥/🤖 | ✅ Complete | 開發環境與工作流程 |
-| `HOW-TO-EDIT-BIO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Author Bio 編輯指南 |
-| `PROFILE-IMAGE-TODO.md` | 3.0.0 | 🤖 AI | ✅ Complete | Profile 頭像替換指南 |
-| `assets/images/README.md` | 3.0.0 | 🤖 AI | ✅ Complete | 圖片資源規格 |
+目前行為由程式與測試確認，設計要求由經確認的規格約束；有落差時記錄並依任務授權處理。
 
-### 建置驗證與第一階段改善
+## 補充與待整併來源
 
-- `scripts/validate.rb`：production 建置與輸出 smoke check。
-- `test/config_test.rb`：重複 YAML key、scoped defaults 與文章 HTML 檢查。
-- `.github/workflows/validate.yml`：PR／push／手動驗證，不部署。
-- `docs/superpowers/plans/2026-10-23-pages-validation.md`：第一階段範圍、驗收與執行記錄。
-- `assets/js/search.js`：安全文字搜尋與 modal 鍵盤互動。
-- `test/search_test.cjs`、`test/search_data_test.rb`：搜尋 DOM 行為與 Liquid 資料回歸測試。
-- `test/package.json`、`test/package-lock.json`：僅用於測試的 jsdom 依賴。
-- `docs/superpowers/plans/2026-10-23-search-reliability.md`：第二階段搜尋修正計畫。
-- `_includes/post-image.html`：文章封面與卡片圖片輸出。
-- `scripts/generate-post-images.sh`：本機產生一張共用 WebP 封面，保留原圖。
-- `test/post_image_test.rb`：圖片選擇、尺寸、fallback 與載入策略回歸測試。
-- `docs/superpowers/plans/2026-10-23-post-images.md`：文章圖片最佳化計畫。
-- `test/navigation_test.rb`、`test/navigation_test.cjs`：選單互動、標籤連結、目錄錨點、精選上限、統計與閱讀時間回歸測試。
-- `test/motion_test.cjs`：Matrix 暫停／恢復、動態效果偏好、粒子與靜音提示回歸測試。
-- 操作方式與限制：參考 `DEVELOPMENT.md` 的 Deployment 與 Testing & Quality。
+以下檔案保留原位。表中指出有效內容的主要去向，並非宣告整份原文失效。
 
-### 📖 AI Agent 閱讀順序
+| 原文件 | 現在如何使用 |
+|---|---|
+| [PROJECT_CHARTER.md](PROJECT_CHARTER.md) | 目標、範圍、品質與協作原則已吸收到 README／agents；舊技術版本與完成勾選不代表現況 |
+| [AI_COLLABORATION_GUIDE.md](AI_COLLABORATION_GUIDE.md) | 核心協作規則已吸收到 agents；相衝突的自動 commit 流程由 agents 取代 |
+| [HOW-TO-EDIT-BIO.md](../HOW-TO-EDIT-BIO.md) | 作者設定操作已吸收到 Development；舊文案範例保留供追溯 |
+| [NAVIGATION_SPEC.md](NAVIGATION_SPEC.md) | 尚待整併至 Layout；與當前導覽／搜尋差異列於整理方案 |
+| [assets/images/README.md](../assets/images/README.md) | 尚待整併至 Asset；現行封面與頭像操作先查 Development |
+| [IMPLEMENTATION_CHECKLIST.md](IMPLEMENTATION_CHECKLIST.md) | 建站階段與歷史設計背景，待封存；不作為目前待辦清單 |
+| 原索引的 `PROFILE-IMAGE-TODO.md` 引用 | repository 查無此檔，不另建空文件；目前共用 WebP 頭像見 Development |
 
-**🚀 第一次接觸專案** (必讀):
-1. `agents.MD` ← 你的入口點
-2. `DOC_INDEX.md` ← 文件地圖（本文件）
-3. `PROJECT_CHARTER.md` ← 專案目標與原則
-4. `AI_COLLABORATION_GUIDE.md` ← 協作流程與規則
-5. `DESIGN_SYSTEM_SPEC.md` ← 設計系統完整規格
+## 計畫與歷史紀錄
 
-**🛠️ 開始任務前查閱**:
-- 設計相關 → `DESIGN_SYSTEM_SPEC.md`, `LAYOUT_SPEC.md`, `NAVIGATION_SPEC.md`
-- 內容創作 → `CONTENT_STRATEGY.md`
-- 資源處理 → `ASSET_SPEC.md`
-- 實作進度 → `IMPLEMENTATION_CHECKLIST.md`
+計畫記錄當時問題、決策與驗收，不取代現行指南：
 
-**💡 特定任務查閱**:
-- 編輯 Bio → `HOW-TO-EDIT-BIO.md`
-- 更換頭像 → `PROFILE-IMAGE-TODO.md`
-- 圖片規格 → `assets/images/README.md`
+- [Pages 驗證計畫](superpowers/plans/2026-10-23-pages-validation.md)
+- [搜尋可靠性計畫](superpowers/plans/2026-10-23-search-reliability.md)
+- [文章圖片計畫](superpowers/plans/2026-10-23-post-images.md)
+- [文件整理方案](superpowers/plans/2026-10-23-documentation-reorganization.md)：目前進行中的跨階段工作紀錄。
 
-### 🔄 版本更新規則
+完整舊版索引與變更紀錄可由 Git 追溯，整理前基準為 `d6b054a`。封存須待有效內容搬移與引用更新後進行。
 
-**版本格式**: `主版本.次版本.修訂版本`
-- **主版本** (+1.0.0): 架構重大變更
-- **次版本** (+0.1.0): 新增章節或規格
-- **修訂版本** (+0.0.1): 內容修正或補充
+## CHANGELOG
 
-**🤖 AI Agent 更新文件步驟**:
-1. 修改文件內容
-2. 更新文件標頭版本號與日期
-3. 更新本文件 (DOC_INDEX.md) 對應記錄
-4. 在文件底部新增 CHANGELOG 條目
-5. Commit 時註明變更原因
+### v5.0.0 (2026-10-23)
 
-### 🏷️ 文件狀態標籤
+- 改為任務導覽與八份常用文件的責任地圖，明確標示未完成整併項目。
+- 移除重複版本／行數追蹤與過時 Complete 標籤，保留補充文件及計畫入口。
 
-- ✅ **Complete**: 規格完整，可直接參考使用
-- 🚧 **In Progress**: 持續更新中
-- 📝 **Draft**: 初稿階段
-- ⏳ **Planned**: 已規劃但未建立
+### 歷史摘要
 
-### 🔍 AI Agent 快速查找指令
-
-```bash
-# 搜尋特定設計規格
-grep -r "color\|font\|spacing" docs/DESIGN_SYSTEM_SPEC.md
-
-# 查找實作狀態
-grep "Phase" docs/IMPLEMENTATION_CHECKLIST.md
-
-# 檢查所有文件版本
-head -n 2 docs/*.md
-```
-
----
-
-## 📝 CHANGELOG
-
-### v4.0.8 (2026-10-23)
-- 同步 DEVELOPMENT.md v2.0.8，記錄搜尋與導覽精簡及新增驗證。
-
-### v4.0.7 (2026-10-23)
-- 索引動態效果 DOM 測試，同步 DEVELOPMENT.md v2.0.7。
-
-### v4.0.6 (2026-10-23)
-- 同步 DEVELOPMENT.md v2.0.6，記錄全站共用頭像壓縮方式。
-
-### v4.0.5 (2026-10-23)
-- 同步 DEVELOPMENT.md v2.0.5 與閱讀時間測試說明。
-
-### v4.0.4 (2026-10-23)
-- 索引導覽模板／DOM 回歸測試。
-- 同步 DEVELOPMENT.md v2.0.4。
-
-### v4.0.3 (2026-10-23)
-- 索引文章圖片共用模板、壓縮工具與測試。
-- 同步 DEVELOPMENT.md v2.0.3。
-
-### v4.0.2 (2026-10-23)
-- 索引搜尋實作、DOM／Liquid 測試與第二階段計畫。
-- 同步 DEVELOPMENT.md v2.0.2。
-
-### v4.0.1 (2026-10-23)
-- 索引第一階段建置驗證工具與實作計畫。
-- 同步 DEVELOPMENT.md v2.0.1。
-
-### v4.0.0 (2025-11-01)
-- **新增「設計系統實作檔案」章節**：索引 _sass/design-system/ 目錄
-  - _variables.scss (155行) - 變數定義
-  - _mixins.scss (270行) - Mixin 工具
-  - 快速參考指南
-- **更新 DESIGN_SYSTEM_SPEC.md**: v3.0.0 → v4.0.0（新增實作說明章節）
-- **CSS 重構完成記錄**：
-  - ✅ 消除 75+ 處硬編碼顏色
-  - ✅ 減少 303 行重複代碼
-  - ✅ 建立專業級設計系統基礎
-
-### v3.1.0 (2025-10-28)
-- **文件受眾明確化**: 在操作指南表格中標示受眾（訪客/AI）
-- **簡化 DOC_INDEX**: 移除實作進度詳情（已保留於 IMPLEMENTATION_CHECKLIST）
-- **優化閱讀順序**: 針對 AI Agent 提供更清晰的查閱指引
-- **精簡 CHANGELOG**: 僅記錄文件系統變更，移除功能實作記錄
-- **統一版本號**: 所有核心文件更新至 v3.0.0 (2025-10-28)
-
-### v3.0.0 (2025-10-26)
-- 文件系統優化：移除 7 個重複/過時文件，保留 9 個核心文件（簡化 44%）
-- 文件閱讀順序更新：以 agents.MD 為起點
-
-### v2.0.0 (2025-10-26)
-- 所有核心規格文件完成並同步實作狀態
-- Phase 1-9 完成標記與詳細記錄
-
-### v1.0.0 (2025-10-11)
-- 建立文件追蹤系統
-- 定義版本更新規則
-
----
-
-**🤖 Note for AI Agents**: 詳細的實作進度、技術細節、部署資訊請查閱：
-- 實作進度 → `IMPLEMENTATION_CHECKLIST.md`
-- 設計規格 → `DESIGN_SYSTEM_SPEC.md`
-- 開發流程 → `DEVELOPMENT.md`
-
----
-
-**Maintained by**: Archi Chen & AI Assistants  
-**Last Updated**: 2026-10-23
+- v4.0.1–4.0.8 (2026-10-23)：加入建置、搜尋、圖片、導覽與動態效果驗證入口。
+- v4.0.0 (2025-11-01)：加入 Design System 實作入口。
+- v3.0.0–3.1.0 (2025-10-26–28)：整理規格與閱讀受眾。
+- v1.0.0–2.0.0 (2025-10)：建立文件追蹤及建站進度索引。

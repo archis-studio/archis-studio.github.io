@@ -1,199 +1,87 @@
-# 開發指南 - Development Guide
-# Version 2.0.8 | Updated: 2026-10-23
+# 開發指南
+# Version 3.0.0 | Updated: 2026-10-23
 
-> **技術文件** - 本地開發環境設定、常用指令與故障排除
+供人類與 AI 維護者查閱架構、環境、測試與部署。修改授權與 Git 規則見 [agents.MD](agents.MD)，主題規格見[文件索引](docs/DOC_INDEX.md)。
 
-📖 **另見**: [`README.md`](README.md) - 專案概覽 | [`agents.MD`](agents.MD) - AI 協作規範
+## 架構地圖
 
----
+這是以 Markdown／YAML 作為內容來源的 Jekyll 靜態網站，Minimal Mistakes 提供基礎版型，本 repository 覆寫必要模板與樣式。
 
-## 📋 Prerequisites
+| 層次 | 主要來源與責任 |
+|---|---|
+| 設定與依賴 | `_config.yml`、`Gemfile`、`Gemfile.lock`、`.ruby-version` |
+| 文章與頁面 | `_posts/`、`_pages/`；front matter 選擇 layout 與網址 |
+| 頁面組合 | `_layouts/`、`_includes/`，共用圖片由 `_includes/post-image.html` 輸出 |
+| 首頁與文章 | `_layouts/home.html`、`_layouts/post.html`；文章庫實際位於 `_pages/posts.html` |
+| 設計系統 | `_sass/design-system/_variables.scss`、`_mixins.scss`；頁面樣式位於 `_sass/custom/` |
+| 樣式入口 | `assets/css/main.scss` 編譯為網站 CSS |
+| 互動 | `assets/js/navigation.js`、`assets/js/search.js` 與部分模板內的頁面互動 |
+| 圖片與靜態檔 | `assets/`；圖片轉換在本機執行，Pages 直接使用產出 |
+| 驗證 | `test/`、`scripts/validate.rb`、`.github/workflows/validate.yml` |
+| 維護說明 | 根目錄指南、`docs/`；不屬於文章來源 |
 
-### System Requirements
-- **OS**: macOS / Linux / Windows WSL
-- **Ruby**: 3.3.10 (via rbenv)
-- **Bundler**: 2.5.22
-- **Jekyll**: 3.10.0
+內容經 Liquid 模板組合，SCSS 編譯後產生靜態 HTML／CSS／JavaScript，再由 Pages 提供。驗證 workflow 另行建置暫存網站，與實際 Pages 部署獨立。
 
-### Initial Setup
+模板缺少檔案時可能來自主題，不應直接建立另一套覆寫。查修改入口時先追蹤 front matter、`_config.yml` 的 scoped defaults、layout 與 include，再比對相關測試。
 
-#### 1. Install rbenv (if not installed)
+## 環境與啟動
+
+2026-10-23 查核：本機 Ruby 3.3.10、Bundler 2.5.22；`github-pages ~> 232` 鎖定的 Jekyll 為 3.10.0，遠端主題為 Minimal Mistakes 4.27.0。之後以 `.ruby-version`、`Gemfile.lock` 與 `_config.yml` 為準，不從舊規格的 Jekyll 4.x 推斷環境。
+
+Ruby 建站環境可使用 macOS、Linux 或 Windows WSL。DOM 測試另需 Node 24；Node 不參與 legacy Pages 建站。圖片重製才需要 ImageMagick（`magick`）。
+
+### 首次安裝
+
+macOS 可用 Homebrew 安裝 `rbenv` 與 `ruby-build`：
+
 ```bash
-# macOS with Homebrew
 brew install rbenv ruby-build
-
-# Add to shell (~/.zshrc or ~/.bashrc)
-echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
-source ~/.zshrc
 ```
 
-#### 2. Install Ruby 3.3.10
-```bash
-rbenv install 3.3.10
-rbenv local 3.3.10
-```
+依 rbenv 安裝說明初始化 shell；zsh 的設定為 `eval "$(rbenv init - zsh)"`，只在尚未設定時加入 `~/.zshrc`。重新開啟終端機後，在專案根目錄執行：
 
-#### 3. Install Dependencies
 ```bash
+rbenv install -s "$(cat .ruby-version)"
+gem install bundler -v 2.5.22
 bundle install
+npm ci --prefix test --ignore-scripts --no-audit --no-fund
+bundle exec jekyll serve
 ```
 
----
+開啟 `http://localhost:4000`，以 Ctrl+C 停止。一般內容修改會觸發重建，瀏覽器重新整理後查看；修改 `_config.yml` 後需重啟服務。
 
-## ⚠️ Troubleshooting First-Time Setup
-
-### Issue: `Could not find 'bundler'` error
-
-**原因**: Shell 還在使用系統的舊版 Ruby
-
-**解決方法**:
-```bash
-# 方法 1: 重新載入 shell 配置
-source ~/.zshrc  # or ~/.bashrc
-
-# 方法 2: 重新開啟終端機視窗
-
-# 驗證 Ruby 版本
-ruby --version
-# 應該顯示: ruby 3.3.10 (2025-10-23 revision 343ea05002)
-```
-
-### Issue: Ruby 版本還是 2.6.10
-
-**檢查 rbenv 是否正確初始化**:
-```bash
-# 檢查 rbenv 路徑
-which rbenv
-# 應該顯示: /opt/homebrew/bin/rbenv
-
-# 檢查 Ruby 來源
-which ruby
-# 應該顯示: /Users/<username>/.rbenv/shims/ruby
-
-# 如果顯示 /usr/bin/ruby，表示 rbenv 未生效
-```
-
-**修復方法**:
-```bash
-# 確認 .zshrc 有 rbenv init
-grep rbenv ~/.zshrc
-
-# 如果沒有，手動加入
-echo 'eval "$(rbenv init - zsh)"' >> ~/.zshrc
-source ~/.zshrc
-```
-
----
-
-## 🚀 Local Development
-
-### Standard Workflow
+### 常用指令
 
 ```bash
-# 1. Navigate to project
-cd /path/to/archis-studio.github.io
-
-# 2. Start development server
-bundle exec jekyll serve --livereload
-
-# 3. Open browser
-# Visit: http://localhost:4000
-
-# 4. Edit files - LiveReload auto-refreshes browser
-
-# 5. Stop server (when done)
-# Press Ctrl+C
-```
-
-### Jekyll Commands
-
-#### Basic Commands
-```bash
-# Build site (output to _site/)
 bundle exec jekyll build
-
-# Serve with live reload (recommended)
-bundle exec jekyll serve --livereload
-
-# Serve on different port
-bundle exec jekyll serve --port 4001 --livereload
-
-# Clean build artifacts
+bundle exec jekyll serve --port 4001
+bundle exec jekyll serve --drafts
+bundle exec jekyll serve --future
 bundle exec jekyll clean
-```
-
-#### Advanced Options
-```bash
-# Incremental build (faster, but may have cache issues)
-bundle exec jekyll serve --incremental --livereload
-
-# Show draft posts (from _drafts/)
-bundle exec jekyll serve --drafts --livereload
-
-# Show future-dated posts
-bundle exec jekyll serve --future --livereload
-
-# Quiet mode (less output)
-bundle exec jekyll serve --quiet --livereload
-
-# Verbose mode (debug output)
-bundle exec jekyll serve --verbose --livereload
-
-# Force polling (if LiveReload not working)
-bundle exec jekyll serve --livereload --force_polling
-```
-
----
-
-### Environment Management
-
-```bash
-# Check versions
-ruby --version          # Should show: 3.3.10
-bundle --version        # Should show: 2.5.22
-bundle exec jekyll -v   # Should show: 3.10.0
-
-# Update dependencies
-bundle update           # Update all gems
-bundle update jekyll    # Update specific gem
-
-# Check for issues
 bundle exec jekyll doctor
-
-# View build performance
 bundle exec jekyll build --profile
 ```
 
----
+`--drafts` 與 `--future` 用於本機預覽，不代表 Pages 會發布這些內容。增量建置可能保留快取，提交前仍使用下方全新 production 驗證；`doctor` 不會檢查所有 HTML 與連結。
 
-## 📝 建立新內容
+## 建立內容
 
-### 新增文章
-```bash
-# 在 _posts/ 目錄建立檔案，格式：YYYY-MM-DD-title.md
-touch _posts/2025-10-24-my-new-post.md
-```
+寫作要求、發布節奏與分類政策仍見 [CONTENT_STRATEGY.md](docs/CONTENT_STRATEGY.md)。該文件尚待校正；下列最小範例依目前模板使用既有分類，暫留本指南，待第三階段整併。
 
-文章 Front Matter 範例：
+文章位於 `_posts/YYYY-MM-DD-title.md`：
+
 ```yaml
 ---
 title: "文章標題"
-categories: [AI, Coding]
-tags: [tutorial, jekyll]
-toc: true
-toc_sticky: true
+categories: [AI Tools]
+tags: [ChatGPT, tutorial]
 ---
-
-文章內容...
 ```
 
-### 新增頁面
-```bash
-# 在 _pages/ 目錄建立檔案
-touch _pages/my-page.md
-```
+分類需與現有分類頁一致，標籤統一大小寫。精選文章使用 `featured: true`；封面使用下方 `header` 欄位。文章 layout 與 permalink 優先沿用 `_config.yml` defaults，特殊網址修改需檢查既有連結。不要把主題的 `toc` 選項直接當成自訂文章模板的行為開關。
 
-頁面 Front Matter 範例：
+新頁面位於 `_pages/`，先確認該頁與網址在授權範圍內。以下為沿用主題單頁版型的最小範例，不代表現有每個頁面都使用它：
+
 ```yaml
 ---
 layout: single
@@ -201,175 +89,29 @@ title: "頁面標題"
 permalink: /my-page/
 author_profile: true
 ---
-
-頁面內容...
 ```
 
----
+樣式修改從 `assets/css/main.scss` 的既有 import 順序追蹤對應 partial，使用現有 variables／mixins 與命名。不要複製舊文件中不存在的 `_components.scss`、`_utilities.scss` 或 `_overrides.scss`；視覺約束仍依 [Design System](docs/DESIGN_SYSTEM_SPEC.md)。
 
-## 🐛 Common Issues & Solutions
+## 作者資料設定
 
-### LiveReload Not Working
-```bash
-# Try force polling
-bundle exec jekyll serve --livereload --force_polling
+全站作者名稱、簡介、位置、信箱與頭像位於 `_config.yml` 的 `author`。側欄由 `_includes/author-profile.html` 顯示，bio 經 `markdownify` 處理；About 的正文、職涯與技能另在 `_pages/about.md`，修改 bio 不會同步改寫 About。
 
-# Or restart with full rebuild
-bundle exec jekyll clean
-bundle exec jekyll serve --livereload
+例如只修改既有 `author` 下的 `bio` 欄位：
+
+```yaml
+bio: '**Software Developer** | 分享 AI 與開發實戰'
 ```
 
-### Sass Deprecation Warnings
-這些是 Minimal Mistakes 主題的警告（上游問題），不影響功能。
+使用空格縮排，確認冒號、引號配對與 YAML 語法。YAML 多行雙引號字串及 `>-` 會折疊換行；`|-` 保留字串換行，也不保證 Markdown 畫面出現硬換行。需要分行時使用 Markdown 段落或 `<br>`，並預覽實際顯示。
 
-**Options**:
-```bash
-# Suppress warnings with quiet mode
-bundle exec jekyll serve --quiet --livereload
+簡介以身份、專長與寫作方向為主，避免過長造成溢出；行數由側欄寬度與文字換行決定，不強制三行。重啟 Jekyll 後在有啟用作者側欄的頁面檢查；部分頁面關閉 `author_profile`，單篇作者設定也可能覆寫全站作者。頭像尺寸與重製方式見下節。
 
-# Or ignore them (they're harmless)
-bundle exec jekyll serve --livereload
-```
+原 [HOW-TO-EDIT-BIO.md](HOW-TO-EDIT-BIO.md) 保留原位供追溯；其中舊圖片路徑、三行字串與自動提交步驟不作為目前操作依據。
 
-### Port Already in Use
-```bash
-# Find process using port 4000
-lsof -ti:4000
+## 圖片處理
 
-# Kill the process
-kill -9 $(lsof -ti:4000)
-
-# Or use different port
-bundle exec jekyll serve --port 4001 --livereload
-```
-
-### Stale Cache Issues
-```bash
-# Clean all caches
-bundle exec jekyll clean
-rm -rf _site .jekyll-cache .sass-cache
-
-# Rebuild from scratch
-bundle exec jekyll build
-```
-
-### Bundler Version Mismatch
-```bash
-# Check Gemfile.lock for bundler version
-grep -A1 "BUNDLED WITH" Gemfile.lock
-
-# Install specific bundler version
-gem install bundler:2.5.22
-
-# Or update Gemfile.lock
-bundle update --bundler
-```
-
----
-
-## 🎨 自訂樣式開發
-
-### SCSS 檔案位置
-- `_sass/design-system/` - 設計系統變數與元件
-- `assets/css/main.scss` - 主樣式入口
-
-### 修改後重新整理
-Jekyll 會自動偵測 SCSS 變更並重新編譯，LiveReload 會自動刷新瀏覽器。
-
----
-
-## 📦 Deployment
-
-### 現有部署方式
-
-GitHub Pages API 於 2026-10-23 確認：`build_type: legacy`，從 `main` 分支根目錄 `/` 建置。實際部署狀態與來源應以 repository Settings → Pages 為準。
-
-本專案使用 `github-pages ~> 232`，lockfile 中的 Jekyll 為 3.10.0、Minimal Mistakes 固定為 4.27.0。`.ruby-version` 為本機與驗證 workflow 的 Ruby 版本來源；它不控制 GitHub Pages 的內建建置環境。
-
-### 自動驗證（不部署）
-
-`.github/workflows/validate.yml` 在 PR、push 或手動執行時：
-
-1. 依 `.ruby-version` 與 `Gemfile.lock` 安裝套件，啟用 `BUNDLE_FROZEN`，禁止自動改寫 lockfile。
-2. 執行 `test/*_test.rb` 的 Ruby 設定／Liquid 回歸測試。
-3. 使用 Node 24 與 `test/package-lock.json` 安裝 jsdom 測試依賴，執行搜尋 DOM 測試。
-4. 執行 `bundle exec ruby scripts/validate.rb`。
-
-驗證工作僅使用 `contents: read`，不要求部署 secret、不發布網站、不修改 Pages 設定。它與 legacy Pages 部署獨立運作；如果要在合併前強制通過，需另行設定 branch protection required status check：`Validate site / validate`（以 GitHub 顯示的 check 名稱為準）。直接 push 到 main 仍可能觸發部署，不會等待這個驗證工作。
-
-### 更新上線流程
-
-1. 先在本機執行下方驗證指令。
-2. 在 PR 檢查 `Validate site` 通過，並完成頁面預覽。
-3. 人類確認後才 commit／push／merge，依當次指示操作。
-4. 確認 GitHub Pages 實際建置與部署成功，再檢查線上頁面。
-
-本機驗證不等於遠端部署成功；GitHub 權限、服務狀態與網路仍可能造成獨立失敗。
-
----
-
-## 🎨 Custom Development
-
-### SCSS Structure
-```
-_sass/
-├── design-system/
-│   ├── _variables.scss      # Colors, fonts, spacing
-│   ├── _components.scss     # Reusable components
-│   └── _utilities.scss      # Helper classes
-└── custom/
-    ├── _masthead.scss       # Navigation customization
-    └── _overrides.scss      # Theme overrides
-```
-
-### Adding Custom Styles
-
-**1. Edit SCSS files in `_sass/`**:
-```scss
-// _sass/design-system/_variables.scss
-$custom-color: #D4A017;
-```
-
-**2. Import in main.scss**:
-```scss
-// assets/css/main.scss
----
----
-@import "minimal-mistakes/skins/dark";
-@import "minimal-mistakes";
-@import "design-system/variables";
-@import "custom/overrides";
-```
-
-**3. Jekyll auto-compiles on save** (with LiveReload)
-
----
-
-## 🧪 Testing & Quality
-
-### 提交前驗證
-
-```bash
-bundle check
-bundle exec ruby -Itest -e 'Dir["test/*_test.rb"].sort.each { |file| require_relative file }'
-npm ci --prefix test --ignore-scripts --no-audit --no-fund
-npm test --prefix test
-bundle exec ruby scripts/validate.rb
-```
-
-驗證程式會檢查設定／資料／workflow YAML 的重複 key，在全新的暫存目錄執行 production build，檢查主要頁面、所有已發布文章版型、分類頁、本地圖片／script／stylesheet 資源，以及開發檔案排除規則。暫存輸出在結束時自動清除，不使用舊 `_site` 判定成功。
-
-遠端主題需要網路；下載失敗時應排除網路問題後重試，不要跳過檢查。這個 smoke check 不執行瀏覽器 JavaScript、不驗證所有連結或第三方服務，不取代響應式／視覺測試。
-
-補充診斷可使用 `bundle exec jekyll doctor`，但它不會驗證所有 HTML 與連結。
-
-### 搜尋回歸測試
-
-需要 Node 24（jsdom 28.1.0 支援 Node >=24.0.0）。Node 只用於測試，不參與 legacy Pages 的網站建置。`test/` 與 `node_modules/` 不會發布。
-
-`test/search_test.cjs` 使用 jsdom 執行實際 `assets/js/search.js`，涵蓋中文／特殊符號、文字安全呈現、結果排序與上限、清空選取、IME、Tab／Escape 與焦點還原。`test/search_data_test.rb` 驗證 Liquid 輸出的分類 URL、baseurl 與 JSON script 安全。
-
-jsdom 不實作真實瀏覽器版面，仍需手動確認手機／平板／桌面搜尋視窗、可見焦點與捲動。
+本節保留現行圖片契約與完整操作，待第三階段移交 [ASSET_SPEC.md](docs/ASSET_SPEC.md) 後再改成引用。
 
 ### 共用文章封面
 
@@ -392,15 +134,6 @@ header:
 
 頂層 `image` 是社群分享圖片，本次保留原始 PNG/JPEG。既有 CSS 控制卡片裁切，不改變圖片本身構圖。`test/post_image_test.rb` 由既有 Ruby workflow 自動執行，Pages 使用已生成的檔案，不執行圖片轉換。
 
-### 文章導覽與首頁驗證
-
-- 文章標籤連結與標籤頁統一採用 `tag-` 錨點；標籤名稱應統一大小寫，避免 slug 相同造成重複 ID。
-- 目錄保留 Markdown／自訂 heading ID；只有缺少 ID 時才生成不撞名的 fallback，標題以文字節點呈現。
-- 首頁精選最多四篇；沒有精選時顯示最新四篇，有少量精選時不混入其他文章。
-- 標籤／文章總數由 Liquid 直接輸出，不加總每個標籤的文章數，因此不會重複計算。
-- `test/navigation_test.rb`、`test/navigation_test.cjs` 分別檢查模板輸出與實際 inline JavaScript。`npm test --prefix test` 執行全部 `*_test.cjs`。
-- production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間以移除 HTML、修剪首尾空白後的字元數計算：每 500 字元一分鐘，向上取整，至少一分鐘；不區分中英文，不新增手動設定欄位。
-
 ### 頭像壓縮
 
 全站使用一張 400x400 WebP，原始 PNG 保留。重新產生不需要擴充圖片工具或安裝 Pages 套件：
@@ -410,6 +143,19 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 ```
 
 `_config.yml` 的 `author.avatar` 指向 WebP；`avatar_width`／`avatar_height` 填入實際檔案尺寸，模板僅在兩者都有設定時輸出，既有 CSS 繼續控制顯示大小。
+
+## 現行互動約定
+
+以下約定保留近期改善的有效決策，待第三階段整併至 [LAYOUT_SPEC.md](docs/LAYOUT_SPEC.md)。舊建站階段清單不代表這些功能尚未完成。
+
+### 文章導覽與首頁驗證
+
+- 文章標籤連結與標籤頁統一採用 `tag-` 錨點；標籤名稱應統一大小寫，避免 slug 相同造成重複 ID。
+- 目錄保留 Markdown／自訂 heading ID；只有缺少 ID 時才生成不撞名的 fallback，標題以文字節點呈現。
+- 首頁精選最多四篇；沒有精選時顯示最新四篇，有少量精選時不混入其他文章。
+- 標籤／文章總數由 Liquid 直接輸出，不加總每個標籤的文章數，因此不會重複計算。
+- `test/navigation_test.rb`、`test/navigation_test.cjs` 分別檢查模板輸出與實際 inline JavaScript。`npm test --prefix test` 執行全部 `*_test.cjs`。
+- production 驗證額外檢查標籤 ID 唯一性、文章標籤目標、文章統計及首頁卡片上限。閱讀時間以移除 HTML、修剪首尾空白後的字元數計算：每 500 字元一分鐘，向上取整，至少一分鐘；不區分中英文，不新增手動設定欄位。
 
 ### 動態效果與音效
 
@@ -430,35 +176,70 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 - 標籤頁移除不會觸發的 fragment-only 事件處理，沿用原生錨點；搜尋與排序仍由 tag cloud 元件負責。減少動態效果仍由全站 CSS 處理。
 - production 驗證會攔下主題搜尋表單／Lunr scripts 回歸，並確認自訂搜尋覆蓋層只有一份。
 
-### Browser Testing
-- **Chrome/Edge**: Primary testing
-- **Firefox**: Secondary testing
-- **Safari**: macOS/iOS testing
-- **Mobile**: Responsive design testing
+## 測試與驗證
 
----
+初次安裝或 `test/package-lock.json` 改變時，先執行 `npm ci --prefix test --ignore-scripts --no-audit --no-fund`。日常修改後依範圍執行測試；提交前完整驗證：
 
-## 📚 Useful Resources
+```bash
+bundle check
+BUNDLE_FROZEN=true bundle exec ruby -Itest -e 'Dir["test/*_test.rb"].sort.each { |file| require_relative file }'
+npm test --prefix test
+BUNDLE_FROZEN=true bundle exec ruby scripts/validate.rb
+```
 
-### Jekyll Documentation
-- [Jekyll Official Docs](https://jekyllrb.com/docs/)
-- [Minimal Mistakes Docs](https://mmistakes.github.io/minimal-mistakes/docs/)
-- [Liquid Template Language](https://shopify.github.io/liquid/)
+| 檢查 | 能證明的範圍與限制 |
+|---|---|
+| Ruby 回歸測試 | 設定、Liquid 輸出、搜尋資料安全、圖片選擇與載入、導覽及閱讀時間等既有契約 |
+| DOM 測試 | 實際搜尋程式、模板互動與動態效果；jsdom 模擬 DOM，不實作真實版面與 CSS 動畫 |
+| production 驗證 | 重複 YAML key、全新暫存建置、主要頁面與已發布文章、分類、標籤目標／唯一 ID、文章統計、首頁卡片上限、本地資源與開發檔案排除 |
+| 搜尋輸出檢查 | 自訂覆蓋層只出現一次，不回歸主題搜尋表單與 Lunr scripts |
+| 手動瀏覽器 | Chrome／Edge、Firefox、Safari／iOS 的版面、鍵盤焦點、捲動、圖片與動態效果；手機、平板、桌面需實際預覽 |
 
-### Tools
-- [Jekyll Cheatsheet](https://devhints.io/jekyll)
-- [YAML Validator](https://www.yamllint.com/)
-- [Markdown Guide](https://www.markdownguide.org/)
+`scripts/validate.rb` 會自動清除暫存輸出，不使用舊 `_site` 判定成功。它不執行瀏覽器 JavaScript、不驗證所有外部連結、第三方服務或效能分數。遠端主題需網路；下載失敗時回報原因，不能略過後宣稱建置成功。
 
----
+搜尋測試涵蓋中文／特殊符號、安全文字呈現、排序與上限、清空選取、IME、Tab／Escape 與焦點還原；仍需手動確認搜尋視窗在不同螢幕的可見焦點與捲動。動畫測試模擬 Canvas、排程與可見性邊界，不等於耗電測量。
 
-**Last Updated**: 2026-10-23
-**Version**: 2.0.8
-**Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
+## 部署與上線
 
----
+2026-10-23 由 GitHub Pages API 確認部署為 `build_type: legacy`，來源為 `main` 分支根目錄 `/`。變更後仍以 repository Settings → Pages 與實際部署結果為準；`.ruby-version` 控制本機與驗證 workflow，不控制 Pages 內建環境。
 
-## 📝 Changelog
+[驗證 workflow](.github/workflows/validate.yml) 在 PR、push 或手動執行時：
+
+1. 依 Ruby 設定與 lockfile 安裝套件，啟用 `BUNDLE_FROZEN`，禁止自動改寫 lockfile。
+2. 執行全部 `test/*_test.rb`。
+3. 使用 Node 24 及 `test/package-lock.json` 安裝測試依賴，執行 DOM 測試。
+4. 執行 production 驗證。
+
+workflow 僅使用 `contents: read`，不需部署 secret、不發布網站、不修改 Pages。它與 legacy 部署獨立，直接 push 到 main 可能立即觸發部署，不會等待此驗證。若要強制合併前檢查，需另外設定 branch protection 的 required status check，以 GitHub 實際顯示名稱為準。
+
+建議流程：本機驗證與預覽 → 依[授權規則](agents.MD#git-規則)提交／建立 PR → 確認 `Validate site` 通過 → 經使用者指示合併或推送 → 確認 Pages 建置、部署與線上頁面。使用者手動提交時，AI 僅提供結果與 commit message，不自行操作。
+
+本機與 CI 通過無法保證遠端部署成功；權限、服務狀態與主題下載仍可能影響 Pages。部署故障需查看實際 Pages 建置紀錄。
+
+## 疑難排解與升級
+
+| 問題 | 檢查與處理 |
+|---|---|
+| Ruby／Bundler 找不到或版本不符 | 執行 `ruby --version`、`bundle --version`、`which ruby`、`rbenv version`；確認 shell 已初始化，Ruby 來自 rbenv shims，而非系統 Ruby |
+| Bundler 不符 lockfile | 查 `Gemfile.lock` 的 `BUNDLED WITH`，安裝對應版本；不要只為排錯改寫 lockfile |
+| 埠號已使用 | 用 `lsof -i :4000` 確認程序；停止自己開的服務或用 `--port 4001`，不要批次強制終止未知程序 |
+| 修改沒有反映 | 重新整理瀏覽器；設定修改需重啟。必要時停止服務、執行 `bundle exec jekyll clean` 後重建 |
+| 檔案監看無效 | 嘗試 `bundle exec jekyll serve --force_polling`，再確認儲存路徑與服務日誌 |
+| Sass 警告 | 依日誌定位主題或專案來源，區分 deprecation 與編譯錯誤；不能一律認定無害或以隱藏日誌取代排查 |
+| 遠端主題下載失敗 | 檢查網路與實際錯誤；保留失敗結果，不用舊輸出冒充成功 |
+
+依賴升級另開明確範圍，先看 `Gemfile`／lockfile／主題 pin 與測試依賴，確認 GitHub Pages 相容限制後才更新。日常安裝使用 `bundle install`，不把全量 `bundle update` 或 `bundle update --bundler` 當成排錯必要步驟；刻意升級後檢查 lockfile diff 並重跑完整驗證。
+
+官方參考：[Jekyll](https://jekyllrb.com/docs/)、[Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/docs/)、[Liquid](https://shopify.github.io/liquid/)。
+
+## CHANGELOG
+
+### v3.0.0 (2026-10-23)
+
+- 補上架構地圖，整併作者資料、開發操作與疑難排解。
+- 校正檔案位置與文章範例，保留圖片及互動完整契約，待主題規格整併。
+- 區分本機驗證、CI 與 Pages 部署；移除不必要的危險排錯及預設升級指令。
+
 
 ### v2.0.8 (2026-10-23)
 - 關閉重複主題搜尋、合併導覽程式並移除無效標籤事件。
