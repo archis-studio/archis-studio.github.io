@@ -184,10 +184,8 @@ defaults:
       sidebar:
         nav: "sidebar"
 
-# Search
-search: true
-search_full_content: true
-search_provider: lunr
+# Disable theme search; the custom search overlay is included by our masthead.
+search: false
 
 # SEO & Social Media
 social:

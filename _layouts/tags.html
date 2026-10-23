@@ -32,31 +32,3 @@ layout: default
     {% endfor %}
   </div>
 </div>
-
-<!-- Smooth scroll to tag details -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Smooth scroll to tag section when clicking tag cloud items
-  document.querySelectorAll('.tag-cloud-item-compact[data-group="tags"]').forEach(item => {
-    item.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#tag-')) {
-        e.preventDefault();
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          targetElement.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-          
-          // Highlight animation
-          targetElement.classList.add('highlight-flash');
-          setTimeout(() => {
-            targetElement.classList.remove('highlight-flash');
-          }, 2000);
-        }
-      }
-    });
-  });
-});
-</script>

@@ -638,19 +638,3 @@
     padding: 0.5rem 0.75rem;
   }
 }
-
-// Scroll animation
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.visible-links.show {
-  animation: slideDown 0.3s ease;
-}

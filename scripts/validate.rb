@@ -72,6 +72,9 @@ module SiteValidation
         end
 
         documents.each do |document|
+          legacy_search = document.at_css(".search-content") || document.css("script[src]").any? { |script| script["src"].include?("/assets/js/lunr/") }
+          raise Error, "Redundant theme search is still loaded" if legacy_search
+          raise Error, "Expected one custom search overlay" unless document.css("#searchOverlay").size == 1
           search_data = document.at_css('script#searchData[type="application/json"]')
           raise Error, "Missing search JSON data" unless search_data
           search = JSON.parse(search_data.text)

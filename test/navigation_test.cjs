@@ -7,6 +7,60 @@ const { JSDOM } = require('jsdom');
 const root = path.join(__dirname, '..');
 const postSource = fs.readFileSync(path.join(root, '_layouts/post.html'), 'utf8')
   .split('<!-- Gaming Features & TOC Script -->')[1].match(/<script>([\s\S]*?)<\/script>/)[1];
+const navigationSource = fs.readFileSync(path.join(root, 'assets/js/navigation.js'), 'utf8');
+
+async function masthead(t, { baseurl = '', scrollY = 0 } = {}) {
+  const dom = new JSDOM(`<div class="masthead"><nav class="masthead__menu"><ul class="nav-links">
+    <li><a class="nav-link" href="${baseurl}/">Home</a></li>
+    <li><a class="nav-link" href="${baseurl}/posts/">Posts</a></li>
+    </ul></nav><button class="mobile-toggle" aria-expanded="false">Menu</button></div>`, {
+    url: `https://example.test${baseurl}/posts/`, runScripts: 'outside-only'
+  });
+  t.after(() => dom.window.close());
+  const { window } = dom;
+  Object.defineProperty(window, 'innerWidth', { value: 375 });
+  Object.defineProperty(window, 'scrollY', { get: () => scrollY });
+  window.document.addEventListener('click', event => {
+    if (event.target.closest('a')) event.preventDefault();
+  });
+  window.eval(navigationSource);
+  await new Promise(resolve => window.document.addEventListener('DOMContentLoaded', resolve, { once: true }));
+  return {
+    document: window.document,
+    scroll(value) { scrollY = value; window.dispatchEvent(new window.Event('scroll')); }
+  };
+}
+
+test('external navigation script toggles the current mobile menu once and closes on link click', async t => {
+  const view = await masthead(t);
+  const toggle = view.document.querySelector('.mobile-toggle');
+  const menu = view.document.querySelector('.masthead__menu');
+  toggle.click();
+  assert.equal(toggle.getAttribute('aria-expanded'), 'true');
+  assert.ok(menu.classList.contains('show'));
+  toggle.click();
+  assert.equal(toggle.getAttribute('aria-expanded'), 'false');
+  assert.equal(menu.classList.contains('show'), false);
+  toggle.click();
+  menu.querySelector('a').click();
+  assert.equal(toggle.getAttribute('aria-expanded'), 'false');
+  assert.equal(menu.classList.contains('show'), false);
+});
+
+test('external navigation marks the current link with a configured baseurl', async t => {
+  const view = await masthead(t, { baseurl: '/preview' });
+  assert.deepEqual(Array.from(view.document.querySelectorAll('.nav-link.active')).map(link => link.textContent), ['Posts']);
+});
+
+test('masthead scroll state initializes at a restored scroll position and updates', async t => {
+  const view = await masthead(t, { scrollY: 100 });
+  const header = view.document.querySelector('.masthead');
+  assert.ok(header.classList.contains('scrolled'));
+  view.scroll(0);
+  assert.equal(header.classList.contains('scrolled'), false);
+  view.scroll(100);
+  assert.ok(header.classList.contains('scrolled'));
+});
 
 async function toc(t, headings, hash = '') {
   const dom = new JSDOM(`<div id="heading-1"></div><article class="post-content">${headings}</article><aside class="post-toc"><nav id="toc"></nav></aside>`, {

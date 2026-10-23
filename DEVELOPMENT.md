@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.7 | Updated: 2026-10-23
+# Version 2.0.8 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -422,6 +422,14 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 
 手動檢查：在系統或 DevTools 切換減少動態效果，確認首頁、搜尋、About 技能條、複製按鈕與閱讀完成提示仍可使用；一般模式的 Matrix 離開畫面後暫停，返回後恢復。
 
+### 搜尋與導覽精簡
+
+- `_config.yml` 的 `search: false` 只關閉 Minimal Mistakes 內建搜尋，避免重複輸出搜尋表單與 Lunr scripts。自訂搜尋由 masthead 直接引入，仍正常使用；不需重新開啟主題搜尋。
+- 導覽互動統一由既有 `assets/js/navigation.js` 負責，使用 `.masthead__menu`、`.mobile-toggle` 與 `.nav-link`。masthead 不再重複輸出 inline 導覽程式，也不注入舊選單的 scroll-lock 樣式；移除未使用的 `.visible-links.show` 與 `slideDown` 動畫。
+- 保留目前選單開關、點擊連結收合、當前網址標示與捲動狀態；初始化會同步已還原的捲動位置。
+- 標籤頁移除不會觸發的 fragment-only 事件處理，沿用原生錨點；搜尋與排序仍由 tag cloud 元件負責。減少動態效果仍由全站 CSS 處理。
+- production 驗證會攔下主題搜尋表單／Lunr scripts 回歸，並確認自訂搜尋覆蓋層只有一份。
+
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
 - **Firefox**: Secondary testing
@@ -445,12 +453,16 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.7
+**Version**: 2.0.8
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.8 (2026-10-23)
+- 關閉重複主題搜尋、合併導覽程式並移除無效標籤事件。
+- 補上現有選單 DOM 測試與重複搜尋產出檢查。
 
 ### v2.0.7 (2026-10-23)
 - 加入系統動態效果偏好、Matrix 暫停與靜音閱讀提示說明。
