@@ -1,6 +1,6 @@
 # 開發指南
 
-Version 4.0.0 | Updated: 2026-10-23
+Version 4.0.2 | Updated: 2026-10-23
 
 供人／Agent 查閱操作、修改位置與驗證方式。授權規則見 [agents.MD](agents.MD)，規格入口見[文件索引](docs/DOC_INDEX.md)。
 
@@ -106,7 +106,7 @@ Markdown／YAML → Liquid layout／include → 靜態 HTML；SCSS → CSS；Pag
 
 兩篇範例本身是已發布文章，也參與搜尋、分類與精選，複製時不要覆寫原檔。較完整範例沿用現有 275×183 圖片示範欄位；這不是新圖片的建議解析度，也不需為範例維護第二張圖片。
 
-寫作品質與內容政策見 [Content](docs/CONTENT_STRATEGY.md)，資源約束見 [Asset](docs/ASSET_SPEC.md)；已知衝突見[整理計畫](docs/superpowers/plans/2026-10-23-documentation-reorganization.md)。
+作者自行決定內容與發布時機；可選建議見[寫作參考](docs/CONTENT_STRATEGY.md)。圖片操作見[圖片處理](#圖片處理)，其他資源約束仍見 [Asset](docs/ASSET_SPEC.md)。
 
 ### 新增頁面與樣式
 
@@ -252,6 +252,14 @@ production 驗證結束後清除暫存目錄，不依賴舊 `_site`；不執行�
 - production 驗證會攔下主題搜尋表單／Lunr scripts 回歸，並確認自訂搜尋覆蓋層只有一份。
 
 ## CHANGELOG
+
+### v4.0.2 (2026-10-23)
+
+- 同步自由寫作與不定期發文決策，移除待確認政策入口。
+
+### v4.0.1 (2026-10-23)
+
+- 發文指南分別連到內容品質與待確認政策，操作維持單一來源。
 
 ### v4.0.0 (2026-10-23)
 
