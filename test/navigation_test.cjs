@@ -13,6 +13,7 @@ async function toc(t, headings, hash = '') {
     url: `https://example.test/blog/example/${hash}`, runScripts: 'outside-only'
   });
   t.after(() => dom.window.close());
+  dom.window.matchMedia = () => Object.assign(new dom.window.EventTarget(), { matches: false });
   dom.window.eval(postSource);
   await new Promise(resolve => dom.window.document.addEventListener('DOMContentLoaded', resolve, { once: true }));
   return dom.window.document;

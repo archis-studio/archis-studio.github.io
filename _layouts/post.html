@@ -172,6 +172,7 @@ layout: default
 <!-- Gaming Features & TOC Script -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
   // ========================================
   // 1. TOC Generation
   // ========================================
@@ -279,14 +280,14 @@ document.addEventListener('DOMContentLoaded', function() {
         copyBtn.innerHTML = '<span class="btn-icon">✨</span><span class="btn-text">+10 EXP</span>';
         copyBtn.classList.add('copied');
         
-        // Show floating EXP
-        const expFloat = document.createElement('div');
-        expFloat.className = 'xp-float';
-        expFloat.textContent = '+10 EXP';
-        block.appendChild(expFloat);
-        
-        setTimeout(() => expFloat.remove(), 1000);
-        
+        if (!motionPreference.matches) {
+          const expFloat = document.createElement('div');
+          expFloat.className = 'xp-float';
+          expFloat.textContent = '+10 EXP';
+          block.appendChild(expFloat);
+          setTimeout(() => expFloat.remove(), 1000);
+        }
+
         // Reset button
         setTimeout(() => {
           copyBtn.innerHTML = '<span class="btn-icon">✓</span><span class="btn-text">Copied</span>';
@@ -330,6 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function showAchievement(icon, title, name, desc) {
     const toast = document.createElement('div');
     toast.className = 'achievement-toast';
+    toast.setAttribute('role', 'status');
     toast.innerHTML = `
       <div class="achievement-header">
         <div class="achievement-icon">${icon}</div>
@@ -343,55 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.body.appendChild(toast);
     
-    // Play elegant achievement sound
-    playAchievementSound();
-    
     setTimeout(() => toast.remove(), 4000);
-  }
-  
-  function playAchievementSound() {
-    try {
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      
-      // Create a more elegant multi-tone achievement sound
-      const now = audioContext.currentTime;
-      
-      // First note - C5 (523.25 Hz)
-      playNote(audioContext, 523.25, now, 0.15, 0.3);
-      
-      // Second note - E5 (659.25 Hz)
-      playNote(audioContext, 659.25, now + 0.15, 0.15, 0.3);
-      
-      // Third note - G5 (783.99 Hz)
-      playNote(audioContext, 783.99, now + 0.3, 0.2, 0.4);
-      
-      // Fourth note - C6 (1046.50 Hz) - Higher octave for sparkle
-      playNote(audioContext, 1046.50, now + 0.5, 0.3, 0.25);
-      
-    } catch(e) {
-      console.log('Audio not supported');
-    }
-  }
-  
-  function playNote(audioContext, frequency, startTime, duration, volume) {
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    
-    oscillator.connect(gainNode);
-    gainNode.connect(audioContext.destination);
-    
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(frequency, startTime);
-    
-    // Smooth volume envelope (attack-decay-sustain-release)
-    gainNode.gain.setValueAtTime(0, startTime);
-    gainNode.gain.linearRampToValueAtTime(volume, startTime + 0.01); // Attack
-    gainNode.gain.exponentialRampToValueAtTime(volume * 0.7, startTime + duration * 0.3); // Decay
-    gainNode.gain.setValueAtTime(volume * 0.5, startTime + duration * 0.7); // Sustain
-    gainNode.gain.exponentialRampToValueAtTime(0.01, startTime + duration); // Release
-    
-    oscillator.start(startTime);
-    oscillator.stop(startTime + duration);
   }
   
   window.addEventListener('scroll', checkScrollBottom);
@@ -399,25 +353,37 @@ document.addEventListener('DOMContentLoaded', function() {
   // ========================================
   // 6. Scroll Particles Effect
   // ========================================
-  const particlesContainer = document.createElement('div');
-  particlesContainer.className = 'scroll-particles';
-  for (let i = 0; i < 6; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particlesContainer.appendChild(particle);
-  }
-  document.body.appendChild(particlesContainer);
-  
-  let lastScroll = 0;
-  window.addEventListener('scroll', function() {
+  let particlesContainer = null;
+  let lastScroll = window.pageYOffset;
+
+  function updateParticles() {
+    if (!particlesContainer) return;
     const currentScroll = window.pageYOffset;
-    if (currentScroll > lastScroll && currentScroll > 100) {
-      // Scrolling down
-      particlesContainer.style.display = 'block';
-    } else {
-      particlesContainer.style.display = 'none';
-    }
+    particlesContainer.style.display = currentScroll > lastScroll && currentScroll > 100 ? 'block' : 'none';
     lastScroll = currentScroll;
-  });
+  }
+
+  function syncParticles() {
+    if (motionPreference.matches) {
+      if (particlesContainer) particlesContainer.remove();
+      particlesContainer = null;
+      window.removeEventListener('scroll', updateParticles);
+      return;
+    }
+    if (particlesContainer) return;
+    particlesContainer = document.createElement('div');
+    particlesContainer.className = 'scroll-particles';
+    for (let i = 0; i < 6; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particlesContainer.appendChild(particle);
+    }
+    document.body.appendChild(particlesContainer);
+    lastScroll = window.pageYOffset;
+    window.addEventListener('scroll', updateParticles, { passive: true });
+  }
+
+  syncParticles();
+  motionPreference.addEventListener('change', syncParticles);
 });
 </script>

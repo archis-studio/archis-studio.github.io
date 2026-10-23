@@ -1,5 +1,5 @@
 # 開發指南 - Development Guide
-# Version 2.0.6 | Updated: 2026-10-23
+# Version 2.0.7 | Updated: 2026-10-23
 
 > **技術文件** - 本地開發環境設定、常用指令與故障排除
 
@@ -411,6 +411,17 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 
 `_config.yml` 的 `author.avatar` 指向 WebP；`avatar_width`／`avatar_height` 填入實際檔案尺寸，模板僅在兩者都有設定時輸出，既有 CSS 繼續控制顯示大小。
 
+### 動態效果與音效
+
+- 直接尊重系統 `prefers-reduced-motion: reduce`，不新增設定面板或偏好儲存。
+- 首頁 Matrix 僅在可見畫面、分頁未隱藏且允許動態效果時繪製；離開畫面／切換分頁暫停，返回時恢復。支援執行中切換系統偏好與重新計算視窗縮放後的欄數；以現代瀏覽器的 matchMedia、IntersectionObserver 與標準 change 事件為支援範圍，不維護舊 API 相容分支。
+- 主樣式在減少動態效果模式下將動畫／transition 縮短至近乎即時，取消延遲與平滑捲動，同時保留動畫完成狀態，避免 About 技能條停在零寬度。搜尋視窗與閱讀完成提示保留可見狀態。
+- 文章在減少動態效果模式下不建立捲動粒子或浮動 EXP；複製文字與成功回饋仍可使用。
+- 閱讀完成提示在所有模式下都不播放音效，每篇頁面只顯示一次，保留文字狀態通知。
+- `test/motion_test.cjs` 在 DOM 測試中模擬瀏覽器 Canvas／排程／可見性邊界，驗證暫停、恢復與偏好變更。它不取代真實瀏覽器的 CSS 動畫、版面或耗電測量。
+
+手動檢查：在系統或 DevTools 切換減少動態效果，確認首頁、搜尋、About 技能條、複製按鈕與閱讀完成提示仍可使用；一般模式的 Matrix 離開畫面後暫停，返回後恢復。
+
 ### Browser Testing
 - **Chrome/Edge**: Primary testing
 - **Firefox**: Secondary testing
@@ -434,12 +445,16 @@ magick assets/images/profile_picture_xaos_engineer.png -auto-orient -resize '400
 ---
 
 **Last Updated**: 2026-10-23
-**Version**: 2.0.6
+**Version**: 2.0.7
 **Jekyll**: 3.10.0 | **Ruby**: 3.3.10 | **Theme**: Minimal Mistakes 4.27.0
 
 ---
 
 ## 📝 Changelog
+
+### v2.0.7 (2026-10-23)
+- 加入系統動態效果偏好、Matrix 暫停與靜音閱讀提示說明。
+- 新增動態效果 DOM 回歸測試與瀏覽器驗證範圍。
 
 ### v2.0.6 (2026-10-23)
 - 改用單張 400x400 WebP 頭像，補上尺寸與重製指令，保留原圖。

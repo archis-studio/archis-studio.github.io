@@ -46,7 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetElement = document.getElementById(targetId);
         
         if (targetElement) {
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          targetElement.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
           
           // Highlight animation
           targetElement.classList.add('highlight-flash');

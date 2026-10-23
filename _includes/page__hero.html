@@ -101,24 +101,21 @@
   
   const ctx = canvas.getContext('2d');
   
-  // Set canvas size
-  function resizeCanvas() {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-  }
-  resizeCanvas();
-  window.addEventListener('resize', resizeCanvas);
-  
+  if (!ctx) return;
+  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+
   // Matrix characters (Binary + Japanese + Symbols)
   const chars = '0101010011010010110100110100101∆πΣΛΩψµ∞≠∑∂∇∫≈≡⊗⊕⊙⊹⊰⊱⋄⋆✦✧⚛︎⍜⍟⟡◇◆□■⎊⎈⌘⍴⍲⍱αβγδφχωΨΦΞΛΩ∇∂∞☯✴✵✶✷✹✺⋰⋱⋮⋯';
   const fontSize = 14;
-  const columns = Math.floor(canvas.width / fontSize);
-  const drops = Array(columns).fill(1);
+  let drops = [];
+  let intervalId = null;
+  let inView = false;
   
   // Colors
   const colors = ['#D4A017', '#4A90B8', '#E8E8E8'];
   
   function drawMatrix() {
+    if (motionPreference.matches || document.hidden || !inView) return;
     // Fade effect
     ctx.fillStyle = 'rgba(15, 15, 18, 0.05)';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -139,8 +136,39 @@
     }
   }
   
-  // Slower animation for better performance
-  setInterval(drawMatrix, 50);
+  function syncAnimation() {
+    const shouldRun = !motionPreference.matches && !document.hidden && inView;
+    if (shouldRun && intervalId === null) intervalId = setInterval(drawMatrix, 50);
+    else if (!shouldRun && intervalId !== null) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+    if (motionPreference.matches) ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+
+  function updateVisibility() {
+    const rect = canvas.getBoundingClientRect();
+    inView = rect.bottom > 0 && rect.top < window.innerHeight && rect.right > 0 && rect.left < window.innerWidth;
+    syncAnimation();
+  }
+
+  function resizeCanvas() {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+    drops = Array(Math.floor(canvas.width / fontSize)).fill(1);
+    updateVisibility();
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+  document.addEventListener('visibilitychange', updateVisibility);
+  motionPreference.addEventListener('change', syncAnimation);
+
+  const observer = new IntersectionObserver(entries => {
+    inView = entries[0].isIntersecting;
+    syncAnimation();
+  });
+  observer.observe(canvas);
 })();
 </script>
 {% endif %}
