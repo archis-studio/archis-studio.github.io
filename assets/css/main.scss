@@ -30,6 +30,17 @@
 @import "custom/comments";         // Giscus comments styling
 @import "search-overlay";
 
+// Keep desktop typography compact without changing phone or tablet sizing.
+@media screen and (min-width: ($breakpoint-lg + 1px)) {
+  html {
+    font-size: 18px;
+  }
+
+  .post-card .category-tag {
+    font-size: $font-size-xs;
+  }
+}
+
 // Respect OS motion preferences while retaining animation end states (e.g. skill bars).
 @media (prefers-reduced-motion: reduce) {
   *,

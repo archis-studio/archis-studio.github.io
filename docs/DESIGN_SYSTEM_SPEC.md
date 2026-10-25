@@ -1,6 +1,6 @@
 # Design System 設計與實作參考
 
-Version 5.1.0 | Updated: 2026-10-24
+Version 5.1.1 | Updated: 2026-10-25
 
 供人／Agent 維護視覺與共用樣式。本文區分設計約束、已定義工具與尚未實作的舊示意；不以程式現況授權改變設計。頁面與互動見 [Layout](LAYOUT_SPEC.md)，操作及驗證見 [Development](../DEVELOPMENT.md)。
 
@@ -73,6 +73,8 @@ Version 5.1.0 | Updated: 2026-10-24
 | `$line-height-tight`、`$line-height-snug`、`$line-height-normal`、`$line-height-relaxed`、`$line-height-loose` | 精確行高查 variables |
 
 字型堆疊不等於字型已下載。custom head 明確載入 Google Fonts 的 Playfair Display 400／700；各元件另有 Georgia、Courier New、Noto Serif TC 等直接宣告。實際字型取決於主題／外部載入、裝置安裝與 fallback，不保證所有頁面使用相同字體。
+
+桌面螢幕寬度超過 1024px 時，main.scss 將根字級固定為 18px，避免主題在寬桌面持續放大文字；手機與平板維持原有尺度，正文行高不變。桌面 post-card 分類標籤使用既有 `$font-size-xs` 保留可讀性。variables 的 px 註解以 16px 根字級換算，實際 rem 尺寸依當下根字級計算。此調整同時縮小 rem 留白，固定 px 的元件則保留原尺寸；先採局部主題覆寫，後續可依預覽回饋調整。
 
 ### 間距、斷點與過渡
 
@@ -195,6 +197,10 @@ token 或編譯通過不代表配色、焦點、響應式或瀏覽器已達標�
 本次改寫前完整規格保留於 commit `2ab75a5` 的本檔；舊元件 SCSS、精確示意值、效益統計與建置 checklist 可由 Git 追溯。[Asset 原文](archive/ASSET_SPEC.md)與[圖片 README](archive/assets-images-README.md)已封存，僅供歷史追溯。逐項接收與未完成範圍見[整理計畫](superpowers/plans/2026-10-23-documentation-reorganization.md)。
 
 ## CHANGELOG
+
+### v5.1.1 (2026-10-25)
+
+- 桌面根字級改為 18px，保留手機／平板尺度與正文行高，並維持桌面卡片分類標籤可讀性。
 
 ### v5.1.0 (2026-10-24)
 
