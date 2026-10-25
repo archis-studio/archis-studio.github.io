@@ -1,6 +1,6 @@
 # 頁面結構與互動
 
-Version 4.0.5 | Updated: 2026-10-24
+Version 4.0.6 | Updated: 2026-10-25
 
 供人／Agent 查找頁面組成、互動約定及實作來源。設計原則與 tokens 見 [Design System](DESIGN_SYSTEM_SPEC.md)，修改入口、測試指令與部署見 [Development](../DEVELOPMENT.md)。來源、DOM 測試、瀏覽器與效能量測各有驗證範圍，不能互相替代。
 
@@ -73,6 +73,7 @@ Hero 描述未設定、為空字串或只有空白時不輸出描述段落；有
 post layout 輸出主標題、日期、分類、標籤、閱讀時間、可選封面、正文、分享、最多三篇相關文章、前後篇導覽及條件式 Giscus。相關文章位於正文後，不是右側 TOC 的內容；外部留言實際可用性需另驗證。
 
 - 閱讀時間以 `content | strip_html | strip | size` 的字元數，每 500 字元一分鐘，向上取整、至少一分鐘；不區分中英文，不加手動時間欄位。
+- 標題下方顯示發布日期；`last_modified_at` 的日曆日期晚於發布日才額外顯示「更新於」，缺值、空值、同日或較早日期皆省略。日期使用語意化 `time` 與機器可讀的 `datetime`，資訊列沿用 flex 換行；列表與排序仍使用發布日期。
 - 分類連結目前指向 `/categories/#<category-slug>` 的 portal；標籤連到 `/tags/#tag-<tag-slug>`。單一分類列表另有獨立路由，不能把這兩種連結描述成同一種。
 - TOC 由 JavaScript 掃描正文 H2／H3／H4，保留 Markdown／自訂 heading ID，缺 ID 才生成不撞名 fallback；標題以文字節點呈現，href 對 ID 編碼。無標題時隱藏目錄。
 - 捲動更新目錄目前項目與閱讀進度。目錄為自訂實作，不由主題 `toc`／`toc_sticky` 選項控制。
@@ -166,6 +167,10 @@ certificates layout 由 `page.certificates` 產生卡片與分類篩選，圖片
 舊 Layout 完整內容可由 commit `94dfac1` 的本檔追溯；[Navigation 原文](archive/NAVIGATION_SPEC.md)已封存，現行行為約定以本文件為準。Asset 的通用視覺原則已在 Design，剩餘頁面結構／載入／裝飾構想已於本文件分清實作與歷史；[Asset 原文](archive/ASSET_SPEC.md)已封存。
 
 ## CHANGELOG
+
+### v4.0.6 (2026-10-25)
+
+- 文章資訊列顯示晚於發布日的更新日期，保留原發布日期與列表排序，補上日期顯示回歸驗證。
 
 ### v4.0.5 (2026-10-24)
 

@@ -20,6 +20,24 @@ class NavigationTest < Minitest::Test
     Array.new(count) { |index| { "title" => "Post #{index}", "url" => "/blog/#{index}/", "featured" => featured } }
   end
 
+  def test_article_displays_a_later_modified_date_with_a_machine_readable_value
+    page = { "date" => "2026-05-28", "last_modified_at" => "2026-10-25" }
+    document = render("_layouts/post.html", { "page" => page, "site" => { "related_posts" => [] } })
+    updated = document.at_css(".post-date--updated")
+    refute_nil updated
+    assert_includes updated.text, "更新於 2026年10月25日"
+    assert_match(/\A2026-10-25T/, updated["datetime"])
+    assert_includes document.at_css(".post-date").text, "發布於 2026年05月28日"
+  end
+
+  def test_article_hides_missing_same_day_and_earlier_modified_dates
+    [nil, "", "2026-05-28T23:59:00+08:00", "2026-05-27"].each do |modified|
+      page = { "date" => "2026-05-28T08:00:00+08:00", "last_modified_at" => modified }
+      document = render("_layouts/post.html", { "page" => page, "site" => { "related_posts" => [] } })
+      assert_nil document.at_css(".post-date--updated"), modified.inspect
+    end
+  end
+
   def homepage(entries)
     render("index.html", { "page" => {}, "site" => { "posts" => entries, "categories" => {} } })
   end

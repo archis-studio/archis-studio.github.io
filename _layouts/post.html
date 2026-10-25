@@ -32,8 +32,18 @@ layout: default
         <svg class="icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
           <path d="M4 0a1 1 0 0 1 1 1v1h6V1a1 1 0 1 1 2 0v1h1a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h1V1a1 1 0 0 1 1-1zM2 6v8h12V6H2z"/>
         </svg>
-        {{ page.date | date: "%Y年%m月%d日" }}
+        發布於 {{ page.date | date: "%Y年%m月%d日" }}
       </time>
+
+      {% if page.last_modified_at and page.last_modified_at != empty %}
+        {% assign published_day = page.date | date: "%Y%m%d" | plus: 0 %}
+        {% assign modified_day = page.last_modified_at | date: "%Y%m%d" | plus: 0 %}
+        {% if modified_day > published_day %}
+        <time class="post-date post-date--updated" datetime="{{ page.last_modified_at | date_to_xmlschema }}">
+          更新於 {{ page.last_modified_at | date: "%Y年%m月%d日" }}
+        </time>
+        {% endif %}
+      {% endif %}
 
       <!-- Reading Time -->
       {% assign character_count = content | strip_html | strip | size %}
