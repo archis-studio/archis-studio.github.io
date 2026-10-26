@@ -3,7 +3,7 @@ title: "AI 工具實戰：從入門到精通"
 categories: [AI Tools, Marketing, Software Dev]
 tags: [AI, ChatGPT, Claude, productivity]
 featured: true
-excerpt: "深入探索 AI 工具的實際應用場景，從基礎概念到進階技巧，讓你的工作效率翻倍。"
+excerpt: "深入探索 AI 工具的實際應用場景，從基礎概念到進階技巧，讓你的工作效率翻倍。 // 精選 80 字，卡片 120 字。"
 description: "一句簡潔的 SEO 描述，50–160 字，說明文章能帶給讀者什麼價值。"
 header:
   image: /assets/images/posts/ai-tools-teaser.jpeg

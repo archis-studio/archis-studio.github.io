@@ -7,7 +7,7 @@ last_modified_at: 2026-10-25
 categories: [Growth, Software Dev, Green Energy]
 tags: [EMS, System Thinking, Engineering Journey, Software Architecture]
 featured: true
-permalink: /blog/from-xaos-to-platform-00/
+permalink: /blog/from-xaos-to-platform-01/
 
 header:
   overlay_image: /assets/images/posts/260531-blog-software-banner.png
